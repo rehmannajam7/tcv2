@@ -351,7 +351,7 @@
       "KICK_OFF_MESSAGE": "Precisa de um resumo rápido, quer consultar conversas anteriores ou redigir uma resposta melhor? O Copilot está aqui para acelerar o processo.",
       "SEND_MESSAGE": "Enviar mensagem...",
       "EMPTY_MESSAGE": "Ocorreu um erro ao gerar a resposta. Por favor, tente novamente.",
-      "LOADER": "Captain is thinking",
+      "LOADER": "AI Assistant is thinking",
       "YOU": "Você",
       "USE": "Use this",
       "RESET": "Reset",
