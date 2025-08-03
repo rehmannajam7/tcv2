@@ -135,14 +135,14 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-wrap app-wrapper text-n-slate-12">
+  <div class="flex flex-wrap app-wrapper text-n-slate-12 p-2" style="background-color: #2c2c2c;">
     <NextSidebar
       @toggle-account-modal="toggleAccountModal"
       @open-key-shortcut-modal="toggleKeyShortcutModal"
       @close-key-shortcut-modal="closeKeyShortcutModal"
       @show-create-account-modal="openCreateAccountModal"
     />
-    <main class="flex flex-1 h-full min-h-0 px-0 overflow-hidden">
+    <main class="flex flex-1 h-full min-h-0 px-0 overflow-hidden rounded-xl ml-1">
       <UpgradePage
         v-show="showUpgradePage"
         ref="upgradePageRef"
