@@ -1,6 +1,6 @@
 class LandingController < ApplicationController
   skip_before_action :set_current_user
-  skip_before_action :verify_authenticity_token
+  # Remove this line: skip_before_action :verify_authenticity_token
   layout 'landing'
 
   def index
