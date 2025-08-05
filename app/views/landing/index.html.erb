@@ -1,20 +1,216 @@
-<div class="landing-container">
-  <% if @global_config['LOGO'].present? %>
-    <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] %>" class="logo">
-  <% end %>
-  
-  <h1 class="title">
-    Welcome to <%= @global_config['INSTALLATION_NAME'] || 'Chatwoot' %>
-  </h1>
-  
-  <p class="subtitle">
-    Your comprehensive customer support solution. Connect with your customers across multiple channels and provide exceptional support.
-  </p>
-  
-  <div class="cta-buttons">
-    <%= link_to "Sign In", "/app/login", class: "btn btn-primary" %>
-    <% if @global_config['ENABLE_ACCOUNT_SIGNUP'] == 'true' %>
-      <%= link_to "Get Started", "/app/auth/signup", class: "btn btn-secondary" %>
-    <% end %>
+<!-- Header Section -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-container">
+        <% if @global_config['LOGO'].present? %>
+          <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %>" class="logo">
+        <% else %>
+          <h2 style="margin: 0; color: var(--primary-purple); font-weight: 700;"><%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %></h2>
+        <% end %>
+      </div>
+      
+      <nav class="nav-menu">
+        <a href="#product">Product</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#resources">Resources</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      
+      <div class="header-buttons">
+        <%= link_to "Login", "/app/login", class: "btn btn-login" %>
+        <%= link_to "Try for free", "/app/auth/signup", class: "btn btn-cta" %>
+      </div>
+    </div>
   </div>
-</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="animate-fade-in">
+      <h1>An AI-based CX enterprise solution for brands and retailers</h1>
+      <p>Transform your customer service with intelligent automation, AI-powered agents, and seamless multichannel support that scales with your business.</p>
+      <%= link_to "Try for free", "/app/auth/signup", class: "btn btn-dark" %>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Integration Cards -->
+<section class="section">
+  <div class="container">
+    <div class="platform-cards">
+      <div class="platform-card animate-fade-in">
+        <i class="fab fa-whatsapp platform-icon whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p>Connect with customers on the world's most popular messaging platform. Automate responses, manage conversations, and provide instant support through WhatsApp Business API.</p>
+        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="platform-card animate-fade-in">
+        <i class="fab fa-instagram platform-icon instagram"></i>
+        <h3>Instagram DMs</h3>
+        <p>Engage with your audience directly through Instagram Direct Messages. Manage customer inquiries, showcase products, and build relationships on this visual platform.</p>
+        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="platform-card animate-fade-in">
+        <i class="fab fa-facebook-messenger platform-icon messenger"></i>
+        <h3>Facebook Messenger</h3>
+        <p>Automate customer conversations on Facebook Messenger with intelligent chatbots, quick replies, and seamless handoffs to human agents when needed.</p>
+        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chat Marketing Section -->
+<section class="section chat-marketing">
+  <div class="container">
+    <h2>Supercharge Your Sales with Chat Marketing</h2>
+    <p>Unlock the potential of conversational commerce across all platforms and turn every interaction into a sales opportunity.</p>
+  </div>
+</section>
+
+<!-- Social Proof Section -->
+<section class="section social-proof">
+  <div class="container">
+    <h3>Trusted by over 50,000 businesses, from fast-growing startups to world-class institutions</h3>
+    <div class="logo-grid">
+      <!-- Placeholder company logos -->
+      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">Compass</div>
+      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">WealthSimple</div>
+      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">Deel</div>
+      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">GEICO</div>
+      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">TechCorp</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI Assistant Section -->
+<section class="section ai-assistant">
+  <div class="container">
+    <h2>Meet Robin~AI: Your Ultimate Support Ally</h2>
+    <p>Our advanced AI assistant handles routine inquiries, provides instant responses, and seamlessly escalates complex issues to human agents, ensuring 24/7 customer support.</p>
+    
+    <div class="chat-mockup">
+      <div style="background: #F3F4F6; padding: 15px; border-radius: 12px; margin-bottom: 10px; text-align: left; color: #1F2937;">
+        <strong>Robin~AI:</strong> Hi! How can I help you today?
+      </div>
+      <div style="background: #8B5CF6; color: white; padding: 15px; border-radius: 12px; margin-bottom: 10px; text-align: right;">
+        <strong>Customer:</strong> I need help with my order
+      </div>
+      <div style="background: #F3F4F6; padding: 15px; border-radius: 12px; text-align: left; color: #1F2937;">
+        <strong>Robin~AI:</strong> I'd be happy to help! Let me pull up your order details...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Agent Efficiency Section -->
+<section class="section">
+  <div class="container">
+    <div class="two-column">
+      <div class="feature-content">
+        <h2>Increase agent efficiency with Copilot</h2>
+        <p>Empower your support team with AI-powered suggestions, automated responses, and intelligent routing. Reduce response times and improve customer satisfaction while handling more conversations.</p>
+        <%= link_to "Port your number", "#", class: "btn btn-cta" %>
+      </div>
+      
+      <div class="feature-mockup">
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div style="background: #EEF2FF; padding: 12px; border-radius: 8px; margin-bottom: 15px; color: #3730A3;">
+            <i class="fas fa-robot"></i> <strong>AI Suggestion:</strong> "Based on the customer's message, I recommend offering a refund or exchange."
+          </div>
+          <div style="background: #F0FDF4; padding: 12px; border-radius: 8px; color: #166534;">
+            <i class="fas fa-check-circle"></i> <strong>Quick Action:</strong> Send refund form
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unified Inbox Section -->
+<section class="section" style="background: #F8FAFC;">
+  <div class="container">
+    <div class="two-column reverse">
+      <div class="feature-content">
+        <h2>Audio, Video, Calls, & Text messages in one unified inbox</h2>
+        <p>Manage all customer communications from a single, powerful interface. Whether it's WhatsApp, email, social media, or phone calls - everything is organized in one place.</p>
+        <%= link_to "Watch a demo", "#", class: "btn btn-dark" %>
+      </div>
+      
+      <div class="feature-mockup">
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+            <div style="background: #25D366; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+            <div style="background: #1DA1F2; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fas fa-envelope"></i> Email</div>
+            <div style="background: #E4405F; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fab fa-instagram"></i> Instagram</div>
+          </div>
+          <div style="background: #F9FAFB; padding: 15px; border-radius: 8px; border-left: 4px solid #8B5CF6;">
+            <strong>Unified Conversation View</strong><br>
+            <span style="color: #6B7280; font-size: 14px;">All channels, one interface</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Management Section -->
+<section class="section contact-management">
+  <div class="container">
+    <div class="two-column">
+      <div class="feature-content">
+        <h2>Contact details all in one place</h2>
+        <p>Get a complete 360-degree view of your customers with comprehensive contact profiles, conversation history, and intelligent insights that help you provide personalized support.</p>
+        <%= link_to "Learn more", "#", class: "btn" style="background: white; color: var(--blue-gradient);" %>
+      </div>
+      
+      <div class="feature-mockup" style="background: rgba(255,255,255,0.1);">
+        <div style="background: white; padding: 20px; border-radius: 12px; color: #1F2937;">
+          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div style="width: 50px; height: 50px; background: #8B5CF6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">JD</div>
+            <div>
+              <strong>John Doe</strong><br>
+              <span style="color: #6B7280; font-size: 14px;">Premium Customer</span>
+            </div>
+          </div>
+          <div style="background: #F9FAFB; padding: 12px; border-radius: 8px; font-size: 14px;">
+            <div style="margin-bottom: 8px;"><strong>Last Purchase:</strong> $299.99</div>
+            <div style="margin-bottom: 8px;"><strong>Total Orders:</strong> 12</div>
+            <div><strong>Satisfaction Score:</strong> 4.8/5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple scroll animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.animate-fade-in');
+    animateElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  });
+</script>
