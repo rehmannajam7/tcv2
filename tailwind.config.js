@@ -38,7 +38,7 @@ const tailwindConfig = {
   theme: {
     extend: {
       height: {
-        'screen': '97.5vh',
+        'screen': '95vh',
       },
       fontFamily: {
         sans: defaultSansFonts,

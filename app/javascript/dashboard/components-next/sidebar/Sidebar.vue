@@ -488,7 +488,7 @@ const menuItems = computed(() => {
 
 <template>
   <aside
-    class="w-[200px] bg-n-solid-2 rtl:border-l ltr:border-r border-n-weak flex flex-col text-sm pb-1 rounded-xl"
+    class="w-[200px] bg-n-solid-2 rtl:border-l h-full ltr:border-r border-n-weak flex flex-col text-sm pb-1 rounded-xl"
   >
     <section class="grid gap-2 mt-2 mb-4">
       <div class="flex items-center min-w-0 gap-2 px-2">
