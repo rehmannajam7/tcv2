@@ -25,165 +25,146 @@
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Updated Hero Section -->
 <section class="hero">
   <div class="container">
-    <div class="animate-fade-in">
-      <h1>An AI-based CX enterprise solution for brands and retailers</h1>
-      <p>Transform your customer service with intelligent automation, AI-powered agents, and seamless multichannel support that scales with your business.</p>
-      <%= link_to "Try for free", "/app/auth/signup", class: "btn btn-dark" %>
-    </div>
-  </div>
-</section>
-
-<!-- Platform Integration Cards -->
-<section class="section">
-  <div class="container">
-    <div class="platform-cards">
-      <div class="platform-card animate-fade-in">
-        <i class="fab fa-whatsapp platform-icon whatsapp"></i>
-        <h3>WhatsApp</h3>
-        <p>Connect with customers on the world's most popular messaging platform. Automate responses, manage conversations, and provide instant support through WhatsApp Business API.</p>
-        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
-      </div>
-      
-      <div class="platform-card animate-fade-in">
-        <i class="fab fa-instagram platform-icon instagram"></i>
-        <h3>Instagram DMs</h3>
-        <p>Engage with your audience directly through Instagram Direct Messages. Manage customer inquiries, showcase products, and build relationships on this visual platform.</p>
-        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
-      </div>
-      
-      <div class="platform-card animate-fade-in">
-        <i class="fab fa-facebook-messenger platform-icon messenger"></i>
-        <h3>Facebook Messenger</h3>
-        <p>Automate customer conversations on Facebook Messenger with intelligent chatbots, quick replies, and seamless handoffs to human agents when needed.</p>
-        <a href="#" class="learn-more">LEARN MORE <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Chat Marketing Section -->
-<section class="section chat-marketing">
-  <div class="container">
-    <h2>Supercharge Your Sales with Chat Marketing</h2>
-    <p>Unlock the potential of conversational commerce across all platforms and turn every interaction into a sales opportunity.</p>
-  </div>
-</section>
-
-<!-- Social Proof Section -->
-<section class="section social-proof">
-  <div class="container">
-    <h3>Trusted by over 50,000 businesses, from fast-growing startups to world-class institutions</h3>
-    <div class="logo-grid">
-      <!-- Placeholder company logos -->
-      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">Compass</div>
-      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">WealthSimple</div>
-      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">Deel</div>
-      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">GEICO</div>
-      <div style="background: #E5E7EB; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #6B7280;">TechCorp</div>
-    </div>
-  </div>
-</section>
-
-<!-- AI Assistant Section -->
-<section class="section ai-assistant">
-  <div class="container">
-    <h2>Meet Robin~AI: Your Ultimate Support Ally</h2>
-    <p>Our advanced AI assistant handles routine inquiries, provides instant responses, and seamlessly escalates complex issues to human agents, ensuring 24/7 customer support.</p>
-    
-    <div class="chat-mockup">
-      <div style="background: #F3F4F6; padding: 15px; border-radius: 12px; margin-bottom: 10px; text-align: left; color: #1F2937;">
-        <strong>Robin~AI:</strong> Hi! How can I help you today?
-      </div>
-      <div style="background: #8B5CF6; color: white; padding: 15px; border-radius: 12px; margin-bottom: 10px; text-align: right;">
-        <strong>Customer:</strong> I need help with my order
-      </div>
-      <div style="background: #F3F4F6; padding: 15px; border-radius: 12px; text-align: left; color: #1F2937;">
-        <strong>Robin~AI:</strong> I'd be happy to help! Let me pull up your order details...
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Agent Efficiency Section -->
-<section class="section">
-  <div class="container">
-    <div class="two-column">
-      <div class="feature-content">
-        <h2>Increase agent efficiency with Copilot</h2>
-        <p>Empower your support team with AI-powered suggestions, automated responses, and intelligent routing. Reduce response times and improve customer satisfaction while handling more conversations.</p>
-        <%= link_to "Port your number", "#", class: "btn btn-cta" %>
-      </div>
-      
-      <div class="feature-mockup">
-        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          <div style="background: #EEF2FF; padding: 12px; border-radius: 8px; margin-bottom: 15px; color: #3730A3;">
-            <i class="fas fa-robot"></i> <strong>AI Suggestion:</strong> "Based on the customer's message, I recommend offering a refund or exchange."
-          </div>
-          <div style="background: #F0FDF4; padding: 12px; border-radius: 8px; color: #166534;">
-            <i class="fas fa-check-circle"></i> <strong>Quick Action:</strong> Send refund form
-          </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>AI-powered CX enterprise solution for brands and retailers</h1>
+        <p>Transform your customer service with intelligent automation, AI-powered agents, and seamless multichannel support that scales with your business.</p>
+        <div class="hero-buttons">
+          <%= link_to "Get started for free", "/app/auth/signup", class: "btn btn-primary" %>
+          <%= link_to "Watch demo", "#", class: "btn btn-secondary" %>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Unified Inbox Section -->
-<section class="section" style="background: #F8FAFC;">
-  <div class="container">
-    <div class="two-column reverse">
-      <div class="feature-content">
-        <h2>Audio, Video, Calls, & Text messages in one unified inbox</h2>
-        <p>Manage all customer communications from a single, powerful interface. Whether it's WhatsApp, email, social media, or phone calls - everything is organized in one place.</p>
-        <%= link_to "Watch a demo", "#", class: "btn btn-dark" %>
-      </div>
-      
-      <div class="feature-mockup">
-        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-          <div style="display: flex; gap: 15px; margin-bottom: 15px;">
-            <div style="background: #25D366; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fab fa-whatsapp"></i> WhatsApp</div>
-            <div style="background: #1DA1F2; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fas fa-envelope"></i> Email</div>
-            <div style="background: #E4405F; color: white; padding: 8px 12px; border-radius: 6px; font-size: 12px;"><i class="fab fa-instagram"></i> Instagram</div>
-          </div>
-          <div style="background: #F9FAFB; padding: 15px; border-radius: 8px; border-left: 4px solid #8B5CF6;">
-            <strong>Unified Conversation View</strong><br>
-            <span style="color: #6B7280; font-size: 14px;">All channels, one interface</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Management Section -->
-<section class="section contact-management">
-  <div class="container">
-    <div class="two-column">
-      <div class="feature-content">
-        <h2>Contact details all in one place</h2>
-        <p>Get a complete 360-degree view of your customers with comprehensive contact profiles, conversation history, and intelligent insights that help you provide personalized support.</p>
-        <%= link_to "Learn more", "#", class: "btn" style="background: white; color: var(--blue-gradient);" %>
-      </div>
-      
-      <div class="feature-mockup" style="background: rgba(255,255,255,0.1);">
-        <div style="background: white; padding: 20px; border-radius: 12px; color: #1F2937;">
-          <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-            <div style="width: 50px; height: 50px; background: #8B5CF6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">JD</div>
-            <div>
-              <strong>John Doe</strong><br>
-              <span style="color: #6B7280; font-size: 14px;">Premium Customer</span>
+      <div class="hero-image">
+        <div class="dashboard-preview">
+          <div class="dashboard-preview">
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 16px; backdrop-filter: blur(10px);">
+              <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+                <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                  <div style="width: 12px; height: 12px; background: #ff5f56; border-radius: 50%;"></div>
+                  <div style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%;"></div>
+                  <div style="width: 12px; height: 12px; background: #27ca3f; border-radius: 50%;"></div>
+                </div>
+                <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin-bottom: 12px;">
+                  <div style="background: #667eea; height: 8px; border-radius: 4px; width: 60%; margin-bottom: 8px;"></div>
+                  <div style="background: #e2e8f0; height: 6px; border-radius: 3px; width: 80%;"></div>
+                </div>
+                <div style="background: #f8fafc; padding: 16px; border-radius: 8px;">
+                  <div style="background: #48bb78; height: 8px; border-radius: 4px; width: 40%; margin-bottom: 8px;"></div>
+                  <div style="background: #e2e8f0; height: 6px; border-radius: 3px; width: 90%;"></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div style="background: #F9FAFB; padding: 12px; border-radius: 8px; font-size: 14px;">
-            <div style="margin-bottom: 8px;"><strong>Last Purchase:</strong> $299.99</div>
-            <div style="margin-bottom: 8px;"><strong>Total Orders:</strong> 12</div>
-            <div><strong>Satisfaction Score:</strong> 4.8/5</div>
-          </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Grid Section -->
+<section class="features-grid section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Everything you need to deliver exceptional customer experiences</h2>
+      <p>Powerful features designed to streamline your customer service operations</p>
+    </div>
+    
+    <div class="features-grid-container">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>AI-Powered Automation</h3>
+        <p>Intelligent chatbots that handle routine inquiries and escalate complex issues seamlessly.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3>Unified Inbox</h3>
+        <p>Manage all customer conversations from WhatsApp, Instagram, Facebook, and email in one place.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Advanced Analytics</h3>
+        <p>Get insights into customer satisfaction, agent performance, and conversation trends.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Team Collaboration</h3>
+        <p>Enable seamless collaboration between agents with internal notes and mentions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integration Section -->
+<section class="integrations section" style="background: #f8fafc;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Connect with your favorite tools</h2>
+      <p>Seamlessly integrate with the tools your team already uses</p>
+    </div>
+    
+    <div class="integrations-grid">
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #25D366; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <span>WhatsApp Business</span>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #E4405F; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <span>Instagram</span>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #1877F2; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-facebook-messenger"></i>
+        </div>
+        <span>Facebook Messenger</span>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #4A154B; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-slack"></i>
+        </div>
+        <span>Slack</span>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #96BF48; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fab fa-shopify"></i>
+        </div>
+        <span>Shopify</span>
+      </div>
+      <div class="integration-card">
+        <div class="integration-icon" style="background: #FF4A00; color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <span>Zapier</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center;">
+  <div class="container">
+    <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Ready to transform your customer service?</h2>
+    <p style="font-size: 1.25rem; margin-bottom: 40px; opacity: 0.9;">Join thousands of businesses already using our platform</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <%= link_to "Start free trial", "/app/auth/signup", class: "btn btn-primary" %>
+      <%= link_to "Contact sales", "#", class: "btn btn-secondary" %>
     </div>
   </div>
 </section>
