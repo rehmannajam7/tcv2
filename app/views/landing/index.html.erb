@@ -1,20 +1,474 @@
-<div class="landing-container">
-  <% if @global_config['LOGO'].present? %>
-    <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] %>" class="logo">
-  <% end %>
-  
-  <h1 class="title">
-    Welcome to <%= @global_config['INSTALLATION_NAME'] || 'Chatwoot' %>
-  </h1>
-  
-  <p class="subtitle">
-    Your comprehensive customer support solution. Connect with your customers across multiple channels and provide exceptional support.
-  </p>
-  
-  <div class="cta-buttons">
-    <%= link_to "Sign In", "/app/login", class: "btn btn-primary" %>
-    <% if @global_config['ENABLE_ACCOUNT_SIGNUP'] == 'true' %>
-      <%= link_to "Get Started", "/app/auth/signup", class: "btn btn-secondary" %>
-    <% end %>
-  </div>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thumbcrowd — AI-based CX for brands and retailers</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo" aria-label="Thumbcrowd Logo">
+          <% if @global_config['LOGO'].present? %>
+            <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %>" class="logo"> 
+          <% end %>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary">
+          <a href="#">Product</a>
+          <a href="#">Solutions</a>
+          <a href="#">Resources</a>
+          <a href="#">Pricing</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="link-muted" href="/app/login">Login</a>
+          <button class="btn btn-outline">Talk to Sales</button>
+          <button class="btn" href="/app/auth/signup">Try for free</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container text-center">
+          <h1 class="serif mb-48">
+            An AI-based CX enterprise <br class="hide-sm" />
+            solution for brands and retailers
+          </h1>
+
+          <div class="actions mt-48">
+            <button class="btn btn-lg">Try for free</button>
+          </div>
+
+          <div class="m-48">
+            <p class="lede">
+              ThumbCrowd empowers customer service leaders to deliver efficient,
+              high‑quality support at scale with an AI agent—continuously improving
+              the speed and quality of results across all channels and languages, 24/7.
+            </p>
+          </div>
+
+          <div class="hero-video-wrapper-div">
+           <img src="/index/ui.png" loading="lazy" alt="" srcset="/index/ui.png 500w, /index/ui.png 1138w" class="border-radius-20">
+          </div>
+
+          <div class="ales mt-48">
+            <h2 class="serif">Supercharge Your Sales with Chat Marketing</h2>
+            <div class="">
+              <p class="muted">
+                Unlock the potential of Instagram, WhatsApp, and Messenger with cutting‑edge chat automation.
+              </p>
+            </div>
+          </div>
+
+          <div class="features">
+            <article class="card card-tint">
+              <div class="card-icon bg-green">
+              <img src="/index/channels_whatsapp.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>WhatsApp</h3>
+              <p>
+                Use WhatsApp Automations to help customers discover products,
+                resolve order information and deliver support—on autopilot.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+            <article class="card card-tint">
+              <div class="card-icon bg-pink">
+                <img src="/index/channels_instagram-dm.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>Instagram DMs</h3>
+              <p>
+                Answer every question, comment, and story reply 24/7. Automate replies and drive higher conversions on IG.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+            <article class="card card-tint">
+              <div class="card-icon bg-blue">
+                <img src="/index/channels_facebook.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>Facebook Messenger</h3>
+              <p>
+                Automate conversations to fuel more sales, generate leads, auto‑answer FAQs, and run marketing campaigns.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="clients_logo m-48" aria-label="Trusted by logos">
+          <span><img src="/index/clientlogos/cheetay.svg" loading="lazy" alt="CHEETAY"></span>
+          <span><img src="/index/clientlogos/AliMedical.svg" loading="lazy" alt="ALIMEDICAL"></span>
+          <span><img src="/index/clientlogos/evercare.svg" loading="lazy" alt="EVERCARE"></span>
+          <span><img src="/index/clientlogos/FBISE.svg" loading="lazy" alt="FBISE"></span>
+          <span><img src="/index/clientlogos/Gharpar.svg" loading="lazy" alt="GHARPAR"></span>
+          <span><img src="/index/clientlogos/InstalmentPk.svg" loading="lazy" alt="INSTALMENTPK"></span>
+          <span><img src="/index/clientlogos/LM.svg" loading="lazy" alt="LECOLEMONDIALE"></span>
+          <span><img src="/index/clientlogos/MG.svg" loading="lazy" alt="MELBOURNEWELLNESS"></span>
+          <span><img src="/index/clientlogos/SaadAhssan.svg" loading="lazy" alt="SAADAHSAN"></span>
+          <span><img src="/index/clientlogos/dawaai.svg" loading="lazy" alt="DAWAAI"></span>
+          <span><img src="/index/clientlogos/CLH.svg" loading="lazy" alt="CHUGHTAI"></span>
+          <span><img src="/index/clientlogos/rizq.svg" loading="lazy" alt="RIZQ"></span>
+        </div>
+      </section>
+      <section class="section section-purple-100">
+        <div class="container text-center">
+          <h2 class="section-title">
+            Meet Robin~AI: Your <br class="hide-sm" /> Ultimate Support Ally
+          </h2>
+          <p class="muted max-w-720 center">
+            ThumbCrowd redefines customer support with seamless device integration and Robin‑AI at its core. Empower agents to work faster, respond smarter, and deliver personalized interactions.
+          </p>
+        </div>
+
+        <div class="container grid-2 gap-40 v-center mt-48">
+          <div>
+            <h3 class="h3">Increase agent efficiency with Copilot</h3>
+            <p class="muted mt-12">
+              Copilot provides instant answers so your team can focus on what really matters: forging deeper relationships with customers.
+            </p>
+            <button class="btn mt-20">Port your number</button>
+          </div>
+
+          <div>
+            <div class="window">
+              <img src="/index/numbers.png" loading="lazy" alt="numbers">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section section-purple-200">
+        <div class="container grid-2 gap-40 v-center">
+          <div>
+            <div class="window">
+              <img src="/index/audio-video.png" loading="lazy" alt="audio video">
+            </div>
+          </div>
+        
+
+          <div>
+            <h3 class="h3">Audio, Video, Calls, &amp; Text messages in one unified inbox</h3>
+            <p class="muted mt-12">
+              See conversations, voice messages, and calls in a single thread for each contact. Never lose context with the full history in one place.
+            </p>
+            <div class="row mt-20">
+              <button class="btn">
+                ▶ Watch a demo
+              </button>
+              <span class="badge">Unified Channels</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sky-100">
+        <div class="container grid-2 gap-40 v-center">
+          <div>
+            <h3 class="h3">Contact details all in one place</h3>
+            <p class="muted mt-12">
+              Keep track of important details with custom properties and notes. One shared address book allows your team to have everything they need before getting in touch.
+            </p>
+            <button class="btn btn-outline mt-20">Learn more →</button>
+          </div>
+
+          <div>
+            <div class="window">
+              <img src="/index/contact-details.png" loading="lazy" alt="contact">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+     <!-- Hero Section -->
+     <main class="container mt-48">
+        <section class="hero-all-in-one">
+            <h1 class="serif">Your all-in-one AI powered service platform</h1>
+            <p class="hero-all-in-one-subtitle">Unite your entire customer service experience—seamlessly combining CRM, ticketing, and AI into one powerful platform for the future.</p>
+            <button class="cta-button">Schedule Demo</button>
+        </section>
+
+        <!-- Feature Grid -->
+        <section">
+          <div class="features-grid-2">
+            <!-- AI Agents for Customers -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agents for Customers</h3>
+                    <p>Respond to your customers with instant, human-like support from a team of advanced AI Agents.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <div class="chat-bubble customer">
+                            <span class="avatar customer-avatar">EL</span>
+                            <span class="message">I'd like to make a return</span>
+                        </div>
+                        <div class="chat-bubble agent">
+                            <div class="agent-response">
+                                <p>Hi Emily, no problem! Please select the item you'd like to return from your recent purchase.</p>
+                                <div class="ai-badge">
+                                    <span class="sparkle">✨</span>
+                                    <span>AI-generated</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-grid">
+                            <div class="product-item">
+                                <img src="/placeholder.svg?height=80&width=60" alt="Plaid Jumpsuit">
+                                <span class="product-name">Plaid Jumpsuit...</span>
+                                <span class="price">$63.00</span>
+                            </div>
+                            <div class="product-item">
+                                <img src="/placeholder.svg?height=80&width=60" alt="Barrel Leg Jeans">
+                                <span class="product-name">Barrel Leg...</span>
+                                <span class="price">$42.00</span>
+                            </div>
+                            <div class="product-item">
+                                <img src="/placeholder.svg?height=80&width=60" alt="Cropped Sweater">
+                                <span class="product-name">Cropped...</span>
+                                <span class="price">$63.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+          
+            <!-- AI Agents for Reps -->
+          
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agents for Reps</h3>
+                    <p>Empower reps with an AI assistant that handles the busy work, so reps focus on great customer experiences.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="rep-interface">
+                        <div class="chat-bubble customer">
+                            <span class="avatar customer-avatar">EL</span>
+                            <span class="message">Can I update my reservation to arrive on March 7th?</span>
+                        </div>
+                        <div class="copilot-suggestion">
+                            <div class="copilot-header">
+                                <span class="copilot-icon">🤖</span>
+                                <span>Copilot</span>
+                            </div>
+                            <p>It looks like there are only 3 rooms available March 7 to 2025.</p>
+                            <div class="hotel-suggestion">
+                                <img src="/placeholder.svg?height=40&width=60" alt="Hotel Room">
+                                <div class="hotel-details">
+                                    <strong>Park City Hotel March 7-10 (3 nights)</strong>
+                                    <p>2 Standard guest rooms, 1 Queen<br>1 Deluxe guest room, 1 King</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+            
+          <!-- CRM -->
+          <div class="features">
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>CRM</h3>
+                    <p>Build more meaningful relationships with a complete view of your customers.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="crm-interface">
+                        <div class="customer-profile">
+                            <div class="profile-row">
+                                <span class="label">Name</span>
+                                <span class="value">Emily Lewis</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="label">ID</span>
+                                <span class="value">BSMP7S82T4</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="label">Email</span>
+                                <span class="value">emily.lewis@email.com</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="label">Phone</span>
+                                <span class="value">+16175056641</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="label">Language</span>
+                                <span class="value">English</span>
+                            </div>
+                            <div class="profile-row">
+                                <span class="label">Avg Satisfaction</span>
+                                <span class="value">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Omnichannel -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Omnichannel</h3>
+                    <p>Our AI Agents seamlessly engage customers across every channel - email, chat, social, phone and more.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="omnichannel-interface">
+                        <div class="customer-header">
+                            <img src="/placeholder.svg?height=32&width=32" alt="Emily Lewis" class="customer-photo">
+                            <span class="customer-name">Emily Lewis</span>
+                        </div>
+                        <div class="activity-timeline">
+                            <div class="activity-item">
+                                <span class="activity-icon">📧</span>
+                                <span class="activity-text">Order #8002 for 2 items ($59.00)</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">📧</span>
+                                <span class="activity-text">Emily receives the order confirmation via email</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">📱</span>
+                                <span class="activity-text">An SMS provides tracking details for the order</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🎤</span>
+                                <span class="activity-text">Emily tells AI Voice Agent, "I never received my order"</span>
+                            </div>
+                            <div class="activity-item">
+                                <span class="activity-icon">🔄</span>
+                                <span class="activity-text">AI Agent sends replacement at no charge</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflows -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Workflows</h3>
+                    <p>Automate repetitive, manual processes to improve team focus and efficiency.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="workflow-interface">
+                        <div class="workflow-step">
+                            <div class="step-icon trigger">T</div>
+                            <span class="step-text">Message Created</span>
+                            <span class="step-label">Trigger</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon action">A</div>
+                            <span class="step-text">Conversation: Update</span>
+                            <span class="step-label">Action</span>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon action">A</div>
+                            <span class="step-text">Message: Create</span>
+                            <span class="step-label">Action</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+            <!-- AI Agent Studio -->
+          <div class="features-grid-2">
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agent Studio</h3>
+                    <p>Effortlessly build your own team of AI Agents, customized to your business needs—no developer required!</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="studio-interface">
+                        <div class="team-hierarchy">
+                            <div class="supervisor">
+                                <div class="agent-node supervisor-node">
+                                    <span class="agent-title">Team Supervisor</span>
+                                    <div class="agent-avatar supervisor-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="agents-row">
+                                <div class="agent-node">
+                                    <div class="agent-avatar"></div>
+                                    <span class="agent-title">Agent Expert</span>
+                                </div>
+                                <div class="agent-node">
+                                    <div class="agent-avatar"></div>
+                                    <span class="agent-title">Agent Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Integrations</h3>
+                    <p>Seamlessly connect all your tools, data, and processes with easy-to-use integrations.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="integrations-interface">
+                        <div class="integration-logos">
+                            <div class="logo-item">
+                                <div class="logo-circle red">H</div>
+                            </div>
+                            <div class="logo-item">
+                                <div class="logo-circle orange">📷</div>
+                            </div>
+                            <div class="logo-item">
+                                <div class="logo-circle gmail">M</div>
+                            </div>
+                            <div class="logo-item">
+                                <div class="logo-circle green">S</div>
+                            </div>
+                            <div class="logo-item">
+                                <div class="logo-circle blue">SF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+     </main>
+        
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#" class="logo" aria-label="Thumbcrowd home">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">Thumbcrowd</span>
+        </a>
+        <p class="muted small">© <span id="y"></span> Thumbcrowd. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Status</a>
+        </nav>
+      </div>
+      <script>
+        // Year without any external JS
+        document.getElementById('y').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
