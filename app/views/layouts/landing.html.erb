@@ -1,14 +1,335 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0"/>
-    <meta name="description" content="Welcome to <%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %> - Your Customer Support Solution">
+    <meta name="description" content="Welcome to <%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %> - An AI-based CX enterprise solution for brands and retailers. Automate customer service with AI agents and multichannel support.">
     <link rel="icon" type="image/png" sizes="512x512" href="<%= @global_config['LOGO_THUMBNAIL'] %>">
     <%= csrf_meta_tags %>
     <%= vite_client_tag %>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-      /* -------- Base -------- */
+
+      :root {
+        --primary-purple: #667eea;
+        --secondary-purple: #764ba2;
+        --light-purple: #f8fafc;
+        --dark-purple: #5a67d8;
+        --orange-cta: #ff6b6b;
+        --dark-cta: #2d3748;
+        --blue-gradient: #4299e1;
+        --text-dark: #2d3748;
+        --text-gray: #718096;
+        --white: #ffffff;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .section {
+        padding: 100px 0;
+      }
+      
+      /* Header Styles */
+      .header {
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+      
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+      
+      .logo {
+        height: 40px;
+      }
+      
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+      
+      .nav-menu a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-menu a:hover {
+        color: var(--primary-purple);
+      }
+      
+      .header-buttons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+      
+      .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+      }
+      
+      .btn-login {
+        background: transparent;
+        color: var(--text-dark);
+        border: 1px solid #e2e8f0;
+      }
+      
+      .btn-login:hover {
+        background: #f7fafc;
+      }
+      
+      .btn-cta {
+        background: var(--orange-cta);
+        color: var(--white);
+      }
+      
+      .btn-cta:hover {
+        background: #ff5252;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+      }
+      
+      .btn-primary {
+        background: var(--orange-cta);
+        color: var(--white);
+        padding: 16px 32px;
+        font-size: 16px;
+        border-radius: 8px;
+      }
+      
+      .btn-primary:hover {
+        background: #ff5252;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+      }
+      
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+        padding: 14px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-secondary:hover {
+        background: white;
+        color: var(--primary-purple);
+      }
+      
+      /* Updated Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 120px 0;
+        color: white;
+        overflow: hidden;
+        margin-top: 70px;
+      }
+      
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 24px;
+      }
+      
+      .hero p {
+        font-size: 1.25rem;
+        opacity: 0.9;
+        margin-bottom: 32px;
+        line-height: 1.6;
+      }
+      
+      .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      
+      /* Features Grid Styles */
+      .features-grid {
+        padding: 100px 0;
+      }
+      
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--text-dark);
+      }
+      
+      .section-header p {
+        font-size: 1.125rem;
+        color: var(--text-gray);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .features-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+      }
+      
+      .feature-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+      
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        color: white;
+        font-size: 24px;
+      }
+      
+      .feature-card h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: var(--text-dark);
+      }
+      
+      .feature-card p {
+        color: var(--text-gray);
+        line-height: 1.6;
+      }
+      
+      /* Integrations Styles */
+      .integrations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+      }
+      
+      .integration-card {
+        background: white;
+        padding: 24px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        transition: transform 0.2s ease;
+      }
+      
+      .integration-card:hover {
+        transform: translateY(-2px);
+      }
+      
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+        }
+        
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+        
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero-buttons {
+          justify-content: center;
+        }
+        
+        .features-grid-container {
+          grid-template-columns: 1fr;
+        }
+        
+        .integrations-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .header-buttons {
+          gap: 10px;
+        }
+        
+        .btn {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+        
+        .section {
+          padding: 60px 0;
+        }
+      }
+
 :root{
   --bg:#ffffff;
   --text:#0f172a;
@@ -739,7 +1060,6 @@ img {border: 0;}
         min-height: 350px;
     }
 }
-
     </style>
   </head>
   <body>
