@@ -1,16 +1,16 @@
 openapi: '3.0.4'
 info:
-  title: Chatwoot - Application API
-  description: Application API endpoints for Chatwoot
+  title: ThumbCrowd - Application API
+  description: Application API endpoints for ThumbCrowd
   version: 1.1.0
-  termsOfService: https://www.chatwoot.com/terms-of-service/
+  termsOfService: https://www.thumb-crowd.com/terms-of-service/
   contact:
-    email: hello@chatwoot.com
+    email: hello@thumb-crowd.com
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://app.chatwoot.com/
+  - url: https://stage.thumb-crowd.com/
 tags:
   - name: Account AgentBots
     description: Manage agent bots within accounts

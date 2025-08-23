@@ -142,7 +142,7 @@ export default {
       @close-key-shortcut-modal="closeKeyShortcutModal"
       @show-create-account-modal="openCreateAccountModal"
     />
-    <main class="flex flex-1 h-full min-h-0 px-0 overflow-hidden">
+    <main class="flex flex-1 h-full min-h-0 px-0 overflow-hidden rounded-xl ml-1">
       <UpgradePage
         v-show="showUpgradePage"
         ref="upgradePageRef"
