@@ -1,6 +1,10 @@
 openapi: '3.0.4'
 info:
+<<<<<<< Updated upstream
   title: ThumbCrowd - Application API
+=======
+  ThumbCrowd - Application API
+>>>>>>> Stashed changes
   description: Application API endpoints for ThumbCrowd
   version: 1.1.0
   termsOfService: https://www.thumb-crowd.com/terms-of-service/
@@ -10,7 +14,11 @@ info:
     name: MIT License
     url: https://opensource.org/licenses/MIT
 servers:
+<<<<<<< Updated upstream
   - url: https://stage.thumb-crowd.com/
+=======
+  - url: https://app.thumb-crowd.com/
+>>>>>>> Stashed changes
 tags:
   - name: Account AgentBots
     description: Manage agent bots within accounts
