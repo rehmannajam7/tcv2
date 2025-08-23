@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "https://thumb-crowd.com/"
+      "url": "https://stage.thumb-crowd.com/"
     }
   ],
   "paths": {
