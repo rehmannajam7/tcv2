@@ -1,0 +1,20 @@
+<div class="landing-container">
+  <% if @global_config['LOGO'].present? %>
+    <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] %>" class="logo">
+  <% end %>
+  
+  <h1 class="title">
+    Welcome to <%= @global_config['INSTALLATION_NAME'] || 'Chatwoot' %>
+  </h1>
+  
+  <p class="subtitle">
+    Your comprehensive customer support solution. Connect with your customers across multiple channels and provide exceptional support.
+  </p>
+  
+  <div class="cta-buttons">
+    <%= link_to "Sign In", "/app/login", class: "btn btn-primary" %>
+    <% if @global_config['ENABLE_ACCOUNT_SIGNUP'] == 'true' %>
+      <%= link_to "Get Started", "/app/auth/signup", class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+</div>

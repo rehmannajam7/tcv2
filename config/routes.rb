@@ -12,10 +12,13 @@ Rails.application.routes.draw do
   if ActiveModel::Type::Boolean.new.cast(ENV.fetch('CW_API_ONLY_SERVER', false))
     root to: 'api#index'
   else
-    root to: 'dashboard#index'
+    # Landing page route (add this before the existing root route)
+    root 'landing#index'
 
+    # Dashboard routes (modify the existing root route)
+    get '/dashboard', to: 'dashboard#index'
     get '/app', to: 'dashboard#index'
-    get '/app/*params', to: 'dashboard#index'
+    get '/app/*path', to: 'dashboard#index'
     get '/app/accounts/:account_id/settings/inboxes/new/twitter', to: 'dashboard#index', as: 'app_new_twitter_inbox'
     get '/app/accounts/:account_id/settings/inboxes/new/microsoft', to: 'dashboard#index', as: 'app_new_microsoft_inbox'
     get '/app/accounts/:account_id/settings/inboxes/new/instagram', to: 'dashboard#index', as: 'app_new_instagram_inbox'
