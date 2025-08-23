@@ -10,7 +10,7 @@ info:
     name: MIT License
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://thumb-crowd.com/
+  - url: https://stage.thumb-crowd.com/
 paths:
   $ref: ./paths/index.yml
 components:
