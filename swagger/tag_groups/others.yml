@@ -1,16 +1,16 @@
 openapi: '3.0.4'
 info:
-  title: ThumbCrowd - Other APIs
-  description: Other API endpoints for ThumbCrowd
+  title: Chatwoot - Other APIs
+  description: Other API endpoints for Chatwoot
   version: 1.1.0
-  termsOfService: https://www.thumb-crowd.com/terms-of-service/
+  termsOfService: https://www.chatwoot.com/terms-of-service/
   contact:
-    email: hello@thumb-crowd.com
+    email: hello@chatwoot.com
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
 servers:
-  - url: https://stage.thumb-crowd.com/
+  - url: https://app.chatwoot.com/
 tags:
   - name: CSAT Survey Page
     description: APIs for CSAT survey functionality

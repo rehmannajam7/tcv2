@@ -1,12 +1,12 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "ThumbCrowd",
-    "description": "This is the API documentation for ThumbCrowd server.",
+    "title": "Chatwoot",
+    "description": "This is the API documentation for Chatwoot server.",
     "version": "1.1.0",
-    "termsOfService": "https://www.thumb-crowd.com/terms-of-service/",
+    "termsOfService": "https://www.chatwoot.com/terms-of-service/",
     "contact": {
-      "email": "hello@thumb-crowd.com"
+      "email": "hello@chatwoot.com"
     },
     "license": {
       "name": "MIT License",
@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "https://stage.thumb-crowd.com/"
+      "url": "https://app.chatwoot.com/"
     }
   ],
   "paths": {
