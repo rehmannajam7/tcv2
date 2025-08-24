@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "https://app.chatwoot.com/"
+      "url": "https://stage.thumb-crowd.com/"
     }
   ],
   "paths": {
