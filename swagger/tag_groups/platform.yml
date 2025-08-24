@@ -1,11 +1,11 @@
 openapi: '3.0.4'
 info:
-  title: Chatwoot - Platform API
-  description: Platform API endpoints for Chatwoot
+  title: ThumbCrowd - Platform API
+  description: Platform API endpoints for ThumbCrowd
   version: 1.1.0
-  termsOfService: https://www.chatwoot.com/terms-of-service/
+  termsOfService: https://stage.thumb-crowd.com/terms-of-service/
   contact:
-    email: hello@chatwoot.com
+    email: hello@thumb-crowd.com
   license:
     name: MIT License
     url: https://opensource.org/licenses/MIT
