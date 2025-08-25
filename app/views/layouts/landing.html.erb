@@ -25,11 +25,19 @@
 
   --violet-100:#ede9fe;
   --violet-200:#ddd6fe;
+  
+  --green-100:#CBFFE8;
   --green-500:#22c55e;
+  
   --pink-500:#ec4899;
+  
   --blue-500:#3b82f6;
 
+  --lemon-100:#fff0c0;
+  --lemon-200:#fef08a;
+
   --sky-100:#dbeafe;
+  --sky-200:#abcdff;
 
   --shadow:0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
 }
@@ -49,6 +57,7 @@ small,.small{font-size:.875rem}
 
 /* Containers & Layout */
 .container{max-width:1120px;margin-inline:auto;padding:0 1rem}
+.container-flex{max-width:1120px;margin-inline:auto;padding:0 1rem;display:flex}
 .text-center{text-align:center}
 .center{margin-inline:auto}
 .max-w-720{max-width:720px}
@@ -98,6 +107,10 @@ small,.small{font-size:.875rem}
 .p-12{padding:.75rem !important}
 .p-20{padding:1.25rem !important}
 .p-48{padding:3rem !important}
+
+.w-32{width:320px !important}
+.w-48{width:480px !important}
+.w-65{width:650px !important}
 
 .border-radius-12{border-radius:.75rem !important}
 .border-radius-20{border-radius:1.25rem !important}
@@ -198,14 +211,19 @@ img {border: 0;}
 /* Sections */
 .section{padding:3rem 0;border-top:1px solid var(--border)}
 .section-purple-100{background:var(--violet-100)}
-.section-purple-200{background:var(--violet-200)}
+.section-green-100{background:var(--green-100)}
+.section-lemon-100{background:var(--lemon-100)}
 .section-sky-100{background:var(--sky-100)}
+.section-sky-200{background:var(--sky-200)}
+.section-h1{
+  font-size:3rem;font-weight:800;letter-spacing:-.02em;line-height:1.0;margin:0
+}
 .section-title{
   font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:0
-}
+}  
 
 /* Window mock */
-.window{width:130%;overflow:hidden}
+.window{width:110%;overflow:hidden;display:flex}
 .chrome{height:34px;border-bottom:1px solid #ecebff;background:linear-gradient(#f6f5ff,#f1f0ff);display:flex;gap:.35rem;align-items:center;padding-left:.6rem}
 .chrome > span{width:10px;height:10px;border-radius:999px;background:#ff6b6b;box-shadow:16px 0 0 #f7d060, 32px 0 0 #4ade80}
 .window-body{padding:14px}
@@ -305,11 +323,14 @@ img {border: 0;}
 
 .card-header {
     margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 0 50px 0 50px;
 }
 
 .card-header h3 {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     color: #1a1a1a;
     margin-bottom: 8px;
 }
@@ -319,6 +340,8 @@ img {border: 0;}
     color: #666666;
     margin-bottom: 12px;
     line-height: 1.4;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 .learn-more {
