@@ -136,7 +136,7 @@ export default {
   <div
     v-if="!authUIFlags.isFetching && !accountUIFlags.isFetchingItem"
     id="app"
-    class="flex-grow-0 w-full h-full min-h-0 app-wrapper p-2" style="background-color: #2c2c2c;"
+    class="flex-grow-0 w-full h-full min-h-0 app-wrapper app-background p-2"
     :class="{ 'app-rtl--wrapper': isRTL }"
     :dir="isRTL ? 'rtl' : 'ltr'"
   >

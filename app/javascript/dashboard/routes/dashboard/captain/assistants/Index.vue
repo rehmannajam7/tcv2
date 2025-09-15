@@ -92,7 +92,7 @@ onMounted(() => store.dispatch('captainAssistants/get'));
         :note="$t('CAPTAIN.ASSISTANTS.EMPTY_STATE.FEATURE_SPOTLIGHT.NOTE')"
         fallback-thumbnail="/assets/images/dashboard/captain/assistant-popover-light.svg"
         fallback-thumbnail-dark="/assets/images/dashboard/captain/assistant-popover-dark.svg"
-        learn-more-url="https://chwt.app/captain-assistant"
+        learn-more-url="https://stage.thumb-crowd.com/captain-assistant"
       />
     </template>
     <template #emptyState>

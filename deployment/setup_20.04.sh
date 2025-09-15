@@ -473,7 +473,7 @@ function cwctl_message() {
 #   None
 ##############################################################################
 function get_cw_version() {
-  CW_VERSION=$(curl -s https://app.chatwoot.com/api | python3 -c 'import sys,json;data=json.loads(sys.stdin.read()); print(data["version"])')
+  CW_VERSION=$(curl -s https://stage.thumb-crowd.com/api | python3 -c 'import sys,json;data=json.loads(sys.stdin.read()); print(data["version"])')
 }
 
 ##############################################################################
@@ -843,7 +843,7 @@ function upgrade() {
       echo "Proceeding with the upgrade..."
     else
       echo "Upgrade aborted. Please install pgvector support before upgrading."
-      echo "Read more at https://chwt.app/v4/migration"
+      echo "Read more at https://stage.thumb-crowd.com/v4/migration"
       return 1
     fi
   fi

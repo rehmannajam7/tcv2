@@ -45,6 +45,14 @@ body {
   }
 }
 
+.app-background {
+  background-color: #e9ecf4;
+}
+
+.dark .app-background {
+  background-color: #2c2c2c;
+}
+
 .banner + .app-wrapper {
   // Reduce the height of the dashboard to make room for the banner.
   // And causing the top right green-action button to be pushed down when scrolling.
