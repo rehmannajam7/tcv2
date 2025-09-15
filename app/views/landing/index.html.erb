@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +15,7 @@
           <% end %>
         </a>
 
-        <nav class="main-nav" aria-label="Primary">
+        <nav class="main-nav" aria-label="Primary" style="display:none;">
           <a href="#">Product</a>
           <a href="#">Solutions</a>
           <a href="#">Resources</a>
@@ -26,7 +25,7 @@
         <div class="header-cta">
           <a class="link-muted" href="/app/login">Login</a>
           <button class="btn btn-outline">Talk to Sales</button>
-          <button class="btn" href="https://stage.thumb-crowd.com/app/auth/signup">Try for free</button>
+          <button class="btn" href="/app/auth/signup">Try for free</button>
         </div>
       </div>
     </header>
@@ -40,7 +39,7 @@
           </h1>
 
           <div class="actions mt-48">
-            <button class="btn btn-lg" href="https://stage.thumb-crowd.com/app/auth/signup">Try for free</button>
+            <button class="btn btn-lg">Try for free</button>
           </div>
 
           <div class="m-48">
@@ -120,17 +119,17 @@
       <section class="section section-green-100">
         <div class="container text-center p-48">
           <h1 class="section-h1">
-            Meet Aly ~ AI: Your <br class="hide-sm" /> Ultimate Support Member
+            Meet ALY~AI: Your <br class="hide-sm" /> Ultimate Support Member
           </h1>
           <p class="muted max-w-720 center">
             ThumbCrowd redefines customer support with seamless device integration and Robin‑AI at its core. Empower agents to work faster, respond smarter, and deliver personalized interactions.
           </p>
         </div>
 
-        <div class="container grid-2 gap-40 v-center mt-48">
-          <div>
+        <div class="container-flex v-center mt-48">
+          <div class="w-65 pr-48">
             <h3 class="h3">Increase agent efficiency with Copilot</h3>
-            <p class="muted mt-12">
+            <p class="mt-12">
               Copilot provides instant answers so your team can focus on what really matters: forging deeper relationships with customers.
             </p>
             <button class="btn mt-20">Port your number</button>
@@ -152,36 +151,30 @@
               <img src="/index/audio-video.png" loading="lazy" alt="audio video">
             </div>
           </div>
-            
-          <div class="w-65 pl-48" style="text-align: right;">
+        
+
+          <div class="w-65 pr-48">
             <h3 class="h3">Audio, Video, Calls, &amp; Text messages in one unified inbox</h3>
             <p class="mt-12">
               See conversations, voice messages, and calls in a single thread for each contact. Never lose context with the full history in one place.
             </p>
-
-            <div class="row mt-20">
-              <button class="btn">
-                ▶ Watch a demo
-              </button>
-            </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-sky-200">
+      <section class="section section-sky-100">
         <div class="container-flex v-center mt-48">
           <div class="w-65 pr-48">
             <h3 class="h3">Contact details all in one place</h3>
             <p class="mt-12">
               Keep track of important details with custom properties and notes. One shared address book allows your team to have everything they need before getting in touch.
             </p>
-            <button class="btn mt-20">Learn more →</button>
           </div>
 
           <div>
             <div class="window">
-                <img src="/index/contact-details.png" loading="lazy" alt="contact">
-              </div>
+              <img src="/index/contact-details.png" loading="lazy" alt="contact">
+            </div>
           </div>
         </div>
       </section>
@@ -201,7 +194,7 @@
 
 
 
-     <!-- Punch Section -->
+     <!-- Hero Section -->
      <main class="container mt-48">
         <section class="hero-all-in-one">
             <h1 class="serif">Your all-in-one AI powered service platform</h1>
@@ -221,36 +214,7 @@
                 </div>
                 <div class="card-mockup">
                     <div class="chat-interface">
-                        <div class="chat-bubble customer">
-                            <span class="avatar customer-avatar">EL</span>
-                            <span class="message">I'd like to make a return</span>
-                        </div>
-                        <div class="chat-bubble agent">
-                            <div class="agent-response">
-                                <p>Hi Emily, no problem! Please select the item you'd like to return from your recent purchase.</p>
-                                <div class="ai-badge">
-                                    <span class="sparkle">✨</span>
-                                    <span>AI-generated</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-grid">
-                            <div class="product-item">
-                                <img src="/placeholder.svg?height=80&width=60" alt="Plaid Jumpsuit">
-                                <span class="product-name">Plaid Jumpsuit...</span>
-                                <span class="price">$63.00</span>
-                            </div>
-                            <div class="product-item">
-                                <img src="/placeholder.svg?height=80&width=60" alt="Barrel Leg Jeans">
-                                <span class="product-name">Barrel Leg...</span>
-                                <span class="price">$42.00</span>
-                            </div>
-                            <div class="product-item">
-                                <img src="/placeholder.svg?height=80&width=60" alt="Cropped Sweater">
-                                <span class="product-name">Cropped...</span>
-                                <span class="price">$63.00</span>
-                            </div>
-                        </div>
+                        <img src="/index/ai_customer.png" loading="lazy" alt="audio video">
                     </div>
                 </div>
             </div>
@@ -265,25 +229,8 @@
                     <a href="#" class="learn-more">Learn More →</a>
                 </div>
                 <div class="card-mockup">
-                    <div class="rep-interface">
-                        <div class="chat-bubble customer">
-                            <span class="avatar customer-avatar">EL</span>
-                            <span class="message">Can I update my reservation to arrive on March 7th?</span>
-                        </div>
-                        <div class="copilot-suggestion">
-                            <div class="copilot-header">
-                                <span class="copilot-icon">🤖</span>
-                                <span>Copilot</span>
-                            </div>
-                            <p>It looks like there are only 3 rooms available March 7 to 2025.</p>
-                            <div class="hotel-suggestion">
-                                <img src="/placeholder.svg?height=40&width=60" alt="Hotel Room">
-                                <div class="hotel-details">
-                                    <strong>Park City Hotel March 7-10 (3 nights)</strong>
-                                    <p>2 Standard guest rooms, 1 Queen<br>1 Deluxe guest room, 1 King</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="chat-interface">
+                        <img src="/index/copilot_team.png" loading="lazy" alt="audio video">
                     </div>
                 </div>
             </div>
