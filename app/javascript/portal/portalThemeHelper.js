@@ -131,7 +131,7 @@ export const initializeTheme = () => {
   if (window.portalConfig.isPlainLayoutEnabled === 'true') return;
   // start with updating the theme in the header, this will set the current theme on the button
   // and set the hover color at the start of init, this is set again when the theme is switched
-  switchTheme(localStorage.theme || 'system');
+  switchTheme(localStorage.theme || 'light');
 
   window.updateThemeInHeader = updateThemeInHeader;
 
