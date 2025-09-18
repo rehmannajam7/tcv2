@@ -48,7 +48,7 @@ By default, it renders:
     <% end %>
 
     <script>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (localStorage.theme === 'dark' || (localStorage.theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         // we can use document.body here but that would mean pushing this script inside the body
         // since the body is not created yet. This is done to avoid FOUC, at a tiny cost of Time to Interactive
         document.documentElement.classList.add('dark')

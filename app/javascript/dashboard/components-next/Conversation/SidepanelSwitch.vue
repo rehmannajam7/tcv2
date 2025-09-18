@@ -55,9 +55,7 @@ useKeyboardEvents(keyboardEvents);
 </script>
 
 <template>
-  <div
-    class="flex flex-col justify-center items-center absolute top-36 xl:top-24 ltr:right-2 rtl:left-2 bg-n-solid-2 border border-n-weak rounded-full gap-2 p-1"
-  >
+  <div class="flex flex-row justify-center items-center gap-2 p-1 bg-n-solid-2">
     <Button
       v-tooltip.top="$t('CONVERSATION.SIDEBAR.CONTACT')"
       ghost

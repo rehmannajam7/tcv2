@@ -8,6 +8,7 @@ import InboxName from '../InboxName.vue';
 import MoreActions from './MoreActions.vue';
 import Thumbnail from '../Thumbnail.vue';
 import SLACardLabel from './components/SLACardLabel.vue';
+import SidepanelSwitch from 'dashboard/components-next/Conversation/SidepanelSwitch.vue';
 import wootConstants from 'dashboard/constants/globals';
 import { conversationListPageURL } from 'dashboard/helper/URLHelper';
 import { snoozedReopenTime } from 'dashboard/helper/snoozeHelpers';
@@ -151,6 +152,7 @@ const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
         class="hidden md:flex"
       />
       <MoreActions :conversation-id="currentChat.id" />
+      <SidepanelSwitch />
     </div>
   </div>
 </template>
