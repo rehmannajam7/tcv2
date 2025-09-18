@@ -22,6 +22,9 @@
     },
     "FORGOT_PASSWORD": "Forgot your password?",
     "CREATE_NEW_ACCOUNT": "Create a new account",
-    "SUBMIT": "Login"
+    "SUBMIT": "Login",
+    "HERO_TITLE": "Get 2x More Sales Using Triggers",
+    "HERO_DESCRIPTION": "Send automated messages that create a proactive customer service which converts visitors into opportunities.",
+    "LEARN_MORE": "Learn More"
   }
 }
