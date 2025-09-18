@@ -192,7 +192,9 @@ export default {
   <main class="min-h-screen bg-gray-50">
     <div class="grid min-h-screen grid-cols-1 lg:grid-cols-2">
       <!-- Left: Form and content -->
-      <section class="flex flex-col justify-center px-6 py-8 sm:px-8 md:px-12 lg:px-16">
+      <section
+        class="flex flex-col justify-center px-6 py-8 sm:px-8 md:px-12 lg:px-16"
+      >
         <div class="w-full max-w-md mx-auto">
           <!-- Logo -->
           <div class="flex justify-start mb-6 sm:mb-8">
@@ -206,18 +208,29 @@ export default {
 
           <!-- Title -->
           <div class="mb-6 sm:mb-8">
-            <p class="text-sm text-gray-600">
-              Login to your {{ globalConfig.installationName }} account to access to your Dashboard.
+            <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+              {{
+                $t('LOGIN.DESCRIPTION', {
+                  installationName: globalConfig.installationName,
+                })
+              }}
             </p>
           </div>
 
           <!-- Login Form -->
           <div v-if="!email">
-            <form class="space-y-5 sm:space-y-6" @submit.prevent="submitFormLogin" novalidate>
+            <form
+              class="space-y-5 sm:space-y-6"
+              novalidate
+              @submit.prevent="submitFormLogin"
+            >
               <!-- Email Field -->
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                  Sign in with your email address *
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  {{ $t('LOGIN.EMAIL.LABEL') }}
                 </label>
                 <FormInput
                   v-model="credentials.email"
@@ -239,8 +252,11 @@ export default {
 
               <!-- Password Field -->
               <div>
-                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
-                  Password *
+                <label
+                  for="password"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  {{ $t('LOGIN.PASSWORD.LABEL') }}
                 </label>
                 <FormInput
                   v-model="credentials.password"
@@ -266,7 +282,7 @@ export default {
                   class="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
                 />
                 <label for="remember_me" class="ml-2 text-sm text-gray-700">
-                  Remember me
+                  {{ $t('LOGIN.REMEMBER_ME') }}
                 </label>
               </div>
 
@@ -290,15 +306,23 @@ export default {
               </div>
 
               <!-- Footer links -->
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 space-y-2 sm:space-y-0 text-sm">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 space-y-2 sm:space-y-0 text-sm"
+              >
                 <div v-if="showSignupLink">
-                  <router-link to="auth/signup" class="text-blue-600 hover:text-blue-500 underline">
-                    Don't have an account yet? Get started.
+                  <router-link
+                    to="auth/signup"
+                    class="text-blue-600 hover:text-blue-500 underline"
+                  >
+                    {{ $t('LOGIN.CREATE_NEW_ACCOUNT') }}
                   </router-link>
                 </div>
                 <div v-if="!globalConfig.disableUserProfileUpdate">
-                  <router-link to="auth/reset/password" class="text-blue-600 hover:text-blue-500 underline">
-                    Forgot Password?
+                  <router-link
+                    to="auth/reset/password"
+                    class="text-blue-600 hover:text-blue-500 underline"
+                  >
+                    {{ $t('LOGIN.FORGOT_PASSWORD') }}
                   </router-link>
                 </div>
               </div>
@@ -311,19 +335,25 @@ export default {
       </section>
 
       <!-- Right: Image placeholder - Hidden on mobile, visible on large screens -->
-      <aside class="relative hidden lg:flex items-center justify-center bg-n-brand overflow-hidden">
+      <aside
+        class="relative hidden lg:flex items-center justify-center bg-n-brand overflow-hidden"
+      >
         <!-- Background gradient -->
-        <div class="absolute inset-0"></div>
-        
+        <div class="absolute inset-0" />
+
         <!-- Content -->
-        <div class="relative z-10 max-w-sm xl:max-w-md px-6 xl:px-8 text-center">
+        <div
+          class="relative z-10 max-w-sm xl:max-w-md px-6 xl:px-8 text-center"
+        >
           <div class="mb-6 xl:mb-8">
-            <h2 class="text-xl xl:text-2xl font-bold mb-3 xl:mb-4 text-white">Get 2x More Sales Using Triggers</h2>
+            <h2 class="text-xl xl:text-2xl font-bold mb-3 xl:mb-4 text-white">
+              {{ $t('LOGIN.HERO_TITLE') }}
+            </h2>
             <p class="text-white mb-4 xl:mb-6 text-sm xl:text-base">
-              Send automated messages that create a proactive customer service which converts visitors into opportunities.
+              {{ $t('LOGIN.HERO_DESCRIPTION') }}
             </p>
           </div>
-        </div>  
+        </div>
       </aside>
     </div>
   </main>

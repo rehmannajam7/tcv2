@@ -1,15 +1,17 @@
 {
   "LOGIN": {
     "TITLE": "Login to ThumbCrowd",
+    "DESCRIPTION": "Login to your {installationName} account to access to your Dashboard.",
     "EMAIL": {
-      "LABEL": "Email",
+      "LABEL": "Sign in with your email address *",
       "PLACEHOLDER": "example{'@'}companyname.com",
       "ERROR": "Please enter a valid email address"
     },
     "PASSWORD": {
-      "LABEL": "Password",
+      "LABEL": "Password *",
       "PLACEHOLDER": "Password"
     },
+    "REMEMBER_ME": "Remember me",
     "API": {
       "SUCCESS_MESSAGE": "Login successful",
       "ERROR_MESSAGE": "Could not connect to Woot server. Please try again.",
@@ -20,8 +22,8 @@
       "BUSINESS_ACCOUNTS_ONLY": "Please use your company email address to login",
       "NO_ACCOUNT_FOUND": "We couldn't find an account for your email address."
     },
-    "FORGOT_PASSWORD": "Forgot your password?",
-    "CREATE_NEW_ACCOUNT": "Create a new account",
+    "FORGOT_PASSWORD": "Forgot Password?",
+    "CREATE_NEW_ACCOUNT": "Don't have an account yet? Get started.",
     "SUBMIT": "Login",
     "HERO_TITLE": "Get 2x More Sales Using Triggers",
     "HERO_DESCRIPTION": "Send automated messages that create a proactive customer service which converts visitors into opportunities.",
