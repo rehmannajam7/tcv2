@@ -50,6 +50,7 @@ export default {
         email: '',
         password: '',
       },
+      rememberMe: false,
       loginApi: {
         message: '',
         showLoading: false,
@@ -94,6 +95,18 @@ export default {
         this.$router.replace({ query: { ...query, error: undefined } });
       });
     }
+    // Prefill remembered email if available
+    this.requestIdleCallbackPolyfill(() => {
+      try {
+        const remembered = localStorage.getItem('remember_email');
+        if (remembered) {
+          this.credentials.email = remembered;
+          this.rememberMe = true;
+        }
+      } catch (e) {
+        // noop if storage is blocked
+      }
+    });
   },
   methods: {
     // TODO: Remove this when Safari gets wider support
@@ -159,6 +172,16 @@ export default {
         return;
       }
 
+      try {
+        if (this.rememberMe) {
+          localStorage.setItem('remember_email', this.credentials.email);
+        } else {
+          localStorage.removeItem('remember_email');
+        }
+      } catch (e) {
+        // ignore storage errors
+      }
+
       this.submitLogin();
     },
   },
@@ -166,92 +189,142 @@ export default {
 </script>
 
 <template>
-  <main
-    class="flex flex-col w-full min-h-screen py-20 bg-n-brand/5 dark:bg-n-background sm:px-6 lg:px-8"
-  >
-    <section class="max-w-5xl mx-auto">
-      <img
-        :src="globalConfig.logo"
-        :alt="globalConfig.installationName"
-        class="block w-auto h-8 mx-auto dark:hidden"
-      />
-      <img
-        v-if="globalConfig.logoDark"
-        :src="globalConfig.logoDark"
-        :alt="globalConfig.installationName"
-        class="hidden w-auto h-8 mx-auto dark:block"
-      />
-      <h2 class="mt-6 text-3xl font-medium text-center text-n-slate-12">
-        {{
-          useInstallationName($t('LOGIN.TITLE'), globalConfig.installationName)
-        }}
-      </h2>
-      <p v-if="showSignupLink" class="mt-3 text-sm text-center text-n-slate-11">
-        {{ $t('COMMON.OR') }}
-        <router-link to="auth/signup" class="lowercase text-link text-n-brand">
-          {{ $t('LOGIN.CREATE_NEW_ACCOUNT') }}
-        </router-link>
-      </p>
-    </section>
-    <section
-      class="bg-white shadow sm:mx-auto mt-11 sm:w-full sm:max-w-lg dark:bg-n-solid-2 p-11 sm:shadow-lg sm:rounded-lg"
-      :class="{
-        'mb-8 mt-15': !showGoogleOAuth,
-        'animate-wiggle': loginApi.hasErrored,
-      }"
-    >
-      <div v-if="!email">
-        <GoogleOAuthButton v-if="showGoogleOAuth" />
-        <form class="space-y-5" @submit.prevent="submitFormLogin">
-          <FormInput
-            v-model="credentials.email"
-            name="email_address"
-            type="text"
-            data-testid="email_input"
-            :tabindex="1"
-            required
-            :label="$t('LOGIN.EMAIL.LABEL')"
-            :placeholder="$t('LOGIN.EMAIL.PLACEHOLDER')"
-            :has-error="v$.credentials.email.$error"
-            @input="v$.credentials.email.$touch"
-          />
-          <FormInput
-            v-model="credentials.password"
-            type="password"
-            name="password"
-            data-testid="password_input"
-            required
-            :tabindex="2"
-            :label="$t('LOGIN.PASSWORD.LABEL')"
-            :placeholder="$t('LOGIN.PASSWORD.PLACEHOLDER')"
-            :has-error="v$.credentials.password.$error"
-            @input="v$.credentials.password.$touch"
-          >
-            <p v-if="!globalConfig.disableUserProfileUpdate">
-              <router-link
-                to="auth/reset/password"
-                class="text-sm text-link"
-                tabindex="4"
-              >
-                {{ $t('LOGIN.FORGOT_PASSWORD') }}
-              </router-link>
+  <main class="min-h-screen bg-gray-50">
+    <div class="grid min-h-screen grid-cols-1 lg:grid-cols-2">
+      <!-- Left: Form and content -->
+      <section class="flex flex-col justify-center px-6 py-8 sm:px-8 md:px-12 lg:px-16">
+        <div class="w-full max-w-md mx-auto">
+          <!-- Logo -->
+          <div class="flex justify-start mb-6 sm:mb-8">
+            <img
+              v-if="globalConfig.logo"
+              :src="globalConfig.logo"
+              :alt="globalConfig.installationName"
+              class="block w-auto h-6 sm:h-8"
+            />
+          </div>
+
+          <!-- Title -->
+          <div class="mb-6 sm:mb-8">
+            <p class="text-sm text-gray-600">
+              Login to your {{ globalConfig.installationName }} account to access to your Dashboard.
             </p>
-          </FormInput>
-          <NextButton
-            lg
-            type="submit"
-            data-testid="submit_button"
-            class="w-full"
-            :tabindex="3"
-            :label="$t('LOGIN.SUBMIT')"
-            :disabled="loginApi.showLoading"
-            :is-loading="loginApi.showLoading"
-          />
-        </form>
-      </div>
-      <div v-else class="flex items-center justify-center">
-        <Spinner color-scheme="primary" size="" />
-      </div>
-    </section>
+          </div>
+
+          <!-- Login Form -->
+          <div v-if="!email">
+            <form class="space-y-5 sm:space-y-6" @submit.prevent="submitFormLogin" novalidate>
+              <!-- Email Field -->
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                  Sign in with your email address *
+                </label>
+                <FormInput
+                  v-model="credentials.email"
+                  name="email_address"
+                  type="text"
+                  data-testid="email_input"
+                  :tabindex="1"
+                  required
+                  autocomplete="username"
+                  autocapitalize="none"
+                  spellcheck="false"
+                  inputmode="email"
+                  :placeholder="$t('LOGIN.EMAIL.PLACEHOLDER')"
+                  :has-error="v$.credentials.email.$error"
+                  class="w-full px-3 py-2.5 sm:py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-base sm:text-sm"
+                  @input="v$.credentials.email.$touch"
+                />
+              </div>
+
+              <!-- Password Field -->
+              <div>
+                <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                  Password *
+                </label>
+                <FormInput
+                  v-model="credentials.password"
+                  type="password"
+                  name="password"
+                  data-testid="password_input"
+                  required
+                  :tabindex="2"
+                  autocomplete="current-password"
+                  :placeholder="$t('LOGIN.PASSWORD.PLACEHOLDER')"
+                  :has-error="v$.credentials.password.$error"
+                  class="w-full px-3 py-2.5 sm:py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-900 text-base sm:text-sm"
+                  @input="v$.credentials.password.$touch"
+                />
+              </div>
+
+              <!-- Remember me -->
+              <div class="flex items-center">
+                <input
+                  id="remember_me"
+                  v-model="rememberMe"
+                  type="checkbox"
+                  class="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500"
+                />
+                <label for="remember_me" class="ml-2 text-sm text-gray-700">
+                  Remember me
+                </label>
+              </div>
+
+              <!-- Login Button -->
+              <div>
+                <NextButton
+                  lg
+                  type="submit"
+                  data-testid="submit_button"
+                  class="w-full bg-n-alpha-black2 text-white font-medium py-3 sm:py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-base sm:text-sm"
+                  :tabindex="3"
+                  :label="$t('LOGIN.SUBMIT')"
+                  :disabled="loginApi.showLoading"
+                  :is-loading="loginApi.showLoading"
+                />
+              </div>
+
+              <!-- Google OAuth Button -->
+              <div v-if="showGoogleOAuth">
+                <GoogleOAuthButton class="w-full" />
+              </div>
+
+              <!-- Footer links -->
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-4 space-y-2 sm:space-y-0 text-sm">
+                <div v-if="showSignupLink">
+                  <router-link to="auth/signup" class="text-blue-600 hover:text-blue-500 underline">
+                    Don't have an account yet? Get started.
+                  </router-link>
+                </div>
+                <div v-if="!globalConfig.disableUserProfileUpdate">
+                  <router-link to="auth/reset/password" class="text-blue-600 hover:text-blue-500 underline">
+                    Forgot Password?
+                  </router-link>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div v-else class="flex items-center justify-center">
+            <Spinner color-scheme="primary" size="" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Image placeholder - Hidden on mobile, visible on large screens -->
+      <aside class="relative hidden lg:flex items-center justify-center bg-n-brand overflow-hidden">
+        <!-- Background gradient -->
+        <div class="absolute inset-0"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-sm xl:max-w-md px-6 xl:px-8 text-center">
+          <div class="mb-6 xl:mb-8">
+            <h2 class="text-xl xl:text-2xl font-bold mb-3 xl:mb-4 text-white">Get 2x More Sales Using Triggers</h2>
+            <p class="text-white mb-4 xl:mb-6 text-sm xl:text-base">
+              Send automated messages that create a proactive customer service which converts visitors into opportunities.
+            </p>
+          </div>
+        </div>  
+      </aside>
+    </div>
   </main>
 </template>
