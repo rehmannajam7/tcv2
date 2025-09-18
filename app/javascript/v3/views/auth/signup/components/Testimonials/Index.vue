@@ -1,26 +1,31 @@
 <script>
 import TestimonialCard from './TestimonialCard.vue';
-import { getTestimonialContent } from '../../../../../api/testimonials';
+
 export default {
   components: { TestimonialCard },
   emits: ['resizeContainers'],
   data() {
-    return { testimonials: [] };
+    return { 
+      testimonials: [
+        {
+          id: 1,
+          authorReview: "ThumbCrowd has transformed how we handle customer feedback. The automated triggers have increased our response rate by 300%.",
+          authorImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+          authorName: "Sarah Johnson",
+          authorCompany: "TechStart Inc."
+        },
+        {
+          id: 2,
+          authorReview: "The best customer service platform we've used. Our team productivity has doubled since implementing ThumbCrowd.",
+          authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+          authorName: "Michael Chen",
+          authorCompany: "Growth Solutions"
+        }
+      ]
+    };
   },
   beforeMount() {
-    this.fetchTestimonials();
-  },
-  methods: {
-    async fetchTestimonials() {
-      try {
-        const { data } = await getTestimonialContent();
-        this.testimonials = data;
-      } catch (error) {
-        // Ignoring the error as the UI wouldn't break
-      } finally {
-        this.$emit('resizeContainers', !!this.testimonials.length);
-      }
-    },
+    this.$emit('resizeContainers', !!this.testimonials.length);
   },
 };
 </script>
@@ -28,34 +33,19 @@ export default {
 <template>
   <div
     v-show="testimonials.length"
-    class="relative flex-1 min-h-screen hidden overflow-hidden bg-n-blue-8 dark:bg-n-blue-5 xl:flex"
+    class="w-full h-full"
   >
-    <img
-      src="assets/images/auth/top-left.svg"
-      class="absolute top-0 left-0 w-40 h-40"
-    />
-    <img
-      src="assets/images/auth/bottom-right.svg"
-      class="absolute bottom-0 right-0 w-40 h-40"
-    />
-    <img
-      src="assets/images/auth/auth--bg.svg"
-      class="h-[96%] left-[6%] top-[8%] w-[96%] absolute"
-    />
-    <div
-      class="z-50 flex flex-col items-center justify-center w-full h-full min-h-screen"
-    >
-      <div class="flex items-start justify-center p-6">
-        <TestimonialCard
-          v-for="(testimonial, index) in testimonials"
-          :key="testimonial.id"
-          :review-content="testimonial.authorReview"
-          :author-image="testimonial.authorImage"
-          :author-name="testimonial.authorName"
-          :author-designation="testimonial.authorCompany"
-          :class="!index ? 'mt-[20%] -mr-4 z-50' : ''"
-        />
-      </div>
+    <!-- Testimonials Content -->
+    <div class="flex flex-col space-y-6">
+      <TestimonialCard
+        v-for="testimonial in testimonials.slice(0, 2)"
+        :key="testimonial.id"
+        :review-content="testimonial.authorReview"
+        :author-image="testimonial.authorImage"
+        :author-name="testimonial.authorName"
+        :author-designation="testimonial.authorCompany"
+        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+      />
     </div>
   </div>
 </template>

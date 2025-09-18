@@ -138,13 +138,13 @@ export default {
 </script>
 
 <template>
-  <div class="flex-1 px-1 overflow-auto">
-    <form class="space-y-3" @submit.prevent="submit">
-      <div class="grid grid-cols-2 gap-2">
+  <div class="w-full">
+    <form class="space-y-6" @submit.prevent="submit">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormInput
           v-model="credentials.fullName"
           name="full_name"
-          class="flex-1"
+          class="w-full"
           :class="{ error: v$.credentials.fullName.$error }"
           :label="$t('REGISTER.FULL_NAME.LABEL')"
           :placeholder="$t('REGISTER.FULL_NAME.PLACEHOLDER')"
@@ -155,7 +155,7 @@ export default {
         <FormInput
           v-model="credentials.accountName"
           name="account_name"
-          class="flex-1"
+          class="w-full"
           :class="{ error: v$.credentials.accountName.$error }"
           :label="$t('REGISTER.COMPANY_NAME.LABEL')"
           :placeholder="$t('REGISTER.COMPANY_NAME.PLACEHOLDER')"
@@ -168,6 +168,7 @@ export default {
         v-model="credentials.email"
         type="email"
         name="email_address"
+        class="w-full"
         :class="{ error: v$.credentials.email.$error }"
         :label="$t('REGISTER.EMAIL.LABEL')"
         :placeholder="$t('REGISTER.EMAIL.PLACEHOLDER')"
@@ -179,6 +180,7 @@ export default {
         v-model="credentials.password"
         type="password"
         name="password"
+        class="w-full"
         :class="{ error: v$.credentials.password.$error }"
         :label="$t('LOGIN.PASSWORD.LABEL')"
         :placeholder="$t('SET_NEW_PASSWORD.PASSWORD.PLACEHOLDER')"
@@ -186,7 +188,7 @@ export default {
         :error-message="passwordErrorText"
         @blur="v$.credentials.password.$touch"
       />
-      <div v-if="globalConfig.hCaptchaSiteKey" class="mb-3">
+      <div v-if="globalConfig.hCaptchaSiteKey" class="mb-4">
         <VueHcaptcha
           ref="hCaptcha"
           :class="{ error: !hasAValidCaptcha && didCaptchaReset }"
@@ -195,7 +197,7 @@ export default {
         />
         <span
           v-if="!hasAValidCaptcha && didCaptchaReset"
-          class="text-xs text-n-ruby-9"
+          class="text-xs text-red-600 mt-1 block"
         >
           {{ $t('SET_NEW_PASSWORD.CAPTCHA.ERROR') }}
         </span>
@@ -204,7 +206,7 @@ export default {
         lg
         type="submit"
         data-testid="submit_button"
-        class="w-full"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-sm"
         icon="i-lucide-chevron-right"
         trailing-icon
         :label="$t('REGISTER.SUBMIT')"
@@ -212,11 +214,27 @@ export default {
         :is-loading="isSignupInProgress"
       />
     </form>
-    <GoogleOAuthButton v-if="showGoogleOAuth" class="flex-col-reverse">
-      {{ $t('REGISTER.OAUTH.GOOGLE_SIGNUP') }}
-    </GoogleOAuthButton>
+    
+    <!-- Google OAuth Button -->
+    <div v-if="showGoogleOAuth" class="mt-6">
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-200" />
+        </div>
+        <div class="relative flex justify-center text-sm">
+          <span class="px-2 bg-white text-gray-600">Or continue with</span>
+        </div>
+      </div>
+      <div class="mt-6">
+        <GoogleOAuthButton class="w-full border border-gray-200 hover:border-gray-300 transition duration-200">
+          {{ $t('REGISTER.OAUTH.GOOGLE_SIGNUP') }}
+        </GoogleOAuthButton>
+      </div>
+    </div>
+
+    <!-- Terms and Privacy Policy -->
     <p
-      class="text-sm mb-1 mt-5 text-n-slate-12 [&>a]:text-n-brand [&>a]:font-medium [&>a]:hover:brightness-110"
+      class="text-center text-xs text-gray-600 mt-2 leading-relaxed [&>a]:text-blue-600 [&>a]:font-medium [&>a]:hover:text-blue-500 [&>a]:underline"
       v-html="termsLink"
     />
   </div>
@@ -226,7 +244,7 @@ export default {
 .h-captcha--box {
   &::v-deep .error {
     iframe {
-      @apply rounded-md border border-n-ruby-8 dark:border-n-ruby-8;
+      @apply rounded-md border border-red-500;
     }
   }
 }
