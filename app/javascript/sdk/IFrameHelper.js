@@ -69,7 +69,7 @@ export const IFrameHelper = {
     iframe.src = widgetUrl;
     iframe.allow =
       'camera;microphone;fullscreen;display-capture;picture-in-picture;clipboard-write;';
-    iframe.id = 'chatwoot_live_chat_widget';
+    iframe.id = 'thumbcrowd_live_chat_widget';
     iframe.style.visibility = 'hidden';
 
     let holderClassName = `woot-widget-holder woot--hide woot-elements--${window.$chatwoot.position}`;
@@ -89,7 +89,7 @@ export const IFrameHelper = {
     IFrameHelper.initWindowSizeListener();
     IFrameHelper.preventDefaultScroll();
   },
-  getAppFrame: () => document.getElementById('chatwoot_live_chat_widget'),
+  getAppFrame: () => document.getElementById('thumbcrowd_live_chat_widget'),
   getBubbleHolder: () => document.getElementsByClassName('woot--bubble-holder'),
   sendMessage: (key, value) => {
     const element = IFrameHelper.getAppFrame();
@@ -299,7 +299,7 @@ export const IFrameHelper = {
   onLoad: ({ widgetColor }) => {
     const iframe = IFrameHelper.getAppFrame();
     iframe.style.visibility = '';
-    iframe.setAttribute('id', `chatwoot_live_chat_widget`);
+    iframe.setAttribute('id', `thumbcrowd_live_chat_widget`);
 
     if (IFrameHelper.getBubbleHolder().length) {
       return;
