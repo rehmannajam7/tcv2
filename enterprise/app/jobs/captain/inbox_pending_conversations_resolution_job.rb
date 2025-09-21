@@ -6,7 +6,7 @@ class Captain::InboxPendingConversationsResolutionJob < ApplicationJob
 
     resolvable_conversations = inbox.conversations.pending.where('last_activity_at < ? ', Time.now.utc - 1.hour).limit(Limits::BULK_ACTIONS_LIMIT)
     resolvable_conversations.each do |conversation|
-      create_outgoing_message(conversation, inbox)
+      create_outgoing_message(conversation, inbox) unless silent_auto_resolution?(inbox)
       conversation.resolved!
     end
   ensure
@@ -14,6 +14,10 @@ class Captain::InboxPendingConversationsResolutionJob < ApplicationJob
   end
 
   private
+
+  def silent_auto_resolution?(inbox)
+    inbox.captain_assistant.config['auto_resolution_silent'] == true
+  end
 
   def create_outgoing_message(conversation, inbox)
     I18n.with_locale(inbox.account.locale) do

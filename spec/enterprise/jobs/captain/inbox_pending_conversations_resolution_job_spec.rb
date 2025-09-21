@@ -59,4 +59,27 @@ RSpec.describe Captain::InboxPendingConversationsResolutionJob, type: :job do
       I18n.t('conversations.activity.captain.resolved', user_name: captain_assistant.name)
     )
   end
+
+  context 'when silent auto-resolution is enabled' do
+    before do
+      captain_assistant.update!(config: { 'auto_resolution_silent' => true })
+    end
+
+    it 'resolves conversations without sending outgoing messages' do
+      expect do
+        perform_enqueued_jobs { described_class.perform_later(inbox) }
+      end.not_to(change { resolvable_pending_conversation.messages.outgoing.reload.count })
+
+      expect(resolvable_pending_conversation.reload.status).to eq('resolved')
+    end
+
+    it 'still adds the correct activity message after resolution by Captain' do
+      perform_enqueued_jobs { described_class.perform_later(inbox) }
+      activity_message = resolvable_pending_conversation.messages.activity.last
+      expect(activity_message).not_to be_nil
+      expect(activity_message.content).to eq(
+        I18n.t('conversations.activity.captain.resolved', user_name: captain_assistant.name)
+      )
+    end
+  end
 end

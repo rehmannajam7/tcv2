@@ -43,6 +43,7 @@ const initialState = {
     memories: false,
   },
   temperature: 1,
+  autoResolutionSilent: false,
 };
 
 const state = reactive({ ...initialState });
@@ -89,6 +90,7 @@ const updateStateFromAssistant = assistant => {
     memories: config.feature_memory || false,
   };
   state.temperature = config.temperature || 1;
+  state.autoResolutionSilent = config.auto_resolution_silent || false;
 };
 
 const handleBasicInfoUpdate = async () => {
@@ -125,6 +127,7 @@ const handleSystemMessagesUpdate = async () => {
       welcome_message: state.welcomeMessage,
       handoff_message: state.handoffMessage,
       resolution_message: state.resolutionMessage,
+      auto_resolution_silent: state.autoResolutionSilent,
     },
   };
 
@@ -276,6 +279,28 @@ watch(
           :message="formErrors.resolutionMessage"
           :message-type="formErrors.resolutionMessage ? 'error' : 'info'"
         />
+
+        <!-- Silent Auto-Resolution Toggle -->
+        <div class="flex flex-col gap-2">
+          <label class="flex items-center gap-2">
+            <input
+              v-model="state.autoResolutionSilent"
+              type="checkbox"
+              class="form-checkbox"
+            />
+            <span class="text-sm font-medium text-n-slate-12">
+              {{ t('CAPTAIN.ASSISTANTS.FORM.AUTO_RESOLUTION_SILENT.LABEL') }}
+            </span>
+          </label>
+          <p class="text-sm text-n-slate-11 italic">
+            {{
+              t('CAPTAIN.ASSISTANTS.FORM.AUTO_RESOLUTION_SILENT.DESCRIPTION')
+            }}
+          </p>
+          <p class="text-xs text-n-slate-10">
+            {{ t('CAPTAIN.ASSISTANTS.FORM.AUTO_RESOLUTION_SILENT.HELP_TEXT') }}
+          </p>
+        </div>
 
         <div class="flex justify-end">
           <Button

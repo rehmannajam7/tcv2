@@ -17,6 +17,8 @@ class Messages::MessageBuilder
   end
 
   def perform
+    return if Conversations::SilentModeValidationService.should_skip_outgoing_message?(@conversation) && @message_type == 'outgoing'
+
     @message = @conversation.messages.build(message_params)
     process_attachments
     process_emails

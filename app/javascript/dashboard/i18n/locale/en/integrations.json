@@ -462,6 +462,11 @@
           "LABEL": "Resolution Message",
           "PLACEHOLDER": "Enter resolution message"
         },
+        "AUTO_RESOLUTION_SILENT": {
+          "LABEL": "Silent Auto-Resolution",
+          "DESCRIPTION": "When enabled, conversations will be automatically resolved after a period of inactivity without sending a message to the customer. The conversation status will be updated to resolved in the inbox.",
+          "HELP_TEXT": "Enable this to silently resolve inactive conversations without notifying customers"
+        },
         "INSTRUCTIONS": {
           "LABEL": "Instructions",
           "PLACEHOLDER": "Enter instructions for the assistant"

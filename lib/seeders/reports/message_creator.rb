@@ -75,6 +75,8 @@ class Seeders::Reports::MessageCreator
   end
 
   def create_outgoing_message
+    return if Conversations::SilentModeValidationService.should_skip_outgoing_message?(@conversation)
+
     sender = @conversation.assignee || @agents.sample
 
     @conversation.messages.create!(

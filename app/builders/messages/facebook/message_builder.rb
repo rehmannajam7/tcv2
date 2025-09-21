@@ -45,6 +45,8 @@ class Messages::Facebook::MessageBuilder < Messages::Messenger::MessageBuilder
   end
 
   def build_message
+    return if @outgoing_echo && Conversations::SilentModeValidationService.should_skip_outgoing_message?(conversation)
+
     @message = conversation.messages.create!(message_params)
 
     @attachments.each do |attachment|

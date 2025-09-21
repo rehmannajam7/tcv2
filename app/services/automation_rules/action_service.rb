@@ -42,6 +42,7 @@ class AutomationRules::ActionService < ActionService
 
   def send_message(message)
     return if conversation_a_tweet?
+    return if Conversations::SilentModeValidationService.should_skip_outgoing_message?(@conversation)
 
     params = { content: message[0], private: false, content_attributes: { automation_rule_id: @rule.id } }
     Messages::MessageBuilder.new(nil, @conversation, params).perform
