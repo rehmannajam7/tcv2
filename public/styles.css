@@ -188,7 +188,7 @@ img {border: 0;}
   display:flex;align-items:center;justify-content:center;
   border:1px dashed var(--border);border-radius:.5rem;padding:.5rem;background:#fafafa;color:#64748b;font-size:.9rem
 }
-.clients_logo{margin-top:1.25rem;display:flex;gap:5rem;justify-content:center;}
+.clients_logo{margin-top:1.25rem;display:flex;gap:5rem;}
 @media(min-width:760px){.logo-row{grid-template-columns:repeat(5,1fr)}}
 
 /* Sections */
