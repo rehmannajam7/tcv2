@@ -60,10 +60,10 @@
       }
       window.errorLoggingConfig = '<%= ENV.fetch('SENTRY_FRONTEND_DSN', '') || ENV.fetch('SENTRY_DSN', '') %>'
     </script>
-    <% if @global_config['ANALYTICS_TOKEN'].present? %>
+    <% if @global_config['GA_TRACKING_ID'].present? %>
     <script>
       window.analyticsConfig = {
-        token: '<%= @global_config['ANALYTICS_TOKEN'] %>',
+        trackingId: '<%= @global_config['GA_TRACKING_ID'] %>',
       }
     </script>
     <% end %>

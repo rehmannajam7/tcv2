@@ -1,18 +1,5 @@
 import helperObject, { AnalyticsHelper } from '../';
 
-vi.mock('@june-so/analytics-next', () => ({
-  AnalyticsBrowser: {
-    load: () => [
-      {
-        identify: vi.fn(),
-        track: vi.fn(),
-        page: vi.fn(),
-        group: vi.fn(),
-      },
-    ],
-  },
-}));
-
 describe('helperObject', () => {
   it('should return an instance of AnalyticsHelper', () => {
     expect(helperObject).toBeInstanceOf(AnalyticsHelper);
@@ -21,119 +8,147 @@ describe('helperObject', () => {
 
 describe('AnalyticsHelper', () => {
   let analyticsHelper;
+  let mockGtag;
+
   beforeEach(() => {
-    analyticsHelper = new AnalyticsHelper({ token: 'test_token' });
+    // Create a mock function for gtag
+    mockGtag = vi.fn();
+
+    // Mock window.gtag
+    Object.defineProperty(window, 'gtag', {
+      writable: true,
+      value: mockGtag,
+    });
+
+    analyticsHelper = new AnalyticsHelper({ trackingId: 'GA-TEST-123' });
   });
 
   describe('init', () => {
-    it('should initialize the analytics browser with the correct token', async () => {
+    it('should initialize Google Analytics with the correct tracking ID', async () => {
       await analyticsHelper.init();
-      expect(analyticsHelper.analytics).not.toBe(null);
+      expect(analyticsHelper.isInitialized).toBe(true);
     });
 
-    it('should not initialize the analytics browser if token is not provided', async () => {
+    it('should not initialize if tracking ID is not provided', async () => {
       analyticsHelper = new AnalyticsHelper();
       await analyticsHelper.init();
-      expect(analyticsHelper.analytics).toBe(null);
+      expect(analyticsHelper.isInitialized).toBe(false);
     });
   });
 
   describe('identify', () => {
-    beforeEach(() => {
-      analyticsHelper.analytics = { identify: vi.fn(), group: vi.fn() };
+    beforeEach(async () => {
+      await analyticsHelper.init();
     });
 
-    it('should call identify on analytics browser with correct arguments', () => {
+    it('should call gtag with login event and user properties', () => {
       analyticsHelper.identify({
         id: '123',
         email: 'test@example.com',
         name: 'Test User',
-        avatar_url: 'avatar_url',
         accounts: [{ id: '1', name: 'Account 1' }],
         account_id: '1',
       });
 
-      expect(analyticsHelper.analytics.identify).toHaveBeenCalledWith(
-        'test@example.com',
-        {
-          userId: '123',
-          email: 'test@example.com',
-          name: 'Test User',
-          avatar: 'avatar_url',
-        }
-      );
-      expect(analyticsHelper.analytics.group).toHaveBeenCalled();
+      expect(mockGtag).toHaveBeenCalledWith('event', 'login', {
+        method: 'chatwoot',
+        user_id: '123',
+        user_email: 'test@example.com',
+        user_name: 'Test User',
+      });
+
+      expect(mockGtag).toHaveBeenCalledWith('event', 'join_group', {
+        group_id: '1',
+        group_name: 'Account 1',
+        user_id: '123',
+      });
     });
 
-    it('should call identify on analytics browser without group', () => {
+    it('should call gtag without group event when account not found', () => {
       analyticsHelper.identify({
         id: '123',
         email: 'test@example.com',
         name: 'Test User',
-        avatar_url: 'avatar_url',
         accounts: [{ id: '1', name: 'Account 1' }],
         account_id: '5',
       });
 
-      expect(analyticsHelper.analytics.group).not.toHaveBeenCalled();
+      expect(mockGtag).toHaveBeenCalledWith(
+        'event',
+        'login',
+        expect.any(Object)
+      );
+      expect(mockGtag).not.toHaveBeenCalledWith(
+        'event',
+        'join_group',
+        expect.any(Object)
+      );
     });
 
-    it('should not call analytics.page if analytics is null', () => {
-      analyticsHelper.analytics = null;
+    it('should not call gtag if not initialized', () => {
+      analyticsHelper.isInitialized = false;
       analyticsHelper.identify({});
-      expect(analyticsHelper.analytics).toBe(null);
+      expect(mockGtag).not.toHaveBeenCalled();
     });
   });
 
   describe('track', () => {
-    beforeEach(() => {
-      analyticsHelper.analytics = { track: vi.fn() };
+    beforeEach(async () => {
+      await analyticsHelper.init();
       analyticsHelper.user = { id: '123' };
     });
 
-    it('should call track on analytics browser with correct arguments', () => {
+    it('should call gtag event with correct arguments', () => {
       analyticsHelper.track('Test Event', { prop1: 'value1', prop2: 'value2' });
-      expect(analyticsHelper.analytics.track).toHaveBeenCalledWith({
-        userId: '123',
-        event: 'Test Event',
-        properties: { prop1: 'value1', prop2: 'value2' },
+      expect(mockGtag).toHaveBeenCalledWith('event', 'test_event', {
+        user_id: '123',
+        prop1: 'value1',
+        prop2: 'value2',
       });
     });
 
-    it('should call track on analytics browser with default properties', () => {
+    it('should call gtag event with default properties', () => {
       analyticsHelper.track('Test Event');
-      expect(analyticsHelper.analytics.track).toHaveBeenCalledWith({
-        userId: '123',
-        event: 'Test Event',
-        properties: {},
+      expect(mockGtag).toHaveBeenCalledWith('event', 'test_event', {
+        user_id: '123',
       });
     });
 
-    it('should not call track on analytics browser if analytics is not initialized', () => {
-      analyticsHelper.analytics = null;
+    it('should not call gtag if not initialized', () => {
+      analyticsHelper.isInitialized = false;
       analyticsHelper.track('Test Event', { prop1: 'value1', prop2: 'value2' });
-      expect(analyticsHelper.analytics).toBe(null);
+      expect(mockGtag).not.toHaveBeenCalled();
     });
   });
 
   describe('page', () => {
-    beforeEach(() => {
-      analyticsHelper.analytics = { page: vi.fn() };
+    beforeEach(async () => {
+      await analyticsHelper.init();
+      analyticsHelper.user = { id: '123' };
     });
 
-    it('should call the analytics.page method with the correct arguments', () => {
+    it('should call gtag page_view event with correct arguments', () => {
       const params = {
-        name: 'Test page',
+        title: 'Test page',
         url: '/test',
+        path: '/test',
       };
       analyticsHelper.page(params);
-      expect(analyticsHelper.analytics.page).toHaveBeenCalledWith(params);
+      expect(mockGtag).toHaveBeenCalledWith('event', 'page_view', {
+        page_title: 'Test page',
+        page_location: '/test',
+        page_path: '/test',
+        user_id: '123',
+        title: 'Test page',
+        url: '/test',
+        path: '/test',
+      });
     });
 
-    it('should not call analytics.page if analytics is null', () => {
-      analyticsHelper.analytics = null;
+    it('should not call gtag if not initialized', () => {
+      analyticsHelper.isInitialized = false;
       analyticsHelper.page();
-      expect(analyticsHelper.analytics).toBe(null);
+      expect(mockGtag).not.toHaveBeenCalled();
     });
   });
 });

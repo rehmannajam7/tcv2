@@ -207,10 +207,10 @@
 - name: DEPLOYMENT_ENV
   value: self-hosted
   description: 'The deployment environment of the installation, to differentiate between ThumbCrowd cloud and self-hosted'
-- name: ANALYTICS_TOKEN
+- name: GA_TRACKING_ID
   value:
-  display_title: 'Analytics Token'
-  description: 'The June.so analytics token for ThumbCrowd cloud'
+  display_title: 'Google Analytics Tracking ID'
+  description: 'The Google Analytics 4 tracking ID (e.g., G-XXXXXXXXXX) for analytics tracking'
   type: secret
 - name: CLEARBIT_API_KEY
   value:

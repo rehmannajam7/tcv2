@@ -30,7 +30,7 @@ class DashboardController < ActionController::Base
       'CHATWOOT_INBOX_TOKEN',
       'API_CHANNEL_NAME',
       'API_CHANNEL_THUMBNAIL',
-      'ANALYTICS_TOKEN',
+      'GA_TRACKING_ID',
       'DIRECT_UPLOADS_ENABLED',
       'HCAPTCHA_SITE_KEY',
       'LOGOUT_REDIRECT_LINK',
