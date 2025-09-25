@@ -14,6 +14,17 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Debug: Global Config Values -->
+    
+    
+    <% if @global_config['GA_TRACKING_ID'].present? %>
+    <script>
+      window.analyticsConfig = {
+        trackingId: '<%= @global_config['GA_TRACKING_ID'] %>',
+      }
+    </script>
+    <% end %>
+    
     <style>
       /* -------- Base -------- */
 :root{
@@ -969,5 +980,35 @@ img {border: 0;}
   </head>
   <body>
     <%= yield %>
+    
+    <% if @global_config['GA_TRACKING_ID'].present? %>
+    <script>
+      // Initialize Google Analytics for landing page
+      (function() {
+        const trackingId = '<%= @global_config['GA_TRACKING_ID'] %>';
+        
+        // Load Google Analytics script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${trackingId}`;
+        document.head.appendChild(script);
+        
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() {
+          window.dataLayer.push(arguments);
+        };
+        
+        // Configure Google Analytics
+        window.gtag('js', new Date());
+        window.gtag('config', trackingId, {
+          page_title: document.title,
+          page_location: window.location.href
+        });
+        
+        console.log('Landing page Google Analytics initialized with ID:', trackingId);
+      })();
+    </script>
+    <% end %>
   </body>
 </html>

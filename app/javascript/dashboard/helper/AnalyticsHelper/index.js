@@ -23,25 +23,35 @@ export class AnalyticsHelper {
       return;
     }
 
-    // Load Google Analytics script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${this.gaTrackingId}`;
-    document.head.appendChild(script);
+    try {
+      // Load Google Analytics script
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${this.gaTrackingId}`;
+      document.head.appendChild(script);
 
-    // Initialize gtag
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
+      // Wait for script to load
+      await new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = reject;
+      });
 
-    // Configure Google Analytics
-    window.gtag('js', new Date());
-    window.gtag('config', this.gaTrackingId, {
-      send_page_view: false, // We'll handle page views manually
-    });
+      // Initialize gtag
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
 
-    this.isInitialized = true;
+      // Configure Google Analytics
+      window.gtag('js', new Date());
+      window.gtag('config', this.gaTrackingId, {
+        send_page_view: false, // We'll handle page views manually
+      });
+
+      this.isInitialized = true;
+    } catch (error) {
+      this.isInitialized = false;
+    }
   }
 
   /**
@@ -123,4 +133,4 @@ export class AnalyticsHelper {
 }
 
 // This object is shared across, the init is called in app/javascript/packs/application.js
-export default new AnalyticsHelper(window.analyticsConfig);
+export default new AnalyticsHelper(window.analyticsConfig || {});

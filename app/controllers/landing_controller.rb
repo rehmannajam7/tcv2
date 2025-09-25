@@ -8,7 +8,8 @@ class LandingController < ApplicationController
     @global_config = GlobalConfig.get(
       'LOGO', 'LOGO_DARK', 'LOGO_THUMBNAIL',
       'INSTALLATION_NAME',
-      'BRAND_URL', 'BRAND_NAME'
+      'BRAND_URL', 'BRAND_NAME',
+      'GA_TRACKING_ID'
     )
   end
 end
