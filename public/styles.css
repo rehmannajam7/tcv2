@@ -188,7 +188,7 @@ img {border: 0;}
   display:flex;align-items:center;justify-content:center;
   border:1px dashed var(--border);border-radius:.5rem;padding:.5rem;background:#fafafa;color:#64748b;font-size:.9rem
 }
-.clients_logo{margin-top:1.25rem;display:flex;gap:5rem;}
+.clients_logo{margin-top:1.25rem;display:flex;gap:5rem;justify-content:center;}
 @media(min-width:760px){.logo-row{grid-template-columns:repeat(5,1fr)}}
 
 /* Sections */
@@ -200,7 +200,7 @@ img {border: 0;}
 .section-white-000{background:#ffffff}
 .section-black-100{background:#1a1a1a;color:#ffffff}
 .section-h1{
-  font-size:3rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:0
+  font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:0
 }  
 
 /* Window mock */
