@@ -99,6 +99,11 @@ Rails.application.routes.draw do
           resources :custom_roles, only: [:index, :create, :show, :update, :destroy]
           resources :campaigns, only: [:index, :create, :show, :update, :destroy]
           resources :dashboard_apps, only: [:index, :show, :create, :update, :destroy]
+          resources :flows, only: [:index, :create, :show, :update, :destroy] do
+            member do
+              post :execute
+            end
+          end
           namespace :channels do
             resource :twilio_channel, only: [:create]
           end

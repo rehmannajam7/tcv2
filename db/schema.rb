@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_14_104358) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_26_061605) do
   # These extensions should be enabled to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -237,7 +237,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_14_104358) do
     t.jsonb "audience", default: []
     t.datetime "scheduled_at", precision: nil
     t.boolean "trigger_only_during_business_hours", default: false
-    t.jsonb "template_params"
+    t.jsonb "template_params", default: {}, null: false
     t.index ["account_id"], name: "index_campaigns_on_account_id"
     t.index ["campaign_status"], name: "index_campaigns_on_campaign_status"
     t.index ["campaign_type"], name: "index_campaigns_on_campaign_type"
@@ -719,6 +719,63 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_14_104358) do
     t.index ["name", "account_id"], name: "index_email_templates_on_name_and_account_id", unique: true
   end
 
+  create_table "flow_executions", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "conversation_id", null: false
+    t.integer "status", default: 0, null: false
+    t.text "execution_data"
+    t.datetime "started_at"
+    t.datetime "completed_at"
+    t.bigint "executed_by_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id", "status"], name: "index_flow_executions_on_conversation_id_and_status"
+    t.index ["conversation_id"], name: "index_flow_executions_on_conversation_id"
+    t.index ["executed_by_id"], name: "index_flow_executions_on_executed_by_id"
+    t.index ["flow_id", "status"], name: "index_flow_executions_on_flow_id_and_status"
+    t.index ["flow_id"], name: "index_flow_executions_on_flow_id"
+    t.index ["started_at"], name: "index_flow_executions_on_started_at"
+  end
+
+  create_table "flow_inbox_associations", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "inbox_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flow_id", "inbox_id"], name: "index_flow_inbox_associations_on_flow_id_and_inbox_id", unique: true
+    t.index ["flow_id"], name: "index_flow_inbox_associations_on_flow_id"
+    t.index ["inbox_id"], name: "index_flow_inbox_associations_on_inbox_id"
+  end
+
+  create_table "flow_team_associations", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flow_id", "team_id"], name: "index_flow_team_associations_on_flow_id_and_team_id", unique: true
+    t.index ["flow_id"], name: "index_flow_team_associations_on_flow_id"
+    t.index ["team_id"], name: "index_flow_team_associations_on_team_id"
+  end
+
+  create_table "flows", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.integer "status", default: 0, null: false
+    t.integer "trigger_type", default: 0, null: false
+    t.text "trigger_conditions"
+    t.text "flow_data"
+    t.bigint "account_id", null: false
+    t.bigint "created_by_id", null: false
+    t.bigint "updated_by_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id", "status"], name: "index_flows_on_account_id_and_status"
+    t.index ["account_id", "trigger_type"], name: "index_flows_on_account_id_and_trigger_type"
+    t.index ["account_id"], name: "index_flows_on_account_id"
+    t.index ["created_by_id"], name: "index_flows_on_created_by_id"
+    t.index ["updated_by_id"], name: "index_flows_on_updated_by_id"
+  end
+
   create_table "folders", force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "category_id", null: false
@@ -1133,6 +1190,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_14_104358) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "flow_executions", "conversations"
+  add_foreign_key "flow_executions", "flows"
+  add_foreign_key "flow_executions", "users", column: "executed_by_id"
+  add_foreign_key "flow_inbox_associations", "flows"
+  add_foreign_key "flow_inbox_associations", "inboxes"
+  add_foreign_key "flow_team_associations", "flows"
+  add_foreign_key "flow_team_associations", "teams"
+  add_foreign_key "flows", "accounts"
+  add_foreign_key "flows", "users", column: "created_by_id"
+  add_foreign_key "flows", "users", column: "updated_by_id"
   add_foreign_key "inboxes", "portals"
   create_trigger("accounts_after_insert_row_tr", :generated => true, :compatibility => 1).
       on("accounts").
