@@ -301,6 +301,61 @@ Rails.application.routes.draw do
             end
           end
 
+          resources :flows, only: [:index, :show, :create, :update, :destroy] do
+            member do
+              post :execute
+            end
+          end
+
+          # FlowEditor API endpoints
+          namespace :flow_editor do
+            resources :flows, only: [:index, :show, :create, :update, :destroy] do
+              member do
+                get :revisions
+                post :save_revision
+              end
+            end
+            get :context
+            resources :contact_groups, only: [:index]
+            resources :labels, only: [:index]
+            resources :channels, only: [:index]
+            resources :custom_attribute_definitions, only: [:index]
+            resources :globals, only: [:index]
+            get :environment, to: 'environment#index'
+            resources :languages, only: [:index]
+            resources :classifiers, only: [:index]
+            resources :ticketers, only: [:index]
+            resources :resthooks, only: [:index]
+            resources :templates, only: [:index]
+            resources :recipients, only: [:index]
+            resources :completion, only: [:index]
+            resources :activity, only: [:index]
+            resources :editor, only: [:index]
+            resources :attachments, only: [:index]
+            resources :revisions, only: [:index]
+            post :simulate_start, to: 'simulate#start'
+            post :simulate_resume, to: 'simulate#resume'
+          end
+
+          # FlowEditor direct endpoint aliases (for compatibility)
+          resources :groups, only: [:index], controller: 'flow_editor/contact_groups'
+          resources :channels, only: [:index], controller: 'flow_editor/channels'
+          resources :languages, only: [:index], controller: 'flow_editor/languages'
+          resources :fields, only: [:index], controller: 'flow_editor/custom_attribute_definitions'
+          get :environment, to: 'flow_editor/environment#index'
+          resources :classifiers, only: [:index], controller: 'flow_editor/classifiers'
+          resources :ticketers, only: [:index], controller: 'flow_editor/ticketers'
+          resources :resthooks, only: [:index], controller: 'flow_editor/resthooks'
+          resources :templates, only: [:index], controller: 'flow_editor/templates'
+          resources :recipients, only: [:index], controller: 'flow_editor/recipients'
+          resources :completion, only: [:index], controller: 'flow_editor/completion'
+          resources :activity, only: [:index], controller: 'flow_editor/activity'
+          resources :editor, only: [:index], controller: 'flow_editor/editor'
+          resources :attachments, only: [:index], controller: 'flow_editor/attachments'
+          resources :revisions, only: [:index], controller: 'flow_editor/revisions'
+          post :simulate_start, to: 'flow_editor/simulate#start'
+          post :simulate_resume, to: 'flow_editor/simulate#resume'
+
           resources :upload, only: [:create]
         end
       end
@@ -569,7 +624,12 @@ Rails.application.routes.draw do
     post 'onboarding', to: 'onboarding#create'
   end
 
-  # ---------------------------------------------------------------------
+  # ----------------------------------------------------------------------
+  # Routes for FlowEditor
+  get '/floweditor', to: 'floweditor#index'
+  get '/floweditor/*path', to: 'floweditor#assets'
+
+  # ----------------------------------------------------------------------
   # Routes for swagger docs
   get '/swagger/*path', to: 'swagger#respond'
   get '/swagger', to: 'swagger#respond'

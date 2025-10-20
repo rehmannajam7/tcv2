@@ -12,10 +12,12 @@ const props = defineProps({
   name: { type: String, required: true },
   label: { type: String, required: true },
   icon: { type: [String, Object, Function], default: null },
-  to: { type: Object, default: null },
+  to: { type: [Object, String], default: null },
   activeOn: { type: Array, default: () => [] },
   children: { type: Array, default: undefined },
   getterKeys: { type: Object, default: () => ({}) },
+  external: { type: Boolean, default: false },
+  target: { type: String, default: '' },
 });
 
 const {
@@ -147,6 +149,8 @@ onMounted(async () => {
       :has-active-child="hasActiveChild"
       :expandable="hasChildren"
       :is-expanded="isExpanded"
+      :external="external"
+      :target="target"
       @toggle="toggleTrigger"
     />
     <ul

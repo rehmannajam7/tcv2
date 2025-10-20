@@ -7,15 +7,20 @@ module AccessTokenAuthHelper
 
   def ensure_access_token
     token = request.headers[:api_access_token] || request.headers[:HTTP_API_ACCESS_TOKEN]
+    Rails.logger.info "AccessTokenAuthHelper: Token from headers: #{token.present? ? 'present' : 'not present'}"
     @access_token = AccessToken.find_by(token: token) if token.present?
+    Rails.logger.info "AccessTokenAuthHelper: @access_token found: #{@access_token.present?}"
   end
 
   def authenticate_access_token!
+    Rails.logger.info "AccessTokenAuthHelper: authenticate_access_token! called"
     ensure_access_token
     render_unauthorized('Invalid Access Token') && return if @access_token.blank?
 
     @resource = @access_token.owner
+    Rails.logger.info "AccessTokenAuthHelper: @resource = #{@resource.class.name} (ID: #{@resource.id})"
     Current.user = @resource if allowed_current_user_type?(@resource)
+    Rails.logger.info "AccessTokenAuthHelper: Current.user set to #{Current.user&.class&.name} (ID: #{Current.user&.id})"
   end
 
   def allowed_current_user_type?(resource)

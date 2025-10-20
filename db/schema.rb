@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_26_061605) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_02_110239) do
   # These extensions should be enabled to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -769,10 +769,19 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_26_061605) do
     t.bigint "updated_by_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "flow_type", default: 0, null: false
+    t.string "trigger_keyword"
+    t.string "floweditor_uuid"
+    t.string "floweditor_sync_status"
+    t.datetime "floweditor_last_synced_at"
+    t.index ["account_id", "flow_type"], name: "index_flows_on_account_id_and_flow_type"
+    t.index ["account_id", "floweditor_uuid"], name: "index_flows_on_account_id_and_floweditor_uuid"
     t.index ["account_id", "status"], name: "index_flows_on_account_id_and_status"
+    t.index ["account_id", "trigger_keyword"], name: "index_flows_on_account_id_and_trigger_keyword"
     t.index ["account_id", "trigger_type"], name: "index_flows_on_account_id_and_trigger_type"
     t.index ["account_id"], name: "index_flows_on_account_id"
     t.index ["created_by_id"], name: "index_flows_on_created_by_id"
+    t.index ["floweditor_uuid"], name: "index_flows_on_floweditor_uuid", unique: true
     t.index ["updated_by_id"], name: "index_flows_on_updated_by_id"
   end
 

@@ -1,4 +1,4 @@
-# DO NOT change the order of features EVER
+# Change enabled: true to enabled: false for flow_editor# DO NOT change the order of features EVER
 ############################################
 # name: the name to be used internally in the code
 # display_name: the name to be used in the UI

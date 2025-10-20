@@ -19,6 +19,16 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       resource '/api/*', headers: :any, methods: :any, expose: %w[access-token client uid expiry]
     end
   end
+
+  # Explicit CORS configuration for FlowEditor
+  allow do
+    origins %w[http://localhost:3001 http://127.0.0.1:3001]
+    resource '/api/v1/accounts/*', 
+             headers: :any, 
+             methods: [:get, :post, :put, :patch, :delete, :options, :head],
+             expose: %w[access-token client uid expiry],
+             credentials: true
+  end
 end
 
 ################################################

@@ -1,0 +1,101 @@
+{
+  "FLOWS": {
+    "HEADER": "Flow Management",
+    "DESCRIPTION": "Manage your conversation flows to automate customer interactions and improve response efficiency.",
+    "LOADING": "Loading flows...",
+    "EMPTY_STATE": {
+      "TITLE": "No flows found",
+      "MESSAGE": "You haven't created any flows yet. Create your first flow to get started with automation.",
+      "CREATE_BUTTON": "Create New Flow"
+    },
+    "LIST": {
+      "TABLE_HEADER": {
+        "NAME": "Flow Name",
+        "DESCRIPTION": "Description", 
+        "STATUS": "Status",
+        "CREATED_AT": "Created",
+        "ACTIONS": "Actions"
+      },
+      "STATUS": {
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive",
+        "DRAFT": "Draft"
+      },
+      "ACTIONS": {
+        "EDIT": "Edit Flow",
+        "DELETE": "Delete Flow",
+        "DUPLICATE": "Duplicate Flow",
+        "ACTIVATE": "Activate",
+        "DEACTIVATE": "Deactivate"
+      }
+    },
+    "CREATE": {
+      "BUTTON": "Create New Flow",
+      "TITLE": "Create New Flow",
+      "SUCCESS_MESSAGE": "Flow created successfully"
+    },
+    "CREATE_MODAL": {
+      "TITLE": "Create New Flow",
+      "FORM": {
+        "NAME": {
+          "LABEL": "Flow Name",
+          "PLACEHOLDER": "Enter flow name"
+        },
+        "TYPE": {
+          "LABEL": "Flow Type",
+          "PLACEHOLDER": "Select flow type",
+          "OPTIONS": {
+            "CONVERSATION": "Conversation Flow",
+            "VOICE": "Voice Flow"
+          }
+        },
+        "TRIGGER_KEYWORD": {
+          "LABEL": "Trigger Keyword",
+          "PLACEHOLDER": "Enter trigger keyword",
+          "OPTIONAL": "Optional",
+          "HELP_TEXT": "This keyword will trigger the flow when mentioned in conversations"
+        }
+      },
+      "BUTTONS": {
+        "CANCEL": "Cancel",
+        "CREATE": "Create Flow",
+        "CREATING": "Creating..."
+      },
+      "VALIDATION": {
+        "NAME_REQUIRED": "Flow name is required",
+        "TYPE_REQUIRED": "Flow type is required",
+        "NAME_DUPLICATE": "A flow with this name already exists"
+      },
+      "SUCCESS_MESSAGE": "Flow created successfully! You can now design your flow.",
+      "ERROR_MESSAGE": "Failed to create flow. Please try again."
+    },
+    "EDIT": {
+      "TITLE": "Edit Flow",
+      "SUCCESS_MESSAGE": "Flow updated successfully"
+    },
+    "DELETE": {
+      "CONFIRM_TITLE": "Delete Flow",
+      "CONFIRM_MESSAGE": "Are you sure you want to delete this flow? This action cannot be undone.",
+      "CONFIRM_YES": "Yes, Delete",
+      "CONFIRM_NO": "Cancel",
+      "SUCCESS_MESSAGE": "Flow deleted successfully",
+      "ERROR_MESSAGE": "Failed to delete flow. Please try again."
+    },
+    "ERRORS": {
+      "FETCH_FAILED": "Failed to load flows. Please refresh and try again.",
+      "CREATE_FAILED": "Failed to create flow. Please try again.",
+      "UPDATE_FAILED": "Failed to update flow. Please try again.",
+      "DELETE_FAILED": "Failed to delete flow. Please try again."
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "Search flows...",
+      "NO_RESULTS": "No flows match your search criteria"
+    },
+    "FILTERS": {
+      "ALL": "All Flows",
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive", 
+      "DRAFT": "Draft"
+    }
+  }
+}

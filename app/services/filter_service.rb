@@ -12,7 +12,7 @@ class FilterService
   def initialize(params, user)
     @params = params
     @user = user
-    file = File.read('./lib/filters/filter_keys.yml')
+    file = File.read(Rails.root.join('lib', 'filters', 'filter_keys.yml'))
     @filters = YAML.safe_load(file)
     @query_string = ''
     @filter_values = {}
