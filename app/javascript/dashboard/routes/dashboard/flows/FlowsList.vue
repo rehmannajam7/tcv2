@@ -51,7 +51,7 @@
           v-for="flow in flows"
           :key="flow.id"
           class="bg-white border border-n-weak rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer group"
-          @click="editFlow(flow.id)"
+          @click="navigateToFlowEditor(flow.id)"
         >
           <!-- Flow Header -->
           <div class="flex items-start justify-between mb-4">
@@ -236,10 +236,12 @@ export default {
         const response = await FlowsAPI.getFlows();
         this.flows = response.data || [];
       } catch (error) {
-        // Error loading flows
+        console.error('Error loading flows:', error);
+        this.$toast.error('Failed to load flows');
+        this.flows = [];
+      } finally {
         this.isLoading = false;
       }
-      this.flows = [];
     },
     createNewFlow() {
       this.showCreateModal = true;
@@ -248,7 +250,10 @@ export default {
       // Navigate to flow editor with flowId
       this.$router.push({
         name: 'flow_editor',
-        params: { accountId: this.accountId, flowId },
+        params: { 
+          accountId: this.accountId, 
+          flowId: flowId || undefined 
+        },
       });
     },
     confirmDeleteFlow(flow) {

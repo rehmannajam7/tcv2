@@ -1,6 +1,8 @@
 <script>
 import { mapGetters } from 'vuex';
 import { useAccount } from 'dashboard/composables/useAccount';
+import axios from 'axios';
+import Auth from 'dashboard/api/auth';
 
 export default {
   name: 'FlowEditor',
@@ -20,6 +22,7 @@ export default {
   data() {
     return {
       isLoading: false, // Start with false so iframe can render immediately
+      flowEditorToken: null, // JWT token for FlowEditor API authentication
     };
   },
   computed: {
@@ -27,8 +30,8 @@ export default {
       currentUser: 'getCurrentUser',
     }),
     flowEditorUrl() {
-      // Point to local FlowEditor server for development
-      const baseUrl = `http://localhost:8000`;
+      // Point to local FlowEditor UI server for development
+      const baseUrl = `http://localhost:3001`;
 
       const params = new URLSearchParams();
 
@@ -45,9 +48,9 @@ export default {
         params.append('user_id', this.currentUser.id);
         params.append('user_name', this.currentUser.name);
         params.append('user_email', this.currentUser.email);
-        // Add access token for API authentication (FlowEditor expects 'token' parameter)
-        if (this.currentUser.access_token) {
-          params.append('token', this.currentUser.access_token);
+        // Add JWT token for API authentication (FlowEditor expects 'token' parameter)
+        if (this.flowEditorToken) {
+          params.append('token', this.flowEditorToken);
         }
       }
 
@@ -59,24 +62,144 @@ export default {
       return `${baseUrl}?${params.toString()}`;
     },
     dashboardAppContext() {
+      // Create a completely safe, serializable version of the context
+      const safeSerialize = (obj) => {
+        if (obj === null || obj === undefined) return null;
+        if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean') {
+          return obj;
+        }
+        if (Array.isArray(obj)) {
+          return obj.map(item => safeSerialize(item));
+        }
+        if (typeof obj === 'object') {
+          const result = {};
+          for (const [key, value] of Object.entries(obj)) {
+            if (typeof value !== 'function' && typeof value !== 'symbol' && typeof value !== 'undefined') {
+              try {
+                result[key] = safeSerialize(value);
+              } catch (e) {
+                // Skip properties that can't be serialized
+                console.warn(`Skipping property ${key} due to serialization error:`, e);
+              }
+            }
+          }
+          return result;
+        }
+        return null;
+      };
+
+      const cleanAccount = this.currentAccount ? safeSerialize({
+        id: this.currentAccount.id,
+        name: this.currentAccount.name,
+        locale: this.currentAccount.locale,
+        domain: this.currentAccount.domain,
+        support_email: this.currentAccount.support_email,
+        // Only include primitive values from features and custom_attributes
+        features: this.currentAccount.features ? Object.keys(this.currentAccount.features).reduce((acc, key) => {
+          const value = this.currentAccount.features[key];
+          if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+            acc[key] = value;
+          }
+          return acc;
+        }, {}) : {},
+        custom_attributes: this.currentAccount.custom_attributes ? Object.keys(this.currentAccount.custom_attributes).reduce((acc, key) => {
+          const value = this.currentAccount.custom_attributes[key];
+          if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+            acc[key] = value;
+          }
+          return acc;
+        }, {}) : {}
+      }) : null;
+
+      const cleanUser = this.currentUser ? safeSerialize({
+        id: this.currentUser.id,
+        name: this.currentUser.name,
+        email: this.currentUser.email,
+        avatar_url: this.currentUser.avatar_url,
+        role: this.currentUser.role,
+        accounts: this.currentUser.accounts ? this.currentUser.accounts.map(acc => ({
+          id: acc.id,
+          name: acc.name,
+          role: acc.role
+        })) : []
+      }) : null;
+
       return {
-        account: this.currentAccount,
-        user: this.currentUser,
+        account: cleanAccount,
+        user: cleanUser,
         flowId: this.flowId,
         mode: this.flowId ? 'edit' : 'create',
-        // Add access token for API authentication
-        accessToken: this.currentUser?.access_token,
+        accessToken: this.flowEditorToken,
       };
+    },
+  },
+  watch: {
+    currentAccount: {
+      immediate: true,
+      handler(newAccount) {
+        if (newAccount && newAccount.id && !this.flowEditorToken) {
+          this.fetchFlowEditorToken();
+        }
+      },
     },
   },
   mounted() {
     // FlowEditor iframe loaded successfully
     this.setupMessageListener();
+    
+    // Send context to FlowEditor after a short delay to ensure iframe is ready
+    setTimeout(() => {
+      this.sendContextToFlowEditor();
+    }, 1000);
   },
   beforeUnmount() {
     window.removeEventListener('message', this.handleMessage);
   },
   methods: {
+    async fetchFlowEditorToken() {
+      try {
+        // Ensure currentAccount is available
+        if (!this.currentAccount || !this.currentAccount.id) {
+          console.warn('Current account not available for token fetch');
+          return;
+        }
+        
+        // Create axios instance with proper authentication headers
+        const { apiHost = '' } = window.chatwootConfig || {};
+        const authHeaders = {};
+        
+        if (Auth.hasAuthCookie()) {
+          const {
+            'access-token': accessToken,
+            'token-type': tokenType,
+            client,
+            expiry,
+            uid,
+          } = Auth.getAuthData();
+          Object.assign(authHeaders, {
+            'access-token': accessToken,
+            'token-type': tokenType,
+            client,
+            expiry,
+            uid,
+          });
+        }
+
+        const response = await axios.get(
+          `${apiHost}/api/v1/accounts/${this.currentAccount.id}/flow_editor/tokens`,
+          { headers: authHeaders }
+        );
+        this.flowEditorToken = response.data.token;
+        console.log('FlowEditor JWT token fetched successfully');
+      } catch (error) {
+        console.error('Failed to fetch FlowEditor token:', error);
+        if (error.response) {
+          this.$toast.error(`Failed to authenticate with FlowEditor: ${error.response.data?.message || error.response.statusText}`);
+        } else {
+          this.$toast.error('Failed to authenticate with FlowEditor');
+        }
+      }
+    },
     setupMessageListener() {
       window.addEventListener('message', this.handleMessage);
     },
@@ -85,116 +208,115 @@ export default {
       this.isLoading = false;
     },
     sendContextToFlowEditor() {
-      if (
-        this.$refs.flowEditorFrame &&
-        this.$refs.flowEditorFrame.contentWindow
-      ) {
-        // Create proper FlowEditor configuration with endpoints
-        const flowEditorConfig = {
-          localStorage: true,
-          endpoints: {
-            // Use FlowEditor's own backend API which will proxy to Chatwoot
-            flows: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/flows`,
-            revisions: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/flows`,
-            activity: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/activity`,
-            groups: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/groups`,
-            contacts: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/recipients`,
-            recipients: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/recipients`,
-            fields: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/fields`,
-            labels: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/labels`,
-            channels: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/channels`,
-            languages: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/languages`,
-            templates: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/templates`,
-            completion: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/completion`,
-            resthooks: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/resthooks`,
-            ticketers: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/ticketers`,
-            classifiers: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/classifiers`,
-            editor: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/editor`,
-            environment: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/environment`,
-            simulate: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/simulate_start`,
-            simulate_start: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/simulate_start`,
-            simulate_resume: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/simulate_resume`,
-            attachments: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/attachments`,
-            globals: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/globals`,
-            brain: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/brain`,
-            external_services: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/external_services`,
-            external_services_calls: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/external_services_calls`,
-            external_services_calls_base: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/external_services_calls`,
-            whatsapp_products: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/whatsapp_products`,
-            whatsapp_flows: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/whatsapp_flows`,
-            knowledgeBases: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/knowledge_bases`,
-            ticketer_queues: `http://localhost:8000/api/v1/accounts/${this.currentAccount.id}/flow_editor/ticketer_queues`,
-          },
-          flow: this.flowId || 'new',
-          flowType: 'messaging',
-          showTemplates: true,
-          showDownload: true,
-          mutable: true,
-          debug: process.env.NODE_ENV === 'development',
-          brand: 'Chatwoot',
-          accountId: this.currentAccount.id,
-          token: this.currentUser?.access_token,
-          httpTimeout: 10000,
-          help: {
-            flows: 'https://docs.chatwoot.com/flows',
-            actions: 'https://docs.chatwoot.com/flows/actions',
-            expressions: 'https://docs.chatwoot.com/flows/expressions',
-          },
-          forceSaveOnLoad: false,
-          showNewUpdates: true,
-        };
+      if (!this.$refs.flowEditorFrame?.contentWindow) {
+        console.warn('FlowEditor iframe not ready yet');
+        return;
+      }
 
-        const eventData = {
-          event: 'appContext',
-          data: {
-            ...this.dashboardAppContext,
-            flowEditorConfig: flowEditorConfig,
-          },
-        };
+      // Create clean, serializable config object
+      const cleanFlowEditorConfig = {
+        flowId: this.flowId,
+        flowType: this.flowType,
+        accountId: this.accountId,
+        token: this.flowEditorToken,
+        apiBaseUrl: this.apiBaseUrl,
+        endpoints: {
+          flows: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flows`,
+          contacts: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/contacts`,
+          conversations: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/conversations`,
+          messages: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/messages`,
+        },
+      };
 
-        // Use the same origin for postMessage communication (HTTPS)
-        let targetOrigin = window.location.origin;
+      // Create the event data with safe serialization
+      const eventData = {
+        type: 'chatwoot_context',
+        data: {
+          dashboardAppContext: this.dashboardAppContext,
+          flowEditorConfig: cleanFlowEditorConfig,
+        },
+      };
 
+      // Double-check serialization before sending
+      try {
+        // First, test if the data can be JSON serialized
+        const testSerialization = JSON.stringify(eventData);
+        
+        // If that works, parse it back to ensure it's clean
+        const serializableData = JSON.parse(testSerialization);
+        
+        // Send the verified serializable data
         this.$refs.flowEditorFrame.contentWindow.postMessage(
-          JSON.stringify(eventData),
-          targetOrigin
+          serializableData,
+          'http://localhost:8000'
         );
+        console.log('Context sent to FlowEditor successfully');
+      } catch (error) {
+        console.error('Failed to serialize context data:', error);
+        
+        // Ultimate fallback: send only essential data
+        const minimalEventData = {
+          type: 'chatwoot_context',
+          data: {
+            dashboardAppContext: {
+              account: { 
+                id: String(this.accountId || ''),
+                name: String(this.currentAccount?.name || '')
+              },
+              user: { 
+                id: String(this.currentUser?.id || ''),
+                name: String(this.currentUser?.name || ''),
+                email: String(this.currentUser?.email || '')
+              },
+              flowId: String(this.flowId || ''),
+              mode: this.flowId ? 'edit' : 'create',
+              accessToken: String(this.flowEditorToken || ''),
+            },
+            flowEditorConfig: {
+              flowId: String(this.flowId || ''),
+              accountId: String(this.accountId || ''),
+              token: String(this.flowEditorToken || ''),
+            },
+          },
+        };
+        
+        try {
+          this.$refs.flowEditorFrame.contentWindow.postMessage(
+            minimalEventData,
+            'http://localhost:8000'
+          );
+          console.log('Minimal context sent to FlowEditor as fallback');
+        } catch (fallbackError) {
+          console.error('Even minimal context failed to serialize:', fallbackError);
+        }
       }
     },
     handleMessage(event) {
-      // Only accept messages from the FlowEditor origin
-      const allowedOrigins = [
-        'http://localhost:8000',
-        'https://floweditor.chatwoot.com',
-      ];
-      if (!allowedOrigins.includes(event.origin)) {
+      // Only accept messages from FlowEditor origins
+      if (
+        event.origin !== 'http://localhost:8000' &&
+        event.origin !== 'https://floweditor.chatwoot.com'
+      ) {
         return;
       }
 
-      let data;
-      try {
-        data =
-          typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
-      } catch (error) {
-        // Failed to parse message data as JSON
+      // Send context to FlowEditor when it's ready
+      if (event.data && event.data.type === 'floweditor_ready') {
+        this.sendContextToFlowEditor();
         return;
       }
 
-      if (typeof data !== 'object' || data === null) {
-        // Invalid message data type
-        return;
-      }
+      const { type, data } = event.data;
 
-      // Handle different message types from FlowEditor
-      switch (data.type) {
+      switch (type) {
         case 'flow_saved':
           this.handleFlowSaved(data);
           break;
         case 'flow_loaded':
-          // Flow loaded successfully in FlowEditor
+          console.log('Flow loaded in FlowEditor:', data);
           break;
         default:
-          // Unhandled message from FlowEditor
+          console.log('Unknown message type from FlowEditor:', type);
           break;
       }
     },

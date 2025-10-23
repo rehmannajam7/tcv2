@@ -335,7 +335,7 @@ Rails.application.routes.draw do
             resources :revisions, only: [:index]
             post :simulate_start, to: 'simulate#start'
             post :simulate_resume, to: 'simulate#resume'
-            get :token, to: 'tokens#show'
+            get :tokens, to: 'tokens#show'
           end
 
           # FlowEditor direct endpoint aliases (for compatibility)
