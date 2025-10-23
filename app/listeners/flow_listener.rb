@@ -4,26 +4,32 @@ class FlowListener < BaseListener
 
   def message_created(event)
     trigger_flows_for_event(MESSAGE_CREATED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   def conversation_created(event)
     trigger_flows_for_event(CONVERSATION_CREATED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   def conversation_opened(event)
     trigger_flows_for_event(CONVERSATION_OPENED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   def conversation_resolved(event)
     trigger_flows_for_event(CONVERSATION_RESOLVED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   def conversation_status_changed(event)
     trigger_flows_for_event(CONVERSATION_STATUS_CHANGED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   def first_reply_created(event)
     trigger_flows_for_event(FIRST_REPLY_CREATED, event.data)
+    broadcast_flow_activity_update(event.data)
   end
 
   private
@@ -40,6 +46,41 @@ class FlowListener < BaseListener
   rescue StandardError => e
     Rails.logger.error "Flow listener error: #{e.message}"
     ChatwootExceptionTracker.new(e).capture_exception
+  end
+
+  def broadcast_flow_activity_update(event_data)
+    # Broadcast flow activity updates to connected clients via ActionCable
+    # This replaces the need for aggressive polling in the flow editor
+    account = extract_account_from_event_data(event_data)
+    return unless account
+
+    # Only broadcast if there are active flows for this account
+    return unless account.flows.active.exists?
+
+    # Prepare activity data for broadcast
+    activity_data = {
+      account_id: account.id,
+      timestamp: Time.current.iso8601,
+      event_type: 'flow_activity_update',
+      has_activity: true
+    }
+
+    # Broadcast to account members (agents/admins who can access flows)
+    tokens = account_member_tokens(account)
+    
+    ::ActionCableBroadcastJob.perform_later(
+      tokens,
+      'flow.activity_updated',
+      activity_data
+    )
+  rescue StandardError => e
+    Rails.logger.error "Flow activity broadcast error: #{e.message}"
+    # Don't re-raise to avoid breaking the main flow
+  end
+
+  def account_member_tokens(account)
+    # Get tokens for all account members who can access flows
+    account.users.where(role: %w[administrator agent]).map(&:pubsub_token)
   end
 
   def flows_enabled_for_account?(event_data)

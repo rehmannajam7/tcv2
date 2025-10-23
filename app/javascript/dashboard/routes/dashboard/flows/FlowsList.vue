@@ -236,24 +236,19 @@ export default {
         const response = await FlowsAPI.getFlows();
         this.flows = response.data || [];
       } catch (error) {
-        console.error('Error loading flows:', error);
-        this.$toast.error('Failed to load flows');
-        this.flows = [];
-      } finally {
+        // Error loading flows
         this.isLoading = false;
       }
+      this.flows = [];
     },
     createNewFlow() {
       this.showCreateModal = true;
     },
-    editFlow(flowId) {
-      console.log('Navigating to flow editor with flowId:', flowId);
+    navigateToFlowEditor(flowId = null) {
+      // Navigate to flow editor with flowId
       this.$router.push({
         name: 'flow_editor',
-        params: { 
-          accountId: this.accountId,
-          flowId: String(flowId)
-        }
+        params: { accountId: this.accountId, flowId },
       });
     },
     confirmDeleteFlow(flow) {
@@ -277,7 +272,7 @@ export default {
         
         this.$toast.success('Flow deleted successfully');
       } catch (error) {
-        console.error('Error deleting flow:', error);
+        // Error deleting flow
         this.$toast.error('Failed to delete flow');
       } finally {
         // Always reset the modal state regardless of success or failure

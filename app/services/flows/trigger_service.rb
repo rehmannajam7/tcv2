@@ -4,6 +4,15 @@ class Flows::TriggerService
 
   attr_reader :event_name, :event_data
 
+  # Rate limiting configuration
+  RATE_LIMIT_CONFIG = {
+    max_executions_per_minute: 60,
+    max_executions_per_conversation_per_minute: 5,
+    deduplication_window: 30.seconds,
+    circuit_breaker_threshold: 10,
+    circuit_breaker_timeout: 5.minutes
+  }.freeze
+
   def initialize(event_name:, event_data:)
     @event_name = event_name
     @event_data = event_data
@@ -17,11 +26,22 @@ class Flows::TriggerService
 
     Rails.logger.info "Processing flow triggers for event: #{event_name}, conversation: #{conversation.id}"
 
-    # Find and execute applicable flows
+    # Apply rate limiting and deduplication
+    return if rate_limited?(conversation)
+    return if duplicate_execution?(conversation)
+
+    # Find and execute applicable flows with circuit breaker protection
     applicable_flows = find_applicable_flows(conversation)
     
     applicable_flows.each do |flow|
-      execute_flow_async(flow, conversation)
+      next if flow_circuit_breaker_open?(flow)
+      
+      begin
+        execute_flow_async(flow, conversation)
+        record_successful_execution(flow, conversation)
+      rescue StandardError => e
+        handle_flow_execution_error(flow, conversation, e)
+      end
     end
   end
 
@@ -39,6 +59,105 @@ class Flows::TriggerService
     ]
 
     triggerable_events.include?(event_name)
+  end
+
+  def rate_limited?(conversation)
+    # Check global rate limit
+    global_key = "flow_executions:global:#{Time.current.strftime('%Y%m%d%H%M')}"
+    global_count = Rails.cache.read(global_key) || 0
+    
+    if global_count >= RATE_LIMIT_CONFIG[:max_executions_per_minute]
+      Rails.logger.warn "Global flow execution rate limit exceeded: #{global_count}/#{RATE_LIMIT_CONFIG[:max_executions_per_minute]}"
+      return true
+    end
+
+    # Check per-conversation rate limit
+    conversation_key = "flow_executions:conversation:#{conversation.id}:#{Time.current.strftime('%Y%m%d%H%M')}"
+    conversation_count = Rails.cache.read(conversation_key) || 0
+    
+    if conversation_count >= RATE_LIMIT_CONFIG[:max_executions_per_conversation_per_minute]
+      Rails.logger.warn "Conversation flow execution rate limit exceeded for conversation #{conversation.id}: #{conversation_count}/#{RATE_LIMIT_CONFIG[:max_executions_per_conversation_per_minute]}"
+      return true
+    end
+
+    # Increment counters
+    Rails.cache.write(global_key, global_count + 1, expires_in: 1.minute)
+    Rails.cache.write(conversation_key, conversation_count + 1, expires_in: 1.minute)
+
+    false
+  end
+
+  def duplicate_execution?(conversation)
+    # Create a unique key for this execution context
+    execution_key = generate_execution_key(conversation)
+    
+    # Check if we've already processed this exact scenario recently
+    if Rails.cache.exist?(execution_key)
+      Rails.logger.info "Duplicate flow execution detected for conversation #{conversation.id}, skipping"
+      return true
+    end
+
+    # Mark this execution to prevent duplicates
+    Rails.cache.write(execution_key, true, expires_in: RATE_LIMIT_CONFIG[:deduplication_window])
+    false
+  end
+
+  def generate_execution_key(conversation)
+    # Create a unique key based on event, conversation, and recent message content
+    key_components = [
+      event_name,
+      conversation.id,
+      conversation.status,
+      conversation.updated_at.to_i
+    ]
+
+    # Include message content hash for message-based events
+    if event_data[:message]
+      message = event_data[:message]
+      key_components << Digest::MD5.hexdigest(message.content.to_s)
+    end
+
+    "flow_execution:#{Digest::MD5.hexdigest(key_components.join(':'))}"
+  end
+
+  def flow_circuit_breaker_open?(flow)
+    circuit_key = "flow_circuit_breaker:#{flow.id}"
+    failure_count = Rails.cache.read("#{circuit_key}:failures") || 0
+    
+    if failure_count >= RATE_LIMIT_CONFIG[:circuit_breaker_threshold]
+      last_failure = Rails.cache.read("#{circuit_key}:last_failure")
+      if last_failure && (Time.current - last_failure) < RATE_LIMIT_CONFIG[:circuit_breaker_timeout]
+        Rails.logger.warn "Circuit breaker open for flow #{flow.id}, skipping execution"
+        return true
+      else
+        # Reset circuit breaker after timeout
+        Rails.cache.delete("#{circuit_key}:failures")
+        Rails.cache.delete("#{circuit_key}:last_failure")
+      end
+    end
+
+    false
+  end
+
+  def record_successful_execution(flow, conversation)
+    # Reset circuit breaker failure count on successful execution
+    circuit_key = "flow_circuit_breaker:#{flow.id}"
+    Rails.cache.delete("#{circuit_key}:failures")
+    Rails.cache.delete("#{circuit_key}:last_failure")
+  end
+
+  def handle_flow_execution_error(flow, conversation, error)
+    Rails.logger.error "Flow execution error for flow #{flow.id}, conversation #{conversation.id}: #{error.message}"
+    
+    # Increment circuit breaker failure count
+    circuit_key = "flow_circuit_breaker:#{flow.id}"
+    failure_count = (Rails.cache.read("#{circuit_key}:failures") || 0) + 1
+    
+    Rails.cache.write("#{circuit_key}:failures", failure_count, expires_in: RATE_LIMIT_CONFIG[:circuit_breaker_timeout])
+    Rails.cache.write("#{circuit_key}:last_failure", Time.current, expires_in: RATE_LIMIT_CONFIG[:circuit_breaker_timeout])
+    
+    # Track error for monitoring
+    ChatwootExceptionTracker.new(error, account: conversation.account).capture_exception
   end
 
   def extract_conversation_from_event

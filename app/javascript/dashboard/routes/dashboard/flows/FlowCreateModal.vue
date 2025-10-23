@@ -201,33 +201,8 @@ export default {
         this.$toast.success(this.$t('FLOWS.CREATE_MODAL.SUCCESS_MESSAGE'));
         
       } catch (error) {
-        console.error('Error creating flow:', error);
-        
-        // Handle different error response formats
-        if (error?.response?.data?.errors) {
-          // Handle validation errors - set them in the errors object for inline display
-          const serverErrors = error.response.data.errors;
-          this.errors = {};
-          
-          // Map server validation errors to form field errors
-          Object.keys(serverErrors).forEach(field => {
-            const fieldErrors = serverErrors[field];
-            if (Array.isArray(fieldErrors)) {
-              this.errors[field] = fieldErrors.join(', ');
-            } else {
-              this.errors[field] = fieldErrors;
-            }
-          });
-          
-          // Don't show toast for validation errors since they're displayed inline
-        } else {
-          // Handle other types of errors with toast
-          let errorMessage = this.$t('FLOWS.CREATE_MODAL.ERROR_MESSAGE');
-          if (error?.response?.data?.message) {
-            errorMessage = error.response.data.message;
-          }
-          this.$toast.error(errorMessage);
-        }
+        // Error creating flow
+        this.$toast.error('Failed to create flow');
       } finally {
         this.isCreating = false;
       }
