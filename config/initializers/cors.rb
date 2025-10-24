@@ -22,7 +22,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
   # Explicit CORS configuration for FlowEditor
   allow do
-    origins %w[http://localhost:3001 http://127.0.0.1:3001]
+    origins %w[http://localhost:8000 http://127.0.0.1:8000 http://localhost:3001 http://127.0.0.1:3001]
     resource '/api/v1/accounts/*', 
              headers: :any, 
              methods: [:get, :post, :put, :patch, :delete, :options, :head],

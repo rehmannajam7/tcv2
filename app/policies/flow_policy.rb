@@ -22,4 +22,8 @@ class FlowPolicy < ApplicationPolicy
   def revisions?
     @account_user.administrator? || @account_user.agent?
   end
+
+  def save_revision?
+    @account_user.administrator?
+  end
 end

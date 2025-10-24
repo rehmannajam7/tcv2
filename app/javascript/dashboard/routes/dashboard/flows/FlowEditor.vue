@@ -31,7 +31,7 @@ export default {
     }),
     flowEditorUrl() {
       // Point to local FlowEditor UI server for development
-      const baseUrl = `http://localhost:3001`;
+      const baseUrl = `http://localhost:8000`;
 
       const params = new URLSearchParams();
 

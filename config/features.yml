@@ -187,3 +187,6 @@
 - name: whatsapp_campaign
   display_name: WhatsApp Campaign
   enabled: false
+- name: flow_editor
+  display_name: Flow Editor
+  enabled: true

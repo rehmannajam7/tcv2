@@ -1,6 +1,6 @@
 class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::BaseController
+  before_action :set_flow, only: [:show, :update, :destroy, :save_revision]
   before_action :check_authorization
-  before_action :set_flow, only: [:show, :update, :destroy]
 
   def index
     @flows = Current.account.flows.order(:name)
@@ -45,7 +45,12 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::BaseCo
   end
 
   def save_revision
-    @flow = Current.account.flows.find(params[:flow_id])
+    Rails.logger.info "=== SAVE_REVISION DEBUG ==="
+    Rails.logger.info "Params: #{params.inspect}"
+    Rails.logger.info "Flow ID: #{params[:id]}"
+    Rails.logger.info "Flow found: #{@flow.inspect}"
+    Rails.logger.info "Definition: #{params[:definition]}"
+    Rails.logger.info "==========================="
     
     # Update the flow with the new definition from FlowEditor
     if @flow.update(flow_data: params[:definition])
@@ -72,7 +77,15 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::BaseCo
   private
 
   def set_flow
+    Rails.logger.info "=== SET_FLOW DEBUG ==="
+    Rails.logger.info "Params ID: #{params[:id]}"
+    Rails.logger.info "Current account: #{Current.account&.id}"
+    Rails.logger.info "Available flows: #{Current.account&.flows&.pluck(:id)}"
+    Rails.logger.info "======================"
+    
     @flow = Current.account.flows.find(params[:id])
+    
+    Rails.logger.info "Flow found: #{@flow.inspect}"
   end
 
   def flow_params
@@ -97,6 +110,11 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::BaseCo
   end
 
   def check_authorization
-    authorize :flow, :index?
+    case action_name
+    when 'save_revision'
+      authorize @flow, :save_revision?
+    else
+      authorize :flow, :index?
+    end
   end
 end
