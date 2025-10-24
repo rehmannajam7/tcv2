@@ -236,10 +236,7 @@ export default {
         const response = await FlowsAPI.getFlows();
         this.flows = response.data || [];
       } catch (error) {
-        console.error('Error loading flows:', error);
-        this.$toast.error('Failed to load flows');
-        this.flows = [];
-      } finally {
+        // Error loading flows
         this.isLoading = false;
       }
     },

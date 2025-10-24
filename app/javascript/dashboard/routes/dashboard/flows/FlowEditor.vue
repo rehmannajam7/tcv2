@@ -63,9 +63,13 @@ export default {
     },
     dashboardAppContext() {
       // Create a completely safe, serializable version of the context
-      const safeSerialize = (obj) => {
+      const safeSerialize = obj => {
         if (obj === null || obj === undefined) return null;
-        if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean') {
+        if (
+          typeof obj === 'string' ||
+          typeof obj === 'number' ||
+          typeof obj === 'boolean'
+        ) {
           return obj;
         }
         if (Array.isArray(obj)) {
@@ -73,56 +77,80 @@ export default {
         }
         if (typeof obj === 'object') {
           const result = {};
-          for (const [key, value] of Object.entries(obj)) {
-            if (typeof value !== 'function' && typeof value !== 'symbol' && typeof value !== 'undefined') {
+          Object.entries(obj).forEach(([key, value]) => {
+            if (
+              typeof value !== 'function' &&
+              typeof value !== 'symbol' &&
+              typeof value !== 'undefined'
+            ) {
               try {
                 result[key] = safeSerialize(value);
               } catch (e) {
                 // Skip properties that can't be serialized
-                console.warn(`Skipping property ${key} due to serialization error:`, e);
               }
             }
-          }
+          });
           return result;
         }
         return null;
       };
 
-      const cleanAccount = this.currentAccount ? safeSerialize({
-        id: this.currentAccount.id,
-        name: this.currentAccount.name,
-        locale: this.currentAccount.locale,
-        domain: this.currentAccount.domain,
-        support_email: this.currentAccount.support_email,
-        // Only include primitive values from features and custom_attributes
-        features: this.currentAccount.features ? Object.keys(this.currentAccount.features).reduce((acc, key) => {
-          const value = this.currentAccount.features[key];
-          if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-            acc[key] = value;
-          }
-          return acc;
-        }, {}) : {},
-        custom_attributes: this.currentAccount.custom_attributes ? Object.keys(this.currentAccount.custom_attributes).reduce((acc, key) => {
-          const value = this.currentAccount.custom_attributes[key];
-          if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
-            acc[key] = value;
-          }
-          return acc;
-        }, {}) : {}
-      }) : null;
+      const cleanAccount = this.currentAccount
+        ? safeSerialize({
+            id: this.currentAccount.id,
+            name: this.currentAccount.name,
+            locale: this.currentAccount.locale,
+            domain: this.currentAccount.domain,
+            support_email: this.currentAccount.support_email,
+            // Only include primitive values from features and custom_attributes
+            features: this.currentAccount.features
+              ? Object.keys(this.currentAccount.features).reduce((acc, key) => {
+                  const value = this.currentAccount.features[key];
+                  if (
+                    typeof value === 'string' ||
+                    typeof value === 'number' ||
+                    typeof value === 'boolean'
+                  ) {
+                    acc[key] = value;
+                  }
+                  return acc;
+                }, {})
+              : {},
+            custom_attributes: this.currentAccount.custom_attributes
+              ? Object.keys(this.currentAccount.custom_attributes).reduce(
+                  (acc, key) => {
+                    const value = this.currentAccount.custom_attributes[key];
+                    if (
+                      typeof value === 'string' ||
+                      typeof value === 'number' ||
+                      typeof value === 'boolean'
+                    ) {
+                      acc[key] = value;
+                    }
+                    return acc;
+                  },
+                  {}
+                )
+              : {},
+          })
+        : null;
 
-      const cleanUser = this.currentUser ? safeSerialize({
-        id: this.currentUser.id,
-        name: this.currentUser.name,
-        email: this.currentUser.email,
-        avatar_url: this.currentUser.avatar_url,
-        role: this.currentUser.role,
-        accounts: this.currentUser.accounts ? this.currentUser.accounts.map(acc => ({
-          id: acc.id,
-          name: acc.name,
-          role: acc.role
-        })) : []
-      }) : null;
+      const cleanUser = this.currentUser
+        ? safeSerialize({
+            id: this.currentUser.id,
+            name: this.currentUser.name,
+            email: this.currentUser.email,
+            avatar_url: this.currentUser.avatar_url,
+            role: this.currentUser.role,
+            accounts: this.currentUser.accounts
+              ? this.currentUser.accounts.map(acc => ({
+                  id: acc.id,
+                  name: acc.name,
+                  role: acc.role,
+                }))
+              : [],
+          })
+        : null;
 
       return {
         account: cleanAccount,
@@ -146,7 +174,7 @@ export default {
   mounted() {
     // FlowEditor iframe loaded successfully
     this.setupMessageListener();
-    
+
     // Send context to FlowEditor after a short delay to ensure iframe is ready
     setTimeout(() => {
       this.sendContextToFlowEditor();
@@ -160,14 +188,14 @@ export default {
       try {
         // Ensure currentAccount is available
         if (!this.currentAccount || !this.currentAccount.id) {
-          console.warn('Current account not available for token fetch');
+          // Current account not available for token fetch
           return;
         }
-        
+
         // Create axios instance with proper authentication headers
         const { apiHost = '' } = window.chatwootConfig || {};
         const authHeaders = {};
-        
+
         if (Auth.hasAuthCookie()) {
           const {
             'access-token': accessToken,
@@ -190,13 +218,16 @@ export default {
           { headers: authHeaders }
         );
         this.flowEditorToken = response.data.token;
-        console.log('FlowEditor JWT token fetched successfully');
       } catch (error) {
-        console.error('Failed to fetch FlowEditor token:', error);
+        // Failed to fetch FlowEditor token
         if (error.response) {
-          this.$toast.error(`Failed to authenticate with FlowEditor: ${error.response.data?.message || error.response.statusText}`);
+          this.$toast.error(
+            `Failed to authenticate with FlowEditor: ${error.response.data?.message || error.response.statusText}`
+          );
         } else {
-          this.$toast.error('Failed to authenticate with FlowEditor');
+          this.$toast.error(
+            'Failed to authenticate with FlowEditor. Please try again.'
+          );
         }
       }
     },
@@ -208,8 +239,11 @@ export default {
       this.isLoading = false;
     },
     sendContextToFlowEditor() {
-      if (!this.$refs.flowEditorFrame?.contentWindow) {
-        console.warn('FlowEditor iframe not ready yet');
+      if (
+        !this.$refs.flowEditorFrame ||
+        !this.$refs.flowEditorFrame.contentWindow
+      ) {
+        // FlowEditor iframe not ready yet
         return;
       }
 
@@ -241,32 +275,29 @@ export default {
       try {
         // First, test if the data can be JSON serialized
         const testSerialization = JSON.stringify(eventData);
-        
+
         // If that works, parse it back to ensure it's clean
         const serializableData = JSON.parse(testSerialization);
-        
+
         // Send the verified serializable data
         this.$refs.flowEditorFrame.contentWindow.postMessage(
           serializableData,
           'http://localhost:8000'
         );
-        console.log('Context sent to FlowEditor successfully');
       } catch (error) {
-        console.error('Failed to serialize context data:', error);
-        
         // Ultimate fallback: send only essential data
         const minimalEventData = {
           type: 'chatwoot_context',
           data: {
             dashboardAppContext: {
-              account: { 
+              account: {
                 id: String(this.accountId || ''),
-                name: String(this.currentAccount?.name || '')
+                name: String(this.currentAccount?.name || ''),
               },
-              user: { 
+              user: {
                 id: String(this.currentUser?.id || ''),
                 name: String(this.currentUser?.name || ''),
-                email: String(this.currentUser?.email || '')
+                email: String(this.currentUser?.email || ''),
               },
               flowId: String(this.flowId || ''),
               mode: this.flowId ? 'edit' : 'create',
@@ -279,15 +310,14 @@ export default {
             },
           },
         };
-        
+
         try {
           this.$refs.flowEditorFrame.contentWindow.postMessage(
             minimalEventData,
             'http://localhost:8000'
           );
-          console.log('Minimal context sent to FlowEditor as fallback');
         } catch (fallbackError) {
-          console.error('Even minimal context failed to serialize:', fallbackError);
+          // Silent fallback - no console logging
         }
       }
     },
@@ -313,10 +343,10 @@ export default {
           this.handleFlowSaved(data);
           break;
         case 'flow_loaded':
-          console.log('Flow loaded in FlowEditor:', data);
+          // Flow loaded successfully
           break;
         default:
-          console.log('Unknown message type from FlowEditor:', type);
+          // Unknown message type
           break;
       }
     },
