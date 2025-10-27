@@ -1,9 +1,6 @@
-class Api::V1::Accounts::FlowEditor::EditorController < Api::V1::Accounts::BaseController
-  # Skip authentication for flow editor endpoints to allow direct access
-  skip_before_action :authenticate_user!, only: [:index]
-  skip_before_action :authenticate_access_token!, only: [:index]
-  skip_before_action :validate_bot_access_token!, only: [:index]
-  skip_before_action :current_account, only: [:index]
+class Api::V1::Accounts::FlowEditor::EditorController < Api::V1::Accounts::FlowEditor::BaseController
+  # Skip JWT authentication for the editor config endpoint
+  skip_before_action :authenticate_flow_editor_token!, only: [:index]
 
   def index
     # Return editor configuration data in the format expected by FlowEditor

@@ -1,4 +1,4 @@
-class Api::V1::Accounts::FlowEditor::CompletionController < Api::V1::Accounts::BaseController
+class Api::V1::Accounts::FlowEditor::CompletionController < Api::V1::Accounts::FlowEditor::BaseController
   before_action :check_authorization
 
   def index

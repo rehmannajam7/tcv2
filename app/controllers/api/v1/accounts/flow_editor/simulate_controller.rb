@@ -1,4 +1,4 @@
-class Api::V1::Accounts::FlowEditor::SimulateController < ApplicationController
+class Api::V1::Accounts::FlowEditor::SimulateController < Api::V1::Accounts::FlowEditor::BaseController
   def start
     Rails.logger.info "SimulateController: start action called"
     

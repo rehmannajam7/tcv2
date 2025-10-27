@@ -1,4 +1,4 @@
-class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::BaseController
+class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEditor::BaseController
   before_action :set_flow, only: [:show, :update, :destroy, :save_revision]
   before_action :check_authorization
 
