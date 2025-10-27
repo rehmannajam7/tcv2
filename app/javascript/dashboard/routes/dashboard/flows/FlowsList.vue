@@ -231,12 +231,14 @@ export default {
       });
     },
     async loadFlows() {
+      this.isLoading = true;
       try {
-        this.isLoading = true;
         const response = await FlowsAPI.getFlows();
         this.flows = response.data || [];
       } catch (error) {
         // Error loading flows
+        // Silent fail - keep UX responsive
+      } finally {
         this.isLoading = false;
       }
     },

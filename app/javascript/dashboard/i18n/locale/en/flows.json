@@ -69,6 +69,13 @@
       "SUCCESS_MESSAGE": "Flow created successfully! You can now design your flow.",
       "ERROR_MESSAGE": "Failed to create flow. Please try again."
     },
+    "EDIT_FLOW": "Edit Flow",
+    "CREATE_NEW_FLOW": "Create New Flow",
+    "DESIGN_DESCRIPTION": "Design and configure your conversation flow",
+    "LOADING_EDITOR": "Loading Editor...",
+    "FEATURE_NOT_ENABLED_TITLE": "Flow Editor Not Available",
+    "FEATURE_NOT_ENABLED_MESSAGE": "The Flow Editor feature is not enabled for your account. This feature allows you to create and manage automated conversation flows.",
+    "CONTACT_ADMIN_MESSAGE": "Please contact your administrator to enable this feature.",
     "EDIT": {
       "TITLE": "Edit Flow",
       "SUCCESS_MESSAGE": "Flow updated successfully"

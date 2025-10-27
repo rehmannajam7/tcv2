@@ -23,15 +23,24 @@ export default {
     return {
       isLoading: false, // Start with false so iframe can render immediately
       flowEditorToken: null, // JWT token for FlowEditor API authentication
+      pendingAcks: new Map(), // Track pending message acknowledgments
     };
   },
   computed: {
     ...mapGetters({
       currentUser: 'getCurrentUser',
+      isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
     }),
+    isFlowEditorEnabled() {
+      return this.isFeatureEnabledonAccount(this.accountId, 'flow_editor');
+    },
     flowEditorUrl() {
-      // Point to local FlowEditor UI server for development
-      const baseUrl = `http://localhost:8000`;
+      // Determine FlowEditor UI base dynamically
+      const configuredBase = (window.chatwootConfig && window.chatwootConfig.flowEditorUiBaseUrl) ? window.chatwootConfig.flowEditorUiBaseUrl : '';
+      const protocol = window.location.protocol || 'http:';
+      const hostname = window.location.hostname || 'localhost';
+      const defaultBase = `${protocol}//${hostname}:3001`;
+      const baseUrl = configuredBase || defaultBase;
 
       const params = new URLSearchParams();
 
@@ -238,126 +247,311 @@ export default {
       // FlowEditor iframe loaded successfully
       this.isLoading = false;
     },
-    sendContextToFlowEditor() {
-      if (
-        !this.$refs.flowEditorFrame ||
-        !this.$refs.flowEditorFrame.contentWindow
-      ) {
-        // FlowEditor iframe not ready yet
+    handleMessage(event) {
+      // Enhanced security check for allowed origins
+      const configuredOrigin = (window.chatwootConfig && window.chatwootConfig.flowEditorUiBaseUrl) ? window.chatwootConfig.flowEditorUiBaseUrl : '';
+      const protocol = window.location.protocol || 'http:';
+      const hostname = window.location.hostname || 'localhost';
+      const dynamicOrigin = `${protocol}//${hostname}:3001`;
+      const allowedOrigins = [configuredOrigin || dynamicOrigin, `${protocol}//${hostname}:8080`, 'http://127.0.0.1:3001', 'http://127.0.0.1:8080'];
+      
+      if (!allowedOrigins.includes(event.origin)) {
+        console.warn('FlowEditor: Rejected message from unauthorized origin:', event.origin);
         return;
       }
 
-      // Create clean, serializable config object
-      const cleanFlowEditorConfig = {
-        flowId: this.flowId,
-        flowType: this.flowType,
-        accountId: this.accountId,
-        token: this.flowEditorToken,
-        apiBaseUrl: this.apiBaseUrl,
-        endpoints: {
-          flows: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flows`,
-          contacts: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/contacts`,
-          conversations: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/conversations`,
-          messages: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/messages`,
-        },
-      };
+      // Validate message structure
+      if (!event.data || typeof event.data !== 'object') {
+        console.warn('FlowEditor: Invalid message format received');
+        return;
+      }
 
-      // Create the event data with safe serialization
-      const eventData = {
-        type: 'chatwoot_context',
-        data: {
-          dashboardAppContext: this.dashboardAppContext,
-          flowEditorConfig: cleanFlowEditorConfig,
-        },
-      };
+      const { type, data, messageId } = event.data;
 
-      // Double-check serialization before sending
+      // Log incoming messages for debugging
+      console.log('FlowEditor: Received message:', { type, data, messageId, origin: event.origin });
+
+      // Handle different message types with enhanced error handling
       try {
-        // First, test if the data can be JSON serialized
-        const testSerialization = JSON.stringify(eventData);
+        switch (type) {
+          case 'floweditor_ready':
+            this.handleFlowEditorReady(data);
+            break;
+          case 'flow_saved':
+            this.handleFlowSaved(data);
+            break;
+          case 'flow_loaded':
+            this.handleFlowLoaded(data);
+            break;
+          case 'flow_validation_error':
+            this.handleFlowValidationError(data);
+            break;
+          case 'request_auth_refresh':
+            this.handleAuthRefreshRequest(data);
+            break;
+          case 'request_token_refresh':
+            this.handleTokenRefreshRequest(data);
+            break;
+          case 'flow_execution_test':
+            this.handleFlowExecutionTest(data);
+            break;
+          case 'floweditor_error':
+            this.handleFlowEditorError(data);
+            break;
+          case 'floweditor_resize':
+            this.handleFlowEditorResize(data);
+            break;
+          default:
+            console.warn('FlowEditor: Unknown message type received:', type);
+            break;
+        }
 
-        // If that works, parse it back to ensure it's clean
-        const serializableData = JSON.parse(testSerialization);
-
-        // Send the verified serializable data
-        this.$refs.flowEditorFrame.contentWindow.postMessage(
-          serializableData,
-          'http://localhost:8000'
-        );
+        // Send acknowledgment if messageId is provided
+        if (messageId) {
+          this.sendMessageToFlowEditor('message_acknowledged', { messageId });
+        }
       } catch (error) {
-        // Ultimate fallback: send only essential data
-        const minimalEventData = {
-          type: 'chatwoot_context',
-          data: {
-            dashboardAppContext: {
-              account: {
-                id: String(this.accountId || ''),
-                name: String(this.currentAccount?.name || ''),
-              },
-              user: {
-                id: String(this.currentUser?.id || ''),
-                name: String(this.currentUser?.name || ''),
-                email: String(this.currentUser?.email || ''),
-              },
-              flowId: String(this.flowId || ''),
-              mode: this.flowId ? 'edit' : 'create',
-              accessToken: String(this.flowEditorToken || ''),
-            },
-            flowEditorConfig: {
-              flowId: String(this.flowId || ''),
-              accountId: String(this.accountId || ''),
-              token: String(this.flowEditorToken || ''),
-            },
-          },
-        };
-
-        try {
-          this.$refs.flowEditorFrame.contentWindow.postMessage(
-            minimalEventData,
-            'http://localhost:8000'
-          );
-        } catch (fallbackError) {
-          // Silent fallback - no console logging
+        console.error('FlowEditor: Error handling message:', error);
+        this.$toast.error('An error occurred while processing FlowEditor message');
+        
+        // Send error acknowledgment
+        if (messageId) {
+          this.sendMessageToFlowEditor('message_error', { 
+            messageId, 
+            error: error.message 
+          });
         }
       }
     },
-    handleMessage(event) {
-      // Only accept messages from FlowEditor origins
-      if (
-        event.origin !== 'http://localhost:8000' &&
-        event.origin !== 'https://floweditor.chatwoot.com'
-      ) {
-        return;
-      }
 
-      // Send context to FlowEditor when it's ready
-      if (event.data && event.data.type === 'floweditor_ready') {
-        this.sendContextToFlowEditor();
-        return;
-      }
+    // Enhanced method to send messages to FlowEditor with retry logic
+    sendMessageToFlowEditor(type, data = {}, options = {}) {
+      const { 
+        retry = true, 
+        maxRetries = 3, 
+        retryDelay = 1000,
+        requireAck = false 
+      } = options;
 
-      const { type, data } = event.data;
+      const messageId = this.generateMessageId();
+      const message = {
+        type,
+        data,
+        messageId,
+        timestamp: Date.now(),
+        source: 'chatwoot'
+      };
 
-      switch (type) {
-        case 'flow_saved':
-          this.handleFlowSaved(data);
-          break;
-        case 'flow_loaded':
-          // Flow loaded successfully
-          break;
-        default:
-          // Unknown message type
-          break;
-      }
+      const sendMessage = (attempt = 1) => {
+        if (!this.$refs.flowEditorFrame || !this.$refs.flowEditorFrame.contentWindow) {
+          if (attempt <= maxRetries && retry) {
+            console.warn(`FlowEditor: Iframe not ready, retrying (${attempt}/${maxRetries})`);
+            setTimeout(() => sendMessage(attempt + 1), retryDelay);
+            return;
+          }
+          console.error('FlowEditor: Cannot send message - iframe not available');
+          return Promise.reject(new Error('FlowEditor iframe not available'));
+        }
+
+        try {
+          console.log('FlowEditor: Sending message:', message);
+          const configuredOrigin = (window.chatwootConfig && window.chatwootConfig.flowEditorUiBaseUrl) ? window.chatwootConfig.flowEditorUiBaseUrl : '';
+          const protocol = window.location.protocol || 'http:';
+          const hostname = window.location.hostname || 'localhost';
+          const dynamicOrigin = `${protocol}//${hostname}:3001`;
+          const targetOrigin = configuredOrigin || dynamicOrigin;
+          this.$refs.flowEditorFrame.contentWindow.postMessage(
+            message,
+            targetOrigin
+          );
+
+          if (requireAck) {
+            return this.waitForAcknowledgment(messageId);
+          }
+          
+          return Promise.resolve();
+        } catch (error) {
+          console.error('FlowEditor: Error sending message:', error);
+          if (attempt <= maxRetries && retry) {
+            setTimeout(() => sendMessage(attempt + 1), retryDelay);
+          } else {
+            return Promise.reject(error);
+          }
+        }
+      };
+
+      return sendMessage();
     },
-    handleFlowSaved(flowData) {
-      // Show success message
-      this.$toast.success('Flow saved successfully');
 
-      // Optionally navigate back to flows list
-      if (flowData.navigateToList) {
+    // Generate unique message IDs
+    generateMessageId() {
+      return `msg_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    },
+
+    // Wait for message acknowledgment
+    waitForAcknowledgment(messageId, timeout = 5000) {
+      return new Promise((resolve, reject) => {
+        const timeoutId = setTimeout(() => {
+          this.pendingAcks.delete(messageId);
+          reject(new Error('Message acknowledgment timeout'));
+        }, timeout);
+
+        this.pendingAcks.set(messageId, { resolve, reject, timeoutId });
+      });
+    },
+
+    // Enhanced message handlers
+    handleFlowEditorReady(data) {
+      console.log('FlowEditor: FlowEditor is ready, sending context');
+      this.sendContextToFlowEditor();
+      this.$toast.success('FlowEditor loaded successfully');
+    },
+
+    handleFlowSaved(data) {
+      console.log('FlowEditor: Flow saved successfully', data);
+      this.$toast.success('Flow saved successfully');
+      
+      // Emit event for parent components
+      this.$emit('flow-saved', data);
+      
+      // Navigate back to flows list if requested
+      if (data && data.navigateToList) {
         this.goBack();
       }
+    },
+
+    handleFlowLoaded(data) {
+      console.log('FlowEditor: Flow loaded successfully', data);
+      this.isLoading = false;
+    },
+
+    handleFlowValidationError(data) {
+      console.error('FlowEditor: Flow validation error', data);
+      this.$toast.error(`Flow validation error: ${data.message || 'Unknown error'}`);
+    },
+
+    handleAuthRefreshRequest(data) {
+      console.log('FlowEditor: Auth refresh requested');
+      this.fetchFlowEditorToken().then(() => {
+        this.sendMessageToFlowEditor('auth_token_updated', {
+          token: this.flowEditorToken,
+          accountId: this.accountId
+        });
+      });
+    },
+
+    // Handle token refresh requests from FlowEditor
+    handleTokenRefreshRequest(data) {
+      console.log('FlowEditor: Token refresh requested by FlowEditor');
+      this.refreshFlowEditorToken().then(() => {
+        this.sendMessageToFlowEditor('auth_token_updated', {
+          token: this.flowEditorToken,
+          accountId: this.accountId,
+          timestamp: Date.now()
+        });
+      }).catch(error => {
+        console.error('FlowEditor: Failed to refresh token:', error);
+        this.sendMessageToFlowEditor('auth_token_error', {
+          error: 'Failed to refresh authentication token',
+          timestamp: Date.now()
+        });
+      });
+    },
+
+    // New method to refresh token using the refresh endpoint
+    async refreshFlowEditorToken() {
+      try {
+        const response = await axios.post(
+          `/api/v1/accounts/${this.accountId}/flow_editor/tokens_refresh`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${Auth.getAuthData().access_token}`,
+            },
+          }
+        );
+
+        if (response.data && response.data.token) {
+          this.flowEditorToken = response.data.token;
+          console.log('FlowEditor: Token refreshed successfully');
+          return response.data;
+        } else {
+          throw new Error('Invalid token response');
+        }
+      } catch (error) {
+        console.error('FlowEditor: Failed to refresh token:', error);
+        throw error;
+      }
+    },
+
+    handleFlowExecutionTest(data) {
+      console.log('FlowEditor: Flow execution test requested', data);
+      // TODO: Implement flow execution testing
+      this.$toast.info('Flow execution test feature coming soon');
+    },
+
+    handleFlowEditorError(data) {
+      console.error('FlowEditor: Error reported by FlowEditor', data);
+      this.$toast.error(`FlowEditor error: ${data.message || 'Unknown error'}`);
+    },
+
+    handleFlowEditorResize(data) {
+      if (data && data.height) {
+        const iframe = this.$refs.flowEditorFrame;
+        if (iframe) {
+          iframe.style.height = `${data.height}px`;
+        }
+      }
+    },
+
+    // Enhanced context sending with better error handling
+    sendContextToFlowEditor() {
+      if (!this.$refs.flowEditorFrame || !this.$refs.flowEditorFrame.contentWindow) {
+        console.warn('FlowEditor: Iframe not ready for context sending');
+        return;
+      }
+
+      // Create comprehensive context object
+      const contextData = {
+        dashboardAppContext: {
+          account: {
+            id: String(this.accountId || ''),
+            name: String(this.currentAccount?.name || ''),
+          },
+          user: {
+            id: String(this.currentUser?.id || ''),
+            name: String(this.currentUser?.name || ''),
+            email: String(this.currentUser?.email || ''),
+          },
+          flowId: String(this.flowId || ''),
+          mode: this.flowId ? 'edit' : 'create',
+          accessToken: String(this.flowEditorToken || ''),
+        },
+        flowEditorConfig: {
+          flowId: String(this.flowId || ''),
+          flowType: String(this.flowType || 'conversation'),
+          accountId: String(this.accountId || ''),
+          token: String(this.flowEditorToken || ''),
+          apiBaseUrl: String(this.apiBaseUrl || ''),
+          endpoints: {
+            flows: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/flows`,
+            saveRevision: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/flows`,
+            contacts: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/contacts`,
+            conversations: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/conversations`,
+            messages: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/messages`,
+          },
+        },
+      };
+
+      // Send context with retry logic
+      this.sendMessageToFlowEditor('chatwoot_context', contextData, {
+        retry: true,
+        maxRetries: 3,
+        retryDelay: 1000
+      }).catch(error => {
+        console.error('FlowEditor: Failed to send context after retries:', error);
+        this.$toast.error('Failed to initialize FlowEditor. Please refresh the page.');
+      });
     },
     goBack() {
       // Navigate back to the flows list page
@@ -403,8 +597,38 @@ export default {
       </div>
     </div>
 
+    <!-- Feature Not Enabled State -->
+    <div v-if="!isFlowEditorEnabled" class="flex items-center justify-center flex-1">
+      <div class="text-center max-w-md">
+        <div class="mb-4">
+          <svg
+            class="w-16 h-16 text-n-slate-8 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.314 16.5c-.77.833.192 2.5 1.732 2.5z"
+            />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-n-slate-12 mb-2">
+          {{ $t('FLOWS.FEATURE_NOT_ENABLED_TITLE') }}
+        </h3>
+        <p class="text-n-slate-11 mb-4">
+          {{ $t('FLOWS.FEATURE_NOT_ENABLED_MESSAGE') }}
+        </p>
+        <p class="text-sm text-n-slate-10">
+          {{ $t('FLOWS.CONTACT_ADMIN_MESSAGE') }}
+        </p>
+      </div>
+    </div>
+
     <!-- Loading State -->
-    <div v-if="isLoading" class="flex items-center justify-center flex-1">
+    <div v-else-if="isLoading" class="flex items-center justify-center flex-1">
       <div class="text-center">
         <div
           class="animate-spin rounded-full h-8 w-8 border-b-2 border-n-brand mx-auto mb-2"

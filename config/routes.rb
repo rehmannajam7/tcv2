@@ -336,6 +336,7 @@ Rails.application.routes.draw do
             post :simulate_start, to: 'simulate#start'
             post :simulate_resume, to: 'simulate#resume'
             get :tokens, to: 'tokens#show'
+            post :tokens_refresh, to: 'tokens#refresh'
           end
 
           # FlowEditor direct endpoint aliases (for compatibility)
