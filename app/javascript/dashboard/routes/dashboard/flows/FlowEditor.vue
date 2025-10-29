@@ -301,6 +301,9 @@ export default {
           case 'floweditor_resize':
             this.handleFlowEditorResize(data);
             break;
+          case 'flow_save_error':
+            this.handleFlowSaveError(data);
+            break;
           default:
             console.warn('FlowEditor: Unknown message type received:', type);
             break;
@@ -502,6 +505,14 @@ export default {
           iframe.style.height = `${data.height}px`;
         }
       }
+    },
+
+    handleFlowSaveError(data) {
+      console.error('FlowEditor: Flow save error reported', data);
+      this.$toast.error(`Flow save failed: ${data.message || data.error || 'Unknown error'}`);
+      
+      // Emit event for parent components
+      this.$emit('flow-save-error', data);
     },
 
     // Enhanced context sending with better error handling
