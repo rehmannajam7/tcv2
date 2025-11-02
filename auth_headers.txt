@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 0
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+Referrer-Policy: strict-origin-when-cross-origin
+Content-Type: application/json; charset=utf-8
+Vary: Accept
+access-token: lpyeIuep2Od3dA0QDUj2hw
+token-type: Bearer
+client: Y29eeSEkbxEBZNRiyfKFVw
+expiry: 1767214962
+uid: john@acme.inc
+Authorization: Bearer eyJhY2Nlc3MtdG9rZW4iOiJscHllSXVlcDJPZDNkQTBRRFVqMmh3IiwidG9rZW4tdHlwZSI6IkJlYXJlciIsImNsaWVudCI6IlkyOWVlU0VrYnhFQlpOUml5ZktGVnciLCJleHBpcnkiOiIxNzY3MjE0OTYyIiwidWlkIjoiam9obkBhY21lLmluYyJ9
+ETag: W/"ac9fb6f7c4164a7127f683d18b96995c"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: user.id=eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik1UWTMiLCJleHAiOm51bGwsInB1ciI6ImNvb2tpZS51c2VyLmlkIn19--682d68463e9876798e93eda7f9c685a7cff2c1c5; path=/; SameSite=Lax
+Set-Cookie: user.expires_at=eyJfcmFpbHMiOnsibWVzc2FnZSI6IklqSXdNalV0TVRBdE16RlVNakU2TXpJNk5ESXVNRFV6V2lJPSIsImV4cCI6bnVsbCwicHVyIjoiY29va2llLnVzZXIuZXhwaXJlc19hdCJ9fQ%3D%3D--9d20162475e9fddbcff59a4ac1e157a2f01e039c; path=/; SameSite=Lax
+X-Request-Id: 1c79f68a-31e3-45c1-a6fa-e2f9463e7a55
+X-Runtime: 0.258726
+Content-Length: 1084
+

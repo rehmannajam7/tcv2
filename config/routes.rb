@@ -445,6 +445,12 @@ Rails.application.routes.draw do
               get :grouped_conversation_metrics
             end
           end
+          resources :contact_analytics, only: [] do
+            collection do
+              get :activity_report
+              get :activity_report_csv
+            end
+          end
         end
       end
     end

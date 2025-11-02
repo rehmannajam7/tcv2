@@ -1,4 +1,11 @@
 class Api::V1::Accounts::FlowEditor::TokensController < Api::V1::Accounts::FlowEditor::BaseController
+  # Allow issuing/refreshing FlowEditor token without requiring an existing FlowEditor JWT
+  skip_before_action :authenticate_flow_editor_token!, only: [:show, :refresh]
+
+  # Authenticate user via DeviseTokenAuth and set Current.account context
+  include EnsureCurrentAccountHelper
+  before_action :authenticate_user!
+  before_action :current_account
   before_action :check_authorization
 
   def show

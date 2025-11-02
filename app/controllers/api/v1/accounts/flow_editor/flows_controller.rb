@@ -1,18 +1,24 @@
 class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEditor::BaseController
-  before_action :set_flow, only: [:show, :update, :destroy, :save_revision]
+  before_action :set_flow, only: [:show, :update, :destroy, :save_revision, :revisions]
   before_action :check_authorization
 
   def index
     @flows = Current.account.flows.order(:name)
-    render json: @flows.map { |flow| flow_json(flow) }
+    render json: {
+      results: @flows.map { |flow| flow_json(flow) },
+      next: nil
+    }
   end
 
   def show
-    render json: flow_json(@flow)
+    render json: {
+      results: [flow_json(@flow)],
+      next: nil
+    }
   end
 
   def create
-    @flow = Current.account.flows.build(flow_params)
+    @flow = Current.account.flows.build(normalized_flow_params)
     @flow.created_by = Current.user
     @flow.updated_by = Current.user
     
@@ -24,7 +30,7 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
   end
 
   def update
-    if @flow.update(flow_params)
+    if @flow.update(normalized_flow_params)
       render json: flow_json(@flow)
     else
       render json: { errors: @flow.errors }, status: :unprocessable_entity
@@ -38,10 +44,18 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
 
   # FlowEditor specific endpoints
   def revisions
-    @flow = Current.account.flows.find(params[:flow_id])
-    # For now, return the current flow as the only revision
-    # In the future, this could return actual revision history
-    render json: [flow_json(@flow)]
+    # Route is /flows/:id/revisions, so use :id not :flow_id
+    Rails.logger.info "=== REVISIONS DEBUG ==="
+    Rails.logger.info "Params ID: #{params[:id]}"
+    Rails.logger.info "Current account: #{Current.account&.id}"
+    Rails.logger.info "Available flows: #{Current.account&.flows&.pluck(:id)}"
+    Rails.logger.info "======================"
+    @flow = Current.account.flows.find(params[:id])
+    Rails.logger.info "Revisions flow found: #{@flow&.id}"
+    render json: {
+      results: [flow_json(@flow)],
+      next: nil
+    }
   end
 
   def save_revision
@@ -52,8 +66,26 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
     Rails.logger.info "Definition: #{params[:definition]}"
     Rails.logger.info "==========================="
     
-    # Update the flow with the new definition from FlowEditor
-    if @flow.update(flow_data: params[:definition])
+    # Normalize and validate the incoming definition before saving
+    definition_param = params[:definition]
+    normalized_definition_json = nil
+
+    begin
+      if definition_param.is_a?(String)
+        # Validate that the string is valid JSON
+        JSON.parse(definition_param)
+        normalized_definition_json = definition_param
+      else
+        # Convert hashes/arrays to JSON for storage
+        normalized_definition_json = definition_param.to_json
+      end
+    rescue JSON::ParserError => e
+      Rails.logger.error "Invalid flow definition JSON provided: #{e.message}"
+      return render json: { errors: { definition: ['is not valid JSON'] } }, status: :unprocessable_entity
+    end
+
+    # Update the flow with the normalized JSON definition
+    if @flow.update(flow_data: normalized_definition_json)
       # Return the format expected by FlowEditor's SaveResult interface
       render json: {
         revision: {
@@ -98,6 +130,12 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
       name: flow.name,
       description: flow.description,
       flow_data: flow.flow_data,
+      # FlowEditor expects a `definition` key containing the parsed JSON
+      definition: parsed_flow_data(flow),
+      # Provide FlowEditor metadata commonly used by clients
+      uuid: flow.floweditor_uuid,
+      revision: flow.updated_at.to_i,
+      version: "13.1",
       status: flow.status,
       trigger_type: flow.trigger_type,
       flow_type: flow.flow_type,
@@ -109,6 +147,7 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
     }
   end
 
+
   def check_authorization
     case action_name
     when 'save_revision'
@@ -117,4 +156,22 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
       authorize :flow, :index?
     end
   end
+  # Safely parse the stored JSON definition into an object for clients
+  def parsed_flow_data(flow)
+    return {} if flow.flow_data.blank?
+    JSON.parse(flow.flow_data)
+  rescue JSON::ParserError => e
+    Rails.logger.error "Invalid stored flow_data JSON for flow #{flow.id}: #{e.message}"
+    {}
+  end
+
+  # Normalize incoming params to ensure flow_data is stored as JSON string
+  def normalized_flow_params
+    fp = flow_params
+    if fp[:flow_data].present? && !fp[:flow_data].is_a?(String)
+      fp[:flow_data] = fp[:flow_data].to_json
+    end
+    fp
+  end
+
 end

@@ -404,15 +404,23 @@ export default {
     },
 
     // Enhanced message handlers
-    handleFlowEditorReady(data) {
-      console.log('FlowEditor: FlowEditor is ready, sending context');
+  handleFlowEditorReady(data) {
+    console.log('FlowEditor: FlowEditor is ready, sending context');
+    try {
       this.sendContextToFlowEditor();
-      this.$toast.success('FlowEditor loaded successfully');
-    },
+      if (this.$toast && typeof this.$toast.success === 'function') {
+        this.$toast.success('FlowEditor loaded successfully');
+      }
+    } catch (e) {
+      console.error('FlowEditor: Error in ready handler', e);
+    }
+  },
 
-    handleFlowSaved(data) {
-      console.log('FlowEditor: Flow saved successfully', data);
+  handleFlowSaved(data) {
+    console.log('FlowEditor: Flow saved successfully', data);
+    if (this.$toast && typeof this.$toast.success === 'function') {
       this.$toast.success('Flow saved successfully');
+    }
       
       // Emit event for parent components
       this.$emit('flow-saved', data);
@@ -428,10 +436,12 @@ export default {
       this.isLoading = false;
     },
 
-    handleFlowValidationError(data) {
-      console.error('FlowEditor: Flow validation error', data);
-      this.$toast.error(`Flow validation error: ${data.message || 'Unknown error'}`);
-    },
+  handleFlowValidationError(data) {
+    console.error('FlowEditor: Flow validation error', data);
+    if (this.$toast && typeof this.$toast.error === 'function') {
+      this.$toast.error(`Flow validation error: ${data?.message || 'Unknown error'}`);
+    }
+  },
 
     handleAuthRefreshRequest(data) {
       console.log('FlowEditor: Auth refresh requested');
@@ -493,10 +503,12 @@ export default {
       this.$toast.info('Flow execution test feature coming soon');
     },
 
-    handleFlowEditorError(data) {
-      console.error('FlowEditor: Error reported by FlowEditor', data);
-      this.$toast.error(`FlowEditor error: ${data.message || 'Unknown error'}`);
-    },
+  handleFlowEditorError(data) {
+    console.error('FlowEditor: Error reported by FlowEditor', data);
+    if (this.$toast && typeof this.$toast.error === 'function') {
+      this.$toast.error(`FlowEditor error: ${data?.message || 'Unknown error'}`);
+    }
+  },
 
     handleFlowEditorResize(data) {
       if (data && data.height) {
@@ -507,16 +519,18 @@ export default {
       }
     },
 
-    handleFlowSaveError(data) {
-      console.error('FlowEditor: Flow save error reported', data);
-      this.$toast.error(`Flow save failed: ${data.message || data.error || 'Unknown error'}`);
+  handleFlowSaveError(data) {
+    console.error('FlowEditor: Flow save error reported', data);
+    if (this.$toast && typeof this.$toast.error === 'function') {
+      this.$toast.error(`Flow save failed: ${data?.message || data?.error || 'Unknown error'}`);
+    }
       
       // Emit event for parent components
       this.$emit('flow-save-error', data);
     },
 
     // Enhanced context sending with better error handling
-    sendContextToFlowEditor() {
+  sendContextToFlowEditor() {
       if (!this.$refs.flowEditorFrame || !this.$refs.flowEditorFrame.contentWindow) {
         console.warn('FlowEditor: Iframe not ready for context sending');
         return;
@@ -561,7 +575,9 @@ export default {
         retryDelay: 1000
       }).catch(error => {
         console.error('FlowEditor: Failed to send context after retries:', error);
-        this.$toast.error('Failed to initialize FlowEditor. Please refresh the page.');
+        if (this.$toast && typeof this.$toast.error === 'function') {
+          this.$toast.error('Failed to initialize FlowEditor. Please refresh the page.');
+        }
       });
     },
     goBack() {
