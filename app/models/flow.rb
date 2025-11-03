@@ -40,8 +40,12 @@
 #
 class Flow < ApplicationRecord
   belongs_to :account
-  belongs_to :created_by, class_name: 'User', foreign_key: 'created_by_id'
-  belongs_to :updated_by, class_name: 'User', foreign_key: 'updated_by_id'
+  belongs_to :created_by, class_name: 'User'
+  belongs_to :updated_by, class_name: 'User'
+
+  # Associations for inbox relationships
+  has_many :flow_inbox_associations, dependent: :destroy
+  has_many :inboxes, through: :flow_inbox_associations
 
   validates :name, presence: true, uniqueness: { scope: :account_id, message: 'must be unique within the account' }
   validates :account_id, presence: true

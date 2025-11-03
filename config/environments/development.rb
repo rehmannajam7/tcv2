@@ -79,8 +79,7 @@ Rails.application.configure do
   stdout_logger = ActiveSupport::Logger.new($stdout)
   stdout_logger.level = config.log_level
   file_logger = ActiveSupport::Logger.new(Rails.root.join('log', "#{Rails.env}.log"), 1, ENV.fetch('LOG_SIZE', '1024').to_i.megabytes)
-  stdout_logger.extend(ActiveSupport::Logger.broadcast(file_logger))
-  config.logger = stdout_logger
+  config.logger = ActiveSupport::BroadcastLogger.new(stdout_logger, file_logger)
 
   # Bullet configuration to fix the N+1 queries
   config.after_initialize do
