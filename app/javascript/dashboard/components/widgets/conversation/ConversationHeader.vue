@@ -13,6 +13,10 @@ import { conversationListPageURL } from 'dashboard/helper/URLHelper';
 import { snoozedReopenTime } from 'dashboard/helper/snoozeHelpers';
 import { useInbox } from 'dashboard/composables/useInbox';
 import { useI18n } from 'vue-i18n';
+import { useUISettings } from 'dashboard/composables/useUISettings';
+import { useMapGetter } from 'dashboard/composables/store';
+import { FEATURE_FLAGS } from 'dashboard/featureFlags';
+import ButtonV4 from 'dashboard/components-next/button/Button.vue';
 
 const props = defineProps({
   chat: {
@@ -31,9 +35,18 @@ const route = useRoute();
 const conversationHeader = ref(null);
 const { width } = useElementSize(conversationHeader);
 const { isAWebWidgetInbox } = useInbox();
+const { uiSettings, updateUISettings } = useUISettings();
 
 const currentChat = computed(() => store.getters.getSelectedChat);
 const accountId = computed(() => store.getters.getCurrentAccountId);
+
+const isFeatureEnabledonAccount = useMapGetter(
+  'accounts/isFeatureEnabledonAccount'
+);
+
+const isCaptainEnabled = computed(() =>
+  isFeatureEnabledonAccount.value(accountId.value, FEATURE_FLAGS.CAPTAIN)
+);
 
 const chatMetadata = computed(() => props.chat.meta);
 
@@ -90,6 +103,28 @@ const hasMultipleInboxes = computed(
 );
 
 const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
+
+const isContactSidebarOpen = computed(
+  () => uiSettings.value.is_contact_sidebar_open
+);
+
+const isCopilotPanelOpen = computed(
+  () => uiSettings.value.is_copilot_panel_open
+);
+
+const toggleContactPanel = () => {
+  updateUISettings({
+    is_contact_sidebar_open: !isContactSidebarOpen.value,
+    is_copilot_panel_open: false,
+  });
+};
+
+const toggleCopilotPanel = () => {
+  updateUISettings({
+    is_contact_sidebar_open: false,
+    is_copilot_panel_open: !isCopilotPanelOpen.value,
+  });
+};
 </script>
 
 <template>
@@ -152,6 +187,27 @@ const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
         class="hidden md:flex"
       />
       <MoreActions :conversation-id="currentChat.id" />
+      <ButtonV4
+        v-tooltip="$t('CONVERSATION.SIDEBAR.CONTACT')"
+        size="sm"
+        variant="ghost"
+        color="slate"
+        icon="i-lucide-user"
+        :class="{ 'bg-n-alpha-2': isContactSidebarOpen }"
+        class="rounded-md hover:bg-n-alpha-2"
+        @click="toggleContactPanel"
+      />
+      <ButtonV4
+        v-if="isCaptainEnabled"
+        v-tooltip="'Copilot'"
+        size="sm"
+        variant="ghost"
+        color="slate"
+        icon="i-lucide-bot"
+        :class="{ 'bg-n-alpha-2': isCopilotPanelOpen }"
+        class="rounded-md hover:bg-n-alpha-2"
+        @click="toggleCopilotPanel"
+      />
     </div>
   </div>
 </template>
