@@ -1,0 +1,180 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TimeoutControl > handles initial values 1`] = `
+<div
+  className="_timeout_control_container_ba30a6"
+>
+  <div
+    className="_left_section_ba30a6"
+  >
+    <SwitchElement
+      checked={true}
+      name="Timeout"
+      onChange={[Function]}
+      size="small"
+      title="Continue when there is no response"
+    />
+  </div>
+  <div
+    className="_drop_down_ba30a6"
+  >
+    <p
+      className="_timeout_label_ba30a6"
+    >
+      Wait for a response for:
+    </p>
+    <Connect(TembaSelect)
+      name="Timeout"
+      onChange={[Function]}
+      options={
+        [
+          {
+            "name": "15 seconds",
+            "value": "15",
+          },
+          {
+            "name": "30 seconds",
+            "value": "30",
+          },
+          {
+            "name": "45 seconds",
+            "value": "45",
+          },
+          {
+            "name": "1 minute",
+            "value": "60",
+          },
+          {
+            "name": "2 minutes",
+            "value": "120",
+          },
+          {
+            "name": "3 minutes",
+            "value": "180",
+          },
+          {
+            "name": "4 minutes",
+            "value": "240",
+          },
+          {
+            "name": "5 minutes",
+            "value": "300",
+          },
+          {
+            "name": "10 minutes",
+            "value": "600",
+          },
+          {
+            "name": "15 minutes",
+            "value": "900",
+          },
+          {
+            "name": "1 hour",
+            "value": "3600",
+          },
+          {
+            "name": "2 hours",
+            "value": "7200",
+          },
+          {
+            "name": "3 hours",
+            "value": "10800",
+          },
+          {
+            "name": "6 hours",
+            "value": "21600",
+          },
+          {
+            "name": "12 hours",
+            "value": "43200",
+          },
+          {
+            "name": "18 hours",
+            "value": "64800",
+          },
+          {
+            "name": "1 day",
+            "value": "86400",
+          },
+          {
+            "name": "2 days",
+            "value": "172800",
+          },
+          {
+            "name": "3 days",
+            "value": "259200",
+          },
+          {
+            "name": "1 week",
+            "value": "604800",
+          },
+        ]
+      }
+      style="sm"
+      value={
+        {
+          "name": "15 seconds",
+          "value": "15",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeoutControl > renders 1`] = `
+<div
+  className="_timeout_control_container_ba30a6"
+>
+  <div
+    className="_left_section_ba30a6"
+  >
+    <SwitchElement
+      checked={false}
+      name="Timeout"
+      onChange={[Function]}
+      size="small"
+      title="Continue when there is no response"
+    />
+  </div>
+</div>
+`;
+
+exports[`TimeoutControl > updates > check 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      120,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`TimeoutControl > updates > update 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      120,
+    ],
+    [
+      15,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

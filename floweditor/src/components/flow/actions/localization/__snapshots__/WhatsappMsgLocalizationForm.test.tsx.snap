@@ -1,0 +1,519 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WhatsappMsgLocalizationForm > should save translated quick replies 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [
+              "quick reply 1 spanish",
+            ],
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should save translated quick replies 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [
+              "quick reply 1 spanish",
+            ],
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [
+              "quick reply 1 spanish",
+              "quick reply 2 spanish",
+            ],
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should save updated message translation 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should save updated message translation 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "attachment": "image:https://example.com/image.png",
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should save updated message translation 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "attachment": "image:https://example.com/image.png",
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "attachment": "audio:https://example.com/audio_new.mp3",
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should save updated message translation 4`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "attachment": "image:https://example.com/image.png",
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "attachment": "audio:https://example.com/audio_new.mp3",
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "quick_replies": [],
+            "text": "new message",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should start with the correct values 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "action_url": "url de acción",
+            "attachment": "image:https://example.com/imagen.png",
+            "button_text": "texto del botón",
+            "footer": "pie de página",
+            "header_text": "texto de encabezado",
+            "quick_replies": [],
+            "text": "texto",
+          },
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+        {
+          "translations": {
+            "description": "descripción 2",
+            "title": "título 2",
+          },
+          "uuid": "550e8400-e29b-41d4-a716-446655440000",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should update an interactive message with list items 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should update an interactive message with list items 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+        {
+          "translations": {
+            "description": "descripción 2",
+            "title": "título 2",
+          },
+          "uuid": "550e8400-e29b-41d4-a716-446655440000",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WhatsappMsgLocalizationForm > should update an interactive message with list items 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 1",
+            "title": "título 1",
+          },
+          "uuid": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        },
+        {
+          "translations": {
+            "description": "descripción 2",
+            "title": "título 2",
+          },
+          "uuid": "550e8400-e29b-41d4-a716-446655440000",
+        },
+      ],
+    ],
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "action_url": "nuevo action url",
+            "button_text": "nuevo button text",
+            "footer": "nuevo footer",
+            "header_text": "nuevo header",
+            "quick_replies": [],
+            "text": "nuevo texto",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "description": "descripción 2",
+            "title": "título 2",
+          },
+          "uuid": "550e8400-e29b-41d4-a716-446655440000",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

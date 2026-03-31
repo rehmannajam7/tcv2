@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MultiChoiceInput > should render 1`] = `
+<Fragment>
+  <div />
+  <Connect(TembaSelect)
+    errors={[]}
+    expressions={true}
+    multi={true}
+    name="Multi Choice"
+    onChange={[Function]}
+    placeholder="Multi Choice"
+    searchable={true}
+    tags={true}
+    value={
+      [
+        {
+          "name": "one",
+          "value": "one",
+        },
+        {
+          "name": "two",
+          "value": "two",
+        },
+        {
+          "name": "three",
+          "value": "three",
+        },
+      ]
+    }
+  />
+</Fragment>
+`;

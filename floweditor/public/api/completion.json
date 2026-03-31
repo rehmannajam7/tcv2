@@ -1,0 +1,12 @@
+{
+  "context": {
+    "types": ["contact", "flow", "channel"],
+    "root": ["contact", "flow", "channel", "parent", "child", "run", "input", "webhook"]
+  },
+  "functions": [
+    {
+      "signature": "upper(text)",
+      "summary": "Converts text to uppercase"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+@import 'src/variables.module.scss';
+
+.titlebar {
+  padding: 0px;
+  width: auto;
+  color: #fff;
+
+  font-weight: normal;
+  text-align: center;
+  border: 0px solid transparent;
+
+  .titletext {
+    flex-grow: 1;
+  }
+
+  .new {
+    margin-left: $unnnic-spacing-xs;
+    background-color: $unnnic-color-neutral-white;
+    border-radius: $unnnic-border-radius-pill;
+    padding: 1px $unnnic-spacing-nano;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+    font-weight: $unnnic-font-weight-bold;
+    color: $unnnic-color-weni-900;
+  }
+
+  .normal {
+    padding: $unnnic-spacing-inset-xs;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: $unnnic-color-neutral-snow;
+    transition: all .2s ease;
+  }
+
+  .remove_confirm {
+    position: relative;
+    margin-top: -27px;
+    border: 0px solid $removal_confirmation;
+    background: $removal_confirmation;
+    padding: 6px 0px;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: flex;
+    z-index: 100;
+
+    .remove_button {
+      visibility: visible;
+    }
+  }
+
+  .remove_button {
+    visibility: hidden;
+  }
+
+  .up_button {
+    visibility: hidden;
+    width: 12px;
+  }
+
+  &:hover {
+    .remove_button {
+      visibility: visible;
+    }
+
+    .up_button {
+      visibility: visible;
+    }
+  }
+
+  .selected {
+    background-color: #C6FFF7 !important;
+    color: $unnnic-color-neutral-dark;
+  }
+}
+
+
+.removal_modal {
+  div[class="unnnic-modal-container-background-body-description-container"] {
+    padding-bottom: unset;
+  }
+}
+
+.removal_buttons {
+  display: flex;
+  gap: $unnnic-spacing-lg;
+
+  button {
+    flex: 1;
+  }
+}

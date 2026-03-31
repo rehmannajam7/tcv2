@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CallExternalServiceComp > should render 1`] = `
+<div
+  style={
+    {
+      "fontSize": "80%",
+      "textAlign": "center",
+    }
+  }
+>
+  <span
+    style={
+      {
+        "fontWeight": 400,
+      }
+    }
+  >
+    chatgpt dummy service
+  </span>
+</div>
+`;

@@ -1,0 +1,22 @@
+@import 'src/variables.module.scss';
+
+.options {
+  display: flex;
+  flex-direction: column;
+  row-gap: $unnnic-spacing-stack-nano;
+}
+
+.lead_in {
+  display: block;
+}
+
+.bucket_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: $unnnic-spacing-stack-sm;
+  gap: $unnnic-spacing-stack-sm $unnnic-spacing-inline-sm;
+}
+
+.bucket_name {
+  flex: 1 1 120px;
+}

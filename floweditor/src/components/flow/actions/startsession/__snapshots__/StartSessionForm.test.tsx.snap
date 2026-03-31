@@ -1,0 +1,3356 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StartSessionForm > render > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Start somebody else
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Start somebody else in a flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="__ele_8d991a_8d991a"
+          >
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_start_type"
+              id="temba_select_start_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_start_type"
+                    data-v-acea6376=""
+                    readonly=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_start_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_start_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select recipients manually"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 _selected_08dd12"
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients manually
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients from a query
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Create a new contact
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <p />
+        <div>
+          <div
+            class="_form_element_9ae69d"
+            data-testid="recipients"
+          >
+            <div
+              class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+            >
+              <div
+                class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+              >
+                Contacts
+              </div>
+              <div
+                class="_select_wrapper_4cce75"
+                data-testid="temba_select_contacts"
+                id="temba_select_contacts"
+              >
+                <div>
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-form sm _bold_placeholder_4cce75"
+                      data-testid="temba_select_input_contacts"
+                      data-v-acea6376=""
+                    >
+                      <!---->
+                      <div
+                        class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                        data-testid="temba_select_input_contacts"
+                        data-v-acea6376=""
+                        data-v-df38a188=""
+                        mask=""
+                      >
+                        <input
+                          class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                          data-testid="temba_select_input_contacts"
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
+                          hascloudycolor="false"
+                          iconright="arrow-button-down-1"
+                          placeholder="Select who should be started in the flow"
+                          type="text"
+                        />
+                        <!---->
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                          data-v-930380cc=""
+                          data-v-df38a188=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_select_options_contacts"
+                  id="temba_select_options_contacts"
+                  style="margin-top: 0px; width: 0px; display: none;"
+                />
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_select_expressions_contacts"
+                  id="temba_select_expressions_contacts"
+                  style="margin-top: 0px; width: 0px; display: none;"
+                />
+              </div>
+              <div
+                class="_selected-list-container_4cce75"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                    count="0"
+                    data-testid="temba_remove_tag_cat_fanciers"
+                    data-v-5a2abba9=""
+                    enabletooltip="false"
+                    hasbackbutton="false"
+                  >
+                    <span
+                      class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                      data-v-5a2abba9=""
+                    >
+                      Cat Fanciers
+                    </span>
+                    <div
+                      class="unnnic-tag__icon"
+                      data-v-5a2abba9=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                        data-v-5a2abba9=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                    count="0"
+                    data-testid="temba_remove_tag_norbert_kwizera"
+                    data-v-5a2abba9=""
+                    enabletooltip="false"
+                    hasbackbutton="false"
+                  >
+                    <span
+                      class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                      data-v-5a2abba9=""
+                    >
+                      Norbert Kwizera
+                    </span>
+                    <div
+                      class="unnnic-tag__icon"
+                      data-v-5a2abba9=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                        data-v-5a2abba9=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                    count="0"
+                    data-testid="temba_remove_tag_rowan_seymour"
+                    data-v-5a2abba9=""
+                    enabletooltip="false"
+                    hasbackbutton="false"
+                  >
+                    <span
+                      class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                      data-v-5a2abba9=""
+                    >
+                      Rowan Seymour
+                    </span>
+                    <div
+                      class="unnnic-tag__icon"
+                      data-v-5a2abba9=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                        data-v-5a2abba9=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+          >
+            <div
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+            >
+              Flow
+            </div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_flow"
+              id="temba_select_flow"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_flow"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_flow"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_flow"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Flow to Start"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StartSessionForm > render > should render an empty form with no action 1`] = `
+{
+  "contactQuery": {
+    "value": "",
+  },
+  "flow": {
+    "value": null,
+  },
+  "recipients": {
+    "value": [],
+  },
+  "startType": {
+    "value": {
+      "name": "Select recipients manually",
+      "value": "assets",
+    },
+  },
+  "valid": false,
+}
+`;
+
+exports[`StartSessionForm > render > should render an empty form with no action 2`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="start_session"
+  title="Start somebody else"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Start somebody else in a flow",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Start somebody else",
+        "type": "start_session",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": null,
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    <SelectElement
+      entry={
+        {
+          "value": {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+        }
+      }
+      key="start_type_select"
+      name="Start Type"
+      onChange={[Function]}
+      options={
+        [
+          {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+          {
+            "name": "Select recipients from a query",
+            "value": "contact_query",
+          },
+          {
+            "name": "Create a new contact",
+            "value": "create_contact",
+          },
+        ]
+      }
+    />
+  </div>
+  <p />
+  <div>
+    <div
+      className="_form_element_9ae69d"
+      data-testid="recipients"
+    >
+      <AssetSelector
+        assets={
+          {
+            "items": {},
+            "type": "contact",
+          }
+        }
+        entry={
+          {
+            "value": [],
+          }
+        }
+        expressions={true}
+        multi={true}
+        name="Contacts"
+        onChange={[Function]}
+        placeholder="Select who should be started in the flow"
+        searchable={true}
+        showLabel={true}
+      />
+    </div>
+    <AssetSelector
+      assets={
+        {
+          "items": {},
+          "type": "flow",
+        }
+      }
+      entry={
+        {
+          "value": null,
+        }
+      }
+      name="Flow"
+      onChange={[Function]}
+      placeholder="Select the flow to start"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
+
+exports[`StartSessionForm > render > should render contact query 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Start somebody else
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Start somebody else in a flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="__ele_8d991a_8d991a"
+          >
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_start_type"
+              id="temba_select_start_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_start_type"
+                    data-v-acea6376=""
+                    readonly=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_start_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_start_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select recipients from a query"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients manually
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients from a query
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Create a new contact
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <p />
+        <div>
+          <div
+            class="_form_element_9ae69d"
+            data-testid="contact_query"
+          >
+            <div>
+              <span
+                class="_label_17662c"
+              >
+                Contact Query
+              </span>
+              <div
+                class="_completion_wrapper_17662c"
+              >
+                <div
+                  data-testid="Contact Query"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-form sm"
+                      data-v-acea6376=""
+                    >
+                      <!---->
+                      <div
+                        class="text-input size--sm unnnic-form-input"
+                        data-v-acea6376=""
+                        data-v-df38a188=""
+                        mask=""
+                      >
+                        <input
+                          class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
+                          hascloudycolor="false"
+                          placeholder="household_id = @fields.household_id"
+                          type="text"
+                          value="my_field > 6"
+                        />
+                        <!---->
+                        <!---->
+                      </div>
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_completion_options_Contact Query"
+                  id=""
+                  style="margin-top: 0px; width: -24px; display: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+          >
+            <div
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+            >
+              Flow
+            </div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_flow"
+              id="temba_select_flow"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_flow"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_flow"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_flow"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Flow to Start"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StartSessionForm > render > should render contact query 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "contact_query": "my_field > 6",
+        "contacts": [],
+        "create_contact": false,
+        "flow": {
+          "name": "Flow to Start",
+          "uuid": "flow_uuid",
+        },
+        "groups": [],
+        "legacy_vars": [],
+        "type": "start_session",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`StartSessionForm > render > should render create new contacts 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Start somebody else
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Start somebody else in a flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="__ele_8d991a_8d991a"
+          >
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_start_type"
+              id="temba_select_start_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_start_type"
+                    data-v-acea6376=""
+                    readonly=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_start_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_start_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select recipients manually"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients manually
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients from a query
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Create a new contact
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <p />
+        <div>
+          <div
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+          >
+            <div
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+            >
+              Flow
+            </div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_flow"
+              id="temba_select_flow"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_flow"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_flow"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_flow"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Flow to Start"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StartSessionForm > render > should render self, children with base props 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="start_session"
+  title="Start somebody else"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Start somebody else in a flow",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Start somebody else",
+        "type": "start_session",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "contacts": [
+            {
+              "name": "Norbert Kwizera",
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "name": "Rowan Seymour",
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "create_contact": false,
+          "flow": {
+            "name": "Flow to Start",
+            "uuid": "flow_uuid",
+          },
+          "groups": [
+            {
+              "name": "Cat Fanciers",
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+          ],
+          "type": "start_session",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "contacts": [
+                  {
+                    "name": "Norbert Kwizera",
+                    "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  },
+                  {
+                    "name": "Rowan Seymour",
+                    "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  },
+                ],
+                "create_contact": false,
+                "flow": {
+                  "name": "Flow to Start",
+                  "uuid": "flow_uuid",
+                },
+                "groups": [
+                  {
+                    "name": "Cat Fanciers",
+                    "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  },
+                ],
+                "type": "start_session",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    <SelectElement
+      entry={
+        {
+          "value": {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+        }
+      }
+      key="start_type_select"
+      name="Start Type"
+      onChange={[Function]}
+      options={
+        [
+          {
+            "name": "Select recipients manually",
+            "value": "assets",
+          },
+          {
+            "name": "Select recipients from a query",
+            "value": "contact_query",
+          },
+          {
+            "name": "Create a new contact",
+            "value": "create_contact",
+          },
+        ]
+      }
+    />
+  </div>
+  <p />
+  <div>
+    <div
+      className="_form_element_9ae69d"
+      data-testid="recipients"
+    >
+      <AssetSelector
+        assets={
+          {
+            "items": {},
+            "type": "contact",
+          }
+        }
+        entry={
+          {
+            "value": [
+              {
+                "id": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Cat Fanciers",
+                "type": "group",
+              },
+              {
+                "id": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "missing": false,
+                "name": "Norbert Kwizera",
+                "type": "contact",
+              },
+              {
+                "id": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "missing": false,
+                "name": "Rowan Seymour",
+                "type": "contact",
+              },
+            ],
+          }
+        }
+        expressions={true}
+        multi={true}
+        name="Contacts"
+        onChange={[Function]}
+        placeholder="Select who should be started in the flow"
+        searchable={true}
+        showLabel={true}
+      />
+    </div>
+    <AssetSelector
+      assets={
+        {
+          "items": {},
+          "type": "flow",
+        }
+      }
+      entry={
+        {
+          "value": {
+            "name": "Flow to Start",
+            "uuid": "flow_uuid",
+          },
+        }
+      }
+      name="Flow"
+      onChange={[Function]}
+      placeholder="Select the flow to start"
+      searchable={true}
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
+
+exports[`StartSessionForm > render > should warn about invalid fields in contact queries 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Start somebody else
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Start somebody else in a flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="__ele_8d991a_8d991a"
+          >
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_start_type"
+              id="temba_select_start_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_start_type"
+                    data-v-acea6376=""
+                    readonly=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_start_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                      readonly=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_start_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Select recipients from a query"
+                        readonly=""
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_start_type"
+                id="temba_select_options_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients manually
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Select recipients from a query
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Create a new contact
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_start_type"
+                id="temba_select_expressions_start_type"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <p />
+        <div>
+          <div
+            class="_form_element_9ae69d"
+            data-testid="contact_query"
+          >
+            <div>
+              <span
+                class="_label_17662c"
+              >
+                Contact Query
+              </span>
+              <div
+                class="_completion_wrapper_17662c"
+              >
+                <div
+                  data-testid="Contact Query"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-form sm"
+                      data-v-acea6376=""
+                    >
+                      <!---->
+                      <div
+                        class="text-input size--sm unnnic-form-input"
+                        data-v-acea6376=""
+                        data-v-df38a188=""
+                        mask=""
+                      >
+                        <input
+                          class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
+                          hascloudycolor="false"
+                          placeholder="household_id = @fields.household_id"
+                          type="text"
+                          value="@fields.arst = 34"
+                        />
+                        <!---->
+                        <!---->
+                      </div>
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_completion_options_Contact Query"
+                  id=""
+                  style="margin-top: 0px; width: -24px; display: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+          >
+            <div
+              class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+            >
+              Flow
+            </div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_flow"
+              id="temba_select_flow"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_flow"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_flow"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_flow"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Flow to Start"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_flow"
+                id="temba_select_options_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_flow"
+                id="temba_select_expressions_flow"
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`StartSessionForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "contacts": [],
+        "create_contact": false,
+        "flow": {
+          "name": "My Flow",
+          "uuid": undefined,
+        },
+        "groups": [
+          {
+            "name": "Subscriber",
+            "uuid": "489763",
+          },
+        ],
+        "legacy_vars": [],
+        "type": "start_session",
+        "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`StartSessionForm > updates > should save changes 1`] = `
+{
+  "contactQuery": {
+    "value": "",
+  },
+  "flow": {
+    "validationFailures": [],
+    "value": {
+      "id": "my_flow",
+      "name": "My Flow",
+      "type": "flow",
+    },
+  },
+  "recipients": {
+    "validationFailures": [],
+    "value": [
+      {
+        "id": "489763",
+        "name": "Subscriber",
+        "type": "group",
+        "uuid": "68223118-109f-442a-aed3-7bb3e1eab687",
+      },
+    ],
+  },
+  "startType": {
+    "value": {
+      "name": "Select recipients manually",
+      "value": "assets",
+    },
+  },
+  "valid": true,
+}
+`;
+
+exports[`StartSessionForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "contacts": [],
+        "create_contact": false,
+        "flow": {
+          "name": "My Flow",
+          "uuid": undefined,
+        },
+        "groups": [
+          {
+            "name": "Subscriber",
+            "uuid": "489763",
+          },
+        ],
+        "legacy_vars": [],
+        "type": "start_session",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

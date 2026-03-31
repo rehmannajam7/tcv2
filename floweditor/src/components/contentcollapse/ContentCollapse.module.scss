@@ -1,0 +1,73 @@
+@import 'src/variables.module.scss';
+
+.collapse {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-sm;
+}
+
+.white_background {
+  background-color: $unnnic-color-neutral-white;
+}
+
+.error {
+  border-color: $unnnic-color-feedback-red;
+}
+
+.optional {
+  color: $unnnic-color-neutral-cloudy;
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-regular;
+}
+
+.collapse_title_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-nano;
+}
+
+.collapse_header {
+  display: flex;
+  flex-direction: row;
+  gap: $unnnic-spacing-nano;
+  align-items: center;
+  cursor: pointer;
+
+  font-size: $unnnic-font-size-body-gt;
+  font-weight: $unnnic-font-weight-bold;
+  color: $unnnic-color-neutral-dark;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-gt;
+}
+
+.collapse_icon {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  .subtitle{
+    font-family: $unnnic-font-family-secondary;
+    font-weight: $unnnic-font-weight-regular;
+    color: $unnnic-color-neutral-cloudy;
+    height: 100%;
+    font-size: $unnnic-font-size-body-md;
+  }
+}
+
+.opacity{
+  color: $unnnic-color-neutral-cleanest;
+}
+
+.collapse_divider {
+  border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+}
+
+.collapse_description {
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-regular;
+  color: $unnnic-color-neutral-dark;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+  color: $unnnic-color-neutral-cloudy;
+}

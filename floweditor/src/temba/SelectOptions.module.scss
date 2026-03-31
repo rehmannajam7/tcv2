@@ -1,0 +1,106 @@
+@import 'src/variables.module.scss';
+
+@mixin scrollbars {
+
+  scrollbar-width: thin;
+  scrollbar-color: $unnnic-color-neutral-clean $unnnic-color-neutral-soft;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $unnnic-color-neutral-clean ;
+    border-radius: $unnnic-border-radius-md;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $unnnic-color-neutral-soft;
+    border-radius: $unnnic-border-radius-md;
+  }
+}
+
+.options_wrapper {
+  @include scrollbars;
+
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 $unnnic-spacing-inline-nano;
+  padding: $unnnic-spacing-inset-nano;
+  background-color: $unnnic-color-background-snow;
+  box-shadow: $unnnic-shadow-level-near;
+  max-height: 164px;
+  overflow: auto;
+  z-index: $z_completion;
+
+  .option {
+    display: flex;
+    flex-direction: column;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: $unnnic-font-size-body-gt + $unnnic-line-height-md;
+    outline: none;
+    border-radius: $unnnic-border-radius-sm;
+    padding: $unnnic-spacing-stack-nano $unnnic-spacing-inline-xs;
+    cursor: pointer;
+
+    .name {
+      color: $unnnic-color-neutral-dark ;
+    }
+
+    .multi_wrapper {
+      display: flex;
+      gap: $unnnic-spacing-inline-xs;
+    }
+  }
+
+  .completion {
+    display: flex;
+    flex-direction: column;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    outline: none;
+    border-radius: $unnnic-border-radius-sm;
+    padding: $unnnic-spacing-stack-nano $unnnic-spacing-inline-xs;
+    cursor: pointer;
+
+    .name {
+      color: $unnnic-color-neutral-darkest;
+    }
+
+    .summary {
+      color: $unnnic-color-neutral-cloudy;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
+  .selected {
+    background-color: $unnnic-color-neutral-light;
+
+    font-size: $unnnic-font-size-body-gt;
+    font-weight: $unnnic-font-weight-bold;
+    line-height: $unnnic-font-size-body-gt + $unnnic-line-height-md;
+
+    .name {
+      color: $unnnic-color-weni-600;
+    }
+  }
+
+  .active {
+    background-color: $unnnic-color-neutral-light;
+    font-weight: $unnnic-font-weight-bold;
+  }
+
+  .active.selected {
+    font-weight: $unnnic-font-weight-black;
+  }
+}

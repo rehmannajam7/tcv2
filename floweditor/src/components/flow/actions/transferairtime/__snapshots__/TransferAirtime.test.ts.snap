@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TransferAirtimeComp > render > should render self 1`] = `
+<div>
+  <div
+    key="transfer_USD"
+  >
+    <div
+      className="_amount_14dede"
+    >
+      1.5
+    </div>
+    <div
+      className="_code_14dede"
+    >
+      USD
+    </div>
+  </div>
+</div>
+`;

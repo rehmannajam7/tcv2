@@ -1,0 +1,49 @@
+@import 'src/variables.module.scss';
+
+.sidebar {
+  position: -webkit-sticky;
+  position: fixed;
+  top: 120px;
+  left: 50px;
+  width: 72px;
+  background-color: $unnnic-color-background-sky;
+  border-radius: $unnnic-border-radius-sm;
+  border: 1px solid $unnnic-color-neutral-soft;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+
+  .option {
+    background-color: $unnnic-color-background-sky;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: $unnnic-spacing-stack-sm 0px;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+    color: $unnnic-color-neutral-cloudy;
+
+    &:hover {
+      background-color: $unnnic-color-neutral-soft;
+    }
+  }
+
+  .disabled {
+    cursor: not-allowed;
+    color: $unnnic-color-neutral-cleanest;
+  }
+}
+
+.left_aligned {
+  span {
+    text-align: left !important;
+  }
+}
+
+.disabled {
+  color: $unnnic-color-neutral-cleanest;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test FlowEditor Authentication</title>
+</head>
+<body>
+    <h1>FlowEditor Authentication Test</h1>
+    <div id="status">Loading...</div>
+    <div id="logs"></div>
+
+    <script>
+        // Simulate the external/index.js functions
+        let currentAuthToken = null;
+        let currentAccountId = null;
+
+        function getAuthToken() {
+            return currentAuthToken;
+        }
+
+        function getAccountContext() {
+            return currentAccountId;
+        }
+
+        function setAuthToken(token) {
+            currentAuthToken = token;
+            console.log('Auth token set:', token);
+        }
+
+        function setAccountContext(accountId) {
+            currentAccountId = accountId;
+            console.log('Account context set:', accountId);
+        }
+
+        // Simulate the message handler from main.jsx
+        function handleChatwootContext(data) {
+            console.log('Received chatwoot context:', data);
+            if (data.flowEditorConfig) {
+                if (data.flowEditorConfig.token) {
+                    setAuthToken(data.flowEditorConfig.token);
+                }
+                if (data.flowEditorConfig.accountId) {
+                    setAccountContext(data.flowEditorConfig.accountId);
+                }
+            }
+        }
+
+        // Simulate a TembaSelect component trying to fetch options
+        async function fetchOptions(query, retryCount = 0) {
+            const url = 'http://localhost:3000/api/v1/accounts/1/flow_editor/channels';
+            
+            try {
+                // Get authentication data
+                const accountId = getAccountContext();
+                const authToken = getAuthToken();
+
+                // If no auth token is available and this is an initial load, wait and retry
+                if (!authToken && retryCount < 5) {
+                    const delay = Math.min(1000 * Math.pow(2, retryCount), 5000);
+                    console.log(`No auth token available, retrying in ${delay}ms (attempt ${retryCount + 1}/5)`);
+                    document.getElementById('status').innerHTML = `Waiting for auth token... (attempt ${retryCount + 1}/5)`;
+                    setTimeout(() => {
+                        fetchOptions(query, retryCount + 1);
+                    }, delay);
+                    return;
+                }
+
+                if (!authToken) {
+                    document.getElementById('status').innerHTML = 'Failed: No auth token after 5 retries';
+                    return;
+                }
+
+                // Set up headers for authentication
+                const headers = {};
+                if (authToken) {
+                    headers['Authorization'] = `Bearer ${authToken}`;
+                }
+                if (accountId) {
+                    headers['X-Account-ID'] = accountId;
+                }
+
+                console.log('Making API request with headers:', headers);
+                document.getElementById('status').innerHTML = 'Making API request...';
+
+                const response = await fetch(url, { headers });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('API response:', data);
+                    document.getElementById('status').innerHTML = 'Success: API call completed';
+                } else {
+                    console.error('API error:', response.status, response.statusText);
+                    document.getElementById('status').innerHTML = `API Error: ${response.status} ${response.statusText}`;
+                }
+
+            } catch (err) {
+                console.error('Error fetching options:', err);
+                document.getElementById('status').innerHTML = `Error: ${err.message}`;
+            }
+        }
+
+        // Start the test
+        console.log('Starting authentication test...');
+        document.getElementById('status').innerHTML = 'Starting test...';
+        
+        // Simulate immediate fetch (like componentDidMount)
+        fetchOptions();
+
+        // Simulate receiving authentication after 2 seconds
+        setTimeout(() => {
+            console.log('Simulating authentication message...');
+            handleChatwootContext({
+                flowEditorConfig: {
+                    token: 'test-jwt-token-12345',
+                    accountId: '1'
+                }
+            });
+        }, 2000);
+
+        // Capture console logs and display them
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const logDiv = document.getElementById('logs');
+            logDiv.innerHTML += '<div style="color: blue;">[LOG] ' + args.join(' ') + '</div>';
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            const logDiv = document.getElementById('logs');
+            logDiv.innerHTML += '<div style="color: red;">[ERROR] ' + args.join(' ') + '</div>';
+        };
+    </script>
+</body>
+</html>

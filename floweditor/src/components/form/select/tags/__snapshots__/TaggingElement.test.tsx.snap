@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`TaggingElement > render > should render self, children 1`] = `
+[
+  <input
+    name="Color"
+    type="hidden"
+    value="Red"
+  />,
+  <input
+    name="Color"
+    type="hidden"
+    value="Green"
+  />,
+  <input
+    name="Color"
+    type="hidden"
+    value="Blue"
+  />,
+]
+`;

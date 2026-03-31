@@ -1,0 +1,15 @@
+@import 'src/variables.module.scss';
+
+.form_element {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.label {
+  margin-bottom: $unnnic-spacing-stack-nano;
+}
+
+.link {
+  cursor: pointer;
+  color: $link_color;
+  text-decoration: underline;
+}

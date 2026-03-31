@@ -1,0 +1,23 @@
+@import 'src/variables.module.scss';
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.emoji_picker_wrapper {
+  position: relative;
+
+  .emoji_picker {
+    z-index: 1000;
+    transform: translate(-100px, -100px);
+    em-emoji-picker {
+      height: 250px;
+    }
+  }
+}
+
+.counter {
+  margin-left: $unnnic-spacing-xs;
+}

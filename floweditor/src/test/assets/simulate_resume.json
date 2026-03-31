@@ -1,0 +1,35 @@
+{
+  "contact": {
+    "uuid": "6e38eba0-d673-4a35-82df-21bae2b6d466",
+    "urns": ["tel:+1234567890"],
+    "fields": {
+      "first_name": "John",
+      "last_name": "Doe"
+    },
+    "groups": [
+      {
+        "uuid": "9ecc8e84-6b83-442b-a04a-8094d5de997b",
+        "name": "Customer Service"
+      }
+    ]
+  },
+  "session": {
+    "runs": [],
+    "contact": {
+      "uuid": "6e38eba0-d673-4a35-82df-21bae2b6d466",
+      "urns": ["tel:+1234567890"],
+      "fields": {
+        "first_name": "John",
+        "last_name": "Doe"
+      },
+      "groups": [
+        {
+          "uuid": "9ecc8e84-6b83-442b-a04a-8094d5de997b",
+          "name": "Customer Service"
+        }
+      ]
+    }
+  },
+  "context": {},
+  "events": []
+}

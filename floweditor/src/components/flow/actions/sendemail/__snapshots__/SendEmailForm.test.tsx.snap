@@ -1,0 +1,908 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SendEmailForm > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Send email
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Send email"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="_ele_be93d9"
+        >
+          <div
+            data-testid="Recipient"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+              unnnic-input="true"
+            >
+              <div
+                class="unnnic-form sm"
+                data-v-acea6376=""
+              >
+                <p
+                  class="unnnic-form__label"
+                  data-v-acea6376=""
+                >
+                  Recipient
+                </p>
+                <div
+                  class="text-input size--sm has-icon-right unnnic-form-input"
+                  data-v-acea6376=""
+                  data-v-df38a188=""
+                  mask=""
+                >
+                  <input
+                    class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                    data-v-bf6639b4=""
+                    data-v-df38a188=""
+                    hascloudycolor="false"
+                    iconright="keyboard-return-1"
+                    placeholder="Email"
+                    type="text"
+                    value=""
+                  />
+                  <!---->
+                  <svg
+                    class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                    data-v-930380cc=""
+                    data-v-df38a188=""
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M16.9999 28.0005C16.7333 28.0005 16.4813 27.8965 16.2933 27.7072L11.3159 22.7298C11.1226 22.5605 10.9999 22.2885 10.9999 22.0045C10.9999 21.9898 10.9999 21.9752 11.0013 21.9605C11.0066 21.8512 11.0279 21.7498 11.0653 21.6525C11.0693 21.6432 11.0826 21.6085 11.0866 21.5992C11.1253 21.5138 11.1759 21.4325 11.2373 21.3605C11.2546 21.3365 11.2746 21.3138 11.2933 21.2938L16.2933 16.2938C16.4826 16.1045 16.7333 16.0005 16.9999 16.0005C17.2666 16.0005 17.5186 16.1045 17.7066 16.2938C17.8959 16.4818 17.9999 16.7338 17.9999 17.0005C17.9999 17.2672 17.8959 17.5192 17.7066 17.7072L14.4106 21.0045H21.9999C24.7573 21.0045 26.9999 18.7618 26.9999 16.0045V13.0005C26.9999 12.4485 27.4479 12.0005 27.9999 12.0005C28.5519 12.0005 28.9999 12.4485 28.9999 13.0005V16.0045C28.9999 19.8645 25.8599 23.0045 21.9999 23.0045H14.4173L17.7066 26.2938C18.0959 26.6832 18.0959 27.3178 17.7066 27.7085C17.5186 27.8965 17.2666 28.0005 16.9999 28.0005Z"
+                      fill="#3B414D"
+                    />
+                    <path
+                      d="M10 35.0005C7.24267 35.0005 5 32.7578 5 30.0005V10.0005C5 7.24316 7.24267 5.00049 10 5.00049H30C32.7573 5.00049 35 7.24316 35 10.0005V30.0005C35 32.7578 32.7573 35.0005 30 35.0005H10ZM10 7.00049C8.34533 7.00049 7 8.34582 7 10.0005V30.0005C7 31.6552 8.34533 33.0005 10 33.0005H30C31.6547 33.0005 33 31.6552 33 30.0005V10.0005C33 8.34582 31.6547 7.00049 30 7.00049H10Z"
+                      fill="#3B414D"
+                    />
+                  </svg>
+                </div>
+                <!---->
+              </div>
+            </div>
+          </div>
+          <div
+            class="_pills_be93d9"
+          >
+            <div
+              class="_pill_be93d9 u font secondary body-md color-neutral-darkest"
+            >
+              jane@example.com
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--xs unnnic--clickable unnnic-icon-scheme--neutral-darkest"
+                  data-testid="remove-recipient-0"
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="primary"
+                    d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                    fill="#3B414D"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <span
+                class="_label_17662c"
+              >
+                Subject
+              </span>
+              <div
+                class="_completion_wrapper_17662c"
+              >
+                <div
+                  data-testid="Subject"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-form sm"
+                      data-v-acea6376=""
+                    >
+                      <!---->
+                      <div
+                        class="text-input size--sm unnnic-form-input"
+                        data-v-acea6376=""
+                        data-v-df38a188=""
+                        mask=""
+                      >
+                        <input
+                          class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                          data-v-bf6639b4=""
+                          data-v-df38a188=""
+                          hascloudycolor="false"
+                          placeholder="Ex: Your order has been delivered"
+                          type="text"
+                          value="New Sign Up"
+                        />
+                        <!---->
+                        <!---->
+                      </div>
+                      <!---->
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_completion_options_Subject"
+                  id=""
+                  style="margin-top: 0px; width: 0px; display: none;"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <span
+                class="_label_17662c"
+              >
+                E-mail text
+              </span>
+              <div
+                class="_completion_wrapper_17662c"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-text-area sm normal _textarea_17662c"
+                    data-testid="E-mail text"
+                    data-v-82a4b073=""
+                  >
+                    <!---->
+                    <textarea
+                      data-v-82a4b073=""
+                      placeholder="Type here..."
+                      value="@run.results.name just signed up."
+                    />
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+                <div
+                  class="_options_wrapper_08dd12"
+                  data-testid="temba_completion_options_E-mail text"
+                  id=""
+                  style="margin-top: 1px; width: -24px; display: none;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SendEmailForm > should save updated fields 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendEmailForm > should save updated fields 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendEmailForm > should save updated fields 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendEmailForm > should save updated fields 4`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendEmailForm > should save updated fields 5`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient@email.com",
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+    [
+      {
+        "addresses": [
+          "newrecipient2@email.com",
+        ],
+        "body": "new body",
+        "subject": "new subject",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

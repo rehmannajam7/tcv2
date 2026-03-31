@@ -1,0 +1,226 @@
+@import 'src/variables.module.scss';
+
+$background_offset: (
+  $grid_size / 2) + ($node_padding) + px;
+
+.canvas_container {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas_background {
+  height: 100%;
+  background-position: 0px 0px;
+  background-image: radial-gradient(circle at center,
+      $unnnic-color-neutral-cleanest 0,
+      $unnnic-color-neutral-cleanest 1px,
+      $unnnic-color-neutral-lightest 2px,
+      $unnnic-color-neutral-lightest 100%
+  );
+  background-size: 40px 40px;
+}
+
+.grayscale::after {
+  filter: grayscale(1);
+}
+
+.canvas {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  outline: none;
+}
+
+.canvas:after {
+  content: '';
+  position: absolute;
+  top: -134px;
+  bottom: 0;
+  width: 400%;
+  left: 100%;
+
+}
+
+.panzoom {
+  position: relative;
+}
+
+.drag_selection {
+  position: absolute;
+  background: $selection_square;
+  border: 0px solid darken($selection_square, 10%);
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: $z_selection;
+}
+
+
+.cursor_select {
+  cursor: default;
+}
+
+.cursor_drag {
+  cursor: grab;
+}
+
+.cursor_dragging {
+  cursor: grabbing;
+}
+
+.zoom_control {
+  display: flex;
+  position: fixed;
+  bottom: $unnnic-spacing-giant;
+  left: 36px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: $unnnic-border-radius-sm;
+  background: #FFF;
+  color: $unnnic-color-neutral-cloudy;
+
+  box-shadow: $unnnic-shadow-level-near;
+
+  .zoom_tooltip {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+
+    :first-child {
+      display: flex !important;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  .start_tooltip {
+    overflow-wrap: unset;
+    white-space: nowrap;
+
+    :last-child {
+      left: 300px !important;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .in,
+  .out,
+  .start {
+    display: flex;
+    width: $unnnic-spacing-xl;
+    height: $unnnic-spacing-xl;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $unnnic-spacing-xs;
+    background: #FFF;
+    font-size: $unnnic-font-size-title-md;
+    cursor: pointer;
+
+    &:hover {
+      background: $unnnic-color-neutral-light;
+    }
+
+    &:active {
+      background: $unnnic-color-neutral-soft;
+    }
+  }
+
+  .start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $unnnic-spacing-nano;
+    padding: $unnnic-spacing-xs;
+    box-sizing: content-box;
+
+    width: $unnnic-avatar-size-nano;
+    height: $unnnic-spacing-md;
+    flex-direction: row;
+    color: $unnnic-color-neutral-cloudy;
+    font-size: $unnnic-font-size-body-gt;
+    transition: all 0.5s;
+    background: $unnnic-color-neutral-light;
+
+    span {
+      padding: 0;
+    }
+
+    :last-child {
+      font-size: 20px;
+    }
+
+    .hide {
+      display: inline-block;
+      text-wrap: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+      padding-right: 0;
+      animation: shrink-and-hide 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
+      max-width: fit-content;
+    }
+
+    &:hover {
+      max-width: fit-content;
+      width: 110px;
+      background: $unnnic-color-neutral-soft;
+    }
+
+    &:hover>.hide {
+      visibility: visible;
+      animation: grow-and-show 0.5s cubic-bezier(0.250, 0.460, 0.450, 1) both;
+    }
+  }
+
+  .percentage {
+    display: flex;
+    width: 44px;
+    padding: $unnnic-spacing-nano;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-gt;
+    line-height: 24px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+}
+
+@keyframes grow-and-show {
+  0% {
+    opacity: 0;
+    width: 0px
+  }
+
+  100% {
+    opacity: 1;
+    width: 100px;
+  }
+}
+
+@keyframes shrink-and-hide {
+  0% {
+    opacity: 1;
+    width: 100px
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0px;
+  }
+}

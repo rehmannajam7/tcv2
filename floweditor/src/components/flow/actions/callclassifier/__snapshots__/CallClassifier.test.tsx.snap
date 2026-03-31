@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CallClassifierComp > should render 1`] = `
+<div
+  className="_node_asset_9658e1"
+  key="purrington"
+>
+  <Trans
+    i18nKey="assets.classifier"
+    values={
+      {
+        "name": "Purrington",
+      }
+    }
+  >
+    Call 
+    <b>
+      [[name]]
+    </b>
+     classifier
+  </Trans>
+</div>
+`;

@@ -1,0 +1,73 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CheckboxElement > should render a checkbox element with title, description > unchecked 1`] = `ShallowWrapper {}`;
+
+exports[`CheckboxElement > should render a checkbox element with title, description 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "checked": true,
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`CheckboxElement > should render a checkbox element with title, description 2`] = `
+<label
+  className="__label_5bf296_5bf296 _label_5bf296"
+  onClick={[Function]}
+>
+  <ForwardRef
+    className="_checkbox_icon_5bf296 checkbox"
+    data-spec="checkbox"
+    icon="check_box"
+    scheme="neutral-snow"
+    size="sm"
+  />
+  <div
+    className="_title_5bf296"
+    data-spec="title"
+  >
+    Checkbox
+  </div>
+  <div
+    className="_description_5bf296"
+    data-spec="description"
+  >
+    All Destinations
+  </div>
+</label>
+`;
+
+exports[`CheckboxElement > should render a checkbox element with title, description 3`] = `
+<label
+  className="__label_5bf296_5bf296 _label_5bf296"
+  onClick={[Function]}
+>
+  <ForwardRef
+    className="_checkbox_icon_5bf296 checkbox"
+    data-spec="checkbox"
+    icon="check_box"
+    scheme="neutral-snow"
+    size="sm"
+  />
+  <div
+    className="_title_5bf296"
+    data-spec="title"
+  />
+  <div
+    className="_description_solo_5bf296"
+    data-spec="description"
+  >
+    Continue when there is no response
+  </div>
+</label>
+`;

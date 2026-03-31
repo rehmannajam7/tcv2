@@ -1,0 +1,833 @@
+{
+  "actions": {
+    "search": "Search...",
+    "add_contact_groups": {
+      "description": "Add the contact to a group",
+      "name": "Add to group"
+    },
+    "add_contact_urn": {
+      "description": "Add a URN for the contact",
+      "name": "Add URN"
+    },
+    "add_input": {
+      "description": "Label the incoming message",
+      "name": "Add label"
+    },
+    "automatic_classify": {
+      "description": "Automatic Classify",
+      "name": "Automatic Classify"
+    },
+    "call_brain": {
+      "description": "Call Weni Brain",
+      "name": "Call Weni Brain"
+    },
+    "call_resthook": {
+      "description": "Call Zapier",
+      "name": "Call Zapier"
+    },
+    "call_webhook": {
+      "description": "Call a webhook",
+      "name": "Call webhook"
+    },
+    "call_wenigpt": {
+      "description": "Call WeniGPT",
+      "name": "Call WeniGPT"
+    },
+    "enter_flow": {
+      "description": "Enter another flow",
+      "name": "Enter another flow"
+    },
+    "external_service": {
+      "description": "Call an external service",
+      "name": "Call External Service"
+    },
+    "open_ticket": {
+      "description": "Open a ticket with a human agent",
+      "name": "Open Ticket"
+    },
+    "play_audio": {
+      "description": "Play a contact recording",
+      "name": "Play Recording"
+    },
+    "play_message": {
+      "description": "Play a message",
+      "name": "Play Message"
+    },
+    "remove_contact_groups": {
+      "description": "Remove the contact from a group",
+      "name": "Remove from group"
+    },
+    "say_msg": {
+      "placeholder": "Send a message to the contact"
+    },
+    "send_broadcast": {
+      "description": "Send somebody else a message",
+      "name": "Send broadcast",
+      "placeholder": "Send a message to the contact"
+    },
+    "send_email": {
+      "description": "Send email",
+      "name": "Send email"
+    },
+    "send_msg": {
+      "description": "Send the contact a message",
+      "name": "Send message",
+      "placeholder": "Send a message to the contact"
+    },
+    "set_contact_field": {
+      "description": "Update the contact",
+      "name": "Update contact"
+    },
+    "set_run_result": {
+      "description": "Save a result for this flow",
+      "name": "Save flow result"
+    },
+    "split_by_contact_field": {
+      "description": "Split by contact field",
+      "name": "Split by contact field"
+    },
+    "split_by_expression": {
+      "description": "Split by a custom expression",
+      "name": "Split by expression"
+    },
+    "split_by_groups": {
+      "description": "Split by group membership",
+      "name": "Split by group membership"
+    },
+    "split_by_intent": {
+      "description": "Split by intent",
+      "name": "Split by intent"
+    },
+    "split_by_random": {
+      "description": "Split randomly",
+      "name": "Split randomly"
+    },
+    "split_by_run_result": {
+      "description": "Split by a result in the flow",
+      "name": "Split by flow result"
+    },
+    "split_by_scheme": {
+      "description": "Split by URN type",
+      "name": "Split by URN type"
+    },
+    "start_session": {
+      "description": "Start somebody else in a flow",
+      "name": "Start somebody else"
+    },
+    "transfer_airtime": {
+      "description": "Send the contact airtime",
+      "name": "Send Airtime"
+    },
+    "wait_for_audio": {
+      "description": "Wait for an audio recording",
+      "name": "Wait for Audio"
+    },
+    "wait_for_dial": {
+      "description": "Wait for forwarded call to someone else",
+      "name": "Wait for Forwarded Call"
+    },
+    "wait_for_digits": {
+      "description": "Wait for multiple digits",
+      "name": "Wait for Digits"
+    },
+    "wait_for_image": {
+      "description": "Wait for an image",
+      "name": "Wait for Image"
+    },
+    "wait_for_location": {
+      "description": "Wait for location GPS coordinates",
+      "name": "Wait for Location"
+    },
+    "wait_for_menu": {
+      "description": "Wait for menu selection",
+      "name": "Wait for Menu Selection"
+    },
+    "wait_for_response": {
+      "description": "Wait for the contact to respond",
+      "name": "Wait for response"
+    },
+    "wait_for_video": {
+      "description": "Wait for a video",
+      "name": "Wait for Video"
+    },
+    "send_msg_catalog": {
+      "name": "Send WhatsApp Product",
+      "complete_catalog": "Complete catalog",
+      "description": "Send a WhatsApp product",
+      "automatic_sending": "Automatic sending",
+      "manual_sending": "[[count]] product",
+      "manual_sending_plural": "[[count]] products",
+      "manual_sending_multiple": "+3 products"
+    },
+    "send_whatsapp_msg": {
+      "description": "Send a WhatsApp message",
+      "name": "Send WhatsApp Message"
+    },
+    "smart_wait_for_response": {
+      "description": "Smartly wait for response",
+      "name": "Smart Wait for Response"
+    }
+  },
+  "add": "Add",
+  "set": "Set",
+  "to": "to",
+  "asset_selector": {
+    "placeholder": "Select existing [[name]] or enter a new one",
+    "placeholder_plural": "Select existing [[name]] or enter a new one"
+  },
+  "assets": {
+    "classifier": "Call <1>[[name]]</1> classifier",
+    "ticketer": "Open a new Ticket on [[name]]"
+  },
+  "body": "Body",
+  "buttons": {
+    "cancel": "Cancel",
+    "create_message": "Create message",
+    "download": "Download",
+    "ok": "Ok",
+    "close": "Close",
+    "confirm": "Confirm",
+    "after": "After",
+    "later": "Later",
+    "save": "Save",
+    "upload": "Upload"
+  },
+  "contact_statuses": {
+    "active": "Active",
+    "archived": "Archived - remove from groups, ignore forever",
+    "blocked": "Blocked - remove from groups, ignore forever",
+    "stopped": "Stopped - remove from groups, ignore until they message again"
+  },
+  "context_explorer": {
+    "copied_expression": "Copied <1>[[expression]]</1> to clipboard",
+    "hide_empty": "Showing keys with values",
+    "show_empty": "Showing all keys"
+  },
+  "create_block": "Create block",
+  "search_in_nodes": "Search block",
+  "create_label": "Create label",
+  "disabled_copy_tooltip": "Select one or more blocks to copy",
+  "copy_tooltip": "Copy block(s)",
+  "document": "Document",
+  "drag": "Drag",
+  "drag_helper": "To connect nodes, <1>drag</1> from the red circle.",
+  "email": {
+    "subject": "Subject",
+    "to": "To"
+  },
+  "empty_flow_message_title": "Let's get started",
+  "empty_flow_message_description": "We recommend starting your flow by sending a message. This message will be sent to anyone who joins your flow. This is your chance to send a message or ask a question.",
+  "enter_to_create_group": "Enter a name to create a new group",
+  "enter_to_create_label": "Enter the name of an existing label or create a new one",
+  "errors": {
+    "group_not_found": "Enter the name of an existing group",
+    "http_header_missing_name": "HTTP headers must have a name",
+    "network": "Hmm, we ran into a problem trying to save your changes. It could just be that your internet connection is not working well at the moment. Please wait a minute or so and try again.",
+    "server": "Hmm, we ran into a problem trying to save your changes. If this problem persists, take note of the change you are trying to make and contact support."
+  },
+  "flow_start": "Flow Start",
+  "form": {
+    "result": "Result"
+  },
+  "forms": {
+    "action": "Action button title",
+    "add_attachment": "Add Attachment",
+    "add_groups_summary": "Select the groups to add the contact to",
+    "add_labels_summary": "Select the labels to apply to the incoming message",
+    "add_quick_reply": "Add a new Quick reply and press Enter",
+    "add_urn_summary": "Add a new URN to reach the contact",
+    "advanced": "Advanced",
+    "all_destinations": "Send a message to all destinations",
+    "all_destinations_title": "Send a message to all destinations known for this contact.",
+    "all_destinations_description": "If you aren't sure what this means, leave it unchecked.",
+    "and": "and",
+    "are_required": "are required",
+    "arguments": "arguments",
+    "assignee": "Assignee",
+    "assign_to_optional": "Assign to (Optional)",
+    "attachment_optional": "Media (optional)",
+    "attachment_placeholder": "Paste an URL or send a file",
+    "attachments": "Attachments",
+    "audio_url": "Audio URL",
+    "automatic_classify": {
+      "category_description": "Define the category you want to classify the contact's response",
+      "category_title": "Categorize as",
+      "words_description": "Unique words related to the category",
+      "words_title": "Words"
+    },
+    "body": "Body",
+    "brain": {
+      "entry": "Enter an expression to use as input in the Brain. To use the contact's last response, use @input.text."
+    },
+    "buckets": "Buckets",
+    "bucket": "Bucket",
+    "option_buckets": " buckets",
+    "call": "Call",
+    "categories": "categories",
+    "categorize_as": "Categorize as:",
+    "category": "Category (optional)",
+    "category_placeholder": "Category",
+    "category_required": "Category",
+    "channel": "Channel",
+    "channel_type": "Channels",
+    "classifier": "Classifier",
+    "clear": "Clear",
+    "confidence": "confidence",
+    "contact_field": "Contact Field",
+    "contact_query": "Contact Query",
+    "continue_when_no_response": "Continue when there is no response",
+    "wait_response_for": "Wait for a response for:",
+    "create_group": "Create group",
+    "create_prefix": "New: ",
+    "currency": "Currency",
+    "custom_search": "Custom Search URL",
+    "custom_search_api_url": "Custom Search API URL",
+    "day": "day",
+    "days": "days",
+    "default_search": "Default search",
+    "delimit": "Delimit",
+    "delimit_result": "Delimit result",
+    "delimit_result_description": "Evaluate your rules against a delimited part of your result",
+    "delimiter": "Delimiter",
+    "description": "Description",
+    "description_optional": "Description (Optional)",
+    "district": "District",
+    "disclaimer": {
+      "title": "Now it is possible to <1>[[highlight]]</1> using WhatsApp Flows.",
+      "highlight": "create richer interactions",
+      "link": "Learn more."
+    },
+    "email_recipient_name": "Recipient",
+    "email_recipient_placeholder": "Email",
+    "email_recipient_prompt": "Enter email address",
+    "enter_a_body": "Enter a body",
+    "enter_a_subject": "Enter a subject",
+    "enter_a_url": "Enter a URL",
+    "enter_field_value": "Enter a new value for [[field]]",
+    "enter_flow_parameters_summary": "<0>[[flow]]</0> expects the following parameters to be set by this flow. These can be set using a <4>Save Flow Result</4> action or directly below.",
+    "enter_flow_parameters_tab": "Parameters",
+    "enter_new_name": "Enter a new contact name",
+    "enter_urn_value": "Enter the URN value",
+    "exit_name": "Exit Name",
+    "expression": "Expression",
+    "expression_input": "Insert an expression to be used as input",
+    "expression_input_placeholder": "Ex: @input.text",
+    "expression_label": "If the expression",
+    "externalService": "External Service",
+    "external_service": "External Service",
+    "external_service_call": "External Service Call",
+    "field": "Field",
+    "field_number": "Field Number",
+    "field_value": "Field Value",
+    "filter": "Filter",
+    "footer": "Footer (optional)",
+    "flow": "Flow",
+    "flow_to_start": "Flow to start",
+    "flow_result": "Flow Result",
+    "groups": "Groups",
+    "header": "Header",
+    "header_name": "Header name",
+    "header_optional": "Header (optional)",
+    "header_text": "Header text",
+    "http_headers": "HTTP Headers",
+    "image_url": "Image URL",
+    "instagram": {
+      "response_types": {
+        "none": "None",
+        "tag": "Tag support for DM's",
+        "dm_comment": "Send DM in response to a Comment",
+        "comment": "Reply to a comment"
+      },
+      "tags": {
+        "human_agent": "Human Agent"
+      },
+      "descriptions": {
+        "tag": "The allows you to send a message after the 24 hours window",
+        "dm_comment": "When a comment is made on a post, this action allows replying in a direct message (DM) to the user who made the comment, keeping the interaction private.",
+        "comment": "When a comment is made on a post, this action allows replying directly within the post's comment section, keeping the interaction public."
+      }
+    },
+    "intent": "Intent",
+    "interactions": "Interactions",
+    "is_not_a_valid_regex": "is not a valid regex",
+    "is_not_finished": "is not finished",
+    "is_required": "is required",
+    "integration_with": "Integration with...",
+    "knowledge_base": "Knowledge Base",
+    "knowledge_base_click": "Click here",
+    "knowledge_base_message": "Don't have any knowledge base for your AI yet?",
+    "knowledge_base_placeholder": "Select a knowledge base",
+    "labels": "Labels",
+    "language": "Language",
+    "list_button_text": "Action button text",
+    "list_button_text_optional": "Action Button Text (optional)",
+    "list_button_text_placeholder": "Action button text",
+    "list_button_url": "Action button URL",
+    "list_items": "List items",
+    "list_option": "Option",
+    "empty_option": "Not filled",
+    "localize_rules": "Sometimes languages need special rules to route things properly. If a translation is not provided, the original rule will be used.",
+    "localized_quick_replies": "Add a new [[language]] Quick Reply and press enter.",
+    "manually_select_products": "Manually select products",
+    "maximum_value": "Maximum value",
+    "message": "Message",
+    "message_type": "Message type",
+    "message_label": "If the message response",
+    "method": "Method",
+    "minimum_value": "Minimum value",
+    "must_be_less_than": "must be less than",
+    "name": "Name",
+    "no_products": "You don't have any product",
+    "none": "None",
+    "operand": "Operand",
+    "operator": "operator",
+    "options_label": "Add up to 10 options",
+    "param": "Param",
+    "parameter": "Parameter",
+    "params": "Params",
+    "pdf_url": "PDF Document URL",
+    "phone_number": "Phone number",
+    "play_audio_help_text": "Enter a variable that contains a recording the contact has previously recorded. For example, @results.voicemail or @fields.short_bio.",
+    "postal_code": "Postal Code (optional)",
+    "product_help_text": "The fields have character limitations, with header and footer 60 characters, body 1024 and action button title 20 characters.",
+    "product_search": "Product Search",
+    "product_search_label": "Enter an expression to be used as input",
+    "product_search_placeholder": "Ex: @input.text",
+    "product_view_settings": "View Settings (required)",
+    "products": "Products",
+    "quick_replies": "Quick Replies",
+    "quick_replies_limit": "You can add up to 10 Quick Replies.",
+    "quick_replies_summary": "Quick Replies are made into buttons for supported channels. For example, when asking a question, you might add a Quick Reply for \"Yes\" and one for \"No\".",
+    "quick_reply": "Quick Reply",
+    "general": "General",
+    "recipients": "Recipients",
+    "contacts": "Contacts",
+    "recording": "Recording",
+    "recording_label": "Previous Recording",
+    "remove": "Remove",
+    "remove_groups_type_label": "Groups that the contact will be removed:",
+    "remove_groups_type_values_selected_label": "Selected",
+    "remove_groups_type_values_all_label": "All",
+    "remove_from_all_label": "Remove from all",
+    "remove_from_all_summary": "Remove the active contact from all groups they're a member of.",
+    "remove_groups_placeholder": "Enter the name of an existing group",
+    "remove_groups_summary": "Select the groups to remove the contact from.",
+    "remove_value": "Remove Value",
+    "replies_label": "Add up to 3 replies",
+    "reply": "Reply",
+    "required": "Required",
+    "resthook": "Resthook",
+    "resthook_to_call": "Select the resthook to call",
+    "result": "Result",
+    "result_category_help": "An optional category for your result. For age, the value might be 17, but the category might be “Teenager”",
+    "result_name": "Result Name",
+    "result_name_help": "By naming the result, you can reference it later using [[resultFormat]]",
+    "result_to_split_on": "Result to split on",
+    "result_value_help": "The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))",
+    "rules": "rules",
+    "save_as": "Save as",
+    "save_as_title": "Save as",
+    "save_result_name": "Save as result",
+    "search_and_send_products_automatically": "Search and send products automatically",
+    "select_an_option": "Select an option",
+    "select_channel": "Select the channel to use for this contact",
+    "select_contacts": "Select contacts",
+    "select_external_service": "Select the external service to use",
+    "select_flow": "Select the flow to start",
+    "select_groups": "Select groups",
+    "select_intent": "Select intent",
+    "select_language": "Select the language to use for this contact",
+    "select_products_to_send": "Select products to send",
+    "select_result": "Select Result",
+    "select_what_to_update": "Select what to update",
+    "create_contact_field": "Create contact field: ",
+    "select_who_to_start": "Select who should be started in the flow",
+    "seller_id": "Seller ID (optional)",
+    "send_complete_catalog": "Send complete catalog",
+    "send_msg_facebook_topic_placeholder": "Select a topic to use over Facebook",
+    "send_msg_facebook_warning": "Sending bulk messages over a Facebook channel requires that a topic be specified if the user has not sent a message in the last 24 hours. Setting a topic to use over Facebook is especially important for the first message in your flow.",
+    "send_product": {
+      "header_info": "It is only possible to send a personalized header when \nmultiple products are selected."
+    },
+    "service_call_param": "Service Call Param",
+    "service_call_param_data": "Service Call Param Data",
+    "service_call_param_filter": "Service Call Param Filter",
+    "smart_wait": {
+      "category_description": "Define the Category you want to classify the Contact's response.",
+      "category_title": "Categorize as",
+      "command_phrases_description": "Write command phrases related to the category",
+      "command_phrases_title": "Command phrases",
+      "description_alert": "<0>Important:</0>Edit your project, <2>add a description</2> and make your AI even more powerful.",
+      "words_description": "Unique words related to the category.",
+      "words_title": "Words"
+    },
+    "send_msg_summary": "Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.",
+    "send_msg_summary_plural": "Add an attachment to each message. The attachment can be a file you upload or a dynamic URL using expressions and variables from your Flow.",
+    "sms_counter_info": "This message is [[characters]] characters and will use [[messages]] messages to send over SMS",
+    "split_by_channel_placeholder": "Select the channels to split by",
+    "split_by_groups": "Select the groups you'd like to split by below",
+    "split_by_scheme": "Channel types",
+    "split_by_scheme_summary": "The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split.",
+    "start_type": "Start Type",
+    "start_type_create": "Create a new contact",
+    "start_type_manual": "Select recipients manually",
+    "start_type_query": "Select recipients from a query",
+    "state": "State",
+    "status": "Status",
+    "subject": "Subject",
+    "subject_placeholder": "Ex: Your order has been delivered",
+    "email_message": "E-mail text",
+    "email_message_placeholder": "Enter the e-mail text",
+    "template": "template",
+    "the_maximum": "the maximum",
+    "the_minimum": "the minimum",
+    "ticketer": "Ticketer",
+    "ticketer_placeholder": "Select the ticketing service to use",
+    "timeout": "Timeout",
+    "timeout_1 day": "1 day",
+    "timeout_1 hour": "1 hour",
+    "timeout_1 minute": "1 minute",
+    "timeout_1 week": "1 week",
+    "timeout_10 minutes": "10 minutes",
+    "timeout_12 hours": "12 hours",
+    "timeout_15 minutes": "15 minutes",
+    "timeout_15 seconds": "15 seconds",
+    "timeout_18 hours": "18 hours",
+    "timeout_2 days": "2 days",
+    "timeout_2 hours": "2 hours",
+    "timeout_2 minutes": "2 minutes",
+    "timeout_3 days": "3 days",
+    "timeout_3 hours": "3 hours",
+    "timeout_3 minutes": "3 minutes",
+    "timeout_30 seconds": "30 seconds",
+    "timeout_4 minutes": "4 minutes",
+    "timeout_45 seconds": "45 seconds",
+    "timeout_5 minutes": "5 minutes",
+    "timeout_6 hours": "6 hours",
+    "title": "Title",
+    "today": "today",
+    "today_proper": "Today",
+    "topic": "Topic",
+    "topic_placeholder": "Select the topic to use",
+    "topic_prefix": "Create Topic: ",
+    "translation": "Translation",
+    "type": "Type",
+    "type_label": "When a contact arrives at this point in your flow...",
+    "type_options": "Type Options",
+    "upload_attachment": "Upload Attachment",
+    "url": "URL",
+    "urn": "Value of URN",
+    "urn_type": "URN Type",
+    "use_as_default_language": "Use as default language",
+    "value": "Value",
+    "variable": "Variable",
+    "video_url": "Video URL",
+    "vtex_search": "VTEX Search",
+    "webhook_body_summary": "Modify the body of the [[method]] request that will be sent to your webhook",
+    "webhook_body_placeholder": "Body of the request",
+    "webhook_example": "This response would add <1>@webhook.product</1> and <4>@webhook[\"stock level\"]</4> for use in the flow.",
+    "webhook_header": "Header",
+    "webhook_header_name": "Header name",
+    "webhook_header_summary": "Add any additional headers below that you would like to send along with your request",
+    "webhook_help": "If your server responds with JSON, each property will be added to the Flow.",
+    "whatsapp_warning": "Sending messages over a WhatsApp channel requires that a template be used if you have not received a message from a contact in the last 24 hours. Setting a template to use over WhatsApp is especially important for the first message in your flow.",
+    "file": "File",
+    "execute": "Run ",
+    "the_last_response": "the last response",
+    "through_the_classifier": " through the classifier",
+    "above": "Above",
+    "classifier_input": "Classifier input",
+    "classifier_input_description": "Enter an expression to use as the input to your classifier. To classify the last response from the contact use",
+    "select_contact_field_label": "If the contact's",
+    "select_result_label": "If the result",
+    "select_result_placeholder": "Select the result",
+    "select_quantity_of_buckets_label": "Split randomly into",
+    "save": "Save",
+    "as": "as",
+    "All Responses": "All responses",
+    "No Response": "No response",
+    "Any Value": "Any value",
+    "Other": "Other",
+    "Success": "Success",
+    "Failure": "Failure",
+    "Complete": "Complete",
+    "Expired": "Expired",
+    "remove_from_all_groups": "Remove from all groups",
+    "split_by": "Split by",
+    "type_here": "Type here...",
+    "select_the_file_type": "Select the file type",
+    "ex_cart": "Ex: cart",
+    "ex_shop": "Ex: shopping",
+    "ex_weni": "Ex: weni.ai",
+    "ex_accept": "Ex: Accept",
+    "ex_application_json": "Ex: application/json",
+    "ex_citrus_and_sweet": "Ex: Citrus and sweet",
+    "ex_footer": "Ex: Footer",
+    "ex_menu": "Ex: Menu",
+    "ex_offers": "Ex: Offers",
+    "ex_orange": "Ex: Orange",
+    "ex_products_action": "Ex: Buy now",
+    "ex_products_body": "Ex: offers are valid for 5 days",
+    "ex_results": "Ex: @results.seller_id",
+    "ex_smart_argument": "Ex: when the user greets you",
+    "ex_smart_category": "Ex: Greeting",
+    "action_button_text": "Action button text",
+    "action_button_url": "Action button URL",
+    "action_button_url_placeholder": "Ex: https://www.restaurantmenu.com"
+  },
+  "guiding": {
+    "close_tour": "Close tour",
+    "control_tools": {
+      "0": {
+        "description": "Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen",
+        "title": "Select and drag"
+      },
+      "1": {
+        "description": "Now you can zoom in and zoom out natively, without having to zoom in on the entire browser, which also helps with the navigability of cards.",
+        "title": "Zoom tool"
+      },
+      "2": {
+        "description": "Your flow is too big and sometimes you get lost? Your problems are over, just click here or use the shortcut Ctrl + Enter to go back to the beginning of your flow.",
+        "title": "Start of flow"
+      }
+    },
+    "v2": {
+      "0": {
+        "button": "Got it 1/3",
+        "description": "Now just click on this button to create a new block.",
+        "title": "New block"
+      },
+      "1": {
+        "button": "Got it 2/3",
+        "description": "Finally, you can copy and paste the blocks wherever you want, including in\nanother flow. Click the button or use the shortcut Ctrl C + Ctrl V.",
+        "title": "Copy and paste"
+      },
+      "2": {
+        "button": "Got it 3/3",
+        "description": "Now the simulator looks like WhatsApp\nso you can more faithfully predict how your flow will look.",
+        "title": "WhatsApp simulator skin"
+      }
+    }
+  },
+  "issues": {
+    "header": "Flow Issues",
+    "label": "Flow Issues",
+    "legacy_extra": "Invalid regular expression found: [[regex]]",
+    "missing_dependency": "Cannot find a [[type]] for <1>[[name]]</1>"
+  },
+  "new": "New",
+  "new_updates": {
+    "buttons": {
+      "first": "Close",
+      "second": "Show me everything"
+    },
+    "description": "Whats new?",
+    "footer": "Feel free to send feedbacks about your experience",
+    "news": {
+      "fifth": "Now it's easier to find the start of your flow",
+      "first": "Now you can use your “little hand” to navigate in your flow",
+      "fourth": "The feedback modal is different and takes up less space on your screen",
+      "second": "Zoom tool",
+      "third": "It's easier to know where your flow is going with the new colors on the arrows that connect the blocks"
+    },
+    "title": "News in the area!"
+  },
+  "operators": {
+    "has_all_words": "has all of the words",
+    "has_any_word": "has any of the words",
+    "has_beginning": "starts with",
+    "has_category": "has the category",
+    "has_date": "has a date",
+    "has_date_category": "Has Date",
+    "has_date_eq": "has a date equal to",
+    "has_date_gt": "has a date after",
+    "has_date_lt": "has a date before",
+    "has_district": "has district",
+    "has_district_category": "Has District",
+    "has_email": "has an email",
+    "has_email_category": "Has Email",
+    "has_error": "has an error",
+    "has_error_category": "Has Error",
+    "has_group": "is in the group",
+    "has_intent": "has intent",
+    "has_number": "has a number",
+    "has_number_between": "has a number between",
+    "has_number_eq": "has a number equal to",
+    "has_number_gt": "has a number above",
+    "has_number_gte": "has a number at or above",
+    "has_number_lt": "has a number below",
+    "has_number_lte": "has a number at or below",
+    "has_only_phrase": "has only the phrase",
+    "has_pattern": "matches regex",
+    "has_phone": "has a phone number",
+    "has_phone_category": "Has Phone",
+    "has_phrase": "has the phrase",
+    "has_state": "has state",
+    "has_state_category": "Has State",
+    "has_text": "has some text",
+    "has_time": "has a time",
+    "has_top_intent": "has top intent",
+    "has_value": "is not empty",
+    "has_value_category": "Not Empty",
+    "has_ward": "has ward",
+    "has_ward_category": "Has Ward"
+  },
+  "or": "or",
+  "recent_messages": {
+    "header": "Recent Messages",
+    "header_empty": "No Recent Messages"
+  },
+  "removal_confirmation": "Do you want to delete the card?",
+  "removal_confirmation_description": "Are you sure you want to delete the card?",
+  "action_cannot_be_reversed": "This action cannot be reversed.",
+  "revisions": {
+    "current": "current",
+    "header": "Revisions",
+    "label": "Revision History",
+    "revert": "revert"
+  },
+  "schemes": {
+    "email": {
+      "name": "Email",
+      "path": "Email Address"
+    },
+    "external": {
+      "name": "External",
+      "path": "External ID"
+    },
+    "facebook": {
+      "path": "Facebook"
+    },
+    "firebase": {
+      "name": "Firebase",
+      "path": "Firebase ID"
+    },
+    "freschat": {
+      "name": "Freshchat"
+    },
+    "freshchat": {
+      "path": "Freshchat ID"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "path": "Instagram ID"
+    },
+    "jiochat": {
+      "path": "Jiochat ID"
+    },
+    "jiojach": {
+      "name": "Jiochat"
+    },
+    "line": {
+      "name": "Line",
+      "path": "Line ID"
+    },
+    "phone": {
+      "name": "SMS",
+      "path": "Phone number"
+    },
+    "slack": {
+      "name": "Slack",
+      "path": "Slack ID"
+    },
+    "teams": {
+      "name": "Teams",
+      "path": "Teams ID"
+    },
+    "telegram": {
+      "name": "Telegram",
+      "path": "Telegram ID"
+    },
+    "twitter": {
+      "name": "Twitter",
+      "path": "Twitter Handle"
+    },
+    "twitterid": {
+      "name": "Twitter",
+      "path": "Twitter ID"
+    },
+    "viber": {
+      "name": "Viber",
+      "path": "Viber ID"
+    },
+    "wechat": {
+      "name": "Wechat",
+      "path": "Wechat ID"
+    },
+    "whatsapp": {
+      "name": "WhatsApp",
+      "path": "WhatsApp Number"
+    }
+  },
+  "select": "Select",
+  "simulator": {
+    "added_to_group": "Added to",
+    "airtime_transferred": "Transferred [[amount]] [[currency]] to [[recipient]]",
+    "contact_field_changed": "Set contact \"[[field]]\" to \"[[value]]\"",
+    "contact_field_cleared": "Cleared contact \"[[field]]\"",
+    "contact_language_changed": "Set preferred language to \"[[language]]\"",
+    "contact_name_changed": "Set contact name to \"[[name]]\"",
+    "contact_status_changed": "Set status to \"[[status]]\"",
+    "flow_entered": "Entered flow \"[[flow]]\"",
+    "flow_exited": "Exited flow",
+    "httplog_dialog": "HTTP Request Details",
+    "input_labels_added": "Message labeled with",
+    "label": "Run in Simulator",
+    "msg_wait": "Waiting for reply",
+    "prompt": {
+      "message": "Enter message",
+      "restart": "Press refresh to start again"
+    },
+    "removed_from_group": "Removed from",
+    "resthook_called": "Triggered flow event \"[[resthook]]\"",
+    "run_result_changed": "Set result \"[[field]]\" to \"[[value]]\"",
+    "sent_email": {
+      "summary": "Sent email to [[recipients]] with subject \"[[subject]]\"",
+      "title": "Email Details"
+    },
+    "session_triggered": "Started somebody else in \"[[flow]]\"",
+    "ticket_opened": "Ticket opened with topic \"[[topic]]\""
+  },
+  "sticky": {
+    "body": "...",
+    "title": "New Note"
+  },
+  "to_flow_start": "Start of flow",
+  "translation": {
+    "header": "Flow Translation",
+    "label": "Translations"
+  },
+  "whatsapp_headers": {
+    "media": "Media",
+    "text": "Text"
+  },
+  "whatsapp_interactions": {
+    "add_url": "URL Button",
+    "add_url_description": "Add a button with a link to an external URL.",
+    "list": "Option list",
+    "list_description": "Make choices easier with a list of up to 10 interactive options",
+    "location": "Location",
+    "location_description": "Ask users for their location to facilitate service",
+    "none": "No interactions selected",
+    "replies": "Quick replies",
+    "replies_description": "Create up to 3 quick replies with predefined messages",
+    "request_location": "Request Location"
+  },
+  "whatsapp_messages": {
+    "interactive_message": "Interactive message",
+    "simple_message": "Simple message"
+  },
+  "whatsapp_msg": {
+    "attachment_url": "Attachment URL",
+    "configure_your_message": "Configure your message",
+    "invalid_attachment_type": "Invalid attachment type",
+    "list_items_required": "At least one list option must be filled",
+    "replies_required": "At least one quick reply must be filled",
+    "replies_unique": "Quick replies must be unique"
+  },
+  "you_can_also_delete_cards_pressing_the_keys": "You can also delete cards by pressing",
+  "copy": {
+    "multiple": "Blocks successfully copied",
+    "single": "Block successfully copied"
+  }
+}

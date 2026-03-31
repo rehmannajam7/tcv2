@@ -1,0 +1,224 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Simulator > renders 1`] = `
+<div
+  className="_sim_container_af16d5"
+  id="sim_container"
+>
+  <div>
+    <div
+      className="_simulator_af16d5 _sim_hidden_af16d5"
+      id="simulator"
+      key="sim"
+    >
+      <ContextExplorer
+        visible={false}
+      />
+      <div
+        className="_screen_af16d5"
+      >
+        <div
+          className="_header_af16d5 "
+        >
+          <div
+            className="_reset_af16d5"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              icon="button-refresh-arrow-1"
+              scheme="neutral-snow"
+              size="md"
+            />
+          </div>
+          <div
+            className="_close_af16d5"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              icon="close"
+              scheme="neutral-snow"
+              size="md"
+            />
+          </div>
+        </div>
+        <div
+          className="_messages_af16d5 "
+          style={
+            {
+              "height": 366,
+            }
+          }
+        >
+          <div
+            id="bottom"
+            style={
+              {
+                "clear": "both",
+                "float": "left",
+                "marginTop": 20,
+              }
+            }
+          />
+        </div>
+        <div
+          className="_controls_af16d5"
+        >
+          <input
+            disabled={true}
+            onKeyUp={[Function]}
+            placeholder="Press refresh to start again"
+            type="text"
+          />
+          <div
+            className="_show_attachments_button_af16d5"
+            data-testid="show_attachments_button"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              icon="attachment"
+              scheme="neutral-cloudy"
+              size="sm"
+            />
+          </div>
+        </div>
+        <div
+          className="_attachment_buttons_af16d5 "
+        >
+          <span
+            className="ml-auto"
+          >
+            <div
+              data-testid="attachment-videos"
+              onClick={[Function]}
+            >
+              <ForwardRef
+                className="_icon_af16d5"
+                icon="video-file-mp4-1"
+                scheme="neutral-cloudy"
+                size="md"
+              />
+            </div>
+          </span>
+          <div
+            data-testid="attachment-images"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              className="_icon_af16d5"
+              icon="common-file-horizontal-image-1"
+              scheme="neutral-cloudy"
+              size="md"
+            />
+          </div>
+          <div
+            data-testid="attachment-audio"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              className="_icon_af16d5"
+              icon="microphone"
+              scheme="neutral-cloudy"
+              size="md"
+            />
+          </div>
+          <div
+            data-testid="attachment-location"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              className="_icon_af16d5"
+              icon="location_on"
+              scheme="neutral-cloudy"
+              size="md"
+            />
+          </div>
+          <div
+            className="ml-auto"
+            data-testid="hide_attachments_button"
+            onClick={[Function]}
+          >
+            <ForwardRef
+              icon="close"
+              scheme="neutral-cloudy"
+              size="md"
+            />
+          </div>
+        </div>
+        <div
+          className="_drawer_af16d5  _forced_af16d5"
+          style={
+            {
+              "bottom": -0,
+            }
+          }
+        />
+        <div
+          className="_footer_af16d5 "
+        >
+          <div
+            className="_show_context_button_af16d5"
+          >
+            <div
+              className="context-button"
+              data-testid="context_show_button"
+              onClick={[Function]}
+            >
+              <ForwardRef
+                icon="alternate_email"
+                scheme="neutral-snow"
+                size="sm"
+              />
+            </div>
+          </div>
+          <div
+            className="_whatsapp_switch_af16d5"
+            data-testid="whatsapp_switch"
+          >
+            <span>
+              WhatsApp
+            </span>
+            <SwitchElement
+              checked={false}
+              name="WhatsApp"
+              onChange={[Function]}
+              size="small"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <Connect(GuidingSteps)
+    action={[Function]}
+    buttonText="Got it 3/3"
+    className="_guiding_steps_af16d5"
+    description="Now the simulator looks like WhatsApp
+so you can more faithfully predict how your flow will look."
+    guide="v2"
+    side="left"
+    step={2}
+    title="WhatsApp simulator skin"
+  >
+    <div
+      className="_simulator_tab_af16d5 "
+      data-testid="simulator_toggle"
+      onClick={[Function]}
+    >
+      <div
+        className="_simulator_tab_icon_af16d5"
+      >
+        <ForwardRef
+          icon="button-play-1"
+          scheme="neutral-snow"
+          size="lg"
+        />
+      </div>
+      <div
+        className="_simulator_tab_text_af16d5"
+      >
+        Run in Simulator
+      </div>
+    </div>
+  </Connect(GuidingSteps)>
+</div>
+`;

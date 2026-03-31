@@ -1,0 +1,46 @@
+.player {
+  position: relative;
+  line-height: 1em !important;
+  letter-spacing: 1em !important;
+  cursor: pointer;
+  display: flex;
+
+  &.playing {
+    .circle_progress {
+    }
+
+    .button {
+      color: cornflowerblue;
+    }
+  }
+
+  .circles {
+    position: relative;
+    opacity: 1;
+    left: -4px;
+
+    .circle_background {
+      position: relative;
+      transition: stroke-dashoffset 0.5s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    .circle_foreground {
+      position: relative;
+      transition: stroke-dashoffset 0.5s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  }
+  .button {
+    &:hover {
+      color: cornflowerblue;
+    }
+    align-self: center;
+    position: absolute;
+    margin-left: -3px;
+    font-size: 13px;
+    color: #aaa;
+  }
+}

@@ -1,0 +1,59 @@
+@import 'src/variables.module.scss';
+
+.recipients {
+  margin-bottom: 15px;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+.recipients_container {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.node {
+  .to {
+    padding: $action_padding;
+    background: $unnnic-color-background-snow;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    border-bottom: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+
+    .name {
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: flex-start;
+      width: fit-content;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+
+    .icon {
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      padding-right: 2px;
+    }
+
+    .more {
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      padding-bottom: 5px;
+    }
+  }
+
+  .message {
+    background: #fff;
+    padding: $action_padding;
+
+    .line {
+      display: block;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+      color: $unnnic-color-neutral-dark;
+    }
+  }
+}

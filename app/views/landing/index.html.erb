@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thumbcrowd — AI-based CX for brands and retailers</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo" aria-label="Thumbcrowd Logo">
+          <% if @global_config['LOGO'].present? %>
+            <img src="<%= @global_config['LOGO'] %>" alt="<%= @global_config['INSTALLATION_NAME'] || 'ThumbCrowd' %>" class="logo"> 
+          <% end %>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary" style="display:none;">
+          <a href="#">Product</a>
+          <a href="#">Solutions</a>
+          <a href="#">Resources</a>
+          <a href="#">Pricing</a>
+        </nav>
+
+        <div class="header-cta">
+          <a class="link-muted" href="/app/login">Login</a>
+          <button class="btn btn-outline">Talk to Sales</button>
+          <button class="btn" href="/app/auth/signup">Try for free</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container text-center">
+          <h1 class="serif mb-48">
+            An AI-based CX enterprise <br class="hide-sm" />
+            solution for brands and retailers
+          </h1>
+
+          <div class="actions mt-48">
+            <button class="btn btn-lg">Try for free</button>
+          </div>
+
+          <div class="m-48">
+            <p class="lede">
+              ThumbCrowd empowers customer service leaders to deliver efficient,
+              high‑quality support at scale with an AI agent—continuously improving
+              the speed and quality of results across all channels and languages, 24/7.
+            </p>
+          </div>
+
+          <div class="hero-video-wrapper-div">
+           <img src="/index/ui.png" loading="lazy" alt="" srcset="/index/ui.png 500w, /index/ui.png 1138w" class="border-radius-20">
+          </div>
+
+          <div class="ales mt-48">
+            <h2 class="serif">Supercharge Your Sales with Chat Marketing</h2>
+            <div class="">
+              <p class="muted">
+                Unlock the potential of Instagram, WhatsApp, and Messenger with cutting‑edge chat automation.
+              </p>
+            </div>
+          </div>
+
+          <div class="features">
+            <article class="card card-tint">
+              <div class="card-icon bg-green">
+              <img src="/index/channels_whatsapp.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>WhatsApp</h3>
+              <p>
+                Use WhatsApp Automations to help customers discover products,
+                resolve order information and deliver support—on autopilot.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+            <article class="card card-tint">
+              <div class="card-icon bg-pink">
+                <img src="/index/channels_instagram-dm.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>Instagram DMs</h3>
+              <p>
+                Answer every question, comment, and story reply 24/7. Automate replies and drive higher conversions on IG.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+            <article class="card card-tint">
+              <div class="card-icon bg-blue">
+                <img src="/index/channels_facebook.svg" loading="lazy" alt="icon">
+              </div>
+              <h3>Facebook Messenger</h3>
+              <p>
+                Automate conversations to fuel more sales, generate leads, auto‑answer FAQs, and run marketing campaigns.
+              </p>
+              <div class="link-card"><a href="#" class="link-inline">Learn more →</a></div>
+            </article>
+          </div>
+
+        </div>
+      </section>
+
+      <section>
+        <div class="clients_logo m-48" aria-label="Trusted by logos">
+          <span><img src="/index/clientlogos/cheetay.svg" loading="lazy" alt="CHEETAY"></span>
+          <span><img src="/index/clientlogos/AliMedical.svg" loading="lazy" alt="ALIMEDICAL"></span>
+          <span><img src="/index/clientlogos/evercare.svg" loading="lazy" alt="EVERCARE"></span>
+          <span><img src="/index/clientlogos/FBISE.svg" loading="lazy" alt="FBISE"></span>
+          <span><img src="/index/clientlogos/Gharpar.svg" loading="lazy" alt="GHARPAR"></span>
+          <span><img src="/index/clientlogos/InstalmentPk.svg" loading="lazy" alt="INSTALMENTPK"></span>
+          <span><img src="/index/clientlogos/LM.svg" loading="lazy" alt="LECOLEMONDIALE"></span>
+          <span><img src="/index/clientlogos/MG.svg" loading="lazy" alt="MELBOURNEWELLNESS"></span>
+          <span><img src="/index/clientlogos/SaadAhssan.svg" loading="lazy" alt="SAADAHSAN"></span>
+          <span><img src="/index/clientlogos/dawaai.svg" loading="lazy" alt="DAWAAI"></span>
+          <span><img src="/index/clientlogos/CLH.svg" loading="lazy" alt="CHUGHTAI"></span>
+          <span><img src="/index/clientlogos/rizq.svg" loading="lazy" alt="RIZQ"></span>
+        </div>
+      </section>
+      <section class="section section-green-100">
+        <div class="container text-center p-48">
+          <h1 class="section-h1">
+            Meet ALY~AI: Your <br class="hide-sm" /> Ultimate Support Member
+          </h1>
+          <p class="muted max-w-720 center">
+            ThumbCrowd redefines customer support with seamless device integration and Robin‑AI at its core. Empower agents to work faster, respond smarter, and deliver personalized interactions.
+          </p>
+        </div>
+
+        <div class="container-flex v-center mt-48">
+          <div class="w-48 pr-48">
+            <h3 class="h3">Increase agent efficiency with Copilot</h3>
+            <p class="mt-12">
+              Copilot provides instant answers so your team can focus on what really matters: forging deeper relationships with customers.
+            </p>
+            <button class="btn mt-20">Port your number</button>
+          </div>
+
+          <div>
+            <div class="window-120">
+              <img src="/index/numbers.png" loading="lazy" alt="numbers">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section section-lemon-100">
+        <div class="container-flex v-center mt-48">
+          <div>
+            <div class="window-110">
+              <img src="/index/audio-video.png" loading="lazy" alt="audio video">
+            </div>
+          </div>
+        
+
+          <div class="w-48 pr-48">
+            <h3 class="h3">Audio, Video, Calls, &amp; Text messages in one unified inbox</h3>
+            <p class="mt-12">
+              See conversations, voice messages, and calls in a single thread for each contact. Never lose context with the full history in one place.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sky-100">
+        <div class="container-flex v-center mt-48">
+          <div class="w-65 pr-48">
+            <h3 class="h3">Contact details all in one place</h3>
+            <p class="mt-12">
+              Keep track of important details with custom properties and notes. One shared address book allows your team to have everything they need before getting in touch.
+            </p>
+          </div>
+
+          <div>
+            <div class="window">
+              <img src="/index/contact-details.png" loading="lazy" alt="contact">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-white-000 p-20">
+        <div class="features-grid-2 section-black-100 gap-145 border-radius-20">
+          <div class="p-48 feature-section">
+            <h1 class="serif mb-48" style="color: #fff; font-weight: 100;">Customers report 17% CSAT improvement when using copilot.</h1>
+          </div>
+          <div>
+            <div class="window" style="width: 100% !important;">
+                <img src="/index/happyface.png" loading="lazy" alt="contact">
+              </div>
+          </div>
+        </div>  
+      </section>
+
+
+
+     <!-- Hero Section -->
+     <main class="container mt-48">
+        <section class="hero-all-in-one">
+            <h1 class="serif">Your all-in-one AI powered service platform</h1>
+            <p class="hero-all-in-one-subtitle">Unite your entire customer service experience—seamlessly combining CRM, ticketing, and AI into one powerful platform for the future.</p>
+            <button class="cta-button">Schedule Demo</button>
+        </section>
+
+        <!-- Feature Grid -->
+        <section">
+          <div class="features-grid-2">
+            <!-- AI Agents for Customers -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agents for Customers</h3>
+                    <p>Respond to your customers with instant, human-like support from a team of advanced AI Agents.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/ai_customer.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+          
+          
+            <!-- AI Agents for Reps -->
+          
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agents for Reps</h3>
+                    <p>Empower reps with an AI assistant that handles the busy work, so reps focus on great customer experiences.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/copilot_team.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+          </div>
+            
+          <!-- CRM -->
+          <div class="features">
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>CRM</h3>
+                    <p>Build more meaningful relationships with a complete view of your customers.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/contact.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Omnichannel -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Omnichannel</h3>
+                    <p>Our AI Agents seamlessly engage customers across every channel - email, chat, social, phone and more.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/omnichannel.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflows -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Workflows</h3>
+                    <p>Automate repetitive, manual processes to improve team focus and efficiency.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/workflow.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+          </div>
+
+            <!-- AI Agent Studio -->
+          <div class="features-grid-2 mb-48">
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>AI Agent Studio</h3>
+                    <p>Effortlessly build your own team of AI Agents, customized to your business needs—no developer required!</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="studio-interface">
+                        <div class="team-hierarchy">
+                            <div class="supervisor">
+                                <div class="agent-node supervisor-node">
+                                    <span class="agent-title">Team Supervisor</span>
+                                    <div class="agent-avatar supervisor-avatar"></div>
+                                </div>
+                            </div>
+                            <div class="agents-row">
+                                <div class="agent-node">
+                                    <div class="agent-avatar"></div>
+                                    <span class="agent-title">Agent Expert</span>
+                                </div>
+                                <div class="agent-node">
+                                    <div class="agent-avatar"></div>
+                                    <span class="agent-title">Agent Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Integrations -->
+            <div class="feature-card">
+                <div class="card-header">
+                    <h3>Integrations</h3>
+                    <p>Seamlessly connect all your tools, data, and processes with easy-to-use integrations.</p>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                <div class="card-mockup">
+                    <div class="chat-interface">
+                        <img src="/index/integrations.png" loading="lazy" alt="audio video">
+                    </div>
+                </div>
+            </div>
+          </div>
+        </section>
+     </main>
+      <!-- AI Features Section -->
+        <section class="section ai-features-section" style="background: #0a0a0a; color: white; padding: 80px 0; margin-top:200px">
+          <div class="container text-center">
+            <div class="ai-hero-content">
+              <h1 style="font-size: 3rem; font-weight: 400; margin-bottom: 1rem; line-height: 1.2;">Create Effortlessly with AI</h1>
+              <p style="color: #a0a0a0; font-size: 1.1rem; margin-bottom: 3rem;">Supercharge your workflow with ThumbCrowd AI.</p>
+            </div>
+
+            <div class="ai-features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 4rem;">
+              <!-- Conversation Summaries -->
+              <div class="ai-feature-card" style="background: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: left;">
+                <div class="feature-header" style="margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Conversation summaries and next steps</h3>
+                  <p style="color: #a0a0a0; font-size: 0.9rem; line-height: 1.4;">ThumbCrowd Copilot automatically summarizes conversations, audios, then intelligently suggests next steps.</p>
+                </div>
+                
+                <div class="call-summary-mockup">
+                  <div class="call-header" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.85rem; color: #888;">
+                    <div class="avatar" style="width: 24px; height: 24px; border-radius: 50%; background: #4a5568;"></div>
+                    <span>📞 Call ended</span>
+                    <span style="margin-left: auto;">Thu Jan 9 at 9:30</span>
+                  </div>
+                  
+                  <div class="ai-summary">
+                    <div class="call-summary-mockup">
+                      <img src="/index/call-summary.png" loading="lazy" alt="call-summary">
+                    </div> 
+                  </div>
+                  
+                  
+                </div>
+              </div>
+
+              <!-- Automatic Audio Transcripts -->
+              <div class="ai-feature-card" style="background: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: left;">
+                <div class="feature-header" style="margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Automatic audio message transcripts</h3>
+                  <p style="color: #a0a0a0; font-size: 0.9rem; line-height: 1.4;">Quickly scan, search, and instantly reference or find info with time-stamps.</p>
+                </div>
+                
+                <div class="transcript-mockup">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="background: #6366f1; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">✨ Call transcript</span>
+                  </div>
+                  
+                  <div class="transcript-messages">
+                    <img src="/index/call-transcript.png" loading="lazy" alt="call transcript">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Suggested Contacts -->
+              <div class="ai-feature-card" style="background: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: left;">
+                <div class="feature-header" style="margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Suggested contacts</h3>
+                  <p style="color: #a0a0a0; font-size: 0.9rem; line-height: 1.4;">Easily add new contacts with suggestions based on call and voicemail transcripts.</p>
+                </div>
+                
+                <div class="contact-suggestion-mockup" style="background: #2a2a2a; border-radius: 12px; padding: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="background: #6366f1; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">✨ Contact suggestion</span>
+                  </div>
+                  
+                  <div class="contact-card" style="background: white; color: black; border-radius: 8px; padding: 1rem; text-align: center;">
+                    <div class="contact-avatar" style="width: 60px; height: 60px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #64748b;">👤</div>
+                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Angela Campbell</h4>
+                    <div class="contact-details" style="font-size: 0.9rem; color: #64748b; margin-bottom: 1rem;">
+                      <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                        <span>📞</span>
+                        <span>Phone: (269) 682-1892</span>
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                        <span>🏢</span>
+                        <span>Company: Icecap</span>
+                      </div>
+                      <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <span>👤</span>
+                        <span>Role: Product Manager</span>
+                      </div>
+                    </div>
+                    <button style="background: #e2e8f0; color: #1a1a1a; border: none; padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; cursor: pointer;">Save to contacts</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI Call Tags -->
+              <div class="ai-feature-card" style="background: #1a1a1a; border-radius: 16px; padding: 2rem; text-align: left;">
+                <div class="feature-header" style="margin-bottom: 1.5rem;">
+                  <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">AI conversation tags</h3>
+                  <p style="color: #a0a0a0; font-size: 0.9rem; line-height: 1.4;">Define your tags, and our AI automatically suggest them to relevant conversations you stay focused on what matters.</p>
+                </div>
+                
+                <div class="call-tags-mockup" style="background: #2a2a2a; border-radius: 12px; padding: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="background: #6366f1; color: white; padding: 0.3rem 0.6rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">✨ Call tag</span>
+                    <span style="color: #888; font-size: 0.8rem; margin-left: auto;">Coming soon</span>
+                  </div>
+                  
+                  <div class="call-entry" style="background: white; color: black; border-radius: 8px; padding: 1rem;">
+                    <div class="call-header" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                      <div style="width: 32px; height: 32px; border-radius: 50%; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">📞</div>
+                      <div>
+                        <div style="font-weight: 600; font-size: 0.9rem;">Call ended</div>
+                        <div style="color: #64748b; font-size: 0.8rem;">Ruth answered • 15:28</div>
+                      </div>
+                    </div>
+                    
+                    <div class="audio-player" style="display: flex; align-items: center; gap: 0.5rem; background: #f8f9fa; padding: 0.5rem; border-radius: 6px; margin-bottom: 0.75rem;">
+                      <button style="background: none; border: none; font-size: 1rem;">▶️</button>
+                      <div style="flex: 1; height: 2px; background: #e2e8f0; border-radius: 1px; position: relative;">
+                        <div style="width: 30%; height: 100%; background: #6366f1; border-radius: 1px;"></div>
+                      </div>
+                      <span style="font-size: 0.8rem; color: #64748b;">1:48</span>
+                      <button style="background: none; border: none; font-size: 0.8rem; color: #64748b;">🔊</button>
+                    </div>
+                    
+                    <div class="call-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                      <span style="background: #dcfce7; color: #166534; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">✅ New answered</span>
+                      <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">📝 Feedback</span>
+                      <span style="background: #dbeafe; color: #1e40af; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.8rem;">⭐ Positive (5/5)</span>
+                    </div>
+                    
+                    <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid #e2e8f0;">
+                      <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.25rem;">📋 View calls with this tag</div>
+                      <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.25rem;">⚙️ Go to tag settings</div>
+                      <div style="font-size: 0.8rem; color: #64748b;">🗑️ Remove tag</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial-section" style="text-align: center; margin-top: 4rem;">
+              <div class="testimonial-avatar" style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23f0f0f0'/%3E%3Ccircle cx='20' cy='16' r='6' fill='%23666'/%3E%3Cpath d='M8 32c0-6.627 5.373-12 12-12s12 5.373 12 12' fill='%23666'/%3E%3C/svg%3E" alt="Joannie Bates" style="width: 40px; height: 40px; border-radius: 50%;">
+              </div>
+              <blockquote style="font-size: 1.25rem; font-weight: 400; line-height: 1.5; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                "ThumbCrowd was truly my first assistant. The AI feature of transcribing calls, creating a summary and to-do list, is next-level amazing."
+              </blockquote>
+              <cite style="color: #a0a0a0; font-size: 0.9rem;">
+                <strong>Joannie Bates</strong>, Principal Agent
+              </cite>
+              <div style="margin-top: 1rem;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Ctext x='60' y='25' text-anchor='middle' fill='%23666' font-family='Arial, sans-serif' font-size='14' font-weight='bold'%3EKW REALTORS%3C/text%3E%3C/svg%3E" alt="KW Realtors" style="height: 24px; opacity: 0.7;">
+              </div>
+            </div>
+          </div>
+        </section>  
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#" class="logo" aria-label="Thumbcrowd home">
+          <span class="logo-mark" aria-hidden="true"></span>
+          <span class="logo-text">Thumbcrowd</span>
+        </a>
+        <p class="muted small">© <span id="y"></span> Thumbcrowd. All rights reserved.</p>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Status</a>
+        </nav>
+      </div>
+      <script>
+        // Year without any external JS
+        document.getElementById('y').textContent = new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

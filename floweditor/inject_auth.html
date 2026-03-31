@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlowEditor Auth Injector</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .token-display { background: #f8f9fa; padding: 10px; border-radius: 5px; font-family: monospace; word-break: break-all; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 FlowEditor Authentication Injector</h1>
+        <p>This tool helps inject authentication tokens into the FlowEditor running in another tab.</p>
+        
+        <div id="status" class="status info">Ready to inject authentication...</div>
+        
+        <div class="token-display">
+            <strong>Token:</strong><br>
+            <span id="token-display">eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNjcsImFjY291bnRfaWQiOjEsImVtYWlsIjoiam9obkBhY21lLmluYyIsInJvbGUiOiJhZG1pbmlzdHJhdG9yIiwidWlkIjoiam9obkBhY21lLmluYyIsImlhdCI6MTc2MjEwMzc5OCwiZXhwIjoxNzYyMTkwMTk4fQ.Ihlncta1q7VGz-7vAUOQBNaNx8N9HoG4dOnddaYtAC4</span>
+        </div>
+        
+        <button onclick="injectAuth()">🚀 Inject Authentication</button>
+        <button onclick="checkAuth()">🔍 Check Current Auth</button>
+        <button onclick="forceReauth()" style="background: #FF9800;">🔄 Force Re-Auth</button>
+        <button onclick="clearAuth()">🗑️ Clear Auth</button>
+        <button onclick="testChannels()">🔗 Open FlowEditor</button>
+        <button onclick="refreshFlowEditor()">🔄 Refresh FlowEditor</button>
+        
+        <div id="logs" style="margin-top: 20px; background: #f8f9fa; padding: 10px; border-radius: 5px; max-height: 400px; overflow-y: auto;">
+            <strong>Logs:</strong><br>
+        </div>
+    </div>
+
+    <script>
+        const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNjcsImFjY291bnRfaWQiOjEsImVtYWlsIjoiam9obkBhY21lLmluYyIsInJvbGUiOiJhZG1pbmlzdHJhdG9yIiwidWlkIjoiam9obkBhY21lLmluYyIsImlhdCI6MTc2MjEwMzc5OCwiZXhwIjoxNzYyMTkwMTk4fQ.Ihlncta1q7VGz-7vAUOQBNaNx8N9HoG4dOnddaYtAC4';
+        const accountId = '1';
+        
+        function log(message) {
+            const logs = document.getElementById('logs');
+            const timestamp = new Date().toLocaleTimeString();
+            logs.innerHTML += `<br>[${timestamp}] ${message}`;
+            logs.scrollTop = logs.scrollHeight;
+            console.log(`[Auth Injector] ${message}`);
+        }
+        
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.className = `status ${type}`;
+            status.innerHTML = message;
+        }
+        
+        function injectAuth() {
+            try {
+                // First, aggressively clear all existing auth data to prevent conflicts
+                clearAllAuthData();
+                
+                log('🗑️ Cleared all existing authentication data from storage');
+                
+                // Set the fresh authentication data
+                localStorage.setItem('floweditor_auth_token', token);
+                localStorage.setItem('floweditor_account_id', accountId);
+                
+                log('✅ Fresh authentication token set in localStorage');
+                log(`✅ Account ID set to: ${accountId}`);
+                
+                // Try to set in global variables if available
+                if (window.setAuthToken) {
+                    window.setAuthToken(token);
+                    log('✅ setAuthToken function called');
+                } else {
+                    log('⚠️ setAuthToken function not available');
+                }
+                
+                if (window.setAccountContext) {
+                    window.setAccountContext(accountId);
+                    log('✅ setAccountContext function called');
+                } else {
+                    log('⚠️ setAccountContext function not available');
+                }
+                
+                // Try to access FlowEditor external module
+                if (window.FlowEditorExternal) {
+                    if (window.FlowEditorExternal.setAuthToken) {
+                        window.FlowEditorExternal.setAuthToken(token);
+                        log('✅ FlowEditorExternal.setAuthToken called');
+                    }
+                    if (window.FlowEditorExternal.setAccountContext) {
+                        window.FlowEditorExternal.setAccountContext(accountId);
+                        log('✅ FlowEditorExternal.setAccountContext called');
+                    }
+                    if (window.FlowEditorExternal.clearStoredAuth) {
+                        window.FlowEditorExternal.clearStoredAuth();
+                        log('✅ FlowEditorExternal.clearStoredAuth called');
+                    }
+                } else {
+                    log('⚠️ FlowEditorExternal not available');
+                }
+                
+                updateStatus('✅ Authentication injected successfully! Please refresh FlowEditor.', 'success');
+                log('🎉 Authentication injection completed - REFRESH FLOWEDITOR NOW');
+                
+            } catch (error) {
+                log(`❌ Error injecting authentication: ${error.message}`);
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function checkAuth() {
+            try {
+                const storedToken = localStorage.getItem('floweditor_auth_token');
+                const storedAccountId = localStorage.getItem('floweditor_account_id');
+                
+                log(`🔍 Stored token: ${storedToken ? storedToken.substring(0, 20) + '...' : 'NOT SET'}`);
+                log(`🔍 Stored account ID: ${storedAccountId || 'NOT SET'}`);
+                
+                if (window.FlowEditorExternal) {
+                    const currentToken = window.FlowEditorExternal.getAuthToken ? window.FlowEditorExternal.getAuthToken() : 'N/A';
+                    const currentAccountId = window.FlowEditorExternal.getAccountContext ? window.FlowEditorExternal.getAccountContext() : 'N/A';
+                    
+                    log(`🔍 Current token: ${currentToken ? currentToken.substring(0, 20) + '...' : 'NOT SET'}`);
+                    log(`🔍 Current account ID: ${currentAccountId || 'NOT SET'}`);
+                } else {
+                    log('⚠️ FlowEditorExternal not available for checking current auth');
+                }
+                
+                updateStatus('🔍 Authentication status checked', 'info');
+                
+            } catch (error) {
+                log(`❌ Error checking authentication: ${error.message}`);
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function clearAllAuthData() {
+            try {
+                log('🧹 Clearing all existing authentication data...');
+                
+                // Clear all floweditor related localStorage items
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && (key.startsWith('floweditor_') || key.startsWith('flow_') || key.includes('auth') || key.includes('token') || key.includes('account'))) {
+                        keysToRemove.push(key);
+                    }
+                }
+                
+                keysToRemove.forEach(key => {
+                    localStorage.removeItem(key);
+                    log(`🗑️ Removed localStorage key: ${key}`);
+                });
+                
+                // Clear specific known keys
+                localStorage.removeItem('floweditor_auth_token');
+                localStorage.removeItem('floweditor_account_id');
+                localStorage.removeItem('floweditor_auth_token_data');
+                localStorage.removeItem('auth_token');
+                localStorage.removeItem('account_id');
+                localStorage.removeItem('accountId');
+                localStorage.removeItem('user_id');
+                localStorage.removeItem('userId');
+                
+                // Clear sessionStorage as well
+                sessionStorage.clear();
+                log('🗑️ Cleared sessionStorage');
+                
+                // Clear cookies if possible
+                document.cookie.split(";").forEach(function(c) { 
+                    document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+                });
+                log('🗑️ Cleared cookies');
+                
+                log('✅ All authentication data cleared');
+                
+            } catch (error) {
+                log(`❌ Error clearing auth data: ${error.message}`);
+            }
+        }
+        
+        function clearAuth() {
+            try {
+                clearAllAuthData();
+                updateStatus('🗑️ Authentication cleared', 'info');
+                
+            } catch (error) {
+                log(`❌ Error clearing authentication: ${error.message}`);
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function testChannels() {
+            try {
+                updateStatus('📡 Opening FlowEditor to test channels...', 'info');
+                log('📡 Opening FlowEditor in new tab to test channels...');
+                
+                // Open FlowEditor in a new tab
+                const flowEditorWindow = window.open('http://localhost:3001', '_blank');
+                
+                if (flowEditorWindow) {
+                    log('✅ FlowEditor opened in new tab');
+                    log('💡 Try opening the "Inbox Associations" modal in the FlowEditor to see if channels load');
+                    updateStatus('✅ FlowEditor opened! Check if channels load in Inbox Associations modal', 'success');
+                } else {
+                    log('❌ Failed to open FlowEditor - popup blocked?');
+                    updateStatus('❌ Failed to open FlowEditor - check popup blocker', 'error');
+                }
+                
+            } catch (error) {
+                log(`❌ Error opening FlowEditor: ${error.message}`);
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function refreshFlowEditor() {
+            try {
+                updateStatus('🔄 Refreshing FlowEditor...', 'info');
+                log('🔄 Attempting to refresh FlowEditor...');
+                
+                // Try to find and refresh existing FlowEditor tabs
+                if (window.opener) {
+                    window.opener.location.reload();
+                    log('✅ Refreshed parent FlowEditor window');
+                } else {
+                    // Open FlowEditor in a new tab
+                    const flowEditorWindow = window.open('http://localhost:3001', '_blank');
+                    if (flowEditorWindow) {
+                        log('✅ Opened fresh FlowEditor tab');
+                    } else {
+                        log('❌ Failed to open FlowEditor - popup blocked?');
+                    }
+                }
+                
+                updateStatus('✅ FlowEditor refresh initiated', 'success');
+                
+            } catch (error) {
+                log(`❌ Error refreshing FlowEditor: ${error.message}`);
+                updateStatus(`❌ Error: ${error.message}`, 'error');
+            }
+        }
+        
+        function forceReauth() {
+            try {
+                log('🔄 Force re-authentication starting...');
+                
+                // Step 1: Aggressively clear everything
+                clearAllAuthData();
+                
+                // Step 2: Wait a moment for clearing to complete
+                setTimeout(() => {
+                    // Step 3: Inject fresh auth
+                    injectAuth();
+                    
+                    // Step 4: Wait another moment then refresh FlowEditor
+                    setTimeout(() => {
+                        refreshFlowEditor();
+                        log('🔄 Force re-authentication completed');
+                        updateStatus('🔄 Force re-authentication completed - FlowEditor refreshed', 'success');
+                    }, 1000);
+                }, 500);
+                
+            } catch (error) {
+                log(`❌ Error in force re-auth: ${error.message}`);
+                updateStatus(`❌ Force re-auth failed: ${error.message}`, 'error');
+            }
+        }
+        
+        // Auto-inject on page load
+        window.addEventListener('load', () => {
+            log('🚀 Auth injector loaded');
+            setTimeout(() => {
+                injectAuth();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

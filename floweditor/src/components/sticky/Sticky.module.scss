@@ -1,0 +1,183 @@
+@import 'src/variables.module.scss';
+
+@mixin color-choice($color) {
+  &.color_option {
+    background: $color;
+  }
+
+  .sticky {
+    background: $color;
+  }
+}
+
+.yellow {
+  @include color-choice($unnnic-color-aux-baby-yellow);
+}
+
+.blue {
+  @include color-choice($unnnic-color-aux-baby-blue);
+}
+
+.purple {
+  @include color-choice($unnnic-color-aux-baby-pink);
+}
+
+.gray {
+  @include color-choice($unnnic-color-neutral-lightest);
+}
+
+.green {
+  @include color-choice($unnnic-color-aux-baby-green);
+}
+
+.color_chooser_container {
+  height: 17px;
+  width: 100%;
+  overflow: hidden;
+
+  &:hover {
+    .color_chooser {
+      opacity: 1;
+      left: 0px;
+    }
+  }
+
+  .color_chooser {
+    color: #fff;
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+    left: -30px;
+    position: relative;
+    display: inline-block;
+
+    .color_option {
+      height: 12px;
+      width: 12px;
+      border-radius: $unnnic-border-radius-pill;
+      display: inline-block;
+      margin: 2px 3px;
+
+      &:hover {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        margin-right: 2px;
+        margin-left: 2px;
+        height: 14px;
+        width: 14px;
+      }
+    }
+  }
+}
+
+.sticky_container {
+  position: relative;
+  padding: $node_padding + px;
+  z-index: $z_sticky;
+
+  textarea::selection {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .sticky {
+    border-radius: 8px;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    cursor: pointer;
+
+    &.selected {
+      box-shadow: 0px 0px 0px 2px $selected !important;
+      border: 0px solid $selected;
+    }
+
+    .removal.title_wrapper {
+      transition: all 100ms ease-in-out;
+      background: transparent;
+
+      .remove_button {
+        color: $removal_confirmation;
+      }
+
+      textarea.title {
+        visibility: hidden;
+      }
+
+      .confirmation {
+        display: inline-block;
+      }
+    }
+
+    .title_wrapper {
+      transition: none;
+      padding: 8px 8px;
+      padding-right: 12px;
+      padding-bottom: 4px;
+
+      position: relative;
+
+      &:hover {
+        .remove_button {
+          visibility: visible;
+        }
+      }
+
+      .remove_button {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        color: $unnnic-color-neutral-darkest;
+        z-index: 1000;
+        visibility: hidden;
+        font-size: 12px;
+      }
+
+      .confirmation {
+        margin: -8px;
+        padding: 8px;
+        color: $removal_confirmation;
+        width: 160px;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 400;
+        display: none;
+        position: absolute;
+      }
+
+      textarea.title {
+        transition: none;
+        border: 0px solid grey;
+        background: none;
+        font-weight: $unnnic-font-weight-bold;
+        font-family: $unnnic-font-family-secondary;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+        width: 140px;
+        resize: none !important;
+        outline: none;
+        box-shadow: none;
+        color: $unnnic-color-neutral-dark;
+        height: inherit;
+        cursor: pointer;
+      }
+    }
+
+    .body_wrapper {
+      padding: 8px 8px;
+
+      textarea.body {
+        font-family: $unnnic-font-family-secondary;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        background: none;
+        resize: none !important;
+        color: $unnnic-color-neutral-dark;
+        font-weight: $unnnic-font-weight-regular;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+        width: 154px;
+        height: inherit;
+        cursor: pointer;
+      }
+    }
+  }
+}

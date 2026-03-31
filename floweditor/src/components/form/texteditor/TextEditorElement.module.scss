@@ -1,0 +1,9 @@
+@import 'src/variables.module.scss';
+
+.texteditor [class='helper'] {
+  display: none !important;
+}
+
+.texteditor textarea {
+  resize: none !important;
+}

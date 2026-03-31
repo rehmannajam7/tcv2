@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`External > result type should trump request type 1`] = `
+{
+  "content": {
+    "type": "group",
+  },
+  "id": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+  "name": "My Test Group",
+  "type": "group",
+}
+`;

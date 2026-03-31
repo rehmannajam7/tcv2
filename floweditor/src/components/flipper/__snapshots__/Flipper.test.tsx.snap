@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Flipper > should flip 1`] = `
+<body>
+  <div>
+    <div
+      class="_flipper_171ad8 _flipped_171ad8"
+    >
+      <div
+        class="_side_171ad8 _front_171ad8"
+      >
+        <span
+          class="_toggle_button_171ad8 fe-cog"
+          data-testid="flip"
+        />
+        <div>
+          Front
+        </div>
+      </div>
+      <div
+        class="_side_171ad8 _back_171ad8"
+      >
+        <span
+          class="_toggle_button_171ad8 fe-back"
+        />
+        <div>
+          Back
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Flipper > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_flipper_171ad8"
+    >
+      <div
+        class="_side_171ad8 _front_171ad8"
+      >
+        <span
+          class="_toggle_button_171ad8 fe-cog"
+          data-testid="flip"
+        />
+        <div>
+          Front
+        </div>
+      </div>
+      <div
+        class="_side_171ad8 _back_171ad8"
+      >
+        <span
+          class="_toggle_button_171ad8 fe-back"
+        />
+        <div>
+          Back
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

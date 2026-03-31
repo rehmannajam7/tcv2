@@ -1,0 +1,182 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Root > instance methods > componentDidMount > should call action creators 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "activity": "",
+        "attachments": "/assets/attachments.json",
+        "brain": "/assets/brain.json",
+        "channels": "/assets/channels.json",
+        "classifiers": "/assets/classifiers.json",
+        "completion": "/assets/completion.json",
+        "editor": "/flow/editor",
+        "environment": "/assets/environment.json",
+        "external_services": "/assets/external_services.json",
+        "external_services_calls": "/assets/external_services_calls.json",
+        "external_services_calls_base": "",
+        "fields": "/assets/fields.json",
+        "flows": "/assets/flows.json",
+        "globals": "/assets/globals.json",
+        "groups": "/assets/groups.json",
+        "knowledgeBases": "/assets/knowledge_bases.json",
+        "labels": "/assets/labels.json",
+        "languages": "/assets/languages.json",
+        "recents": "/assets/recents.json",
+        "recipients": "/assets/recipients.json",
+        "resthooks": "/assets/resthooks.json",
+        "revisions": "/assets/revisions.json",
+        "simulateResume": "/assets/simulate_resume.json",
+        "simulateStart": "/assets/simulate_start.json",
+        "templates": "/assets/templates.json",
+        "ticketer_queues": "/assets/ticketer_queues.json",
+        "ticketers": "/assets/ticketers.json",
+        "topics": "/assets/topics.json",
+        "users": "/assets/users.json",
+        "whatsapp_flows": "/assets/whatsapp_flows.json",
+        "whatsapp_products": "/assets/whatsapp_products.json",
+      },
+      "a4f64f1b-85bc-477e-b706-de313a022979",
+      undefined,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Root > render > should apply translating style if passed a truthy translating prop 1`] = `
+<PageVisibility
+  onChange={[Function]}
+>
+  <div
+    className="_translating_09aa27"
+    data-spec="editor-container"
+    id="editor-container"
+  >
+    <div
+      className="_footer_09aa27"
+    >
+      <div
+        className="_download_button_09aa27"
+      >
+        <Button
+          name="Download"
+          onClick={[Function]}
+          type="primary"
+        />
+      </div>
+    </div>
+    <div
+      className="_editor_09aa27"
+      data-spec="editor"
+    >
+      <Connect(RevisionExplorer)
+        createNewRevision={[MockFunction spy]}
+        loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
+        onToggled={[Function]}
+        popped={null}
+      />
+      <div
+        id="portal-root"
+      />
+      <div
+        id="canvas-portal"
+      />
+    </div>
+  </div>
+</PageVisibility>
+`;
+
+exports[`Root > render > should render flow if passed a definition, language 1`] = `
+<PageVisibility
+  onChange={[Function]}
+>
+  <div
+    data-spec="editor-container"
+    id="editor-container"
+  >
+    <div
+      className="_footer_09aa27"
+    >
+      <div
+        className="_download_button_09aa27"
+      >
+        <Button
+          name="Download"
+          onClick={[Function]}
+          type="primary"
+        />
+      </div>
+    </div>
+    <div
+      className="_editor_09aa27"
+      data-spec="editor"
+    >
+      <Connect(Flow) />
+      <Connect(RevisionExplorer)
+        createNewRevision={[MockFunction spy]}
+        loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
+        onToggled={[Function]}
+        popped={null}
+      />
+      <div
+        id="portal-root"
+      />
+      <div
+        id="canvas-portal"
+      />
+    </div>
+  </div>
+</PageVisibility>
+`;
+
+exports[`Root > render > should render self, children with required props 1`] = `
+<PageVisibility
+  onChange={[Function]}
+>
+  <div
+    data-spec="editor-container"
+    id="editor-container"
+  >
+    <div
+      className="_footer_09aa27"
+    >
+      <div
+        className="_download_button_09aa27"
+      >
+        <Button
+          name="Download"
+          onClick={[Function]}
+          type="primary"
+        />
+      </div>
+    </div>
+    <div
+      className="_editor_09aa27"
+      data-spec="editor"
+    >
+      <Connect(RevisionExplorer)
+        createNewRevision={[MockFunction spy]}
+        loadFlowDefinition={[MockFunction spy]}
+        mutable={true}
+        onToggled={[Function]}
+        popped={null}
+      />
+      <div
+        id="portal-root"
+      />
+      <div
+        id="canvas-portal"
+      />
+    </div>
+  </div>
+</PageVisibility>
+`;

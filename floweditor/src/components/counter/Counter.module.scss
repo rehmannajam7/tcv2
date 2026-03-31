@@ -1,0 +1,14 @@
+@import "src/variables.module.scss";
+
+.counter {
+  z-index: $z_counters;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.clickable {
+  cursor: pointer;
+}

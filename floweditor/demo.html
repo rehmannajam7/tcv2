@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:200,300,400,500" />
+    <title>FlowEditor Demo</title>
+    <style>
+        html input {
+            font-weight: 300;
+        }
+        :root {
+            font-size: 16px;
+        }
+        html {
+            --font-family: 'Roboto', Helvetica, Arial, sans-serif;
+            --primary-rgb: 35, 135, 202;
+            --secondary-rgb: 140, 51, 140;
+            --tertiary-rgb: 135, 202, 35;
+            --focus-rgb: 82, 168, 236;
+            --error-rgb: 255, 99, 71;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        #floweditor {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <div id="floweditor"></div>
+    
+    <script type="module" src="/src/main.jsx" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM Content Loaded');
+            
+            // Wait for the FlowEditor module to load and expose showFlowEditor
+            function initializeFlowEditor() {
+                console.log('Attempting to initialize FlowEditor...');
+                console.log('window.showFlowEditor available:', !!window.showFlowEditor);
+                
+                if (window.showFlowEditor) {
+                    // Extract authentication parameters from URL or use defaults for demo
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const accountId = urlParams.get('accountId') || urlParams.get('account_id') || '1';
+                    const token = urlParams.get('token') || urlParams.get('access_token') || 'demo-token-123';
+                    
+                    // Add authentication parameters to URL if not present
+                    if (!urlParams.get('accountId') && !urlParams.get('account_id')) {
+                        urlParams.set('accountId', accountId);
+                        const newUrl = window.location.pathname + '?' + urlParams.toString();
+                        window.history.replaceState({}, '', newUrl);
+                    }
+                    
+                    const config = {
+                        flow: 'demo-flow-id',
+                        flowType: 'message',
+                        localStorage: true,
+                        mutable: true,
+                        httpTimeout: 30000,
+                        accountId: accountId,
+                        token: token,
+                        filters: ['facebook', 'whatsapp', 'airtime', 'resthook', 'classifier', 'ticketer', 'external_service', 'whatsapp_catalog', 'brain'],
+                        help: {
+                            legacy_extra: 'help.html',
+                            missing_dependency: 'help.html',
+                            invalid_regex: 'help.html'
+                        },
+                        endpoints: {
+                            globals: '/api/globals.json',
+                            groups: '/api/groups.json',
+                            fields: '/api/fields.json',
+                            labels: '/api/labels.json',
+                            channels: '/api/channels.json',
+                            classifiers: '/api/classifiers.json',
+                            ticketers: '/api/ticketers.json',
+                            resthooks: '/api/resthooks.json',
+                            templates: '/api/templates.json',
+                            flows: '/api/flows.json',
+                            revisions: '/api/revisions.json',
+                            recents: '/api/recents.json',
+                            languages: '/api/languages.json',
+                            environment: '/api/environment.json',
+                            recipients: '/api/recipients.json',
+                            functions: '/api/functions.json',
+                            completion: '/api/completion.json',
+                            attachments: '/api/attachments.json',
+                            activity: '/api/activity.json'
+                        },
+                        showNewUpdates: false,
+                        initialGuide: 'v2'
+                    };
+
+                    console.log('Initializing FlowEditor with config:', config);
+                    const element = document.getElementById('floweditor');
+                    console.log('Target element:', element);
+                    
+                    try {
+                        window.showFlowEditor(element, config);
+                        console.log('FlowEditor initialization called successfully');
+                    } catch (error) {
+                        console.error('Error initializing FlowEditor:', error);
+                    }
+                } else {
+                    console.log('FlowEditor not ready, retrying in 100ms...');
+                    setTimeout(initializeFlowEditor, 100);
+                }
+            }
+
+            // Start trying to initialize after a short delay to allow module loading
+            setTimeout(initializeFlowEditor, 500);
+        });
+    </script>
+</body>
+</html>

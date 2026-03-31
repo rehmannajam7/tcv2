@@ -1,0 +1,257 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AddLabelsForm > render > should render a base action 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  className="_dialog_0aa07d"
+  headerClass="add_input_labels"
+  title="Add label"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Label the incoming message",
+        "form": [Function],
+        "name": "Add label",
+        "type": "add_input_labels",
+        "visibility": [
+          "messaging",
+          "messaging_offline",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "labels": [
+            {
+              "name": "Help",
+              "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+            },
+            {
+              "name": "Feedback",
+              "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+            },
+          ],
+          "type": "add_input_labels",
+          "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "labels": [
+                  {
+                    "name": "Help",
+                    "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+                  },
+                  {
+                    "name": "Feedback",
+                    "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+                  },
+                ],
+                "type": "add_input_labels",
+                "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <AssetSelector
+    assets={
+      {
+        "items": {},
+        "type": "label",
+      }
+    }
+    createAssetFromInput={[Function]}
+    createPrefix="Create label: "
+    entry={
+      {
+        "value": [
+          {
+            "name": "Help",
+            "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+          },
+          {
+            "name": "Feedback",
+            "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+          },
+        ],
+      }
+    }
+    expressions={true}
+    multi={true}
+    name="Labels"
+    namePure="Select the labels to apply to the incoming message"
+    onAssetCreated={[Function]}
+    onChange={[Function]}
+    placeholder="Enter the name of an existing label or create a new one"
+    searchable={true}
+    showLabel={true}
+  />
+</Dialog>
+`;
+
+exports[`AddLabelsForm > updates > should allow creating a new label > add new label 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "labels": [
+          {
+            "name": "Help",
+            "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+          },
+          {
+            "name": "Feedback",
+            "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+          },
+          {
+            "id": "feedback_label",
+            "name": "Feedback",
+            "type": "label",
+          },
+        ],
+        "type": "add_input_labels",
+        "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`AddLabelsForm > updates > should allow creating a new label > create label 1`] = `
+{
+  "labels": {
+    "validationFailures": [],
+    "value": [
+      {
+        "name": "Help",
+        "uuid": "232b99d1-579f-4d7f-b750-4b034927e9f8",
+      },
+      {
+        "name": "Feedback",
+        "uuid": "ab58dffa-98da-40ba-bebc-489ec6ff7170",
+      },
+      {
+        "id": "feedback_label",
+        "name": "Feedback",
+        "type": "label",
+      },
+    ],
+  },
+  "valid": true,
+}
+`;
+
+exports[`AddLabelsForm > updates > should allow creating a new label 1`] = `
+{
+  "name": "New Label",
+}
+`;
+
+exports[`AddLabelsForm > updates > should allow switching from router > switch from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "labels": [
+          {
+            "id": "feedback_label",
+            "name": "Feedback",
+            "type": "label",
+          },
+        ],
+        "type": "add_input_labels",
+        "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`AddLabelsForm > updates > should update and save > update label 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "labels": [
+          {
+            "id": "feedback_label",
+            "name": "Feedback",
+            "type": "label",
+          },
+        ],
+        "type": "add_input_labels",
+        "uuid": "aa15ef19-da81-43d0-b6e5-84b47216aeb8",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`AddLabelsForm > updates > should update and save 1`] = `
+{
+  "labels": {
+    "validationFailures": [],
+    "value": [
+      {
+        "id": "feedback_label",
+        "name": "Feedback",
+        "type": "label",
+      },
+    ],
+  },
+  "valid": true,
+}
+`;

@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CallBrainComp > should render save placeholder when result prop passed 1`] = `
+<div
+  className="_content_14ba6f"
+>
+  <ForwardRef
+    icon="hub"
+    scheme="neutral-cloudy"
+    size="sm"
+  />
+  <span
+    className="_brain_info_14ba6f"
+  >
+    Dóris
+     - 
+    Marketing Specialist
+  </span>
+</div>
+`;

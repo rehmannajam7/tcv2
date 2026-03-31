@@ -1,0 +1,9 @@
+{
+  "results": [
+    {
+      "uuid": "classifier-1",
+      "name": "Intent Classifier",
+      "type": "wit"
+    }
+  ]
+}

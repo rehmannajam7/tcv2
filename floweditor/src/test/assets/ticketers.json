@@ -1,0 +1,30 @@
+{
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "uuid": "1165a73a-2ee0-4891-895e-768645194862",
+      "name": "Email (bob@acme.com)",
+      "type": "mailgun",
+      "created_on": "2019-10-15T20:07:58.529130Z"
+    },
+    {
+      "uuid": "1165a73a-2ee0-4891-895e-768645194863",
+      "name": "Weni Chats Sector - 1165a73a-2ee0-4891-895e-768645194863",
+      "type": "wenichats",
+      "created_on": "2019-10-15T20:07:58.529130Z"
+    },
+    {
+      "uuid": "1165a73a-2ee0-4891-895e-768645194864",
+      "name": "Weni Chats Sector - 1165a73a-2ee0-4891-895e-768645194864",
+      "type": "wenichats",
+      "created_on": "2019-10-15T20:07:58.529130Z"
+    },
+    {
+      "id": "123",
+      "name": "Weni Chats Sector - 123",
+      "type": "wenichats",
+      "created_on": "2019-10-15T20:07:58.529130Z"
+    }
+  ]
+}

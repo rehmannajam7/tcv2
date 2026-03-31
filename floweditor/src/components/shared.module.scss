@@ -1,0 +1,174 @@
+@import 'src/variables.module.scss';
+
+.random {
+  background: $light_gray;
+}
+
+.issues {
+  margin: 15px 0px 5px 0px;
+  background: $light_gray_2;
+  font-size: 12px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  .header {
+    display: flex;
+    background: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 10px;
+    color: $red;
+
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      margin-right: 8px;
+    }
+
+    .title {
+      font-size: 13px;
+    }
+
+    .summary {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+    }
+  }
+}
+
+.issue_help {
+  cursor: pointer;
+
+  &:hover {
+    color: lighten($red, 3%);
+    text-decoration: underline;
+  }
+}
+
+.wait_for_audio,
+.wait_for_image,
+.wait_for_video,
+.wait_for_location,
+.wait_for_menu,
+.wait_for_digits,
+.wait_for_response,
+.wait_for_dial,
+.smart_wait_for_response {
+  background: $unnnic-color-weni-800 !important;
+}
+
+.send_email,
+.send_broadcast {
+  background: $unnnic-color-aux-purple-500 !important;
+}
+
+.msg,
+.say_msg,
+.send_msg,
+.send_whatsapp_msg {
+  background: $unnnic-color-brand-weni-soft !important;
+}
+
+.transfer_airtime,
+.enter_flow,
+.start_session,
+.set_run_result {
+  background: #DE16BA !important;
+}
+
+.send_msg_catalog {
+  background: $unnnic-color-aux-green-500 !important;
+}
+
+.add_input_labels,
+.add_contact_urn,
+.set_contact_name,
+.set_contact_field,
+.set_contact_language,
+.set_contact_status,
+.set_contact_channel,
+.add_contact_groups {
+  background: $unnnic-color-aux-blue-500 !important;
+}
+
+.remove_contact_groups {
+  background: $unnnic-color-neutral-darkest !important;
+}
+
+.play_audio {
+  background: $yellow;
+}
+
+
+.call_classifier,
+.split_by_random,
+.split_by_expression,
+.split_by_groups,
+.split_by_contact_field,
+.split_by_intent,
+.split_by_run_result,
+.split_by_scheme,
+.automatic_classify {
+  background: $unnnic-color-neutral-cloudy !important;
+}
+
+.call_resthook,
+.call_webhook,
+.call_external_service,
+.call_wenigpt,
+.open_ticket {
+  background: $unnnic-color-aux-orange-500 !important;
+}
+
+.call_brain {
+  background: $unnnic-color-aux-purple-100 !important;
+  color: $unnnic-color-aux-purple-500 !important;
+
+  [data-use-vue-component-wrap] {
+    span>svg>path {
+      fill: black !important;
+    }
+  }
+}
+
+.missing {
+  background: #E53E3E !important;
+}
+
+.missing_asset {
+  color: #E53E3E !important;
+}
+
+.breaks {
+  word-wrap: break-word;
+}
+
+.url {
+  width: $node_min_width + px;
+}
+
+.node_asset {
+  display: inherit;
+  gap: 4px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  .node_group {
+    padding-right: 5px;
+  }
+
+  .node_label {
+    padding-right: 5px;
+  }
+}
+
+.advanced_title {
+  font-size: 12px;
+}
+
+.alert {
+  background: #E53E3E;
+}

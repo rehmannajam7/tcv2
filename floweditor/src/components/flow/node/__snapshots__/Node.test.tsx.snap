@@ -1,0 +1,2893 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NodeComp > renders 1`] = `
+<body>
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > renders a named random split 1`] = `
+<body>
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="2dc85899-0577-4f1b-a620-f12094e34b5e"
+    >
+      <div
+        class="_node_108c8d _split_by_random_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_random_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split randomly
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              _save_result_108c8d
+              null
+              false
+            "
+          >
+            <div
+              class="_save_as_108c8d"
+            >
+              Save as
+               
+            </div>
+            <div
+              class="_result_name_108c8d"
+            >
+              My Random Split
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 1
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="2dc85899-0577-4f1b-a620-f12094e34b5e:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 2
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="2dc85899-0577-4f1b-a620-f12094e34b5e:1dce2b34-9aab-4e20-81c4-3f0408dcb671"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 3
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="2dc85899-0577-4f1b-a620-f12094e34b5e:763e4844-3e1b-407a-a1b5-5fdfcd308b41"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should handle node removal 1`] = `
+<body>
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="c99dcf07-2ad6-4730-9e99-810a39f5a58d"
+    >
+      <div
+        class="_node_108c8d _split_by_random_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_random_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split randomly
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              _save_result_108c8d
+              null
+              false
+            "
+          >
+            <div
+              class="_save_as_108c8d"
+            >
+              Save as
+               
+            </div>
+            <div
+              class="_result_name_108c8d"
+            >
+              My Random Split
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 1
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="c99dcf07-2ad6-4730-9e99-810a39f5a58d:431978dd-6b18-4e25-86f1-11835491a9c9"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 2
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="c99dcf07-2ad6-4730-9e99-810a39f5a58d:3d8db86c-7279-4106-a388-3f143bd5623f"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Bucket 3
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="c99dcf07-2ad6-4730-9e99-810a39f5a58d:96249bdc-cb58-4489-a188-0eeb6686a8c9"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should not open node editor on node click if mouse status is DRAGGING 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="dc9996b2-8127-49a3-b97b-c38b8f26958a"
+    >
+      <div
+        class="_node_108c8d _split_by_contact_field_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_contact_field_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split by name
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Name
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="dc9996b2-8127-49a3-b97b-c38b8f26958a:3792a634-e96d-4426-8016-0ddc35c0e431"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                age
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="dc9996b2-8127-49a3-b97b-c38b8f26958a:5d1d4ca8-7ba1-4c46-9deb-77ecd3e8eed8"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should not show addAction button if a stacked action node and has a call brain action on it 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="6f87dde3-5df3-4935-8585-2656df068d61"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-452c1751-5b03-4d1a-8346-83be999a8258"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _send_msg_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _send_msg_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      Hey!
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="_action_604508 _localized_604508 _call_brain_604508"
+              data-spec="action-container"
+              id="action-28ab7e47-57cc-42ae-8269-5d8d442d4276"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _call_brain_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-testid="move-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _up_button_122edd"
+                          data-spec="move"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.6851 25.9913L20.9567 10.4043C20.8323 10.2746 20.683 10.1714 20.5177 10.1009C20.3524 10.0304 20.1746 9.99402 19.9949 9.99402C19.8152 9.99402 19.6374 10.0304 19.4721 10.1009C19.3068 10.1714 19.1575 10.2746 19.0332 10.4043L5.311 25.9913C5.20125 26.1149 5.11748 26.2594 5.06465 26.416C5.01183 26.5727 4.99104 26.7384 5.00352 26.9032C5.01599 27.0681 5.06148 27.2288 5.13727 27.3757C5.21307 27.5226 5.31763 27.6528 5.44474 27.7586L7.75697 29.7046C8.01481 29.922 8.34778 30.0292 8.68402 30.0033C9.02027 29.9773 9.33283 29.8202 9.55426 29.5658L19.7593 17.751C19.7886 17.7169 19.825 17.6895 19.8659 17.6708C19.9067 17.652 19.9512 17.6423 19.9962 17.6423C20.0411 17.6423 20.0856 17.652 20.1265 17.6708C20.1673 17.6895 20.2037 17.7169 20.233 17.751L30.4418 29.5621C30.5518 29.6887 30.6857 29.7924 30.8358 29.8673C30.986 29.9421 31.1494 29.9867 31.3167 29.9983C31.4831 30.0131 31.6508 29.9944 31.8099 29.9434C31.969 29.8923 32.1162 29.8098 32.2429 29.7008L34.5563 27.7536C34.6832 27.6476 34.7874 27.5174 34.863 27.3704C34.9386 27.2235 34.984 27.0629 34.9965 26.8982C35.0089 26.7334 34.9883 26.5678 34.9356 26.4112C34.883 26.2546 34.7995 26.1101 34.6901 25.9863L34.6851 25.9913Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Call Weni Brain
+                      <span
+                        class="_new_122edd"
+                      >
+                        New
+                        !
+                      </span>
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _call_brain_604508 "
+                  data-spec="action-body"
+                >
+                  <div
+                    class="_content_14ba6f"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--sm"
+                        data-v-930380cc=""
+                      >
+                        hub
+                      </span>
+                    </div>
+                    <span
+                      class="_brain_info_14ba6f"
+                    >
+                      Dóris
+                       - 
+                      Marketing Specialist
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should open node editor on node click 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="44f05c10-0ec0-41ab-aed7-c65267337df7"
+    >
+      <div
+        class="_node_108c8d _split_by_contact_field_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_contact_field_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split by name
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Name
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="44f05c10-0ec0-41ab-aed7-c65267337df7:666613f2-2d4f-432c-a707-929481961e98"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                age
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="44f05c10-0ec0-41ab-aed7-c65267337df7:6b121177-6eef-48b3-8f6d-eef2154a0e10"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a ghost node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _ghost_108c8d _flow_start_108c8d"
+      id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a router node with issues 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="431dadb3-0257-432f-ace3-52157bba69ed"
+    >
+      <div
+        class="_node_108c8d _split_by_contact_field_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd __missing_9658e1_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split by name
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Name
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="431dadb3-0257-432f-ace3-52157bba69ed:7966434b-6d38-4d8b-b01c-13d3d9aa593c"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                age
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="431dadb3-0257-432f-ace3-52157bba69ed:13499a54-8702-4210-9ce4-0ad968752581"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a split by groups node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42"
+    >
+      <div
+        class="_node_108c8d _split_by_groups_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_groups_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split by group membership
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Customers, Unsatisfied Customers, Early Adopters, Testers, Subscribers, Champions
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:5b3f0f14-2ad5-4cae-9dcf-c9e241ac33e2"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:e77be637-d81e-4e45-a4d6-ccbc0b2dbee5"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:e7a7cf96-14d6-4bc9-8f4c-08359d9ad8ef"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:ac686d86-90de-4083-96e4-dec11294952e"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:68b70910-5b74-4c9e-b825-d8b8777d6dc3"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:de30b249-8c4c-4309-a9a7-a0db331669ba"
+              />
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Other
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f1cdc5d9-28bb-4a35-bfeb-047ee337db42:e231b33c-0a4e-423b-9783-eb335a76012e"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a split by subflow node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="25dea3d1-eead-4b7a-be9b-617e41df2a35"
+    >
+      <div
+        class="_node_108c8d _split_by_subflow_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _has_router_604508 _localized_604508 _enter_flow_604508"
+              data-spec="action-container"
+              id="action-d4a3a01c-1dee-4324-b107-4ac7a21d836f"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _enter_flow_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Enter another flow
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _enter_flow_604508 "
+                  data-spec="action-body"
+                >
+                  <div
+                    class="_start_flow_a1a0b8"
+                  >
+                    <div
+                      class="_node_asset_9658e1"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="display: inline-block;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--avatar-nano unnnic-icon-scheme--neutral-dark _icon_25b42d"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M6.875 35.0005C5.84125 35.0005 5 34.1592 5 33.1255V29.3755C5 28.3417 5.84125 27.5005 6.875 27.5005H21.875C22.9088 27.5005 23.75 28.3417 23.75 29.3755V31.2505H26.5625C27.08 31.2505 27.5 30.8305 27.5 30.313V25.6255H18.125C17.0913 25.6255 16.25 24.7842 16.25 23.7505V20.0005C16.25 18.9667 17.0913 18.1255 18.125 18.1255H21.875V17.188C21.875 16.6705 21.455 16.2505 20.9375 16.2505H15.3125C13.7612 16.2505 12.5 14.9892 12.5 13.438V12.5005H6.875C5.84125 12.5005 5 11.6592 5 10.6255V6.87549C5 5.84174 5.84125 5.00049 6.875 5.00049H21.875C22.9088 5.00049 23.75 5.84174 23.75 6.87549V10.6255C23.75 11.6592 22.9088 12.5005 21.875 12.5005H14.375V13.438C14.375 13.9555 14.795 14.3755 15.3125 14.3755H20.9375C22.4888 14.3755 23.75 15.6367 23.75 17.188V18.1255H33.125C34.1588 18.1255 35 18.9667 35 20.0005V23.7505C35 24.7842 34.1588 25.6255 33.125 25.6255H29.375V30.313C29.375 31.8642 28.1138 33.1255 26.5625 33.1255H23.75C23.75 34.1592 22.9088 35.0005 21.875 35.0005H6.875ZM6.875 33.1255H21.875V29.3755H6.875V33.1255ZM18.125 23.7505H33.125V20.0005H18.125V23.7505ZM6.875 10.6255H21.875V6.87549H6.875V10.6255Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                      <a
+                        class="_link_25b42d"
+                        href="/flow/editor/148ec949-7617-42f2-87e5-9eeb429e5732"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Colors
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Complete
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="25dea3d1-eead-4b7a-be9b-617e41df2a35:ddd2a089-c320-4a64-abbb-3a452eac2099"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Expired
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="25dea3d1-eead-4b7a-be9b-617e41df2a35:75841a8c-6891-441c-9db4-4f40ec15db4a"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a switch router node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="1cc6cd43-ca71-4502-9b3b-e2b0425293b7"
+    >
+      <div
+        class="_node_108c8d _split_by_contact_field_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _split_by_contact_field_9658e1 _title_108c8d null"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Split by name
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Name
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="1cc6cd43-ca71-4502-9b3b-e2b0425293b7:679d32c1-9996-48b4-9691-e869507b9e46"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                age
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="1cc6cd43-ca71-4502-9b3b-e2b0425293b7:19c23626-6961-4683-9cae-38dd767614f3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a wait for responde node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _selected_108c8d"
+      id="d045610c-14db-4444-908d-edd47e178802"
+    >
+      <div
+        class="_node_108c8d _wait_for_response_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              data-testid="titlebar-wrapper"
+            >
+              <div
+                class="_titlebar_122edd null"
+                data-spec="titlebar-container"
+              >
+                <div
+                  class="_normal_122edd _wait_for_response_9658e1 _title_108c8d _selected_122edd"
+                  data-spec="titlebar"
+                >
+                  <div
+                    class="_up_button_122edd"
+                    data-spec="move"
+                  />
+                  <div
+                    class="_titletext_122edd u font secondary body-md bold"
+                  >
+                    Wait for response
+                  </div>
+                  <div
+                    class="_remove_button_122edd"
+                    data-testid="remove-icon"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="all: unset;"
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              _save_result_108c8d
+              null
+              _selected_108c8d
+            "
+          >
+            <div
+              class="_save_as_108c8d"
+            >
+              Save as
+               
+            </div>
+            <div
+              class="_result_name_108c8d"
+            >
+              Result Name
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render a webhook based node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="1cd36d06-3885-40b4-87bd-8b08dbe9a0cd"
+    >
+      <div
+        class="_node_108c8d _split_by_resthook_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _has_router_604508 _localized_604508 _call_resthook_604508"
+              data-spec="action-container"
+              id="action-b22ef47d-8d17-4737-97c8-64ad9af64771"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _call_resthook_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Call Zapier
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _call_resthook_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    my-resthook
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              _save_result_108c8d
+              _border_top_108c8d
+              false
+            "
+          >
+            <div
+              class="_save_as_108c8d"
+            >
+              Save as
+               
+            </div>
+            <div
+              class="_result_name_108c8d"
+            >
+              result
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Success
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="1cd36d06-3885-40b4-87bd-8b08dbe9a0cd:899ff2e0-f17f-48ca-a037-44532cea68ab"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="_name_d88b3c u font secondary body-md"
+              >
+                Failure
+              </div>
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="1cd36d06-3885-40b4-87bd-8b08dbe9a0cd:639bcf7e-cb03-4c89-b4df-eba0e2ac70c9"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render an action node with issues 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="d84bf916-0d8b-48b6-a352-f0ad96df7b76"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-70c57f31-98f7-4095-b85f-d146216d6605"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd _missing_9658e1"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _missing_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _missing_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      Hey!
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          />
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render counter and call activityClicked callback 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            10
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render even with null action 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="b7b2cde7-51f7-4420-80c7-8854e805f992"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          />
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render non mutable node and not trigger counter click 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d _immutable_108c8d"
+      id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            10
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+              />
+              <div
+                class="_drag_helper_9b2f01 "
+              >
+                <div
+                  class="_arrow_9b2f01"
+                >
+                  <div
+                    class="_tail_9b2f01"
+                  />
+                  <div
+                    class="_head_9b2f01"
+                  />
+                </div>
+                <div
+                  class="_help_text_9b2f01"
+                >
+                  To connect nodes, 
+                  <span
+                    class="_bold_9b2f01"
+                  >
+                    drag
+                  </span>
+                   from the red circle.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should render with scroll to node 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+    >
+      <div
+        class="__wrapper_f617cd_f617cd"
+      >
+        <div
+          class="_node_108c8d _execute_actions_108c8d"
+        >
+          <div
+            class="_counter_632b48 _active_108c8d _clickable_632b48 "
+            data-spec="counter-outter"
+            data-testid="counter-outter"
+          >
+            <div
+              class=""
+              data-spec="counter-inner"
+            >
+              0
+            </div>
+          </div>
+          <div
+            class="_cropped_108c8d"
+          >
+            <div
+              class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+            >
+              Flow Start
+            </div>
+          </div>
+          <div
+            class="_exit_table_108c8d"
+          >
+            <div
+              class="_exits_108c8d"
+            >
+              <div
+                class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+              >
+                <div
+                  class="__endpoint_d88b3c_d88b3c"
+                  id="b1f332f3-bdd3-4891-aec5-1843a712dbf1:061fc171-8b79-4636-b892-bd0ea5aa9b42"
+                />
+                <div
+                  class="_drag_helper_9b2f01 "
+                >
+                  <div
+                    class="_arrow_9b2f01"
+                  >
+                    <div
+                      class="_tail_9b2f01"
+                    />
+                    <div
+                      class="_head_9b2f01"
+                    />
+                  </div>
+                  <div
+                    class="_help_text_9b2f01"
+                  >
+                    To connect nodes, 
+                    <span
+                      class="_bold_9b2f01"
+                    >
+                      drag
+                    </span>
+                     from the red circle.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_add_108c8d"
+              data-testid="add-action"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="primary"
+                    d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                    fill="#3B414D"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`NodeComp > should show addAction button if a stacked action node and has no call brain action on it 1`] = `
+<body>
+  <div />
+  <div>
+    <div
+      class="_node_container_108c8d plumb-drag _flow_start_108c8d"
+      id="d2b146a5-da3b-4766-9d5a-10c91c09dce3"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            class="_flow_start_message_108c8d u font secondary body-md bold color-brand-weni-soft"
+          >
+            Flow Start
+          </div>
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-309c2652-b028-47d5-8691-14f39d7433de"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _send_msg_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _send_msg_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      Hey!
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          />
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

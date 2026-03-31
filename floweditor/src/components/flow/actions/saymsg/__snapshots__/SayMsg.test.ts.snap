@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SayMsgComp > render > should render placeholder when text prop isn't passed 1`] = `
+<div
+  className="placeholder"
+>
+  Send a message to the contact
+</div>
+`;
+
+exports[`SayMsgComp > render > should render text prop when passed 1`] = `
+<Fragment>
+  <div
+    className="_text_35e8dc"
+  >
+    Hey!
+  </div>
+</Fragment>
+`;

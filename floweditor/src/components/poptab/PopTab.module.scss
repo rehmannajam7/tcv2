@@ -1,0 +1,118 @@
+@import 'src/variables.module.scss';
+
+.pop_wrapper {
+  position: fixed;
+  z-index: $z_pop_tabs;
+
+  &.visible {
+    .popped {
+      opacity: 1;
+      transition: right 0.1s ease-out; // cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s;
+      box-shadow: 0px 0px 8px 0px #666;
+
+      &.revisions {
+        background: $unnnic-color-background-snow;
+        outline: $unnnic-border-width-thinner solid $unnnic-color-neutral-cloudy;
+        outline-offset: -$unnnic-border-width-thinner;
+        border-radius: $unnnic-border-radius-md;
+        box-shadow: none;
+
+        .body {
+          padding: $unnnic-spacing-inset-xs;
+        }
+      }
+    }
+
+    z-index: $z_pop_tabs + 1;
+
+    .tab_wrapper {
+      .tab {
+        left: 0px;
+
+        &:hover {
+          left: 0px;
+        }
+      }
+    }
+  }
+
+  .tab_wrapper {
+    .tab {
+      position: absolute;
+      left: -3.5 * $unnnic-font-size;
+      padding-right: 0.75 * $unnnic-font-size + 10;
+      border-top-left-radius: $unnnic-border-radius-md;
+      border-bottom-left-radius: $unnnic-border-radius-md;
+      cursor: pointer;
+      width: 130px;
+      transition: left 0.1s ease-out;
+      transition-delay: 300ms;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        left: -120px;
+        transition: left 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        .label {
+          opacity: 1;
+        }
+      }
+
+      .icon {
+        display: inline-block;
+        padding: $unnnic-spacing-stack-nano 0.75 * $unnnic-font-size;
+      }
+
+      .label {
+        width: 60px;
+        display: inline-block;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.8s;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .popped {
+    .header {
+      color: #fff;
+      height: 26px;
+
+      .header_label {
+        font-size: 13px;
+        font-weight: 400;
+        padding: 5px 10px;
+      }
+
+      .close {
+        cursor: pointer;
+        font-size: 16px;
+        float: right;
+        padding: 5px;
+
+        &:hover {
+          color: #eee;
+        }
+      }
+    }
+
+    .footer {
+      border-top: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      padding: $unnnic-spacing-inset-xs;
+
+      button {
+        width: 100%;
+      }
+    }
+
+    opacity: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: right 0.2s ease-out,
+    opacity 0.5s;
+  }
+}

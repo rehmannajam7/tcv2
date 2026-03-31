@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Endpoints</title>
+</head>
+<body>
+    <h1>Endpoint Debug Information</h1>
+    <div id="debug-info"></div>
+    
+    <script type="module">
+        import { getEndpoints } from './src/config/endpoints.js';
+        
+        const endpoints = getEndpoints();
+        const debugInfo = document.getElementById('debug-info');
+        
+        // Show resolved endpoints
+        debugInfo.innerHTML = `
+            <h2>Resolved Endpoints:</h2>
+            <p><strong>Knowledge Bases URL:</strong> ${endpoints.knowledgeBases}</p>
+            <p><strong>Captain Assistants URL:</strong> ${endpoints.captainAssistants}</p>
+            <p><strong>Window Location:</strong> ${window.location.href}</p>
+            <p><strong>Current Time:</strong> ${new Date().toLocaleString()}</p>
+        `;
+        
+        // Test the URLs
+        async function testEndpoint(url, name) {
+            try {
+                console.log(`Testing ${name} endpoint: ${url}`);
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                console.log(`${name} response:`, response.status, response.statusText);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(`${name} data:`, data);
+                    return { success: true, status: response.status, data: data };
+                } else {
+                    const errorText = await response.text();
+                    console.log(`${name} error response:`, errorText);
+                    return { success: false, status: response.status, error: errorText };
+                }
+            } catch (error) {
+                console.error(`${name} fetch error:`, error);
+                return { success: false, status: 0, error: error.message };
+            }
+        }
+        
+        // Test both endpoints
+        Promise.all([
+            testEndpoint(endpoints.knowledgeBases, 'Knowledge Bases'),
+            testEndpoint(endpoints.captainAssistants, 'Captain Assistants')
+        ]).then(results => {
+            const [kbResult, captainResult] = results;
+            
+            debugInfo.innerHTML += `
+                <h2>API Test Results:</h2>
+                <h3>Knowledge Bases API:</h3>
+                <p><strong>Success:</strong> ${kbResult.success}</p>
+                <p><strong>Status:</strong> ${kbResult.status}</p>
+                <p><strong>Data:</strong> ${kbResult.success ? JSON.stringify(kbResult.data, null, 2) : kbResult.error}</p>
+                
+                <h3>Captain Assistants API:</h3>
+                <p><strong>Success:</strong> ${captainResult.success}</p>
+                <p><strong>Status:</strong> ${captainResult.status}</p>
+                <p><strong>Data:</strong> ${captainResult.success ? JSON.stringify(captainResult.data, null, 2) : captainResult.error}</p>
+            `;
+        });
+    </script>
+</body>
+</html>

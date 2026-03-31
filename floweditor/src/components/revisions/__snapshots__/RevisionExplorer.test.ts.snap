@@ -1,0 +1,441 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RevisionExplorer > render > should render base component 1`] = `
+<div
+  className=""
+>
+  <div
+    className="_mask_d1f54f"
+  />
+  <PopTab
+    bgColor="#FFFFFF"
+    color="#67738B"
+    header="Revisions"
+    icon="synchronize-arrow-clock-4"
+    label="Revision History"
+    onHide={[Function]}
+    onShow={[Function]}
+    top="348px"
+    type="revisions"
+    visible={false}
+  >
+    <div
+      className="_explorer_wrapper_d1f54f"
+    >
+      <div
+        className="_explorer_d1f54f"
+      >
+        <div
+          className="_revisions_d1f54f"
+        >
+          <div
+            className="_revision_d1f54f _selected_d1f54f"
+            key="revision_202"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 11, 2019, 9:34 PM
+              <div
+                className="_tag_d1f54f u font secondary body-sm color-neutral-cloudy _current_d1f54f"
+              >
+                current
+              </div>
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_201"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 11, 2019, 9:34 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_200"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 11, 2019, 9:34 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_199"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 11, 2019, 8:34 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_198"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 11, 2019, 8:34 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_197"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 6:00 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_196"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_195"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_194"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_193"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_192"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_191"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_190"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:59 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_189"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:58 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_188"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:58 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_187"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:58 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_186"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:58 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_185"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 5:58 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_184"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 6, 2019, 1:18 AM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_183"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 5, 2019, 11:16 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_139"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              February 1, 2019, 6:23 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              System Update
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_138"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              January 31, 2019, 9:32 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_137"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              January 31, 2019, 9:30 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_136"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              January 31, 2019, 9:30 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+          <div
+            className="_revision_d1f54f "
+            key="revision_135"
+            onClick={[Function]}
+          >
+            <div
+              className="_title_d1f54f u font secondary body-gt color-neutral-darkest"
+            >
+              January 31, 2019, 9:30 PM
+            </div>
+            <div
+              className="u font secondary body-md color-neutral-cloudy"
+            >
+              org1.admin@nyaruka.com
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </PopTab>
+</div>
+`;

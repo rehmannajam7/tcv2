@@ -1,0 +1,363 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Providers: ConfigProvider: operatorConfigs > should provide operator config 1`] = `
+[
+  {
+    "operands": 1,
+    "type": "has_any_word",
+    "verboseName": "has any of the words",
+  },
+  {
+    "operands": 1,
+    "type": "has_all_words",
+    "verboseName": "has all of the words",
+  },
+  {
+    "operands": 1,
+    "type": "has_phrase",
+    "verboseName": "has the phrase",
+  },
+  {
+    "operands": 1,
+    "type": "has_only_phrase",
+    "verboseName": "has only the phrase",
+  },
+  {
+    "operands": 1,
+    "type": "has_beginning",
+    "verboseName": "starts with",
+  },
+  {
+    "categoryName": "Has Text",
+    "operands": 0,
+    "type": "has_text",
+    "verboseName": "has some text",
+  },
+  {
+    "categoryName": "Has Number",
+    "operands": 0,
+    "type": "has_number",
+    "verboseName": "has a number",
+  },
+  {
+    "operands": 2,
+    "type": "has_number_between",
+    "verboseName": "has a number between",
+  },
+  {
+    "operands": 1,
+    "type": "has_number_lt",
+    "verboseName": "has a number below",
+  },
+  {
+    "operands": 1,
+    "type": "has_number_lte",
+    "verboseName": "has a number at or below",
+  },
+  {
+    "operands": 1,
+    "type": "has_number_eq",
+    "verboseName": "has a number equal to",
+  },
+  {
+    "operands": 1,
+    "type": "has_number_gte",
+    "verboseName": "has a number at or above",
+  },
+  {
+    "operands": 1,
+    "type": "has_number_gt",
+    "verboseName": "has a number above",
+  },
+  {
+    "categoryName": "Has Date",
+    "operands": 0,
+    "type": "has_date",
+    "verboseName": "has a date",
+  },
+  {
+    "operands": 1,
+    "type": "has_date_lt",
+    "verboseName": "has a date before",
+  },
+  {
+    "operands": 1,
+    "type": "has_date_eq",
+    "verboseName": "has a date equal to",
+  },
+  {
+    "operands": 1,
+    "type": "has_date_gt",
+    "verboseName": "has a date after",
+  },
+  {
+    "categoryName": "Has Time",
+    "operands": 0,
+    "type": "has_time",
+    "verboseName": "has a time",
+  },
+  {
+    "operands": 1,
+    "type": "has_group",
+    "verboseName": "is in the group",
+    "visibility": [
+      "-",
+    ],
+  },
+  {
+    "operands": 0,
+    "type": "has_category",
+    "verboseName": "has the category",
+    "visibility": [
+      "-",
+    ],
+  },
+  {
+    "categoryName": "Has Phone",
+    "operands": 0,
+    "type": "has_phone",
+    "verboseName": "has a phone number",
+  },
+  {
+    "categoryName": "Has Email",
+    "operands": 0,
+    "type": "has_email",
+    "verboseName": "has an email",
+  },
+  {
+    "categoryName": "Has State",
+    "filter": "locations",
+    "operands": 0,
+    "type": "has_state",
+    "verboseName": "has state",
+  },
+  {
+    "categoryName": "Has District",
+    "filter": "locations",
+    "operands": 1,
+    "type": "has_district",
+    "verboseName": "has district",
+  },
+  {
+    "categoryName": "Has Ward",
+    "filter": "locations",
+    "operands": 2,
+    "type": "has_ward",
+    "verboseName": "has ward",
+  },
+  {
+    "categoryName": "Has Error",
+    "operands": 0,
+    "type": "has_error",
+    "verboseName": "has an error",
+    "visibility": [
+      "-",
+    ],
+  },
+  {
+    "categoryName": "Not Empty",
+    "operands": 0,
+    "type": "has_value",
+    "verboseName": "is not empty",
+    "visibility": [
+      "-",
+    ],
+  },
+  {
+    "operands": 1,
+    "type": "has_pattern",
+    "verboseName": "matches regex",
+  },
+]
+`;
+
+exports[`Providers: ConfigProvider: operatorConfigs > should provide operator config 2`] = `
+{
+  "has_all_words": {
+    "operands": 1,
+    "type": "has_all_words",
+    "verboseName": "has all of the words",
+  },
+  "has_any_word": {
+    "operands": 1,
+    "type": "has_any_word",
+    "verboseName": "has any of the words",
+  },
+  "has_beginning": {
+    "operands": 1,
+    "type": "has_beginning",
+    "verboseName": "starts with",
+  },
+  "has_category": {
+    "operands": 0,
+    "type": "has_category",
+    "verboseName": "has the category",
+    "visibility": [
+      "-",
+    ],
+  },
+  "has_date": {
+    "categoryName": "Has Date",
+    "operands": 0,
+    "type": "has_date",
+    "verboseName": "has a date",
+  },
+  "has_date_eq": {
+    "operands": 1,
+    "type": "has_date_eq",
+    "verboseName": "has a date equal to",
+  },
+  "has_date_gt": {
+    "operands": 1,
+    "type": "has_date_gt",
+    "verboseName": "has a date after",
+  },
+  "has_date_lt": {
+    "operands": 1,
+    "type": "has_date_lt",
+    "verboseName": "has a date before",
+  },
+  "has_district": {
+    "categoryName": "Has District",
+    "filter": "locations",
+    "operands": 1,
+    "type": "has_district",
+    "verboseName": "has district",
+  },
+  "has_email": {
+    "categoryName": "Has Email",
+    "operands": 0,
+    "type": "has_email",
+    "verboseName": "has an email",
+  },
+  "has_error": {
+    "categoryName": "Has Error",
+    "operands": 0,
+    "type": "has_error",
+    "verboseName": "has an error",
+    "visibility": [
+      "-",
+    ],
+  },
+  "has_group": {
+    "operands": 1,
+    "type": "has_group",
+    "verboseName": "is in the group",
+    "visibility": [
+      "-",
+    ],
+  },
+  "has_intent": {
+    "operands": 2,
+    "type": "has_intent",
+    "verboseName": "has intent",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "has_number": {
+    "categoryName": "Has Number",
+    "operands": 0,
+    "type": "has_number",
+    "verboseName": "has a number",
+  },
+  "has_number_between": {
+    "operands": 2,
+    "type": "has_number_between",
+    "verboseName": "has a number between",
+  },
+  "has_number_eq": {
+    "operands": 1,
+    "type": "has_number_eq",
+    "verboseName": "has a number equal to",
+  },
+  "has_number_gt": {
+    "operands": 1,
+    "type": "has_number_gt",
+    "verboseName": "has a number above",
+  },
+  "has_number_gte": {
+    "operands": 1,
+    "type": "has_number_gte",
+    "verboseName": "has a number at or above",
+  },
+  "has_number_lt": {
+    "operands": 1,
+    "type": "has_number_lt",
+    "verboseName": "has a number below",
+  },
+  "has_number_lte": {
+    "operands": 1,
+    "type": "has_number_lte",
+    "verboseName": "has a number at or below",
+  },
+  "has_only_phrase": {
+    "operands": 1,
+    "type": "has_only_phrase",
+    "verboseName": "has only the phrase",
+  },
+  "has_pattern": {
+    "operands": 1,
+    "type": "has_pattern",
+    "verboseName": "matches regex",
+  },
+  "has_phone": {
+    "categoryName": "Has Phone",
+    "operands": 0,
+    "type": "has_phone",
+    "verboseName": "has a phone number",
+  },
+  "has_phrase": {
+    "operands": 1,
+    "type": "has_phrase",
+    "verboseName": "has the phrase",
+  },
+  "has_state": {
+    "categoryName": "Has State",
+    "filter": "locations",
+    "operands": 0,
+    "type": "has_state",
+    "verboseName": "has state",
+  },
+  "has_text": {
+    "categoryName": "Has Text",
+    "operands": 0,
+    "type": "has_text",
+    "verboseName": "has some text",
+  },
+  "has_time": {
+    "categoryName": "Has Time",
+    "operands": 0,
+    "type": "has_time",
+    "verboseName": "has a time",
+  },
+  "has_top_intent": {
+    "operands": 2,
+    "type": "has_top_intent",
+    "verboseName": "has top intent",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "has_value": {
+    "categoryName": "Not Empty",
+    "operands": 0,
+    "type": "has_value",
+    "verboseName": "is not empty",
+    "visibility": [
+      "-",
+    ],
+  },
+  "has_ward": {
+    "categoryName": "Has Ward",
+    "filter": "locations",
+    "operands": 2,
+    "type": "has_ward",
+    "verboseName": "has ward",
+  },
+}
+`;

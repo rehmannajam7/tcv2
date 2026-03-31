@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlowEditor Save/Load Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        button { margin: 5px; padding: 10px 15px; }
+        #floweditor { width: 100%; height: 600px; border: 1px solid #ddd; margin: 20px 0; }
+        .log { background: #f5f5f5; padding: 10px; margin: 10px 0; font-family: monospace; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>FlowEditor Save/Load Cycle Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Status</h2>
+        <div id="status">Initializing...</div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Controls</h2>
+        <button onclick="initializeFlowEditor()">1. Initialize FlowEditor</button>
+        <button onclick="loadTestFlow()">2. Load Test Flow</button>
+        <button onclick="addTestNode()">3. Add Test Node</button>
+        <button onclick="testGetFlowData()">4. Test Get Flow Data</button>
+        <button onclick="testSaveLoad()">5. Test Save/Load Cycle</button>
+        <button onclick="clearLogs()">Clear Logs</button>
+    </div>
+
+    <div class="test-section">
+        <h2>FlowEditor Container</h2>
+        <div id="floweditor"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Logs</h2>
+        <div id="logs" class="log"></div>
+    </div>
+
+    <script>
+        let testFlowUuid = 'test-flow-' + Date.now();
+        let originalNodeCount = 0;
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const logDiv = document.getElementById('logs');
+            const className = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+            logDiv.innerHTML += `<span class="${className}">[${timestamp}] ${message}</span>\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(`[${timestamp}] ${message}`);
+        }
+
+        function updateStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            const className = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+            statusDiv.innerHTML = `<span class="${className}">${message}</span>`;
+        }
+
+        function clearLogs() {
+            document.getElementById('logs').innerHTML = '';
+        }
+
+        function initializeFlowEditor() {
+            log('Initializing FlowEditor...');
+            updateStatus('Initializing FlowEditor...');
+            
+            if (typeof window.showFlowEditor !== 'function') {
+                log('ERROR: showFlowEditor function not available', 'error');
+                updateStatus('ERROR: showFlowEditor not available', 'error');
+                return;
+            }
+
+            try {
+                window.showFlowEditor({
+                    container: document.getElementById('floweditor'),
+                    flowUuid: testFlowUuid,
+                    accountId: 'test-account',
+                    userId: 'test-user'
+                });
+                
+                log('FlowEditor initialized successfully', 'success');
+                updateStatus('FlowEditor initialized', 'success');
+                
+                // Wait for store to be available
+                setTimeout(() => {
+                    if (window.flowEditorStore) {
+                        log('Global store is available: ' + typeof window.flowEditorStore, 'success');
+                    } else {
+                        log('WARNING: Global store not yet available', 'error');
+                    }
+                }, 2000);
+                
+            } catch (error) {
+                log('ERROR initializing FlowEditor: ' + error.message, 'error');
+                updateStatus('ERROR: ' + error.message, 'error');
+            }
+        }
+
+        function loadTestFlow() {
+            log('Loading test flow...');
+            updateStatus('Loading test flow...');
+            
+            const testFlowData = {
+                uuid: testFlowUuid,
+                name: 'Test Flow for Save/Load',
+                nodes: [
+                    {
+                        uuid: 'start-node',
+                        actions: [],
+                        exits: [{
+                            uuid: 'start-exit',
+                            destination_uuid: null
+                        }]
+                    }
+                ],
+                _ui: {
+                    nodes: {
+                        'start-node': {
+                            position: { left: 100, top: 100 },
+                            type: 'execute_actions'
+                        }
+                    }
+                }
+            };
+
+            try {
+                // Simulate the load_flow message
+                window.postMessage({
+                    type: 'load_flow',
+                    flowDetails: testFlowData
+                }, '*');
+                
+                originalNodeCount = testFlowData.nodes.length;
+                log(`Test flow loaded with ${originalNodeCount} nodes`, 'success');
+                updateStatus('Test flow loaded', 'success');
+                
+            } catch (error) {
+                log('ERROR loading test flow: ' + error.message, 'error');
+                updateStatus('ERROR loading flow: ' + error.message, 'error');
+            }
+        }
+
+        function addTestNode() {
+            log('Adding test node to flow...');
+            updateStatus('Adding test node...');
+            
+            if (!window.flowEditorStore) {
+                log('ERROR: Global store not available', 'error');
+                updateStatus('ERROR: Store not available', 'error');
+                return;
+            }
+
+            try {
+                const state = window.flowEditorStore.getState();
+                log('Current flow state: ' + JSON.stringify(state.flowContext.definition?.nodes?.length || 0) + ' nodes');
+                
+                // This would normally be done through the UI, but for testing we'll simulate it
+                // In a real scenario, the user would drag and drop or click to add nodes
+                log('Note: In a real test, you would interact with the UI to add nodes', 'info');
+                log('Current node count: ' + (state.flowContext.definition?.nodes?.length || 0), 'info');
+                
+                updateStatus('Ready for manual node addition', 'success');
+                
+            } catch (error) {
+                log('ERROR accessing store: ' + error.message, 'error');
+                updateStatus('ERROR: ' + error.message, 'error');
+            }
+        }
+
+        function testGetFlowData() {
+            log('Testing get_flow_data functionality...');
+            updateStatus('Testing get flow data...');
+            
+            try {
+                // Simulate the get_flow_data message
+                window.postMessage({
+                    type: 'get_flow_data'
+                }, '*');
+                
+                log('get_flow_data message sent', 'success');
+                updateStatus('Waiting for flow data response...', 'info');
+                
+            } catch (error) {
+                log('ERROR testing get_flow_data: ' + error.message, 'error');
+                updateStatus('ERROR: ' + error.message, 'error');
+            }
+        }
+
+        function testSaveLoad() {
+            log('Testing complete save/load cycle...');
+            updateStatus('Testing save/load cycle...');
+            
+            if (!window.flowEditorStore) {
+                log('ERROR: Global store not available', 'error');
+                updateStatus('ERROR: Store not available', 'error');
+                return;
+            }
+
+            try {
+                const state = window.flowEditorStore.getState();
+                const currentDefinition = state.flowContext.definition;
+                
+                if (!currentDefinition) {
+                    log('ERROR: No flow definition in store', 'error');
+                    updateStatus('ERROR: No flow definition', 'error');
+                    return;
+                }
+                
+                log('Current flow definition: ' + JSON.stringify({
+                    uuid: currentDefinition.uuid,
+                    name: currentDefinition.name,
+                    nodeCount: currentDefinition.nodes?.length || 0
+                }));
+                
+                // Test the save mechanism
+                log('Testing save mechanism...', 'info');
+                
+                // Get flow data to verify it contains the current state
+                window.postMessage({ type: 'get_flow_data' }, '*');
+                
+                updateStatus('Save/load test in progress...', 'info');
+                
+            } catch (error) {
+                log('ERROR in save/load test: ' + error.message, 'error');
+                updateStatus('ERROR: ' + error.message, 'error');
+            }
+        }
+
+        // Listen for messages from the FlowEditor
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.type) {
+                switch (event.data.type) {
+                    case 'flow_data_response':
+                        log('Received flow_data_response: ' + JSON.stringify({
+                            hasDefinition: !!event.data.definition,
+                            nodeCount: event.data.definition?.nodes?.length || 0,
+                            flowUuid: event.data.definition?.uuid
+                        }), 'success');
+                        
+                        if (event.data.definition && event.data.definition.nodes) {
+                            const nodeCount = event.data.definition.nodes.length;
+                            if (nodeCount >= originalNodeCount) {
+                                log(`✅ Flow data contains ${nodeCount} nodes (expected >= ${originalNodeCount})`, 'success');
+                                updateStatus('Save/load test PASSED', 'success');
+                            } else {
+                                log(`❌ Flow data contains ${nodeCount} nodes (expected >= ${originalNodeCount})`, 'error');
+                                updateStatus('Save/load test FAILED', 'error');
+                            }
+                        } else {
+                            log('❌ No flow definition in response', 'error');
+                            updateStatus('Save/load test FAILED', 'error');
+                        }
+                        break;
+                        
+                    case 'flow_loaded':
+                        log('Flow loaded successfully', 'success');
+                        break;
+                        
+                    case 'flow_saved':
+                        log('Flow saved successfully', 'success');
+                        break;
+                        
+                    default:
+                        log('Received message: ' + event.data.type, 'info');
+                }
+            }
+        });
+
+        // Initialize when page loads
+        window.addEventListener('load', function() {
+            log('Page loaded, waiting for FlowEditor to be available...');
+            updateStatus('Waiting for FlowEditor...');
+            
+            // Check periodically for showFlowEditor availability
+            const checkInterval = setInterval(() => {
+                if (typeof window.showFlowEditor === 'function') {
+                    clearInterval(checkInterval);
+                    log('✅ showFlowEditor is available!', 'success');
+                    updateStatus('FlowEditor ready for testing', 'success');
+                }
+            }, 1000);
+            
+            // Timeout after 10 seconds
+            setTimeout(() => {
+                if (typeof window.showFlowEditor !== 'function') {
+                    clearInterval(checkInterval);
+                    log('❌ showFlowEditor not available after 10 seconds', 'error');
+                    updateStatus('ERROR: FlowEditor not loaded', 'error');
+                }
+            }, 10000);
+        });
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

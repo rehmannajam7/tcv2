@@ -1,0 +1,16 @@
+@import "src/variables.module.scss";
+
+.modal {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #777;
+  font-size: 12px;
+  border: 5px solid rgba(0, 0, 0, 0.05);
+  border-radius: $curvature + 5px;
+}
+
+.overlay {
+  background-color: rgba($unnnic-color-neutral-black, $unnnic-opacity-level-overlay);
+  position: fixed;
+  inset: 0px;
+}

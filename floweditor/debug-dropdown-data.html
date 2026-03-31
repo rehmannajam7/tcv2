@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Dropdown Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .api-data { background-color: #e8f5e8; }
+        .merged-data { background-color: #e8e8f5; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        button { margin: 5px; padding: 10px 15px; font-size: 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Debug WeniGPT Dropdown Data Flow</h1>
+    
+    <div class="section">
+        <h2>Data Flow Analysis</h2>
+        <p>This page helps debug the WeniGPT dropdown data flow to identify where "robin assistant" might be coming from.</p>
+    </div>
+
+    <div class="section api-data">
+        <h2>1. Raw API Responses</h2>
+        <button onclick="testAPIs()">Fetch API Data</button>
+        <div id="api-results"></div>
+    </div>
+
+    <div class="section merged-data">
+        <h2>2. Merged Data Simulation</h2>
+        <button onclick="simulateMerge()">Simulate Data Merge</button>
+        <div id="merge-results"></div>
+    </div>
+
+    <div class="section">
+        <h2>3. Dropdown Label Generation</h2>
+        <button onclick="generateLabels()">Generate Labels</button>
+        <div id="label-results"></div>
+    </div>
+
+    <script>
+        async function testAPIs() {
+            const resultsDiv = document.getElementById('api-results');
+            resultsDiv.innerHTML = '<p>Fetching API data...</p>';
+            
+            try {
+                // Test knowledge bases
+                const kbResponse = await fetch('/floweditor-api/api/v1/accounts/1/flow_editor/knowledge_bases');
+                const kbData = await kbResponse.json();
+                
+                // Test captain assistants
+                const captainResponse = await fetch('/floweditor-api/api/v1/accounts/1/captain/assistants');
+                const captainData = await captainResponse.json();
+                
+                resultsDiv.innerHTML = `
+                    <h3>Knowledge Bases API:</h3>
+                    <pre>${JSON.stringify(kbData, null, 2)}</pre>
+                    <h3>Captain Assistants API:</h3>
+                    <pre>${JSON.stringify(captainData, null, 2)}</pre>
+                `;
+                
+                // Parse the wrapper format
+                const kbParsed = typeof kbData.body === 'string' ? JSON.parse(kbData.body) : kbData;
+                const captainParsed = typeof captainData.body === 'string' ? JSON.parse(captainData.body) : captainData;
+                
+                window.kbData = kbParsed;
+                window.captainData = captainParsed;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+            }
+        }
+
+        function simulateMerge() {
+            const resultsDiv = document.getElementById('merge-results');
+            
+            if (!window.kbData || !window.captainData) {
+                resultsDiv.innerHTML = '<p style="color: red;">Please fetch API data first!</p>';
+                return;
+            }
+            
+            try {
+                const extract = (data) => {
+                    if (Array.isArray(data)) return data;
+                    if (data && typeof data === 'object' && 'results' in data && Array.isArray(data.results)) return data.results;
+                    if (data && typeof data === 'object' && 'data' in data && Array.isArray(data.data)) return data.data;
+                    return [];
+                };
+                
+                const kbResults = extract(window.kbData);
+                const captainResults = extract(window.captainData);
+                
+                const wenigptKBs = kbResults.map((item) => ({
+                    id: String(item.id ?? item.uuid ?? ''),
+                    name: item.name ?? item.label ?? String(item.id ?? ''),
+                    content: { intelligence: item.intelligence ?? item?.content?.intelligence ?? 'KB' },
+                }));
+                
+                const captainKBs = captainResults.map((item) => ({
+                    id: String(item.id ?? item.uuid ?? ''),
+                    name: item.name ?? item.label ?? String(item.id ?? ''),
+                    content: { intelligence: 'Captain' },
+                }));
+                
+                const merged = [...wenigptKBs, ...captainKBs].map((kb) => ({
+                    ...kb,
+                    label: `${kb.content?.intelligence} - ${kb.name}`,
+                }));
+                
+                window.mergedData = merged;
+                
+                resultsDiv.innerHTML = `
+                    <h3>Extracted Knowledge Bases (${wenigptKBs.length}):</h3>
+                    <pre>${JSON.stringify(wenigptKBs, null, 2)}</pre>
+                    <h3>Extracted Captain Assistants (${captainKBs.length}):</h3>
+                    <pre>${JSON.stringify(captainKBs, null, 2)}</pre>
+                    <h3>Merged Data (${merged.length}):</h3>
+                    <pre>${JSON.stringify(merged, null, 2)}</pre>
+                `;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div style="color: red;">Error: ${error.message}</div>`;
+            }
+        }
+
+        function generateLabels() {
+            const resultsDiv = document.getElementById('label-results');
+            
+            if (!window.mergedData) {
+                resultsDiv.innerHTML = '<p style="color: red;">Please simulate merge first!</p>';
+                return;
+            }
+            
+            const labels = window.mergedData.map(item => item.label);
+            
+            resultsDiv.innerHTML = `
+                <h3>Dropdown Labels:</h3>
+                <ul>
+                    ${labels.map(label => `<li>${label}</li>`).join('')}
+                </ul>
+                <h3>Search for "robin":</h3>
+                <p>Found: ${labels.some(label => label.toLowerCase().includes('robin')) ? 'YES' : 'NO'}</p>
+                ${labels.filter(label => label.toLowerCase().includes('robin')).map(label => `<p style="color: red;">Found: ${label}</p>`).join('')}
+            `;
+            
+            // Also check for "assistant"
+            const assistantLabels = labels.filter(label => label.toLowerCase().includes('assistant'));
+            if (assistantLabels.length > 0) {
+                resultsDiv.innerHTML += `
+                    <h3>Labels containing "assistant":</h3>
+                    <ul>
+                        ${assistantLabels.map(label => `<li>${label}</li>`).join('')}
+                    </ul>
+                `;
+            }
+        }
+
+        // Auto-test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Debug: Page loaded - ready to debug dropdown data flow');
+        });
+    </script>
+</body>
+</html>

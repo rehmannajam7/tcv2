@@ -1,0 +1,168 @@
+{
+  "contact": {
+    "uuid": "6e38eba0-d673-4a35-82df-21bae2b6d466",
+    "urns": ["tel:+1234567890"],
+    "fields": {
+      "first_name": "John",
+      "last_name": "Doe"
+    },
+    "groups": [
+      {
+        "uuid": "9ecc8e84-6b83-442b-a04a-8094d5de997b",
+        "name": "Customer Service"
+      }
+    ]
+  },
+  "session": {
+    "runs": [
+      {
+        "path": [
+          {
+            "arrived_on": "2020-01-29T10:43:31.123456789Z",
+            "uuid": "6de81ff6-f541-4099-8ad7-03214d15b07e",
+            "exit_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18e",
+            "node_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d"
+          },
+          {
+            "arrived_on": "2020-01-29T10:43:31.123456789Z",
+            "uuid": "6de81ff6-f541-4099-8ad7-03214d15b07g",
+            "exit_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18f",
+            "node_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07e"
+          }
+        ],
+        "flow_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18e",
+        "status": "waiting",
+        "events": [
+          {
+            "type": "msg_created",
+            "msg": {
+              "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+              "urn": "tel:+1123456789",
+              "text": "Finish"
+            },
+            "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+            "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07e",
+            "created_on": "2020-01-29T10:43:31.123456789Z"
+          }
+        ]
+      },
+      {
+        "path": [
+          {
+            "arrived_on": "2020-01-29T10:43:31.123456789Z",
+            "uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+            "exit_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18e",
+            "node_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d"
+          }
+        ],
+        "flow_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18e",
+        "status": "waiting",
+        "events": [
+          {
+            "type": "msg_created",
+            "msg": {
+              "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+              "urn": "tel:+1123456789",
+              "text": "Finish"
+            },
+            "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+            "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+            "created_on": "2020-01-29T10:43:31.123456789Z"
+          }
+        ]
+      },
+      {
+        "path": [],
+        "flow_uuid": "6de81ff6-f541-4099-8ad7-03214d15b18e",
+        "status": "finished",
+        "events": []
+      }
+    ],
+    "contact": {
+      "uuid": "6e38eba0-d673-4a35-82df-21bae2b6d466",
+      "urns": ["tel:+1234567890"],
+      "fields": {
+        "first_name": "John",
+        "last_name": "Doe"
+      },
+      "groups": [
+        {
+          "uuid": "9ecc8e84-6b83-442b-a04a-8094d5de997b",
+          "name": "Customer Service"
+        }
+      ]
+    }
+  },
+  "context": {},
+  "events": [
+    {
+      "type": "msg_created",
+      "msg": {
+        "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+        "urn": "tel:+1123456789",
+        "text": "Finish"
+      },
+      "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+      "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+      "created_on": "2020-01-29T10:43:31.123456789Z"
+    },
+    {
+      "type": "msg_created",
+      "msg": {
+        "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+        "urn": "tel:+1123456789",
+        "text": "Are you ready?",
+        "quick_replies": ["Yes", "No"]
+      },
+      "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+      "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+      "created_on": "2020-01-29T10:43:32.123456789Z"
+    },
+    {
+      "type": "msg_created",
+      "msg": {
+        "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+        "urn": "tel:+1123456789",
+        "text": "Select an option",
+        "list_message": {
+          "list_items": [
+            {
+              "title": "Option 1",
+              "description": "Description 1"
+            },
+            {
+              "title": "Option 2",
+              "description": "Description 2"
+            }
+          ]
+        }
+      },
+      "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+      "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+      "created_on": "2020-01-29T10:43:33.123456789Z"
+    },
+    {
+      "type": "msg_received",
+      "msg": {
+        "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+        "urn": "tel:+1123456789",
+        "text": "Sure"
+      },
+      "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+      "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+      "created_on": "2020-01-29T10:43:34.123456789Z"
+    },
+    {
+      "type": "msg_received",
+      "msg": {
+        "uuid": "c166c2cb-290c-4805-a5af-052ad2858288",
+        "urn": "tel:+1123456789",
+        "text": "Thanks for getting in touch",
+        "attachments": ["image/jpeg:http://temba.io/test.jpg"]
+      },
+      "uuid": "51e6f864-a16f-4be7-839f-945afc857559",
+      "step_uuid": "6de81ff6-f541-4099-8ad7-03214d15b07d",
+      "created_on": "2020-01-29T10:43:35.123456789Z"
+    }
+  ]
+}

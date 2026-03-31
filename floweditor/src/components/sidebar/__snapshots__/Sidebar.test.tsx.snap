@@ -1,0 +1,458 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sidebar > should change mouse state on click 1`] = `
+<body>
+  <div>
+    <div
+      class="_sidebar_53de86"
+    >
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="mouse-state"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="create-node"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86 _disabled_53de86"
+            data-testid="copy-button"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="veaury-UnnnicTooltip-stub"
+      >
+        <div
+          class="_option_53de86"
+          data-testid="search-button"
+        >
+          <div
+            data-testid="veaury-Icon-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Sidebar > should change mouse state to select on click 1`] = `
+<body>
+  <div>
+    <div
+      class="_sidebar_53de86"
+    >
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="mouse-state"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="create-node"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86 _disabled_53de86"
+            data-testid="copy-button"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="veaury-UnnnicTooltip-stub"
+      >
+        <div
+          class="_option_53de86"
+          data-testid="search-button"
+        >
+          <div
+            data-testid="veaury-Icon-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Sidebar > should copy on click 1`] = `
+<body>
+  <div>
+    <div
+      class="_sidebar_53de86"
+    >
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="mouse-state"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="create-node"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86 "
+            data-testid="copy-button"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="veaury-UnnnicTooltip-stub"
+      >
+        <div
+          class="_option_53de86"
+          data-testid="search-button"
+        >
+          <div
+            data-testid="veaury-Icon-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Sidebar > should create node on click 1`] = `
+<body>
+  <div>
+    <div
+      class="_sidebar_53de86"
+    >
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="mouse-state"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="create-node"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86 _disabled_53de86"
+            data-testid="copy-button"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="veaury-UnnnicTooltip-stub"
+      >
+        <div
+          class="_option_53de86"
+          data-testid="search-button"
+        >
+          <div
+            data-testid="veaury-Icon-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Sidebar > should open search on click 1`] = `
+<div
+  className="_sidebar_53de86"
+>
+  <Connect(GuidingSteps)
+    buttonText="Got it 1/3"
+    description="Click here, use the “V” shortcut or hold down the space bar to use the “little hand” tool, with it you will be able to navigate through your entire flow just by clicking and dragging on the screen"
+    guide="control_tools"
+    step={0}
+    title="Select and drag"
+  >
+    <Component
+      enabled={false}
+      shortcutText="V"
+      side="right"
+      text="Select"
+    >
+      <div
+        className="_option_53de86"
+        data-testid="mouse-state"
+        onClick={[Function]}
+      >
+        <Component
+          icon="near_me"
+          size="md"
+        />
+      </div>
+    </Component>
+  </Connect(GuidingSteps)>
+  <Connect(GuidingSteps)
+    buttonText="Got it 1/3"
+    description="Now just click on this button to create a new block."
+    guide="v2"
+    step={0}
+    title="New block"
+  >
+    <Component
+      enabled={false}
+      side="right"
+      text="Create block"
+    >
+      <div
+        className="_option_53de86"
+        data-testid="create-node"
+        onClick={[Function]}
+      >
+        <Component
+          icon="add_circle"
+          size="md"
+        />
+      </div>
+    </Component>
+  </Connect(GuidingSteps)>
+  <Connect(GuidingSteps)
+    buttonText="Got it 2/3"
+    description="Finally, you can copy and paste the blocks wherever you want, including in
+another flow. Click the button or use the shortcut Ctrl C + Ctrl V."
+    guide="v2"
+    step={1}
+    title="Copy and paste"
+  >
+    <Component
+      className="_left_aligned_53de86"
+      enabled={true}
+      shortcutText={null}
+      side="right"
+      text="Select one or more blocks to copy"
+    >
+      <div
+        className="_option_53de86 _disabled_53de86"
+        data-testid="copy-button"
+        onClick={[Function]}
+      >
+        <Component
+          className="_disabled_53de86"
+          icon="content_copy"
+          size="md"
+        />
+      </div>
+    </Component>
+  </Connect(GuidingSteps)>
+  <Component
+    className="_left_aligned_53de86"
+    enabled={true}
+    shortcutText="Ctrl + F"
+    side="right"
+    text="Search block"
+  >
+    <div
+      className="_option_53de86"
+      data-testid="search-button"
+      onClick={[Function]}
+    >
+      <Component
+        icon="search"
+        size="md"
+      />
+    </div>
+  </Component>
+</div>
+`;
+
+exports[`Sidebar > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_sidebar_53de86"
+    >
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="mouse-state"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86"
+            data-testid="create-node"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_guiding_wrapper_168ca1"
+      >
+        <div
+          data-testid="veaury-UnnnicTooltip-stub"
+        >
+          <div
+            class="_option_53de86 _disabled_53de86"
+            data-testid="copy-button"
+          >
+            <div
+              data-testid="veaury-Icon-stub"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        data-testid="veaury-UnnnicTooltip-stub"
+      >
+        <div
+          class="_option_53de86"
+          data-testid="search-button"
+        >
+          <div
+            data-testid="veaury-Icon-stub"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

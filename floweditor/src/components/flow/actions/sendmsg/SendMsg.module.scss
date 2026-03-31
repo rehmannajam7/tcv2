@@ -1,0 +1,36 @@
+@import 'src/variables.module.scss';
+
+.quick_replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $unnnic-spacing-stack-xs $unnnic-spacing-inline-xs;
+}
+
+.attachment {
+  color: $gray;
+  transform: rotate(30deg);
+  display: inline-block;
+}
+
+.summary {
+  margin-top: 4px;
+}
+
+.whatsapp {
+  display: inline-block;
+  color: $gray;
+}
+
+.facebook {
+  display: inline-block;
+  color: $gray;
+}
+
+.line {
+  display: block;
+  min-height: $unnnic-font-size-body-md;
+}
+
+.icons {
+  display: flex;
+}

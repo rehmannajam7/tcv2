@@ -1,0 +1,29 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OptionalTextInput > renders 1`] = `
+<div
+  className="_optional_text_input_1fb2f6 _toggle_1fb2f6"
+>
+  <span
+    className="_toggle_link_1fb2f6 "
+    data-spec="toggle-link"
+    data-testid="toggle-link"
+    onClick={[Function]}
+  >
+    Click me to show
+    <ForwardRef
+      icon="arrow-button-right-1"
+      scheme="neutral-cleanest"
+      size="xs"
+    />
+  </span>
+</div>
+`;
+
+exports[`OptionalTextInput > updates 1`] = `
+{
+  "editing": true,
+  "showToggle": true,
+  "valid": true,
+}
+`;

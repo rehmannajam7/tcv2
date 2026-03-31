@@ -1,0 +1,777 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FieldRouterForm > initializes 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="split_by_contact_field"
+  title="Split by contact field"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "description": "Split by contact field",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+          "cases",
+        ],
+        "name": "Split by contact field",
+        "type": "split_by_contact_field",
+      }
+    }
+    nodeSettings={
+      {
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "Color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "config": {
+              "operand": {
+                "id": "name",
+                "name": "Name",
+                "type": "property",
+              },
+            },
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_contact_field",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_lead_in_2e5e94"
+  >
+    <AssetSelector
+      additionalOptions={
+        [
+          {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+          {
+            "id": "language",
+            "key": "language",
+            "name": "Language",
+            "type": "property",
+          },
+          {
+            "id": "channel",
+            "key": "channel",
+            "name": "Channel",
+            "type": "property",
+          },
+          {
+            "id": "status",
+            "key": "status",
+            "name": "Status",
+            "type": "property",
+          },
+          {
+            "id": "tel",
+            "name": "Phone number",
+            "type": "scheme",
+          },
+          {
+            "id": "whatsapp",
+            "name": "WhatsApp Number",
+            "type": "scheme",
+          },
+          {
+            "id": "facebook",
+            "name": "Facebook",
+            "type": "scheme",
+          },
+          {
+            "id": "twitterid",
+            "name": "Twitter ID",
+            "type": "scheme",
+          },
+          {
+            "id": "telegram",
+            "name": "Telegram ID",
+            "type": "scheme",
+          },
+          {
+            "id": "viber",
+            "name": "Viber ID",
+            "type": "scheme",
+          },
+          {
+            "id": "line",
+            "name": "Line ID",
+            "type": "scheme",
+          },
+          {
+            "id": "wechat",
+            "name": "Wechat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "fcm",
+            "name": "Firebase ID",
+            "type": "scheme",
+          },
+          {
+            "id": "jiochat",
+            "name": "Jiochat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "freshchat",
+            "name": "Freshchat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "mailto",
+            "name": "Email Address",
+            "type": "scheme",
+          },
+          {
+            "id": "twitter",
+            "name": "Twitter Handle",
+            "type": "scheme",
+          },
+          {
+            "id": "ext",
+            "name": "External ID",
+            "type": "scheme",
+          },
+          {
+            "id": "instagram",
+            "name": "Instagram ID",
+            "type": "scheme",
+          },
+          {
+            "id": "slack",
+            "name": "Slack ID",
+            "type": "scheme",
+          },
+          {
+            "id": "teams",
+            "name": "Teams ID",
+            "type": "scheme",
+          },
+        ]
+      }
+      assets={
+        {
+          "items": {},
+          "type": "field",
+        }
+      }
+      entry={
+        {
+          "value": {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+        }
+      }
+      getName={[Function]}
+      name="If the contact's"
+      onChange={[Function]}
+      searchable={true}
+      showLabel={true}
+      sortFunction={[Function]}
+      style="sm"
+      valueKey="id"
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
+  </div>
+  <CaseList
+    cases={
+      [
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "red",
+            ],
+            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "type": "has_any_word",
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          "valid": true,
+        },
+      ]
+    }
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Color",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`FieldRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="split_by_contact_field"
+  title="Split by contact field"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "description": "Split by contact field",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+          "cases",
+        ],
+        "name": "Split by contact field",
+        "type": "split_by_contact_field",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "Color",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "config": {
+              "operand": {
+                "id": "name",
+                "name": "Name",
+                "type": "property",
+              },
+            },
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "split_by_contact_field",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_lead_in_2e5e94"
+  >
+    <AssetSelector
+      additionalOptions={
+        [
+          {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+          {
+            "id": "language",
+            "key": "language",
+            "name": "Language",
+            "type": "property",
+          },
+          {
+            "id": "channel",
+            "key": "channel",
+            "name": "Channel",
+            "type": "property",
+          },
+          {
+            "id": "status",
+            "key": "status",
+            "name": "Status",
+            "type": "property",
+          },
+          {
+            "id": "tel",
+            "name": "Phone number",
+            "type": "scheme",
+          },
+          {
+            "id": "whatsapp",
+            "name": "WhatsApp Number",
+            "type": "scheme",
+          },
+          {
+            "id": "facebook",
+            "name": "Facebook",
+            "type": "scheme",
+          },
+          {
+            "id": "twitterid",
+            "name": "Twitter ID",
+            "type": "scheme",
+          },
+          {
+            "id": "telegram",
+            "name": "Telegram ID",
+            "type": "scheme",
+          },
+          {
+            "id": "viber",
+            "name": "Viber ID",
+            "type": "scheme",
+          },
+          {
+            "id": "line",
+            "name": "Line ID",
+            "type": "scheme",
+          },
+          {
+            "id": "wechat",
+            "name": "Wechat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "fcm",
+            "name": "Firebase ID",
+            "type": "scheme",
+          },
+          {
+            "id": "jiochat",
+            "name": "Jiochat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "freshchat",
+            "name": "Freshchat ID",
+            "type": "scheme",
+          },
+          {
+            "id": "mailto",
+            "name": "Email Address",
+            "type": "scheme",
+          },
+          {
+            "id": "twitter",
+            "name": "Twitter Handle",
+            "type": "scheme",
+          },
+          {
+            "id": "ext",
+            "name": "External ID",
+            "type": "scheme",
+          },
+          {
+            "id": "instagram",
+            "name": "Instagram ID",
+            "type": "scheme",
+          },
+          {
+            "id": "slack",
+            "name": "Slack ID",
+            "type": "scheme",
+          },
+          {
+            "id": "teams",
+            "name": "Teams ID",
+            "type": "scheme",
+          },
+        ]
+      }
+      assets={
+        {
+          "items": {},
+          "type": "field",
+        }
+      }
+      entry={
+        {
+          "value": {
+            "id": "name",
+            "key": "name",
+            "name": "Name",
+            "type": "property",
+          },
+        }
+      }
+      getName={[Function]}
+      name="If the contact's"
+      onChange={[Function]}
+      searchable={true}
+      showLabel={true}
+      sortFunction={[Function]}
+      style="sm"
+      valueKey="id"
+    />
+  </div>
+  <div
+    className="u font secondary body-md color-neutral-cloudy"
+  >
+    If the message response
+  </div>
+  <CaseList
+    cases={
+      [
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "red",
+            ],
+            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "type": "has_any_word",
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          "valid": true,
+        },
+      ]
+    }
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Color",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`FieldRouterForm > updates > should build expression from a selected field 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@fields.my_field",
+            "result_name": "Color",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "operand": {
+              "id": "my_field",
+              "name": "My Field",
+              "type": "field",
+            },
+          },
+          "position": null,
+          "type": "split_by_contact_field",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`FieldRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "red",
+        ],
+        "type": "has_any_word",
+      },
+      "valid": true,
+    },
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "maroon",
+        ],
+        "type": "has_any_word",
+      },
+      "valid": true,
+    },
+    {
+      "categoryName": "Green",
+      "kase": {
+        "arguments": [
+          "green",
+        ],
+        "type": "has_any_word",
+      },
+      "valid": true,
+    },
+  ],
+  "field": {
+    "value": {
+      "id": "name",
+      "key": "name",
+      "name": "Name",
+      "type": "property",
+    },
+  },
+  "resultName": {
+    "validationFailures": [],
+    "value": "Favorite Color",
+  },
+  "valid": true,
+}
+`;
+
+exports[`FieldRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                "type": "has_any_word",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "name": "Green",
+                "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@contact.name",
+            "result_name": "Favorite Color",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+            "operand": {
+              "id": "name",
+              "name": "Name",
+              "type": "property",
+            },
+          },
+          "position": null,
+          "type": "split_by_contact_field",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

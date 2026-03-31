@@ -1,0 +1,26 @@
+.label {
+  display: flex;
+  position: inherit;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.title {
+  display: inline-block;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+.description {
+  margin-top: 5px;
+  margin-left: 22px;
+}
+
+.description_solo {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.checkbox_icon {
+  vertical-align: middle;
+}

@@ -1,0 +1,143 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PlayAudioForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="play_audio"
+  title="Play Recording"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Play a contact recording",
+        "form": [Function],
+        "name": "Play Recording",
+        "type": "play_audio",
+        "visibility": [
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "audio_url": "/my_audio.mp3",
+          "type": "play_audio",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "audio_url": "/my_audio.mp3",
+                "type": "play_audio",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <p>
+    Previous Recording
+  </p>
+  <TextInputElement
+    autocomplete={true}
+    entry={
+      {
+        "value": "/my_audio.mp3",
+      }
+    }
+    focus={true}
+    helpText={
+      <Trans
+        i18nKey="forms.play_audio_help_text"
+      >
+        Enter a variable that contains a recording the contact has previously recorded. For example, @results.voicemail or @fields.short_bio.
+      </Trans>
+    }
+    name="Message"
+    onChange={[Function]}
+    showLabel={false}
+  />
+</Dialog>
+`;
+
+exports[`PlayAudioForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "@flow.recording",
+        "type": "play_audio",
+        "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`PlayAudioForm > updates > should save changes 1`] = `
+{
+  "audio": {
+    "validationFailures": [],
+    "value": "@flow.recording",
+  },
+  "valid": true,
+}
+`;
+
+exports[`PlayAudioForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "audio_url": "@flow.recording",
+        "type": "play_audio",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

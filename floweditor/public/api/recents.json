@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "uuid": "contact-1",
+      "name": "John Doe",
+      "urns": ["tel:+1234567890"]
+    },
+    {
+      "uuid": "contact-2", 
+      "name": "Jane Smith",
+      "urns": ["tel:+0987654321"]
+    }
+  ]
+}

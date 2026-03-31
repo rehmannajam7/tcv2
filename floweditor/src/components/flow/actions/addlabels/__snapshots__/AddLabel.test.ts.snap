@@ -1,0 +1,131 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AddLabelsComp > should display labels on action 1`] = `
+<Fragment>
+  <div
+    style={
+      {
+        "textAlign": "center",
+      }
+    }
+  >
+    <div
+      className="_node_asset_9658e1"
+      key="label-0"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Help
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-1"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      New
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-2"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Feedback
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-3"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Needs Attention
+    </div>
+    <div
+      key="ellipses"
+    >
+      +
+      2
+       more
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`AddLabelsComp > should display labels that contains name_match key 1`] = `
+<Fragment>
+  <div
+    style={
+      {
+        "textAlign": "center",
+      }
+    }
+  >
+    <div
+      className="_node_asset_9658e1"
+      key="Look at me, i have a name_match key"
+    >
+      Look at me, i have a name_match key
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-0"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Help
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-1"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      New
+    </div>
+    <div
+      className="_node_asset_9658e1"
+      key="label-2"
+    >
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="bookmark-tag-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      Feedback
+    </div>
+    <div
+      key="ellipses"
+    >
+      +
+      3
+       more
+    </div>
+  </div>
+</Fragment>
+`;

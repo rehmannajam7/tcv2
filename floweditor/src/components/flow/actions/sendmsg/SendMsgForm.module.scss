@@ -1,0 +1,42 @@
+@import 'src/variables.module.scss';
+
+.title {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.quick_reply_summary {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.template_text {
+  margin-top: 10px;
+  padding: 10px;
+  background: $light_gray_2;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.variable {
+  margin-bottom: 6px;
+}
+
+temba-completion {
+  --textarea-height: 120px;
+}
+
+.disclaimer{
+  display: flex;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  align-items: center;
+  gap: $unnnic-spacing-xs;
+  padding: $unnnic-spacing-sm;
+  margin: $unnnic-spacing-stack-sm 0;
+
+  .disclaimer_text {
+    margin: 0 !important;
+    font-size: $unnnic-font-size-body-gt !important;
+    color: $unnnic-color-neutral-dark !important;
+  }
+
+}

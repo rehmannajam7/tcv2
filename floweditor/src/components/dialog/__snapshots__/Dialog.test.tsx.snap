@@ -1,0 +1,2587 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog > should focus on main tab on primary button click 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_5824662338181952"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should focus on main tab on primary button click 2`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _clickable_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <div
+          class="_header_overlay_af1b5d"
+        />
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_5824662338181952"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      >
+        <div>
+          Tab 1 Content
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should focus on main tab on primary button click 3`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_5824662338181952"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should not switch tabs if there are undefined tabs 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should not switch tabs if there are undefined tabs 2`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render tabs with errors 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_17330503849007073"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render tabs with errors 2`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _clickable_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <div
+          class="_header_overlay_af1b5d"
+        />
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_17330503849007073"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      >
+        <div>
+          Tab 2 Content
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render with full props 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render with undefined tabs 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should render without any props 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          />
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should switch tab on instace method call 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_03524534118514566"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should switch to main tab on title click 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_6703682664092412"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should switch to main tab on title click 2`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _clickable_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <div
+          class="_header_overlay_af1b5d"
+        />
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_6703682664092412"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      >
+        <div>
+          Tab 2 Content
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Dialog > should switch to main tab on title click 3`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d my-class"
+    >
+      <div
+        class="_header_af1b5d _iconed_af1b5d _barber_af1b5d"
+      >
+        <span
+          class="_header_icon_af1b5d fe-icon"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            My Dialog
+            <span
+              class="_new_af1b5d"
+            >
+              New
+              !
+            </span>
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          >
+            Subtitlf
+          </div>
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 1
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_6703682664092412"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Tab 2
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_no_padding_af1b5d"
+      />
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_gutter_af1b5d"
+          >
+            <div>
+              The Gutter
+            </div>
+          </div>
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_left_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Other
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

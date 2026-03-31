@@ -1,0 +1,840 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UpdateContactForm > render > should render an empty form with different action 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  className="_dialog_b1bcf2"
+  headerClass="set_contact_field"
+  title="Update contact"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "set_contact_name",
+          "set_contact_language",
+          "set_contact_channel",
+          "set_contact_status",
+        ],
+        "component": [Function],
+        "description": "Update the contact",
+        "form": [Function],
+        "name": "Update contact",
+        "type": "set_contact_field",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "groups": [
+            {
+              "name": "Customers",
+              "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Unsatisfied Customers",
+              "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
+            },
+            {
+              "name": "Early Adopters",
+              "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
+            },
+            {
+              "name": "Testers",
+              "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
+            },
+            {
+              "name": "Subscribers",
+              "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Champions",
+              "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
+            },
+          ],
+          "type": "add_contact_groups",
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+        "originalNode": null,
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <AssetSelector
+    additionalOptions={
+      [
+        {
+          "id": "name",
+          "key": "name",
+          "name": "Name",
+          "type": "property",
+        },
+        {
+          "id": "language",
+          "key": "language",
+          "name": "Language",
+          "type": "property",
+        },
+        {
+          "id": "channel",
+          "key": "channel",
+          "name": "Channel",
+          "type": "property",
+        },
+        {
+          "id": "status",
+          "key": "status",
+          "name": "Status",
+          "type": "property",
+        },
+      ]
+    }
+    assets={
+      {
+        "items": {},
+        "type": "field",
+      }
+    }
+    createAssetFromInput={[Function]}
+    createPrefix="Create contact field: "
+    entry={
+      {
+        "value": {
+          "id": "name",
+          "key": "name",
+          "name": "Name",
+          "type": "property",
+        },
+      }
+    }
+    getName={[Function]}
+    name="Select what to update"
+    onAssetCreated={[Function]}
+    onChange={[Function]}
+    searchable={true}
+    showLabel={true}
+    sortFunction={[Function]}
+  />
+  <div
+    className="_value_b1bcf2"
+  >
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "",
+        }
+      }
+      focus={true}
+      name="Enter a new contact name"
+      onChange={[Function]}
+      placeholder="Enter a new contact name"
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
+
+exports[`UpdateContactForm > render > should render an empty form with no action 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  className="_dialog_b1bcf2"
+  headerClass="set_contact_field"
+  title="Update contact"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "set_contact_name",
+          "set_contact_language",
+          "set_contact_channel",
+          "set_contact_status",
+        ],
+        "component": [Function],
+        "description": "Update the contact",
+        "form": [Function],
+        "name": "Update contact",
+        "type": "set_contact_field",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": null,
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <AssetSelector
+    additionalOptions={
+      [
+        {
+          "id": "name",
+          "key": "name",
+          "name": "Name",
+          "type": "property",
+        },
+        {
+          "id": "language",
+          "key": "language",
+          "name": "Language",
+          "type": "property",
+        },
+        {
+          "id": "channel",
+          "key": "channel",
+          "name": "Channel",
+          "type": "property",
+        },
+        {
+          "id": "status",
+          "key": "status",
+          "name": "Status",
+          "type": "property",
+        },
+      ]
+    }
+    assets={
+      {
+        "items": {},
+        "type": "field",
+      }
+    }
+    createAssetFromInput={[Function]}
+    createPrefix="Create contact field: "
+    entry={
+      {
+        "value": {
+          "id": "name",
+          "key": "name",
+          "name": "Name",
+          "type": "property",
+        },
+      }
+    }
+    getName={[Function]}
+    name="Select what to update"
+    onAssetCreated={[Function]}
+    onChange={[Function]}
+    searchable={true}
+    showLabel={true}
+    sortFunction={[Function]}
+  />
+  <div
+    className="_value_b1bcf2"
+  >
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "",
+        }
+      }
+      focus={true}
+      name="Enter a new contact name"
+      onChange={[Function]}
+      placeholder="Enter a new contact name"
+      showLabel={true}
+    />
+  </div>
+</Dialog>
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to channel 1`] = `
+{
+  "channel": {
+    "validationFailures": [],
+    "value": {
+      "name": "Channel Name",
+      "type": "channel",
+      "uuid": "channel_uuid",
+    },
+  },
+  "field": {
+    "value": {
+      "id": "channel",
+      "key": "channel",
+      "name": "Channel",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_channel",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to channel 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "channel": {
+          "name": "Channel Name",
+          "uuid": "channel_uuid",
+        },
+        "type": "set_contact_channel",
+        "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to contact name 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "name": "Rowan Seymour",
+        "type": "set_contact_name",
+        "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to field value 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "birthday",
+      "name": "Birthday",
+      "type": "field",
+    },
+  },
+  "fieldValue": {
+    "validationFailures": [],
+    "value": "12/25/00",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_field",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to field value 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "field": {
+          "key": undefined,
+          "name": undefined,
+        },
+        "type": "set_contact_field",
+        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        "value": "12/25/00",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to language 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "language",
+      "key": "language",
+      "name": "Language",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "",
+  },
+  "language": {
+    "validationFailures": [],
+    "value": "e",
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_language",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > should allow switching from router > to language 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "language": undefined,
+        "type": "set_contact_language",
+        "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > to status 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "status",
+      "key": "status",
+      "name": "Status",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "",
+  },
+  "language": {
+    "validationFailures": [],
+    "value": undefined,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_status",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > to status 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "status": "active",
+        "type": "set_contact_status",
+        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should update channel 1`] = `
+{
+  "channel": {
+    "validationFailures": [],
+    "value": {
+      "id": "channel_id",
+      "name": "Channel Name",
+      "type": "channel",
+    },
+  },
+  "field": {
+    "value": {
+      "id": "channel",
+      "key": "channel",
+      "name": "Channel",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "25",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_channel",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > updates > should update channel 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "channel": {
+          "name": "Channel Name",
+          "uuid": undefined,
+        },
+        "type": "set_contact_channel",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should update field value 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "birthday",
+      "name": "Birthday",
+      "type": "field",
+    },
+  },
+  "fieldValue": {
+    "validationFailures": [],
+    "value": "12/25/00",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_field",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > updates > should update field value 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "field": {
+          "key": undefined,
+          "name": undefined,
+        },
+        "type": "set_contact_field",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        "value": "12/25/00",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should update language 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "language",
+      "key": "language",
+      "name": "Language",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "25",
+  },
+  "language": {
+    "validationFailures": [],
+    "value": "e",
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_language",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > updates > should update language 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "language": undefined,
+        "type": "set_contact_language",
+        "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should update name 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "name",
+      "key": "name",
+      "name": "Name",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "Rowan Seymour",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_name",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > updates > should update name 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "name": "Rowan Seymour",
+        "type": "set_contact_name",
+        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should update status 1`] = `
+{
+  "channel": {
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "status",
+      "key": "status",
+      "name": "Status",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Blocked - remove from groups, ignore forever",
+      "value": "blocked",
+    },
+  },
+  "type": "set_contact_status",
+  "valid": true,
+}
+`;
+
+exports[`UpdateContactForm > updates > should update status 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "status": "blocked",
+        "type": "set_contact_status",
+        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+      },
+      [Function],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`UpdateContactForm > updates > should validate before saving 1`] = `
+{
+  "channel": {
+    "validationFailures": [
+      {
+        "message": "Channel is required",
+      },
+    ],
+    "value": null,
+  },
+  "field": {
+    "value": {
+      "id": "channel",
+      "key": "channel",
+      "name": "Channel",
+      "type": "property",
+    },
+  },
+  "fieldValue": {
+    "value": "25",
+  },
+  "language": {
+    "value": null,
+  },
+  "name": {
+    "value": "",
+  },
+  "status": {
+    "value": {
+      "name": "Active",
+      "value": "active",
+    },
+  },
+  "type": "set_contact_channel",
+  "valid": false,
+}
+`;

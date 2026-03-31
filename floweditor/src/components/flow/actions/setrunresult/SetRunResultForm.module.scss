@@ -1,0 +1,7 @@
+@import 'src/variables.module.scss';
+
+.name,
+.value,
+.category {
+  margin-top: $unnnic-spacing-stack-sm;
+}

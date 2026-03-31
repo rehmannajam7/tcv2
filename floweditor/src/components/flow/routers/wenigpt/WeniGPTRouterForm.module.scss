@@ -1,0 +1,26 @@
+@import 'src/variables.module.scss';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+}
+
+.message {
+  display: inline-flex;
+  gap: $unnnic-spacing-nano;
+  margin-top: $unnnic-spacing-nano;
+
+  color: $unnnic-color-neutral-cloudy;
+  font-family: $unnnic-font-family-secondary;
+  font-size: $unnnic-font-size-body-md;
+  font-style: normal;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+
+  .link {
+    color: $unnnic-color-weni-600;
+    font-weight: $unnnic-font-weight-bold;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,1385 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`LogEvent > should filter authorization from api.bothub.it requests 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_has_detail_9015ee"
+      >
+        <div
+          class="_info_9015ee _webhook_9015ee "
+        >
+          <span>
+            Called 
+            https://api.bothub.it/webhook
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ReactModalPortal"
+  />
+</body>
+`;
+
+exports[`LogEvent > should not render invalid attachment type 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div />
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should not render msg_created event without text 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should not render service_called event with unknown type 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    />
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should not render unknown attachment type 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div />
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should not render webhook_called event without url 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    />
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render airtime_transferred event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Transferred 10 USD to +1234567890
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render audio msg attachments 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <div
+              class="_audio_attachment_9015ee"
+            >
+              <div
+                class="_media_player_9015ee"
+              >
+                <div
+                  class="_player_88e07f "
+                  data-testid="mediaplayer"
+                  style="height: 18px; width: 18px;"
+                >
+                  <audio
+                    data-testid="audio"
+                    preload="none"
+                    src="http://temba.io/test.mp3"
+                  />
+                  <div
+                    class="_circles_88e07f"
+                  >
+                    <svg
+                      height="18"
+                      width="18"
+                    >
+                      <circle
+                        class="_circle_background_88e07f"
+                        cx="9"
+                        cy="9"
+                        fill="#fff"
+                        r="7"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                      <circle
+                        class="_circle_background_88e07f"
+                        cx="9"
+                        cy="9"
+                        fill="transparent"
+                        r="7"
+                        stroke="#ddd"
+                        stroke-width="1"
+                      />
+                      <circle
+                        class="_circle_foreground_88e07f"
+                        cx="9"
+                        cy="9"
+                        fill="transparent"
+                        r="7"
+                        stroke="cornflowerblue"
+                        stroke-dasharray="43.982297150257104 43.982297150257104"
+                        stroke-width="1"
+                        style="stroke-dashoffset: 43.982297150257104;"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    class="_button_88e07f"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--alert-red unnnic-icon-size--sm"
+                        data-v-930380cc=""
+                      >
+                        play_arrow
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_audio_text_9015ee"
+              >
+                Audio Recording
+              </div>
+            </div>
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render broadcast_created event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render broadcast_created event with attachment 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render classification event with intents and entities 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <table
+        class="_classification_9015ee"
+      >
+        <tbody>
+          <tr>
+            <td />
+            <td>
+              intent
+            </td>
+            <td>
+              0.847
+            </td>
+          </tr>
+          <tr>
+            <td />
+            <td>
+              intent
+            </td>
+            <td>
+              0.123
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Bobby
+            </td>
+            <td>
+              name
+            </td>
+            <td>
+              1.000
+            </td>
+          </tr>
+          <tr>
+            <td>
+              38
+            </td>
+            <td>
+              age
+            </td>
+            <td>
+              1.000
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_field_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Set contact "Age" to "38"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_field_changed event with null value 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Cleared contact "Age"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_groups_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee undefined"
+      >
+        <span>
+          Added to "U-Reporters", "Youth". Removed from "Unregistered", "Missing Name"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_groups_changed event without groups added and removed 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee undefined"
+      >
+        <span />
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_language_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Set preferred language to "eng"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_name_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Set contact name to "Bobby"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_status_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Set status to "blocked"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render contact_urns_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Added a URN for the contact
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render documents msg attachments 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <div
+              style="cursor: pointer; text-decoration: none; padding: 10px 12px; background: rgb(230, 230, 230); color: rgb(102, 102, 102);"
+            >
+              <div
+                style="display: flex; align-items: center;"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--md"
+                    data-v-930380cc=""
+                  >
+                    picture_as_pdf
+                  </span>
+                </div>
+                <div
+                  style="margin-left: 5px; line-height: 16px;"
+                >
+                  Document
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render email_created event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_has_detail_9015ee"
+      >
+        <div
+          class="_info_9015ee _email_9015ee"
+        >
+          Sent email to &quot;fun@temba.io&quot;, &quot;events@temba.io&quot; with subject "Party time"
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ReactModalPortal"
+  />
+</body>
+`;
+
+exports[`LogEvent > should render email_sent event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_has_detail_9015ee"
+      >
+        <div
+          class="_info_9015ee _email_9015ee"
+        >
+          Sent email to &quot;fun@temba.io&quot;, &quot;events@temba.io&quot; with subject "Party time"
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ReactModalPortal"
+  />
+</body>
+`;
+
+exports[`LogEvent > should render environment_refreshed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    />
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render error event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_error_9015ee "
+      >
+        <span>
+          Error: 
+          I'm an error
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render failure event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_error_9015ee "
+      >
+        <span>
+          Error: 
+          I'm a failure
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render flow_entered event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Entered flow "My Flow"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render geo msg attachments 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="/static/images/map.jpg"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render info event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          I am informative
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render input_labels_added event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee undefined"
+      >
+        <span>
+          Message labeled with "Spam", "Important"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render ivr_created event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.wav"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Thanks for getting in touch
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render msg_created event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render msg_created event with no attachments 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render msg_received event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_msg_received_9015ee "
+      >
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Thanks for getting in touch
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render msg_wait event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Waiting for reply
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render msg_wpp_created event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee _whatsapp_9015ee"
+      >
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <img
+              alt="Attachment"
+              src="http://temba.io/test.jpg"
+            />
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render resthook_called event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Triggered flow event "new-registration"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render run_result_changed event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Set result "Response 1" to "yes"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render service_called event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_has_detail_9015ee"
+      >
+        <div
+          class="_info_9015ee _webhook_9015ee "
+        >
+          <span>
+            Called 
+            https://api.wit.ai/message?v=20170307&q=Hi+everybody
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ReactModalPortal"
+  />
+</body>
+`;
+
+exports[`LogEvent > should render session_triggered event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Started somebody else in "My Flow"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render ticket_opened event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_info_9015ee "
+      >
+        <span>
+          Ticket opened with topic "Support"
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render video msg attachments 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_send_msg_9015ee "
+      >
+        <div
+          class="_profile_image_9015ee"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <svg
+              class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow _profile_icon_9015ee"
+              data-v-930380cc=""
+              fill="none"
+              height="40"
+              viewBox="0 0 40 40"
+              width="40"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="primary"
+                d="M20.0001 19.6672C24.0502 19.6672 27.3334 16.3839 27.3334 12.3338C27.3334 8.28373 24.0502 5.00049 20.0001 5.00049C15.95 5.00049 12.6668 8.28373 12.6668 12.3338C12.6668 16.3839 15.95 19.6672 20.0001 19.6672Z"
+                fill="#3B414D"
+              />
+              <path
+                class="primary"
+                d="M20 21.6671C16.6418 21.671 13.4222 23.0068 11.0476 25.3814C8.67299 27.756 7.33723 30.9756 7.33334 34.3338C7.33334 34.5106 7.40358 34.6802 7.52861 34.8052C7.65363 34.9302 7.8232 35.0004 8.00001 35.0004H32C32.1768 35.0004 32.3464 34.9302 32.4714 34.8052C32.5964 34.6802 32.6667 34.5106 32.6667 34.3338C32.6628 30.9756 31.327 27.756 28.9524 25.3814C26.5778 23.0068 23.3582 21.671 20 21.6671Z"
+                fill="#3B414D"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="_msg_wrapper_9015ee"
+        >
+          <div>
+            <div
+              class="_video_attachment_9015ee"
+            >
+              <video
+                controls=""
+                src="http://temba.io/test.mp4"
+              />
+            </div>
+          </div>
+          <div
+            class="_msg_text_9015ee"
+          >
+            Hi there
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`LogEvent > should render webhook_called event 1`] = `
+<body>
+  <div>
+    <div
+      class="_evt_9015ee"
+    >
+      <div
+        class="_has_detail_9015ee"
+      >
+        <div
+          class="_info_9015ee _webhook_9015ee "
+        >
+          <span>
+            Called 
+            https://temba.io/webhook
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="ReactModalPortal"
+  />
+</body>
+`;

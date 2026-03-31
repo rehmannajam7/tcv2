@@ -1,0 +1,227 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SendEmailForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="send_email"
+  title="Send email"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Send email",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "subject",
+          "body",
+        ],
+        "name": "Send email",
+        "type": "send_email",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "addresses": [
+            "jane@example.com",
+          ],
+          "body": "@run.results.name just signed up.",
+          "subject": "New Sign Up",
+          "type": "send_email",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "addresses": [
+                  "jane@example.com",
+                ],
+                "body": "@run.results.name just signed up.",
+                "subject": "New Sign Up",
+                "type": "send_email",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_ele_be93d9"
+  >
+    <TextInputElement
+      __className="_subject_be93d9"
+      entry={
+        {
+          "value": "",
+        }
+      }
+      iconRight="keyboard-return-1"
+      name="Recipient"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      onKeyPressEnter={[Function]}
+      placeholder="Email"
+      showLabel={true}
+    />
+    <div
+      className="_pills_be93d9"
+    >
+      <div
+        className="_pill_be93d9 u font secondary body-md color-neutral-darkest"
+        key="0"
+      >
+        jane@example.com
+        <ForwardRef
+          clickable={true}
+          data-testid="remove-recipient-0"
+          icon="close-1"
+          onClick={[Function]}
+          scheme="neutral-darkest"
+          size="xs"
+        />
+      </div>
+    </div>
+    <div>
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "New Sign Up",
+          }
+        }
+        name="Subject"
+        onChange={[Function]}
+        placeholder="Ex: Your order has been delivered"
+        showLabel={true}
+      />
+    </div>
+    <div>
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "@run.results.name just signed up.",
+          }
+        }
+        name="E-mail text"
+        onChange={[Function]}
+        placeholder="Type here..."
+        showLabel={true}
+        textarea={true}
+      />
+    </div>
+  </div>
+</Dialog>
+`;
+
+exports[`SendEmailForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "joe@domain.com",
+          "jane@domain.com",
+        ],
+        "body": "What is a group of tigers called?",
+        "subject": "URGENT: I have a question",
+        "type": "send_email",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendEmailForm > updates > should save changes 1`] = `
+{
+  "body": {
+    "validationFailures": [],
+    "value": "What is a group of tigers called?",
+  },
+  "recipient": {
+    "value": "",
+  },
+  "recipientError": undefined,
+  "recipients": {
+    "validationFailures": [],
+    "value": [
+      "joe@domain.com",
+      "jane@domain.com",
+    ],
+  },
+  "subject": {
+    "validationFailures": [],
+    "value": "URGENT: I have a question",
+  },
+  "valid": true,
+}
+`;
+
+exports[`SendEmailForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "addresses": [
+          "joe@domain.com",
+          "jane@domain.com",
+        ],
+        "body": "What is a group of tigers called?",
+        "subject": "URGENT: I have a question",
+        "type": "send_email",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

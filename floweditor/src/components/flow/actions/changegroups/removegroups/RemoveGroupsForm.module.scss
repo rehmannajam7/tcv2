@@ -1,0 +1,16 @@
+@import 'src/variables.module.scss';
+
+.checkbox {
+  margin-top: 20px;
+}
+
+.dialog {
+  width: 498px;
+}
+
+.form_element {
+  margin-top: $unnnic-spacing-stack-sm;
+  display: flex;
+  column-gap: $unnnic-spacing-inline-sm;
+  align-items: center;
+}
