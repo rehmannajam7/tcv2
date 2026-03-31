@@ -1,0 +1,119 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "basePath": "/docs",
+  "name": "ThumbCrowd Developer Docs",
+  "url": "https://docs.thumb-crowd.com",
+  "description": "Official developer documentation for ThumbCrowd - Customer support platform. Learn about our APIs, integrations, and development guidelines.",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "https://stage.thumb-crowd.com/docs/favicon.png",
+  "colors": {
+    "primary": "#0069ED",
+    "light": "#4D9CFF",
+    "dark": "#0050B4"
+  },
+  "fonts": {
+    "heading": {
+      "family": "Haskoy",
+      "weight": 500,
+      "source": "https://stage.thumb-crowd.com/docs/fonts/haskoy/Haskoy-Medium.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Haskoy",
+      "weight": 400,
+      "source": "https://stage.thumb-crowd.com/docs/fonts/haskoy/Haskoy-Regular.woff2",
+      "format": "woff2"
+    }
+  },
+  "theme": "maple",
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Introduction",
+        "icon": "house",
+        "pages": [
+          "introduction"
+        ]
+      },
+      
+      {
+        "anchor": "API Reference",
+        "icon": "square-terminal",
+        "pages": [],
+        "groups": [
+          {
+            "group": "Getting Started",
+            "description": "Learn about ThumbCrowd APIs and how to use them",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Application APIs",
+            "description": "APIs for managing application aspects of ThumbCrowd",
+            "includeTags": [
+              "Agents",
+              "Automation Rule",
+              "Account AgentBots",
+              "Canned Responses",
+              "Contact Labels",
+              "Contacts",
+              "Conversation Assignments",
+              "Conversation Labels",
+              "Conversations",
+              "Custom Attributes",
+              "Custom Filters",
+              "Help Center",
+              "Inboxes",
+              "Integrations",
+              "Messages",
+              "Profile",
+              "Reports",
+              "Teams",
+              "Webhooks"
+            ],
+            "openapi": "https://raw.githubusercontent.com/rehmannajam7/tcv2/tcv2/main/swagger/tag_groups/application_swagger.json"
+          },
+          {
+            "group": "Platform APIs",
+            "description": "APIs for managing platform aspects of ThumbCrowd",
+            "includeTags": [
+              "Accounts",
+              "Account Users",
+              "AgentBots",
+              "Users"
+            ],
+            "openapi": "https://raw.githubusercontent.com/rehmannajam7/tcv2/tcv2/main/swagger/tag_groups/platform_swagger.json"
+          },
+          {
+            "group": "Client APIs",
+            "description": "APIs for client applications",
+            "includeTags": [
+              "Contacts API",
+              "Conversations API",
+              "Messages API"
+            ],
+            "openapi": "https://raw.githubusercontent.com/rehmannajam7/tcv2/tcv2/main/swagger/tag_groups/client_swagger.json"
+          },
+          {
+            "group": "Other APIs",
+            "description": "Additional ThumbCrowd APIs",
+            "includeTags": [
+              "CSAT Survey Page"
+            ],
+            "openapi": "https://raw.githubusercontent.com/rehmannajam7/tcv2/tcv2/main/swagger/tag_groups/other_swagger.json"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/thumbcrowd",
+      "linkedin": "https://www.linkedin.com/company/thumbcrowd"
+    }
+  }
+}
