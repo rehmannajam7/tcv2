@@ -13,6 +13,10 @@ import { conversationListPageURL } from 'dashboard/helper/URLHelper';
 import { snoozedReopenTime } from 'dashboard/helper/snoozeHelpers';
 import { useInbox } from 'dashboard/composables/useInbox';
 import { useI18n } from 'vue-i18n';
+import { useUISettings } from 'dashboard/composables/useUISettings';
+import ButtonV4 from 'dashboard/components-next/button/Button.vue';
+import { emitter } from 'shared/helpers/mitt';
+import { BUS_EVENTS } from 'shared/constants/busEvents';
 
 const props = defineProps({
   chat: {
@@ -31,6 +35,7 @@ const route = useRoute();
 const conversationHeader = ref(null);
 const { width } = useElementSize(conversationHeader);
 const { isAWebWidgetInbox } = useInbox();
+const { uiSettings, updateUISettings } = useUISettings();
 
 const currentChat = computed(() => store.getters.getSelectedChat);
 const accountId = computed(() => store.getters.getCurrentAccountId);
@@ -90,6 +95,25 @@ const hasMultipleInboxes = computed(
 );
 
 const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
+
+const isContactSidebarOpen = computed(
+  () => uiSettings.value.is_contact_sidebar_open
+);
+
+const isCopilotPanelOpen = computed(
+  () => uiSettings.value.is_copilot_panel_open
+);
+
+const toggleContactPanel = () => {
+  updateUISettings({
+    is_contact_sidebar_open: !isContactSidebarOpen.value,
+    is_copilot_panel_open: false,
+  });
+};
+
+const toggleCopilotPanel = () => {
+  emitter.emit(BUS_EVENTS.TOGGLE_COPILOT_PANEL);
+};
 </script>
 
 <template>
@@ -150,6 +174,26 @@ const hasSlaPolicyId = computed(() => props.chat?.sla_policy_id);
         show-extended-info
         :parent-width="width"
         class="hidden md:flex"
+      />
+      <ButtonV4
+        v-tooltip="$t('CONVERSATION.SIDEBAR.CONTACT')"
+        size="sm"
+        variant="ghost"
+        color="slate"
+        icon="i-lucide-user"
+        :class="{ 'bg-n-alpha-2': isContactSidebarOpen }"
+        class="rounded-md hover:bg-n-alpha-2"
+        @click="toggleContactPanel"
+      />
+      <ButtonV4
+        v-tooltip="'Copilot'"
+        size="sm"
+        variant="ghost"
+        color="slate"
+        icon="i-lucide-sparkles"
+        :class="{ 'bg-n-alpha-2': isCopilotPanelOpen }"
+        class="rounded-md hover:bg-n-alpha-2"
+        @click="toggleCopilotPanel"
       />
       <MoreActions :conversation-id="currentChat.id" />
     </div>
