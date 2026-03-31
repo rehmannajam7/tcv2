@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
   # These extensions should be enabled to support this database
-  enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -157,15 +156,6 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.index ["sla_policy_id"], name: "index_applied_slas_on_sla_policy_id"
   end
 
-  create_table "article_embeddings", force: :cascade do |t|
-    t.bigint "article_id", null: false
-    t.text "term", null: false
-    t.vector "embedding", limit: 1536
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["embedding"], name: "index_article_embeddings_on_embedding", using: :ivfflat
-  end
-
   create_table "articles", force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "portal_id", null: false
@@ -277,7 +267,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.jsonb "audience", default: []
     t.datetime "scheduled_at", precision: nil
     t.boolean "trigger_only_during_business_hours", default: false
-    t.jsonb "template_params"
+    t.jsonb "template_params", default: {}, null: false
     t.index ["account_id"], name: "index_campaigns_on_account_id"
     t.index ["campaign_status"], name: "index_campaigns_on_campaign_status"
     t.index ["campaign_type"], name: "index_campaigns_on_campaign_type"
@@ -307,7 +297,6 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.index ["account_id"], name: "index_captain_assistant_responses_on_account_id"
     t.index ["assistant_id"], name: "index_captain_assistant_responses_on_assistant_id"
     t.index ["documentable_id", "documentable_type"], name: "idx_cap_asst_resp_on_documentable"
-    t.index ["embedding"], name: "vector_idx_knowledge_entries_embedding", using: :ivfflat
     t.index ["status"], name: "index_captain_assistant_responses_on_status"
   end
 
@@ -589,7 +578,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.bigint "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "contacts_count"
+    t.integer "contacts_count", default: 0, null: false
     t.index ["account_id", "domain"], name: "index_companies_on_account_and_domain", unique: true, where: "(domain IS NOT NULL)"
     t.index ["account_id"], name: "index_companies_on_account_id"
     t.index ["name", "account_id"], name: "index_companies_on_name_and_account_id"
@@ -815,6 +804,76 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "account_id"], name: "index_email_templates_on_name_and_account_id", unique: true
+  end
+
+  create_table "flow_executions", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "contact_id", null: false
+    t.bigint "conversation_id"
+    t.bigint "account_id", null: false
+    t.jsonb "context", default: {}, null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "started_at", null: false
+    t.datetime "completed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "results", default: {}, null: false
+    t.index ["account_id"], name: "index_flow_executions_on_account_id"
+    t.index ["contact_id"], name: "index_flow_executions_on_contact_id"
+    t.index ["conversation_id"], name: "index_flow_executions_on_conversation_id"
+    t.index ["flow_id", "contact_id", "status"], name: "index_flow_executions_on_flow_id_and_contact_id_and_status"
+    t.index ["flow_id"], name: "index_flow_executions_on_flow_id"
+    t.index ["status"], name: "index_flow_executions_on_status"
+  end
+
+  create_table "flow_inbox_associations", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "inbox_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flow_id", "inbox_id"], name: "index_flow_inbox_associations_on_flow_id_and_inbox_id", unique: true
+    t.index ["flow_id"], name: "index_flow_inbox_associations_on_flow_id"
+    t.index ["inbox_id"], name: "index_flow_inbox_associations_on_inbox_id"
+  end
+
+  create_table "flow_team_associations", force: :cascade do |t|
+    t.bigint "flow_id", null: false
+    t.bigint "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flow_id", "team_id"], name: "index_flow_team_associations_on_flow_id_and_team_id", unique: true
+    t.index ["flow_id"], name: "index_flow_team_associations_on_flow_id"
+    t.index ["team_id"], name: "index_flow_team_associations_on_team_id"
+  end
+
+  create_table "flows", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.integer "status", default: 0, null: false
+    t.integer "trigger_type", default: 0, null: false
+    t.text "trigger_conditions"
+    t.text "flow_data"
+    t.bigint "account_id", null: false
+    t.bigint "created_by_id", null: false
+    t.bigint "updated_by_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "flow_type", default: 0, null: false
+    t.string "trigger_keyword"
+    t.string "floweditor_uuid"
+    t.string "floweditor_sync_status"
+    t.datetime "floweditor_last_synced_at"
+    t.text "keywords", default: [], array: true
+    t.index ["account_id", "flow_type"], name: "index_flows_on_account_id_and_flow_type"
+    t.index ["account_id", "floweditor_uuid"], name: "index_flows_on_account_id_and_floweditor_uuid"
+    t.index ["account_id", "status"], name: "index_flows_on_account_id_and_status"
+    t.index ["account_id", "trigger_keyword"], name: "index_flows_on_account_id_and_trigger_keyword"
+    t.index ["account_id", "trigger_type"], name: "index_flows_on_account_id_and_trigger_type"
+    t.index ["account_id"], name: "index_flows_on_account_id"
+    t.index ["created_by_id"], name: "index_flows_on_created_by_id"
+    t.index ["floweditor_uuid"], name: "index_flows_on_floweditor_uuid", unique: true
+    t.index ["keywords"], name: "index_flows_on_keywords", using: :gin
+    t.index ["updated_by_id"], name: "index_flows_on_updated_by_id"
   end
 
   create_table "folders", force: :cascade do |t|
@@ -1247,7 +1306,7 @@ ActiveRecord::Schema[7.1].define(version: 2026_03_24_102005) do
     t.text "message_signature"
     t.string "otp_secret"
     t.integer "consumed_timestep"
-    t.boolean "otp_required_for_login", default: false
+    t.boolean "otp_required_for_login", default: false, null: false
     t.text "otp_backup_codes"
     t.index ["email"], name: "index_users_on_email"
     t.index ["otp_required_for_login"], name: "index_users_on_otp_required_for_login"

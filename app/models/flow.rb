@@ -9,6 +9,7 @@
 #  floweditor_last_synced_at :datetime
 #  floweditor_sync_status    :string
 #  floweditor_uuid           :string
+#  keywords                  :text             default([]), is an Array
 #  name                      :string           not null
 #  status                    :integer          default("draft"), not null
 #  trigger_conditions        :text
@@ -30,6 +31,7 @@
 #  index_flows_on_account_id_and_trigger_type     (account_id,trigger_type)
 #  index_flows_on_created_by_id                   (created_by_id)
 #  index_flows_on_floweditor_uuid                 (floweditor_uuid) UNIQUE
+#  index_flows_on_keywords                        (keywords) USING gin
 #  index_flows_on_updated_by_id                   (updated_by_id)
 #
 class Flow < ApplicationRecord
