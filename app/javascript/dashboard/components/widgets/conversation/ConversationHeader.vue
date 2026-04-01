@@ -203,7 +203,7 @@ const toggleCopilotPanel = () => {
         size="sm"
         variant="ghost"
         color="slate"
-        icon="i-lucide-bot"
+        icon="i-woot-captain flex-shrink-0"
         :class="{ 'bg-n-alpha-2': isCopilotPanelOpen }"
         class="rounded-md hover:bg-n-alpha-2"
         @click="toggleCopilotPanel"
