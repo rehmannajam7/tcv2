@@ -94,8 +94,7 @@ yarn-debug.log*
 .vscode
 .claude/settings.local.json
 .cursor
-.codex/
-.claude/
+<<<<<<< HEAD
 CLAUDE.local.md
 
 # Histoire deployment
@@ -103,4 +102,10 @@ CLAUDE.local.md
 .histoire
 .pnpm-store/*
 local/
-Procfile.worktree
+=======
+swagger_Old/
+>>>>>>> feature/sleek-sidebar-redesign
+
+# Local backups and artifacts
+db_backups/
+public/brand-assets OLD/

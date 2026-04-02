@@ -63,11 +63,15 @@ watch(
 );
 </script>
 
+<!-- eslint-disable vue/no-static-inline-styles -->
 <template>
-  <div class="flex w-full h-full min-h-0">
+  <div
+    class="flex flex-grow-0 w-full h-full min-h-0 app-wrapper p-2"
+    style="background-color: #2c2c2c"
+  >
     <section
       v-if="isHelpCenterEnabled"
-      class="flex flex-1 h-full px-0 overflow-hidden bg-n-surface-1"
+      class="flex flex-1 h-full px-0 overflow-hidden bg-n-background"
     >
       <router-view />
     </section>

@@ -21,6 +21,8 @@ class Messages::MessageBuilder
   end
 
   def perform
+    return if Conversations::SilentModeValidationService.should_skip_outgoing_message?(@conversation) && @message_type == 'outgoing'
+
     @message = @conversation.messages.build(message_params)
     process_attachments
     process_emails
@@ -124,9 +126,15 @@ class Messages::MessageBuilder
   end
 
   def message_sender
-    return if @params[:sender_type] != 'AgentBot'
+    case @params[:sender_type]
+    when 'AgentBot'
+      AgentBot.where(account_id: [nil, @conversation.account.id]).find_by(id: @params[:sender_id])
+    when 'Captain::Assistant'
+      # Guard for OSS environments where Captain::Assistant may not exist
+      return unless defined?(Captain::Assistant)
 
-    AgentBot.where(account_id: [nil, @conversation.account.id]).find_by(id: @params[:sender_id])
+      Captain::Assistant.where(account_id: @conversation.account.id).find_by(id: @params[:sender_id])
+    end
   end
 
   def message_params
@@ -142,7 +150,8 @@ class Messages::MessageBuilder
       items: @items,
       in_reply_to: @in_reply_to,
       echo_id: @params[:echo_id],
-      source_id: @params[:source_id]
+      source_id: @params[:source_id],
+      content_attributes: content_attributes
     }.merge(external_created_at).merge(automation_rule_id).merge(campaign_id).merge(template_params)
   end
 

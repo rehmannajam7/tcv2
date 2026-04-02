@@ -1,7 +1,7 @@
 <script setup>
-import { computed } from 'vue';
 import { useMapGetter } from 'dashboard/composables/store.js';
 import Icon from 'next/icon/Icon.vue';
+import { computed } from 'vue';
 
 const props = defineProps({
   to: { type: [Object, String], default: '' },
@@ -12,27 +12,51 @@ const props = defineProps({
   isActive: { type: Boolean, default: false },
   hasActiveChild: { type: Boolean, default: false },
   getterKeys: { type: Object, default: () => ({}) },
+  external: { type: Boolean, default: false },
+  target: { type: String, default: '' },
 });
 
 const emit = defineEmits(['toggle']);
 
 const showBadge = useMapGetter(props.getterKeys.badge);
-const dynamicCount = useMapGetter(props.getterKeys.count);
-const count = computed(() =>
-  dynamicCount.value > 99 ? '99+' : dynamicCount.value
-);
+
+const isExternalLink = computed(() => {
+  return (
+    typeof props.to === 'string' &&
+    (props.to.startsWith('http') || props.external)
+  );
+});
+
+const componentType = computed(() => {
+  if (!props.to) return 'div';
+  return isExternalLink.value ? 'a' : 'router-link';
+});
+
+const linkProps = computed(() => {
+  if (!props.to) return {};
+
+  if (isExternalLink.value) {
+    return {
+      href: props.to,
+      target: props.target || '_blank',
+      rel: 'noopener noreferrer',
+    };
+  }
+
+  return { to: props.to };
+});
 </script>
 
 <template>
   <component
-    :is="to ? 'router-link' : 'div'"
-    class="flex items-center gap-2 px-1.5 py-1 rounded-lg h-8 min-w-0"
+    :is="componentType"
+    class="flex items-center gap-2 px-2 py-1.5 rounded-lg h-8"
     role="button"
     draggable="false"
-    :to="to"
+    v-bind="linkProps"
     :title="label"
     :class="{
-      'text-n-slate-12 bg-n-alpha-2 font-medium': isActive && !hasActiveChild,
+      'text-n-blue-text bg-n-alpha-2 font-medium': isActive && !hasActiveChild,
       'text-n-slate-12 font-medium': hasActiveChild,
       'text-n-slate-11 hover:bg-n-alpha-2': !isActive && !hasActiveChild,
     }"
@@ -45,27 +69,9 @@ const count = computed(() =>
         class="size-2 -top-px ltr:-right-px rtl:-left-px bg-n-brand absolute rounded-full border border-n-solid-2"
       />
     </div>
-    <div class="flex items-center gap-1.5 flex-grow min-w-0 flex-1">
-      <span
-        class="truncate"
-        :class="{
-          'text-body-main': !isActive,
-          'font-medium text-sm': isActive || hasActiveChild,
-        }"
-      >
-        {{ label }}
-      </span>
-      <span
-        v-if="dynamicCount && !expandable"
-        class="rounded-md capitalize text-xs leading-5 font-medium text-center outline outline-1 px-1 flex-shrink-0"
-        :class="{
-          'text-n-slate-12 outline-n-slate-6': isActive,
-          'text-n-slate-11 outline-n-strong': !isActive,
-        }"
-      >
-        {{ count }}
-      </span>
-    </div>
+    <span class="text-sm font-medium leading-5 flex-grow">
+      {{ label }}
+    </span>
     <span
       v-if="expandable"
       v-show="isExpanded"

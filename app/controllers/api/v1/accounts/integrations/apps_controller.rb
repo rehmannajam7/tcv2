@@ -11,6 +11,7 @@ class Api::V1::Accounts::Integrations::AppsController < Api::V1::Accounts::BaseC
 
   def fetch_apps
     @apps = Integrations::App.all.select { |app| app.active?(Current.account) }
+    @current_account = Current.account
   end
 
   def fetch_app

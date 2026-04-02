@@ -44,10 +44,36 @@ class Captain::Tools::SimplePageCrawlService
   end
 
   def extract_links_from_html
-    @doc.xpath('//a/@href').to_set do |link|
-      absolute_url = URI.join(@external_link, link.value).to_s
-      absolute_url
-    end
+    @doc.xpath('//a/@href').filter_map do |link|
+      href = link.value.to_s.strip
+      next if invalid_href?(href)
+
+      create_absolute_url(href)
+    end.to_set
+  end
+
+  def invalid_href?(href)
+    href.blank? || href.start_with?('#') || non_http_scheme?(href)
+  end
+
+  def non_http_scheme?(href)
+    href.start_with?('tel:', 'mailto:', 'javascript:', 'ftp:')
+  end
+
+  def create_absolute_url(href)
+    absolute_url = URI.join(@external_link, href).to_s
+    parsed_url = URI.parse(absolute_url)
+
+    return absolute_url if valid_http_url?(parsed_url)
+
+    nil
+  rescue URI::InvalidURIError => e
+    Rails.logger.warn("Skipping invalid URI: #{href} - #{e.message}")
+    nil
+  end
+
+  def valid_http_url?(parsed_url)
+    parsed_url.is_a?(URI::HTTP) || parsed_url.is_a?(URI::HTTPS)
   end
 
   def resolve_url(url)

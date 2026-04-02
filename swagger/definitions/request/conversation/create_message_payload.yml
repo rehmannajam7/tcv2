@@ -52,6 +52,7 @@ properties:
         example: 'en_US'
       processed_params:
         type: object
+<<<<<<< HEAD
         description: Processed template parameters organized by component type
         properties:
           body:
@@ -91,3 +92,8 @@ properties:
                   type: string
                   description: Dynamic parameter value for the button
                   example: 'SSFSDFSD'
+=======
+        description: The processed param values for template variables in template
+        example:
+          1: 'Thumbcrowd'
+>>>>>>> feature/sleek-sidebar-redesign

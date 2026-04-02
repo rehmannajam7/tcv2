@@ -1,0 +1,17 @@
+class LandingController < ApplicationController
+  skip_before_action :set_current_user
+  # Remove this line: skip_before_action :verify_authenticity_token
+  layout 'landing'
+
+  def index
+    # Landing page logic here
+    @global_config = GlobalConfig.get(
+      'LOGO', 'LOGO_DARK', 'LOGO_THUMBNAIL',
+      'INSTALLATION_NAME',
+      'BRAND_URL', 'BRAND_NAME',
+      'GA_TRACKING_ID'
+    ).merge(
+      GA_TRACKING_ID: GlobalConfig.get_value('GA_TRACKING_ID').presence || ENV.fetch('GA_TRACKING_ID', '')
+    )
+  end
+end

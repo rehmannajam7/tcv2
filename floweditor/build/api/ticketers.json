@@ -1,0 +1,9 @@
+{
+  "results": [
+    {
+      "uuid": "ticketer-1",
+      "name": "Support Tickets",
+      "type": "mailgun"
+    }
+  ]
+}

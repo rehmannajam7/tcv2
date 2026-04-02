@@ -3,6 +3,7 @@ class MessageTemplates::Template::AutoResolve
 
   def perform
     return if conversation.account.auto_resolve_message.blank?
+    return if Conversations::SilentModeValidationService.should_skip_outgoing_message?(conversation)
 
     if within_messaging_window?
       conversation.messages.create!(auto_resolve_message_params)

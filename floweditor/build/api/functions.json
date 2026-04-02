@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "signature": "upper(text)",
+      "summary": "Converts text to uppercase"
+    },
+    {
+      "signature": "lower(text)",
+      "summary": "Converts text to lowercase"
+    }
+  ]
+}

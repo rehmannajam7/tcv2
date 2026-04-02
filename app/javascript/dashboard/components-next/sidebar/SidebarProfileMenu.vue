@@ -15,8 +15,11 @@ import {
 } from 'next/dropdown-menu/base';
 import CustomBrandPolicyWrapper from '../../components/CustomBrandPolicyWrapper.vue';
 
-defineProps({
-  isCollapsed: { type: Boolean, default: false },
+const props = defineProps({
+  compact: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['close', 'openKeyShortcutModal']);
@@ -34,6 +37,28 @@ const globalConfig = useMapGetter('globalConfig/get');
 const isFeatureEnabledonAccount = useMapGetter(
   'accounts/isFeatureEnabledonAccount'
 );
+
+const userTooltip = computed(() => {
+  const name = currentUser.value?.available_name || '';
+  const email = currentUser.value?.email || '';
+  return { content: `<div>${name}</div><div>${email}</div>`, html: true };
+});
+
+const dropdownBodyClasses = computed(() => {
+  if (props.compact) {
+    return 'ltr:left-full rtl:right-full bottom-12 z-50 w-80 ltr:ml-2 rtl:mr-2';
+  }
+
+  return 'ltr:left-0 rtl:right-0 bottom-12 z-50 w-80 mb-2';
+});
+
+const triggerClasses = computed(() => {
+  if (props.compact) {
+    return 'grid place-content-center size-10 mx-auto rounded-lg cursor-pointer hover:bg-n-alpha-1 p-1';
+  }
+
+  return 'flex gap-2 items-center rounded-lg cursor-pointer text-left w-full hover:bg-n-alpha-1 p-1';
+});
 
 const showChatSupport = computed(() => {
   return (
@@ -86,16 +111,7 @@ const menuItems = computed(() => {
       showOnCustomBrandedInstance: false,
       label: t('SIDEBAR_ITEMS.DOCS'),
       icon: 'i-lucide-book',
-      link: 'https://www.chatwoot.com/hc/user-guide/en',
-      nativeLink: true,
-      target: '_blank',
-    },
-    {
-      show: true,
-      showOnCustomBrandedInstance: false,
-      label: t('SIDEBAR_ITEMS.CHANGELOG'),
-      icon: 'i-lucide-scroll-text',
-      link: 'https://www.chatwoot.com/changelog/',
+      link: 'https://stage.thumb-crowd.com/hc/user-guide/en',
       nativeLink: true,
       target: '_blank',
     },
@@ -124,19 +140,11 @@ const allowedMenuItems = computed(() => {
 </script>
 
 <template>
-  <DropdownContainer
-    class="relative min-w-0"
-    :class="isCollapsed ? 'w-auto' : 'w-full'"
-    @close="emit('close')"
-  >
+  <DropdownContainer class="relative w-full min-w-0" @close="emit('close')">
     <template #trigger="{ toggle, isOpen }">
       <button
-        class="flex gap-2 items-center p-1 text-left rounded-lg cursor-pointer hover:bg-n-alpha-1"
-        :class="[
-          { 'bg-n-alpha-1': isOpen },
-          isCollapsed ? 'justify-center' : 'w-full',
-        ]"
-        :title="isCollapsed ? currentUser.available_name : undefined"
+        v-tooltip.right="props.compact ? userTooltip : null"
+        :class="[triggerClasses, { 'bg-n-alpha-1': isOpen }]"
         @click="toggle"
       >
         <Avatar
@@ -147,17 +155,17 @@ const allowedMenuItems = computed(() => {
           class="flex-shrink-0"
           rounded-full
         />
-        <div v-if="!isCollapsed" class="min-w-0">
-          <div class="text-sm font-medium leading-4 truncate text-n-slate-12">
+        <div v-if="!props.compact" class="min-w-0">
+          <div class="text-n-slate-12 text-sm leading-4 font-medium truncate">
             {{ currentUser.available_name }}
           </div>
-          <div class="text-xs truncate text-n-slate-11">
+          <div class="text-n-slate-11 text-xs truncate">
             {{ currentUser.email }}
           </div>
         </div>
       </button>
     </template>
-    <DropdownBody class="bottom-12 z-50 mb-2 w-80 ltr:left-0 rtl:right-0">
+    <DropdownBody :class="dropdownBodyClasses">
       <SidebarProfileMenuStatus />
       <DropdownSeparator />
       <template v-for="item in allowedMenuItems" :key="item.label">

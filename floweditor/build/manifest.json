@@ -1,0 +1,33 @@
+{
+  "index.html": {
+    "assets": [
+      "assets/map-1ccfe6ad.jpg",
+      "sitestatic/assets/floweditor-b5d86c98.ttf",
+      "sitestatic/assets/floweditor-9d60195f.woff",
+      "assets/floweditor-8ec30324.svg"
+    ],
+    "file": "assets/index-ef975590.js",
+    "isEntry": true,
+    "src": "index.html"
+  },
+  "src/external/index.js": {
+    "file": "assets/index-1e5a3392.js",
+    "src": "src/external/index.js"
+  },
+  "src/static/fonts/floweditor/fonts/floweditor.svg": {
+    "file": "assets/floweditor-8ec30324.svg",
+    "src": "src/static/fonts/floweditor/fonts/floweditor.svg"
+  },
+  "src/static/fonts/floweditor/fonts/floweditor.ttf": {
+    "file": "sitestatic/assets/floweditor-b5d86c98.ttf",
+    "src": "src/static/fonts/floweditor/fonts/floweditor.ttf"
+  },
+  "src/static/fonts/floweditor/fonts/floweditor.woff": {
+    "file": "sitestatic/assets/floweditor-9d60195f.woff",
+    "src": "src/static/fonts/floweditor/fonts/floweditor.woff"
+  },
+  "src/static/images/map.jpg": {
+    "file": "assets/map-1ccfe6ad.jpg",
+    "src": "src/static/images/map.jpg"
+  }
+}

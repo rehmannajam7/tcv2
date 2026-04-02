@@ -1,5 +1,5 @@
 {
-  "name": "@chatwoot/chatwoot",
+  "name": "@thumbcrowd/thumbcrowd",
   "version": "4.12.1",
   "license": "MIT",
   "scripts": {
@@ -71,6 +71,7 @@
     "dompurify": "3.3.2",
     "flag-icons": "^7.2.3",
     "floating-vue": "^5.2.2",
+    "gtag": "^1.0.1",
     "highlight.js": "^11.10.0",
     "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",

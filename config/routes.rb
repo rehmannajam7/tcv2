@@ -12,20 +12,20 @@ Rails.application.routes.draw do
   if ActiveModel::Type::Boolean.new.cast(ENV.fetch('CW_API_ONLY_SERVER', false))
     root to: 'api#index'
   else
-    root to: 'dashboard#index'
+    # Landing page route (add this before the existing root route)
+    root 'landing#index'
 
+    # Dashboard routes (modify the existing root route)
+    get '/dashboard', to: 'dashboard#index'
     get '/app', to: 'dashboard#index'
-    get '/app/*params', to: 'dashboard#index'
+    get '/app/*path', to: 'dashboard#index'
     get '/app/accounts/:account_id/settings/inboxes/new/twitter', to: 'dashboard#index', as: 'app_new_twitter_inbox'
     get '/app/accounts/:account_id/settings/inboxes/new/microsoft', to: 'dashboard#index', as: 'app_new_microsoft_inbox'
     get '/app/accounts/:account_id/settings/inboxes/new/instagram', to: 'dashboard#index', as: 'app_new_instagram_inbox'
-    get '/app/accounts/:account_id/settings/inboxes/new/tiktok', to: 'dashboard#index', as: 'app_new_tiktok_inbox'
     get '/app/accounts/:account_id/settings/inboxes/new/:inbox_id/agents', to: 'dashboard#index', as: 'app_twitter_inbox_agents'
     get '/app/accounts/:account_id/settings/inboxes/new/:inbox_id/agents', to: 'dashboard#index', as: 'app_email_inbox_agents'
     get '/app/accounts/:account_id/settings/inboxes/new/:inbox_id/agents', to: 'dashboard#index', as: 'app_instagram_inbox_agents'
-    get '/app/accounts/:account_id/settings/inboxes/new/:inbox_id/agents', to: 'dashboard#index', as: 'app_tiktok_inbox_agents'
     get '/app/accounts/:account_id/settings/inboxes/:inbox_id', to: 'dashboard#index', as: 'app_instagram_inbox_settings'
-    get '/app/accounts/:account_id/settings/inboxes/:inbox_id', to: 'dashboard#index', as: 'app_tiktok_inbox_settings'
     get '/app/accounts/:account_id/settings/inboxes/:inbox_id', to: 'dashboard#index', as: 'app_email_inbox_settings'
 
     resource :widget, only: [:show]
@@ -56,13 +56,9 @@ Rails.application.routes.draw do
             post :bulk_create, on: :collection
           end
           namespace :captain do
-            resource :preferences, only: [:show, :update]
             resources :assistants do
               member do
                 post :playground
-              end
-              collection do
-                get :tools
               end
               resources :inboxes, only: [:index, :create, :destroy], param: :inbox_id
               resources :scenarios
@@ -72,7 +68,6 @@ Rails.application.routes.draw do
             resources :copilot_threads, only: [:index, :create] do
               resources :copilot_messages, only: [:index, :create]
             end
-            resources :custom_tools
             resources :documents, only: [:index, :show, :create, :destroy]
             resource :tasks, only: [], controller: 'tasks' do
               post :rewrite
@@ -81,8 +76,8 @@ Rails.application.routes.draw do
               post :label_suggestion
               post :follow_up
             end
+            resources :custom_tools
           end
-          resource :saml_settings, only: [:show, :create, :update, :destroy]
           resources :agent_bots, only: [:index, :create, :show, :update, :destroy] do
             delete :avatar, on: :member
             post :reset_access_token, on: :member
@@ -111,14 +106,13 @@ Rails.application.routes.draw do
           end
           resources :sla_policies, only: [:index, :create, :show, :update, :destroy]
           resources :custom_roles, only: [:index, :create, :show, :update, :destroy]
-          resources :agent_capacity_policies, only: [:index, :create, :show, :update, :destroy] do
-            scope module: :agent_capacity_policies do
-              resources :users, only: [:index, :create, :destroy]
-              resources :inbox_limits, only: [:create, :update, :destroy]
-            end
-          end
           resources :campaigns, only: [:index, :create, :show, :update, :destroy]
           resources :dashboard_apps, only: [:index, :show, :create, :update, :destroy]
+          resources :flows, only: [:index, :create, :show, :update, :destroy] do
+            member do
+              post :execute
+            end
+          end
           namespace :channels do
             resource :twilio_channel, only: [:create]
           end
@@ -153,7 +147,6 @@ Rails.application.routes.draw do
               post :custom_attributes
               get :attachments
               get :inbox_assistant
-              get :reporting_events if ChatwootApp.enterprise?
             end
           end
 
@@ -166,11 +159,6 @@ Rails.application.routes.draw do
             end
           end
 
-          resources :companies, only: [:index, :show, :create, :update, :destroy] do
-            collection do
-              get :search
-            end
-          end
           resources :contacts, only: [:index, :show, :update, :create, :destroy] do
             collection do
               get :active
@@ -189,16 +177,12 @@ Rails.application.routes.draw do
               resources :contact_inboxes, only: [:create]
               resources :labels, only: [:create, :index]
               resources :notes
-              post :call, on: :member, to: 'calls#create' if ChatwootApp.enterprise?
             end
           end
           resources :csat_survey_responses, only: [:index] do
             collection do
               get :metrics
               get :download
-            end
-            member do
-              patch :update if ChatwootApp.enterprise?
             end
           end
           resources :applied_slas, only: [:index] do
@@ -207,7 +191,6 @@ Rails.application.routes.draw do
               get :download
             end
           end
-          resources :reporting_events, only: [:index] if ChatwootApp.enterprise?
           resources :custom_attribute_definitions, only: [:index, :show, :create, :update, :destroy]
           resources :custom_filters, only: [:index, :show, :create, :update, :destroy]
           resources :inboxes, only: [:index, :show, :create, :update, :destroy] do
@@ -229,7 +212,6 @@ Rails.application.routes.draw do
               post :analyze, on: :collection
             end
           end
-
           resources :inbox_members, only: [:create, :show], param: :inbox_id do
             collection do
               delete :destroy
@@ -260,15 +242,6 @@ Rails.application.routes.draw do
             end
           end
 
-          # Assignment V2 Routes
-          resources :assignment_policies do
-            resources :inboxes, only: [:index, :create, :destroy], module: :assignment_policies
-          end
-
-          resources :inboxes, only: [] do
-            resource :assignment_policy, only: [:show, :create, :destroy], module: :inboxes
-          end
-
           namespace :twitter do
             resource :authorization, only: [:create]
           end
@@ -282,10 +255,6 @@ Rails.application.routes.draw do
           end
 
           namespace :instagram do
-            resource :authorization, only: [:create]
-          end
-
-          namespace :tiktok do
             resource :authorization, only: [:create]
           end
 
@@ -346,8 +315,6 @@ Rails.application.routes.draw do
             member do
               patch :archive
               delete :logo
-              post :send_instructions
-              get :ssl_status
             end
             resources :categories do
               post :reorder, on: :collection
@@ -356,6 +323,63 @@ Rails.application.routes.draw do
               post :reorder, on: :collection
             end
           end
+
+          resources :flows, only: [:index, :show, :create, :update, :destroy] do
+            member do
+              post :execute
+            end
+          end
+
+          # FlowEditor API endpoints
+          namespace :flow_editor do
+            resources :flows, only: [:index, :show, :create, :update, :destroy] do
+              member do
+                get :revisions
+                post :save_revision
+              end
+            end
+            get :context
+            resources :contact_groups, only: [:index]
+            resources :labels, only: [:index]
+            resources :channels, only: [:index]
+            resources :custom_attribute_definitions, only: [:index]
+            resources :globals, only: [:index]
+            get :environment, to: 'environment#index'
+            resources :languages, only: [:index]
+            resources :classifiers, only: [:index]
+            resources :ticketers, only: [:index]
+            resources :resthooks, only: [:index]
+            resources :templates, only: [:index]
+            resources :recipients, only: [:index]
+            resources :completion, only: [:index]
+            resources :activity, only: [:index]
+            resources :editor, only: [:index]
+            resources :attachments, only: [:index, :create]
+            resources :revisions, only: [:index]
+            post :simulate_start, to: 'simulate#start'
+            post :simulate_resume, to: 'simulate#resume'
+            get :tokens, to: 'tokens#show'
+            post :tokens_refresh, to: 'tokens#refresh'
+          end
+
+          # FlowEditor direct endpoint aliases (for compatibility)
+          resources :groups, only: [:index], controller: 'flow_editor/contact_groups'
+          resources :channels, only: [:index], controller: 'flow_editor/channels'
+          resources :languages, only: [:index], controller: 'flow_editor/languages'
+          resources :fields, only: [:index], controller: 'flow_editor/custom_attribute_definitions'
+          get :environment, to: 'flow_editor/environment#index'
+          resources :classifiers, only: [:index], controller: 'flow_editor/classifiers'
+          resources :ticketers, only: [:index], controller: 'flow_editor/ticketers'
+          resources :resthooks, only: [:index], controller: 'flow_editor/resthooks'
+          resources :templates, only: [:index], controller: 'flow_editor/templates'
+          resources :recipients, only: [:index], controller: 'flow_editor/recipients'
+          resources :completion, only: [:index], controller: 'flow_editor/completion'
+          resources :activity, only: [:index], controller: 'flow_editor/activity'
+          resources :editor, only: [:index], controller: 'flow_editor/editor'
+          resources :attachments, only: [:index, :create], controller: 'flow_editor/attachments'
+          resources :revisions, only: [:index], controller: 'flow_editor/revisions'
+          post :simulate_start, to: 'flow_editor/simulate#start'
+          post :simulate_resume, to: 'flow_editor/simulate#resume'
 
           resources :upload, only: [:create]
         end
@@ -367,9 +391,6 @@ Rails.application.routes.draw do
         resources :webhooks, only: [:create]
       end
 
-      # Frontend API endpoint to trigger SAML authentication flow
-      post 'auth/saml_login', to: 'auth#saml_login'
-
       resource :profile, only: [:show, :update] do
         delete :avatar, on: :collection
         member do
@@ -378,14 +399,6 @@ Rails.application.routes.draw do
           put :set_active_account
           post :resend_confirmation
           post :reset_access_token
-        end
-
-        # MFA routes
-        scope module: 'profile' do
-          resource :mfa, controller: 'mfa', only: [:show, :create, :destroy] do
-            post :verify
-            post :backup_codes
-          end
         end
       end
 
@@ -434,7 +447,6 @@ Rails.application.routes.draw do
               get :team
               get :inbox
               get :label
-              get :channel
             end
           end
           resources :reports, only: [:index] do
@@ -446,7 +458,6 @@ Rails.application.routes.draw do
               get :labels
               get :teams
               get :conversations
-              get :conversations_summary
               get :conversation_traffic
               get :bot_metrics
               get :inbox_label_matrix
@@ -454,11 +465,16 @@ Rails.application.routes.draw do
               get :outgoing_messages_count
             end
           end
-          resource :year_in_review, only: [:show]
           resources :live_reports, only: [] do
             collection do
               get :conversation_metrics
               get :grouped_conversation_metrics
+            end
+          end
+          resources :contact_analytics, only: [] do
+            collection do
+              get :activity_report
+              get :activity_report_csv
             end
           end
         end
@@ -476,7 +492,6 @@ Rails.application.routes.draw do
               post :subscription
               get :limits
               post :toggle_deletion
-              post :topup_checkout
             end
           end
         end
@@ -501,7 +516,7 @@ Rails.application.routes.draw do
         resources :agent_bots, only: [:index, :create, :show, :update, :destroy] do
           delete :avatar, on: :member
         end
-        resources :accounts, only: [:index, :create, :show, :update, :destroy] do
+        resources :accounts, only: [:create, :show, :update, :destroy] do
           resources :account_users, only: [:index, :create] do
             collection do
               delete :destroy
@@ -587,25 +602,17 @@ Rails.application.routes.draw do
   namespace :twilio do
     resources :callback, only: [:create]
     resources :delivery_status, only: [:create]
-
-    if ChatwootApp.enterprise?
-      post 'voice/call/:phone', to: 'voice#call_twiml', as: :voice_call
-      post 'voice/status/:phone', to: 'voice#status', as: :voice_status
-      post 'voice/conference_status/:phone', to: 'voice#conference_status', as: :voice_conference_status
-    end
   end
 
   get 'microsoft/callback', to: 'microsoft/callbacks#show'
   get 'google/callback', to: 'google/callbacks#show'
   get 'instagram/callback', to: 'instagram/callbacks#show'
-  get 'tiktok/callback', to: 'tiktok/callbacks#show'
   get 'notion/callback', to: 'notion/callbacks#show'
   # ----------------------------------------------------------------------
   # Routes for external service verifications
   get '.well-known/assetlinks.json' => 'android_app#assetlinks'
   get '.well-known/apple-app-site-association' => 'apple_app#site_association'
   get '.well-known/microsoft-identity-association.json' => 'microsoft#identity_association'
-  get '.well-known/cf-custom-hostname-challenge/:id', to: 'custom_domains#verify'
 
   # ----------------------------------------------------------------------
   # Internal Monitoring Routes
@@ -654,7 +661,12 @@ Rails.application.routes.draw do
     post 'onboarding', to: 'onboarding#create'
   end
 
-  # ---------------------------------------------------------------------
+  # ----------------------------------------------------------------------
+  # Routes for FlowEditor
+  get '/floweditor', to: 'floweditor#index'
+  get '/floweditor/*path', to: 'floweditor#assets'
+
+  # ----------------------------------------------------------------------
   # Routes for swagger docs
   get '/swagger/*path', to: 'swagger#respond'
   get '/swagger', to: 'swagger#respond'

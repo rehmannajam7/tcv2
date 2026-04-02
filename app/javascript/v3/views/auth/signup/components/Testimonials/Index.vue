@@ -1,48 +1,57 @@
-<script setup>
-import { ref, onBeforeMount } from 'vue';
+<script>
 import TestimonialCard from './TestimonialCard.vue';
-import { getTestimonialContent } from '../../../../../api/testimonials';
 
-const emit = defineEmits(['resizeContainers']);
-
-const testimonial = ref(null);
-
-const fetchTestimonials = async () => {
-  try {
-    const { data } = await getTestimonialContent();
-    if (data.length) {
-      testimonial.value = data[Math.floor(Math.random() * data.length)];
-    }
-  } catch {
-    // Ignoring the error as the UI wouldn't break
-  } finally {
-    emit('resizeContainers', !!testimonial.value);
-  }
+export default {
+  components: { TestimonialCard },
+  emits: ['resizeContainers'],
+  data() {
+    return {
+      testimonials: [
+        {
+          id: 1,
+          authorReview:
+            'ThumbCrowd has transformed how we handle customer feedback. The automated triggers have increased our response rate by 300%.',
+          authorImage:
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+          authorName: 'Sarah Johnson',
+          authorCompany: 'TechStart Inc.',
+        },
+        {
+          id: 2,
+          authorReview:
+            "The best customer service platform we've used. Our team productivity has doubled since implementing ThumbCrowd.",
+          authorImage:
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+          authorName: 'Michael Chen',
+          authorCompany: 'Growth Solutions',
+        },
+      ],
+    };
+  },
+  beforeMount() {
+    this.$emit('resizeContainers', !!this.testimonials.length);
+  },
 };
-
-onBeforeMount(() => {
-  fetchTestimonials();
-});
 </script>
 
 <template>
-  <div
-    class="relative flex-1 flex flex-col items-start justify-center bg-n-alpha-black2 dark:bg-n-solid-3 px-12 py-14 rounded-e-lg"
-  >
-    <TestimonialCard
-      v-if="testimonial"
-      :review-content="testimonial.authorReview"
-      :author-image="testimonial.authorImage"
-      :author-name="testimonial.authorName"
-      :author-designation="testimonial.authorCompany"
-    />
-    <div class="absolute bottom-8 right-8 grid grid-cols-3 gap-1.5">
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
-      <span class="w-2 h-2 rounded-full bg-n-gray-5" />
+  <div v-show="testimonials.length" class="w-full h-full">
+    <!-- Testimonials Content -->
+    <div class="flex flex-col space-y-6">
+      <TestimonialCard
+        v-for="testimonial in testimonials.slice(0, 2)"
+        :key="testimonial.id"
+        :review-content="testimonial.authorReview"
+        :author-image="testimonial.authorImage"
+        :author-name="testimonial.authorName"
+        :author-designation="testimonial.authorCompany"
+        class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
+      />
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.center--img {
+}
+</style>

@@ -1,67 +1,39 @@
 <script setup>
-import { h, ref, computed, onMounted } from 'vue';
-import { provideSidebarContext, useSidebarResize } from './provider';
+import { h, computed, onMounted, ref, watch } from 'vue';
+import { provideSidebarContext } from './provider';
 import { useAccount } from 'dashboard/composables/useAccount';
 import { useKbd } from 'dashboard/composables/utils/useKbd';
 import { useMapGetter } from 'dashboard/composables/store';
 import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
+import { usePolicy } from 'dashboard/composables/usePolicy';
+import { useStorage } from '@vueuse/core';
+import { OnClickOutside } from '@vueuse/components';
 import { useSidebarKeyboardShortcuts } from './useSidebarKeyboardShortcuts';
-import { vOnClickOutside } from '@vueuse/components';
-import { FEATURE_FLAGS } from 'dashboard/featureFlags';
-import { useWindowSize, useEventListener } from '@vueuse/core';
-import { emitter } from 'shared/helpers/mitt';
-import { BUS_EVENTS } from 'shared/constants/busEvents';
+import { useRoute, useRouter } from 'vue-router';
+import { useKeyboardEvents } from 'dashboard/composables/useKeyboardEvents';
 
 import Button from 'dashboard/components-next/button/Button.vue';
 import SidebarGroup from './SidebarGroup.vue';
 import SidebarProfileMenu from './SidebarProfileMenu.vue';
-import SidebarChangelogCard from './SidebarChangelogCard.vue';
-import SidebarChangelogButton from './SidebarChangelogButton.vue';
 import ChannelLeaf from './ChannelLeaf.vue';
-import ChannelIcon from 'next/icon/ChannelIcon.vue';
 import SidebarAccountSwitcher from './SidebarAccountSwitcher.vue';
 import Logo from 'next/icon/Logo.vue';
 import ComposeConversation from 'dashboard/components-next/NewConversation/ComposeConversation.vue';
-
-const props = defineProps({
-  isMobileSidebarOpen: {
-    type: Boolean,
-    default: false,
-  },
-});
 
 const emit = defineEmits([
   'closeKeyShortcutModal',
   'openKeyShortcutModal',
   'showCreateAccountModal',
-  'closeMobileSidebar',
 ]);
 
-const { accountScopedRoute, isOnChatwootCloud } = useAccount();
+const { accountScopedRoute } = useAccount();
 const store = useStore();
 const searchShortcut = useKbd([`$mod`, 'k']);
 const { t } = useI18n();
-
-const isACustomBrandedInstance = useMapGetter(
-  'globalConfig/isACustomBrandedInstance'
-);
-const isRTL = useMapGetter('accounts/isRTL');
-
-const { width: windowWidth } = useWindowSize();
-const isMobile = computed(() => windowWidth.value < 768);
-
-const accountId = useMapGetter('getCurrentAccountId');
-const isFeatureEnabledonAccount = useMapGetter(
-  'accounts/isFeatureEnabledonAccount'
-);
-
-const hasAdvancedAssignment = computed(() => {
-  return isFeatureEnabledonAccount.value(
-    accountId.value,
-    FEATURE_FLAGS.ADVANCED_ASSIGNMENT
-  );
-});
+const route = useRoute();
+const router = useRouter();
+const { shouldShow } = usePolicy();
 
 const toggleShortcutModalFn = show => {
   if (show) {
@@ -73,89 +45,79 @@ const toggleShortcutModalFn = show => {
 
 useSidebarKeyboardShortcuts(toggleShortcutModalFn);
 
-const expandedItem = ref(null);
+const expandedItem = useStorage(
+  'next-sidebar-expanded-item',
+  null,
+  sessionStorage
+);
 
 const setExpandedItem = name => {
   expandedItem.value = expandedItem.value === name ? null : name;
 };
-
-const {
-  sidebarWidth,
-  isCollapsed,
-  setSidebarWidth,
-  saveWidth,
-  snapToCollapsed,
-  snapToExpanded,
-  COLLAPSED_THRESHOLD,
-} = useSidebarResize();
-
-// On mobile, sidebar is always expanded (flyout mode)
-const isEffectivelyCollapsed = computed(
-  () => !isMobile.value && isCollapsed.value
-);
-
-// Resize handle logic
-const isResizing = ref(false);
-const startX = ref(0);
-const startWidth = ref(0);
-
 provideSidebarContext({
   expandedItem,
   setExpandedItem,
-  isCollapsed: isEffectivelyCollapsed,
-  sidebarWidth,
-  isResizing,
 });
 
-// Get clientX from mouse or touch event
-const getClientX = event =>
-  event.touches ? event.touches[0].clientX : event.clientX;
-
-const onResizeStart = event => {
-  isResizing.value = true;
-  startX.value = getClientX(event);
-  startWidth.value = sidebarWidth.value;
-  Object.assign(document.body.style, {
-    cursor: 'col-resize',
-    userSelect: 'none',
-  });
-  // Prevent default to avoid scrolling on touch
-  event.preventDefault();
-};
-
-const onResizeMove = event => {
-  if (!isResizing.value) return;
-
-  const delta = isRTL.value
-    ? startX.value - getClientX(event)
-    : getClientX(event) - startX.value;
-  setSidebarWidth(startWidth.value + delta);
-};
-
-const onResizeEnd = () => {
-  if (!isResizing.value) return;
-
-  isResizing.value = false;
-  Object.assign(document.body.style, { cursor: '', userSelect: '' });
-
-  // Snap to collapsed state if below threshold
-  if (sidebarWidth.value < COLLAPSED_THRESHOLD) {
-    snapToCollapsed();
-  } else {
-    saveWidth();
+const resolvePath = to => {
+  if (!to) return '/';
+  try {
+    return router.resolve(to)?.path || '/';
+  } catch {
+    return '/';
   }
 };
 
-const onResizeHandleDoubleClick = () => {
-  if (isCollapsed.value) snapToExpanded();
-  else snapToCollapsed();
+const findRouteByName = name => {
+  const routes = router.getRoutes();
+  return routes.find(routeRecord => routeRecord.name === name);
 };
 
-// Support both mouse and touch events
-useEventListener(document, 'mousemove', onResizeMove);
-useEventListener(document, 'mouseup', onResizeEnd);
-useEventListener(document, 'touchmove', onResizeMove, { passive: false });
-useEventListener(document, 'touchend', onResizeEnd);
+const resolvePermissions = to => {
+  if (!to) return [];
+  if (to.params?.navigationPath) {
+    const targetRoute = findRouteByName(to.params.navigationPath);
+    return targetRoute?.meta?.permissions ?? [];
+  }
+  try {
+    return router.resolve(to)?.meta?.permissions ?? [];
+  } catch {
+    return [];
+  }
+};
+
+const resolveFeatureFlag = to => {
+  if (!to) return '';
+  if (to.params?.navigationPath) {
+    const targetRoute = findRouteByName(to.params.navigationPath);
+    return targetRoute?.meta?.featureFlag || '';
+  }
+  try {
+    return router.resolve(to)?.meta?.featureFlag || '';
+  } catch {
+    return '';
+  }
+};
+
+const resolveInstallationType = to => {
+  if (!to) return [];
+  if (to.params?.navigationPath) {
+    const targetRoute = findRouteByName(to.params.navigationPath);
+    return targetRoute?.meta?.installationTypes || [];
+  }
+  try {
+    return router.resolve(to)?.meta?.installationTypes || [];
+  } catch {
+    return [];
+  }
+};
+
+const isAllowed = to => {
+  const permissions = resolvePermissions(to);
+  const featureFlag = resolveFeatureFlag(to);
+  const installationType = resolveInstallationType(to);
+  return shouldShow(featureFlag, permissions, installationType);
+};
 
 const inboxes = useMapGetter('inboxes/getInboxes');
 const labels = useMapGetter('labels/getLabelsOnSidebar');
@@ -178,20 +140,6 @@ onMounted(() => {
 const sortedInboxes = computed(() =>
   inboxes.value.slice().sort((a, b) => a.name.localeCompare(b.name))
 );
-
-const closeMobileSidebar = () => {
-  if (!props.isMobileSidebarOpen) return;
-  emit('closeMobileSidebar');
-};
-
-const onComposeOpen = toggleFn => {
-  toggleFn();
-  emitter.emit(BUS_EVENTS.NEW_CONVERSATION_MODAL, true);
-};
-
-const onComposeClose = () => {
-  emitter.emit(BUS_EVENTS.NEW_CONVERSATION_MODAL, false);
-};
 
 const newReportRoutes = () => [
   {
@@ -230,7 +178,7 @@ const menuItems = computed(() => {
       to: accountScopedRoute('inbox_view'),
       activeOn: ['inbox_view', 'inbox_view_conversation'],
       getterKeys: {
-        count: 'notifications/getUnreadCount',
+        badge: 'notifications/getHasUnreadNotifications',
       },
     },
     {
@@ -286,7 +234,6 @@ const menuItems = computed(() => {
           children: sortedInboxes.value.map(inbox => ({
             name: `${inbox.name}-${inbox.id}`,
             label: inbox.name,
-            icon: h(ChannelIcon, { inbox, class: 'size-[16px]' }),
             to: accountScopedRoute('inbox_dashboard', { inbox_id: inbox.id }),
             component: leafProps =>
               h(ChannelLeaf, {
@@ -305,7 +252,7 @@ const menuItems = computed(() => {
             name: `${label.title}-${label.id}`,
             label: label.title,
             icon: h('span', {
-              class: `size-[8px] rounded-sm`,
+              class: `size-[12px] ring-1 ring-n-alpha-1 dark:ring-white/20 ring-inset rounded-sm`,
               style: { backgroundColor: label.color },
             }),
             to: accountScopedRoute('label_conversations', {
@@ -319,14 +266,13 @@ const menuItems = computed(() => {
       name: 'Captain',
       icon: 'i-woot-captain',
       label: t('SIDEBAR.CAPTAIN'),
-      activeOn: ['captain_assistants_create_index'],
       children: [
         {
-          name: 'FAQs',
-          label: t('SIDEBAR.CAPTAIN_RESPONSES'),
+          name: 'Assistants',
+          label: t('SIDEBAR.CAPTAIN_ASSISTANTS'),
           activeOn: [
-            'captain_assistants_responses_index',
-            'captain_assistants_responses_pending',
+            'captain_assistants_index',
+            'captain_assistants_create_index',
           ],
           to: accountScopedRoute('captain_assistants_index', {
             navigationPath: 'captain_assistants_responses_index',
@@ -338,6 +284,25 @@ const menuItems = computed(() => {
           activeOn: ['captain_assistants_documents_index'],
           to: accountScopedRoute('captain_assistants_index', {
             navigationPath: 'captain_assistants_documents_index',
+          }),
+        },
+        {
+          name: 'Responses',
+          label: t('SIDEBAR.CAPTAIN_RESPONSES'),
+          activeOn: [
+            'captain_assistants_responses_index',
+            'captain_assistants_responses_pending',
+          ],
+          to: accountScopedRoute('captain_assistants_index', {
+            navigationPath: 'captain_assistants_responses_index',
+          }),
+        },
+        {
+          name: 'Tools',
+          label: t('SIDEBAR.CAPTAIN_TOOLS'),
+          activeOn: ['captain_tools_index'],
+          to: accountScopedRoute('captain_assistants_index', {
+            navigationPath: 'captain_tools_index',
           }),
         },
         {
@@ -365,20 +330,12 @@ const menuItems = computed(() => {
           }),
         },
         {
-          name: 'Tools',
-          label: t('SIDEBAR.CAPTAIN_TOOLS'),
-          activeOn: ['captain_tools_index'],
-          to: accountScopedRoute('captain_assistants_index', {
-            navigationPath: 'captain_tools_index',
-          }),
-        },
-        {
           name: 'Settings',
           label: t('SIDEBAR.CAPTAIN_SETTINGS'),
           activeOn: [
             'captain_assistants_settings_index',
-            'captain_assistants_guidelines_index',
             'captain_assistants_guardrails_index',
+            'captain_assistants_guidelines_index',
           ],
           to: accountScopedRoute('captain_assistants_index', {
             navigationPath: 'captain_assistants_settings_index',
@@ -433,7 +390,7 @@ const menuItems = computed(() => {
             name: `${label.title}-${label.id}`,
             label: label.title,
             icon: h('span', {
-              class: `size-[8px] rounded-sm`,
+              class: `size-[12px] ring-1 ring-n-alpha-1 dark:ring-white/20 ring-inset rounded-sm`,
               style: { backgroundColor: label.color },
             }),
             to: accountScopedRoute(
@@ -446,23 +403,6 @@ const menuItems = computed(() => {
               'contacts_edit_label',
             ],
           })),
-        },
-      ],
-    },
-    {
-      name: 'Companies',
-      label: t('SIDEBAR.COMPANIES'),
-      icon: 'i-lucide-building-2',
-      children: [
-        {
-          name: 'All Companies',
-          label: t('SIDEBAR.ALL_COMPANIES'),
-          to: accountScopedRoute(
-            'companies_dashboard_index',
-            {},
-            { page: 1, search: undefined }
-          ),
-          activeOn: ['companies_dashboard_index'],
         },
       ],
     },
@@ -522,6 +462,12 @@ const menuItems = computed(() => {
       ],
     },
     {
+      name: 'Flow',
+      label: 'Flows',
+      icon: 'i-lucide-workflow',
+      to: accountScopedRoute('flows_list'),
+    },
+    {
       name: 'Portals',
       label: t('SIDEBAR.HELP_CENTER.TITLE'),
       icon: 'i-lucide-library-big',
@@ -579,12 +525,6 @@ const menuItems = computed(() => {
           icon: 'i-lucide-briefcase',
           to: accountScopedRoute('general_settings_index'),
         },
-        // {
-        //   name: 'Settings Captain',
-        //   label: t('SIDEBAR.CAPTAIN_AI'),
-        //   icon: 'i-woot-captain',
-        //   to: accountScopedRoute('captain_settings_index'),
-        // },
         {
           name: 'Settings Agents',
           label: t('SIDEBAR.AGENTS'),
@@ -595,49 +535,12 @@ const menuItems = computed(() => {
           name: 'Settings Teams',
           label: t('SIDEBAR.TEAMS'),
           icon: 'i-lucide-users',
-          activeOn: [
-            'settings_teams_list',
-            'settings_teams_new',
-            'settings_teams_finish',
-            'settings_teams_add_agents',
-            'settings_teams_show',
-            'settings_teams_edit',
-            'settings_teams_edit_members',
-            'settings_teams_edit_finish',
-          ],
           to: accountScopedRoute('settings_teams_list'),
         },
-        ...(hasAdvancedAssignment.value
-          ? [
-              {
-                name: 'Settings Agent Assignment',
-                label: t('SIDEBAR.AGENT_ASSIGNMENT'),
-                icon: 'i-lucide-user-cog',
-                activeOn: [
-                  'assignment_policy_index',
-                  'agent_assignment_policy_index',
-                  'agent_assignment_policy_create',
-                  'agent_assignment_policy_edit',
-                  'agent_capacity_policy_index',
-                  'agent_capacity_policy_create',
-                  'agent_capacity_policy_edit',
-                ],
-                to: accountScopedRoute('assignment_policy_index'),
-              },
-            ]
-          : []),
         {
           name: 'Settings Inboxes',
           label: t('SIDEBAR.INBOXES'),
           icon: 'i-lucide-inbox',
-          activeOn: [
-            'settings_inbox_list',
-            'settings_inbox_show',
-            'settings_inbox_new',
-            'settings_inbox_finish',
-            'settings_inboxes_page_channel',
-            'settings_inboxes_add_agents',
-          ],
           to: accountScopedRoute('settings_inbox_list'),
         },
         {
@@ -655,7 +558,7 @@ const menuItems = computed(() => {
         {
           name: 'Settings Automation',
           label: t('SIDEBAR.AUTOMATION'),
-          icon: 'i-lucide-repeat',
+          icon: 'i-lucide-workflow',
           to: accountScopedRoute('automation_list'),
         },
         {
@@ -701,18 +604,6 @@ const menuItems = computed(() => {
           to: accountScopedRoute('sla_list'),
         },
         {
-          name: 'Conversation Workflow',
-          label: t('SIDEBAR.CONVERSATION_WORKFLOW'),
-          icon: 'i-lucide-workflow',
-          to: accountScopedRoute('conversation_workflow_index'),
-        },
-        {
-          name: 'Settings Security',
-          label: t('SIDEBAR.SECURITY'),
-          icon: 'i-lucide-shield',
-          to: accountScopedRoute('security_settings_index'),
-        },
-        {
           name: 'Settings Billing',
           label: t('SIDEBAR.BILLING'),
           icon: 'i-lucide-credit-card',
@@ -722,155 +613,301 @@ const menuItems = computed(() => {
     },
   ];
 });
+
+const flattenNavigableChildren = item => {
+  return item.children?.flatMap(child => child.children || child) || [];
+};
+
+const hasAccessibleChildren = item => {
+  if (!Array.isArray(item.children) || item.children.length === 0) return false;
+  return flattenNavigableChildren(item).some(
+    child => child.to && isAllowed(child.to)
+  );
+};
+
+const railItems = computed(() => {
+  return menuItems.value.filter(item => {
+    if (item.to) return isAllowed(item.to);
+    if (Array.isArray(item.children)) return hasAccessibleChildren(item);
+    return true;
+  });
+});
+
+const isRailItemActive = item => {
+  if (item.to) {
+    if (route.path === resolvePath(item.to)) return true;
+    return item.activeOn?.includes(route.name);
+  }
+
+  const navigableChildren = flattenNavigableChildren(item);
+  const pathSame = navigableChildren.find(
+    child => child.to && route.path === resolvePath(child.to)
+  );
+  if (pathSame) return true;
+
+  const activeOnPages = navigableChildren.filter(child =>
+    child.activeOn?.includes(route.name)
+  );
+  if (activeOnPages.length > 0) return true;
+
+  return navigableChildren.some(
+    child => child.to && route.path.startsWith(resolvePath(child.to))
+  );
+};
+
+const isPanelOpen = ref(false);
+const activeRailItemName = ref(null);
+
+const currentActiveRailItemName = computed(() => {
+  return railItems.value.find(item => isRailItemActive(item))?.name || null;
+});
+
+watch(
+  currentActiveRailItemName,
+  nextName => {
+    if (!nextName) return;
+    if (!activeRailItemName.value || !isPanelOpen.value) {
+      activeRailItemName.value = nextName;
+    }
+  },
+  { immediate: true }
+);
+
+const activeRailItem = computed(() => {
+  return (
+    railItems.value.find(item => item.name === activeRailItemName.value) ||
+    railItems.value[0] ||
+    null
+  );
+});
+
+const getDefaultTo = item => {
+  if (item.to && isAllowed(item.to)) return item.to;
+  if (!Array.isArray(item.children)) return null;
+
+  const candidate = flattenNavigableChildren(item).find(
+    child => child.to && isAllowed(child.to)
+  );
+  return candidate?.to || null;
+};
+
+const navigateIfNeeded = to => {
+  if (!to) return;
+  const targetPath = resolvePath(to);
+  if (route.path !== targetPath) router.push(to);
+};
+
+const openPanelForItem = item => {
+  activeRailItemName.value = item.name;
+
+  if (!Array.isArray(item.children)) {
+    navigateIfNeeded(getDefaultTo(item));
+    isPanelOpen.value = false;
+    return;
+  }
+
+  isPanelOpen.value = true;
+  expandedItem.value = item.name;
+  navigateIfNeeded(getDefaultTo(item));
+};
+
+const closePanel = () => {
+  isPanelOpen.value = false;
+};
+
+useKeyboardEvents({
+  Escape: {
+    action: () => {
+      if (isPanelOpen.value) closePanel();
+    },
+    allowOnFocusedInput: true,
+  },
+});
 </script>
 
 <template>
-  <aside
-    v-on-click-outside="[
-      closeMobileSidebar,
-      { ignore: ['#mobile-sidebar-launcher'] },
-    ]"
-    class="bg-n-background flex flex-col text-sm pb-px fixed top-0 ltr:left-0 rtl:right-0 h-full z-40 w-[200px] md:w-auto md:relative md:flex-shrink-0 md:ltr:translate-x-0 md:rtl:translate-x-0 ltr:border-r rtl:border-l border-n-weak"
-    :class="[
-      {
-        'shadow-lg md:shadow-none': isMobileSidebarOpen,
-        'ltr:-translate-x-full rtl:translate-x-full': !isMobileSidebarOpen,
-        'transition-transform duration-200 ease-out md:transition-[width]':
-          !isResizing,
-      },
-    ]"
-    :style="isMobile ? undefined : { width: `${sidebarWidth}px` }"
+  <OnClickOutside
+    class="relative flex h-full flex-shrink-0"
+    @trigger="() => (isPanelOpen ? closePanel() : null)"
   >
-    <section
-      class="grid"
-      :class="isEffectivelyCollapsed ? 'mt-3 mb-6 gap-4' : 'mt-1 mb-4 gap-2'"
+    <aside
+      class="w-14 bg-n-solid-2 rtl:border-l h-full ltr:border-r border-n-weak flex flex-col text-sm py-2 rounded-xl items-center"
     >
-      <div
-        class="flex gap-2 items-center min-w-0"
-        :class="{
-          'justify-center px-1': isEffectivelyCollapsed,
-          'px-2': !isEffectivelyCollapsed,
-        }"
+      <button
+        type="button"
+        class="grid flex-shrink-0 size-8 place-content-center rounded-lg"
+        :aria-label="activeRailItem?.label || t('SIDEBAR.INBOX')"
+        @click="
+          () => (activeRailItem ? openPanelForItem(activeRailItem) : null)
+        "
       >
-        <template v-if="isEffectivelyCollapsed">
-          <SidebarAccountSwitcher
-            is-collapsed
-            @show-create-account-modal="emit('showCreateAccountModal')"
-          />
-        </template>
-        <template v-else>
-          <div class="grid flex-shrink-0 place-content-center size-6">
-            <Logo class="size-4" />
-          </div>
-          <div class="flex-shrink-0 w-px h-3 bg-n-strong" />
-          <SidebarAccountSwitcher
-            class="flex-grow -mx-1 min-w-0"
-            @show-create-account-modal="emit('showCreateAccountModal')"
-          />
-        </template>
-      </div>
-      <div
-        class="flex gap-2"
-        :class="isEffectivelyCollapsed ? 'flex-col items-center' : 'px-2'"
-      >
+        <Logo class="size-4" />
+      </button>
+
+      <div class="flex flex-col gap-2 mt-3">
         <RouterLink
-          v-if="!isEffectivelyCollapsed"
+          v-tooltip.right="t('COMBOBOX.SEARCH_PLACEHOLDER')"
           :to="{ name: 'search' }"
-          class="flex gap-2 items-center px-2 py-1 w-full h-7 rounded-lg outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out"
-        >
-          <span class="flex-shrink-0 i-lucide-search size-4 text-n-slate-10" />
-          <span class="flex-grow text-start text-n-slate-10">
-            {{ t('COMBOBOX.SEARCH_PLACEHOLDER') }}
-          </span>
-          <span
-            class="hidden tracking-wide pointer-events-none select-none text-n-slate-10"
-          >
-            {{ searchShortcut }}
-          </span>
-        </RouterLink>
-        <RouterLink
-          v-else
-          :to="{ name: 'search' }"
-          class="flex items-center justify-center size-8 rounded-lg outline outline-1 outline-n-weak bg-n-button-color transition-all duration-100 ease-out hover:bg-n-alpha-2 dark:hover:bg-n-slate-9/30"
-          :title="t('COMBOBOX.SEARCH_PLACEHOLDER')"
+          :aria-label="t('COMBOBOX.SEARCH_PLACEHOLDER')"
+          class="grid size-9 place-content-center rounded-lg outline outline-1 outline-n-weak bg-n-solid-3 dark:bg-n-black/30"
         >
           <span class="i-lucide-search size-4 text-n-slate-11" />
         </RouterLink>
-        <ComposeConversation align-position="right" @close="onComposeClose">
-          <template #trigger="{ toggle, isOpen }">
+
+        <ComposeConversation align-position="right">
+          <template #trigger="{ toggle }">
             <Button
               icon="i-lucide-pen-line"
               color="slate"
               size="sm"
-              class="dark:hover:!bg-n-slate-9/30"
-              :class="[
-                isEffectivelyCollapsed
-                  ? '!size-8 !outline-n-weak !text-n-slate-11'
-                  : '!h-7 !outline-n-weak !text-n-slate-11',
-                { '!bg-n-alpha-2 dark:!bg-n-slate-9/30': isOpen },
-              ]"
-              @click="onComposeOpen(toggle)"
+              class="!size-9 !bg-n-solid-3 dark:!bg-n-black/30 !outline-n-weak !text-n-slate-11"
+              :aria-label="t('CONTACT.NEW_CONVERSATION.TITLE')"
+              @click="toggle"
             />
           </template>
         </ComposeConversation>
       </div>
-    </section>
-    <nav
-      class="grid overflow-y-scroll flex-grow gap-2 pb-5 no-scrollbar min-w-0"
-      :class="isEffectivelyCollapsed ? 'px-1' : 'px-2'"
-    >
-      <ul
-        class="flex flex-col gap-1 m-0 list-none min-w-0"
-        :class="{ 'items-center': isEffectivelyCollapsed }"
+
+      <nav
+        class="flex flex-col flex-grow gap-2 mt-4 overflow-y-auto no-scrollbar"
       >
-        <SidebarGroup
-          v-for="item in menuItems"
-          :key="item.name"
-          v-bind="item"
-        />
-      </ul>
-    </nav>
-    <section
-      class="flex relative flex-col flex-shrink-0 gap-1 justify-between items-center"
-    >
-      <div
-        class="pointer-events-none absolute inset-x-0 -top-[1.938rem] h-8 bg-gradient-to-t from-n-background to-transparent"
-      />
-      <SidebarChangelogCard
-        v-if="
-          isOnChatwootCloud &&
-          !isACustomBrandedInstance &&
-          !isEffectivelyCollapsed
-        "
-      />
-      <SidebarChangelogButton
-        v-if="
-          isOnChatwootCloud &&
-          !isACustomBrandedInstance &&
-          isEffectivelyCollapsed
-        "
-      />
-      <div
-        class="px-1 py-1.5 flex-shrink-0 flex w-full z-50 gap-2 items-center border-t border-n-weak shadow-[0px_-2px_4px_0px_rgba(27,28,29,0.02)]"
-        :class="isEffectivelyCollapsed ? 'justify-center' : 'justify-between'"
-      >
+        <ul class="flex flex-col gap-1 m-0 list-none">
+          <li v-for="item in railItems" :key="item.name" class="grid">
+            <Button
+              v-tooltip.right="item.label"
+              :icon="item.icon"
+              ghost
+              slate
+              sm
+              class="!size-9 !rounded-lg"
+              :class="{
+                'bg-n-alpha-2':
+                  isRailItemActive(item) || item.name === activeRailItemName,
+              }"
+              :aria-label="item.label"
+              @click="openPanelForItem(item)"
+            />
+          </li>
+        </ul>
+      </nav>
+
+      <div class="flex flex-col items-center gap-2 mt-auto pt-2 pb-1">
+        <span
+          v-tooltip.right="searchShortcut"
+          class="grid place-content-center text-[11px] text-n-slate-10 tracking-wide select-none pointer-events-none"
+        >
+          {{ searchShortcut }}
+        </span>
         <SidebarProfileMenu
-          :is-collapsed="isEffectivelyCollapsed"
+          compact
           @open-key-shortcut-modal="emit('openKeyShortcutModal')"
         />
       </div>
-    </section>
-    <!-- Resize Handle (desktop only) -->
-    <div
-      class="hidden md:block absolute top-0 h-full w-1 cursor-col-resize z-40 ltr:right-0 rtl:left-0 group"
-      @mousedown="onResizeStart"
-      @touchstart="onResizeStart"
-      @dblclick="onResizeHandleDoubleClick"
+    </aside>
+
+    <aside
+      class="bg-n-solid-2 h-full flex flex-col text-sm pb-1 overflow-hidden transition-[width] duration-200 ease-in-out"
+      :class="{
+        'w-[200px]':
+          isPanelOpen &&
+          activeRailItem &&
+          Array.isArray(activeRailItem.children),
+        'ltr:border-r rtl:border-l border-n-weak rounded-xl shadow-lg':
+          isPanelOpen &&
+          activeRailItem &&
+          Array.isArray(activeRailItem.children),
+        'w-0 pointer-events-none':
+          !isPanelOpen ||
+          !activeRailItem ||
+          !Array.isArray(activeRailItem.children),
+      }"
+      :aria-hidden="
+        !(
+          isPanelOpen &&
+          activeRailItem &&
+          Array.isArray(activeRailItem.children)
+        )
+      "
     >
       <div
-        class="absolute top-0 h-full w-px ltr:right-0 rtl:left-0 bg-transparent group-hover:bg-n-brand transition-colors"
-        :class="{ 'bg-n-brand': isResizing }"
-      />
-    </div>
-  </aside>
+        class="h-full transition-[opacity,transform] duration-200 ease-in-out"
+        :class="{
+          'opacity-100 translate-x-0':
+            isPanelOpen &&
+            activeRailItem &&
+            Array.isArray(activeRailItem.children),
+          'opacity-0 ltr:-translate-x-2 rtl:translate-x-2':
+            !isPanelOpen ||
+            !activeRailItem ||
+            !Array.isArray(activeRailItem.children),
+        }"
+      >
+        <template
+          v-if="activeRailItem && Array.isArray(activeRailItem.children)"
+        >
+          <section class="flex items-center justify-between gap-2 px-2 pt-2">
+            <span class="flex-grow min-w-0 font-medium truncate">
+              {{ activeRailItem.label }}
+            </span>
+            <Button
+              icon="i-lucide-x"
+              ghost
+              slate
+              sm
+              class="!size-7 !rounded-lg"
+              :aria-label="t('GENERAL.CLOSE')"
+              @click="closePanel"
+            />
+          </section>
+
+          <section class="grid gap-2 mt-2 mb-4">
+            <div class="flex items-center min-w-0 gap-2 px-2">
+              <div class="flex-shrink-0 w-px h-3 bg-n-strong" />
+              <SidebarAccountSwitcher
+                class="flex-grow min-w-0 -mx-1"
+                @show-create-account-modal="emit('showCreateAccountModal')"
+              />
+            </div>
+            <div class="flex gap-2 px-2">
+              <RouterLink
+                :to="{ name: 'search' }"
+                class="flex items-center w-full gap-2 px-2 py-1 rounded-lg h-7 outline outline-1 outline-n-weak bg-n-solid-3 dark:bg-n-black/30"
+              >
+                <span
+                  class="flex-shrink-0 i-lucide-search size-4 text-n-slate-11"
+                />
+                <span class="flex-grow text-left">
+                  {{ t('COMBOBOX.SEARCH_PLACEHOLDER') }}
+                </span>
+                <span
+                  class="hidden tracking-wide pointer-events-none select-none text-n-slate-10"
+                >
+                  {{ searchShortcut }}
+                </span>
+              </RouterLink>
+              <ComposeConversation align-position="right">
+                <template #trigger="{ toggle }">
+                  <Button
+                    icon="i-lucide-pen-line"
+                    color="slate"
+                    size="sm"
+                    class="!h-7 !bg-n-solid-3 dark:!bg-n-black/30 !outline-n-weak !text-n-slate-11"
+                    @click="toggle"
+                  />
+                </template>
+              </ComposeConversation>
+            </div>
+          </section>
+
+          <nav
+            class="grid flex-grow gap-2 px-2 pb-5 overflow-y-scroll no-scrollbar"
+          >
+            <ul class="flex flex-col m-0 list-none">
+              <SidebarGroup v-bind="activeRailItem" />
+            </ul>
+          </nav>
+        </template>
+      </div>
+    </aside>
+  </OnClickOutside>
 </template>

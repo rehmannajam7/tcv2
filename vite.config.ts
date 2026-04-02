@@ -29,7 +29,7 @@ const isTestMode = process.env.TEST === 'true';
 const vueOptions = {
   template: {
     compilerOptions: {
-      isCustomElement: tag => ['ninja-keys'].includes(tag),
+      isCustomElement: (tag: string) => ['ninja-keys'].includes(tag),
     },
   },
 };
@@ -44,6 +44,21 @@ if (isLibraryMode) {
 
 export default defineConfig({
   plugins: plugins,
+  css: {
+    preprocessorOptions: {
+      scss: {
+        includePaths: [
+          path.resolve(__dirname, 'app/javascript'),
+          path.resolve(__dirname, 'app/javascript/widget/assets/scss'),
+        ],
+      },
+    },
+  },
+  define: {
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: false,
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+  },
   build: {
     rollupOptions: {
       output: {

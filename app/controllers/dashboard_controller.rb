@@ -1,31 +1,6 @@
 class DashboardController < ActionController::Base
   include SwitchLocale
 
-  GLOBAL_CONFIG_KEYS = %w[
-    LOGO
-    LOGO_DARK
-    LOGO_THUMBNAIL
-    INSTALLATION_NAME
-    WIDGET_BRAND_URL
-    TERMS_URL
-    BRAND_URL
-    BRAND_NAME
-    PRIVACY_URL
-    DISPLAY_MANIFEST
-    CREATE_NEW_ACCOUNT_FROM_DASHBOARD
-    CHATWOOT_INBOX_TOKEN
-    API_CHANNEL_NAME
-    API_CHANNEL_THUMBNAIL
-    CLOUD_ANALYTICS_TOKEN
-    DIRECT_UPLOADS_ENABLED
-    MAXIMUM_FILE_UPLOAD_SIZE
-    HCAPTCHA_SITE_KEY
-    LOGOUT_REDIRECT_LINK
-    DISABLE_USER_PROFILE_UPDATE
-    DEPLOYMENT_ENV
-    INSTALLATION_PRICING_PLAN
-  ].freeze
-
   before_action :set_application_pack
   before_action :set_global_config
   before_action :set_dashboard_scripts
@@ -44,7 +19,25 @@ class DashboardController < ActionController::Base
   end
 
   def set_global_config
-    @global_config = GlobalConfig.get(*GLOBAL_CONFIG_KEYS).merge(app_config)
+    @global_config = GlobalConfig.get(
+      'LOGO', 'LOGO_DARK', 'LOGO_THUMBNAIL',
+      'INSTALLATION_NAME',
+      'WIDGET_BRAND_URL', 'TERMS_URL',
+      'BRAND_URL', 'BRAND_NAME',
+      'PRIVACY_URL',
+      'DISPLAY_MANIFEST',
+      'CREATE_NEW_ACCOUNT_FROM_DASHBOARD',
+      'CHATWOOT_INBOX_TOKEN',
+      'API_CHANNEL_NAME',
+      'API_CHANNEL_THUMBNAIL',
+      'GA_TRACKING_ID',
+      'DIRECT_UPLOADS_ENABLED',
+      'HCAPTCHA_SITE_KEY',
+      'LOGOUT_REDIRECT_LINK',
+      'DISABLE_USER_PROFILE_UPDATE',
+      'DEPLOYMENT_ENV',
+      'INSTALLATION_PRICING_PLAN'
+    ).merge(app_config)
   end
 
   def set_dashboard_scripts
@@ -68,27 +61,19 @@ class DashboardController < ActionController::Base
 
   def app_config
     {
-      APP_VERSION: Chatwoot.config[:version],
+      APP_VERSION: ThumbCrowd.config[:version],
       VAPID_PUBLIC_KEY: VapidService.public_key,
-      ENABLE_ACCOUNT_SIGNUP: GlobalConfigService.load('ENABLE_ACCOUNT_SIGNUP', 'false'),
+      ENABLE_ACCOUNT_SIGNUP: GlobalConfigService.load('ENABLE_ACCOUNT_SIGNUP', false),
       FB_APP_ID: GlobalConfigService.load('FB_APP_ID', ''),
       INSTAGRAM_APP_ID: GlobalConfigService.load('INSTAGRAM_APP_ID', ''),
-      TIKTOK_APP_ID: GlobalConfigService.load('TIKTOK_APP_ID', ''),
-      FACEBOOK_API_VERSION: GlobalConfigService.load('FACEBOOK_API_VERSION', 'v18.0'),
+      FACEBOOK_API_VERSION: GlobalConfigService.load('FACEBOOK_API_VERSION', 'v17.0'),
       WHATSAPP_APP_ID: GlobalConfigService.load('WHATSAPP_APP_ID', ''),
       WHATSAPP_CONFIGURATION_ID: GlobalConfigService.load('WHATSAPP_CONFIGURATION_ID', ''),
+      GA_TRACKING_ID: GlobalConfig.get_value('GA_TRACKING_ID').presence || ENV.fetch('GA_TRACKING_ID', ''),
       IS_ENTERPRISE: ChatwootApp.enterprise?,
       AZURE_APP_ID: GlobalConfigService.load('AZURE_APP_ID', ''),
-      GIT_SHA: GIT_HASH,
-      ALLOWED_LOGIN_METHODS: allowed_login_methods
+      GIT_SHA: GIT_HASH
     }
-  end
-
-  def allowed_login_methods
-    methods = ['email']
-    methods << 'google_oauth' if GlobalConfigService.load('ENABLE_GOOGLE_OAUTH_LOGIN', 'true').to_s != 'false'
-    methods << 'saml' if ChatwootHub.pricing_plan != 'community' && GlobalConfigService.load('ENABLE_SAML_SSO_LOGIN', 'true').to_s != 'false'
-    methods
   end
 
   def set_application_pack

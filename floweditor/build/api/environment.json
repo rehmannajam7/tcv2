@@ -1,0 +1,16 @@
+{
+  "date_style": "day_first",
+  "time_format": "24",
+  "timezone": "America/New_York",
+  "languages": [
+    {
+      "iso": "eng",
+      "name": "English"
+    },
+    {
+      "iso": "spa", 
+      "name": "Spanish"
+    }
+  ],
+  "input_collation": "default"
+}

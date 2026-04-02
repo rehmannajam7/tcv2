@@ -1,5 +1,6 @@
 <script>
 import { mapGetters } from 'vuex';
+import AddAccountModal from './components/app/AddAccountModal.vue';
 import LoadingState from './components/widgets/LoadingState.vue';
 import NetworkNotification from './components/NetworkNotification.vue';
 import UpdateBanner from './components/app/UpdateBanner.vue';
@@ -18,12 +19,12 @@ import {
   verifyServiceWorkerExistence,
 } from './helper/pushHelper';
 import ReconnectService from 'dashboard/helper/ReconnectService';
-import { useUISettings } from 'dashboard/composables/useUISettings';
 
 export default {
   name: 'App',
 
   components: {
+    AddAccountModal,
     LoadingState,
     NetworkNotification,
     UpdateBanner,
@@ -37,18 +38,17 @@ export default {
     const { accountId } = useAccount();
     // Use the font size composable (it automatically sets up the watcher)
     const { currentFontSize } = useFontSize();
-    const { uiSettings } = useUISettings();
 
     return {
       router,
       store,
       currentAccountId: accountId,
       currentFontSize,
-      uiSettings,
     };
   },
   data() {
     return {
+      showAddAccountModal: false,
       latestChatwootVersion: null,
       reconnectService: null,
     };
@@ -61,12 +61,21 @@ export default {
       authUIFlags: 'getAuthUIFlags',
       accountUIFlags: 'accounts/getUIFlags',
     }),
+    hasAccounts() {
+      const { accounts = [] } = this.currentUser || {};
+      return accounts.length > 0;
+    },
     hideOnOnboardingView() {
       return !isOnOnboardingView(this.$route);
     },
   },
 
   watch: {
+    currentUser() {
+      if (!this.hasAccounts) {
+        this.showAddAccountModal = true;
+      }
+    },
     currentAccountId: {
       immediate: true,
       handler() {
@@ -79,10 +88,7 @@ export default {
   mounted() {
     this.initializeColorTheme();
     this.listenToThemeChanges();
-    // If user locale is set, use it; otherwise use account locale
-    this.setLocale(
-      this.uiSettings?.locale || window.chatwootConfig.selectedLocale
-    );
+    this.setLocale(window.chatwootConfig.selectedLocale);
   },
   unmounted() {
     if (this.reconnectService) {
@@ -108,8 +114,7 @@ export default {
       const { locale, latest_chatwoot_version: latestChatwootVersion } =
         this.getAccount(this.currentAccountId);
       const { pubsub_token: pubsubToken } = this.currentUser || {};
-      // If user locale is set, use it; otherwise use account locale
-      this.setLocale(this.uiSettings?.locale || locale);
+      this.setLocale(locale);
       this.latestChatwootVersion = latestChatwootVersion;
       vueActionCable.init(this.store, pubsubToken);
       this.reconnectService = new ReconnectService(this.store, this.router);
@@ -131,7 +136,8 @@ export default {
   <div
     v-if="!authUIFlags.isFetching && !accountUIFlags.isFetchingItem"
     id="app"
-    class="flex flex-col w-full h-screen min-h-0 bg-n-background"
+    class="flex-grow-0 w-full h-full min-h-0 app-wrapper app-background p-2"
+    :class="{ 'app-rtl--wrapper': isRTL }"
     :dir="isRTL ? 'rtl' : 'ltr'"
   >
     <UpdateBanner :latest-chatwoot-version="latestChatwootVersion" />
@@ -144,6 +150,7 @@ export default {
         <component :is="Component" />
       </transition>
     </router-view>
+    <AddAccountModal :show="showAddAccountModal" :has-accounts="hasAccounts" />
     <WootSnackbarBox />
     <NetworkNotification />
   </div>
