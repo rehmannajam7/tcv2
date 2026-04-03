@@ -4,14 +4,13 @@ import { IFrameHelper } from './IFrameHelper';
 export const loadCSS = () => {
   const css = document.createElement('style');
   css.innerHTML = `${SDK_CSS}`;
-  css.id = 'cw-widget-styles';
+  css.id = 'tc-widget-styles';
   css.dataset.turboPermanent = true;
   document.body.appendChild(css);
 };
 
-// This is a method specific to Turbo
-// The body replacing strategy removes Chatwoot styles
-// as well as the widget, this help us get it back
+// Turbo-specific: full body replacement drops injected widget styles and nodes;
+// re-attach them on the new body.
 export const restoreElement = (id, newBody) => {
   const element = document.getElementById(id);
   const newElement = newBody.querySelector(`#${id}`);
@@ -22,9 +21,9 @@ export const restoreElement = (id, newBody) => {
 };
 
 export const restoreWidgetInDOM = newBody => {
-  restoreElement('cw-bubble-holder', newBody);
-  restoreElement('cw-widget-holder', newBody);
-  restoreElement('cw-widget-styles', newBody);
+  restoreElement('tc-bubble-holder', newBody);
+  restoreElement('tc-widget-holder', newBody);
+  restoreElement('tc-widget-styles', newBody);
 };
 
 export const addClasses = (elm, classes) => {

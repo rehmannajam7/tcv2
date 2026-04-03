@@ -10,6 +10,7 @@ import DuplicateInboxBanner from './channels/instagram/DuplicateInboxBanner.vue'
 import EmailInboxFinish from './channels/emailChannels/EmailInboxFinish.vue';
 import { useInbox } from 'dashboard/composables/useInbox';
 import { INBOX_TYPES } from 'dashboard/helper/inbox';
+import { normalizeWebWidgetScript } from 'shared/helpers/webWidgetScript';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -23,6 +24,10 @@ const qrCodes = reactive({
 
 const currentInbox = computed(() =>
   store.getters['inboxes/getInbox'](route.params.inbox_id)
+);
+
+const webWidgetScriptDisplay = computed(() =>
+  normalizeWebWidgetScript(currentInbox.value?.web_widget_script)
 );
 
 // Use useInbox composable with the inbox ID
@@ -180,7 +185,7 @@ onMounted(() => {
         <div class="my-4 mx-auto max-w-[70%]">
           <woot-code
             v-if="currentInbox.web_widget_script"
-            :script="currentInbox.web_widget_script"
+            :script="webWidgetScriptDisplay"
           />
         </div>
         <div class="w-[50%] max-w-[50%] ml-[25%]">

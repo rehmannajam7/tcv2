@@ -1116,7 +1116,7 @@
         "AGENT_MESSAGE": "სალამი"
       },
       "BRANDING_TEXT": "მოძრავებულია Chatwoot-ის მიერ",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.thumbcrowdSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

@@ -72,16 +72,16 @@ export const IFrameHelper = {
     iframe.id = 'thumbcrowd_live_chat_widget';
     iframe.style.visibility = 'hidden';
 
-    let holderClassName = `woot-widget-holder woot--hide woot-elements--${window.$chatwoot.position}`;
+    let holderClassName = `thumbcrowd-widget-holder thumbcrowd--hide thumbcrowd-elements--${window.$chatwoot.position}`;
     if (window.$chatwoot.hideMessageBubble) {
-      holderClassName += ` woot-widget--without-bubble`;
+      holderClassName += ` thumbcrowd-widget--without-bubble`;
     }
     if (isFlatWidgetStyle(window.$chatwoot.widgetStyle)) {
-      holderClassName += ` woot-widget-holder--flat`;
+      holderClassName += ` thumbcrowd-widget-holder--flat`;
     }
 
     addClasses(widgetHolder, holderClassName);
-    widgetHolder.id = 'cw-widget-holder';
+    widgetHolder.id = 'tc-widget-holder';
     widgetHolder.dataset.turboPermanent = true;
     widgetHolder.appendChild(iframe);
     body.appendChild(widgetHolder);
@@ -90,11 +90,12 @@ export const IFrameHelper = {
     IFrameHelper.preventDefaultScroll();
   },
   getAppFrame: () => document.getElementById('thumbcrowd_live_chat_widget'),
-  getBubbleHolder: () => document.getElementsByClassName('woot--bubble-holder'),
+  getBubbleHolder: () =>
+    document.getElementsByClassName('thumbcrowd--bubble-holder'),
   sendMessage: (key, value) => {
     const element = IFrameHelper.getAppFrame();
     element.contentWindow.postMessage(
-      `chatwoot-widget:${JSON.stringify({ event: key, ...value })}`,
+      `thumbcrowd-widget:${JSON.stringify({ event: key, ...value })}`,
       '*'
     );
   },
@@ -102,11 +103,11 @@ export const IFrameHelper = {
     window.onmessage = e => {
       if (
         typeof e.data !== 'string' ||
-        e.data.indexOf('chatwoot-widget:') !== 0
+        e.data.indexOf('thumbcrowd-widget:') !== 0
       ) {
         return;
       }
-      const message = JSON.parse(e.data.replace('chatwoot-widget:', ''));
+      const message = JSON.parse(e.data.replace('thumbcrowd-widget:', ''));
       if (typeof IFrameHelper.events[message.event] === 'function') {
         IFrameHelper.events[message.event](message);
       }
@@ -273,7 +274,7 @@ export const IFrameHelper = {
         return;
       }
 
-      const bubbleElement = document.querySelector('.woot-widget-bubble');
+      const bubbleElement = document.querySelector('.thumbcrowd-widget-bubble');
       if (
         event.unreadMessageCount > 0 &&
         !bubbleElement.classList.contains('unread-notification')
@@ -307,17 +308,17 @@ export const IFrameHelper = {
     createBubbleHolder(window.$chatwoot.hideMessageBubble);
     onLocationChangeListener();
 
-    let className = 'woot-widget-bubble';
-    let closeBtnClassName = `woot-elements--${window.$chatwoot.position} woot-widget-bubble woot--close woot--hide`;
+    let className = 'thumbcrowd-widget-bubble';
+    let closeBtnClassName = `thumbcrowd-elements--${window.$chatwoot.position} thumbcrowd-widget-bubble thumbcrowd--close thumbcrowd--hide`;
 
     if (isFlatWidgetStyle(window.$chatwoot.widgetStyle)) {
-      className += ' woot-widget-bubble--flat';
-      closeBtnClassName += ' woot-widget-bubble--flat';
+      className += ' thumbcrowd-widget-bubble--flat';
+      closeBtnClassName += ' thumbcrowd-widget-bubble--flat';
     }
 
     if (isWidgetColorLighter(widgetColor)) {
-      className += ' woot-widget-bubble-color--lighter';
-      closeBtnClassName += ' woot-widget-bubble-color--lighter';
+      className += ' thumbcrowd-widget-bubble-color--lighter';
+      closeBtnClassName += ' thumbcrowd-widget-bubble-color--lighter';
     }
 
     const chatIcon = createBubbleIcon({
