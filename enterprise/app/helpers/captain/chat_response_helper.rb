@@ -16,10 +16,28 @@ module Captain::ChatResponseHelper
   def parse_json_response(content)
     content = content.gsub('```json', '').gsub('```', '')
     content = content.strip
-    JSON.parse(content)
+    parsed = JSON.parse(content)
+    normalize_assistant_json_keys(parsed)
   rescue JSON::ParserError => e
     Rails.logger.error "#{self.class.name} Assistant: #{@assistant.id}, Error parsing JSON response: #{e.message}"
-    { 'content' => content }
+    # ResponseBuilderJob expects 'response'; 'content' alone caused blank replies and error_fallback.
+    stripped = content.to_s.strip
+    { 'response' => stripped, 'reasoning' => '', 'parse_error' => true }
+  end
+
+  # Map alternate LLM keys to 'response' so Captain jobs always get a displayable field.
+  def normalize_assistant_json_keys(parsed)
+    return parsed unless parsed.is_a?(Hash)
+
+    h = parsed.with_indifferent_access
+    text = h[:response].presence || h[:content].presence || h[:text].presence || h[:message].presence || h[:answer].presence
+    out = parsed.stringify_keys
+    if text.present? && out['response'].blank?
+      out['response'] = text.to_s
+    elsif out['response'].blank? && out['content'].present?
+      out['response'] = out['content'].to_s
+    end
+    out
   end
 
   def apply_credit_usage_metadata(parsed_response)

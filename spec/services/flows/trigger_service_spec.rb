@@ -114,4 +114,35 @@ RSpec.describe Flows::TriggerService do
       service.perform
     end
   end
+
+  describe '.captain_should_yield_to_flow?' do
+    let(:contact) { create(:contact, account: account) }
+    let(:conversation) { create(:conversation, account: account, inbox: inbox, contact: contact) }
+
+    it 'returns false when only webhook flows exist and the message does not match the keyword' do
+      create(:flow, :active, account: account, created_by: user, updated_by: user,
+                            trigger_type: :webhook, trigger_keyword: 'order')
+      msg = create(:message, account: account, conversation: conversation, content: 'Thanks')
+
+      expect(described_class.captain_should_yield_to_flow?(msg)).to be false
+    end
+
+    it 'returns true when a webhook flow keyword matches the message' do
+      flow = create(:flow, :active, account: account, created_by: user, updated_by: user,
+                                   trigger_type: :webhook, trigger_keyword: 'order')
+      create(:flow_inbox_association, flow: flow, inbox: inbox)
+      msg = create(:message, account: account, conversation: conversation, content: 'track my order please')
+
+      expect(described_class.captain_should_yield_to_flow?(msg)).to be true
+    end
+
+    it 'returns true while a flow execution is pending for the conversation' do
+      flow = create(:flow, :active, :automatic, :with_keyword, account: account, created_by: user, updated_by: user)
+      create(:flow_execution, flow: flow, conversation: conversation, contact: contact, account: account,
+                              status: :pending)
+      msg = create(:message, account: account, conversation: conversation, content: 'anything')
+
+      expect(described_class.captain_should_yield_to_flow?(msg)).to be true
+    end
+  end
 end

@@ -72,8 +72,21 @@ class DashboardController < ActionController::Base
       GA_TRACKING_ID: GlobalConfig.get_value('GA_TRACKING_ID').presence || ENV.fetch('GA_TRACKING_ID', ''),
       IS_ENTERPRISE: ChatwootApp.enterprise?,
       AZURE_APP_ID: GlobalConfigService.load('AZURE_APP_ID', ''),
-      GIT_SHA: GIT_HASH
+      GIT_SHA: GIT_HASH,
+      ALLOWED_LOGIN_METHODS: dashboard_allowed_login_methods
     }
+  end
+
+  # Exposed as window.chatwootConfig.allowedLoginMethods (vueapp layout).
+  # Security settings SAML UI requires 'saml' here when installation allows SSO
+  # (same gate as Api::V1::Accounts::SamlSettingsController#check_saml_sso_enabled).
+  def dashboard_allowed_login_methods
+    methods = %w[email]
+    if ChatwootApp.enterprise? &&
+       GlobalConfigService.load('ENABLE_SAML_SSO_LOGIN', 'true').to_s == 'true'
+      methods << 'saml'
+    end
+    methods
   end
 
   def set_application_pack

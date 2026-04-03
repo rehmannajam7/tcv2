@@ -69,7 +69,20 @@ class Api::V1::Accounts::FlowsController < Api::V1::Accounts::BaseController
   end
 
   def check_authorization
-    authorize :flow, :index?
+    case action_name
+    when 'index'
+      authorize(:flow, :index?)
+    when 'show'
+      authorize(@flow, :show?)
+    when 'create'
+      authorize(:flow, :create?)
+    when 'update'
+      authorize(@flow, :update?)
+    when 'destroy'
+      authorize(@flow, :destroy?)
+    else
+      authorize(:flow, :index?)
+    end
   end
 
   def build_flow
@@ -80,7 +93,7 @@ class Api::V1::Accounts::FlowsController < Api::V1::Accounts::BaseController
   end
 
   def handle_inbox_associations
-    return if params[:flow][:inbox_ids].blank?
+    return if params.dig(:flow, :inbox_ids).blank?
 
     process_inbox_associations
   end
@@ -102,7 +115,11 @@ class Api::V1::Accounts::FlowsController < Api::V1::Accounts::BaseController
 
   def normalize_flow_data(flow_params_hash)
     v = flow_params_hash[:flow_data]
-    flow_params_hash[:flow_data] = v.to_json if v.present? && !v.is_a?(String)
+    if v.blank?
+      flow_params_hash[:flow_data] = '{}'
+    elsif !v.is_a?(String)
+      flow_params_hash[:flow_data] = v.to_json
+    end
   end
 
   def normalize_flow_type_in(flow_params_hash)
@@ -141,10 +158,11 @@ class Api::V1::Accounts::FlowsController < Api::V1::Accounts::BaseController
   end
 
   def process_inbox_associations
-    return unless params[:flow][:inbox_ids].is_a?(Array)
+    inbox_ids_param = params.dig(:flow, :inbox_ids)
+    return unless inbox_ids_param.is_a?(Array)
 
     current_inbox_ids = @flow.inboxes.pluck(:id)
-    new_inbox_ids = params[:flow][:inbox_ids].map(&:to_i).uniq
+    new_inbox_ids = inbox_ids_param.map(&:to_i).uniq
 
     update_inbox_associations(current_inbox_ids, new_inbox_ids)
   rescue StandardError => e

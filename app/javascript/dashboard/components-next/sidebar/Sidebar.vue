@@ -544,6 +544,21 @@ const menuItems = computed(() => {
           to: accountScopedRoute('settings_inbox_list'),
         },
         {
+          name: 'Settings Assignment Policy',
+          label: t('SIDEBAR.AGENT_ASSIGNMENT'),
+          icon: 'i-lucide-users-round',
+          activeOn: [
+            'assignment_policy_index',
+            'agent_assignment_policy_index',
+            'agent_assignment_policy_create',
+            'agent_assignment_policy_edit',
+            'agent_capacity_policy_index',
+            'agent_capacity_policy_create',
+            'agent_capacity_policy_edit',
+          ],
+          to: accountScopedRoute('assignment_policy_index'),
+        },
+        {
           name: 'Settings Labels',
           label: t('SIDEBAR.LABELS'),
           icon: 'i-lucide-tags',
@@ -602,6 +617,18 @@ const menuItems = computed(() => {
           label: t('SIDEBAR.SLA'),
           icon: 'i-lucide-clock-alert',
           to: accountScopedRoute('sla_list'),
+        },
+        {
+          name: 'Settings Conversation Workflow',
+          label: t('SIDEBAR.CONVERSATION_WORKFLOW'),
+          icon: 'i-lucide-git-branch',
+          to: accountScopedRoute('conversation_workflow_index'),
+        },
+        {
+          name: 'Settings Security',
+          label: t('SIDEBAR.SECURITY'),
+          icon: 'i-lucide-shield',
+          to: accountScopedRoute('security_settings_index'),
         },
         {
           name: 'Settings Billing',

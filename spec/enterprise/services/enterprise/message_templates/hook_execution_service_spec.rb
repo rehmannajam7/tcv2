@@ -46,15 +46,17 @@ RSpec.describe MessageTemplates::HookExecutionService do
         create(:message, conversation: conversation, message_type: :incoming, account: account)
       end
 
-      it 'performs captain handoff when quota is exceeded (OOO template will kick in after handoff)' do
+      it 'still schedules Captain job when quota is exceeded (quota is enforced inside the job)' do
         account.update!(
           limits: { 'captain_responses' => 100 },
           custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
         )
 
+        expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+
         create(:message, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
       end
 
       it 'does not send out of office message when Captain is handling' do
@@ -94,11 +96,68 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'performs handoff within business hours when quota exceeded' do
+      it 'does not open the conversation when quota is exceeded (no hook-level handoff)' do
+        expect(Captain::Conversation::ResponseBuilderJob).to receive(:perform_later).with(conversation, assistant)
+
         create(:message, conversation: conversation, message_type: :incoming, account: account)
 
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
       end
+    end
+  end
+
+  context 'when an automatic keyword flow matches the incoming message' do
+    let(:flow_user) { create(:user, account: account) }
+
+    before do
+      inbox.update!(working_hours_enabled: false)
+      create(
+        :flow, :active, :automatic,
+        account: account,
+        created_by: flow_user,
+        updated_by: flow_user,
+        trigger_keyword: 'hello',
+        flow_data: '{}'
+      )
+    end
+
+    it 'does not schedule Captain so the flow can respond' do
+      expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+
+      create(:message, conversation: conversation, message_type: :incoming, account: account, content: 'hello')
+    end
+  end
+
+  context 'when a flow session is already active for the conversation' do
+    let(:flow_user) { create(:user, account: account) }
+    let(:active_flow) do
+      create(
+        :flow, :active, :automatic,
+        account: account,
+        created_by: flow_user,
+        updated_by: flow_user,
+        trigger_keyword: 'later',
+        flow_data: '{}'
+      )
+    end
+
+    before do
+      inbox.update!(working_hours_enabled: false)
+      active_flow
+      create(
+        :flow_execution,
+        flow: active_flow,
+        conversation: conversation,
+        contact: contact,
+        account: account,
+        status: :pending
+      )
+    end
+
+    it 'does not schedule Captain until the flow completes' do
+      expect(Captain::Conversation::ResponseBuilderJob).not_to receive(:perform_later)
+
+      create(:message, conversation: conversation, message_type: :incoming, account: account, content: 'unrelated text')
     end
   end
 
@@ -289,7 +348,7 @@ RSpec.describe MessageTemplates::HookExecutionService do
       expect(MessageTemplates::Template::EmailCollect).not_to have_received(:new)
     end
 
-    it 'does not send out of office template after handoff on campaign conversations when quota is exceeded' do
+    it 'does not send out of office template on campaign conversations when quota is exceeded (no hook handoff)' do
       account.update!(
         limits: { 'captain_responses' => 100 },
         custom_attributes: account.custom_attributes.merge('captain_responses_usage' => 100)
@@ -306,10 +365,12 @@ RSpec.describe MessageTemplates::HookExecutionService do
       expect do
         create(:message, conversation: campaign_conversation, message_type: :incoming, account: account)
       end.not_to(change { campaign_conversation.messages.template.count })
+
+      expect(campaign_conversation.reload.status).to eq('pending')
     end
   end
 
-  context 'when Captain quota is exceeded and handoff happens' do
+  context 'when Captain quota is exceeded' do
     before do
       account.update!(
         limits: { 'captain_responses' => 100 },
@@ -330,14 +391,12 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'sends out of office message after handoff due to quota exceeded' do
+      it 'does not open the conversation or send OOO from a quota handoff (hook no longer handoffs)' do
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
-        end.to change { conversation.messages.template.count }.by(1)
+        end.not_to(change { conversation.messages.template.count })
 
-        expect(conversation.reload.status).to eq('open')
-        ooo_message = conversation.messages.template.last
-        expect(ooo_message.content).to eq('We are currently closed. Please leave your email.')
+        expect(conversation.reload.status).to eq('pending')
       end
     end
 
@@ -354,12 +413,12 @@ RSpec.describe MessageTemplates::HookExecutionService do
         )
       end
 
-      it 'does not send out of office message after handoff' do
+      it 'keeps the conversation pending when quota is exceeded' do
         expect do
           create(:message, conversation: conversation, message_type: :incoming, account: account)
         end.not_to(change { conversation.messages.template.count })
 
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
       end
     end
   end

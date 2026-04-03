@@ -1,5 +1,6 @@
 <script>
 import { mapGetters } from 'vuex';
+import { useAlert } from 'dashboard/composables';
 import { useAccount } from 'dashboard/composables/useAccount';
 import FlowsAPI from 'dashboard/api/flows';
 import FlowCreateModal from './FlowCreateModal.vue';
@@ -127,10 +128,9 @@ export default {
           flow => flow.id !== this.flowToDelete.id
         );
 
-        this.$toast.success('Flow deleted successfully');
-      } catch (error) {
-        // Error deleting flow
-        this.$toast.error('Failed to delete flow');
+        useAlert(this.$t('FLOWS.DELETE.SUCCESS_MESSAGE'));
+      } catch {
+        useAlert(this.$t('FLOWS.DELETE.ERROR_MESSAGE'));
       } finally {
         // Always reset the modal state regardless of success or failure
         this.cancelDelete();
@@ -198,7 +198,7 @@ export default {
 
 <template>
   <div
-    class="flex flex-col justify-between flex-1 h-full m-0 overflow-auto bg-n-background px-6"
+    class="flex flex-col justify-between flex-1 h-full m-0 overflow-auto bg-n-surface-1 px-6"
   >
     <!-- Header -->
     <div class="flex items-center justify-between p-6 border-b border-n-weak">

@@ -59,7 +59,34 @@ module Featurable
     all_features.select { |_feature, enabled| enabled == false }
   end
 
+  # Bulk-assign account features from Super Admin (enabled_features checkboxes).
+  # Params use FlagShihTzu flag ids (e.g. :feature_flow_editor). Enterprise prepends call `super`.
+  def selected_feature_flags=(features)
+    return if features.nil?
+
+    selected = Array(features).map(&:to_sym).to_set
+    premium_names = FEATURE_LIST.select { |f| f['premium'] }.pluck('name')
+    skip_premium = ChatwootApp.enterprise? && ChatwootHub.pricing_plan == 'community'
+
+    manageable_super_admin_feature_names.each do |name|
+      next if skip_premium && premium_names.include?(name)
+
+      setter = :"feature_#{name}="
+      send(setter, selected.include?(:"feature_#{name}"))
+    end
+  end
+
   private
+
+  def manageable_super_admin_feature_names
+    names = FEATURE_LIST.pluck('name')
+    unless ChatwootApp.chatwoot_cloud?
+      internal = FEATURE_LIST.select { |f| f['chatwoot_internal'] }.pluck('name')
+      names -= internal
+    end
+    deprecated = FEATURE_LIST.select { |f| f['deprecated'] }.pluck('name')
+    names - deprecated
+  end
 
   def enable_default_features
     config = InstallationConfig.find_by(name: 'ACCOUNT_LEVEL_FEATURE_DEFAULTS')

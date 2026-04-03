@@ -11,8 +11,15 @@ module Enterprise::Inbox
     super || captain_active?
   end
 
+  # Aly/Captain is "active" for an inbox when an assistant is linked. On Chatwoot Cloud we also
+  # require remaining plan responses; self-hosted installs should not hit a misleading
+  # "Transferring to another agent" handoff once local quota accounting hits zero.
   def captain_active?
-    captain_assistant.present? && more_responses?
+    return false if captain_assistant.blank?
+
+    return true unless ChatwootApp.chatwoot_cloud?
+
+    more_responses?
   end
 
   private

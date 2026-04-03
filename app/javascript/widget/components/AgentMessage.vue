@@ -254,7 +254,12 @@ export default {
       </div>
     </div>
 
-    <UserMessage v-if="hasRecordedResponse" :message="responseMessage" />
+    <!-- input_select: server creates a real incoming message (widget messages#update) for flow
+         triggers; showing responseMessage here duplicates that bubble. -->
+    <UserMessage
+      v-if="hasRecordedResponse && contentType !== 'input_select'"
+      :message="responseMessage"
+    />
     <div v-if="isASubmittedForm">
       <UserMessage
         v-for="submittedValue in submittedFormValues"

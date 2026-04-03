@@ -329,8 +329,8 @@ pt_BR:
       description: 'Crie issues em Linear diretamente da sua janela de conversa. Alternativamente, vincule as issues lineares existentes para um processo de rastreamento de problemas mais simples e eficiente.'
     notion:
       name: 'Notion'
-      short_description: 'Integre banco de dados, documentos e páginas diretamente com o Capitão.'
-      description: 'Conecte o seu espaço de trabalho Notion para permitir que o Capitão acesse e gere respostas inteligentes usando o conteúdo de seus bancos de dados, documentos e páginas para fornecer suporte ao cliente mais contextual.'
+      short_description: 'Integre banco de dados, documentos e páginas diretamente com o Aly Assistant.'
+      description: 'Conecte o seu espaço de trabalho Notion para permitir que o Aly Assistant acesse e gere respostas inteligentes usando o conteúdo de seus bancos de dados, documentos e páginas para fornecer suporte ao cliente mais contextual.'
     shopify:
       name: 'Shopify'
       short_description: 'Acessar detalhes do pedido e dados de clientes da sua loja Shopify.'
@@ -343,9 +343,9 @@ pt_BR:
     copilot_message_required: A mensagem é obrigatória
     copilot_error: 'Conecte com um assistente a esta caixa de entrada para usar Copilot'
     copilot_limit: 'Você está sem créditos de Copilot. Pode comprar mais créditos na seção de faturamento.'
-    upgrade: 'Atualize seu plano para habilitar o Capitão IA'
-    disabled: 'O Capitão IA está desativado para esta conta.'
-    api_key_missing: 'A chave de API do Capitão IA não está configurada.'
+    upgrade: 'Atualize seu plano para habilitar o Aly Assistant'
+    disabled: 'O Aly Assistant está desativado para esta conta.'
+    api_key_missing: 'A chave de API do Aly Assistant não está configurada.'
     copilot:
       using_tool: 'Usando a ferramenta %{function_name}'
       completed_tool_call: 'Uso da ferramenta %{function_name} concluída'

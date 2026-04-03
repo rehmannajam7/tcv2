@@ -165,7 +165,7 @@ RSpec.describe Captain::Assistant::AgentRunnerService do
     it 'processes and formats agent result' do
       result = service.generate_response(message_history: message_history)
 
-      expect(result).to eq({ 'response' => 'Test response', 'agent_name' => nil })
+      expect(result).to eq({ 'response' => 'Test response', 'reasoning' => 'Processed by agent', 'agent_name' => nil })
     end
 
     context 'when no scenarios are enabled' do

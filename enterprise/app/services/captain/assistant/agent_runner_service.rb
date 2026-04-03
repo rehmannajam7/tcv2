@@ -95,10 +95,38 @@ class Captain::Assistant::AgentRunnerService
 
   def process_agent_result(result)
     Rails.logger.info "[Captain V2] Agent result: #{result.inspect}"
-    output = result.output
-    response = output.is_a?(Hash) ? output.with_indifferent_access : { 'response' => output.to_s, 'reasoning' => 'Processed by agent' }
+    output = result&.output
+    response = coalesce_runner_output(output)
     response['agent_name'] = result.context&.dig(:current_agent)
     response
+  end
+
+  # Agents may return nested keys or stringified JSON; blank 'response' used to crash the job via validate_message_content!.
+  def coalesce_runner_output(output)
+    base = { 'response' => '', 'reasoning' => 'Processed by agent' }
+    case output
+    when nil
+      base
+    when Hash
+      h = output.with_indifferent_access
+      text = h[:response].presence || h[:content].presence || h[:text].presence || h[:message].presence || h[:answer].presence
+      text = text.to_s.strip if text
+      reasoning = (h[:reasoning] || h[:thought]).to_s.presence || base['reasoning']
+      base.merge('response' => text.to_s, 'reasoning' => reasoning)
+    when String
+      s = output.strip
+      if s.start_with?('{', '[')
+        begin
+          parsed = JSON.parse(s)
+          return coalesce_runner_output(parsed)
+        rescue JSON::ParserError
+          # fall through
+        end
+      end
+      base.merge('response' => s)
+    else
+      base.merge('response' => output.to_s.strip)
+    end
   end
 
   def error_response(error_message)

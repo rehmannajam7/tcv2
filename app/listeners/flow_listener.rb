@@ -3,36 +3,49 @@ class FlowListener < BaseListener
   include Events::Types
 
   def message_created(event)
-    trigger_flows_for_event(MESSAGE_CREATED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(MESSAGE_CREATED, data)
+    broadcast_flow_activity_update(data)
   end
 
   def conversation_created(event)
-    trigger_flows_for_event(CONVERSATION_CREATED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(CONVERSATION_CREATED, data)
+    broadcast_flow_activity_update(data)
   end
 
   def conversation_opened(event)
-    trigger_flows_for_event(CONVERSATION_OPENED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(CONVERSATION_OPENED, data)
+    broadcast_flow_activity_update(data)
   end
 
   def conversation_resolved(event)
-    trigger_flows_for_event(CONVERSATION_RESOLVED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(CONVERSATION_RESOLVED, data)
+    broadcast_flow_activity_update(data)
   end
 
   def conversation_status_changed(event)
-    trigger_flows_for_event(CONVERSATION_STATUS_CHANGED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(CONVERSATION_STATUS_CHANGED, data)
+    broadcast_flow_activity_update(data)
   end
 
   def first_reply_created(event)
-    trigger_flows_for_event(FIRST_REPLY_CREATED, event.data)
-    broadcast_flow_activity_update(event.data)
+    data = normalize_flow_event_data(event.data)
+    trigger_flows_for_event(FIRST_REPLY_CREATED, data)
+    broadcast_flow_activity_update(data)
   end
 
   private
+
+  # EventDispatcherJob passes JSON-deserialized payloads with string keys; Wisper may use symbols.
+  def normalize_flow_event_data(event_data)
+    return ActiveSupport::HashWithIndifferentAccess.new if event_data.blank?
+
+    ActiveSupport::HashWithIndifferentAccess.new(event_data)
+  end
 
   def trigger_flows_for_event(event_name, event_data)
     # Skip if flows are disabled for this account

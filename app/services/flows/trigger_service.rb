@@ -86,6 +86,27 @@ class Flows::TriggerService
     end
   end
 
+  # Skip Captain/Aly auto-replies while a flow session owns the conversation, or when this
+  # incoming message will start/resume automatic flows (flows run async; hooks run first).
+  def self.captain_should_yield_to_flow?(message)
+    return false unless message&.incoming?
+
+    conversation = message.conversation
+    return false unless conversation&.contact_id
+
+    if FlowExecution.exists?(
+      conversation_id: conversation.id,
+      contact_id: conversation.contact_id,
+      status: %i[pending running]
+    )
+      return true
+    end
+
+    new(event_name: MESSAGE_CREATED, event_data: { message: message })
+      .send(:find_applicable_flows, conversation)
+      .any?
+  end
+
   private
 
   def should_process_event?
@@ -473,10 +494,15 @@ class Flows::TriggerService
     evaluate_flow_conditions(flow, conversation)
   end
 
-  def webhook_flow_applicable?(flow, _conversation)
-    # Webhook flows are triggered by external events
-    # For now, we'll trigger them on message creation if they have webhook triggers
-    event_name == MESSAGE_CREATED && flow.trigger_keyword.present?
+  def webhook_flow_applicable?(flow, conversation)
+    # Align with automatic flows: only treat as applicable when this message would
+    # actually start the flow. Otherwise captain_should_yield_to_flow? stays true on
+    # every incoming message whenever any webhook flow has a keyword set, blocking
+    # Aly Assistant after conversational flows complete.
+    return false unless flow_event_matches?(flow)
+    return false unless keyword_matches?(flow, conversation)
+
+    evaluate_flow_conditions(flow, conversation)
   end
 
   def flow_event_matches?(_flow)

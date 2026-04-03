@@ -226,7 +226,7 @@
   enabled: false
   premium: true
 - name: captain_tasks
-  display_name: Captain Tasks
+  display_name: Aly Assistant Tasks
   enabled: true
 - name: conversation_required_attributes
   display_name: Required Conversation Attributes

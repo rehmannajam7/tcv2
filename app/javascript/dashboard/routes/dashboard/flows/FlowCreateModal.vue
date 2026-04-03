@@ -1,4 +1,5 @@
 <script>
+import { useAlert } from 'dashboard/composables';
 import FlowsAPI from '../../../api/flows';
 import InboxesAPI from '../../../api/inboxes';
 import TagMultiSelectComboBox from 'dashboard/components-next/combobox/TagMultiSelectComboBox.vue';
@@ -157,29 +158,30 @@ export default {
         this.$emit('flowCreated', responseData);
         this.closeModal();
 
-        // Show success message
-        this.$toast.success(this.$t('FLOWS.CREATE_MODAL.SUCCESS_MESSAGE'));
+        useAlert(this.$t('FLOWS.CREATE_MODAL.SUCCESS_MESSAGE'));
       } catch (error) {
-        // Error creating flow
         console.error('Flow creation error:', error);
-        
-        // Handle different error response formats
-        let errorMessage = 'Failed to create flow';
-        if (error?.response?.data?.errors) {
-          // Handle validation errors from backend
-          const errors = error.response.data.errors;
-          if (typeof errors === 'object') {
-            errorMessage = Object.values(errors).flat().join(', ') || errorMessage;
+
+        let errorMessage = this.$t('FLOWS.CREATE_MODAL.ERROR_MESSAGE');
+        const data = error?.response?.data;
+        if (data?.errors) {
+          const errors = data.errors;
+          if (typeof errors === 'object' && !Array.isArray(errors)) {
+            errorMessage =
+              Object.values(errors)
+                .flat()
+                .filter(Boolean)
+                .join(', ') || errorMessage;
           } else if (typeof errors === 'string') {
             errorMessage = errors;
           }
-        } else if (error?.response?.data?.message) {
-          errorMessage = error.response.data.message;
+        } else if (data?.message) {
+          errorMessage = data.message;
         } else if (error?.message) {
           errorMessage = error.message;
         }
-        
-        this.$toast.error(errorMessage);
+
+        useAlert(errorMessage);
       } finally {
         this.isCreating = false;
       }

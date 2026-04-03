@@ -310,7 +310,7 @@
     "ACTIVE": "Ativo",
     "COMPANIES": "Empresas",
     "ALL_COMPANIES": "Todas as empresas",
-    "CAPTAIN": "Capitão",
+    "CAPTAIN": "Aly Assistant",
     "CAPTAIN_ASSISTANTS": "Assistentes",
     "CAPTAIN_DOCUMENTS": "Documentos",
     "CAPTAIN_RESPONSES": "FAQs",
@@ -357,8 +357,8 @@
     "REPORTS_LABEL": "Etiquetas",
     "REPORTS_INBOX": "Caixa de Entrada",
     "REPORTS_TEAM": "Time",
-    "AGENT_ASSIGNMENT": "Atribuição de Agentes",
-    "SET_AVAILABILITY_TITLE": "Defina como",
+    "AGENT_ASSIGNMENT": "Políticas de Atribuição",
+    "SET_AVAILABILITY_TITLE": "Defina Como",
     "SET_YOUR_AVAILABILITY": "Disponibilidade",
     "SLA": "SLA",
     "CUSTOM_ROLES": "Funções Personalizadas",
@@ -380,15 +380,15 @@
     },
     "DOCS": "Ler documentos",
     "SECURITY": "Segurança",
-    "CAPTAIN_AI": "Capitão",
+    "CAPTAIN_AI": "Aly Assistant",
     "CONVERSATION_WORKFLOW": "Fluxo de Conversa"
   },
   "CAPTAIN_SETTINGS": {
-    "TITLE": "Configurações do Capitão",
-    "DESCRIPTION": "Configure seus modelos e recursos de IA para o Capitão. O Capitão utiliza um modelo de cobrança baseado em créditos; você será cobrado em créditos por cada ação que o Capitão realizar, dependendo do modelo selecionado.",
-    "LOADING": "Carregando configurações do Capitão...",
-    "LINK_TEXT": "Saiba mais sobre os Créditos do Capitão",
-    "NOT_ENABLED": "O Capitão não está habilitado para a sua conta. Atualize seu plano para acessar os recursos do Capitão.",
+    "TITLE": "Configurações do Aly Assistant",
+    "DESCRIPTION": "Configure seus modelos e recursos de IA para o Aly Assistant. O Aly Assistant utiliza um modelo de cobrança baseado em créditos; você será cobrado em créditos por cada ação que o Aly Assistant realizar, dependendo do modelo selecionado.",
+    "LOADING": "Carregando configurações do Aly Assistant...",
+    "LINK_TEXT": "Saiba mais sobre os créditos do Aly Assistant",
+    "NOT_ENABLED": "O Aly Assistant não está habilitado para a sua conta. Atualize seu plano para acessar os recursos do Aly Assistant.",
     "MODEL_CONFIG": {
       "TITLE": "Configuração do Modelo",
       "DESCRIPTION": "Selecione modelos de IA para diferentes recursos.",
@@ -427,8 +427,8 @@
       }
     },
     "API": {
-      "SUCCESS": "Configurações do Capitão atualizadas com sucesso.",
-      "ERROR": "Falha ao atualizar as configurações do Capitão. Por favor, tente novamente."
+      "SUCCESS": "Configurações do Aly Assistant atualizadas com sucesso.",
+      "ERROR": "Falha ao atualizar as configurações do Aly Assistant. Por favor, tente novamente."
     }
   },
   "BILLING_SETTINGS": {
@@ -447,12 +447,12 @@
       "BUTTON_TXT": "Ir para o portal de cobrança"
     },
     "CAPTAIN": {
-      "TITLE": "Capitão",
-      "DESCRIPTION": "Gerenciar uso e créditos para o Captain AI.",
+      "TITLE": "Aly Assistant",
+      "DESCRIPTION": "Gerenciar uso e créditos para o Aly Assistant.",
       "BUTTON_TXT": "Comprar mais créditos",
       "DOCUMENTS": "Documentos",
       "RESPONSES": "Respostas",
-      "UPGRADE": "O capitão não está disponível no plano gratuito, faça o upgrade para ter acesso aos assistentes, co-piloto e muito mais.",
+      "UPGRADE": "O Aly Assistant não está disponível no plano gratuito, faça o upgrade para ter acesso aos assistentes, co-piloto e muito mais.",
       "REFRESH_CREDITS": "Atualizar"
     },
     "CHAT_WITH_US": {
@@ -464,7 +464,7 @@
     "TOPUP": {
       "BUY_CREDITS": "Comprar mais créditos",
       "MODAL_TITLE": "Comprar Créditos de IA",
-      "MODAL_DESCRIPTION": "Comprar créditos adicionais para o Capitão IA.",
+      "MODAL_DESCRIPTION": "Comprar créditos adicionais para o Aly Assistant.",
       "CREDITS": "CRÉDITOS",
       "ONE_TIME": "único",
       "POPULAR": "Mais populares",

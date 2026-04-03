@@ -5,6 +5,50 @@ require 'rails_helper'
 RSpec.describe Inbox do
   let!(:inbox) { create(:inbox) }
 
+  describe '#captain_active?' do
+    let(:account) { create(:account) }
+    let(:inbox) { create(:inbox, account: account) }
+    let(:assistant) { create(:captain_assistant, account: account) }
+
+    before do
+      create(:captain_inbox, inbox: inbox, captain_assistant: assistant)
+    end
+
+    it 'is false without a linked assistant' do
+      inbox_without_captain = create(:inbox, account: account)
+      expect(inbox_without_captain.captain_active?).to be false
+    end
+
+    context 'when not Chatwoot Cloud' do
+      before { allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(false) }
+
+      it 'is true when assistant is linked even if response quota is exhausted' do
+        account.update!(custom_attributes: { 'captain_responses_usage' => 1_000_000 })
+        account.update!(limits: { 'captain_responses' => 1 })
+
+        expect(inbox.reload.captain_active?).to be true
+      end
+    end
+
+    context 'when Chatwoot Cloud' do
+      before { allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(true) }
+
+      it 'is false when response quota is exhausted' do
+        account.update!(custom_attributes: { 'captain_responses_usage' => 1_000_000 })
+        account.update!(limits: { 'captain_responses' => 1 })
+
+        expect(inbox.reload.captain_active?).to be false
+      end
+
+      it 'is true when quota remains' do
+        account.update!(custom_attributes: { 'captain_responses_usage' => 0 })
+        account.update!(limits: { 'captain_responses' => 100 })
+
+        expect(inbox.reload.captain_active?).to be true
+      end
+    end
+  end
+
   describe 'member_ids_with_assignment_capacity' do
     let!(:inbox_member_1) { create(:inbox_member, inbox: inbox) }
     let!(:inbox_member_2) { create(:inbox_member, inbox: inbox) }

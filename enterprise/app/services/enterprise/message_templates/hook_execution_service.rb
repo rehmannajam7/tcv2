@@ -4,8 +4,10 @@ module Enterprise::MessageTemplates::HookExecutionService
   def trigger_templates
     super
     return unless should_process_captain_response?
-    return perform_handoff unless inbox.captain_active?
 
+    # Quota / captain_active? is enforced inside Captain::Conversation::ResponseBuilderJob for
+    # Chatwoot Cloud. Never perform a fake "transfer to agent" handoff from here — that opened
+    # the conversation and permanently stopped Aly from replying to follow-up messages.
     schedule_captain_response
   end
 
@@ -50,32 +52,13 @@ module Enterprise::MessageTemplates::HookExecutionService
   end
 
   def should_process_captain_response?
-    conversation.pending? && message.incoming? && inbox.captain_assistant.present?
-  end
-
-  def perform_handoff
-    return unless conversation.pending?
-
-    Rails.logger.info("Captain limit exceeded, performing handoff mid-conversation for conversation: #{conversation.id}")
-    conversation.messages.create!(
-      message_type: :outgoing,
-      account_id: conversation.account.id,
-      inbox_id: conversation.inbox.id,
-      content: 'Transferring to another agent for further assistance.'
-    )
-    conversation.bot_handoff!
-    send_out_of_office_message_after_handoff
-  end
-
-  def send_out_of_office_message_after_handoff
-    # Campaign conversations should never receive OOO templates — the campaign itself
-    # serves as the initial outreach, and OOO would be confusing in that context.
-    return if conversation.campaign.present?
-
-    ::MessageTemplates::Template::OutOfOffice.perform_if_applicable(conversation)
+    conversation.pending? && message.incoming? && inbox.captain_assistant.present? &&
+      !Flows::TriggerService.captain_should_yield_to_flow?(message)
   end
 
   def captain_handling_conversation?
+    return true if message && Flows::TriggerService.captain_should_yield_to_flow?(message)
+
     conversation.pending? && inbox.respond_to?(:captain_assistant) && inbox.captain_assistant.present?
   end
 end

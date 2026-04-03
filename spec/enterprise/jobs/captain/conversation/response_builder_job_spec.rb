@@ -14,6 +14,13 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
     before do
       create(:message, conversation: conversation, content: 'Hello', message_type: :incoming)
 
+      # Job skips LLM when a flow session is active; these examples exercise Captain only.
+      allow(FlowExecution).to receive(:exists?).and_return(false)
+      # Job skips LLM when Chatwoot Cloud quota is exhausted; keep false unless a test overrides.
+      allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(false)
+      # Default to Captain V1 so mock_llm_chat_service is used unless a context enables V2.
+      allow(account).to receive(:feature_enabled?).and_return(false)
+      allow(account).to receive(:feature_enabled?).with('captain_integration_v2').and_return(false)
       allow(inbox).to receive(:captain_active?).and_return(true)
       allow(Captain::Llm::AssistantChatService).to receive(:new).and_return(mock_llm_chat_service)
       allow(mock_llm_chat_service).to receive(:generate_response).and_return({ 'response' => 'Hey, welcome to Captain Specs' })
@@ -22,11 +29,6 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
     end
 
     context 'when captain_v2 is disabled' do
-      before do
-        allow(account).to receive(:feature_enabled?).and_return(false)
-        allow(account).to receive(:feature_enabled?).with('captain_integration_v2').and_return(false)
-      end
-
       it 'uses Captain::Llm::AssistantChatService' do
         expect(Captain::Llm::AssistantChatService).to receive(:new).with(assistant: assistant, conversation: conversation)
         expect(Captain::Assistant::AgentRunnerService).not_to receive(:new)
@@ -46,6 +48,21 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
         described_class.perform_now(conversation, assistant)
         account.reload
         expect(account.usage_limits[:captain][:responses][:consumed]).to eq(1)
+      end
+
+      context 'when Chatwoot Cloud Aly response quota is exhausted' do
+        before do
+          allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(true)
+          allow(account).to receive(:usage_limits).and_return({
+            captain: { responses: { current_available: 0, total_count: 100, consumed: 100 } }
+          })
+        end
+
+        it 'skips LLM generation without creating outgoing messages' do
+          expect(mock_llm_chat_service).not_to receive(:generate_response)
+          described_class.perform_now(conversation, assistant)
+          expect(conversation.messages.outgoing.count).to eq(0)
+        end
       end
 
       it 'does not send a response when the conversation is no longer pending' do
@@ -110,8 +127,6 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
       let(:agent) { create(:user, account: account, role: :agent) }
 
       before do
-        allow(account).to receive(:feature_enabled?).and_return(false)
-        allow(account).to receive(:feature_enabled?).with('captain_integration_v2').and_return(false)
         allow(mock_llm_chat_service).to receive(:generate_response).and_return({ 'response' => 'conversation_handoff' })
       end
 
@@ -171,6 +186,10 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
     let(:mock_message_builder) { instance_double(Captain::OpenAiMessageBuilderService) }
 
     before do
+      allow(FlowExecution).to receive(:exists?).and_return(false)
+      allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(false)
+      allow(account).to receive(:feature_enabled?).and_return(false)
+      allow(account).to receive(:feature_enabled?).with('captain_integration_v2').and_return(false)
       create(:message, conversation: conversation, content: 'Hello with image', message_type: :incoming)
       allow(Captain::Llm::AssistantChatService).to receive(:new).and_return(mock_llm_chat_service)
       allow(Captain::OpenAiMessageBuilderService).to receive(:new).with(message: anything).and_return(mock_message_builder)
@@ -179,15 +198,15 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
     end
 
     context 'when ActiveStorage::FileNotFoundError occurs' do
-      it 'handles file errors and triggers handoff' do
+      it 'does not open the conversation; ActiveJob retry_on handles FileNotFound without propagating' do
         allow(mock_message_builder).to receive(:generate_content)
-          .and_raise(ActiveStorage::FileNotFoundError, 'Image file not found')
+          .and_raise(ActiveStorage::FileNotFoundError.new('Image file not found'))
 
-        # For retryable errors, the job should handle them and proceed with handoff
-        described_class.perform_now(conversation, assistant)
+        expect do
+          described_class.perform_now(conversation, assistant)
+        end.not_to raise_error
 
-        # Verify handoff occurred due to repeated failures
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
       end
 
       it 'succeeds when no error occurs' do
@@ -203,12 +222,15 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
     end
 
     context 'when Faraday::BadRequestError occurs' do
-      it 'handles API errors and triggers handoff' do
+      it 'does not open the conversation; ActiveJob retry_on handles BadRequest without propagating' do
         allow(mock_llm_chat_service).to receive(:generate_response)
-          .and_raise(Faraday::BadRequestError, 'Bad request to image service')
+          .and_raise(Faraday::BadRequestError.new('Bad request to image service'))
 
-        described_class.perform_now(conversation, assistant)
-        expect(conversation.reload.status).to eq('open')
+        expect do
+          described_class.perform_now(conversation, assistant)
+        end.not_to raise_error
+
+        expect(conversation.reload.status).to eq('pending')
       end
 
       it 'succeeds when no error occurs' do
@@ -228,7 +250,7 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
           .and_raise(ActiveStorage::FileNotFoundError, 'Image permanently unavailable')
       end
 
-      it 'triggers handoff after max retries' do
+      it 'sends fallback message without opening the conversation' do
         # Since perform_now re-raises retryable errors, simulate the final failure after retries
         allow(mock_message_builder).to receive(:generate_content)
           .and_raise(StandardError, 'Max retries exceeded')
@@ -237,7 +259,8 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
 
         described_class.perform_now(conversation, assistant)
 
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
+        expect(conversation.messages.outgoing.last.content).to eq(I18n.t('conversations.captain.error_fallback'))
       end
     end
 
@@ -248,14 +271,15 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
         allow(mock_llm_chat_service).to receive(:generate_response).and_raise(standard_error)
       end
 
-      it 'handles error and triggers handoff' do
+      it 'handles error with a fallback message and keeps the conversation pending' do
         expect(ChatwootExceptionTracker).to receive(:new)
           .with(standard_error, account: account)
           .and_call_original
 
         described_class.perform_now(conversation, assistant)
 
-        expect(conversation.reload.status).to eq('open')
+        expect(conversation.reload.status).to eq('pending')
+        expect(conversation.messages.outgoing.last.content).to eq(I18n.t('conversations.captain.error_fallback'))
       end
 
       it 'ensures Current.executed_by is reset' do
@@ -283,6 +307,8 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
 
     before do
       create(:message, conversation: conversation, content: 'Hello', message_type: :incoming)
+      allow(FlowExecution).to receive(:exists?).and_return(false)
+      allow(ChatwootApp).to receive(:chatwoot_cloud?).and_return(false)
       allow(Captain::Llm::AssistantChatService).to receive(:new).and_return(mock_llm_chat_service)
       allow(account).to receive(:feature_enabled?).and_return(false)
       allow(account).to receive(:feature_enabled?).with('captain_integration_v2').and_return(false)
@@ -347,14 +373,13 @@ RSpec.describe Captain::Conversation::ResponseBuilderJob, type: :job do
         allow(mock_llm_chat_service).to receive(:generate_response).and_raise(StandardError, 'API error')
       end
 
-      it 'sends out of office message after error-triggered handoff' do
+      it 'does not hand off or send OOO template on generation errors' do
         expect do
           described_class.perform_now(conversation, assistant)
-        end.to change { conversation.messages.template.count }.by(1)
+        end.not_to(change { conversation.messages.template.count })
 
-        expect(conversation.reload.status).to eq('open')
-        ooo_message = conversation.messages.template.last
-        expect(ooo_message.content).to eq('We are currently closed.')
+        expect(conversation.reload.status).to eq('pending')
+        expect(conversation.messages.outgoing.last.content).to eq(I18n.t('conversations.captain.error_fallback'))
       end
     end
 

@@ -1,4 +1,5 @@
 <script>
+import { useAlert } from 'dashboard/composables';
 import FlowsAPI from '../../../api/flows';
 import InboxesAPI from '../../../api/inboxes';
 import TagMultiSelectComboBox from 'dashboard/components-next/combobox/TagMultiSelectComboBox.vue';
@@ -140,23 +141,27 @@ export default {
         const resp = await FlowsAPI.updateFlow(this.flow.id, payload);
         const updated = resp?.data || { ...this.flow, ...payload };
         this.$emit('saved', updated);
-        this.$toast.success(this.$t('FLOWS.EDIT.SUCCESS_MESSAGE'));
+        useAlert(this.$t('FLOWS.EDIT.SUCCESS_MESSAGE'));
       } catch (error) {
-        let errorMessage = 'Failed to update flow';
-        if (error?.response?.data?.errors) {
-          const errors = error.response.data.errors;
-          if (typeof errors === 'object') {
+        let errorMessage = this.$t('FLOWS.ERRORS.UPDATE_FAILED');
+        const data = error?.response?.data;
+        if (data?.errors) {
+          const errors = data.errors;
+          if (typeof errors === 'object' && !Array.isArray(errors)) {
             errorMessage =
-              Object.values(errors).flat().join(', ') || errorMessage;
+              Object.values(errors)
+                .flat()
+                .filter(Boolean)
+                .join(', ') || errorMessage;
           } else if (typeof errors === 'string') {
             errorMessage = errors;
           }
-        } else if (error?.response?.data?.message) {
-          errorMessage = error.response.data.message;
+        } else if (data?.message) {
+          errorMessage = data.message;
         } else if (error?.message) {
           errorMessage = error.message;
         }
-        this.$toast.error(errorMessage);
+        useAlert(errorMessage);
       } finally {
         this.isSaving = false;
       }

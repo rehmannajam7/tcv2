@@ -29,27 +29,30 @@ RSpec.describe Captain::Tools::HandoffTool, type: :model do
   describe '#perform' do
     context 'when conversation exists' do
       context 'with reason provided' do
-        it 'creates a private note with reason and hands off conversation' do
+        it 'creates public handoff line plus private reason note and hands off conversation' do
           reason = 'Customer needs specialized support'
 
           expect do
             result = tool.perform(tool_context, reason: reason)
             expect(result).to eq("Conversation handed off to human support team (Reason: #{reason})")
-          end.to change(Message, :count).by(1)
+          end.to change(Message, :count).by(2)
         end
 
-        it 'creates message with correct attributes' do
+        it 'creates public customer message and private note with correct attributes' do
           reason = 'Customer needs specialized support'
           tool.perform(tool_context, reason: reason)
 
-          created_message = Message.last
-          expect(created_message.content).to eq(reason)
-          expect(created_message.message_type).to eq('outgoing')
-          expect(created_message.private).to be true
-          expect(created_message.sender).to eq(assistant)
-          expect(created_message.account).to eq(account)
-          expect(created_message.inbox).to eq(inbox)
-          expect(created_message.conversation).to eq(conversation)
+          public_msg = conversation.messages.outgoing.where(private: false).order(:id).last
+          expect(public_msg.content).to eq(I18n.t('conversations.captain.handoff'))
+          expect(public_msg.sender).to eq(assistant)
+
+          private_msg = conversation.messages.outgoing.where(private: true).order(:id).last
+          expect(private_msg.content).to eq(reason)
+          expect(private_msg.message_type).to eq('outgoing')
+          expect(private_msg.sender).to eq(assistant)
+          expect(private_msg.account).to eq(account)
+          expect(private_msg.inbox).to eq(inbox)
+          expect(private_msg.conversation).to eq(conversation)
         end
 
         it 'triggers bot handoff on conversation' do
@@ -89,14 +92,14 @@ RSpec.describe Captain::Tools::HandoffTool, type: :model do
       end
 
       context 'without reason provided' do
-        it 'creates a private note with nil content and hands off conversation' do
+        it 'creates only the public handoff message and hands off conversation' do
           expect do
             result = tool.perform(tool_context)
             expect(result).to eq('Conversation handed off to human support team')
           end.to change(Message, :count).by(1)
 
-          created_message = Message.last
-          expect(created_message.content).to be_nil
+          created_message = conversation.messages.outgoing.where(private: false).last
+          expect(created_message.content).to eq(I18n.t('conversations.captain.handoff'))
         end
 
         it 'logs tool usage with default reason' do

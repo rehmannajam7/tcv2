@@ -136,8 +136,7 @@ export default {
   <div
     v-if="!authUIFlags.isFetching && !accountUIFlags.isFetchingItem"
     id="app"
-    class="flex-grow-0 w-full h-full min-h-0 app-wrapper app-background p-2"
-    :class="{ 'app-rtl--wrapper': isRTL }"
+    class="flex flex-col w-full h-screen min-h-0 bg-n-background app-background p-2"
     :dir="isRTL ? 'rtl' : 'ltr'"
   >
     <UpdateBanner :latest-chatwoot-version="latestChatwootVersion" />

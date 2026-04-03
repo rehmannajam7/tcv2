@@ -1,5 +1,6 @@
 <script>
 import { mapGetters } from 'vuex';
+import { useAlert } from 'dashboard/composables';
 import { useAccount } from 'dashboard/composables/useAccount';
 import axios from 'axios';
 import Auth from 'dashboard/api/auth';
@@ -48,6 +49,43 @@ export default {
       // Use the same base URL as the main application
       const { hostURL } = window.chatwootConfig || {};
       return hostURL || `${window.location.protocol}//${window.location.host}`;
+    },
+    /**
+     * FlowEditor replaces its default endpoint map when the parent passes any endpoints.
+     * We must include every URL the bundled editor expects (notably attachments + simulator).
+     */
+    flowEditorEndpoints() {
+      const b = `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}`;
+      const fe = `${b}/flow_editor`;
+      return {
+        flows: `${fe}/flows`,
+        saveRevision: `${fe}/flows`,
+        contacts: `${b}/contacts`,
+        conversations: `${b}/conversations`,
+        messages: `${b}/messages`,
+        custom_attribute_definitions: `${b}/fields`,
+        groups: `${b}/groups`,
+        attachments: `${fe}/attachments`,
+        simulate_start: `${fe}/simulate_start`,
+        simulate_resume: `${fe}/simulate_resume`,
+        simulateStart: `${fe}/simulate_start`,
+        simulateResume: `${fe}/simulate_resume`,
+        environment: `${fe}/environment`,
+        editor: `${fe}/editor`,
+        classifiers: `${fe}/classifiers`,
+        channels: `${b}/channels`,
+        languages: `${b}/languages`,
+        labels: `${fe}/labels`,
+        globals: `${fe}/globals`,
+        completion: `${fe}/completion`,
+        activity: `${fe}/activity`,
+        templates: `${fe}/templates`,
+        recipients: `${fe}/recipients`,
+        resthooks: `${fe}/resthooks`,
+        ticketers: `${fe}/ticketers`,
+        revisions: `${fe}/revisions`,
+        context: `${fe}/context`,
+      };
     },
     flowEditorUrl() {
       // Determine FlowEditor UI base dynamically
@@ -187,6 +225,27 @@ export default {
         accessToken: this.flowEditorToken,
       };
     },
+    syncIndicatorClass() {
+      return {
+        'sync-indicator': true,
+        'sync-indicator--idle': this.syncStatus === 'idle',
+        'sync-indicator--syncing': this.syncStatus === 'syncing',
+        'sync-indicator--success': this.syncStatus === 'success',
+        'sync-indicator--error': this.syncStatus === 'error',
+      };
+    },
+    syncStatusText() {
+      switch (this.syncStatus) {
+        case 'syncing':
+          return 'Synchronizing...';
+        case 'success':
+          return 'Synchronized';
+        case 'error':
+          return `Sync failed: ${this.syncError || ''}`;
+        default:
+          return 'Ready';
+      }
+    },
   },
   watch: {
     currentAccount: {
@@ -249,13 +308,12 @@ export default {
         );
         this.flowEditorToken = response.data.token;
       } catch (error) {
-        // Failed to fetch FlowEditor token
         if (error.response) {
-          this.$toast.error(
+          useAlert(
             `Failed to authenticate with FlowEditor: ${error.response.data?.message || error.response.statusText}`
           );
         } else {
-          this.$toast.error(
+          useAlert(
             'Failed to authenticate with FlowEditor. Please try again.'
           );
         }
@@ -393,9 +451,7 @@ export default {
         }
       } catch (error) {
         console.error('FlowEditor: Error handling message:', error);
-        this.$toast.error(
-          'An error occurred while processing FlowEditor message'
-        );
+        useAlert('An error occurred while processing FlowEditor message');
 
         // Send error acknowledgment
         if (messageId) {
@@ -678,31 +734,6 @@ export default {
         syncError: this.syncError,
         syncLastUpdate: this.syncLastUpdate,
       };
-    },
-
-    syncIndicatorClass() {
-      // Return CSS class for sync indicator based on status
-      return {
-        'sync-indicator': true,
-        'sync-indicator--idle': this.syncStatus === 'idle',
-        'sync-indicator--syncing': this.syncStatus === 'syncing',
-        'sync-indicator--success': this.syncStatus === 'success',
-        'sync-indicator--error': this.syncStatus === 'error',
-      };
-    },
-
-    syncStatusText() {
-      // Return human-readable sync status text
-      switch (this.syncStatus) {
-        case 'syncing':
-          return 'Synchronizing...';
-        case 'success':
-          return 'Synchronized';
-        case 'error':
-          return `Sync failed: ${this.syncError}`;
-        default:
-          return 'Ready';
-      }
     },
 
     resetKeywords() {
@@ -1129,15 +1160,7 @@ export default {
           accountId: String(this.accountId || ''),
           token: String(this.flowEditorToken || ''),
           apiBaseUrl: String(this.apiBaseUrl || ''),
-          endpoints: {
-            flows: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/flows`,
-            saveRevision: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/flows`,
-            contacts: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/contacts`,
-            conversations: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/conversations`,
-            messages: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/messages`,
-            custom_attribute_definitions: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/fields`,
-            groups: `${this.apiBaseUrl}/api/v1/accounts/${this.accountId}/flow_editor/groups`,
-          },
+          endpoints: this.flowEditorEndpoints,
         },
       };
 

@@ -5,6 +5,9 @@ class Flows::TriggerJob < ApplicationJob
   def perform(event_name:, event_data:)
     Rails.logger.info "Processing flow triggers for event: #{event_name}"
 
+    # ActiveJob JSON serialization uses string keys for nested hashes
+    event_data = event_data.deep_symbolize_keys if event_data.is_a?(Hash)
+
     # Reconstruct objects from serialized data
     reconstructed_data = reconstruct_event_data(event_data)
 
@@ -28,6 +31,7 @@ class Flows::TriggerJob < ApplicationJob
     # Reconstruct message object
     if serialized_data[:message]
       message_data = serialized_data[:message]
+      message_data = message_data.deep_symbolize_keys if message_data.is_a?(Hash)
       message = Message.find_by(id: message_data[:id])
       reconstructed_data[:message] = message if message
     end
@@ -35,6 +39,7 @@ class Flows::TriggerJob < ApplicationJob
     # Reconstruct conversation object
     if serialized_data[:conversation]
       conversation_data = serialized_data[:conversation]
+      conversation_data = conversation_data.deep_symbolize_keys if conversation_data.is_a?(Hash)
       conversation = Conversation.find_by(id: conversation_data[:id])
       reconstructed_data[:conversation] = conversation if conversation
     end
