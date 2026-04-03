@@ -9,6 +9,7 @@ class Integrations::Captain::ProcessorService < Integrations::BotProcessorServic
 
   def process_response(message, response)
     if response == 'conversation_handoff'
+      Conversations::HandoffPublicText.append_customer_message!(message.conversation)
       message.conversation.bot_handoff!
     else
       create_conversation(message, { content: response })

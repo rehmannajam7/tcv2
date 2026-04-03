@@ -24,15 +24,23 @@ class Captain::Tools::HandoffTool < Captain::Tools::BasePublicTool
   private
 
   def trigger_handoff(conversation, reason)
-    # post the reason as a private note
-    conversation.messages.create!(
-      message_type: :outgoing,
-      private: true,
-      sender: @assistant,
-      account: conversation.account,
-      inbox: conversation.inbox,
-      content: reason
-    )
+    # Customer-facing acknowledgment (same as Captain::Conversation::ResponseBuilderJob handoff path).
+    # Previously only a private note was created, so the widget showed no reply after "transfer to human".
+    I18n.with_locale(conversation.account.locale) do
+      Conversations::HandoffPublicText.append_customer_message!(conversation, assistant: @assistant)
+    end
+
+    # Optional context for agents (only when the model supplied a reason)
+    if reason.present?
+      conversation.messages.create!(
+        message_type: :outgoing,
+        private: true,
+        sender: @assistant,
+        account: conversation.account,
+        inbox: conversation.inbox,
+        content: reason
+      )
+    end
 
     # Trigger the bot handoff (sets status to open + dispatches events)
     conversation.bot_handoff!

@@ -86,9 +86,10 @@ describe Integrations::Dialogflow::ProcessorService do
         )
       end
 
-      it 'handsoff the conversation to agent' do
+      it 'handsoff the conversation to agent and posts the standard handoff line' do
         processor.perform
         expect(conversation.status).to eql('open')
+        expect(conversation.messages.outgoing.where(private: false).last.content).to eq(I18n.t('conversations.captain.handoff'))
       end
     end
 

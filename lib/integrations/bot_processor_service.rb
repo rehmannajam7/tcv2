@@ -55,6 +55,7 @@ class Integrations::BotProcessorService
   def process_action(message, action)
     case action
     when 'handoff'
+      Conversations::HandoffPublicText.append_customer_message!(message.conversation)
       message.conversation.bot_handoff!
     when 'resolve'
       message.conversation.resolved!

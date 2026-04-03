@@ -646,8 +646,8 @@ class Flows::ExecutionService
     # FlowEditor stores webhook config inside actions[0] for call_webhook type
     action = node['actions']&.find { |a| a['type'] == 'call_webhook' } || node['actions']&.first || {}
     webhook_url = action['url'] || node['url']
-    method = (action['method'] || node['method'] || 'POST').to_s.upcase
-    headers = action['headers'] || node['headers'] || {}
+    (action['method'] || node['method'] || 'POST').to_s.upcase
+    action['headers'] || node['headers'] || {}
     body = action['body'] || node['body'] || ''
 
     return unless webhook_url.present?
@@ -914,6 +914,10 @@ class Flows::ExecutionService
 
     # 3) Replace @conversation.* variables
     result.gsub!(/@conversation\.id/i, conversation.display_id.to_s)
+    # Same phrase as Captain AI / bot handoff; use in flow messages for a consistent transfer line.
+    result.gsub!(/@conversation\.standard_handoff\b/i) do
+      Conversations::HandoffPublicText.message_for(conversation)
+    end
 
     # 4) Replace @results.* variables (e.g. @results.Result 1.value)
     result.gsub!(/@results\.([a-z0-9_ \-]+)\.(category|value|input)/i) do
@@ -1106,7 +1110,7 @@ class Flows::ExecutionService
     end
 
     # Safely evaluate arithmetic (only digits, operators, whitespace, dots)
-    sanitized = resolved.gsub(/[^0-9+\-*\/().% ]/, '')
+    sanitized = resolved.gsub(%r{[^0-9+\-*/().% ]}, '')
     return resolved if sanitized.blank?
 
     # rubocop:disable Security/Eval
@@ -1155,8 +1159,6 @@ class Flows::ExecutionService
       resolve_flow_variable(Regexp.last_match(1))
     when /\Adate\z/i then Date.current.strftime('%Y-%m-%d')
     when /\Anow\z/i then Time.current.iso8601
-    else
-      nil
     end
   end
 
@@ -1216,7 +1218,7 @@ class Flows::ExecutionService
         current << c
       end
     end
-    parts << current.strip unless current.blank?
+    parts << current.strip if current.present?
     parts
   end
 

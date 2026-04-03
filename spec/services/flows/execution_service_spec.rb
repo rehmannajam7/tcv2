@@ -359,4 +359,14 @@ RSpec.describe Flows::ExecutionService do
       expect(execution.status).to eq('completed')
     end
   end
+
+  describe 'flow variable @conversation.standard_handoff' do
+    let(:service) { described_class.new(flow: flow, conversation: conversation, trigger_data: {}) }
+
+    it 'substitutes with the shared default handoff phrase' do
+      result = service.send(:replace_variables, 'Before @conversation.standard_handoff After', {})
+      expect(result).to include(I18n.t('conversations.captain.handoff'))
+      expect(result).not_to include('standard_handoff')
+    end
+  end
 end

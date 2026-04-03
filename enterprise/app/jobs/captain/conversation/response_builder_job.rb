@@ -109,7 +109,7 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
 
   def create_handoff_message
     create_outgoing_message(
-      @assistant.config['handoff_message'].presence || I18n.t('conversations.captain.handoff')
+      Conversations::HandoffPublicText.message_for(@conversation, assistant: @assistant)
     )
   end
 

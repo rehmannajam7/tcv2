@@ -124,15 +124,9 @@ class Captain::InboxPendingConversationsResolutionJob < ApplicationJob
   end
 
   def create_handoff_message(conversation, inbox)
-    handoff_message = inbox.captain_assistant.config['handoff_message']
-    return if handoff_message.blank?
-
-    conversation.messages.create!(
-      message_type: :outgoing,
-      sender: inbox.captain_assistant,
-      account_id: conversation.account_id,
-      inbox_id: conversation.inbox_id,
-      content: handoff_message,
+    Conversations::HandoffPublicText.append_customer_message!(
+      conversation,
+      assistant: inbox.captain_assistant,
       preserve_waiting_since: true
     )
   end

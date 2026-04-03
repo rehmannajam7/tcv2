@@ -226,7 +226,7 @@ RSpec.describe Captain::InboxPendingConversationsResolutionJob, type: :job do
       expect(resolvable_pending_conversation.reload.waiting_since).to be_within(1.second).of(original_waiting_since)
     end
 
-    it 'does not create handoff message if not configured' do
+    it 'creates the default handoff message when assistant config has no handoff_message' do
       captain_assistant.update!(config: {})
       inbox.reload
       allow(inbox.account).to receive(:feature_enabled?).and_call_original
@@ -234,7 +234,10 @@ RSpec.describe Captain::InboxPendingConversationsResolutionJob, type: :job do
 
       expect do
         described_class.perform_now(inbox)
-      end.not_to(change { resolvable_pending_conversation.messages.where(private: false).count })
+      end.to change { resolvable_pending_conversation.messages.where(private: false).count }.by(1)
+
+      public_message = resolvable_pending_conversation.messages.where(private: false).outgoing.last
+      expect(public_message.content).to eq(I18n.t('conversations.captain.handoff'))
     end
 
     it 'adds the correct activity message after handoff' do
