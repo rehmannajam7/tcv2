@@ -8,7 +8,21 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
     @inbox = conversation.inbox
     @assistant = assistant
 
+    if flow_session_active?
+      Rails.logger.info(
+        "[CAPTAIN][ResponseBuilderJob] Skipping reply; flow session active for conversation #{conversation.id}"
+      )
+      return
+    end
+
     return unless conversation_pending?
+
+    if ChatwootApp.chatwoot_cloud? && !captain_response_quota_available?
+      Rails.logger.info(
+        "[CAPTAIN][ResponseBuilderJob] Aly response quota exhausted for account #{account.id}, skipping job"
+      )
+      return
+    end
 
     Current.executed_by = @assistant
 
@@ -18,7 +32,7 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
       generate_and_process_response
     end
   rescue ActiveStorage::FileNotFoundError, Faraday::BadRequestError => e
-    handle_error(e)
+    log_error(e)
     raise e
   rescue StandardError => e
     handle_error(e)
@@ -31,16 +45,38 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
   delegate :account, :inbox, to: :@conversation
 
   def generate_and_process_response
+    history = collect_previous_messages
     @response = Captain::Llm::AssistantChatService.new(assistant: @assistant, conversation: @conversation).generate_response(
-      message_history: collect_previous_messages
+      message_history: history
     )
+    @response = normalize_captain_response_hash(@response)
+    if should_retry_with_compact_history?(@response)
+      Rails.logger.warn(
+        "[CAPTAIN][ResponseBuilderJob] Empty V1 reply; retrying with compact history for conversation #{@conversation.id}"
+      )
+      @response = Captain::Llm::AssistantChatService.new(assistant: @assistant, conversation: @conversation).generate_response(
+        message_history: compact_captain_message_history(history)
+      )
+      @response = normalize_captain_response_hash(@response)
+    end
     process_response
   end
 
   def generate_response_with_v2
+    history = collect_previous_messages
     @response = Captain::Assistant::AgentRunnerService.new(assistant: @assistant, conversation: @conversation).generate_response(
-      message_history: collect_previous_messages
+      message_history: history
     )
+    @response = normalize_captain_response_hash(@response)
+    if should_retry_with_compact_history?(@response)
+      Rails.logger.warn(
+        "[CAPTAIN][ResponseBuilderJob] Empty V2 reply; retrying with compact history for conversation #{@conversation.id}"
+      )
+      @response = Captain::Assistant::AgentRunnerService.new(assistant: @assistant, conversation: @conversation).generate_response(
+        message_history: compact_captain_message_history(history)
+      )
+      @response = normalize_captain_response_hash(@response)
+    end
     process_response
   end
 
@@ -51,9 +87,10 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
       process_action('handoff')
     else
       ActiveRecord::Base.transaction do
-        create_messages
-        Rails.logger.info("[CAPTAIN][ResponseBuilderJob] Incrementing response usage for #{account.id}")
-        account.increment_response_usage
+        if create_messages
+          Rails.logger.info("[CAPTAIN][ResponseBuilderJob] Incrementing response usage for #{account.id}")
+          account.increment_response_usage
+        end
       end
     end
   end
@@ -85,7 +122,7 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
   end
 
   def handoff_requested?
-    @response['response'] == 'conversation_handoff'
+    @response.is_a?(Hash) && @response.with_indifferent_access[:response].to_s.strip == 'conversation_handoff'
   end
 
   def process_action(action)
@@ -113,13 +150,63 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
     )
   end
 
+  # Returns true when a normal assistant reply was posted (counts toward usage).
+  # Returns false when we only posted error_fallback due to blank model output (do not increment usage).
   def create_messages
-    validate_message_content!(@response['response'])
-    create_outgoing_message(@response['response'], agent_name: @response['agent_name'])
+    content = extract_displayable_response(@response)
+    if content.blank?
+      Rails.logger.error(
+        "[CAPTAIN][ResponseBuilderJob] Blank Captain reply for conversation #{@conversation.id}, response_keys=#{@response&.keys}, inspect=#{@response.inspect}"
+      )
+      create_outgoing_message(I18n.t('conversations.captain.error_fallback'))
+      return false
+    end
+
+    create_outgoing_message(content, agent_name: @response['agent_name'])
+    true
   end
 
-  def validate_message_content!(content)
-    raise ArgumentError, 'Message content cannot be blank' if content.blank?
+  def extract_displayable_response(response)
+    return '' unless response.is_a?(Hash)
+
+    h = response.with_indifferent_access
+    h[:response].to_s.strip.presence ||
+      h[:content].to_s.strip.presence ||
+      h[:text].to_s.strip.presence ||
+      h[:message].to_s.strip.presence ||
+      h[:answer].to_s.strip.presence ||
+      ''
+  end
+
+  def normalize_captain_response_hash(resp)
+    return resp unless resp.is_a?(Hash)
+
+    h = resp.with_indifferent_access
+    text = extract_displayable_response(resp)
+    out = h.to_hash.stringify_keys
+    out['response'] = text if text.present?
+    out
+  end
+
+  def should_retry_with_compact_history?(resp)
+    return false unless resp.is_a?(Hash)
+
+    h = resp.with_indifferent_access
+    return false if h[:response].to_s.strip == 'conversation_handoff'
+
+    extract_displayable_response(resp).blank?
+  end
+
+  # After flows, long multimodal history can confuse models; retry with text summaries only.
+  def compact_captain_message_history(history)
+    history.last(24).map do |msg|
+      c = msg[:content]
+      next msg unless c.is_a?(Array)
+
+      text, = Captain::OpenAiMessageBuilderService.extract_text_and_attachments(c)
+      summary = text.presence || '[earlier message included an attachment]'
+      { role: msg[:role], content: summary, agent_name: msg[:agent_name] }.compact
+    end
   end
 
   def create_outgoing_message(message_content, agent_name: nil)
@@ -136,14 +223,24 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
     )
   end
 
+  # Do not call bot_handoff! here: transient LLM/API failures or blank model output would
+  # open the conversation and block all further Aly replies for that thread.
   def handle_error(error)
     log_error(error)
-    process_action('handoff') if conversation_pending?
+    return true unless conversation_pending?
+
+    I18n.with_locale(@assistant.account.locale) do
+      create_outgoing_message(I18n.t('conversations.captain.error_fallback'))
+    end
     true
   end
 
   def log_error(error)
     ChatwootExceptionTracker.new(error, account: account).capture_exception
+  end
+
+  def captain_response_quota_available?
+    account.usage_limits[:captain][:responses][:current_available].positive?
   end
 
   def captain_v2_enabled?
@@ -153,5 +250,16 @@ class Captain::Conversation::ResponseBuilderJob < ApplicationJob
   def conversation_pending?
     status = Conversation.uncached { Conversation.where(id: @conversation.id).pick(:status) }
     status == 'pending' || status == Conversation.statuses[:pending]
+  end
+
+  def flow_session_active?
+    contact = @conversation.contact
+    return false unless contact
+
+    FlowExecution.exists?(
+      conversation_id: @conversation.id,
+      contact_id: contact.id,
+      status: %i[pending running]
+    )
   end
 end
