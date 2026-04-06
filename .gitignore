@@ -94,7 +94,6 @@ yarn-debug.log*
 .vscode
 .claude/settings.local.json
 .cursor
-<<<<<<< HEAD
 CLAUDE.local.md
 
 # Histoire deployment
@@ -102,9 +101,10 @@ CLAUDE.local.md
 .histoire
 .pnpm-store/*
 local/
-=======
 swagger_Old/
->>>>>>> feature/sleek-sidebar-redesign
+
+# Mintlify docs site (full tree tracked on branch tcv2/APIdocs)
+thumbcrowd-docs/
 
 # Local backups and artifacts
 db_backups/
