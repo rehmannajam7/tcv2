@@ -47,6 +47,9 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        // Avoid legacy Sass JS API (Dart Sass 2.0) and cut noise until @use migration / upstream fixes
+        api: 'modern-compiler',
+        silenceDeprecations: ['import', 'global-builtin'],
         includePaths: [
           path.resolve(__dirname, 'app/javascript'),
           path.resolve(__dirname, 'app/javascript/widget/assets/scss'),

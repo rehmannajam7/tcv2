@@ -9,6 +9,14 @@ export default defineConfig({
     server: {
       port: 6179,
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler',
+          silenceDeprecations: ['import', 'global-builtin'],
+        },
+      },
+    },
   },
   viteIgnorePlugins: ['vite-plugin-ruby'],
   theme: {

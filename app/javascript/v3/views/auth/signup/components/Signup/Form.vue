@@ -245,10 +245,8 @@ export default {
 
 <style scoped lang="scss">
 .h-captcha--box {
-  &::v-deep .error {
-    iframe {
-      @apply rounded-md border border-red-500;
-    }
+  & :deep(.error iframe) {
+    @apply rounded-md border border-red-500;
   }
 }
 </style>
