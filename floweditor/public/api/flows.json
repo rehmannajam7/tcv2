@@ -1,0 +1,210 @@
+{
+  "results": [
+    {
+      "uuid": "demo-flow-id",
+      "name": "Demo Flow",
+      "type": "message",
+      "archived": false,
+      "labels": [],
+      "expires": 10080,
+      "parent_refs": [],
+      "spec_version": "13.1.0",
+      "language": "eng",
+      "localization": {},
+      "nodes": [
+        {
+          "uuid": "start-node",
+          "actions": [
+            {
+              "uuid": "start-action",
+              "type": "send_msg",
+              "text": "Welcome! What would you like to do today?",
+              "quick_replies": ["Get Help", "Learn More", "Contact Support"]
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "start-exit",
+              "destination_uuid": "wait-node"
+            }
+          ]
+        },
+        {
+          "uuid": "wait-node",
+          "wait": {
+            "type": "msg"
+          },
+          "router": {
+            "type": "switch",
+            "operand": "@input.text",
+            "cases": [
+              {
+                "uuid": "help-case",
+                "type": "has_any_word",
+                "arguments": ["help", "assistance"],
+                "category_uuid": "help-category"
+              },
+              {
+                "uuid": "learn-case", 
+                "type": "has_any_word",
+                "arguments": ["learn", "more", "info"],
+                "category_uuid": "learn-category"
+              },
+              {
+                "uuid": "support-case",
+                "type": "has_any_word", 
+                "arguments": ["support", "contact"],
+                "category_uuid": "support-category"
+              }
+            ],
+            "categories": [
+              {
+                "uuid": "help-category",
+                "name": "Help",
+                "exit_uuid": "help-exit"
+              },
+              {
+                "uuid": "learn-category",
+                "name": "Learn More",
+                "exit_uuid": "learn-exit"
+              },
+              {
+                "uuid": "support-category",
+                "name": "Support",
+                "exit_uuid": "support-exit"
+              },
+              {
+                "uuid": "other-category",
+                "name": "Other",
+                "exit_uuid": "other-exit"
+              }
+            ],
+            "default_category_uuid": "other-category"
+          },
+          "exits": [
+            {
+              "uuid": "help-exit",
+              "destination_uuid": "help-node"
+            },
+            {
+              "uuid": "learn-exit",
+              "destination_uuid": "learn-node"
+            },
+            {
+              "uuid": "support-exit",
+              "destination_uuid": "support-node"
+            },
+            {
+              "uuid": "other-exit",
+              "destination_uuid": "other-node"
+            }
+          ]
+        },
+        {
+          "uuid": "help-node",
+          "actions": [
+            {
+              "uuid": "help-action",
+              "type": "send_msg",
+              "text": "Here are some helpful resources:\n\n1. User Guide\n2. FAQ\n3. Video Tutorials\n\nIs there anything specific you need help with?"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "help-node-exit",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "learn-node",
+          "actions": [
+            {
+              "uuid": "learn-action",
+              "type": "send_msg",
+              "text": "Great! Here's more information about our services:\n\n• Feature Overview\n• Pricing Plans\n• Success Stories\n\nWould you like to schedule a demo?"
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "learn-node-exit",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "support-node",
+          "actions": [
+            {
+              "uuid": "support-action",
+              "type": "send_msg",
+              "text": "I'll connect you with our support team. Please provide:\n\n1. Your name\n2. Email address\n3. Brief description of your issue\n\nOur team will get back to you within 24 hours."
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "support-node-exit",
+              "destination_uuid": null
+            }
+          ]
+        },
+        {
+          "uuid": "other-node",
+          "actions": [
+            {
+              "uuid": "other-action",
+              "type": "send_msg",
+              "text": "I didn't quite understand that. Could you please choose from one of these options:\n\n• Get Help\n• Learn More\n• Contact Support\n\nOr type your question directly."
+            }
+          ],
+          "exits": [
+            {
+              "uuid": "other-node-exit",
+              "destination_uuid": "wait-node"
+            }
+          ]
+        }
+      ],
+      "_ui": {
+        "nodes": {
+          "start-node": {
+            "position": {
+              "left": 140,
+              "top": 0
+            }
+          },
+          "wait-node": {
+            "position": {
+              "left": 140,
+              "top": 200
+            }
+          },
+          "help-node": {
+            "position": {
+              "left": -120,
+              "top": 400
+            }
+          },
+          "learn-node": {
+            "position": {
+              "left": 140,
+              "top": 400
+            }
+          },
+          "support-node": {
+            "position": {
+              "left": 400,
+              "top": 400
+            }
+          },
+          "other-node": {
+            "position": {
+              "left": 140,
+              "top": 600
+            }
+          }
+        }
+      }
+    }
+  ]
+}

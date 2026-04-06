@@ -1,0 +1,181 @@
+@import 'src/variables.module.scss';
+
+.action {
+  position: relative;
+  margin: 0px;
+  overflow: hidden;
+  background: white;
+
+  &:first-child {
+    border-top-right-radius: $unnnic-border-radius-md;
+    border-top-left-radius: $unnnic-border-radius-md;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: $unnnic-border-radius-md;
+    border-bottom-left-radius: $unnnic-border-radius-md;
+  }
+
+  &.has_router {
+    &:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  clear: both;
+}
+
+.body {
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  word-wrap: break-word;
+  width: auto;
+
+  &.add_contact_urn,
+  &.add_input_labels,
+  &.send_msg,
+  &.set_contact_field,
+  &.set_contact_name,
+  &.call_webhook,
+  &.call_resthook,
+  &.set_contact_language,
+  &.set_contact_status,
+  &.set_contact_channel,
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.play_audio,
+  &.say_msg,
+  &.set_run_result,
+  &.send_email,
+  &.send_broadcast,
+  &.transfer_airtime,
+  &.open_ticket,
+  &.missing,
+  &.enter_flow,
+  &.call_external_service,
+  &.send_msg_catalog,
+  &.send_whatsapp_msg,
+  &.call_wenigpt,
+  &.call_brain {
+    font-family: $unnnic-font-family-secondary;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    color: $unnnic-color-neutral-dark;
+
+    width: $node_min_width - $action_padding * 2;
+    padding: $action_padding;
+  }
+
+  &.call_webhook {
+    text-decoration: underline;
+    text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
+  }
+
+  &.add_contact_groups,
+  &.remove_contact_groups,
+  &.call_classifier,
+  &.call_wenigpt {
+    text-align: center;
+  }
+
+  &.call_classifier {
+    padding: $action_padding;
+    width: inherit;
+  }
+
+  &.send_msg_catalog {
+    width: auto;
+  }
+
+  &.send_whatsapp_msg {
+    width: auto;
+    max-width: 267px;
+  }
+
+  &.send_broadcast,
+  &.start_session {
+    padding: 0px;
+    width: $node_min_width + px;
+  }
+
+  &.call_brain {
+    width: 196px;
+  }
+}
+
+.not_localizable {
+  .overlay {
+    display: block;
+  }
+
+  .body {
+    background: #fff;
+  }
+}
+
+.immutable {
+  .overlay {
+    display: block;
+  }
+}
+
+.translate_from {
+  background: $translation_bg;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid darken($translation_bg, 5%);
+  margin-bottom: 12px;
+}
+
+.translate_to {
+  padding: 5px;
+  font-weight: 400;
+}
+
+.translating {
+  .body {
+    background: $translation_bg;
+  }
+}
+
+.missing_localization {
+  .body {
+    color: $translation_missing;
+  }
+}
+
+.localized {
+  .body {
+    background: #fff;
+  }
+}
+
+.selected {
+  background: #EEFFFC !important;
+
+  >div {
+    background: #EEFFFC !important;
+
+    >div {
+      background: #EEFFFC !important;
+    }
+  }
+}
+
+
+.body.missing {
+  background-color: #FFF1F1;
+}
+
+.overlay {
+  cursor: default;
+  position: absolute;
+  display: none;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  $color_1: rgba(0, 0, 0, 0.12);
+  $color_2: rgba(0, 0, 0, 0.1);
+}

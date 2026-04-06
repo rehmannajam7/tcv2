@@ -1,0 +1,11 @@
+@import 'src/variables.module.scss';
+
+.groups_container {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: $unnnic-spacing-stack-nano;
+  align-items: flex-start;
+  width: fit-content;
+  margin: 0 auto;
+  max-width: 100%;
+}

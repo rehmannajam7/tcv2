@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowEditor Debug</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .debug-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .log { background: #f5f5f5; padding: 10px; margin: 10px 0; font-family: monospace; }
+        button { padding: 10px 20px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>FlowEditor Authentication Debug</h1>
+    
+    <div class="debug-section">
+        <h2>URL Parameters</h2>
+        <div id="url-params" class="log"></div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>Authentication Status</h2>
+        <div id="auth-status" class="log"></div>
+        <button onclick="checkAuth()">Check Authentication</button>
+        <button onclick="testSave()">Test Save Request</button>
+    </div>
+    
+    <div class="debug-section">
+        <h2>Console Logs</h2>
+        <div id="console-logs" class="log"></div>
+    </div>
+
+    <script type="module">
+        // Capture console logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        const logContainer = document.getElementById('console-logs');
+        
+        function addLog(type, ...args) {
+            const logEntry = document.createElement('div');
+            logEntry.style.color = type === 'error' ? 'red' : type === 'warn' ? 'orange' : 'black';
+            logEntry.textContent = `[${type.toUpperCase()}] ${args.join(' ')}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        console.log = (...args) => {
+            originalLog(...args);
+            addLog('log', ...args);
+        };
+        
+        console.error = (...args) => {
+            originalError(...args);
+            addLog('error', ...args);
+        };
+        
+        console.warn = (...args) => {
+            originalWarn(...args);
+            addLog('warn', ...args);
+        };
+        
+        // Display URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const paramsDiv = document.getElementById('url-params');
+        paramsDiv.innerHTML = `
+            <strong>Account ID:</strong> ${urlParams.get('accountId') || 'Not provided'}<br>
+            <strong>Token:</strong> ${urlParams.get('token') ? urlParams.get('token').substring(0, 20) + '...' : 'Not provided'}<br>
+            <strong>Flow ID:</strong> ${urlParams.get('flowId') || 'Not provided'}
+        `;
+        
+        // Global functions for testing
+        window.checkAuth = async function() {
+            try {
+                const { getAuthToken, getAccountContext } = await import('./src/external/index.js');
+                const authStatus = document.getElementById('auth-status');
+                authStatus.innerHTML = `
+                    <strong>Auth Token:</strong> ${getAuthToken() ? getAuthToken().substring(0, 20) + '...' : 'Not set'}<br>
+                    <strong>Account Context:</strong> ${getAccountContext() || 'Not set'}
+                `;
+            } catch (error) {
+                console.error('Failed to check auth:', error);
+            }
+        };
+        
+        window.testSave = async function() {
+            try {
+                const { saveRevision } = await import('./src/external/index.js');
+                
+                // Create a minimal test flow definition
+                const testDefinition = {
+                    uuid: 'test-flow-uuid',
+                    name: 'Test Flow',
+                    spec_version: '13.1.0',
+                    language: 'eng',
+                    type: 'messaging',
+                    nodes: [],
+                    _ui: null
+                };
+                
+                const endpoint = `http://localhost:3000/api/v1/accounts/${urlParams.get('accountId')}/flows/${urlParams.get('flowId') || 'test'}/revisions`;
+                
+                console.log('Testing save with endpoint:', endpoint);
+                
+                const result = await saveRevision(endpoint, testDefinition);
+                console.log('Save test successful:', result);
+            } catch (error) {
+                console.error('Save test failed:', error);
+            }
+        };
+        
+        // Initialize authentication on page load
+        (async function() {
+            try {
+                const { initializeAuthFromUrl } = await import('./src/external/index.js');
+                const authResult = initializeAuthFromUrl();
+                console.log('Authentication initialized:', authResult);
+                
+                // Auto-check auth status
+                setTimeout(checkAuth, 500);
+            } catch (error) {
+                console.error('Failed to initialize auth:', error);
+            }
+        })();
+    </script>
+</body>
+</html>

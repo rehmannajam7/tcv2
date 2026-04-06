@@ -1,0 +1,152 @@
+@import 'src/variables.module.scss';
+
+$spacing: 10px;
+
+.group {
+  padding-bottom: 0 !important;
+  margin-bottom: 0px;
+}
+
+.divider {
+  padding-left: $unnnic-spacing-inline-sm;
+  padding-right: $unnnic-spacing-inline-sm;
+  vertical-align: sub;
+  margin-top: 4px;
+}
+
+.select-container {
+  border: 1px solid red;
+}
+
+.param {
+  display: flex;
+  gap: $unnnic-spacing-inline-xs;
+  user-select: none;
+
+  .form_group {
+    margin: 0;
+  }
+
+  .choice {
+    flex: 1;
+  }
+
+  .moveIcon {
+    align-self: center;
+
+    button {
+      padding: 0 !important;
+      width: $unnnic-icon-size-sm;
+      height: $unnnic-icon-size-sm;
+
+      &:hover {
+
+        &:after {
+          border: none;
+        }
+      }
+
+      span {
+        min-width: unset;
+        min-height: unset;
+      }
+
+      svg>path {
+        fill: $unnnic-color-neutral-cloudy;
+      }
+    }
+  }
+
+  .single_operand {
+    display: inline-flex;
+    position: relative;
+    margin-left: $spacing;
+
+    width: 184px;
+  }
+
+  .multi_operand {
+    display: inline-flex;
+    margin-left: $spacing;
+    width: 184px;
+  }
+
+  .categorize_as {
+    font-size: 13px;
+    line-height: 13px;
+    position: relative;
+    width: 95px;
+    text-align: center;
+    margin: 0px $spacing - 2;
+    margin-top: 4px;
+  }
+
+  .data {
+    position: relative;
+    flex: 1;
+  }
+
+  &:hover {
+    .remove_icon {
+      opacity: 1;
+    }
+
+    .dnd_icon {
+      opacity: 1;
+    }
+  }
+
+  .relative_date {
+    display: inline-block;
+    width: 50px;
+  }
+}
+
+.dnd_icon {
+  color: #aaa;
+  font-weight: bold;
+  padding-top: 9px;
+  padding-right: 2px;
+  padding-left: 5px;
+  float: left;
+  opacity: 0;
+  font-size: 9px;
+  line-height: 9px;
+}
+
+.remove_icon {
+  color: #aaa;
+  padding-top: 8px;
+  float: right;
+  line-height: 12px;
+  cursor: pointer;
+  margin-left: 2px;
+  margin-top: 8px;
+  font-size: 9px;
+  z-index: 3000;
+}
+
+.move_icon {
+  margin-top: 8px;
+}
+
+.remove_filler {
+  width: 11px;
+}
+
+.order_filler {
+  width: 16px;
+}
+
+.empty {
+  display: inline-block;
+  width: 15px;
+}
+
+[data-draggable='true'] {
+  cursor: pointer;
+}
+
+.expression_input {
+  flex: 1;
+}

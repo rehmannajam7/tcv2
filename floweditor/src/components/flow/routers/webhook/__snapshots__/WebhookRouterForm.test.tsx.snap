@@ -1,0 +1,1792 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WebhookRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="call_webhook"
+  tabs={
+    [
+      {
+        "body": <React.Fragment>
+          <div
+            className="_info_2fe879 u font secondary body-md color-neutral-cloudy"
+          >
+            <Trans
+              i18nKey="forms.webhook_header_summary"
+            >
+              Add any additional headers below that you would like to send along with your request.
+            </Trans>
+          </div>
+          <div
+            className="_header_wrapper_2fe879"
+          >
+            <div>
+              <HeaderElement
+                canRemove={true}
+                entry={
+                  {
+                    "value": {
+                      "name": "Accept",
+                      "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                      "value": "application/json",
+                    },
+                  }
+                }
+                index={0}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
+            <div>
+              <HeaderElement
+                canRemove={false}
+                entry={
+                  {
+                    "value": {
+                      "name": "",
+                      "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                      "value": "",
+                    },
+                  }
+                }
+                index={1}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
+          </div>
+        </React.Fragment>,
+        "checked": true,
+        "hasErrors": false,
+        "name": "HTTP Headers",
+      },
+      {
+        "body": <div
+          className="_body_form_2fe879 u font secondary body-md color-neutral-cloudy"
+        >
+          <div>
+            <Trans
+              i18nKey="forms.webhook_body_summary"
+              values={
+                {
+                  "method": "GET",
+                }
+              }
+            >
+              Modify the body of the [[method]] request that will be sent to your webhook
+            </Trans>
+          </div>
+          <div
+            className="_req_body_2fe879"
+          >
+            <TextInputElement
+              autocomplete={true}
+              entry={
+                {
+                  "value": "",
+                }
+              }
+              name="GET Body"
+              onChange={[Function]}
+              placeholder="Type here..."
+              showLabel={false}
+              textarea={true}
+            />
+          </div>
+        </div>,
+        "checked": false,
+        "name": "GET Body",
+      },
+    ]
+  }
+  title="Call webhook"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "split_by_webhook",
+        ],
+        "component": [Function],
+        "description": "Call a webhook",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Call webhook",
+        "type": "call_webhook",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "node": {
+            "actions": [
+              {
+                "headers": {},
+                "method": "GET",
+                "result_name": "Response",
+                "type": "call_webhook",
+                "url": "http://www.google.com",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+              {
+                "destination_uuid": null,
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "Success",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_only_text",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                  "name": "Success",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Failure",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+              ],
+              "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              "operand": "@results.response.category",
+              "type": "switch",
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "type": "call_webhook",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_url_container_2fe879"
+  >
+    <div
+      className="_method_2fe879"
+    >
+      <SelectElement
+        entry={
+          {
+            "value": {
+              "name": "GET",
+              "value": "GET",
+            },
+          }
+        }
+        key="method_select"
+        name="Method"
+        onChange={[Function]}
+        options={
+          [
+            {
+              "name": "GET",
+              "value": "GET",
+            },
+            {
+              "name": "POST",
+              "value": "POST",
+            },
+            {
+              "name": "PUT",
+              "value": "PUT",
+            },
+            {
+              "name": "DELETE",
+              "value": "DELETE",
+            },
+            {
+              "name": "HEAD",
+              "value": "HEAD",
+            },
+            {
+              "name": "PATCH",
+              "value": "PATCH",
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      className="_url_2fe879"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "",
+          }
+        }
+        name="URL"
+        onChange={[Function]}
+        placeholder="Enter a URL"
+      />
+    </div>
+  </div>
+  <div
+    className="_instructions_2fe879 u font secondary body-md color-neutral-cloudy"
+  >
+    <div>
+      <Trans
+        i18nKey="forms.webhook_help"
+      >
+        If your server responds with JSON, each property will be added to the Flow.
+      </Trans>
+    </div>
+    <pre
+      className="_code_2fe879"
+    >
+      { "product": "Solar Charging Kit", "stock level": 32 }
+    </pre>
+    <div>
+      <Trans
+        i18nKey="forms.webhook_example"
+      >
+        This response would add
+        <span
+          className="_example_2fe879"
+        >
+          @webhook.product
+        </span>
+         and
+         
+        <span
+          className="_example_2fe879"
+        >
+          @webhook["stock level"]
+        </span>
+        for use in the flow.
+      </Trans>
+    </div>
+  </div>
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Result",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`WebhookRouterForm > should render a split_by_webhook's original action 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="call_webhook"
+  tabs={
+    [
+      {
+        "body": <React.Fragment>
+          <div
+            className="_info_2fe879 u font secondary body-md color-neutral-cloudy"
+          >
+            <Trans
+              i18nKey="forms.webhook_header_summary"
+            >
+              Add any additional headers below that you would like to send along with your request.
+            </Trans>
+          </div>
+          <div
+            className="_header_wrapper_2fe879"
+          >
+            <div>
+              <HeaderElement
+                canRemove={true}
+                entry={
+                  {
+                    "value": {
+                      "name": "Content-Type",
+                      "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
+                      "value": "application/json",
+                    },
+                  }
+                }
+                index={0}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
+            <div>
+              <HeaderElement
+                canRemove={false}
+                entry={
+                  {
+                    "value": {
+                      "name": "",
+                      "uuid": "57bf1459-14b9-4a73-b579-9d1b56f0b276",
+                      "value": "",
+                    },
+                  }
+                }
+                index={1}
+                onChange={[Function]}
+                onRemove={[Function]}
+              />
+            </div>
+          </div>
+        </React.Fragment>,
+        "checked": true,
+        "hasErrors": false,
+        "name": "HTTP Headers",
+      },
+      {
+        "body": <div
+          className="_body_form_2fe879 u font secondary body-md color-neutral-cloudy"
+        >
+          <div>
+            <Trans
+              i18nKey="forms.webhook_body_summary"
+              values={
+                {
+                  "method": "GET",
+                }
+              }
+            >
+              Modify the body of the [[method]] request that will be sent to your webhook
+            </Trans>
+          </div>
+          <div
+            className="_req_body_2fe879"
+          >
+            <TextInputElement
+              autocomplete={true}
+              entry={
+                {
+                  "value": undefined,
+                }
+              }
+              name="GET Body"
+              onChange={[Function]}
+              placeholder="Type here..."
+              showLabel={false}
+              textarea={true}
+            />
+          </div>
+        </div>,
+        "checked": true,
+        "name": "GET Body",
+      },
+    ]
+  }
+  title="Call webhook"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "split_by_webhook",
+        ],
+        "component": [Function],
+        "description": "Call a webhook",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "exits",
+        ],
+        "name": "Call webhook",
+        "type": "call_webhook",
+        "visibility": [
+          "messaging",
+          "messaging_background",
+          "voice",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "node": {
+            "actions": [
+              {
+                "headers": {
+                  "Content-Type": "application/json",
+                },
+                "method": "GET",
+                "result_name": "Response",
+                "type": "call_webhook",
+                "url": "http://www.google.com",
+                "uuid": "7663e5a1-6a46-4b0d-af01-b2262a6ad4b5",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
+              },
+              {
+                "destination_uuid": null,
+                "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "Success",
+                  ],
+                  "category_uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+                  "type": "has_only_text",
+                  "uuid": "90e20a49-6ecc-4b0b-97bf-bcbd37069b63",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "38282c32-100e-4376-af57-7f6a36ddafba",
+                  "name": "Success",
+                  "uuid": "c99dcf07-2ad6-4730-9e99-810a39f5a58d",
+                },
+                {
+                  "exit_uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+                  "name": "Failure",
+                  "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
+                },
+              ],
+              "default_category_uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
+              "operand": "@results.response.category",
+              "type": "switch",
+            },
+            "uuid": "b5292cef-6113-4066-80f5-371178abf28b",
+          },
+          "ui": {
+            "type": "split_by_webhook",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_url_container_2fe879"
+  >
+    <div
+      className="_method_2fe879"
+    >
+      <SelectElement
+        entry={
+          {
+            "value": {
+              "name": "GET",
+              "value": "GET",
+            },
+          }
+        }
+        key="method_select"
+        name="Method"
+        onChange={[Function]}
+        options={
+          [
+            {
+              "name": "GET",
+              "value": "GET",
+            },
+            {
+              "name": "POST",
+              "value": "POST",
+            },
+            {
+              "name": "PUT",
+              "value": "PUT",
+            },
+            {
+              "name": "DELETE",
+              "value": "DELETE",
+            },
+            {
+              "name": "HEAD",
+              "value": "HEAD",
+            },
+            {
+              "name": "PATCH",
+              "value": "PATCH",
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      className="_url_2fe879"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "http://www.google.com",
+          }
+        }
+        name="URL"
+        onChange={[Function]}
+        placeholder="Enter a URL"
+      />
+    </div>
+  </div>
+  <div
+    className="_instructions_2fe879 u font secondary body-md color-neutral-cloudy"
+  >
+    <div>
+      <Trans
+        i18nKey="forms.webhook_help"
+      >
+        If your server responds with JSON, each property will be added to the Flow.
+      </Trans>
+    </div>
+    <pre
+      className="_code_2fe879"
+    >
+      { "product": "Solar Charging Kit", "stock level": 32 }
+    </pre>
+    <div>
+      <Trans
+        i18nKey="forms.webhook_example"
+      >
+        This response would add
+        <span
+          className="_example_2fe879"
+        >
+          @webhook.product
+        </span>
+         and
+         
+        <span
+          className="_example_2fe879"
+        >
+          @webhook["stock level"]
+        </span>
+        for use in the flow.
+      </Trans>
+    </div>
+  </div>
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Response",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`WebhookRouterForm > updates > should repopulate post body 1`] = `
+{
+  "body": {
+    "value": "",
+  },
+  "headers": [
+    {
+      "value": {
+        "name": "Accept",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+        "value": "application/json",
+      },
+    },
+    {
+      "value": {
+        "name": "",
+        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
+        "value": "",
+      },
+    },
+  ],
+  "method": {
+    "value": {
+      "value": "GET",
+    },
+  },
+  "resultName": {
+    "value": "Result",
+  },
+  "url": {
+    "validationFailures": [],
+    "value": "http://domain.com/",
+  },
+  "valid": true,
+}
+`;
+
+exports[`WebhookRouterForm > updates > should repopulate post body 2`] = `
+{
+  "body": {
+    "value": "@(json(object(
+  "contact", object(
+    "uuid", contact.uuid, 
+    "name", contact.name, 
+    "urn", contact.urn
+  ),
+  "flow", object(
+    "uuid", run.flow.uuid, 
+    "name", run.flow.name
+  ),
+  "results", foreach_value(results, extract_object, "value", "category")
+)))",
+  },
+  "headers": [
+    {
+      "value": {
+        "name": "Accept",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+        "value": "application/json",
+      },
+    },
+    {
+      "validationFailures": undefined,
+      "value": {
+        "name": "Content-Type",
+        "uuid": "f05fa107-03db-4315-a211-53da63603e6f",
+        "value": "application/json",
+      },
+    },
+    {
+      "validationFailures": undefined,
+      "value": {
+        "name": "",
+        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
+        "value": "",
+      },
+    },
+  ],
+  "method": {
+    "value": "POST",
+  },
+  "resultName": {
+    "value": "Result",
+  },
+  "url": {
+    "validationFailures": [],
+    "value": "http://domain.com/",
+  },
+  "valid": true,
+}
+`;
+
+exports[`WebhookRouterForm > updates > should save changes 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WebhookRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WebhookRouterForm > updates > should save changes 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated get body",
+              "headers": {
+                "Content-Type": "application/json",
+              },
+              "method": "GET",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WebhookRouterForm > updates > should save changes 4`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated get body",
+              "headers": {
+                "Content-Type": "application/json",
+              },
+              "method": "GET",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "@(json(object(
+  "contact", object(
+    "uuid", contact.uuid, 
+    "name", contact.name, 
+    "urn", contact.urn
+  ),
+  "flow", object(
+    "uuid", run.flow.uuid, 
+    "name", run.flow.name
+  ),
+  "results", foreach_value(results, extract_object, "value", "category")
+)))",
+              "headers": {},
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WebhookRouterForm > updates > should save changes 5`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated post body",
+              "headers": {
+                "Content-Type": "application/json",
+                "Content-type": "application/json",
+              },
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "Updated get body",
+              "headers": {
+                "Content-Type": "application/json",
+              },
+              "method": "GET",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "@(json(object(
+  "contact", object(
+    "uuid", contact.uuid, 
+    "name", contact.name, 
+    "urn", contact.urn
+  ),
+  "flow", object(
+    "uuid", run.flow.uuid, 
+    "name", run.flow.name
+  ),
+  "results", foreach_value(results, extract_object, "value", "category")
+)))",
+              "headers": {},
+              "method": "POST",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "body": "",
+              "headers": {},
+              "method": "GET",
+              "result_name": "My Webhook Result",
+              "type": "call_webhook",
+              "url": "http://app.rapidpro.io",
+              "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "Success",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_only_text",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "Success",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Failure",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "default_category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "operand": "@results.my_webhook_result.category",
+            "type": "switch",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_webhook",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

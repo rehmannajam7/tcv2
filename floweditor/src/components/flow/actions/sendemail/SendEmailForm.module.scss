@@ -1,0 +1,23 @@
+.ele {
+    display: flex;
+    flex-direction: column;
+    row-gap: $unnnic-spacing-stack-sm;
+
+    .message {
+        margin-top: 8px;
+    }
+}
+
+.pills {
+    display: flex;
+    gap: $unnnic-spacing-stack-sm $unnnic-spacing-inline-sm;
+    flex-wrap: wrap;
+
+    .pill {
+        padding: $unnnic-spacing-stack-nano 0.75 * $unnnic-font-size;
+        display: inline-flex;
+        column-gap: $unnnic-spacing-inline-nano;
+        background-color: $unnnic-color-neutral-soft;
+        border-radius: $unnnic-border-radius-pill;
+    }
+}

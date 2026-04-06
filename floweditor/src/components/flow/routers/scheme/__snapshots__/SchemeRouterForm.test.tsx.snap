@@ -1,0 +1,1489 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SchemeRouterForm > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Split by URN type
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Split by URN type"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="_info_e04b9c u font secondary body-md color-neutral-cloudy"
+        >
+          The contact's URN is the address they used to reach you such as their phone number or a Facebook ID. Select which URN types to split.
+        </div>
+        <div
+          class="__ele_8d991a_8d991a"
+        >
+          <div
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+          >
+            Channels
+          </div>
+          <div
+            class="_select_wrapper_4cce75"
+            data-testid="temba_select_channels"
+            id="temba_select_channels"
+          >
+            <div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_channels"
+                  data-v-acea6376=""
+                  readonly=""
+                >
+                  <!---->
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_channels"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                    readonly=""
+                  >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_channels"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Select the channels to split by"
+                      readonly=""
+                      type="text"
+                    />
+                    <!---->
+                    <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
+                      fill="none"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      width="40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_options_channels"
+              id="temba_select_options_channels"
+              style="margin-top: 0px; width: 0px; display: none;"
+            >
+              <div
+                class="_option_08dd12 _active_08dd12 _selected_08dd12"
+                data-option-index="0"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary"
+                          fill="#3B414D"
+                          height="30"
+                          rx="4"
+                          width="30"
+                          x="5"
+                          y="5.00049"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
+                          fill="white"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    SMS
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  _selected_08dd12"
+                data-option-index="1"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary"
+                          fill="#3B414D"
+                          height="30"
+                          rx="4"
+                          width="30"
+                          x="5"
+                          y="5.00049"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
+                          fill="white"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    WhatsApp
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  _selected_08dd12"
+                data-option-index="2"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--brand-weni unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary"
+                          fill="#3B414D"
+                          height="30"
+                          rx="4"
+                          width="30"
+                          x="5"
+                          y="5.00049"
+                        />
+                        <path
+                          clip-rule="evenodd"
+                          d="M13.0626 19.6981L17.0001 23.9295L26.9376 13.2504L28.2501 14.6608L17.0001 26.7504L11.7501 21.1086L13.0626 19.6981Z"
+                          fill="white"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Facebook
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="3"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Twitter
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="4"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Telegram
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="5"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Viber
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="6"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Line
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="7"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wechat
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="8"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Firebase
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="9"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Jiochat
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="10"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Freshchat
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="11"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    External
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="12"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Instagram
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="13"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Slack
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_option_08dd12  "
+                data-option-index="14"
+              >
+                <div
+                  class="_multi_wrapper_08dd12"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="all: unset;"
+                  >
+                    <div
+                      class="unnnic-checkbox-wrapper _checkbox_08dd12"
+                      data-v-7fb32042=""
+                    >
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--md unnnic--clickable unnnic-icon-scheme--neutral-clean unnnic-checkbox"
+                        data-v-7fb32042=""
+                        data-v-930380cc=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          class="primary-stroke"
+                          height="29"
+                          rx="3.5"
+                          stroke="#3B414D"
+                          width="29"
+                          x="5.5"
+                          y="5.50049"
+                        />
+                      </svg>
+                      <!---->
+                    </div>
+                  </div>
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Teams
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_expressions_channels"
+              id="temba_select_expressions_channels"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+          </div>
+          <div
+            class="_selected-list-container_4cce75"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                count="0"
+                data-testid="temba_remove_tag_sms"
+                data-v-5a2abba9=""
+                enabletooltip="false"
+                hasbackbutton="false"
+              >
+                <span
+                  class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                  data-v-5a2abba9=""
+                >
+                  SMS
+                </span>
+                <div
+                  class="unnnic-tag__icon"
+                  data-v-5a2abba9=""
+                >
+                  <svg
+                    class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                    data-v-5a2abba9=""
+                    data-v-930380cc=""
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="primary"
+                      d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                      fill="#3B414D"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                count="0"
+                data-testid="temba_remove_tag_whatsapp"
+                data-v-5a2abba9=""
+                enabletooltip="false"
+                hasbackbutton="false"
+              >
+                <span
+                  class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                  data-v-5a2abba9=""
+                >
+                  WhatsApp
+                </span>
+                <div
+                  class="unnnic-tag__icon"
+                  data-v-5a2abba9=""
+                >
+                  <svg
+                    class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                    data-v-5a2abba9=""
+                    data-v-930380cc=""
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="primary"
+                      d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                      fill="#3B414D"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-tag
+        unnnic-tag-scheme--neutral-dark unnnic-tag-content"
+                count="0"
+                data-testid="temba_remove_tag_facebook"
+                data-v-5a2abba9=""
+                enabletooltip="false"
+                hasbackbutton="false"
+              >
+                <span
+                  class="unnnic-tag__label
+      unnnic-tag__label--hasIcon"
+                  data-v-5a2abba9=""
+                >
+                  Facebook
+                </span>
+                <div
+                  class="unnnic-tag__icon"
+                  data-v-5a2abba9=""
+                >
+                  <svg
+                    class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-darkest"
+                    data-v-5a2abba9=""
+                    data-v-930380cc=""
+                    fill="none"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    width="40"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      class="primary"
+                      d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                      fill="#3B414D"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_optional_text_input_1fb2f6 _toggle_1fb2f6"
+        >
+          <span
+            class="_toggle_link_1fb2f6 "
+            data-spec="toggle-link"
+            data-testid="toggle-link"
+          >
+            Save as
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-cleanest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M14.0093 34.6856L29.5962 20.9572C29.726 20.8328 29.8292 20.6835 29.8997 20.5182C29.9702 20.3529 30.0066 20.1751 30.0066 19.9954C30.0066 19.8157 29.9702 19.6379 29.8997 19.4726C29.8292 19.3073 29.726 19.158 29.5962 19.0336L14.0093 5.31149C13.8857 5.20174 13.7412 5.11796 13.5845 5.06514C13.4279 5.01232 13.2622 4.99153 13.0973 5.00401C12.9325 5.01648 12.7718 5.06197 12.6249 5.13776C12.4779 5.21356 12.3477 5.31812 12.242 5.44522L10.296 7.75745C10.0786 8.0153 9.97133 8.34827 9.99728 8.68451C10.0232 9.02076 10.1804 9.33332 10.4347 9.55474L22.2496 19.7598C22.2837 19.7891 22.311 19.8255 22.3298 19.8664C22.3486 19.9072 22.3583 19.9517 22.3583 19.9967C22.3583 20.0416 22.3486 20.0861 22.3298 20.1269C22.311 20.1678 22.2837 20.2042 22.2496 20.2335L10.4385 30.4423C10.3118 30.5523 10.2081 30.6862 10.1333 30.8363C10.0584 30.9865 10.0139 31.1499 10.0023 31.3172C9.98744 31.4836 10.0061 31.6513 10.0572 31.8104C10.1083 31.9695 10.1908 32.1167 10.2997 32.2434L12.247 34.5568C12.3529 34.6836 12.4832 34.7879 12.6301 34.8635C12.7771 34.9391 12.9377 34.9845 13.1024 34.997C13.2672 35.0094 13.4328 34.9887 13.5894 34.9361C13.746 34.8835 13.8905 34.8 14.0143 34.6906L14.0093 34.6856Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SchemeRouterForm > should select schemes 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+            },
+            {
+              "uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+            },
+            {
+              "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "tel",
+                ],
+                "category_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                "type": "has_only_phrase",
+                "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+              },
+              {
+                "arguments": [
+                  "facebook",
+                ],
+                "category_uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+                "type": "has_only_phrase",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                "name": "SMS",
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+              {
+                "exit_uuid": "e67ce051-f3e4-4c42-807b-e393df5fa382",
+                "name": "Facebook",
+                "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+              },
+              {
+                "exit_uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+                "name": "Other",
+                "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+              },
+            ],
+            "default_category_uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+            "operand": "@(urn_parts(contact.urn).scheme)",
+            "result_name": "",
+            "type": "switch",
+          },
+          "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+          },
+          "position": null,
+          "type": "split_by_scheme",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

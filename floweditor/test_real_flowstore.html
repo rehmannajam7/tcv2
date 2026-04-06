@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real FlowStore Account Isolation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-results {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .info { color: #17a2b8; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .account-test {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .account-panel {
+            flex: 1;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            border: 2px solid #dee2e6;
+        }
+        .account-panel.active {
+            border-color: #007bff;
+            background: #e7f3ff;
+        }
+        .url-display {
+            background: #e9ecef;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Real FlowStore Account Isolation Test</h1>
+        <p>This test uses the actual FlowStore implementation from the Flow Editor to verify account isolation.</p>
+        
+        <div class="test-section">
+            <h2>Current URL Context</h2>
+            <div id="urlContext" class="url-display"></div>
+            <button onclick="updateUrlContext()">Refresh URL Context</button>
+        </div>
+
+        <div class="test-section">
+            <h2>Account Simulation</h2>
+            <p>Test different account contexts by changing the URL parameters:</p>
+            <div class="account-test">
+                <div class="account-panel" id="account1Panel">
+                    <h3>Account 1</h3>
+                    <button onclick="simulateAccount(1)">Switch to Account 1</button>
+                    <button onclick="testFlowStore(1)">Test FlowStore</button>
+                    <div id="account1Results" class="test-results"></div>
+                </div>
+                <div class="account-panel" id="account2Panel">
+                    <h3>Account 2</h3>
+                    <button onclick="simulateAccount(2)">Switch to Account 2</button>
+                    <button onclick="testFlowStore(2)">Test FlowStore</button>
+                    <div id="account2Results" class="test-results"></div>
+                </div>
+                <div class="account-panel" id="defaultPanel">
+                    <h3>No Account</h3>
+                    <button onclick="simulateAccount(null)">Switch to Default</button>
+                    <button onclick="testFlowStore(null)">Test FlowStore</button>
+                    <div id="defaultResults" class="test-results"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Cross-Account Isolation Test</h2>
+            <button onclick="runFullIsolationTest()">Run Complete Isolation Test</button>
+            <div id="isolationResults" class="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>localStorage Monitor</h2>
+            <button onclick="monitorStorage()">Monitor Storage</button>
+            <button onclick="clearAllStorage()">Clear All Storage</button>
+            <div id="storageMonitor" class="test-results"></div>
+        </div>
+    </div>
+
+    <!-- Import the actual FlowStore -->
+    <script type="module">
+        // Import the real FlowStore
+        import { FlowStore } from './src/services/FlowStore.js';
+        
+        // Make it globally available for testing
+        window.FlowStore = FlowStore;
+        window.flowStoreReady = true;
+        
+        // Initialize the page
+        updateUrlContext();
+        monitorStorage();
+        
+        console.log('FlowStore imported successfully:', FlowStore);
+    </script>
+
+    <script>
+        // Wait for FlowStore to be ready
+        function waitForFlowStore(callback) {
+            if (window.flowStoreReady && window.FlowStore) {
+                callback();
+            } else {
+                setTimeout(() => waitForFlowStore(callback), 100);
+            }
+        }
+
+        function updateUrlContext() {
+            const urlContext = document.getElementById('urlContext');
+            const currentUrl = window.location.href;
+            const urlParams = new URLSearchParams(window.location.search);
+            const accountId = urlParams.get('accountId') || urlParams.get('account_id') || 'none';
+            
+            urlContext.textContent = `Current URL: ${currentUrl}\nAccount ID: ${accountId}`;
+        }
+
+        function simulateAccount(accountId) {
+            const url = new URL(window.location);
+            url.searchParams.delete('accountId');
+            url.searchParams.delete('account_id');
+            
+            if (accountId !== null) {
+                url.searchParams.set('account_id', accountId);
+            }
+            
+            // Update URL without page reload
+            window.history.pushState({}, '', url);
+            updateUrlContext();
+            
+            // Update active panel
+            document.querySelectorAll('.account-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            
+            const panelId = accountId === null ? 'defaultPanel' : `account${accountId}Panel`;
+            document.getElementById(panelId).classList.add('active');
+        }
+
+        function testFlowStore(accountId) {
+            waitForFlowStore(() => {
+                const resultsId = accountId === null ? 'defaultResults' : `account${accountId}Results`;
+                const results = document.getElementById(resultsId);
+                let output = `Testing FlowStore for Account ${accountId || 'Default'}...\n\n`;
+
+                try {
+                    // Ensure we're in the right URL context
+                    simulateAccount(accountId);
+                    
+                    const flowStore = window.FlowStore.get();
+                    
+                    // Create a test flow
+                    const testFlow = {
+                        uuid: `test-flow-${accountId || 'default'}-${Date.now()}`,
+                        name: `Test Flow for Account ${accountId || 'Default'}`,
+                        language: 'eng',
+                        nodes: [
+                            {
+                                uuid: 'node-1',
+                                actions: [{
+                                    type: 'send_msg',
+                                    text: `Hello from Account ${accountId || 'Default'}!`,
+                                    uuid: 'action-1'
+                                }],
+                                exits: [{
+                                    uuid: 'exit-1',
+                                    destination_uuid: null
+                                }]
+                            }
+                        ],
+                        localization: {},
+                        _ui: {
+                            nodes: {},
+                            languages: {}
+                        }
+                    };
+
+                    // Test save
+                    flowStore.save(testFlow);
+                    output += `✓ Saved test flow: ${testFlow.uuid}\n`;
+                    output += `✓ Flow name: ${testFlow.name}\n`;
+
+                    // Test load
+                    const loadedFlow = flowStore.getFlowFromStore(testFlow.uuid);
+                    if (loadedFlow && loadedFlow.uuid === testFlow.uuid) {
+                        output += `✓ Successfully loaded flow: ${loadedFlow.uuid}\n`;
+                        output += `✓ Loaded flow name: ${loadedFlow.name}\n`;
+                        output += `✓ Node count: ${loadedFlow.nodes.length}\n`;
+                    } else {
+                        output += `✗ Failed to load saved flow\n`;
+                        output += `  Expected UUID: ${testFlow.uuid}\n`;
+                        output += `  Loaded: ${loadedFlow ? loadedFlow.uuid : 'null'}\n`;
+                    }
+
+                    // Show internal details
+                    output += `\nInternal Details:\n`;
+                    output += `- Account ID detected: ${flowStore.getAccountId ? 'method exists' : 'method missing'}\n`;
+                    output += `- Storage key method: ${flowStore.getStorageKey ? 'method exists' : 'method missing'}\n`;
+
+                    results.className = 'test-results success';
+
+                } catch (error) {
+                    output += `\n❌ Test error: ${error.message}\n`;
+                    output += `Stack: ${error.stack}\n`;
+                    results.className = 'test-results error';
+                }
+
+                results.textContent = output;
+            });
+        }
+
+        function runFullIsolationTest() {
+            waitForFlowStore(() => {
+                const results = document.getElementById('isolationResults');
+                let output = 'Running Complete Account Isolation Test...\n\n';
+
+                try {
+                    // Clear all existing data
+                    localStorage.clear();
+                    output += '✓ Cleared all localStorage data\n\n';
+
+                    const accounts = [1, 2, 3, null];
+                    const testFlows = {};
+                    let allTestsPassed = true;
+
+                    // Phase 1: Create and save flows for each account
+                    output += 'Phase 1: Creating flows for each account\n';
+                    accounts.forEach(accountId => {
+                        try {
+                            simulateAccount(accountId);
+                            const flowStore = window.FlowStore.get();
+                            
+                            const testFlow = {
+                                uuid: `isolation-test-${accountId || 'default'}-${Date.now()}`,
+                                name: `Isolation Test Flow for Account ${accountId || 'Default'}`,
+                                language: 'eng',
+                                nodes: [{
+                                    uuid: 'node-1',
+                                    actions: [{
+                                        type: 'send_msg',
+                                        text: `Secret message for Account ${accountId || 'Default'}`,
+                                        uuid: 'action-1'
+                                    }],
+                                    exits: [{ uuid: 'exit-1', destination_uuid: null }]
+                                }],
+                                localization: {},
+                                _ui: { nodes: {}, languages: {} },
+                                secretData: `TOP_SECRET_${accountId || 'DEFAULT'}`
+                            };
+
+                            flowStore.save(testFlow);
+                            testFlows[accountId || 'default'] = testFlow;
+                            output += `✓ Created flow for account ${accountId || 'default'}\n`;
+                        } catch (error) {
+                            output += `✗ Failed to create flow for account ${accountId || 'default'}: ${error.message}\n`;
+                            allTestsPassed = false;
+                        }
+                    });
+
+                    // Phase 2: Verify each account can only access its own data
+                    output += '\nPhase 2: Verifying account isolation\n';
+                    accounts.forEach(accountId => {
+                        try {
+                            simulateAccount(accountId);
+                            const flowStore = window.FlowStore.get();
+                            const expectedFlow = testFlows[accountId || 'default'];
+                            
+                            const loadedFlow = flowStore.getFlowFromStore(expectedFlow.uuid);
+                            
+                            if (!loadedFlow) {
+                                output += `✗ Account ${accountId || 'default'} failed to load its own flow\n`;
+                                allTestsPassed = false;
+                                return;
+                            }
+
+                            if (loadedFlow.uuid !== expectedFlow.uuid) {
+                                output += `✗ Account ${accountId || 'default'} loaded wrong flow UUID\n`;
+                                allTestsPassed = false;
+                                return;
+                            }
+
+                            if (loadedFlow.secretData !== expectedFlow.secretData) {
+                                output += `✗ Account ${accountId || 'default'} loaded corrupted secret data\n`;
+                                allTestsPassed = false;
+                                return;
+                            }
+
+                            output += `✓ Account ${accountId || 'default'} correctly isolated\n`;
+                        } catch (error) {
+                            output += `✗ Account ${accountId || 'default'} isolation test failed: ${error.message}\n`;
+                            allTestsPassed = false;
+                        }
+                    });
+
+                    // Phase 3: Verify cross-account protection
+                    output += '\nPhase 3: Verifying cross-account protection\n';
+                    // Try to access account 1's data from account 2
+                    simulateAccount(2);
+                    const account2Store = window.FlowStore.get();
+                    const account1Flow = testFlows[1];
+                    
+                    const crossAccessAttempt = account2Store.getFlowFromStore(account1Flow.uuid);
+                    if (crossAccessAttempt === null || crossAccessAttempt === undefined) {
+                        output += '✓ Cross-account access properly blocked\n';
+                    } else {
+                        output += `✗ Cross-account access breach detected!\n`;
+                        output += `  Account 2 accessed Account 1's flow: ${crossAccessAttempt.uuid}\n`;
+                        allTestsPassed = false;
+                    }
+
+                    if (allTestsPassed) {
+                        output += '\n🎉 ALL ISOLATION TESTS PASSED!\n';
+                        output += 'Account isolation is working correctly.\n';
+                        results.className = 'test-results success';
+                    } else {
+                        output += '\n❌ SOME ISOLATION TESTS FAILED!\n';
+                        output += 'Account isolation needs attention.\n';
+                        results.className = 'test-results error';
+                    }
+
+                } catch (error) {
+                    output += `\n❌ Test suite error: ${error.message}\n`;
+                    results.className = 'test-results error';
+                }
+
+                results.textContent = output;
+                monitorStorage(); // Update storage monitor
+            });
+        }
+
+        function monitorStorage() {
+            const monitor = document.getElementById('storageMonitor');
+            let output = 'Current localStorage Contents:\n\n';
+
+            try {
+                const flowKeys = [];
+                const otherKeys = [];
+
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key) {
+                        if (key.startsWith('flow')) {
+                            flowKeys.push(key);
+                        } else {
+                            otherKeys.push(key);
+                        }
+                    }
+                }
+
+                if (flowKeys.length > 0) {
+                    output += 'FlowStore Keys:\n';
+                    flowKeys.sort().forEach(key => {
+                        const value = localStorage.getItem(key);
+                        let preview = 'null';
+                        if (value) {
+                            try {
+                                const parsed = JSON.parse(value);
+                                preview = `{uuid: ${parsed.uuid || 'N/A'}, name: "${parsed.name || 'N/A'}", secretData: "${parsed.secretData || 'N/A'}"}`;
+                            } catch {
+                                preview = value.substring(0, 80) + (value.length > 80 ? '...' : '');
+                            }
+                        }
+                        output += `  ${key}: ${preview}\n`;
+                    });
+                    output += '\n';
+                } else {
+                    output += 'No FlowStore keys found.\n\n';
+                }
+
+                if (otherKeys.length > 0) {
+                    output += `Other Keys (${otherKeys.length}):\n`;
+                    otherKeys.sort().slice(0, 10).forEach(key => {
+                        output += `  ${key}\n`;
+                    });
+                    if (otherKeys.length > 10) {
+                        output += `  ... and ${otherKeys.length - 10} more\n`;
+                    }
+                }
+
+                monitor.className = 'test-results info';
+
+            } catch (error) {
+                output += `\n❌ Monitor error: ${error.message}\n`;
+                monitor.className = 'test-results error';
+            }
+
+            monitor.textContent = output;
+        }
+
+        function clearAllStorage() {
+            localStorage.clear();
+            monitorStorage();
+            
+            // Clear all test results
+            document.querySelectorAll('.test-results').forEach(element => {
+                if (element.id !== 'storageMonitor') {
+                    element.textContent = '';
+                    element.className = 'test-results';
+                }
+            });
+        }
+
+        // Auto-refresh storage monitor every 5 seconds
+        setInterval(monitorStorage, 5000);
+    </script>
+</body>
+</html>

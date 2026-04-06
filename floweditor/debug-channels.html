@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Channels Loading</title>
+</head>
+<body>
+    <h1>Debug Channels Loading</h1>
+    <div id="output"></div>
+    <br>
+    <button onclick="openFlowEditor()">Open FlowEditor</button>
+    <br><br>
+    <iframe id="floweditor" width="100%" height="600" style="border: 1px solid #ccc; display: none;"></iframe>
+    
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(message) {
+            console.log(message);
+            output.innerHTML += '<div>' + JSON.stringify(message) + '</div>';
+        }
+        
+        async function testChannelsEndpoint() {
+            log('Testing channels endpoint...');
+            
+            try {
+                const response = await fetch('/floweditor-api/accounts/1/flow_editor/channels');
+                log('Response status: ' + response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log('Channels data received:');
+                    log(data);
+                    
+                    if (data.results && Array.isArray(data.results)) {
+                        log('Number of channels: ' + data.results.length);
+                        data.results.forEach((channel, index) => {
+                            log(`Channel ${index + 1}: ${channel.name} (ID: ${channel.id})`);
+                        });
+                    }
+                } else {
+                    log('Error: ' + response.statusText);
+                }
+            } catch (error) {
+                log('Fetch error: ' + error.message);
+            }
+        }
+        
+        function openFlowEditor() {
+            const iframe = document.getElementById('floweditor');
+            iframe.src = '/';
+            iframe.style.display = 'block';
+            log('FlowEditor opened in iframe');
+        }
+        
+        // Test the endpoint when page loads
+        testChannelsEndpoint();
+    </script>
+</body>
+</html>

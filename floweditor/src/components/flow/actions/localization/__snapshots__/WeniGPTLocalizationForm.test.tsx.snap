@@ -1,0 +1,184 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WeniGPTLocalizationForm > should render wenigpt 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Call WeniGPT
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          data-spec="translation-container"
+        >
+          <div
+            class="_translate_from_604508"
+            data-spec="text-to-translate"
+          >
+            Hello
+          </div>
+        </div>
+        <div>
+          <div
+            class="_completion_wrapper_17662c"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-text-area sm normal _textarea_17662c"
+                data-testid="Message"
+                data-v-82a4b073=""
+              >
+                <!---->
+                <textarea
+                  data-v-82a4b073=""
+                  placeholder="English Translation"
+                  value=""
+                />
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_completion_options_Message"
+              id=""
+              style="margin-top: 1px; width: -24px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Ok
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`WeniGPTLocalizationForm > should render wenigpt with initial values 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "input": "hola",
+          },
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`WeniGPTLocalizationForm > should save updated expression translation 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "eng",
+      [
+        {
+          "translations": {
+            "input": "new message",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

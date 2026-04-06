@@ -1,0 +1,747 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SearchBar > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_search_card_bce88e"
+    >
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="display: inline-block;"
+      >
+        <svg
+          class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--neutral-dark _icon_bce88e"
+          data-v-930380cc=""
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="primary"
+            d="M34.0615 35.0005C33.8116 35.0005 33.5754 34.903 33.3992 34.7256L25.2575 26.5826C24.3065 27.3961 23.2355 28.0597 22.067 28.5559C20.5312 29.2082 18.9178 29.5394 17.272 29.5394C15.7011 29.5394 14.1578 29.2382 12.6819 28.6421C9.64389 27.4161 7.26574 25.0817 5.98481 22.0662C4.70388 19.052 4.67263 15.7178 5.89858 12.6811C7.12452 9.64433 9.45894 7.26492 12.4732 5.98399C14.009 5.33041 15.6211 5.00049 17.2682 5.00049C18.8391 5.00049 20.3825 5.30291 21.8583 5.89776C24.8963 7.12371 27.2745 9.45812 28.5554 12.4736C29.8363 15.4891 29.8676 18.822 28.6416 21.8588C28.1393 23.1035 27.4469 24.2444 26.5809 25.2554L34.7251 33.4009C35.09 33.7658 35.09 34.3606 34.7251 34.7268C34.5477 34.903 34.3115 35.0005 34.0615 35.0005ZM17.2682 6.87502C15.8748 6.87502 14.5077 7.15495 13.2068 7.70856C10.6524 8.79454 8.67413 10.809 7.63564 13.3821C6.59715 15.9552 6.6234 18.7783 7.70813 21.3327C8.7941 23.887 10.8086 25.8653 13.3817 26.9038C14.6326 27.4086 15.9411 27.6636 17.2707 27.6636C18.6641 27.6636 20.0313 27.3836 21.3322 26.83C22.5494 26.3127 23.6404 25.5828 24.5739 24.6606C24.5864 24.6431 24.6002 24.6281 24.6139 24.6143C24.6339 24.5943 24.6526 24.5781 24.6701 24.5656C25.6236 23.6021 26.381 22.4499 26.9021 21.1565C27.9406 18.5833 27.9143 15.7603 26.8283 13.2059C25.7436 10.6516 23.7279 8.67332 21.1548 7.63483C19.9063 7.13121 18.5979 6.87502 17.2682 6.87502Z"
+            fill="#3B414D"
+          />
+        </svg>
+      </div>
+      <div
+        class="_input_bce88e"
+        data-testid="searchInput"
+        id="searchBarInputElementDiv"
+      >
+        <div>
+          <div
+            class="_completion_wrapper_17662c"
+          >
+            <div
+              data-testid=""
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form sm"
+                  data-v-acea6376=""
+                >
+                  <!---->
+                  <div
+                    class="text-input size--sm unnnic-form-input"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                  >
+                    <input
+                      class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      placeholder="Search..."
+                      type="text"
+                      value=""
+                    />
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_completion_options_"
+              id=""
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_buttons_bce88e"
+      >
+        <div
+          class="_button_06a3b3"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <button
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
+              data-testid="downButton"
+              data-v-4cec5e43=""
+              disabled=""
+            >
+              <!---->
+              <!---->
+              <!---->
+              <span
+                class="unnnic-button__label"
+                data-v-4cec5e43=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="_icon_06a3b3"
+                  >
+                    <svg
+                      fill="none"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <mask
+                        height="21"
+                        id="mask0_4498_1599"
+                        maskUnits="userSpaceOnUse"
+                        width="20"
+                        x="0"
+                        y="0"
+                      >
+                        <rect
+                          fill="#D9D9D9"
+                          height="20"
+                          width="20"
+                          y="0.5"
+                        />
+                      </mask>
+                      <g
+                        mask="url(#mask0_4498_1599)"
+                      >
+                        <path
+                          d="M9.99593 13.0098C9.90661 13.0098 9.82355 12.9938 9.74674 12.9617C9.66992 12.9297 9.59946 12.8816 9.53537 12.8175L5.67222 8.95433C5.55214 8.83426 5.49423 8.70425 5.49851 8.56429C5.50278 8.42433 5.56528 8.29399 5.68601 8.17327C5.80673 8.05255 5.93573 7.99219 6.07301 7.99219C6.21029 7.99219 6.33929 8.05255 6.46001 8.17327L10.0001 11.7342L13.561 8.17327C13.6764 8.05789 13.8041 8.00234 13.944 8.0066C14.084 8.01088 14.2143 8.07338 14.335 8.1941C14.4557 8.31483 14.5161 8.44383 14.5161 8.58112C14.5161 8.7184 14.4534 8.84936 14.328 8.974L10.4648 12.8175C10.3952 12.8816 10.3219 12.9297 10.2451 12.9617C10.1683 12.9938 10.0852 13.0098 9.99593 13.0098Z"
+                          fill="#D0D3D9"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                
+                 
+              </span>
+              <!---->
+            </button>
+          </div>
+        </div>
+        <div
+          class="_button_06a3b3"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <button
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
+              data-testid="upButton"
+              data-v-4cec5e43=""
+              disabled=""
+            >
+              <!---->
+              <!---->
+              <!---->
+              <span
+                class="unnnic-button__label"
+                data-v-4cec5e43=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="_icon_06a3b3"
+                  >
+                    <svg
+                      fill="none"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      width="20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="expand_less"
+                      >
+                        <mask
+                          height="21"
+                          id="mask0_4498_1608"
+                          maskUnits="userSpaceOnUse"
+                          width="20"
+                          x="0"
+                          y="0"
+                        >
+                          <rect
+                            fill="#D9D9D9"
+                            height="20"
+                            id="Bounding box"
+                            width="20"
+                            y="0.5"
+                          />
+                        </mask>
+                        <g
+                          mask="url(#mask0_4498_1608)"
+                        >
+                          <path
+                            d="M9.99991 9.28193L6.43899 12.8428C6.32362 12.9582 6.19595 13.0173 6.05599 13.0199C5.91605 13.0226 5.78571 12.9636 5.66499 12.8428C5.54426 12.7221 5.48389 12.5931 5.48389 12.4558C5.48389 12.3186 5.5466 12.1872 5.67203 12.0618L9.53518 8.19864C9.60483 8.13454 9.67807 8.08647 9.75489 8.05441C9.83169 8.02237 9.91476 8.00635 10.0041 8.00635C10.0934 8.00635 10.1765 8.02237 10.2533 8.05441C10.3301 8.08647 10.4005 8.13454 10.4646 8.19864L14.3278 12.0618C14.4479 12.1819 14.5092 12.3084 14.5119 12.4414C14.5146 12.5744 14.4556 12.7013 14.3348 12.822C14.2141 12.9427 14.0851 13.0031 13.9478 13.0031C13.8105 13.0031 13.6815 12.9427 13.5608 12.822L9.99991 9.28193Z"
+                            fill="#D0D3D9"
+                            id="expand_less_2"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                
+                 
+              </span>
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+      <span
+        class="_number_bce88e"
+        data-testid="matchCount"
+      >
+        0/0
+      </span>
+      <div
+        class="_close_bce88e"
+      >
+        <div
+          class="_closeButton_e9883f"
+        >
+          <div
+            data-use-vue-component-wrap=""
+            data-v-app=""
+          >
+            <button
+              class="unnnic-button unnnic-button--size-small unnnic-button--tertiary"
+              data-testid="closeButton"
+              data-v-4cec5e43=""
+            >
+              <!---->
+              <!---->
+              <!---->
+              <span
+                class="unnnic-button__label"
+                data-v-4cec5e43=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="_closeIcon_e9883f"
+                  >
+                    <svg
+                      fill="none"
+                      height="14"
+                      viewBox="0 0 13 14"
+                      width="13"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.34422 7.89805L1.27112 12.9711C1.13267 13.1096 0.958641 13.1804 0.749025 13.1836C0.539425 13.1868 0.362191 13.116 0.217325 12.9711C0.0724415 12.8263 0 12.6506 0 12.4442C0 12.2378 0.0724415 12.0622 0.217325 11.9173L5.2904 6.84422L0.217325 1.77112C0.0788582 1.63267 0.00802483 1.45864 0.00482483 1.24902C0.00160816 1.03943 0.0724415 0.862191 0.217325 0.717325C0.362191 0.572442 0.537825 0.5 0.744225 0.5C0.950625 0.5 1.12626 0.572442 1.27112 0.717325L6.34422 5.7904L11.4173 0.717325C11.5558 0.578858 11.7298 0.508025 11.9394 0.504825C12.149 0.501608 12.3263 0.572442 12.4711 0.717325C12.616 0.862191 12.6884 1.03782 12.6884 1.24422C12.6884 1.45062 12.616 1.62626 12.4711 1.77112L7.39805 6.84422L12.4711 11.9173C12.6096 12.0558 12.6804 12.2298 12.6836 12.4394C12.6868 12.649 12.616 12.8263 12.4711 12.9711C12.3263 13.116 12.1506 13.1884 11.9442 13.1884C11.7378 13.1884 11.5622 13.116 11.4173 12.9711L6.34422 7.89805Z"
+                        fill="#67738B"
+                        id="close"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                
+                 
+              </span>
+              <!---->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_node_container_108c8d plumb-drag"
+      id="11f18b66-37ce-43f0-a74e-4638eb7e5921"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-bbb43f9d-d254-44ef-a9d1-7a3e392f972c"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _send_msg_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _send_msg_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      teste1
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+                id="11f18b66-37ce-43f0-a74e-4638eb7e5921:07e2e3d2-d7cb-4905-93b8-50598ec4fdf3"
+              />
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_node_container_108c8d plumb-drag"
+      id="f5804ae2-2103-4b55-b17a-129b359d39a2"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-77e4f770-42ad-4573-95cf-f7d96a020dd9"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _send_msg_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _send_msg_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      teste2
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="f5804ae2-2103-4b55-b17a-129b359d39a2:72e44e5c-777e-41de-a35c-c52f418d6c6c"
+              />
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_node_container_108c8d plumb-drag"
+      id="2eeba668-b742-4982-b8da-2cb3726903e5"
+    >
+      <div
+        class="_node_108c8d _execute_actions_108c8d"
+      >
+        <div
+          class="_counter_632b48 _active_108c8d _clickable_632b48 "
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class=""
+            data-spec="counter-inner"
+          >
+            0
+          </div>
+        </div>
+        <div
+          class="_cropped_108c8d"
+        >
+          <div
+            style="position: relative;"
+          >
+            <div
+              class="_action_604508 _localized_604508 _send_msg_604508"
+              data-spec="action-container"
+              id="action-87e4f770-42ad-4573-95cf-f7d96a020dd9"
+            >
+              <div
+                class="_overlay_604508"
+                data-spec="action-overlay"
+              />
+              <div
+                data-spec="interactive-div"
+              >
+                <div
+                  class="_titlebar_122edd null"
+                  data-spec="titlebar-container"
+                >
+                  <div
+                    class="_normal_122edd _send_msg_9658e1 null"
+                    data-spec="titlebar"
+                  >
+                    <div
+                      class="_up_button_122edd"
+                      data-spec="move"
+                    />
+                    <div
+                      class="_titletext_122edd u font secondary body-md bold"
+                    >
+                      Send message
+                    </div>
+                    <div
+                      class="_remove_button_122edd"
+                      data-testid="remove-icon"
+                    >
+                      <div
+                        data-use-vue-component-wrap=""
+                        data-v-app=""
+                        style="all: unset;"
+                      >
+                        <svg
+                          class="unnnic-icon unnnic-icon__size--xs unnnic-icon-scheme--neutral-snow"
+                          data-v-930380cc=""
+                          fill="none"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          width="40"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            class="primary"
+                            d="M34.0592 34.9982C33.9361 34.9985 33.8142 34.9744 33.7004 34.9272C33.5867 34.88 33.4835 34.8107 33.3969 34.7232L19.9995 21.3271L6.60213 34.7232C6.51561 34.811 6.4125 34.8808 6.29879 34.9284C6.18507 34.976 6.06303 35.0005 5.93976 35.0005C5.81648 35.0005 5.69444 34.976 5.58073 34.9284C5.46701 34.8808 5.3639 34.811 5.27739 34.7232C5.10209 34.5471 5.00367 34.3087 5.00367 34.0602C5.00367 33.8117 5.10209 33.5734 5.27739 33.3972L18.6748 19.9999L5.27739 6.60374C5.09992 6.42753 5.00244 6.19132 5.00244 5.94137C5.00244 5.69142 5.09992 5.45522 5.27739 5.279C5.4536 5.10154 5.68981 5.00406 5.93976 5.00406C6.18971 5.00406 6.42591 5.10154 6.60213 5.279L19.9995 18.6751L33.3969 5.27775C33.4834 5.18994 33.5865 5.1202 33.7002 5.0726C33.8139 5.025 33.936 5.00049 34.0592 5.00049C34.1825 5.00049 34.3046 5.025 34.4183 5.0726C34.532 5.1202 34.6351 5.18994 34.7216 5.27775C34.8092 5.36454 34.8787 5.46782 34.9261 5.58161C34.9735 5.69541 34.9979 5.81747 34.9979 5.94075C34.9979 6.06403 34.9735 6.18609 34.9261 6.29988C34.8787 6.41367 34.8092 6.51695 34.7216 6.60374L21.3242 20.0011L34.7216 33.3985C34.8969 33.5746 34.9953 33.813 34.9953 34.0615C34.9953 34.31 34.8969 34.5484 34.7216 34.7245C34.6347 34.8115 34.5315 34.8805 34.4178 34.9275C34.3041 34.9745 34.1822 34.9985 34.0592 34.9982Z"
+                            fill="#3B414D"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_body_604508 _send_msg_604508 "
+                  data-spec="action-body"
+                >
+                  <div>
+                    <div
+                      class="_line_eeabad"
+                    >
+                      different
+                    </div>
+                    <div
+                      class="_icons_eeabad"
+                    />
+                  </div>
+                  <div
+                    class=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="_exit_table_108c8d"
+        >
+          <div
+            class="_exits_108c8d"
+          >
+            <div
+              class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          _has-background_d88b3c
+          null 
+        "
+            >
+              <div
+                class="__endpoint_d88b3c_d88b3c"
+                id="2eeba668-b742-4982-b8da-2cb3726903e5:82e44e5c-777e-41de-a35c-c52f418d6c6c"
+              />
+            </div>
+          </div>
+          <div
+            class="_add_108c8d"
+            data-testid="add-action"
+          >
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <svg
+                class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-darkest"
+                data-v-930380cc=""
+                fill="none"
+                height="40"
+                viewBox="0 0 40 40"
+                width="40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="primary"
+                  d="M20 35.0005C19.4825 35.0005 19.0625 34.5805 19.0625 34.063V20.938H5.9375C5.42 20.938 5 20.518 5 20.0005C5 19.483 5.42 19.063 5.9375 19.063H19.0625V5.93799C19.0625 5.42049 19.4825 5.00049 20 5.00049C20.5175 5.00049 20.9375 5.42049 20.9375 5.93799V19.063H34.0625C34.58 19.063 35 19.483 35 20.0005C35 20.518 34.58 20.938 34.0625 20.938H20.9375V34.063C20.9375 34.5805 20.5175 35.0005 20 35.0005Z"
+                  fill="#3B414D"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

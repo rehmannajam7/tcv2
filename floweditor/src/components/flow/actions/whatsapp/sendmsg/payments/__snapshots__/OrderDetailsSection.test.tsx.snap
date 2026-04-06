@@ -1,0 +1,2173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OrderDetailsSection > should render 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Reference ID
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Reference ID"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="Input the order unique identifier"
+                        type="text"
+                        value="123"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Reference ID"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Item List
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Item List"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="eg., @results.item_list"
+                        type="text"
+                        value="@results.items"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Item List"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="_payment_type_label_806df4"
+            >
+              Payment type
+            </p>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--brand-weni unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary"
+                    cx="20"
+                    cy="20.0005"
+                    fill="#3B414D"
+                    r="15"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20.0005"
+                    fill="white"
+                    r="6.66667"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Physical goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--neutral-cleanest unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary-stroke"
+                    cx="20"
+                    cy="20.0005"
+                    r="14.5"
+                    stroke="#3B414D"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Digital goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_collapse_0dd17b  "
+          >
+            <div
+              class="_collapse_title_wrapper_0dd17b"
+            >
+              <div
+                class="_collapse_header_0dd17b"
+                data-testid="Payment settings"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="display: flex;"
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                    data-v-930380cc=""
+                  >
+                    check_circle
+                  </span>
+                </div>
+                <span
+                  class=""
+                >
+                  Payment settings
+                </span>
+                <span
+                  class="_optional_0dd17b"
+                >
+                  (Optional)
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should render 2`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Reference ID
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Reference ID"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="Input the order unique identifier"
+                        type="text"
+                        value="123"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Reference ID"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Item List
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Item List"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="eg., @results.item_list"
+                        type="text"
+                        value="@results.items"
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Item List"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="_payment_type_label_806df4"
+            >
+              Payment type
+            </p>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--brand-weni unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary"
+                    cx="20"
+                    cy="20.0005"
+                    fill="#3B414D"
+                    r="15"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20.0005"
+                    fill="white"
+                    r="6.66667"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Physical goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--neutral-cleanest unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary-stroke"
+                    cx="20"
+                    cy="20.0005"
+                    r="14.5"
+                    stroke="#3B414D"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Digital goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_collapse_0dd17b  "
+          >
+            <div
+              class="_collapse_title_wrapper_0dd17b"
+            >
+              <div
+                class="_collapse_header_0dd17b"
+                data-testid="Payment settings"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="display: flex;"
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                    data-v-930380cc=""
+                  >
+                    check_circle
+                  </span>
+                </div>
+                <span
+                  class=""
+                >
+                  Payment settings
+                </span>
+                <span
+                  class="_optional_0dd17b"
+                >
+                  (Optional)
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div
+                class="_payment_settings_806df4"
+              >
+                <div
+                  class="_row_fields_806df4"
+                >
+                  <div
+                    class="_small_806df4"
+                  >
+                    <div>
+                      <span
+                        class="_label_17662c"
+                      >
+                        Discount value
+                      </span>
+                      <div
+                        class="_completion_wrapper_17662c"
+                      >
+                        <div
+                          data-testid="Discount value"
+                        >
+                          <div
+                            data-use-vue-component-wrap=""
+                            data-v-app=""
+                            style="all: unset;"
+                          >
+                            <div
+                              class="unnnic-form sm"
+                              data-v-acea6376=""
+                            >
+                              <!---->
+                              <div
+                                class="text-input size--sm unnnic-form-input"
+                                data-v-acea6376=""
+                                data-v-df38a188=""
+                                mask=""
+                              >
+                                <input
+                                  class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                  data-v-bf6639b4=""
+                                  data-v-df38a188=""
+                                  hascloudycolor="false"
+                                  placeholder="5.99"
+                                  type="text"
+                                  value="3000"
+                                />
+                                <!---->
+                                <!---->
+                              </div>
+                              <!---->
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="_options_wrapper_08dd12"
+                          data-testid="temba_completion_options_Discount value"
+                          id=""
+                          style="margin-top: 0px; width: 0px; display: none;"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Discount program name
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Discount program name"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="e.g., Summer Sale, VIP Discount"
+                                type="text"
+                                value="program"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Discount program name"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Discount description
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Discount description"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="e.g., 10% off on all eletronics"
+                                type="text"
+                                value="discount"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Discount description"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_divider_806df4"
+                />
+                <div
+                  class="_row_fields_806df4"
+                >
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Shipping value
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Shipping value"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="9.99"
+                                type="text"
+                                value="2000"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Shipping value"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Shipping description
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Shipping description"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="e.g., Standard shipping (5-7 days)"
+                                type="text"
+                                value="shipping"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Shipping description"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="_divider_806df4"
+                />
+                <div
+                  class="_row_fields_806df4"
+                >
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Tax value
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Tax value"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="0"
+                                type="text"
+                                value="1000"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Tax value"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <span
+                      class="_label_17662c"
+                    >
+                      Tax description
+                    </span>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="Tax description"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="e.g., 10% tax on all products"
+                                type="text"
+                                value="tax"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_Tax description"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should render 3`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div
+            class="_collapses_wrapper_806df4"
+          >
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="Pay with card"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    Pay with card
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="Copy pix code"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    Copy pix code
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="_payment_buttons_error_806df4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should render errors 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Reference ID
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Reference ID"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="Input the order unique identifier"
+                        type="text"
+                        value=""
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Reference ID"
+                id=""
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Item List
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Item List"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="eg., @results.item_list"
+                        type="text"
+                        value=""
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Item List"
+                id=""
+                style="margin-top: 0px; width: -24px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="_payment_type_label_806df4"
+            >
+              Payment type
+            </p>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--brand-weni unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary"
+                    cx="20"
+                    cy="20.0005"
+                    fill="#3B414D"
+                    r="15"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20.0005"
+                    fill="white"
+                    r="6.66667"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Physical goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--neutral-cleanest unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary-stroke"
+                    cx="20"
+                    cy="20.0005"
+                    r="14.5"
+                    stroke="#3B414D"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Digital goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_collapse_0dd17b  "
+          >
+            <div
+              class="_collapse_title_wrapper_0dd17b"
+            >
+              <div
+                class="_collapse_header_0dd17b"
+                data-testid="Payment settings"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="display: flex;"
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-soft unnnic-icon-size--md material-symbols-rounded--filled"
+                    data-v-930380cc=""
+                  >
+                    check_circle
+                  </span>
+                </div>
+                <span
+                  class=""
+                >
+                  Payment settings
+                </span>
+                <span
+                  class="_optional_0dd17b"
+                >
+                  (Optional)
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should render errors 2`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div
+            class="_collapses_wrapper_806df4"
+          >
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="Pay with card"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-soft unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    Pay with card
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="Copy pix code"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-soft unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    Copy pix code
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="_payment_buttons_error_806df4"
+            >
+              At least one payment button is required
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should render without any orderDetails data 1`] = `
+<body>
+  <div>
+    <div>
+      <div
+        data-use-vue-component-wrap=""
+        data-v-app=""
+        style="all: unset;"
+      >
+        <div
+          class="tab size-sm _tabs_806df4"
+          data-v-1389f531=""
+        >
+          <header
+            class="tab-header"
+            data-v-1389f531=""
+          >
+            <ul
+              class="tab-content"
+              data-v-1389f531=""
+            >
+              
+              <li
+                class="tab-head tab-head--active"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Order details
+                </div>
+                
+                <!---->
+              </li>
+              <li
+                class="tab-head"
+                data-v-1389f531=""
+              >
+                
+                <div
+                  __use_react_component_wrap=""
+                  style="all: unset;"
+                >
+                  Payment buttons
+                </div>
+                
+                <!---->
+              </li>
+              
+            </ul>
+          </header>
+          <main
+            class="tab-body"
+            data-v-1389f531=""
+          >
+            <div
+              class="tab-panel"
+              data-v-1389f531=""
+            >
+              
+              
+            </div>
+          </main>
+        </div>
+      </div>
+      <div>
+        <div
+          class="_tab_settings_806df4"
+        >
+          <p
+            class="_description_806df4"
+          >
+            Configure the values ​​below with their respective variables
+          </p>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Reference ID
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Reference ID"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="Input the order unique identifier"
+                        type="text"
+                        value=""
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Reference ID"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <span
+              class="_label_17662c"
+            >
+              Item List
+            </span>
+            <div
+              class="_completion_wrapper_17662c"
+            >
+              <div
+                data-testid="Item List"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm unnnic-form-input"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        placeholder="eg., @results.item_list"
+                        type="text"
+                        value=""
+                      />
+                      <!---->
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_completion_options_Item List"
+                id=""
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+          <div>
+            <p
+              class="_payment_type_label_806df4"
+            >
+              Payment type
+            </p>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--brand-weni unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary"
+                    cx="20"
+                    cy="20.0005"
+                    fill="#3B414D"
+                    r="15"
+                  />
+                  <circle
+                    cx="20"
+                    cy="20.0005"
+                    fill="white"
+                    r="6.66667"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Physical goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+            <div
+              data-use-vue-component-wrap=""
+              data-v-app=""
+              style="all: unset;"
+            >
+              <div
+                class="unnnic-radio-container unnnic-radio-container--md"
+                data-v-5abeb7d3=""
+              >
+                <svg
+                  class="unnnic-icon unnnic-icon__size--md unnnic-icon-scheme--neutral-cleanest unnnic-radio"
+                  data-v-5abeb7d3=""
+                  data-v-930380cc=""
+                  fill="none"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  width="40"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    class="primary-stroke"
+                    cx="20"
+                    cy="20.0005"
+                    r="14.5"
+                    stroke="#3B414D"
+                  />
+                </svg>
+                <span
+                  class="label"
+                  data-v-5abeb7d3=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    <span
+                      class="color-neutral-cloudy"
+                    >
+                      Digital goods
+                    </span>
+                  </div>
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_collapse_0dd17b  "
+          >
+            <div
+              class="_collapse_title_wrapper_0dd17b"
+            >
+              <div
+                class="_collapse_header_0dd17b"
+                data-testid="Payment settings"
+              >
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="display: flex;"
+                >
+                  <span
+                    class="material-symbols-rounded unnnic-icon-scheme--neutral-soft unnnic-icon-size--md material-symbols-rounded--filled"
+                    data-v-930380cc=""
+                  >
+                    check_circle
+                  </span>
+                </div>
+                <span
+                  class=""
+                >
+                  Payment settings
+                </span>
+                <span
+                  class="_optional_0dd17b"
+                >
+                  (Optional)
+                </span>
+                <div
+                  class="_collapse_icon_0dd17b"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                      data-v-930380cc=""
+                    >
+                      expand_more
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`OrderDetailsSection > should update order details 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "discount": {
+          "description": "new discount",
+          "program_name": "new program",
+          "value": "4000",
+        },
+        "item_list": "@result.new_items",
+        "payment_settings": {
+          "payment_link": "https://weni.ai/new",
+          "pix_config": {
+            "code": "new code",
+            "key": "new key",
+            "key_type": "new random",
+            "merchant_name": "new merchant",
+          },
+          "type": "digital-goods",
+        },
+        "reference_id": "456",
+        "shipping": {
+          "description": "new shipping",
+          "value": "3000",
+        },
+        "tax": {
+          "description": "new tax",
+          "value": "2000",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

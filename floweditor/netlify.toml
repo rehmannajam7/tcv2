@@ -1,0 +1,30 @@
+[build]
+  command = "yarn run netlify"
+  publish = "build"
+  functions = "lambda-build"
+
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  targetPort = 3001
+
+[[redirects]]
+  from = "/api/flow-definitions/*"
+  to = "/.netlify/functions/flow-definitions"
+  status = 200
+
+[[redirects]]
+  from = "/api/flow-definitions"
+  to = "/.netlify/functions/flow-definitions"
+  status = 200
+
+[[redirects]]
+  from = "/api/flows/*"
+  to = "/.netlify/functions/flows"
+  status = 200
+
+[[redirects]]
+  from = "/api/flows"
+  to = "/.netlify/functions/flows"
+  status = 200

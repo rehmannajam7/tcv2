@@ -1,0 +1,334 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`helpers > prefix > should prefix "has a date after" operator appropriately 1`] = `"After "`;
+
+exports[`helpers > prefix > should prefix "has a date before" operator appropriately 1`] = `"Before "`;
+
+exports[`helpers > prefix > should prefix "has a date equal to" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a date" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a number above" operator appropriately 1`] = `">"`;
+
+exports[`helpers > prefix > should prefix "has a number at or above" operator appropriately 1`] = `">= "`;
+
+exports[`helpers > prefix > should prefix "has a number at or below" operator appropriately 1`] = `"<= "`;
+
+exports[`helpers > prefix > should prefix "has a number below" operator appropriately 1`] = `"< "`;
+
+exports[`helpers > prefix > should prefix "has a number between" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a number equal to" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a number" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a phone number" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has a time" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has all of the words" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has an email" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has an error" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has any of the words" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has district" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has only the phrase" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has some text" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has state" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has the category" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has the phrase" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "has ward" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "is in the group" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "is not empty" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "matches regex" operator appropriately 1`] = `""`;
+
+exports[`helpers > prefix > should prefix "starts with" operator appropriately 1`] = `""`;
+
+exports[`helpers > validateCase > cross validates min - max 1`] = `
+{
+  "argument": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "50 - 3",
+  },
+  "categoryNameEdited": false,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [
+      {
+        "message": "Maximum value must be a more than the minimum",
+      },
+    ],
+    "value": "3",
+  },
+  "min": {
+    "validationFailures": [
+      {
+        "message": "Minimum value must be less than the maximum",
+      },
+    ],
+    "value": "50",
+  },
+  "operatorConfig": {
+    "operands": 2,
+    "type": "has_number_between",
+    "verboseName": "has a number between",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`helpers > validateCase > does not require arguments without an exit 1`] = `
+{
+  "argument": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryNameEdited": false,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "min": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "operatorConfig": {
+    "operands": 1,
+    "type": "has_any_word",
+    "verboseName": "has any of the words",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`helpers > validateCase > does not suggest an empty range for exit name, ie " - " 1`] = `
+{
+  "argument": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryNameEdited": false,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "min": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "operatorConfig": {
+    "operands": 2,
+    "type": "has_number_between",
+    "verboseName": "has a number between",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`helpers > validateCase > requires arguments when exit is set 1`] = `
+{
+  "argument": {
+    "validationFailures": [
+      {
+        "message": "Value is required",
+      },
+    ],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "My Exit",
+  },
+  "categoryNameEdited": true,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "min": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "operatorConfig": {
+    "operands": 1,
+    "type": "has_any_word",
+    "verboseName": "has any of the words",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": false,
+}
+`;
+
+exports[`helpers > validateCase > suggests min - max exits 1`] = `
+{
+  "argument": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "5 - 40",
+  },
+  "categoryNameEdited": false,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [],
+    "value": "40",
+  },
+  "min": {
+    "validationFailures": [],
+    "value": "5",
+  },
+  "operatorConfig": {
+    "operands": 2,
+    "type": "has_number_between",
+    "verboseName": "has a number between",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": true,
+}
+`;
+
+exports[`helpers > validateCase > suggests operator exit names for no operands 1`] = `
+{
+  "argument": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "categoryName": {
+    "validationFailures": [],
+    "value": "Has Text",
+  },
+  "categoryNameEdited": false,
+  "confidence": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "district": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "intent": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "max": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "min": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "operatorConfig": {
+    "categoryName": "Has Text",
+    "operands": 0,
+    "type": "has_text",
+    "verboseName": "has some text",
+  },
+  "state": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "valid": true,
+}
+`;

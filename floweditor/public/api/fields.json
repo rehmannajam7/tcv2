@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "key": "name",
+      "name": "Full Name",
+      "value_type": "text"
+    },
+    {
+      "key": "email",
+      "name": "Email Address", 
+      "value_type": "text"
+    },
+    {
+      "key": "phone",
+      "name": "Phone Number",
+      "value_type": "text"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SetRunResultComp > should render save placeholder when value prop passed 1`] = `
+<div>
+  Save
+   
+  <span
+    className="emphasize"
+  >
+    Grace
+  </span>
+   
+  as
+   
+  <span
+    className="emphasize"
+  >
+    Name
+  </span>
+</div>
+`;
+
+exports[`SetRunResultComp > should render with clear placholder when value prop isn't passed 1`] = `
+<div>
+  Clear value for 
+  <span
+    className="emphasize"
+  >
+    Name
+  </span>
+</div>
+`;

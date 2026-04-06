@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CallWeniGPTComp > should render save placeholder when result prop passed 1`] = `
+<div>
+  Save
+   
+  as
+   
+  <span
+    className="emphasize"
+  >
+    Result
+  </span>
+</div>
+`;

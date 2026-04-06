@@ -1,0 +1,120 @@
+@import 'src/variables.module.scss';
+
+$revision_color: $purple;
+
+.hidden {
+  visibility: hidden;
+  z-index: 0;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  display: none;
+  z-index: -1;
+  transition: opacity 0.6s;
+}
+
+.visible {
+  .mask {
+    opacity: 1;
+    display: block;
+    z-index: $z_pop_tabs + 1;
+  }
+}
+
+.explorer_wrapper {
+  transition: 0.2s ease-in-out;
+  color: $light_gray_2;
+  font-weight: 300;
+
+  .explorer {
+    width: 250px;
+    overflow: hidden;
+
+    .revisions {
+      height: 325px;
+      padding-right: $unnnic-spacing-inline-sm;
+      overflow-y: overlay;
+      overflow-x: hidden;
+
+      &::-webkit-scrollbar {
+        width: $unnnic-spacing-inline-nano;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $unnnic-color-neutral-clean;
+        border-radius: $unnnic-border-radius-pill;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $unnnic-color-neutral-soft;
+        border-radius: $unnnic-border-radius-pill;
+      }
+
+      .revision {
+        border-radius: $unnnic-border-radius-sm;
+        color: $text_color;
+        padding: 0.5 * $unnnic-font-size;
+        display: flex;
+        flex-direction: column;
+        row-gap: $unnnic-spacing-stack-nano;
+
+        &.selected {
+          background: $unnnic-color-background-carpet;
+        }
+
+        &:hover {
+          background: $unnnic-color-background-carpet;
+          cursor: pointer;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          column-gap: $unnnic-spacing-inline-xs;
+        }
+
+        .button {
+          border-radius: 30px;
+          padding: 3px 5px;
+          position: relative;
+          font-size: 9px;
+          letter-spacing: 1px;
+          font-weight: 400;
+          top: 7px;
+          background: lighten($revision_color, 5%);
+          color: $light_gray_2;
+          width: 36px;
+          text-align: center;
+          float: right;
+
+          &:hover {
+            background: lighten($revision_color, 10%);
+          }
+
+          &.current {
+            background: $light_gray;
+            color: #999;
+          }
+        }
+
+        .tag {
+          background-color: $unnnic-color-neutral-soft;
+          border-radius: $unnnic-border-radius-lg;
+          padding: 0.125 * $unnnic-font-size 0.75 * $unnnic-font-size;
+          text-transform: capitalize;
+
+          &.revert {
+            background-color: $unnnic-color-brand-weni-soft;
+          }
+        }
+      }
+    }
+  }
+}

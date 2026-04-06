@@ -1,0 +1,106 @@
+@import '../../../../variables.module.scss';
+
+
+
+.header {
+  display: flex;
+  gap: $unnnic-spacing-sm;
+  flex-direction: row;
+  width: 100%;
+  color: $unnnic-color-neutral-dark;
+
+    .header_type {
+      display: flex;
+      flex-direction: column;
+      span {
+        margin-bottom: $unnnic-spacing-stack-nano;
+      }
+    }
+    
+    .header_text{
+      width: 100%;
+    }
+
+    .header_media{
+      display: flex;
+      width: 100%;
+
+      .attachment {
+        display: flex;
+        width: 100%;
+        gap: $unnnic-spacing-inline-xs;
+        align-items: center;
+        color: $unnnic-color-neutral-cloudy;
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+      
+        .attachment_url{
+          width: 100%;
+        }
+      
+        .remove {
+          span {
+            font-size: 20px !important;
+          }
+        }
+      }
+    }
+
+}
+
+.attachment_file{
+  display: flex;
+  align-items: center;
+  color: $unnnic-color-neutral-cloudy;
+  font-size: $unnnic-font-size-body-md;
+  font-weight: $unnnic-font-weight-bold;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+
+  .remove {
+    span {
+      font-size: 20px !important;
+    }
+  }
+}
+
+
+
+.interactions_tab {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-stack-sm;
+}
+
+.interaction_type {
+  display: flex;
+}
+
+.location_message {
+  textarea {
+    color: $unnnic-color-neutral-cleanest !important;
+    border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft !important;
+    background-color: transparent !important;
+  }
+}
+
+.cta_inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $unnnic-spacing-sm;
+}
+
+.translate_from {
+  background: $translation_bg;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid darken($translation_bg, 5%);
+  margin-bottom: 12px;
+
+  .pill{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}

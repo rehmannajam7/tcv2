@@ -1,0 +1,151 @@
+@import 'src/variables.module.scss';
+
+$spacing: 10px;
+
+.group {
+  padding-bottom: 0 !important;
+  margin-bottom: 0px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+.divider {
+  padding-left: $unnnic-spacing-inline-xs;
+  padding-right: $unnnic-spacing-inline-xs;
+  vertical-align: sub;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.kase {
+  box-sizing: unset !important;
+  display: flex;
+  user-select: none;
+  flex: 1;
+
+  display: flex;
+  column-gap: $unnnic-spacing-inline-xs;
+
+  .form_group {
+    margin: 0;
+  }
+
+  .move_icon {
+    margin-top: 8px;
+  }
+
+  .categorize_as {
+    margin-top: 8px;
+  }
+
+  .choice {
+    flex: 1;
+
+    :global {
+      .unnnic-select {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .single_operand {
+    flex: 1;
+
+    :global {
+      input {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .multi_operand {
+    flex: 1;
+    display: flex;
+
+    :global {
+      input {
+        width: 100% !important;
+        min-width: 77.7px;
+      }
+    }
+  }
+
+  .no_argument {
+    display: none;
+  }
+
+  .expanded_category {
+    flex: 1 1;
+    margin-left: 16px;
+    flex-grow: 1.06;
+  }
+
+  .category {
+    position: relative;
+    padding: 1px 0;
+    flex: 1;
+  }
+
+  .category_wrapper {
+    flex: 1;
+  }
+
+  &:hover {
+    .remove_icon {
+      opacity: 1;
+    }
+
+    .dnd_icon {
+      opacity: 1;
+    }
+  }
+
+  input {
+    padding: 6px 7px;
+  }
+
+  .relative_date {
+    display: inline-block;
+    width: 50px;
+
+    input {
+      width: 50px;
+    }
+  }
+}
+
+.dnd_icon {
+  color: #aaa;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-right: 2px;
+  padding-left: 5px;
+  float: left;
+  opacity: 0;
+  font-size: 9px;
+  line-height: 9px;
+}
+
+.remove_icon_wrapper {
+  margin-top: 12px;
+}
+
+.remove_icon {
+  color: #aaa;
+  float: right;
+  line-height: 12px;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+.empty {
+  display: inline-block;
+  width: 15px;
+}
+
+[data-draggable='true'] {
+  cursor: pointer;
+}

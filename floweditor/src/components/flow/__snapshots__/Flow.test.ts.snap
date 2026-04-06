@@ -1,0 +1,93 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Flow > helpers > getDragStyle > should return style object for drag selection box 1`] = `
+{
+  "height": 211,
+  "left": 270,
+  "top": 91,
+  "width": 230,
+}
+`;
+
+exports[`Flow > instance methods > onConnectorDrop > should do NodeEditor work if the user is not dragging back 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "46e8d603-8e5d-4435-97dd-1333291aafca:8653ac06-00ba-4890-a79f-d30f3a55193b",
+      "30ad731f-64ce-43c6-96bf-7690256ef35e",
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Flow > instance methods > onConnectorDrop > should do NodeEditor work if the user is not dragging back 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "originalAction": {
+          "text": "",
+          "type": "send_msg",
+          "uuid": "c5f52dd5-48ae-4b63-a76f-4407149d1f73",
+        },
+        "originalNode": {
+          "ghost": true,
+          "inboundConnections": {
+            "8653ac06-00ba-4890-a79f-d30f3a55193b": "46e8d603-8e5d-4435-97dd-1333291aafca",
+          },
+          "node": {
+            "actions": [
+              {
+                "text": "",
+                "type": "send_msg",
+                "uuid": "c5f52dd5-48ae-4b63-a76f-4407149d1f73",
+              },
+            ],
+            "exits": [
+              {
+                "destination_uuid": null,
+                "uuid": "f2466bf6-5421-4832-ae95-e37de21fc6db",
+              },
+            ],
+            "uuid": "30ad731f-64ce-43c6-96bf-7690256ef35e",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`Flow > render > should render NodeEditor 1`] = `
+{
+  "helpArticles": {},
+  "plumberConnectExit": [MockFunction spy],
+}
+`;
+
+exports[`Flow > render > should render Simulator 1`] = `
+{
+  "mergeEditorState": [MockFunction spy],
+  "onToggled": [Function],
+  "popped": null,
+}
+`;

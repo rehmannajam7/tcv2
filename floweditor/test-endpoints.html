@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Endpoints</title>
+</head>
+<body>
+    <h1>Endpoint Test</h1>
+    <div id="results"></div>
+    
+    <script type="module">
+        // Import the endpoints configuration
+        import { getEndpoints } from './src/config/endpoints.js';
+        
+        const endpoints = getEndpoints();
+        const results = document.getElementById('results');
+        
+        results.innerHTML = `
+            <h2>Resolved Endpoints:</h2>
+            <p><strong>Knowledge Bases:</strong> ${endpoints.knowledgeBases}</p>
+            <p><strong>Captain Assistants:</strong> ${endpoints.captainAssistants}</p>
+            <p><strong>Base URL Logic:</strong></p>
+            <ul>
+                <li>Window location: ${window.location.origin}</li>
+                <li>Full URL: ${window.location.href}</li>
+                <li>Account ID from URL: ${new URLSearchParams(window.location.search).get('account_id')}</li>
+            </ul>
+        `;
+        
+        // Test the actual API calls
+        console.log('Testing endpoints:', endpoints);
+        
+        // Test knowledge bases
+        fetch(endpoints.knowledgeBases)
+            .then(response => {
+                console.log('Knowledge bases response:', response.status, response.ok);
+                return response.ok ? response.json() : null;
+            })
+            .then(data => {
+                console.log('Knowledge bases data:', data);
+                results.innerHTML += `<p><strong>KB API Result:</strong> ${data ? 'SUCCESS' : 'FAILED'}</p>`;
+            })
+            .catch(error => {
+                console.error('Knowledge bases error:', error);
+                results.innerHTML += `<p><strong>KB API Error:</strong> ${error.message}</p>`;
+            });
+            
+        // Test captain assistants
+        fetch(endpoints.captainAssistants)
+            .then(response => {
+                console.log('Captain assistants response:', response.status, response.ok);
+                return response.ok ? response.json() : null;
+            })
+            .then(data => {
+                console.log('Captain assistants data:', data);
+                results.innerHTML += `<p><strong>Captain API Result:</strong> ${data ? 'SUCCESS' : 'FAILED'}</p>`;
+            })
+            .catch(error => {
+                console.error('Captain assistants error:', error);
+                results.innerHTML += `<p><strong>Captain API Error:</strong> ${error.message}</p>`;
+            });
+    </script>
+</body>
+</html>

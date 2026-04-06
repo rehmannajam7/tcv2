@@ -1,0 +1,29 @@
+@import 'src/variables.module.scss';
+
+.delimited {
+  display: flex;
+  align-items: baseline;
+}
+
+.lead_in_sub {
+  margin-left: 8px;
+}
+
+.result_select {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.result_select_delimited {
+  width: 166px;
+  margin-left: 10px;
+}
+
+.field_number {
+  width: 96px;
+  margin-left: 10px;
+}
+
+.delimiter {
+  width: 158px;
+  margin-left: 12px;
+}

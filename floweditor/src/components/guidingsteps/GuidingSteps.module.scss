@@ -1,0 +1,119 @@
+@import 'src/variables.module.scss';
+
+:root {
+  --tooltip-margin: 8px;
+  --tooltip-arrow-size: 7px;
+}
+
+/* Wrapping */
+.guiding_wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.guiding {
+  position: absolute;
+  border-radius: $unnnic-border-radius-sm;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: $unnnic-inset-xs;
+  color: $unnnic-color-neutral-snow;
+  background: $unnnic-color-neutral-black;
+  font-size: $unnnic-font-size-body-md;
+  font-family: $unnnic-font-family-secondary;
+  line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+  z-index: 1000;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-stack-xs;
+
+  &::before {
+    content: " ";
+    left: 50%;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: var(--tooltip-arrow-size);
+    margin-left: calc(var(--tooltip-arrow-size) * -1);
+  }
+
+  .title_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    font-weight: $unnnic-font-weight-bold;
+  }
+
+  .close {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .description {
+    white-space: pre-line;
+  }
+
+  .button {
+    background-color: $unnnic-color-brand-weni-soft;
+    width: 100%;
+  }
+
+  &.arrow_left {
+
+    &::before {
+      left: 2.5%;
+    }
+  }
+}
+
+.top {
+  top: calc(var(--tooltip-margin) * -1);
+  transform: translateX(-2%) translateY(-100%);
+
+  &::before {
+    top: 100%;
+    border-top-color: $unnnic-color-neutral-black;
+  }
+}
+
+.right {
+  left: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+
+  &::before {
+    left: calc(var(--tooltip-arrow-size) * -1);
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    border-right-color: $unnnic-color-neutral-black;
+  }
+}
+
+.bottom {
+  bottom: calc(var(--tooltip-margin) * -1);
+
+  &::before {
+    bottom: 100%;
+    border-bottom-color: $unnnic-color-neutral-black;
+  }
+}
+
+.left {
+  left: auto;
+  right: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+
+  &::before {
+    left: auto;
+    right: calc(var(--tooltip-arrow-size) * -2);
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    border-left-color: $unnnic-color-neutral-black;
+  }
+}

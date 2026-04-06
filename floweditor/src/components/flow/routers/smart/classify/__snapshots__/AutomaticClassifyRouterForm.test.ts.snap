@@ -1,0 +1,624 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AutomaticClassifyRouterForm > initializes case config 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_response"
+  title="Wait for response"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "switch",
+        ],
+        "description": "Wait for the contact to respond",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "categories",
+          "cases",
+        ],
+        "name": "Wait for response",
+        "type": "wait_for_response",
+        "visibility": [
+          "messaging",
+          "messaging_offline",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_any_word",
+                  "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                },
+                {
+                  "arguments": [
+                    "not blue",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_any_word",
+                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "name": "Red",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+                {
+                  "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                  "name": "Other",
+                  "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                },
+              ],
+              "default_category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+          },
+          "ui": {
+            "config": {
+              "cases": {
+                "b1f332f3-bdd3-4891-aec5-1843a712dbf1": {
+                  "arguments": [
+                    "not blue",
+                  ],
+                },
+              },
+            },
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "automatic_classify",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_input_99e97f"
+  >
+    <div
+      className="_label_99e97f u font secondary body-md color-neutral-cloudy"
+    >
+      Enter an expression to use as the input to your classifier. To classify the last response from the contact use
+      <span
+        className="_link_99e97f color-weni-600"
+      >
+        @input.text
+      </span>
+    </div>
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "@input.text",
+        }
+      }
+      name="Operand"
+      onChange={[Function]}
+      placeholder="@input.text"
+      showLabel={false}
+    />
+  </div>
+  <DescriptionAlert
+    openDescriptionEdit={[Function]}
+  />
+  <div
+    className="_content_99e97f"
+  >
+    <div
+      className="_phrases_99e97f"
+    >
+      <div
+        className="_header_99e97f"
+      >
+        <span
+          className="_title_99e97f"
+        >
+          Command phrases
+        </span>
+        <span
+          className="_description_99e97f"
+        >
+          Write command phrases related to the category
+        </span>
+      </div>
+    </div>
+    <div
+      className="_categories_99e97f"
+    >
+      <div
+        className="_header_99e97f"
+      >
+        <span
+          className="_title_99e97f"
+        >
+          Categorize as
+        </span>
+        <span
+          className="_description_99e97f"
+        >
+          Define the category you want to classify the contact's response
+        </span>
+      </div>
+    </div>
+  </div>
+  <CaseList
+    cases={
+      [
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "red",
+            ],
+            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "type": "has_any_word",
+            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          },
+          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          "valid": true,
+        },
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "not blue",
+            ],
+            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "type": "has_any_word",
+            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          },
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "valid": true,
+        },
+      ]
+    }
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    required={true}
+    type="smart"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`AutomaticClassifyRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_response"
+  title="Wait for response"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "switch",
+        ],
+        "description": "Wait for the contact to respond",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "categories",
+          "cases",
+        ],
+        "name": "Wait for response",
+        "type": "wait_for_response",
+        "visibility": [
+          "messaging",
+          "messaging_offline",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "wait_for_response",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_input_99e97f"
+  >
+    <div
+      className="_label_99e97f u font secondary body-md color-neutral-cloudy"
+    >
+      Enter an expression to use as the input to your classifier. To classify the last response from the contact use
+      <span
+        className="_link_99e97f color-weni-600"
+      >
+        @input.text
+      </span>
+    </div>
+    <TextInputElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "@input.text",
+        }
+      }
+      name="Operand"
+      onChange={[Function]}
+      placeholder="@input.text"
+      showLabel={false}
+    />
+  </div>
+  <DescriptionAlert
+    openDescriptionEdit={[Function]}
+  />
+  <div
+    className="_content_99e97f"
+  >
+    <div
+      className="_phrases_99e97f"
+    >
+      <div
+        className="_header_99e97f"
+      >
+        <span
+          className="_title_99e97f"
+        >
+          Command phrases
+        </span>
+        <span
+          className="_description_99e97f"
+        >
+          Write command phrases related to the category
+        </span>
+      </div>
+    </div>
+    <div
+      className="_categories_99e97f"
+    >
+      <div
+        className="_header_99e97f"
+      >
+        <span
+          className="_title_99e97f"
+        >
+          Categorize as
+        </span>
+        <span
+          className="_description_99e97f"
+        >
+          Define the category you want to classify the contact's response
+        </span>
+      </div>
+    </div>
+  </div>
+  <CaseList
+    cases={[]}
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    required={true}
+    type="smart"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "Result",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`AutomaticClassifyRouterForm > updates > should not save changes if case is invalid 1`] = `
+{
+  "cases": [
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "red",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      "valid": true,
+    },
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "maroon",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      "valid": false,
+    },
+    {
+      "categoryName": "Green",
+      "kase": {
+        "arguments": [
+          "green",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+      "valid": true,
+    },
+  ],
+  "hiddenCases": [],
+  "operand": {
+    "validationFailures": [],
+    "value": "@results.result1",
+  },
+  "resultName": {
+    "validationFailures": [],
+    "value": "Favorite Color",
+  },
+  "valid": false,
+}
+`;
+
+exports[`AutomaticClassifyRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "red",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      "valid": true,
+    },
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "maroon",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      "valid": true,
+    },
+    {
+      "categoryName": "Green",
+      "kase": {
+        "arguments": [
+          "green",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+      "valid": true,
+    },
+  ],
+  "hiddenCases": [],
+  "operand": {
+    "validationFailures": [],
+    "value": "@results.result1",
+  },
+  "resultName": {
+    "validationFailures": [],
+    "value": "Favorite Color",
+  },
+  "valid": true,
+}
+`;
+
+exports[`AutomaticClassifyRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+            {
+              "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [],
+                "category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                "type": "has_category",
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Green",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Failure",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+              {
+                "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "name": "Other",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@results.result1",
+            "result_name": "Favorite Color",
+            "type": "smart",
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+          },
+          "position": null,
+          "type": "wait_for_response",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

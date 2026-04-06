@@ -1,0 +1,52 @@
+@import 'src/variables.module.scss';
+
+.list_items{
+  display: flex;
+  flex-direction: column;
+
+  .item{
+    display: flex;
+    flex-direction: row;
+    gap: $unnnic-spacing-sm;
+    margin-bottom: $unnnic-spacing-xs;
+
+    .options_name{
+      flex: 2
+    }
+
+    .options_value{
+      flex: 5;
+      margin-left: $unnnic-spacing-sm;
+    }
+
+    .name {
+      flex: 2;
+      max-width: 196px;
+    }
+
+    .value {
+      flex: 4;
+      flex-direction: column;
+      display: flex;
+    }
+
+    .attachment_title {
+      color: $unnnic-color-neutral-cloudy;
+      text-decoration: underline;
+      font-weight: $unnnic-font-weight-bold;
+      margin: auto 0;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .remove_attachment {
+      margin: 0;
+
+      button {
+        padding: $unnnic-spacing-ant !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+@import 'src/variables.module.scss';
+
+$curvature: 10px;
+
+.clickable {
+  cursor: pointer;
+}
+
+.icon {
+  margin-left: 6px;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  max-height: 95vh;
+  overflow: hidden;
+
+  background: $unnnic-color-background-carpet;
+  border-radius: $unnnic-border-radius-sm;
+  box-shadow: $unnnic-shadow-level-separated;
+  width: 800px;
+
+  .header {
+    color: $unnnic-color-neutral-dark;
+    text-align: center;
+
+    &:hover {
+      .header_overlay {
+        background: #00000010;
+      }
+    }
+
+    .header_overlay {
+      position: absolute;
+      width: 647px;
+      text-align: right;
+
+      border-top-left-radius: $curvature;
+      border-top-right-radius: $curvature;
+      pointer-events: none;
+      z-index: $z_modal_header;
+    }
+
+    .header_icon {
+      font-size: 80px;
+      position: absolute;
+      left: -35px;
+      top: 16px;
+      clip: rect(0px, 100px, 54px, 35px);
+    }
+
+    .title {
+      padding: $unnnic-spacing-inset-md;
+      padding-top: $unnnic-spacing-stack-giant;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $unnnic-spacing-xs;
+      font-family: $unnnic-font-family-secondary;
+    }
+
+    .new {
+      display: flex;
+      align-items: center;
+      background-color: $unnnic-color-weni-600;
+      border-radius: $unnnic-border-radius-pill;
+      padding: 2px 12px;
+
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+      color: $unnnic-color-weni-50;
+      font-weight: $unnnic-font-weight-regular;
+    }
+
+    &.barber {
+      $color_1: rgba(0, 0, 0, 0.08);
+      $color_2: rgba(0, 0, 0, 0.05);
+      background-image: repeating-linear-gradient(60deg,
+          $color_1,
+          $color_1 12px,
+          $color_2 12px,
+          $color_2 24px);
+    }
+
+    &.iconed {
+      .title_container {
+        margin-left: 50px;
+      }
+    }
+
+    .tabs {
+      padding: 0 $unnnic-spacing-inline-md;
+      margin-bottom: $unnnic-spacing-stack-md;
+    }
+  }
+
+  .content {
+    overflow: auto;
+    height: 100%;
+    margin: 0 $unnnic-spacing-inline-sm;
+    padding: 0 $unnnic-spacing-inline-xs;
+
+    p {
+      margin-top: 10px;
+      line-height: 20px;
+      font-family: $unnnic-font-family-secondary;
+      font-weight: $unnnic-font-weight-regular;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    }
+  }
+
+  .content_no_padding {
+    overflow: auto;
+    height: 100%;
+  }
+
+  .footer {
+    padding: $unnnic-spacing-stack-sm $unnnic-spacing-inline-md $unnnic-spacing-stack-lg $unnnic-spacing-inline-md;
+    border-bottom-left-radius: $curvature;
+    border-bottom-right-radius: $curvature;
+
+    align-items: center;
+
+    .gutter {
+      border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+      border-radius: $unnnic-border-radius-sm;
+      padding: $unnnic-spacing-inset-xs;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: $unnnic-spacing-sm;
+    }
+
+    .buttons_wrapper {
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+    }
+
+    .left_buttons,
+    .right_buttons {
+      flex: 1;
+      display: flex;
+      column-gap: $unnnic-spacing-inline-lg;
+
+      >* {
+        flex: 1;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}

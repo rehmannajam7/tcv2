@@ -1,0 +1,488 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RouterLocalizationForm > initializes 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_response"
+  tabs={
+    [
+      {
+        "body": <React.Fragment>
+          <p
+            data-spec="instructions"
+          >
+            Sometimes languages need special rules to route things properly. If a translation is not provided, the original rule will be used.
+          </p>
+          <div
+            className="_translating_list_container_c108c5 "
+            tabIndex={0}
+          >
+            <div
+              className="_translating_item_list_c108c5"
+            >
+              <div
+                className="_translating_operator_container_c108c5"
+                data-spec="operator-field"
+              >
+                <div
+                  className="_translating_operator_c108c5"
+                  data-spec="verbose-name"
+                >
+                  has any of the words
+                </div>
+                <div
+                  className="_translating_from_c108c5"
+                  data-spec="argument-to-translate"
+                >
+                  red
+                </div>
+                <div
+                  className="_translating_to_c108c5"
+                >
+                  <TextInputElement
+                    data-spec="localize-case"
+                    entry={
+                      {
+                        "value": "rojo, r",
+                      }
+                    }
+                    name="061fc171-8b79-4636-b892-bd0ea5aa9b42"
+                    onChange={[Function]}
+                    placeholder="Spanish Translation"
+                    showLabel={false}
+                  />
+                </div>
+              </div>
+              <div
+                className="_translating_operator_container_c108c5"
+                data-spec="operator-field"
+              >
+                <div
+                  className="_translating_operator_c108c5"
+                  data-spec="verbose-name"
+                >
+                  has any of the words
+                </div>
+                <div
+                  className="_translating_from_c108c5"
+                  data-spec="argument-to-translate"
+                >
+                  blue
+                </div>
+                <div
+                  className="_translating_to_c108c5"
+                >
+                  <TextInputElement
+                    data-spec="localize-case"
+                    entry={
+                      {
+                        "value": "",
+                      }
+                    }
+                    name="763e4844-3e1b-407a-a1b5-5fdfcd308b41"
+                    onChange={[Function]}
+                    placeholder="Spanish Translation"
+                    showLabel={false}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </React.Fragment>,
+        "name": "Rule Translations",
+      },
+    ]
+  }
+  title="Spanish Category Names"
+>
+  <p
+    data-spec="instructions"
+  >
+    When category names are referenced later in the flow, the appropriate language for the category will be used. If no translation is provided, the original text will be used.
+  </p>
+  <div
+    className="_translating_list_container_c108c5 "
+    tabIndex={0}
+  >
+    <div
+      className="_translating_item_list_c108c5"
+    >
+      <div
+        className="_translating_category_c108c5"
+        key="1e47a1e1-3c67-4df5-adf1-da542c789adb"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Red
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "",
+              }
+            }
+            name=""
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+      <div
+        className="_translating_category_c108c5"
+        key="2dc85899-0577-4f1b-a620-f12094e34b5e"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Blue
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "",
+              }
+            }
+            name=""
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+      <div
+        className="_translating_category_c108c5"
+        key="70ac6ea6-803a-4c33-81c7-dc26803c313f"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Other
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "Otro",
+              }
+            }
+            name="Otro"
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Dialog>
+`;
+
+exports[`RouterLocalizationForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="wait_for_response"
+  tabs={
+    [
+      {
+        "body": <React.Fragment>
+          <p
+            data-spec="instructions"
+          >
+            Sometimes languages need special rules to route things properly. If a translation is not provided, the original rule will be used.
+          </p>
+          <div
+            className="_translating_list_container_c108c5 "
+            tabIndex={0}
+          >
+            <div
+              className="_translating_item_list_c108c5"
+            >
+              <div
+                className="_translating_operator_container_c108c5"
+                data-spec="operator-field"
+              >
+                <div
+                  className="_translating_operator_c108c5"
+                  data-spec="verbose-name"
+                >
+                  has any of the words
+                </div>
+                <div
+                  className="_translating_from_c108c5"
+                  data-spec="argument-to-translate"
+                >
+                  red
+                </div>
+                <div
+                  className="_translating_to_c108c5"
+                >
+                  <TextInputElement
+                    data-spec="localize-case"
+                    entry={
+                      {
+                        "value": "rojo, r",
+                      }
+                    }
+                    name="061fc171-8b79-4636-b892-bd0ea5aa9b42"
+                    onChange={[Function]}
+                    placeholder="Spanish Translation"
+                    showLabel={false}
+                  />
+                </div>
+              </div>
+              <div
+                className="_translating_operator_container_c108c5"
+                data-spec="operator-field"
+              >
+                <div
+                  className="_translating_operator_c108c5"
+                  data-spec="verbose-name"
+                >
+                  has any of the words
+                </div>
+                <div
+                  className="_translating_from_c108c5"
+                  data-spec="argument-to-translate"
+                >
+                  blue
+                </div>
+                <div
+                  className="_translating_to_c108c5"
+                >
+                  <TextInputElement
+                    data-spec="localize-case"
+                    entry={
+                      {
+                        "value": "",
+                      }
+                    }
+                    name="763e4844-3e1b-407a-a1b5-5fdfcd308b41"
+                    onChange={[Function]}
+                    placeholder="Spanish Translation"
+                    showLabel={false}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </React.Fragment>,
+        "name": "Rule Translations",
+      },
+    ]
+  }
+  title="Spanish Category Names"
+>
+  <p
+    data-spec="instructions"
+  >
+    When category names are referenced later in the flow, the appropriate language for the category will be used. If no translation is provided, the original text will be used.
+  </p>
+  <div
+    className="_translating_list_container_c108c5 "
+    tabIndex={0}
+  >
+    <div
+      className="_translating_item_list_c108c5"
+    >
+      <div
+        className="_translating_category_c108c5"
+        key="1e47a1e1-3c67-4df5-adf1-da542c789adb"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Red
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "",
+              }
+            }
+            name=""
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+      <div
+        className="_translating_category_c108c5"
+        key="2dc85899-0577-4f1b-a620-f12094e34b5e"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Blue
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "",
+              }
+            }
+            name=""
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+      <div
+        className="_translating_category_c108c5"
+        key="70ac6ea6-803a-4c33-81c7-dc26803c313f"
+      >
+        <div
+          className="_translating_from_c108c5"
+          data-spec="category-name"
+        >
+          Other
+        </div>
+        <div
+          className="_translating_to_c108c5"
+        >
+          <TextInputElement
+            data-spec="localize-category"
+            entry={
+              {
+                "value": "Otro",
+              }
+            }
+            name="Otro"
+            onChange={[Function]}
+            placeholder="Spanish Translation"
+            showLabel={false}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</Dialog>
+`;
+
+exports[`RouterLocalizationForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
+      "arguments": [
+        "Red, r, rolo, maroon",
+      ],
+      "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+      "type": "has_any_word",
+      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+    },
+    {
+      "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+    },
+  ],
+  "categories": [
+    {
+      "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+      "name": "Roooojo!",
+      "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+    },
+    {
+      "name": "",
+      "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+    },
+    {
+      "exit_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+      "name": "Otro",
+      "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+    },
+  ],
+  "valid": true,
+}
+`;
+
+exports[`RouterLocalizationForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      "spa",
+      [
+        {
+          "translations": {
+            "name": "Roooojo!",
+          },
+          "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+        },
+        {
+          "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+        },
+        {
+          "translations": {
+            "name": "Otro",
+          },
+          "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+        },
+        {
+          "translations": {
+            "arguments": [
+              "Red, r, rolo, maroon",
+            ],
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+        },
+        {
+          "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+        },
+      ],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

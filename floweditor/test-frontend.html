@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Frontend API Connectivity</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Frontend API Connectivity Test</h1>
+    
+    <div class="test-section info">
+        <h2>Test Configuration</h2>
+        <p>This page tests the FlowEditor frontend API connectivity to verify the dropdown will use live data.</p>
+        <p>Open the browser console to see detailed debugging logs from WeniGPTRouterForm.tsx</p>
+    </div>
+
+    <div class="test-section" id="endpoint-test">
+        <h2>Endpoint Resolution Test</h2>
+        <button onclick="testEndpoints()">Test Endpoint Resolution</button>
+        <div id="endpoint-results"></div>
+    </div>
+
+    <div class="test-section" id="proxy-test">
+        <h2>Proxy Connectivity Test</h2>
+        <button onclick="testProxy()">Test Proxy Endpoints</button>
+        <div id="proxy-results"></div>
+    </div>
+
+    <div class="test-section" id="debug-info">
+        <h2>Debug Information</h2>
+        <pre id="debug-output"></pre>
+    </div>
+
+    <script>
+        // Direct endpoint testing without ES modules
+        window.testEndpoints = function() {
+            const resultsDiv = document.getElementById('endpoint-results');
+            try {
+                // Simulate the endpoint resolution logic from endpoints.js
+                const urlParams = new URLSearchParams(window.location.search);
+                let accountId = urlParams.get('account_id') || urlParams.get('accountId') || urlParams.get('accountid');
+                
+                if (!accountId) {
+                    const pathMatch = window.location.pathname.match(/\/accounts\/(\d+)/);
+                    if (pathMatch) {
+                        accountId = pathMatch[1];
+                    }
+                }
+                
+                accountId = accountId || '1'; // fallback
+                
+                let baseUrl;
+                if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                    baseUrl = `${window.location.origin}/floweditor-api/api/v1/accounts/${accountId}`;
+                    console.log('🔧 Using proxy base for development:', baseUrl);
+                } else {
+                    baseUrl = `${window.location.origin}/floweditor-api/api/v1/accounts/${accountId}`;
+                }
+                
+                const endpoints = {
+                    knowledgeBases: `${baseUrl}/flow_editor/knowledge_bases`,
+                    captainAssistants: `${baseUrl}/captain/assistants`
+                };
+                
+                console.log('🔍 Test: Endpoints resolved:', endpoints);
+                
+                resultsDiv.innerHTML = `
+                    <div class="success">
+                        <h3>✅ Endpoint Resolution Success</h3>
+                        <p><strong>Knowledge Bases:</strong> ${endpoints.knowledgeBases}</p>
+                        <p><strong>Captain Assistants:</strong> ${endpoints.captainAssistants}</p>
+                        <p>Check browser console for full endpoint object.</p>
+                    </div>
+                `;
+                
+                // Update debug info
+                document.getElementById('debug-output').textContent = JSON.stringify({
+                    knowledgeBases: endpoints.knowledgeBases,
+                    captainAssistants: endpoints.captainAssistants,
+                    accountId: accountId,
+                    hostname: window.location.hostname
+                }, null, 2);
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Endpoint Resolution Failed</h3>
+                        <p>Error: ${error.message}</p>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+            }
+        };
+        
+        window.testProxy = async function() {
+            const resultsDiv = document.getElementById('proxy-results');
+            resultsDiv.innerHTML = '<p>Testing proxy endpoints...</p>';
+            
+            try {
+                // Define getEndpoints function locally since it's not available in global scope
+                const getEndpoints = function() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    let accountId = urlParams.get('account_id') || urlParams.get('accountId') || urlParams.get('accountid');
+                    
+                    if (!accountId) {
+                        const pathMatch = window.location.pathname.match(/\/accounts\/(\d+)/);
+                        if (pathMatch) {
+                            accountId = pathMatch[1];
+                        }
+                    }
+                    
+                    accountId = accountId || '1'; // fallback
+                    
+                    let baseUrl;
+                    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                        baseUrl = `${window.location.origin}/floweditor-api/api/v1/accounts/${accountId}`;
+                    } else {
+                        baseUrl = `${window.location.origin}/floweditor-api/api/v1/accounts/${accountId}`;
+                    }
+                    
+                    return {
+                        knowledgeBases: `${baseUrl}/flow_editor/knowledge_bases`,
+                        captainAssistants: `${baseUrl}/captain/assistants`
+                    };
+                };
+                
+                const endpoints = getEndpoints();
+                
+                // Test knowledge bases endpoint
+                console.log('🔍 Test: Fetching knowledge bases from:', endpoints.knowledgeBases);
+                const kbResponse = await fetch(endpoints.knowledgeBases, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                console.log('🔍 Test: Knowledge bases response:', {
+                    status: kbResponse.status,
+                    ok: kbResponse.ok,
+                    url: kbResponse.url
+                });
+                
+                let kbData = null;
+                if (kbResponse.ok) {
+                    kbData = await kbResponse.json();
+                    console.log('🔍 Test: Knowledge bases data:', kbData);
+                }
+                
+                // Test captain assistants endpoint
+                console.log('🔍 Test: Fetching captain assistants from:', endpoints.captainAssistants);
+                const captainResponse = await fetch(endpoints.captainAssistants, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                console.log('🔍 Test: Captain assistants response:', {
+                    status: captainResponse.status,
+                    ok: captainResponse.ok,
+                    url: captainResponse.url
+                });
+                
+                let captainData = null;
+                if (captainResponse.ok) {
+                    captainData = await captainResponse.json();
+                    console.log('🔍 Test: Captain assistants data:', captainData);
+                }
+                
+                // Display results
+                let html = '<div class="success"><h3>✅ Proxy Test Results</h3>';
+                
+                if (kbResponse.ok) {
+                    html += `<p><strong>Knowledge Bases:</strong> ✅ ${kbResponse.status}</p>`;
+                    if (kbData) {
+                        const kbResults = kbData.results || kbData.data || kbData;
+                        html += `<p>Found ${Array.isArray(kbResults) ? kbResults.length : 0} knowledge bases</p>`;
+                    }
+                } else {
+                    html += `<p><strong>Knowledge Bases:</strong> ❌ ${kbResponse.status}</p>`;
+                }
+                
+                if (captainResponse.ok) {
+                    html += `<p><strong>Captain Assistants:</strong> ✅ ${captainResponse.status}</p>`;
+                    if (captainData) {
+                        const captainResults = captainData.results || captainData.data || captainData;
+                        html += `<p>Found ${Array.isArray(captainResults) ? captainResults.length : 0} captain assistants</p>`;
+                    }
+                } else {
+                    html += `<p><strong>Captain Assistants:</strong> ❌ ${captainResponse.status}</p>`;
+                }
+                
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Proxy Test Failed</h3>
+                        <p>Error: ${error.message}</p>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+                console.error('🔍 Test: Proxy test failed:', error);
+            }
+        };
+        
+        // Auto-test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Test: Page loaded, testing endpoints...');
+            window.testEndpoints();
+        });
+    </script>
+</body>
+</html>

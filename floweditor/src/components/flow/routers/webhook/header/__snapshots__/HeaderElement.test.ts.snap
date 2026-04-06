@@ -1,0 +1,286 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > onChange 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": "application/json",
+      },
+      [],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > setState 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "errors": [],
+        "name": {
+          "value": "Content-Type",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeName > should update state, call onChange prop > text element 1`] = `ShallowWrapper {}`;
+
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop > header change 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": {
+          "name": "Content-Type",
+          "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+          "value": "application/json",
+        },
+      },
+      [],
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "value": {
+          "value": {
+            "name": "Content-Type",
+            "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+            "value": "application/json",
+          },
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`HeaderElement > instance methods > handleChangeValue > should update state, call onChange prop 2`] = `
+<FormElement
+  entry={
+    {
+      "value": {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": "application/json",
+      },
+    }
+  }
+  name="Header"
+>
+  <div
+    className="_header_2fe879"
+    data-spec="header-container"
+  >
+    <div
+      className="_header_name_2fe879"
+      data-spec="name-container"
+    >
+      <TextInputElement
+        entry={
+          {
+            "value": "Content-Type",
+          }
+        }
+        name="Ex: Accept"
+        onChange={[Function]}
+        placeholder="Ex: Accept"
+      />
+    </div>
+    <div
+      className="_header_value_2fe879"
+      data-spec="value-container"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": {
+              "name": "Content-Type",
+              "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+              "value": "application/json",
+            },
+          }
+        }
+        name="Ex: application/json"
+        onChange={[Function]}
+        placeholder="Ex: application/json"
+      />
+    </div>
+    <div
+      className="_remove_icon_2fe879"
+    />
+  </div>
+</FormElement>
+`;
+
+exports[`HeaderElement > render > should render remove icon 1`] = `
+<FormElement
+  entry={
+    {
+      "value": {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": "application/json",
+      },
+    }
+  }
+  name="Header"
+>
+  <div
+    className="_header_2fe879"
+    data-spec="header-container"
+  >
+    <div
+      className="_header_name_2fe879"
+      data-spec="name-container"
+    >
+      <TextInputElement
+        entry={
+          {
+            "value": "Content-Type",
+          }
+        }
+        name="Ex: Accept"
+        onChange={[Function]}
+        placeholder="Ex: Accept"
+      />
+    </div>
+    <div
+      className="_header_value_2fe879"
+      data-spec="value-container"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "application/json",
+          }
+        }
+        name="Ex: application/json"
+        onChange={[Function]}
+        placeholder="Ex: application/json"
+      />
+    </div>
+    <div
+      className="_remove_icon_2fe879"
+    >
+      <ForwardRef
+        clickable={true}
+        data-spec="remove-icon"
+        data-testid="remove-icon"
+        icon="delete-1-1"
+        onClick={[Function]}
+        scheme="neutral-cloudy"
+        size="sm"
+      />
+    </div>
+  </div>
+</FormElement>
+`;
+
+exports[`HeaderElement > render > should render self, children with base props 1`] = `
+{
+  "autocomplete": true,
+  "entry": {
+    "value": "application/json",
+  },
+  "error": undefined,
+  "name": "Ex: application/json",
+  "onChange": [Function],
+  "placeholder": "Ex: application/json",
+}
+`;
+
+exports[`HeaderElement > render > should render self, children with base props 2`] = `
+<FormElement
+  entry={
+    {
+      "value": {
+        "name": "Content-Type",
+        "uuid": "00c4498e-1c9e-4c26-aa7c-f81d13573129",
+        "value": "application/json",
+      },
+    }
+  }
+  name="Header"
+>
+  <div
+    className="_header_2fe879"
+    data-spec="header-container"
+  >
+    <div
+      className="_header_name_2fe879"
+      data-spec="name-container"
+    >
+      <TextInputElement
+        entry={
+          {
+            "value": "Content-Type",
+          }
+        }
+        name="Ex: Accept"
+        onChange={[Function]}
+        placeholder="Ex: Accept"
+      />
+    </div>
+    <div
+      className="_header_value_2fe879"
+      data-spec="value-container"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "application/json",
+          }
+        }
+        name="Ex: application/json"
+        onChange={[Function]}
+        placeholder="Ex: application/json"
+      />
+    </div>
+    <div
+      className="_remove_icon_2fe879"
+    />
+  </div>
+</FormElement>
+`;

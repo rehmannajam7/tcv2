@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FlowEditor Test</title>
+</head>
+<body>
+    <div id="floweditor"></div>
+    <script>
+        // Test if showFlowEditor is available
+        setTimeout(() => {
+            console.log('Testing showFlowEditor availability...');
+            console.log('window.showFlowEditor:', typeof window.showFlowEditor);
+            
+            if (typeof window.showFlowEditor === 'function') {
+                console.log('✅ showFlowEditor is available!');
+                document.body.innerHTML += '<p style="color: green;">✅ showFlowEditor is available!</p>';
+            } else {
+                console.log('❌ showFlowEditor is not available');
+                document.body.innerHTML += '<p style="color: red;">❌ showFlowEditor is not available</p>';
+            }
+        }, 2000);
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

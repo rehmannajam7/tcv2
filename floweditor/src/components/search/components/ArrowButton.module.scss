@@ -1,0 +1,19 @@
+@import 'src/variables.module.scss';
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .icon{
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        margin-top: 1px;
+    }
+
+    button {
+        padding: $unnnic-spacing-nano !important;
+        height: revert !important;
+    }
+}

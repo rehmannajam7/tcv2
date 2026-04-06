@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Account Isolation Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-results {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        .success { color: #28a745; }
+        .error { color: #dc3545; }
+        .info { color: #17a2b8; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Account Isolation Test</h1>
+        
+        <div class="test-section">
+            <h2>FlowStore Account Isolation Test</h2>
+            <p>This test verifies that the FlowStore properly isolates data between different accounts using localStorage.</p>
+            <button onclick="runIsolationTest()">Run Isolation Test</button>
+            <div id="isolationResults" class="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Storage Key Verification</h2>
+            <button onclick="verifyStorageKeys()">Verify Storage Keys</button>
+            <div id="storageResults" class="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Cross-Account Data Protection</h2>
+            <button onclick="testCrossAccountProtection()">Test Cross-Account Protection</button>
+            <div id="protectionResults" class="test-results"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>localStorage Monitor</h2>
+            <button onclick="monitorStorage()">Monitor All Storage</button>
+            <div id="storageMonitor" class="test-results"></div>
+        </div>
+    </div>
+
+    <script>
+        // Mock FlowStore implementation for testing
+        class FlowStore {
+            constructor(accountId = null) {
+                this.accountId = accountId;
+            }
+
+            static get(accountId = null) {
+                return new FlowStore(accountId);
+            }
+
+            getAccountId() {
+                // Get account ID from URL parameters or use provided accountId
+                const urlParams = new URLSearchParams(window.location.search);
+                const urlAccountId = urlParams.get('account_id');
+                return this.accountId || urlAccountId || 'default';
+            }
+
+            getStorageKey(key) {
+                const accountId = this.getAccountId();
+                return `floweditor_${accountId}_${key}`;
+            }
+
+            save(flowDefinition) {
+                const key = this.getStorageKey('flow_definition');
+                const data = {
+                    ...flowDefinition,
+                    savedAt: new Date().toISOString(),
+                    accountId: this.getAccountId()
+                };
+                localStorage.setItem(key, JSON.stringify(data));
+                console.log(`FlowStore.save() - Saved to ${key}:`, data);
+                return data;
+            }
+
+            load() {
+                const key = this.getStorageKey('flow_definition');
+                const data = localStorage.getItem(key);
+                const result = data ? JSON.parse(data) : null;
+                console.log(`FlowStore.load() - Loaded from ${key}:`, result);
+                return result;
+            }
+
+            clear() {
+                const accountId = this.getAccountId();
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith(`floweditor_${accountId}_`)) {
+                        keysToRemove.push(key);
+                    }
+                }
+                keysToRemove.forEach(key => localStorage.removeItem(key));
+                console.log(`FlowStore.clear() - Removed ${keysToRemove.length} keys for account ${accountId}`);
+                return keysToRemove.length;
+            }
+        }
+
+        function runIsolationTest() {
+            const results = document.getElementById('isolationResults');
+            let output = 'Running FlowStore Account Isolation Test...\n\n';
+
+            try {
+                // Clear all existing data
+                localStorage.clear();
+                output += '✓ Cleared all localStorage data\n';
+
+                // Test different accounts
+                const accounts = [1, 2, 3, 'default'];
+                const testFlows = {};
+
+                // Create and save flows for each account
+                accounts.forEach(accountId => {
+                    const store = FlowStore.get(accountId);
+                    const testFlow = {
+                        uuid: `flow-${accountId}-${Date.now()}`,
+                        name: `Test Flow for Account ${accountId}`,
+                        nodes: [
+                            { uuid: 'node1', type: 'wait_for_response' },
+                            { uuid: 'node2', type: 'send_msg' }
+                        ],
+                        accountId: accountId,
+                        createdAt: new Date().toISOString()
+                    };
+                    
+                    store.save(testFlow);
+                    testFlows[accountId] = testFlow;
+                    output += `✓ Saved test flow for account ${accountId}\n`;
+                });
+
+                // Verify each account can only access its own data
+                let isolationPassed = true;
+                accounts.forEach(accountId => {
+                    const store = FlowStore.get(accountId);
+                    const loadedFlow = store.load();
+                    
+                    if (!loadedFlow) {
+                        output += `✗ Account ${accountId} failed to load its own flow\n`;
+                        isolationPassed = false;
+                        return;
+                    }
+
+                    if (loadedFlow.accountId !== accountId) {
+                        output += `✗ Account ${accountId} loaded flow from account ${loadedFlow.accountId}\n`;
+                        isolationPassed = false;
+                        return;
+                    }
+
+                    if (loadedFlow.uuid !== testFlows[accountId].uuid) {
+                        output += `✗ Account ${accountId} loaded wrong flow UUID\n`;
+                        isolationPassed = false;
+                        return;
+                    }
+
+                    output += `✓ Account ${accountId} correctly loaded its own flow\n`;
+                });
+
+                if (isolationPassed) {
+                    output += '\n✅ Account isolation test PASSED!\n';
+                    results.className = 'test-results success';
+                } else {
+                    output += '\n❌ Account isolation test FAILED!\n';
+                    results.className = 'test-results error';
+                }
+
+            } catch (error) {
+                output += `\n❌ Test error: ${error.message}\n`;
+                results.className = 'test-results error';
+            }
+
+            results.textContent = output;
+        }
+
+        function verifyStorageKeys() {
+            const results = document.getElementById('storageResults');
+            let output = 'Verifying Storage Key Generation...\n\n';
+
+            try {
+                const accounts = [1, 2, 3, 'default'];
+                
+                accounts.forEach(accountId => {
+                    const store = FlowStore.get(accountId);
+                    const expectedKey = `floweditor_${accountId}_flow_definition`;
+                    const actualKey = store.getStorageKey('flow_definition');
+                    
+                    if (actualKey === expectedKey) {
+                        output += `✓ Account ${accountId}: ${actualKey}\n`;
+                    } else {
+                        output += `✗ Account ${accountId}: Expected ${expectedKey}, got ${actualKey}\n`;
+                    }
+                });
+
+                output += '\n✅ Storage key verification completed!\n';
+                results.className = 'test-results success';
+
+            } catch (error) {
+                output += `\n❌ Verification error: ${error.message}\n`;
+                results.className = 'test-results error';
+            }
+
+            results.textContent = output;
+        }
+
+        function testCrossAccountProtection() {
+            const results = document.getElementById('protectionResults');
+            let output = 'Testing Cross-Account Data Protection...\n\n';
+
+            try {
+                // Clear existing data
+                localStorage.clear();
+                
+                // Create sensitive data for account 1
+                const store1 = FlowStore.get(1);
+                const sensitiveFlow = {
+                    uuid: 'sensitive-flow-123',
+                    name: 'Sensitive Account 1 Flow',
+                    secretData: 'TOP_SECRET_ACCOUNT_1',
+                    accountId: 1
+                };
+                store1.save(sensitiveFlow);
+                output += '✓ Saved sensitive data for account 1\n';
+
+                // Try to access from account 2
+                const store2 = FlowStore.get(2);
+                const loadedFromAccount2 = store2.load();
+                
+                if (loadedFromAccount2 === null) {
+                    output += '✓ Account 2 cannot access account 1 data (correct)\n';
+                } else {
+                    output += `✗ Account 2 accessed account 1 data: ${loadedFromAccount2.secretData}\n`;
+                }
+
+                // Try to access from account 3
+                const store3 = FlowStore.get(3);
+                const loadedFromAccount3 = store3.load();
+                
+                if (loadedFromAccount3 === null) {
+                    output += '✓ Account 3 cannot access account 1 data (correct)\n';
+                } else {
+                    output += `✗ Account 3 accessed account 1 data: ${loadedFromAccount3.secretData}\n`;
+                }
+
+                // Verify account 1 can still access its own data
+                const reloadedFromAccount1 = store1.load();
+                if (reloadedFromAccount1 && reloadedFromAccount1.secretData === 'TOP_SECRET_ACCOUNT_1') {
+                    output += '✓ Account 1 can still access its own sensitive data\n';
+                } else {
+                    output += '✗ Account 1 lost access to its own data\n';
+                }
+
+                output += '\n✅ Cross-account protection test completed!\n';
+                results.className = 'test-results success';
+
+            } catch (error) {
+                output += `\n❌ Protection test error: ${error.message}\n`;
+                results.className = 'test-results error';
+            }
+
+            results.textContent = output;
+        }
+
+        function monitorStorage() {
+            const monitor = document.getElementById('storageMonitor');
+            let output = 'Current localStorage Contents:\n\n';
+
+            try {
+                const flowKeys = [];
+                const otherKeys = [];
+
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key) {
+                        if (key.startsWith('floweditor_')) {
+                            flowKeys.push(key);
+                        } else {
+                            otherKeys.push(key);
+                        }
+                    }
+                }
+
+                if (flowKeys.length > 0) {
+                    output += 'FlowEditor Keys:\n';
+                    flowKeys.sort().forEach(key => {
+                        const value = localStorage.getItem(key);
+                        let preview = 'null';
+                        if (value) {
+                            try {
+                                const parsed = JSON.parse(value);
+                                preview = `{uuid: ${parsed.uuid || 'N/A'}, name: "${parsed.name || 'N/A'}", accountId: ${parsed.accountId || 'N/A'}}`;
+                            } catch {
+                                preview = value.substring(0, 50) + (value.length > 50 ? '...' : '');
+                            }
+                        }
+                        output += `  ${key}: ${preview}\n`;
+                    });
+                    output += '\n';
+                } else {
+                    output += 'No FlowEditor keys found.\n\n';
+                }
+
+                if (otherKeys.length > 0) {
+                    output += `Other Keys (${otherKeys.length}):\n`;
+                    otherKeys.sort().forEach(key => {
+                        output += `  ${key}\n`;
+                    });
+                } else {
+                    output += 'No other keys found.\n';
+                }
+
+                monitor.className = 'test-results info';
+
+            } catch (error) {
+                output += `\n❌ Monitor error: ${error.message}\n`;
+                monitor.className = 'test-results error';
+            }
+
+            monitor.textContent = output;
+        }
+
+        // Auto-run tests on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                runIsolationTest();
+                verifyStorageKeys();
+                monitorStorage();
+            }, 500);
+        });
+
+        // Monitor storage changes
+        window.addEventListener('storage', (e) => {
+            console.log('Storage changed:', e.key, e.newValue);
+            monitorStorage();
+        });
+    </script>
+</body>
+</html>

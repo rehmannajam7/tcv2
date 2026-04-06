@@ -1,0 +1,37 @@
+.label {
+  margin-bottom: $unnnic-spacing-stack-nano;
+}
+
+.url_attachment_container {
+  margin-top: $unnnic-spacing-stack-sm;
+}
+
+.url_attachment {
+  display: flex;
+  align-items: center;
+
+  .remove_upload {
+    display: inline-block;
+  }
+
+  .remove {
+    width: $unnnic-spacing-inline-sm;
+  }
+
+  .type_choice {
+    flex: 1;
+  }
+
+  .url {
+    display: inline-block;
+    width: 329px;
+    margin-left: $unnnic-spacing-inline-sm;
+    margin-right: $unnnic-spacing-inline-xs;
+    flex: 1;
+  }
+
+  .download {
+    margin-right: $unnnic-spacing-inline-xs;
+  }
+
+}

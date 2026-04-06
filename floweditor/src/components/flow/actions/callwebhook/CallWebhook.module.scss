@@ -1,0 +1,8 @@
+@import 'src/variables.module.scss';
+.text {
+  font-family: $unnnic-font-family-secondary;
+  color: $unnnic-color-neutral-dark;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
+  text-align: center;
+}

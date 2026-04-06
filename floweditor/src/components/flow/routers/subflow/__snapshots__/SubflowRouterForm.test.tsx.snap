@@ -1,0 +1,2358 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SubflowRouterForm > should create result actions for parameters 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d _dialog_40da5e"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Enter another flow
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Enter another flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+        >
+          <div
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+          >
+            Flow to start
+          </div>
+          <div
+            class="_select_wrapper_4cce75"
+            data-testid="temba_select_flow_to_start"
+            id="temba_select_flow_to_start"
+          >
+            <div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_flow_to_start"
+                  data-v-acea6376=""
+                >
+                  <!---->
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_flow_to_start"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                  >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_flow_to_start"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Colors"
+                      type="text"
+                    />
+                    <!---->
+                    <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
+                      fill="none"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      width="40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_options_flow_to_start"
+              id="temba_select_options_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_expressions_flow_to_start"
+              id="temba_select_expressions_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SubflowRouterForm > should create result actions for parameters 2`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d _dialog_40da5e"
+    >
+      <div
+        class="_header_af1b5d _clickable_af1b5d"
+      >
+        <div
+          class="_header_overlay_af1b5d"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Enter another flow
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Parameters
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div>
+          <p
+            class="_info_40da5e"
+          >
+            <a
+              href="/flow/editor/undefined"
+              target="_"
+            >
+              My Subflow Flow
+            </a>
+             expects the following parameters to be set by this flow. These can be set using a 
+             action or directly below.
+             action or directly below.
+          </p>
+          <table
+            class="_params_40da5e"
+          >
+            <tbody>
+              <tr
+                class="_param_40da5e"
+              >
+                <td
+                  class="_param_name_40da5e"
+                >
+                  max
+                </td>
+                <td
+                  class="_param_input_40da5e"
+                >
+                  <div>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="max"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="max"
+                                type="text"
+                                value=""
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_max"
+                        id=""
+                        style="margin-top: 0px; width: -24px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="_param_40da5e"
+              >
+                <td
+                  class="_param_name_40da5e"
+                >
+                  min
+                </td>
+                <td
+                  class="_param_input_40da5e"
+                >
+                  <div>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="min"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="min"
+                                type="text"
+                                value=""
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_min"
+                        id=""
+                        style="margin-top: 0px; width: -24px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SubflowRouterForm > should create result actions for parameters 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "name": "max",
+              "type": "set_run_result",
+              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              "value": "100",
+            },
+            {
+              "name": "min",
+              "type": "set_run_result",
+              "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+              "value": "1",
+            },
+            {
+              "flow": {
+                "name": "My Subflow Flow",
+                "uuid": "my-subflow",
+              },
+              "type": "enter_flow",
+              "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "C",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_run_status",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+              {
+                "arguments": [
+                  "E",
+                ],
+                "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "type": "has_run_status",
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Complete",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Expired",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@child.status",
+            "type": "switch",
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_subflow",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SubflowRouterForm > should create result actions for parameters 4`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d _dialog_40da5e"
+    >
+      <div
+        class="_header_af1b5d _clickable_af1b5d"
+      >
+        <div
+          class="_header_overlay_af1b5d"
+        />
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Enter another flow
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+          style="all: unset;"
+        >
+          <div
+            class="tab size-sm _tabs_af1b5d"
+            data-v-1389f531=""
+          >
+            <header
+              class="tab-header"
+              data-v-1389f531=""
+            >
+              <ul
+                class="tab-content"
+                data-v-1389f531=""
+              >
+                
+                <li
+                  class="tab-head"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    General
+                  </div>
+                  
+                  <!---->
+                </li>
+                <li
+                  class="tab-head tab-head--active"
+                  data-v-1389f531=""
+                >
+                  
+                  <div
+                    __use_react_component_wrap=""
+                    style="all: unset;"
+                  >
+                    Parameters
+                    <div
+                      data-use-vue-component-wrap=""
+                      id="__vue_wrapper_container_772096629523503"
+                      style="all: unset;"
+                    />
+                  </div>
+                  
+                  <!---->
+                </li>
+                
+              </ul>
+            </header>
+            <main
+              class="tab-body"
+              data-v-1389f531=""
+            >
+              <div
+                class="tab-panel"
+                data-v-1389f531=""
+              >
+                
+                
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div>
+          <p
+            class="_info_40da5e"
+          >
+            <a
+              href="/flow/editor/undefined"
+              target="_"
+            >
+              My Subflow Flow
+            </a>
+             expects the following parameters to be set by this flow. These can be set using a 
+             action or directly below.
+             action or directly below.
+          </p>
+          <table
+            class="_params_40da5e"
+          >
+            <tbody>
+              <tr
+                class="_param_40da5e"
+              >
+                <td
+                  class="_param_name_40da5e"
+                >
+                  max
+                </td>
+                <td
+                  class="_param_input_40da5e"
+                >
+                  <div>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="max"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="max"
+                                type="text"
+                                value="100"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_max"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                class="_param_40da5e"
+              >
+                <td
+                  class="_param_name_40da5e"
+                >
+                  min
+                </td>
+                <td
+                  class="_param_input_40da5e"
+                >
+                  <div>
+                    <div
+                      class="_completion_wrapper_17662c"
+                    >
+                      <div
+                        data-testid="min"
+                      >
+                        <div
+                          data-use-vue-component-wrap=""
+                          data-v-app=""
+                          style="all: unset;"
+                        >
+                          <div
+                            class="unnnic-form sm"
+                            data-v-acea6376=""
+                          >
+                            <!---->
+                            <div
+                              class="text-input size--sm unnnic-form-input"
+                              data-v-acea6376=""
+                              data-v-df38a188=""
+                              mask=""
+                            >
+                              <input
+                                class="unnnic-form-input input-itself input size-sm normal unnnic-form-input input-itself"
+                                data-v-bf6639b4=""
+                                data-v-df38a188=""
+                                hascloudycolor="false"
+                                placeholder="min"
+                                type="text"
+                                value="1"
+                              />
+                              <!---->
+                              <!---->
+                            </div>
+                            <!---->
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="_options_wrapper_08dd12"
+                        data-testid="temba_completion_options_min"
+                        id=""
+                        style="margin-top: 0px; width: 0px; display: none;"
+                      />
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SubflowRouterForm > should create result actions for parameters 5`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [
+            {
+              "name": "max",
+              "type": "set_run_result",
+              "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              "value": "100",
+            },
+            {
+              "name": "min",
+              "type": "set_run_result",
+              "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+              "value": "1",
+            },
+            {
+              "flow": {
+                "name": "My Subflow Flow",
+                "uuid": "my-subflow",
+              },
+              "type": "enter_flow",
+              "uuid": "d4a3a01c-1dee-4324-b107-4ac7a21d836f",
+            },
+          ],
+          "exits": [
+            {
+              "destination_uuid": null,
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "destination_uuid": null,
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "C",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_run_status",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+              {
+                "arguments": [
+                  "E",
+                ],
+                "category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "type": "has_run_status",
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Complete",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Expired",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@child.status",
+            "type": "switch",
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+        },
+        "ui": {
+          "config": {},
+          "position": null,
+          "type": "split_by_subflow",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SubflowRouterForm > should init parameter tab 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d _dialog_40da5e"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Enter another flow
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Enter another flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+        >
+          <div
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+          >
+            Flow to start
+          </div>
+          <div
+            class="_select_wrapper_4cce75"
+            data-testid="temba_select_flow_to_start"
+            id="temba_select_flow_to_start"
+          >
+            <div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_flow_to_start"
+                  data-v-acea6376=""
+                >
+                  <!---->
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_flow_to_start"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                  >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_flow_to_start"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Colors"
+                      type="text"
+                    />
+                    <!---->
+                    <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
+                      fill="none"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      width="40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_options_flow_to_start"
+              id="temba_select_options_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_expressions_flow_to_start"
+              id="temba_select_expressions_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SubflowRouterForm > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_dialog_af1b5d _dialog_40da5e"
+    >
+      <div
+        class="_header_af1b5d"
+      >
+        <div
+          class="_title_container_af1b5d"
+        >
+          <div
+            class="_title_af1b5d u font secondary title-sm black"
+          >
+            Enter another flow
+          </div>
+          <div
+            class="_subtitle_af1b5d"
+          />
+        </div>
+      </div>
+      <div
+        class="_content_af1b5d"
+      >
+        <div
+          class=" _type_list_8229f3"
+        >
+          <div
+            class="color-neutral-cloudy"
+          >
+            When a contact arrives at this point in your flow...
+          </div>
+          <div>
+            <div
+              class="_select_wrapper_4cce75"
+              data-testid="temba_select_type"
+              id="temba_select_type"
+            >
+              <div>
+                <div
+                  data-use-vue-component-wrap=""
+                  data-v-app=""
+                  style="all: unset;"
+                >
+                  <div
+                    class="unnnic-form sm _bold_placeholder_4cce75"
+                    data-testid="temba_select_input_type"
+                    data-v-acea6376=""
+                  >
+                    <!---->
+                    <div
+                      class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                      data-testid="temba_select_input_type"
+                      data-v-acea6376=""
+                      data-v-df38a188=""
+                      mask=""
+                    >
+                      <input
+                        class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                        data-testid="temba_select_input_type"
+                        data-v-bf6639b4=""
+                        data-v-df38a188=""
+                        hascloudycolor="false"
+                        iconright="arrow-button-down-1"
+                        placeholder="Enter another flow"
+                        type="text"
+                      />
+                      <!---->
+                      <svg
+                        class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                        data-v-930380cc=""
+                        data-v-df38a188=""
+                        fill="none"
+                        height="40"
+                        viewBox="0 0 40 40"
+                        width="40"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          class="primary"
+                          d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                          fill="#3B414D"
+                        />
+                      </svg>
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_options_type"
+                id="temba_select_options_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              >
+                <div
+                  class="_option_08dd12 _active_08dd12 "
+                  data-option-index="0"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="1"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send a WhatsApp message (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="2"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Wait for the contact to respond
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="3"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Smartly wait for response (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="4"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call WeniGPT (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="5"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send somebody else a message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="6"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Label the incoming message
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="7"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add a URN for the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="8"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Add the contact to a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="9"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Remove the contact from a group
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="10"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Update the contact
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="11"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send email
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="12"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Save a result for this flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="13"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call a webhook
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="14"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Call Zapier
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  _selected_08dd12"
+                  data-option-index="15"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Enter another flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="16"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Start somebody else in a flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="17"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Open a ticket with a human agent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="18"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Send the contact airtime
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="19"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by intent
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="20"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Automatic Classify (New)
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="21"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a custom expression
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="22"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by contact field
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="23"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by a result in the flow
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="24"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split randomly
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="25"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by group membership
+                  </span>
+                </div>
+                <div
+                  class="_option_08dd12  "
+                  data-option-index="26"
+                >
+                  <span
+                    class="_name_08dd12"
+                  >
+                    Split by URN type
+                  </span>
+                </div>
+              </div>
+              <div
+                class="_options_wrapper_08dd12"
+                data-testid="temba_select_expressions_type"
+                id="temba_select_expressions_type"
+                style="margin-top: 0px; width: 0px; display: none;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="__ele_8d991a_8d991a __ele_7ef115_8d991a"
+        >
+          <div
+            class="_label_8d991a u font secondary body-md color-neutral-cloudy"
+          >
+            Flow to start
+          </div>
+          <div
+            class="_select_wrapper_4cce75"
+            data-testid="temba_select_flow_to_start"
+            id="temba_select_flow_to_start"
+          >
+            <div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="all: unset;"
+              >
+                <div
+                  class="unnnic-form sm _bold_placeholder_4cce75"
+                  data-testid="temba_select_input_flow_to_start"
+                  data-v-acea6376=""
+                >
+                  <!---->
+                  <div
+                    class="text-input size--sm has-icon-right _bold_placeholder_4cce75 unnnic-form-input"
+                    data-testid="temba_select_input_flow_to_start"
+                    data-v-acea6376=""
+                    data-v-df38a188=""
+                    mask=""
+                  >
+                    <input
+                      class="_bold_placeholder_4cce75 unnnic-form-input input-itself input size-sm normal _bold_placeholder_4cce75 unnnic-form-input input-itself"
+                      data-testid="temba_select_input_flow_to_start"
+                      data-v-bf6639b4=""
+                      data-v-df38a188=""
+                      hascloudycolor="false"
+                      iconright="arrow-button-down-1"
+                      placeholder="Colors"
+                      type="text"
+                    />
+                    <!---->
+                    <svg
+                      class="unnnic-icon unnnic-icon__size--sm unnnic-icon-scheme--neutral-cloudy icon-right"
+                      data-v-930380cc=""
+                      data-v-df38a188=""
+                      fill="none"
+                      height="40"
+                      viewBox="0 0 40 40"
+                      width="40"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        class="primary"
+                        d="M5.31471 14.0096L19.0432 29.5967C19.1676 29.7264 19.3169 29.8296 19.4822 29.9001C19.6474 29.9707 19.8253 30.007 20.005 30.007C20.1847 30.007 20.3625 29.9707 20.5278 29.9001C20.6931 29.8296 20.8424 29.7264 20.9668 29.5967L34.689 14.0096C34.7987 13.886 34.8825 13.7415 34.9353 13.5849C34.9882 13.4282 35.009 13.2625 34.9965 13.0977C34.984 12.9328 34.9385 12.7721 34.8627 12.6252C34.7869 12.4783 34.6824 12.3481 34.5553 12.2423L32.243 10.2963C31.9852 10.0789 31.6522 9.97163 31.316 9.99759C30.9797 10.0235 30.6671 10.1807 30.4457 10.435L20.2406 22.25C20.2112 22.2841 20.1749 22.3114 20.134 22.3302C20.0931 22.3489 20.0487 22.3587 20.0037 22.3587C19.9588 22.3587 19.9143 22.3489 19.8734 22.3302C19.8326 22.3114 19.7962 22.2841 19.7669 22.25L9.558 10.4338C9.33639 10.1806 9.02374 10.0252 8.68809 10.0013C8.52167 9.9865 8.35397 10.0052 8.19489 10.0563C8.03582 10.1074 7.8886 10.1898 7.76195 10.2988L5.44845 12.2423C5.32061 12.3479 5.21534 12.4781 5.13889 12.6252C5.06245 12.7723 5.0164 12.9332 5.0035 13.0985C4.99099 13.2635 5.01212 13.4294 5.06562 13.586C5.11911 13.7426 5.20386 13.8868 5.31471 14.0096Z"
+                        fill="#3B414D"
+                      />
+                    </svg>
+                  </div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_options_flow_to_start"
+              id="temba_select_options_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+            <div
+              class="_options_wrapper_08dd12"
+              data-testid="temba_select_expressions_flow_to_start"
+              id="temba_select_expressions_flow_to_start"
+              style="margin-top: 0px; width: 0px; display: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="_footer_af1b5d"
+      >
+        <div
+          class="_buttons_af1b5d"
+        >
+          <div
+            class="_buttons_wrapper_af1b5d"
+          >
+            <div
+              class="_right_buttons_af1b5d"
+            >
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--tertiary"
+                  data-v-4cec5e43=""
+                  style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Cancel
+                  </span>
+                  <!---->
+                </button>
+              </div>
+              <div
+                data-use-vue-component-wrap=""
+                data-v-app=""
+              >
+                <button
+                  class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+                  data-v-4cec5e43=""
+                  style="margin-top: 0px; margin-right: 0px;"
+                >
+                  <!---->
+                  <!---->
+                  <!---->
+                  <span
+                    class="unnnic-button__label"
+                    data-v-4cec5e43=""
+                  >
+                    
+                    
+                     Confirm
+                  </span>
+                  <!---->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

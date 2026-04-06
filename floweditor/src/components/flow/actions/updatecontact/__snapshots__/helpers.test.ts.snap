@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UpdateContact.helpers > should sort options 1`] = `
+[
+  {
+    "id": "name",
+    "key": "name",
+    "name": "Name",
+    "type": "property",
+  },
+  {
+    "id": "channel",
+    "key": "channel",
+    "name": "Channel",
+    "type": "property",
+  },
+  {
+    "id": "language",
+    "key": "language",
+    "name": "Language",
+    "type": "property",
+  },
+  {
+    "id": "status",
+    "key": "status",
+    "name": "Status",
+    "type": "property",
+  },
+]
+`;

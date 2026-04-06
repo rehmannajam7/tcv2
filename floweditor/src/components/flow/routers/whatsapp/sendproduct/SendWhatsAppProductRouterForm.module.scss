@@ -1,0 +1,92 @@
+@import 'src/variables.module.scss';
+
+.products_config {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-sm;
+
+  .automatic_check {
+    margin: $unnnic-spacing-xs 0;
+  }
+
+  .search_type_radio {
+    display: flex;
+    gap: $unnnic-spacing-sm;
+  }
+
+  .product_view_settings {
+    border-radius: $unnnic-border-radius-sm;
+    border: 1px solid $unnnic-color-neutral-soft;
+    display: flex;
+    padding: $unnnic-spacing-sm;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $unnnic-spacing-sm;
+    align-self: stretch;
+
+    .title {
+      cursor: pointer;
+      color: $unnnic-color-neutral-cloudy;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: $unnnic-spacing-xs;
+
+      .label {
+        display: flex;
+        align-items: center;
+        margin-bottom: $unnnic-spacing-nano;
+        gap: $unnnic-spacing-nano;
+        color: $unnnic-color-neutral-cloudy;
+
+        font-size: $unnnic-font-size-body-md;
+        line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+
+        .info_icon {
+          vertical-align: middle;
+          font-size: $unnnic-font-size-body-lg;
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+          color: $unnnic-color-neutral-cleanest;
+        }
+      }
+
+    }
+
+    .help_text {
+      color: $unnnic-color-neutral-cloudy;
+      font-family: $unnnic-font-family-secondary;
+      font-size: $unnnic-font-size-body-md;
+      line-height: $unnnic-line-height-md + $unnnic-font-size-body-md;
+    }
+  }
+
+  .vtex_fields {
+    display: flex;
+    flex-direction: column;
+    gap: $unnnic-spacing-sm;
+
+    .search_url {
+      flex: 5;
+    }
+
+    .cart_simulation_params {
+      flex: 5;
+    }
+
+    .optional {
+      display: flex;
+      gap: $unnnic-spacing-sm;
+
+      .postal_code,
+      .seller_id {
+        flex: 1;
+      }
+    }
+  }
+}

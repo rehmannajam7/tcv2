@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowEditor Persistence Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+        .storage-info { background-color: #f8f9fa; padding: 10px; margin: 10px 0; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>FlowEditor Persistent Storage Test</h1>
+    
+    <div class="test-section">
+        <h3>Current Storage State</h3>
+        <div id="storageInfo" class="storage-info"></div>
+        <button onclick="checkStorage()">Refresh Storage Info</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test Actions</h3>
+        <button onclick="storeTestData()">Store Test Authentication</button>
+        <button onclick="clearStorage()">Clear Storage</button>
+        <button onclick="testFlowEditor()">Test FlowEditor Access</button>
+    </div>
+    
+    <div class="test-section">
+        <h3>Test Results</h3>
+        <div id="testResults"></div>
+    </div>
+
+    <script>
+        // Storage keys (matching the FlowEditor implementation)
+        const STORAGE_KEYS = {
+            AUTH_TOKEN: 'floweditor_auth_token',
+            ACCOUNT_ID: 'floweditor_account_id',
+        };
+
+        function checkStorage() {
+            const authToken = localStorage.getItem(STORAGE_KEYS.AUTH_TOKEN);
+            const accountId = localStorage.getItem(STORAGE_KEYS.ACCOUNT_ID);
+            
+            const info = document.getElementById('storageInfo');
+            info.innerHTML = `
+                <strong>Stored Authentication:</strong><br>
+                Account ID: ${accountId || 'Not set'}<br>
+                Auth Token: ${authToken || 'Not set'}
+            `;
+        }
+
+        function storeTestData() {
+            localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, 'test_token_123');
+            localStorage.setItem(STORAGE_KEYS.ACCOUNT_ID, '1');
+            
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<div class="success">✅ Test authentication data stored successfully!</div>';
+            checkStorage();
+        }
+
+        function clearStorage() {
+            localStorage.removeItem(STORAGE_KEYS.AUTH_TOKEN);
+            localStorage.removeItem(STORAGE_KEYS.ACCOUNT_ID);
+            
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<div class="success">✅ Storage cleared successfully!</div>';
+            checkStorage();
+        }
+
+        function testFlowEditor() {
+            // Open FlowEditor in a new tab to test persistence
+            const flowEditorUrl = 'http://localhost:3001/';
+            window.open(flowEditorUrl, '_blank');
+            
+            const results = document.getElementById('testResults');
+            results.innerHTML = '<div class="success">✅ FlowEditor opened in new tab. Check if it loads without URL parameters!</div>';
+        }
+
+        // Initialize on page load
+        checkStorage();
+    </script>
+</body>
+</html>

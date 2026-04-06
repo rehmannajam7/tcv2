@@ -1,0 +1,13 @@
+@import 'src/variables.module.scss';
+
+.label {
+  margin-bottom: $unnnic-spacing-stack-nano;
+}
+
+.value {
+  margin-top: $unnnic-spacing-stack-sm;
+}
+
+.dialog {
+  width: 498px;
+}

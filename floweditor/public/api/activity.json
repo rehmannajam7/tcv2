@@ -1,0 +1,12 @@
+{
+  "results": [
+    {
+      "nodes": {
+        "node-1": {
+          "active": 5,
+          "visited": 25
+        }
+      }
+    }
+  ]
+}

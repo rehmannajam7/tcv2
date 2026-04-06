@@ -1,0 +1,215 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SetRunResultForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="set_run_result"
+  title="Save flow result"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Save a result for this flow",
+        "form": [Function],
+        "name": "Save flow result",
+        "type": "set_run_result",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "category": "",
+          "name": "Name",
+          "type": "set_run_result",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "value": "Grace",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "category": "",
+                "name": "Name",
+                "type": "set_run_result",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                "value": "Grace",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_form_2c4d55"
+  >
+    <AssetSelector
+      additionalOptions={[]}
+      assets={
+        {
+          "items": {},
+          "type": "result",
+        }
+      }
+      createAssetFromInput={[Function]}
+      createPrefix="New: "
+      entry={
+        {
+          "value": {
+            "id": "name",
+            "name": "Name",
+            "type": "result",
+          },
+        }
+      }
+      formClearable={true}
+      helpText={
+        <Trans
+          i18nKey="forms.result_name_help"
+          values={
+            {
+              "resultFormat": "@results.name",
+            }
+          }
+        >
+          By naming the result, you can reference it later using [[resultFormat]]
+        </Trans>
+      }
+      name="Result"
+      nameKey="name"
+      onChange={[Function]}
+      searchable={true}
+      showLabel={true}
+      valueKey="value"
+    />
+    <div
+      className="_value_2c4d55"
+    >
+      <TextInputElement
+        autocomplete={true}
+        entry={
+          {
+            "value": "Grace",
+          }
+        }
+        helpText="The value to save for this result or empty to clears it. You can use expressions, for example: @(title(input))"
+        name="Value"
+        onChange={[Function]}
+        placeholder="Value"
+        showLabel={true}
+      />
+    </div>
+    <div
+      className="_category_2c4d55"
+    >
+      <TextInputElement
+        autocomplete={false}
+        entry={
+          {
+            "value": "",
+          }
+        }
+        helpText="An optional category for your result. For age, the value might be 17, but the category might be “Teenager”"
+        name="Category (optional)"
+        onChange={[Function]}
+        placeholder="Ex: shopping"
+        showLabel={true}
+      />
+    </div>
+  </div>
+</Dialog>
+`;
+
+exports[`SetRunResultForm > updates > should allow switching from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "category": "Result Category",
+        "name": "Result Name",
+        "type": "set_run_result",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        "value": "Result Value",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SetRunResultForm > updates > should save changes 1`] = `
+{
+  "category": {
+    "validationFailures": [],
+    "value": "Result Category",
+  },
+  "name": {
+    "validationFailures": [],
+    "value": {
+      "id": "result_name",
+      "name": "Result Name",
+      "type": "result",
+    },
+  },
+  "valid": true,
+  "value": {
+    "validationFailures": [],
+    "value": "Result Value",
+  },
+}
+`;
+
+exports[`SetRunResultForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "category": "Result Category",
+        "name": "Result Name",
+        "type": "set_run_result",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        "value": "Result Value",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

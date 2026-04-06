@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "uuid": "template-1",
+      "name": "Welcome Message",
+      "translations": [
+        {
+          "channel": {
+            "uuid": "channel-1",
+            "name": "WhatsApp"
+          },
+          "language": "eng",
+          "content": "Welcome to our service!",
+          "variable_count": 0,
+          "status": "approved",
+          "namespace": "demo"
+        }
+      ]
+    }
+  ]
+}

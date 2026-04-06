@@ -1,0 +1,44 @@
+@import "src/variables.module.scss";
+
+.form_element {
+  margin-bottom: $unnnic-spacing-stack-sm;
+}
+
+.node {
+  .to {
+    padding: $unnnic-spacing-inset-xs;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+
+    .name {
+      font-size: 10px;
+    }
+
+    .more {
+      line-height: 5px;
+      padding-bottom: 5px;
+    }
+
+    +.flow {
+      border-top: 1px solid $unnnic-color-neutral-soft;
+    }
+  }
+
+  .message {
+    padding: $action_padding;
+    width: 100%;
+  }
+}
+
+.flow {
+  padding: $action_padding;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  margin-right: 6px;
+}

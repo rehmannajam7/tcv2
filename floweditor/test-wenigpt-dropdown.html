@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeniGPT Dropdown Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        iframe { width: 100%; height: 600px; border: 2px solid #ccc; border-radius: 5px; }
+        .controls { margin: 20px 0; }
+        button { margin: 5px; padding: 10px 15px; font-size: 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>WeniGPT Dropdown Live Test</h1>
+    
+    <div class="test-section info">
+        <h2>Test Configuration</h2>
+        <p>This page tests the WeniGPT router dropdown to verify it uses live API data instead of static fallback.</p>
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Open the browser console to see debugging logs</li>
+            <li>Click "Load FlowEditor with WeniGPT" to open the FlowEditor</li>
+            <li>Add a WeniGPT router node to the flow</li>
+            <li>Check if the Knowledge Base dropdown shows live data ("General Knowledge", "Product Information", "Captain Assistant 1", etc.)</li>
+            <li>Check console for "🔍 WeniGPT:" debug messages</li>
+        </ol>
+    </div>
+
+    <div class="controls">
+        <button onclick="loadFlowEditor()">Load FlowEditor with WeniGPT</button>
+        <button onclick="testAPIEndpoints()">Test API Endpoints Directly</button>
+        <button onclick="clearConsole()">Clear Console</button>
+    </div>
+
+    <div class="test-section">
+        <h2>FlowEditor Test</h2>
+        <iframe id="floweditor-frame" src="" style="display: none;"></iframe>
+        <div id="test-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>API Test Results</h2>
+        <div id="api-results"></div>
+    </div>
+
+    <script>
+        function clearConsole() {
+            console.clear();
+            document.getElementById('test-results').innerHTML = '<p>Console cleared. Check browser console for new logs.</p>';
+        }
+
+        function loadFlowEditor() {
+            const frame = document.getElementById('floweditor-frame');
+            const resultsDiv = document.getElementById('test-results');
+            
+            // URL with parameters to simulate FlowEditor environment
+            const flowEditorUrl = '/?flow=new&account_id=1&token=test-token';
+            
+            frame.src = flowEditorUrl;
+            frame.style.display = 'block';
+            
+            resultsDiv.innerHTML = `
+                <div class="info">
+                    <h3>FlowEditor Loaded</h3>
+                    <p>URL: ${flowEditorUrl}</p>
+                    <p>Instructions:</p>
+                    <ol>
+                        <li>Right-click in the iframe and select "Inspect" to open dev tools for the iframe</li>
+                        <li>Go to the Console tab in the iframe's dev tools</li>
+                        <li>Add a WeniGPT router node to test the dropdown</li>
+                        <li>Look for "🔍 WeniGPT:" debug messages in the console</li>
+                    </ol>
+                </div>
+            `;
+            
+            console.log('🔍 Test: FlowEditor iframe loaded with URL:', flowEditorUrl);
+            console.log('🔍 Test: To see WeniGPT debug logs, open the iframe console and look for "🔍 WeniGPT:" messages');
+        }
+
+        async function testAPIEndpoints() {
+            const resultsDiv = document.getElementById('api-results');
+            resultsDiv.innerHTML = '<p>Testing API endpoints...</p>';
+            
+            try {
+                // Test knowledge bases endpoint through proxy
+                console.log('🔍 Test: Fetching knowledge bases...');
+                const kbResponse = await fetch('/floweditor-api/api/v1/accounts/1/flow_editor/knowledge_bases', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                console.log('🔍 Test: Knowledge bases response:', {
+                    status: kbResponse.status,
+                    ok: kbResponse.ok,
+                    url: kbResponse.url
+                });
+                
+                let kbData = null;
+                let kbError = null;
+                if (kbResponse.ok) {
+                    kbData = await kbResponse.json();
+                    console.log('🔍 Test: Knowledge bases data:', kbData);
+                } else {
+                    kbError = `HTTP ${kbResponse.status}`;
+                }
+                
+                // Test captain assistants endpoint through proxy
+                console.log('🔍 Test: Fetching captain assistants...');
+                const captainResponse = await fetch('/floweditor-api/api/v1/accounts/1/captain/assistants', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                
+                console.log('🔍 Test: Captain assistants response:', {
+                    status: captainResponse.status,
+                    ok: captainResponse.ok,
+                    url: captainResponse.url
+                });
+                
+                let captainData = null;
+                let captainError = null;
+                if (captainResponse.ok) {
+                    captainData = await captainResponse.json();
+                    console.log('🔍 Test: Captain assistants data:', captainData);
+                } else {
+                    captainError = `HTTP ${captainResponse.status}`;
+                }
+                
+                // Display results
+                let html = '<div class="success"><h3>✅ API Test Results</h3>';
+                
+                if (kbResponse.ok) {
+                    html += `<p><strong>Knowledge Bases:</strong> ✅ ${kbResponse.status}</p>`;
+                    if (kbData) {
+                        try {
+                            const kbBody = typeof kbData.body === 'string' ? JSON.parse(kbData.body) : kbData;
+                            const kbResults = kbBody.results || kbBody.data || kbBody;
+                            html += `<p>Found ${Array.isArray(kbResults) ? kbResults.length : 0} knowledge bases</p>`;
+                            if (Array.isArray(kbResults) && kbResults.length > 0) {
+                                html += '<ul>';
+                                kbResults.slice(0, 3).forEach(kb => {
+                                    html += `<li>${kb.name || kb.label || 'Unnamed'}</li>`;
+                                });
+                                if (kbResults.length > 3) html += `<li>... and ${kbResults.length - 3} more</li>`;
+                                html += '</ul>';
+                            }
+                        } catch (e) {
+                            html += `<p>Data format: ${JSON.stringify(kbData).substring(0, 100)}...</p>`;
+                        }
+                    }
+                } else {
+                    html += `<p><strong>Knowledge Bases:</strong> ❌ ${kbError || kbResponse.status}</p>`;
+                }
+                
+                if (captainResponse.ok) {
+                    html += `<p><strong>Captain Assistants:</strong> ✅ ${captainResponse.status}</p>`;
+                    if (captainData) {
+                        try {
+                            const captainBody = typeof captainData.body === 'string' ? JSON.parse(captainData.body) : captainData;
+                            const captainResults = captainBody.results || captainBody.data || captainBody;
+                            html += `<p>Found ${Array.isArray(captainResults) ? captainResults.length : 0} captain assistants</p>`;
+                            if (Array.isArray(captainResults) && captainResults.length > 0) {
+                                html += '<ul>';
+                                captainResults.slice(0, 3).forEach(ca => {
+                                    html += `<li>${ca.name || ca.label || 'Unnamed'}</li>`;
+                                });
+                                if (captainResults.length > 3) html += `<li>... and ${captainResults.length - 3} more</li>`;
+                                html += '</ul>';
+                            }
+                        } catch (e) {
+                            html += `<p>Data format: ${JSON.stringify(captainData).substring(0, 100)}...</p>`;
+                        }
+                    }
+                } else {
+                    html += `<p><strong>Captain Assistants:</strong> ❌ ${captainError || captainResponse.status}</p>`;
+                }
+                
+                html += '</div>';
+                resultsDiv.innerHTML = html;
+                
+                // Summary for dropdown expectation
+                const totalItems = (kbData ? (() => {
+                    try {
+                        const kbBody = typeof kbData.body === 'string' ? JSON.parse(kbData.body) : kbData;
+                        return (kbBody.results || kbBody.data || kbBody).length;
+                    } catch (e) { return 0; }
+                })() : 0) + (captainData ? (() => {
+                    try {
+                        const captainBody = typeof captainData.body === 'string' ? JSON.parse(captainData.body) : captainData;
+                        return (captainBody.results || captainBody.data || captainBody).length;
+                    } catch (e) { return 0; }
+                })() : 0);
+                
+                if (totalItems > 0) {
+                    resultsDiv.innerHTML += `
+                        <div class="success" style="margin-top: 10px;">
+                            <h4>🎉 Expected Dropdown Content</h4>
+                            <p>The WeniGPT dropdown should now show <strong>${totalItems} live items</strong> from the API instead of static fallback data.</p>
+                            <p>Look for items like: "General Knowledge", "Product Information", "Captain Assistant 1", etc.</p>
+                        </div>
+                    `;
+                }
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ API Test Failed</h3>
+                        <p>Error: ${error.message}</p>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+                console.error('🔍 Test: API test failed:', error);
+            }
+        }
+        
+        // Auto-test on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🔍 Test: WeniGPT dropdown test page loaded');
+            console.log('🔍 Test: Click "Test API Endpoints Directly" to verify API connectivity');
+            console.log('🔍 Test: Click "Load FlowEditor with WeniGPT" to test the actual dropdown');
+            console.log('🔍 Test: Look for "🔍 WeniGPT:" messages in the console when testing the dropdown');
+        });
+    </script>
+</body>
+</html>

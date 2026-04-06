@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "key": "org_name",
+      "name": "Organization Name",
+      "value": "Demo Organization"
+    },
+    {
+      "key": "org_timezone",
+      "name": "Organization Timezone",
+      "value": "America/New_York"
+    }
+  ]
+}

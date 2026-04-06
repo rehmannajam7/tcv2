@@ -1,0 +1,80 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PopTab > render > should render base component 1`] = `
+<div
+  className="pop_wrapper _pop_wrapper_6f73c3 _visible_6f73c3"
+  style={
+    {
+      "right": -250,
+      "top": "50px",
+    }
+  }
+>
+  <div
+    className="_tab_wrapper_6f73c3"
+  >
+    <div
+      className="_tab_6f73c3"
+      onClick={[Function]}
+      style={
+        {
+          "background": "red",
+        }
+      }
+    >
+      <div
+        className="_icon_6f73c3"
+      >
+        <ForwardRef
+          icon="fe-history"
+          scheme="neutral-snow"
+          size="lg"
+        />
+      </div>
+      <div
+        className="_label_6f73c3"
+      >
+        Show Revisions
+      </div>
+    </div>
+  </div>
+  <div
+    className="_popped_6f73c3 _undefined_6f73c3"
+    style={
+      {
+        "borderColor": "red",
+        "right": 265,
+        "top": -100,
+      }
+    }
+  >
+    <div
+      className="_header_6f73c3"
+      style={
+        {
+          "background": "red",
+        }
+      }
+    >
+      <div
+        className="_close_6f73c3"
+        onClick={[Function]}
+      >
+        <ForwardRef
+          icon="close"
+          scheme="neutral-snow"
+          size="md"
+        />
+      </div>
+    </div>
+    <div
+      className="_body_6f73c3"
+      style={
+        {
+          "background": "red",
+        }
+      }
+    />
+  </div>
+</div>
+`;

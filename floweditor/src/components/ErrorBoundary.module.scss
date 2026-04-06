@@ -1,0 +1,114 @@
+@import 'src/variables.module.scss';
+
+.errorBoundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: $unnnic-spacing-lg;
+  background-color: $unnnic-color-neutral-lightest;
+  border-radius: $unnnic-border-radius-md;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-cleanest;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 500px;
+  padding: $unnnic-spacing-xl;
+  background-color: white;
+  border-radius: $unnnic-border-radius-md;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.errorTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $unnnic-color-neutral-darkest;
+  margin: 0 0 $unnnic-spacing-md 0;
+}
+
+.errorMessage {
+  font-size: 1rem;
+  color: $unnnic-color-neutral-dark;
+  margin: 0 0 $unnnic-spacing-lg 0;
+  line-height: 1.5;
+}
+
+.errorActions {
+  display: flex;
+  gap: $unnnic-spacing-sm;
+  justify-content: center;
+  margin-bottom: $unnnic-spacing-lg;
+}
+
+.retryButton {
+  background-color: $unnnic-color-weni-600;
+  color: white;
+  border: none;
+  padding: $unnnic-spacing-sm $unnnic-spacing-md;
+  border-radius: $unnnic-border-radius-sm;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $unnnic-color-weni-700;
+  }
+
+  &:active {
+    background-color: $unnnic-color-weni-800;
+  }
+}
+
+.reloadButton {
+  background-color: transparent;
+  color: $unnnic-color-neutral-dark;
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-clean;
+  padding: $unnnic-spacing-sm $unnnic-spacing-md;
+  border-radius: $unnnic-border-radius-sm;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $unnnic-color-neutral-lightest;
+    border-color: $unnnic-color-neutral-cleanest;
+  }
+
+  &:active {
+    background-color: $unnnic-color-neutral-light;
+  }
+}
+
+.errorDetails {
+  text-align: left;
+  margin-top: $unnnic-spacing-md;
+  border: $unnnic-border-width-thinner solid $unnnic-color-feedback-red;
+  border-radius: $unnnic-border-radius-sm;
+  background-color: rgba(255, 0, 0, 0.05);
+
+  summary {
+    padding: $unnnic-spacing-sm;
+    cursor: pointer;
+    font-weight: 500;
+    color: $unnnic-color-feedback-red;
+    
+    &:hover {
+      background-color: rgba(255, 0, 0, 0.05);
+    }
+  }
+}
+
+.errorStack {
+  margin: 0;
+  padding: $unnnic-spacing-sm;
+  background-color: $unnnic-color-neutral-darkest;
+  color: $unnnic-color-neutral-lightest;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  overflow-x: auto;
+  border-radius: 0 0 $unnnic-border-radius-sm $unnnic-border-radius-sm;
+}

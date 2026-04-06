@@ -1,0 +1,3905 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SendWhatsAppMsgForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "tertiary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  headerClass="send_whatsapp_msg"
+  new={true}
+  title="Send WhatsApp Message"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Send a WhatsApp message",
+        "filter": "whatsapp",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "text",
+          "quick_replies",
+          "footer",
+          "header_text",
+          "button_text",
+        ],
+        "massageForDisplay": [Function],
+        "name": "Send WhatsApp Message",
+        "new": true,
+        "type": "send_whatsapp_msg",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "action_url": "",
+          "attachment": null,
+          "button_text": "",
+          "flow_data": {},
+          "flow_data_attachment_name_map": {},
+          "flow_id": "",
+          "flow_screen": "",
+          "footer": "",
+          "header_text": "",
+          "header_type": "media",
+          "interaction_type": null,
+          "list_items": [],
+          "messageType": "simple",
+          "order_details": null,
+          "quick_replies": [],
+          "text": "",
+          "type": "send_whatsapp_msg",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "action_url": "",
+                "attachment": null,
+                "button_text": "",
+                "flow_data": {},
+                "flow_data_attachment_name_map": {},
+                "flow_id": "",
+                "flow_screen": "",
+                "footer": "",
+                "header_text": "",
+                "header_type": "media",
+                "interaction_type": null,
+                "list_items": [],
+                "messageType": "simple",
+                "order_details": null,
+                "quick_replies": [],
+                "text": "",
+                "type": "send_whatsapp_msg",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <section
+    className="_content_1c4276"
+  >
+    <header
+      className="_header_1c4276"
+    >
+      Configure your message
+    </header>
+    <div
+      className="_selectors_1c4276"
+    >
+      <div>
+        <span
+          className="_label_1c4276"
+        >
+          Message type
+        </span>
+        <ForwardRef
+          options={
+            [
+              {
+                "label": "Simple message",
+                "value": "simple",
+              },
+              {
+                "label": "Interactive message",
+                "value": "interactive",
+              },
+            ]
+          }
+          orderedByIndex={true}
+          size="sm"
+          v-model={
+            [
+              [
+                {
+                  "label": "Simple message",
+                  "value": "simple",
+                },
+              ],
+              [Function],
+            ]
+          }
+        />
+      </div>
+      <div>
+        <span
+          className="_label_1c4276"
+        >
+          Interactions
+        </span>
+        <ForwardRef
+          disabled={true}
+          options={
+            [
+              {
+                "label": "No interactions selected",
+                "value": null,
+              },
+              {
+                "description": "Create up to 3 quick replies with predefined messages",
+                "label": "Quick replies",
+                "value": "replies",
+              },
+              {
+                "description": "Make choices easier with a list of up to 10 interactive options",
+                "label": "Option list",
+                "value": "list",
+              },
+              {
+                "description": "Ask users for their location to facilitate service",
+                "label": "Request Location",
+                "value": "location",
+              },
+              {
+                "description": "Add a button with a link to an external URL.",
+                "label": "URL Button",
+                "value": "cta_url",
+              },
+              {
+                "description": "Use your interactive forms created on Meta.",
+                "label": "WhatsApp Flows",
+                "value": "flow_msg",
+              },
+              {
+                "description": "Send order details to the user",
+                "label": "Payments: Order Details",
+                "value": "order_details",
+              },
+            ]
+          }
+          orderedByIndex={true}
+          size="sm"
+          v-model={
+            [
+              [
+                {
+                  "label": "No interactions selected",
+                  "value": null,
+                },
+              ],
+              [Function],
+            ]
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="_header_1c4276"
+    >
+      <div
+        className="_inputs_1c4276"
+      >
+        <React.Fragment>
+          <div
+            className="_attachment_url_1c4276"
+          >
+            <TextInputElement
+              autocomplete={true}
+              disabled={false}
+              entry={
+                {
+                  "value": "",
+                }
+              }
+              error={null}
+              name="Media (optional)"
+              onChange={[Function]}
+              placeholder="Paste an URL or send a file"
+              showLabel={true}
+              size="sm"
+            />
+          </div>
+          <div
+            className="_upload_button_5978a7 "
+          >
+            <Button
+              disabled={false}
+              iconName="upload-bottom-1"
+              name="Upload"
+              onClick={[Function]}
+              size="small"
+              type="secondary"
+            />
+            <input
+              data-testid="upload-input"
+              onChange={[Function]}
+              style={
+                {
+                  "display": "none",
+                }
+              }
+              type="file"
+            />
+          </div>
+        </React.Fragment>
+      </div>
+    </div>
+    <TextEditorElement
+      autocomplete={true}
+      entry={
+        {
+          "value": "",
+        }
+      }
+      maxLength={4096}
+      name="Message"
+      onChange={[Function]}
+      placeholder="Type here..."
+      showLabel={true}
+    />
+  </section>
+</Dialog>
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled but missing a single pix config field if there's no payment link 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e44fa695-257c-4cdd-baf7-bb485aa2d1a0",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should not save changes with order details filled if there is no message, reference id, item list or neither payment buttons 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "917734c2-2bc0-4b4e-9d21-14411cb62c87",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "",
+        "program_name": "",
+        "value": "",
+      },
+      "item_list": "",
+      "payment_settings": {
+        "payment_link": "",
+        "pix_config": {
+          "code": "",
+          "key": "",
+          "key_type": "",
+          "merchant_name": "",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "",
+      "shipping": {
+        "description": "",
+        "value": "",
+      },
+      "tax": {
+        "description": "",
+        "value": "",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Send order details to the user",
+      "label": "Payments: Order Details",
+      "value": "order_details",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "679d32c1-9996-48b4-9691-e869507b9e46",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "validationFailures": [],
+    "value": {
+      "discount": {
+        "description": "discount",
+        "program_name": "program",
+        "value": "3000",
+      },
+      "item_list": "@results.items",
+      "payment_settings": {
+        "payment_link": "https://weni.ai",
+        "pix_config": {
+          "code": "456",
+          "key": "123",
+          "key_type": "random",
+          "merchant_name": "merchant",
+        },
+        "type": "physical-goods",
+      },
+      "reference_id": "123",
+      "shipping": {
+        "description": "shipping",
+        "value": "2000",
+      },
+      "tax": {
+        "description": "tax",
+        "value": "1000",
+      },
+    },
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > should save changes with order details filled 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "interaction_type": "order_details",
+        "messageType": "interactive",
+        "order_details": {
+          "discount": {
+            "description": "discount",
+            "program_name": "program",
+            "value": "3000",
+          },
+          "item_list": "@results.items",
+          "payment_settings": {
+            "payment_link": "https://weni.ai",
+            "pix_config": {
+              "code": "456",
+              "key": "123",
+              "key_type": "random",
+              "merchant_name": "merchant",
+            },
+            "type": "physical-goods",
+          },
+          "reference_id": "123",
+          "shipping": {
+            "description": "shipping",
+            "value": "2000",
+          },
+          "tax": {
+            "description": "tax",
+            "value": "1000",
+          },
+        },
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "validationFailures": [],
+    "value": "new footer",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "00dd2423-0a34-4ee2-b97d-839fb2d593ef",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "validationFailures": [
+      {
+        "message": "At least one quick reply must be filled",
+      },
+    ],
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes if footer is filled but there are no replies or list items 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "validationFailures": [],
+    "value": "new footer",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "c5722340-f7e1-4d99-ac5e-3a6e59845111",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "new header",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "0c8c9239-9b59-473a-a229-d8a9693be270",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "validationFailures": [
+      {
+        "message": "At least one quick reply must be filled",
+      },
+    ],
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes if header is set to text and filled but there are no replies or list items 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "new header",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "9adce29f-da95-4182-9cb3-0f1e3bf714e5",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button text if no list items are provided 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "96249bdc-cb58-4489-a188-0eeb6686a8c9",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save changes with updated button url if no list items are provided 2`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [
+      {
+        "message": "At least one list option must be filled",
+      },
+    ],
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "306dee46-46c7-4a8a-8a33-ab2b7e42b02e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should not save if message is empty and there is no attachment 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [
+      {
+        "message": "Message is required",
+      },
+    ],
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": false,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes after remove attachment 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there are no replies or list items 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "a62e8284-49f8-4292-adbc-d5f6607f85c5",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there are no replies or list items 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there is no message 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "6c22884b-0e35-4206-982e-18320691eda9",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes if header is set to media and filled, and there is no message 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes when interaction type is location 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Ask users for their location to facilitate service",
+      "label": "Request Location",
+      "value": "location",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "452c1751-5b03-4d1a-8346-83be999a8258",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes when interaction type is location 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "interaction_type": "location",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and action url when interaction type is CTA 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "https://weni.ai",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Add a button with a link to an external URL.",
+      "label": "URL Button",
+      "value": "cta_url",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "6f87dde3-5df3-4935-8585-2656df068d61",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with cta button and action url when interaction type is CTA 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "action_url": "https://weni.ai",
+        "button_text": "new button text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "cta_url",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated attachment by url 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": {
+      "type": "image",
+      "uploaded": false,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated attachment by url 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button text 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "new button text",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "b5a6cc81-02ba-4931-b4be-a0d7204be029",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button text 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "button_text": "new button text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 1`] = `
+{
+  "actionURL": {
+    "validationFailures": [],
+    "value": "new url text",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "f627a69c-a227-451f-9520-ce969f02162e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated button url 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "action_url": "new url text",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "validationFailures": [],
+    "value": "new footer",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "reply 1",
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated footer 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "footer": "new footer",
+        "header_type": "media",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated header 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "new header",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e0bc3776-792f-49d2-b4be-48be2cf8159a",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "reply 1",
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated header 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_text": "new header",
+        "header_type": "text",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "e81b3f1a-0863-4418-8a72-9c9f8aa72b7c",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 1",
+            "title": "title 1",
+            "uuid": "1",
+          },
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "description 1",
+        "title": "title 1",
+        "uuid": "1",
+      },
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "431978dd-6b18-4e25-86f1-11835491a9c9",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Make choices easier with a list of up to 10 interactive options",
+      "label": "Option list",
+      "value": "list",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "validationFailures": [],
+    "value": [
+      {
+        "description": "description 2",
+        "title": "title 2",
+        "uuid": "2",
+      },
+      {
+        "description": "",
+        "title": "",
+        "uuid": "431978dd-6b18-4e25-86f1-11835491a9c9",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated list items after a removal 3`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "text",
+        "interaction_type": "list",
+        "list_items": [
+          {
+            "description": "description 2",
+            "title": "title 2",
+            "uuid": "2",
+          },
+        ],
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated message 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated message 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick replies 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "a0bf60d1-2333-41a5-9bcb-7c56cc5e969e",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "reply 1",
+      "reply 2",
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated quick replies 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "interaction_type": "replies",
+        "messageType": "interactive",
+        "quick_replies": [
+          "reply 1",
+          "reply 2",
+        ],
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload attachment 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": {
+      "type": "image",
+      "uploaded": true,
+      "url": "http://weni.ai/image.png",
+    },
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+      },
+    ],
+  },
+  "message": {
+    "value": "",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with updated upload attachment 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "attachment": "image:http://weni.ai/image.png",
+        "flow_data": {},
+        "flow_data_attachment_name_map": {},
+        "header_type": "media",
+        "messageType": "simple",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "button_text": "button text",
+        "flow_data": {
+          "file": "",
+          "foo": "bar",
+        },
+        "flow_data_attachment_name_map": {},
+        "flow_id": "123",
+        "flow_screen": "first screen",
+        "header_type": "text",
+        "interaction_type": "flow_msg",
+        "messageType": "interactive",
+        "text": "new msg",
+        "type": "send_whatsapp_msg",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 3`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "file value",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {
+    "file": "file name",
+  },
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should save changes with whatsapp flow configured 4`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "validationFailures": [],
+    "value": "button text",
+  },
+  "flowData": {
+    "value": {
+      "file": "",
+      "foo": "bar",
+    },
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "validationFailures": [],
+    "value": "first screen",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Text",
+      "value": "text",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Use your interactive forms created on Meta.",
+      "label": "WhatsApp Flows",
+      "value": "flow_msg",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "d2b146a5-da3b-4766-9d5a-10c91c09dce3",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "validationFailures": [],
+    "value": {
+      "assets": {
+        "screens": [
+          "first screen",
+          "second screen",
+        ],
+        "variables": [
+          "foo",
+          "file",
+        ],
+      },
+      "id": "123",
+      "name": "wpp flow",
+    },
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 1`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 2`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "value": "",
+  },
+  "headerText": {
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "description": "Create up to 3 quick replies with predefined messages",
+      "label": "Quick replies",
+      "value": "replies",
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Interactive message",
+      "value": "interactive",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;
+
+exports[`SendWhatsAppMsgForm > updates > should switch message type to interactive and go back to simple if desired 3`] = `
+{
+  "actionURL": {
+    "value": "",
+  },
+  "attachment": {
+    "validationFailures": [],
+    "value": null,
+  },
+  "buttonText": {
+    "value": "",
+  },
+  "flowData": {
+    "value": {},
+  },
+  "flowDataAttachmentNameMap": {},
+  "flowScreen": {
+    "value": "",
+  },
+  "footer": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerText": {
+    "validationFailures": [],
+    "value": "",
+  },
+  "headerType": {
+    "value": {
+      "label": "Media",
+      "value": "media",
+    },
+  },
+  "interactionType": {
+    "value": {
+      "label": "No interactions selected",
+      "value": null,
+    },
+  },
+  "listItemDescriptionEntry": {
+    "value": "",
+  },
+  "listItemTitleEntry": {
+    "value": "",
+  },
+  "listItems": {
+    "value": [
+      {
+        "description": "",
+        "title": "",
+        "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+      },
+    ],
+  },
+  "message": {
+    "validationFailures": [],
+    "value": "new msg",
+  },
+  "messageType": {
+    "value": {
+      "label": "Simple message",
+      "value": "simple",
+    },
+  },
+  "orderDetails": {
+    "value": null,
+  },
+  "quickReplies": {
+    "value": [
+      "",
+    ],
+  },
+  "quickReplyEntry": {
+    "value": "",
+  },
+  "valid": true,
+  "whatsappFlow": {
+    "value": null,
+  },
+}
+`;

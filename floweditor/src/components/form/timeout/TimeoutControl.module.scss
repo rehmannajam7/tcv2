@@ -1,0 +1,17 @@
+@import 'src/mixins.module.scss';
+@import 'src/variables.module.scss';
+
+.timeout_control_container {
+  display: flex;
+  flex-direction: column;
+  gap: $unnnic-spacing-stack-sm;
+}
+
+.timeout_label {
+  margin: 0;
+  margin-bottom: $unnnic-spacing-stack-nano;
+  font-family: $unnnic-font-family-secondary;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+}

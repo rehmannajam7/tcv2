@@ -1,0 +1,349 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ChangeGroupsComp > helpers > getChangeGroupsMarkup > should return ChangeGroupsComp markup w/ container 1`] = `
+<div
+  className="_groups_container_44aef7"
+  data-spec="content"
+>
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Early Adopters
+      </span>
+    </React.Fragment>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Testers
+      </span>
+    </React.Fragment>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Subscribers
+      </span>
+    </React.Fragment>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Champions
+      </span>
+    </React.Fragment>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+  >
+    Name Match
+  </div>
+</div>
+`;
+
+exports[`ChangeGroupsComp > helpers > getContentMarkup > should return list of elements that contains remove-all markup 1`] = `
+[
+  <div
+    data-spec="remove_from_all"
+  >
+    Remove from all groups
+  </div>,
+]
+`;
+
+exports[`ChangeGroupsComp > helpers > getContentMarkup > should return list of group elements 1`] = `
+[
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Early Adopters
+      </span>
+    </React.Fragment>
+  </div>,
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Testers
+      </span>
+    </React.Fragment>
+  </div>,
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Subscribers
+      </span>
+    </React.Fragment>
+  </div>,
+  <div
+    className="_node_asset_9658e1"
+  >
+    <React.Fragment>
+      <ForwardRef
+        className="_icon_25b42d"
+        icon="single-neutral-actions-1"
+        scheme="neutral-dark"
+        size="avatar-nano"
+      />
+      <span
+        className="_link_25b42d _truncated_25b42d"
+      >
+        Champions
+      </span>
+    </React.Fragment>
+  </div>,
+  <div
+    className="_node_asset_9658e1"
+  >
+    Name Match
+  </div>,
+]
+`;
+
+exports[`ChangeGroupsComp > helpers > getRemoveAllMarkup > should return remove-all markup 1`] = `
+<div
+  data-spec="remove_from_all"
+>
+  Remove from all groups
+</div>
+`;
+
+exports[`ChangeGroupsComp > render > should limit div to max number of groups 1`] = `
+<div
+  className="_groups_container_44aef7"
+  data-spec="content"
+>
+  <div
+    className="_node_asset_9658e1"
+    key="23ff7152-b588-43e4-90de-fda77aeaf7c0"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Customers
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="2429d573-80d7-47f8-879f-f2ba442a1bfd"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Unsatisfied Customers
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="cdbf9e01-aaa7-4381-8259-ee042447bcac"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Early Adopters
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="afaba971-8943-4dd8-860b-3561ed4f1fe1"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Testers
+    </span>
+  </div>
+  <div
+    key="ellipses"
+  >
+    +
+    2
+     more
+  </div>
+</div>
+`;
+
+exports[`ChangeGroupsComp > render > should render 'remove from all' markup when passed group action of type Types.remove_contact_groups 1`] = `
+<div
+  className="_groups_container_44aef7"
+  data-spec="content"
+>
+  <div
+    data-spec="remove_from_all"
+    key="remove_from_all"
+  >
+    Remove from all groups
+  </div>
+</div>
+`;
+
+exports[`ChangeGroupsComp > render > should render group name 1`] = `
+<div
+  className="_groups_container_44aef7"
+  data-spec="content"
+>
+  <div
+    className="_node_asset_9658e1"
+    key="cdbf9e01-aaa7-4381-8259-ee042447bcac"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Early Adopters
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="afaba971-8943-4dd8-860b-3561ed4f1fe1"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Testers
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="33b28bac-b588-43e4-90de-fda77aeaf7c0"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Subscribers
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="e0cccbcf-49be-4eef-88a7-ce2150a6d902"
+  >
+    <ForwardRef
+      className="_icon_25b42d"
+      icon="single-neutral-actions-1"
+      scheme="neutral-dark"
+      size="avatar-nano"
+    />
+    <span
+      className="_link_25b42d _truncated_25b42d"
+    >
+      Champions
+    </span>
+  </div>
+  <div
+    className="_node_asset_9658e1"
+    key="Name Match"
+  >
+    Name Match
+  </div>
+</div>
+`;

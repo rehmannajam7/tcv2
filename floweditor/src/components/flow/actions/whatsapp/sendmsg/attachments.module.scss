@@ -1,0 +1,17 @@
+@import 'src/variables.module.scss';
+
+.upload_button {
+  margin-top: $unnnic-spacing-md;
+
+  button {
+    height: 36px !important;
+  }
+}
+
+.small_upload_button {
+  margin: 0;
+
+  button {
+    padding: $unnnic-spacing-ant !important;
+  }
+}

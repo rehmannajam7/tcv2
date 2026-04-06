@@ -1,0 +1,154 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Modal > render > should render timeout control 1`] = `
+<Modal
+  show={true}
+  width="600px"
+>
+  <Modal
+    ariaHideApp={false}
+    bodyOpenClassName="ReactModal__Body--open"
+    closeTimeoutMS={0}
+    contentLabel="Modal"
+    isOpen={true}
+    overlayClassName="_overlay_4d72af"
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={false}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      {
+        "content": {
+          "border": "none",
+          "borderRadius": "none",
+          "bottom": "initial",
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "marginTop": "40px",
+          "outline": "none",
+          "padding": "none",
+          "width": "600px",
+        },
+      }
+    }
+  >
+    <Portal
+      containerInfo={
+        <div
+          class="ReactModalPortal"
+        >
+          <div
+            class="ReactModal__Overlay ReactModal__Overlay--after-open _overlay_4d72af"
+          >
+            <div
+              aria-label="Modal"
+              class="ReactModal__Content ReactModal__Content--after-open"
+              role="dialog"
+              style="position: absolute; top: 40px; left: 40px; right: 40px; background: rgb(255, 255, 255); overflow: auto; border-radius: none; outline: none; margin-left: auto; margin-right: auto; margin-top: 40px; width: 600px;"
+              tabindex="-1"
+            />
+          </div>
+        </div>
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        contentLabel="Modal"
+        defaultStyles={
+          {
+            "content": {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={true}
+        overlayClassName="_overlay_4d72af"
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={false}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          {
+            "content": {
+              "border": "none",
+              "borderRadius": "none",
+              "bottom": "initial",
+              "marginLeft": "auto",
+              "marginRight": "auto",
+              "marginTop": "40px",
+              "outline": "none",
+              "padding": "none",
+              "width": "600px",
+            },
+          }
+        }
+      >
+        <div
+          className="ReactModal__Overlay ReactModal__Overlay--after-open _overlay_4d72af"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={{}}
+        >
+          <div
+            aria-label="Modal"
+            className="ReactModal__Content ReactModal__Content--after-open"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            role="dialog"
+            style={
+              {
+                "WebkitOverflowScrolling": "touch",
+                "background": "#fff",
+                "border": "none",
+                "borderRadius": "none",
+                "bottom": "initial",
+                "left": "40px",
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "marginTop": "40px",
+                "outline": "none",
+                "overflow": "auto",
+                "padding": "none",
+                "position": "absolute",
+                "right": "40px",
+                "top": "40px",
+                "width": "600px",
+              }
+            }
+            tabIndex="-1"
+          />
+        </div>
+      </ModalPortal>
+    </Portal>
+  </Modal>
+</Modal>
+`;

@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "uuid": "label-1",
+      "name": "Important",
+      "count": 25
+    },
+    {
+      "uuid": "label-2",
+      "name": "Follow Up",
+      "count": 10
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:300|Roboto:200,300,400,500" />
+
+  <script type="module" src="/src/main.jsx" defer></script>
+  <script>
+    // Debug panel functionality
+    function toggleDebugPanel() {
+      const panel = document.getElementById('debug-panel');
+      const button = panel.querySelector('button');
+      if (panel.style.display === 'none') {
+        panel.style.display = 'block';
+        button.textContent = 'Hide Debug';
+      } else {
+        panel.style.display = 'none';
+        button.textContent = 'Show Debug';
+      }
+    }
+    
+    function addDebugMessage(message) {
+      const output = document.getElementById('debug-output');
+      if (output) {
+        const div = document.createElement('div');
+        div.style.marginBottom = '5px';
+        div.style.borderBottom = '1px solid #ddd';
+        div.style.paddingBottom = '2px';
+        div.innerHTML = '<small>' + new Date().toLocaleTimeString() + '</small><br>' + 
+                       (typeof message === 'object' ? JSON.stringify(message, null, 2) : message);
+        output.appendChild(div);
+        output.scrollTop = output.scrollHeight;
+      }
+    }
+    
+    // Intercept console.log calls that contain our debug markers
+    const originalConsoleLog = console.log;
+    console.log = function(...args) {
+      originalConsoleLog.apply(console, args);
+      
+      // Check if any argument contains our debug markers
+      const message = args.join(' ');
+      if (message.includes('🏪') || message.includes('🔍') || message.includes('🔐') || 
+          message.includes('createAssetStore') || message.includes('getAssets') || 
+          message.includes('CHANNELS')) {
+        addDebugMessage(message);
+      }
+    };
+    
+    window.addEventListener('DOMContentLoaded', (event) => {
+      // Parse URL parameters to get dynamic configuration
+      const urlParams = new URLSearchParams(window.location.search);
+      const accountId = urlParams.get('accountId') || urlParams.get('account_id'); // Account ID from Chatwoot (support both formats)
+      const flowId = urlParams.get('flow') || null; // Flow ID for editing existing flows (changed from 'flowId' to 'flow')
+      const token = urlParams.get('token'); // Authentication token from Chatwoot
+      
+      // Check for Chatwoot authentication parameters
+      const userId = urlParams.get('user_id');
+      const userEmail = urlParams.get('user_email');
+      
+      // Check for stored authentication if URL parameters are not present
+      const storedAccountId = localStorage.getItem('floweditor_account_id');
+      const storedToken = localStorage.getItem('floweditor_auth_token');
+      
+      const finalAccountId = accountId || storedAccountId;
+      
+      // For Chatwoot integration, we don't require a token parameter in the URL
+      // The authentication will be handled by the React app using the user_id and account_id
+      let finalToken = token || storedToken;
+      
+      // If we have Chatwoot parameters but no token, that's okay - the React app will handle auth
+      const hasChatwootParams = userId && accountId;
+      
+      // Development mode bypass - allow access without authentication when running on localhost
+      const isDevelopmentMode = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      
+      // Validate required parameters (from URL or storage)
+      let finalAccountIdResolved = finalAccountId;
+      if (!finalAccountIdResolved || isDevelopmentMode) {
+        // In development mode, always use account ID 1 to match backend
+        if (isDevelopmentMode) {
+          console.log('Development mode: Using default account ID 1');
+          finalAccountIdResolved = '1'; // Default account ID for development
+          // Clear any existing stored account ID and set to 1
+          localStorage.setItem('floweditor_account_id', finalAccountIdResolved);
+        } else if (!finalAccountIdResolved) {
+          console.error('Missing required accountId parameter');
+          document.body.innerHTML = '<div style="padding: 20px; text-align: center;"><h2>Error: Missing Account ID</h2><p>This FlowEditor instance requires an accountId parameter or stored authentication.</p></div>';
+          return;
+        }
+      }
+      
+      // Only require token if we don't have Chatwoot parameters and not in development mode
+      if (!finalToken && !hasChatwootParams && !isDevelopmentMode) {
+        console.error('Missing required token parameter');
+        document.body.innerHTML = '<div style="padding: 20px; text-align: center;"><h2>Error: Missing Authentication Token</h2><p>This FlowEditor instance requires a valid authentication token. Please provide a token parameter in the URL or ensure you have stored authentication.</p></div>';
+        return;
+      }
+      
+      // In development mode, set a valid token for testing
+      if (isDevelopmentMode && !finalToken) {
+        console.log('Development mode: Setting test token for FlowEditor authentication');
+        finalToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJhY2NvdW50X2lkIjoxLCJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJyb2xlIjoiYWRtaW5pc3RyYXRvciIsInVpZCI6InRlc3RAZXhhbXBsZS5jb20iLCJpYXQiOjE3NjE4NDMyMTYsImV4cCI6MTc2MTkyOTYxNn0.j-meTOOOO4zf3JZnC-DHWB7iXo938mKfMgnQa9wsMWE';
+      }
+      
+      // Resolve FlowEditor API base without hardcoding localhost
+      const protocol = window.location.protocol || 'http:';
+      const hostname = window.location.hostname || 'localhost';
+
+      const resolveApiBase = () => {
+        try {
+          // Prefer Chatwoot-provided config when embedding via iframe
+          const cfg = (typeof window !== 'undefined' && window.chatwootConfig) || {};
+          const fromConfig =
+            cfg.flowEditorApiBaseUrl ||
+            cfg.flowEditorBaseUrl ||
+            cfg.floweditorApiBaseUrl;
+
+          // Fallback to same-origin proxy path to avoid cross-origin issues
+          let base = fromConfig || `${window.location.origin}/floweditor-api`;
+          base = String(base).replace(/\/$/, '');
+
+          // Ensure API version suffix unless already present or using proxy root
+          if (!/\/api\/v\d+$/i.test(base) && !/\/floweditor-api$/i.test(base)) {
+            base = `${base}/api/v1`;
+          }
+          return base;
+        } catch (e) {
+          console.warn('Falling back to localhost:8000/api/v1 due to resolution error', e);
+          return `${protocol}//${hostname}:8000/api/v1`;
+        }
+      };
+
+      var apiBase = resolveApiBase();
+      var base = `${apiBase}/`;
+      console.log('FlowEditor API base resolved to:', apiBase);
+      
+      // Clear cached FlowEditor data but preserve flow definitions
+      try {
+        // Clear FlowEditor-specific localStorage items but preserve flow data
+        const keysToRemove = [];
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key && (key.startsWith('floweditor_') || key.startsWith('fe_'))) {
+            // Clear floweditor_ and fe_ prefixed items (cache, settings, etc.)
+            keysToRemove.push(key);
+          } else if (key && key.startsWith('flow_')) {
+            // For flow_ prefixed items, only clear non-definition data
+            // Preserve flow definitions but clear other flow-related cache
+            if (!key.includes('_definition') && !key.match(/^flow_\d+(_[a-z0-9]+)?$/)) {
+              keysToRemove.push(key);
+            }
+          }
+        }
+        keysToRemove.forEach(key => localStorage.removeItem(key));
+        console.log('Cleared FlowEditor cache (preserved flow definitions):', keysToRemove);
+      } catch (e) {
+        console.warn('Failed to clear FlowEditor cache', e);
+      }
+      
+      // Store authentication for future use
+      try {
+        if (finalAccountIdResolved) {
+          localStorage.setItem('floweditor_account_id', finalAccountIdResolved);
+        }
+        if (finalToken) {
+          localStorage.setItem('floweditor_auth_token', finalToken);
+        }
+        console.log('FlowEditor auth context persisted to localStorage');
+      } catch (e) {
+        console.warn('Failed to persist FlowEditor auth context', e);
+      }
+      
+      // Configuration object for FlowEditor
+      // Use proxy endpoints that will be transformed by the FlowEditor server
+      const config = {
+        flow: flowId, // Flow UUID for editing existing flows
+        localStorage: true,
+        httpTimeout: 30000, // Set timeout to 30 seconds to prevent API timeouts
+        endpoints: {
+          flows: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/flows`,
+          groups: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/groups`,
+          fields: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/custom_attribute_definitions`,
+          labels: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/labels`,
+          channels: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/channels`,
+          classifiers: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/classifiers`,
+          ticketers: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/ticketers`,
+          resthooks: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/resthooks`,
+          templates: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/templates`,
+          languages: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/languages`,
+          environment: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/environment`,
+          recipients: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/recipients`,
+          completion: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/completion`,
+          activity: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/activity`,
+          editor: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/editor`,
+          attachments: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/attachments`,
+          // For saveRevision, this must be the flows base; saveRevision will append /{flowId}/save_revision
+          revisions: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/flows`,
+          functions: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/functions`,
+          globals: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/globals`,
+          contacts: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/contacts`,
+          simulateStart: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/simulate_start`,
+          simulateResume: `${apiBase}/accounts/${finalAccountIdResolved}/flow_editor/simulate_resume`
+        },
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+      
+
+      
+      // Initialize FlowEditor with configuration
+      let initializationAttempts = 0;
+      const maxAttempts = 100; // Maximum 10 seconds (100 * 100ms)
+      
+      function initializeFlowEditor() {
+        initializationAttempts++;
+        console.log(`Initializing FlowEditor (attempt ${initializationAttempts}/${maxAttempts}) with config:`, config);
+        
+        console.log('Checking for showFlowEditor...', typeof window.showFlowEditor);
+        console.log('Checking for FlowEditorExternal...', typeof window.FlowEditorExternal);
+        
+        if (window.showFlowEditor && typeof window.showFlowEditor === 'function') {
+          console.log('showFlowEditor found, initializing...');
+          
+          // Initialize authentication from URL parameters using the external module
+          if (window.FlowEditorExternal && window.FlowEditorExternal.initializeAuthFromUrl) {
+            console.log('Initializing authentication from URL parameters');
+            const authResult = window.FlowEditorExternal.initializeAuthFromUrl();
+            console.log('Authentication initialized:', authResult);
+          } else {
+            console.warn('FlowEditorExternal.initializeAuthFromUrl not available, using fallback');
+            // Fallback: Send authentication via postMessage
+            if (finalToken) {
+              setTimeout(() => {
+                window.postMessage({
+                  type: 'set_auth_token',
+                  token: finalToken
+                }, '*');
+              }, 100);
+            }
+            
+            if (finalAccountId) {
+              setTimeout(() => {
+                window.postMessage({
+                  type: 'set_account_context',
+                  accountId: finalAccountId
+                }, '*');
+              }, 100);
+            }
+          }
+          
+          // Ensure authentication is set up before initializing FlowEditor
+          // Import and configure the external module directly
+          import('/src/external/index.js').then(({ setAuthToken, setAccountContext }) => {
+            console.log('Setting up authentication directly in external module');
+            if (finalToken) {
+              setAuthToken(finalToken);
+              console.log('Auth token set in external module');
+            }
+            if (finalAccountId) {
+              setAccountContext(finalAccountId);
+              console.log('Account context set in external module');
+            }
+            
+            // Now initialize the FlowEditor
+            window.showFlowEditor(document.getElementById('floweditor'), config);
+          }).catch(error => {
+            console.error('Failed to import external module, falling back to direct initialization:', error);
+            // Fallback to direct initialization
+            window.showFlowEditor(document.getElementById('floweditor'), config);
+          });
+        } else if (initializationAttempts < maxAttempts) {
+          console.log(`FlowEditor not ready, retrying in 100ms... (attempt ${initializationAttempts}/${maxAttempts})`);
+          setTimeout(initializeFlowEditor, 100);
+        } else {
+          console.error('FlowEditor failed to initialize after maximum attempts. Module may have failed to load.');
+          // Show error message to user
+          const flowEditorElement = document.getElementById('floweditor');
+          if (flowEditorElement) {
+            flowEditorElement.innerHTML = '<div style="padding: 20px; text-align: center; color: #e74c3c;"><h3>FlowEditor Failed to Load</h3><p>The FlowEditor module could not be loaded. Please refresh the page and try again.</p></div>';
+          }
+        }
+      }
+      
+      // Start trying to initialize after a longer delay to allow module loading
+      setTimeout(initializeFlowEditor, 1000);
+    });
+  </script>
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Nyaruka Flow Editor</title>
+  <style>
+    html input {
+      font-weight: 300;
+    }
+
+    :root {
+      font-size: 16px;
+    }
+
+    html {
+
+
+      --font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      --primary-rgb: 35, 135, 202;
+      --secondary-rgb: 140, 51, 140;
+      --tertiary-rgb: 135, 202, 35;
+
+      --focus-rgb: 82, 168, 236;
+      --error-rgb: 255, 99, 71;
+      --success-rgb: 102, 186, 104;
+
+      --selection-light-rgb: 240, 240, 240;
+      --selection-dark-rgb: 180, 180, 180;
+
+      --select-input-height: inherit;
+
+      --curvature: 6px;
+      --curvature-widget: 6px;
+      --color-focus: #a4cafe;
+      --color-widget-bg: #fff;
+      --color-widget-bg-focused: #fff;
+      --color-widget-border: rgb(225, 225, 225);
+
+      /* primary colors, should be dark */
+      --color-selection: #f0f6ff;
+
+      --widget-box-shadow-focused: 0 0 0 3px rgba(164, 202, 254, .45);
+      --widget-box-shadow-focused-error: 0 0 0 3px rgba(var(--error-rgb), 0.3);
+
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+      /* page text, borders, widgets */
+      --color-text: #555;
+      --color-widget-text: #555;
+      --color-borders: rgba(0, 0, 0, 0.07);
+      --color-placeholder: #ccc;
+
+      /* light colors, panel backgrounds, selection, etc */
+      --color-primary-light: #eee;
+      --color-secondary-light: #ccc;
+
+      /* dark colors, nav bar, buttons, etc */
+      --color-primary-dark: rgb(var(--primary-rgb));
+      --color-secondary-dark: rgb(var(--secondary-rgb));
+
+      /* light text goes over dark, dark over lights */
+      --color-text-light: rgba(255, 255, 255, 1);
+      --color-text-dark: rgba(0, 0, 0, 0.5);
+      --color-text-dark-secondary: rgba(0, 0, 0, 0.25);
+      --color-text-help: rgba(0, 0, 0, 0.35);
+
+      /* solid overlays with text */
+      --color-overlay-dark: rgba(0, 0, 0, 0.2);
+      --color-overlay-dark-text: rgba(255, 255, 255, 0.9);
+      --color-overlay-light: rgba(0, 0, 0, 0.05);
+      --color-overlay-light-text: rgba(0, 0, 0, 0.6);
+
+      /* links, buttons, and label badges */
+      --color-link-primary: rgba(var(--primary-rgb), 0.8);
+      --color-link-primary-hover: rgba(var(--primary-rgb), 0.9);
+      --color-link-secondary: rgba(var(--secondary-rgb), 0.8);
+      --color-link-secondary-hover: rgba(var(--secondary-rgb), 0.9);
+      --color-button-primary: var(--color-primary-dark);
+      --color-button-primary-text: var(--color-text-light);
+      --color-button-secondary: var(--color-secondary-light);
+      --color-button-secondary-text: var(--color-text-dark);
+
+      --color-button-destructive: rgb(var(--error-rgb));
+      --color-button-destructive-text: var(--color-text-light);
+
+      --color-button-attention: #2ecc71;
+
+      --color-label-primary: var(--color-primary-dark);
+      --color-label-primary-text: var(--color-text-light);
+      --color-label-secondary: rgba(0, 0, 0, 0.2);
+      --color-label-secondary-text: rgba(255, 255, 255, 0.9);
+
+      --color-nav-unselected: #fff;
+      --color-nav-selected-bg: #fff;
+      --color-nav-selected-text: var(--color-primary-dark);
+
+      --color-info: #c0d9eb;
+      --color-warning: #fff6c0;
+      --color-error: rgb(var(--error-rgb));
+      --font-size: 14px;
+      --button-font-size: 1.125rem;
+
+      --header-bg: var(--color-primary-dark);
+
+      --temba-textinput-padding: 9px;
+      --temba-textinput-font-size: var(--font-size);
+
+      font-size: var(--font-size);
+      font-weight: 300;
+      font-family: var(--font-family);
+
+      --button-y: 6px;
+      --button-x: 14px;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+    }
+
+    #floweditor {
+      height: 100%;
+    }
+
+    temba-select:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .flatpickr-calendar {
+      margin-top: 28px;
+      margin-bottom: 28px;
+      margin-left: -13px;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  
+  <!-- Debug Panel -->
+  <div id="debug-panel" style="position: fixed; top: 10px; right: 10px; width: 300px; background: #f0f0f0; border: 1px solid #ccc; padding: 10px; font-size: 12px; z-index: 10000; max-height: 400px; overflow-y: auto;">
+    <h4 style="margin: 0 0 10px 0;">Debug Info</h4>
+    <div id="debug-output"></div>
+    <button onclick="toggleDebugPanel()" style="margin-top: 10px;">Hide Debug</button>
+  </div>
+  
+  <div id="floweditor"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+</html>

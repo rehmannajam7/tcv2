@@ -1,0 +1,250 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ExitComp > renders 1`] = `
+<body>
+  <div>
+    <div
+      class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+    >
+      <div
+        class="_name_d88b3c u font secondary body-md"
+      >
+        Red
+      </div>
+      <div
+        class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+        id="763e4844-3e1b-407a-a1b5-5fdfcd308b41:b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+      />
+      <div
+        style="position: absolute; bottom: -25px;"
+      >
+        <div
+          class="_counter_632b48 _activity_d88b3c  _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class="_count_d88b3c"
+            data-spec="counter-inner"
+          >
+            1,000
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExitComp > shows activity 1`] = `
+{
+  Symbol(SameObject caches): {
+    "attributes": NamedNodeMap {},
+    "childNodes": NodeList [
+      <div>
+        <div
+          class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+        >
+          <div
+            class="_name_d88b3c u font secondary body-md"
+          >
+            Red
+          </div>
+          <div
+            class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+            id="763e4844-3e1b-407a-a1b5-5fdfcd308b41:b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+          />
+          <div
+            style="position: absolute; bottom: -25px;"
+          >
+            <div
+              class="_counter_632b48 _activity_d88b3c  _visible_632b48"
+              data-spec="counter-outter"
+              data-testid="counter-outter"
+            >
+              <div
+                class="_count_d88b3c"
+                data-spec="counter-inner"
+              >
+                1,000
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>,
+    ],
+  },
+}
+`;
+
+exports[`ExitComp > shows localization 1`] = `
+<body>
+  <div>
+    <div
+      class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c __translating_d88b3c_d88b3c 
+          null
+          null 
+        "
+    >
+      <div
+        class="_name_d88b3c u font secondary body-md"
+      >
+        Hola!
+      </div>
+      <div
+        class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+        id="763e4844-3e1b-407a-a1b5-5fdfcd308b41:b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+      />
+      <div
+        style="position: absolute; bottom: -25px;"
+      >
+        <div
+          class="_counter_632b48 _activity_d88b3c  _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class="_count_d88b3c"
+            data-spec="counter-inner"
+          >
+            1,000
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExitComp > shows missing localization 1`] = `
+<body>
+  <div>
+    <div
+      class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c __translating_d88b3c_d88b3c __missing_localization_d88b3c_d88b3c 
+          null
+          null 
+        "
+    >
+      <div
+        class="_name_d88b3c u font secondary body-md"
+      >
+        Red
+      </div>
+      <div
+        class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+        id="763e4844-3e1b-407a-a1b5-5fdfcd308b41:b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+      />
+      <div
+        style="position: absolute; bottom: -25px;"
+      >
+        <div
+          class="_counter_632b48 _activity_d88b3c  _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class="_count_d88b3c"
+            data-spec="counter-inner"
+          >
+            1,000
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ExitComp > shows recent messages on mouse over 1`] = `
+<body>
+  <div>
+    <div
+      id="activity_recent_messages"
+    >
+      <div>
+        <div
+          class="_recent_messages_d88b3c"
+          style="position: absolute; left: 0px; top: 0px;"
+        >
+          <div
+            class="_title_d88b3c"
+          >
+            Recent Messages
+          </div>
+          <div
+            class="_message_d88b3c"
+          >
+            <div
+              class="_text_d88b3c"
+            >
+              Hi Mom!
+            </div>
+            <div
+              class="_sent_d88b3c"
+            >
+              a few seconds ago
+            </div>
+          </div>
+          <div
+            class="_message_d88b3c"
+          >
+            <div
+              class="_text_d88b3c"
+            >
+              Hi Dad!
+            </div>
+            <div
+              class="_sent_d88b3c"
+            >
+              a few seconds ago
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="
+          __exit_d88b3c_d88b3c _plumb-exit_d88b3c 
+          null
+          null 
+        "
+    >
+      <div
+        class="_name_d88b3c u font secondary body-md"
+      >
+        Red
+      </div>
+      <div
+        class="__endpoint_d88b3c_d88b3c _ jtk-connected_d88b3c"
+        id="763e4844-3e1b-407a-a1b5-5fdfcd308b41:b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+      />
+      <div
+        style="position: absolute; bottom: -25px;"
+      >
+        <div
+          class="_counter_632b48 _activity_d88b3c  _visible_632b48"
+          data-spec="counter-outter"
+          data-testid="counter-outter"
+        >
+          <div
+            class="_count_d88b3c"
+            data-spec="counter-inner"
+          >
+            1,000
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

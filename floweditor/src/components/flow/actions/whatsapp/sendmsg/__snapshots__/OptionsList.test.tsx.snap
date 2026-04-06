@@ -1,0 +1,171 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OptionsList > should render 1`] = `
+<body>
+  <div>
+    <div
+      class="_list_wrapper_307ca0"
+    >
+      <div>
+        <span
+          class="_options_label_307ca0"
+        >
+          Add up to 10 options
+        </span>
+        <div
+          class="_list_items_307ca0"
+        >
+          <div
+            class="_content_307ca0"
+          >
+            <div
+              class="_drag_wrapper_307ca0"
+              data-draggable="true"
+            >
+              <div
+                data-draggable="true"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="height: 20px; padding: 4px;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--md unnnic--clickable _drag_handle_307ca0"
+                  data-draggable="true"
+                  data-v-930380cc=""
+                >
+                  drag_indicator
+                </span>
+              </div>
+            </div>
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="title 1"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    title 1
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      class="_subtitle_0dd17b"
+                    >
+                      Option 1/10
+                    </div>
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="_content_307ca0"
+          >
+            <div
+              class="_drag_wrapper_307ca0"
+              data-draggable="true"
+            >
+              <div
+                data-draggable="true"
+                data-use-vue-component-wrap=""
+                data-v-app=""
+                style="height: 20px; padding: 4px;"
+              >
+                <span
+                  class="material-symbols-rounded unnnic-icon-scheme--neutral-cloudy unnnic-icon-size--md unnnic--clickable _drag_handle_307ca0"
+                  data-draggable="true"
+                  data-v-930380cc=""
+                >
+                  drag_indicator
+                </span>
+              </div>
+            </div>
+            <div
+              class="_collapse_0dd17b  "
+            >
+              <div
+                class="_collapse_title_wrapper_0dd17b"
+              >
+                <div
+                  class="_collapse_header_0dd17b"
+                  data-testid="title 2"
+                >
+                  <div
+                    data-use-vue-component-wrap=""
+                    data-v-app=""
+                    style="display: flex;"
+                  >
+                    <span
+                      class="material-symbols-rounded unnnic-icon-scheme--weni-600 unnnic-icon-size--md material-symbols-rounded--filled"
+                      data-v-930380cc=""
+                    >
+                      check_circle
+                    </span>
+                  </div>
+                  <span
+                    class=""
+                  >
+                    title 2
+                  </span>
+                  <div
+                    class="_collapse_icon_0dd17b"
+                  >
+                    <div
+                      class="_subtitle_0dd17b"
+                    >
+                      Option 2/10
+                    </div>
+                    <div
+                      data-use-vue-component-wrap=""
+                      data-v-app=""
+                      style="display: flex;"
+                    >
+                      <span
+                        class="material-symbols-rounded unnnic-icon-scheme--neutral-darkest unnnic-icon-size--md"
+                        data-v-930380cc=""
+                      >
+                        expand_more
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

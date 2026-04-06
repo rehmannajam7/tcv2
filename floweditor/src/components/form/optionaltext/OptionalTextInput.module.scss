@@ -1,0 +1,31 @@
+.optional_text_input {
+  font-family: $unnnic-font-family-secondary;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  color: $unnnic-color-neutral-cleanest;
+  margin-top: $unnnic-spacing-stack-sm;
+
+  .toggle_link {
+    display: flex;
+    gap: $unnnic-spacing-inline-xs;
+    align-items: center;
+    cursor: pointer;
+
+    font-family: $unnnic-font-family-secondary;
+    font-weight: $unnnic-font-weight-regular;
+    font-size: $unnnic-font-size-body-md;
+    line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+    color: $unnnic-color-neutral-cloudy;
+  }
+
+  .expanded {
+    margin-bottom: $unnnic-spacing-stack-sm;
+  }
+}
+
+.toggle {
+  border: $unnnic-border-width-thinner solid $unnnic-color-neutral-soft;
+  border-radius: $unnnic-border-radius-sm;
+  padding: $unnnic-spacing-inset-xs;
+}

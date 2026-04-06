@@ -1,0 +1,11 @@
+{
+  "name": "thumbcrowd-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ThumbCrowd Documentation",
+  "main": "start-docs.js",
+  "scripts": {
+    "dev": "mint dev --port 81",
+    "start": "mint dev --port 81"
+  }
+}

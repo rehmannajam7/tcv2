@@ -1,0 +1,317 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RemoveGroupsForm > render > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Ok",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  className="_dialog_d20b1b"
+  headerClass="remove_contact_groups"
+  title="Remove from group"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "component": [Function],
+        "description": "Remove the contact from a group",
+        "form": [Function],
+        "name": "Remove from group",
+        "type": "remove_contact_groups",
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": {
+          "all_groups": false,
+          "groups": [
+            {
+              "name": "Customers",
+              "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Unsatisfied Customers",
+              "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
+            },
+            {
+              "name": "Early Adopters",
+              "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
+            },
+            {
+              "name": "Testers",
+              "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
+            },
+            {
+              "name": "Subscribers",
+              "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Champions",
+              "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
+            },
+          ],
+          "type": "remove_contact_groups",
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+        },
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [
+              {
+                "all_groups": false,
+                "groups": [
+                  {
+                    "name": "Customers",
+                    "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
+                  },
+                  {
+                    "name": "Unsatisfied Customers",
+                    "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
+                  },
+                  {
+                    "name": "Early Adopters",
+                    "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
+                  },
+                  {
+                    "name": "Testers",
+                    "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
+                  },
+                  {
+                    "name": "Subscribers",
+                    "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+                  },
+                  {
+                    "name": "Champions",
+                    "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
+                  },
+                ],
+                "type": "remove_contact_groups",
+                "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+              },
+            ],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+            ],
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "execute_actions",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div
+    className="_form_element_d20b1b u font secondary body-md color-neutral-cloudy"
+  >
+    Groups that the contact will be removed:
+    <ForwardRef
+      size="sm"
+      v-model={
+        [
+          "false",
+          [Function],
+        ]
+      }
+      value="false"
+    >
+      <span
+        className="color-neutral-cloudy"
+      >
+        Selected
+      </span>
+    </ForwardRef>
+    <ForwardRef
+      size="sm"
+      v-model={
+        [
+          "false",
+          [Function],
+        ]
+      }
+      value="true"
+    >
+      <span
+        className="color-neutral-cloudy"
+      >
+        All
+      </span>
+    </ForwardRef>
+  </div>
+  <div
+    className="_form_element_d20b1b"
+  >
+    <AssetSelector
+      entry={
+        {
+          "value": [
+            {
+              "name": "Customers",
+              "uuid": "23ff7152-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Unsatisfied Customers",
+              "uuid": "2429d573-80d7-47f8-879f-f2ba442a1bfd",
+            },
+            {
+              "name": "Early Adopters",
+              "uuid": "cdbf9e01-aaa7-4381-8259-ee042447bcac",
+            },
+            {
+              "name": "Testers",
+              "uuid": "afaba971-8943-4dd8-860b-3561ed4f1fe1",
+            },
+            {
+              "name": "Subscribers",
+              "uuid": "33b28bac-b588-43e4-90de-fda77aeaf7c0",
+            },
+            {
+              "name": "Champions",
+              "uuid": "e0cccbcf-49be-4eef-88a7-ce2150a6d902",
+            },
+          ],
+        }
+      }
+      multi={true}
+      name="Groups"
+      onChange={[Function]}
+      placeholder="Select groups"
+      searchable={true}
+      shouldExclude={[Function]}
+    />
+  </div>
+</Dialog>
+`;
+
+exports[`RemoveGroupsForm > should cancel 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      true,
+    ],
+    [
+      true,
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`RemoveGroupsForm > updates > should allow switching from router > switch from router 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_groups": false,
+        "groups": [
+          {
+            "name": "Subscriber",
+            "uuid": "68223118-109f-442a-aed3-7bb3e1eab687",
+          },
+        ],
+        "type": "remove_contact_groups",
+        "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`RemoveGroupsForm > updates > should handle remove from all groups > update 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_groups": true,
+        "groups": [],
+        "type": "remove_contact_groups",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`RemoveGroupsForm > updates > should handle remove from all groups > update 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_groups": true,
+        "groups": [],
+        "type": "remove_contact_groups",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`RemoveGroupsForm > updates > should handle updates and save > update 1`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "all_groups": false,
+        "groups": [
+          {
+            "name": "Subscriber",
+            "uuid": "68223118-109f-442a-aed3-7bb3e1eab687",
+          },
+        ],
+        "type": "remove_contact_groups",
+        "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

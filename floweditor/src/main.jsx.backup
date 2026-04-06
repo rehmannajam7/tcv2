@@ -1,0 +1,158 @@
+// Global polyfills for Node.js compatibility
+if (typeof global === 'undefined') {
+  window.global = window;
+}
+if (typeof global.setTimeout === 'undefined') {
+  global.setTimeout = window.setTimeout;
+}
+if (typeof global.clearTimeout === 'undefined') {
+  global.clearTimeout = window.clearTimeout;
+}
+if (typeof global.setInterval === 'undefined') {
+  global.setInterval = window.setInterval;
+}
+if (typeof global.clearInterval === 'undefined') {
+  global.clearInterval = window.clearInterval;
+}
+
+import './global.module.scss';
+import './static/fonts/floweditor/style.css';
+
+import '@weni/unnnic-system/dist/style.css';
+
+import { FlowEditorContainer } from 'components';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'setimmediate';
+
+import * as serviceWorker from './serviceWorker';
+
+// Preload temba-components to ensure they're available before FlowEditor initialization
+let tembaComponentsLoaded = false;
+
+// Check if temba-components are already registered
+const componentsExist =
+  document.body.innerHTML.indexOf('temba-components') > -1 ||
+  document.body.innerHTML.indexOf('temba-modules') > -1;
+
+console.log('Components exist check:', componentsExist);
+console.log('Document body innerHTML length:', document.body.innerHTML.length);
+
+// Improved temba-components detection and loading
+const loadTembaComponents = async () => {
+  if (tembaComponentsLoaded) {
+    console.log('Temba components already loaded, skipping');
+    return;
+  }
+
+  // Better detection: check for actual custom elements registration
+  const hasTembaComponents =
+    customElements.get('temba-store') ||
+    customElements.get('temba-select') ||
+    document.querySelector('temba-store') !== null;
+
+  if (!hasTembaComponents) {
+    console.log('Attempting to load temba-components...');
+    try {
+      await import('@nyaruka/temba-components/dist/index.js');
+      console.log('Successfully loaded temba components');
+
+      // Wait a bit for components to register
+      await new Promise(resolve => setTimeout(resolve, 100));
+
+      tembaComponentsLoaded = true;
+    } catch (error) {
+      console.error('Failed to load temba components:', error);
+      // Don't throw error - allow app to continue without temba components
+      console.warn(
+        'Continuing without temba-components - some features may be limited',
+      );
+      tembaComponentsLoaded = true; // Mark as loaded to prevent retry loops
+    }
+  } else {
+    console.log('Temba components already registered, skipping import');
+    tembaComponentsLoaded = true;
+  }
+};
+
+// Immediately expose showFlowEditor to window object
+console.log('main.jsx loading, exposing showFlowEditor immediately');
+window.showFlowEditor = function(element, config) {
+  console.log('showFlowEditor called with:', element, config);
+
+  // Load temba components first
+  loadTembaComponents()
+    .then(() => {
+      console.log('Temba components loaded, initializing Sentry and rendering');
+
+      // Initialize Sentry if available
+      if (window.Sentry) {
+        window.Sentry.init({
+          dsn: config.sentryDsn,
+          environment: config.sentryEnvironment,
+          release: config.sentryRelease,
+          beforeSend(event) {
+            if (event.exception) {
+              const exception = event.exception.values[0];
+              if (
+                exception.value &&
+                exception.value.includes('Non-Error promise rejection captured')
+              ) {
+                return null;
+              }
+            }
+            return event;
+          },
+        });
+      }
+
+      // Set HTTP timeout if provided
+      if (config.httpTimeout) {
+        import('./external/index.ts').then(
+          ({ setHTTPTimeout, setAccountContext }) => {
+            setHTTPTimeout(config.httpTimeout);
+
+            // Set account context if provided
+            if (config.accountId) {
+              console.log('Setting account context:', config.accountId);
+              setAccountContext(config.accountId);
+            }
+          },
+        );
+      } else {
+        // Still set account context even if no timeout is provided
+        if (config.accountId) {
+          import('./external/index.ts').then(({ setAccountContext }) => {
+            console.log('Setting account context:', config.accountId);
+            setAccountContext(config.accountId);
+          });
+        }
+      }
+
+      // Listen for account context messages from parent window
+      window.addEventListener('message', event => {
+        if (event.data.type === 'set_account_context' && event.data.accountId) {
+          import('./external/index.ts').then(({ setAccountContext }) => {
+            setAccountContext(event.data.accountId);
+          });
+        }
+      });
+
+      // Render the FlowEditor
+      ReactDOM.render(
+        React.createElement(FlowEditorContainer, { config }),
+        element,
+      );
+    })
+    .catch(error => {
+      console.error('Error during FlowEditor initialization:', error);
+    });
+};
+console.log('showFlowEditor exposed to window:', typeof window.showFlowEditor);
+
+console.log('showFlowEditor function exposed to window');
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

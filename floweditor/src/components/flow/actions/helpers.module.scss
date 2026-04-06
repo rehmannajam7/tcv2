@@ -1,0 +1,24 @@
+@import 'src/variables.module.scss';
+
+.icon {
+  margin-right: $unnnic-spacing-inline-nano;
+}
+
+.link {
+  font-family: $unnnic-font-family-secondary;
+  font-size: $unnnic-font-size-body-md;
+  line-height: $unnnic-font-size-body-md + $unnnic-line-height-md;
+  color: $unnnic-color-neutral-dark;
+  text-underline-offset: 0.1875 * $unnnic-font-size; // 3px
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.truncated {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

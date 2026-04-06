@@ -1,0 +1,8 @@
+{
+  "results": [
+    {
+      "resthook": "webhook-1",
+      "subscribers": ["http://example.com/webhook"]
+    }
+  ]
+}

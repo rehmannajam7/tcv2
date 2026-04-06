@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CallResthookComp > render > should render self 1`] = `
+<div>
+  my-resthook
+</div>
+`;

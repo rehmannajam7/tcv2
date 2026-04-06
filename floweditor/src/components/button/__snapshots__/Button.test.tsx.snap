@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Button > render > should render self, children with base props 1`] = `
+<body>
+  <div>
+    <div
+      data-use-vue-component-wrap=""
+      data-v-app=""
+    >
+      <button
+        class="unnnic-button unnnic-button--size-large unnnic-button--primary"
+        data-v-4cec5e43=""
+        style="margin-left: 0px; margin-top: 0px; margin-right: 0px;"
+      >
+        <!---->
+        <!---->
+        <!---->
+        <span
+          class="unnnic-button__label"
+          data-v-4cec5e43=""
+        >
+          
+          
+           Save
+        </span>
+        <!---->
+      </button>
+    </div>
+  </div>
+</body>
+`;

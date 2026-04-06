@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowEditor Embed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .iframe-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .info {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e8f4fd;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FlowEditor Embedding Test</h1>
+            <p>This page simulates how the FlowEditor appears when embedded in stage.thumb-crowd.com</p>
+        </div>
+        
+        <div class="info">
+            <strong>Test Status:</strong> Testing CORS fixes, dynamic imports, and authentication in embedded context.
+            <br><strong>Expected:</strong> FlowEditor should load without CORS errors and display the flow interface.
+        </div>
+        
+        <div class="iframe-container">
+            <h3>Embedded FlowEditor</h3>
+            <iframe 
+                src="http://localhost:3001?accountId=2&token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjaGF0d29vdCIsImF1ZCI6ImZsb3dlZGl0b3IiLCJzdWIiOiIyIiwiaWF0IjoxNzU5NTA2MjMyLCJleHAiOjE3NTk1MTM0MzIsImp0aSI6ImFhOWE4NjlkLTcyNTctNGQ3Ny05NzRmLTgxOWYxMWZiMGJjYiIsInVzZXJfaWQiOjIsImFjY291bnRfaWQiOjIsImVtYWlsIjoic2hvYWliLmhhc3NhbkBldmVyY2FyZS5wayIsInJvbGUiOiJhZG1pbmlzdHJhdG9yIiwidWlkIjoic2hvYWliLmhhc3NhbkBldmVyY2FyZS5wayIsImZsb3dlZGl0b3JfYWNjZXNzIjp0cnVlLCJwZXJtaXNzaW9ucyI6WyJyZWFkIiwid3JpdGUiLCJkZWxldGUiLCJhZG1pbiJdfQ.iALQPkANo6p4shoetFHi7cqQLL9rsRh3ibF376occzY"
+                title="FlowEditor"
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <div class="info" style="margin-top: 20px;">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Open browser developer tools (F12)</li>
+                <li>Check the Console tab for any CORS or loading errors</li>
+                <li>Check the Network tab to verify resources load successfully</li>
+                <li>Verify the FlowEditor interface loads and is functional</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Log iframe loading events
+        const iframe = document.querySelector('iframe');
+        
+        iframe.addEventListener('load', function() {
+            console.log('✅ FlowEditor iframe loaded successfully');
+        });
+        
+        iframe.addEventListener('error', function() {
+            console.error('❌ FlowEditor iframe failed to load');
+        });
+        
+        // Monitor for any console errors
+        window.addEventListener('error', function(e) {
+            console.error('Page Error:', e.error);
+        });
+    </script>
+</body>
+</html>

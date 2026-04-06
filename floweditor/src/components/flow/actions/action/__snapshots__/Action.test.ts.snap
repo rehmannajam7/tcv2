@@ -1,0 +1,220 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ActionWrapper > render > should display hybrid style 1`] = `
+<div
+  className="_action_604508 _has_router_604508 _localized_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={true}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display missing_localization style 1`] = `
+<div
+  className="_action_604508 _translating_604508 _missing_localization_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-0ed4b887-2924-45ea-babe-4d580cdfb000"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display not_localizable style 1`] = `
+<div
+  className="_action_604508 _translating_604508 _not_localizable_604508 _enter_flow_604508"
+  data-spec="action-container"
+  id="action-d4a3a01c-1dee-4324-b107-4ac7a21d836f"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_enter_flow_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Enter another flow"
+    />
+    <div
+      className="_body_604508 _enter_flow_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should display translating style 1`] = `
+<div
+  className="_action_604508 _translating_604508 _missing_localization_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={false}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should render self, children with base props 1`] = `
+{
+  "__className": "_send_msg_9658e1",
+  "hasIssues": false,
+  "new": undefined,
+  "onMoveUp": [Function],
+  "onRemoval": [Function],
+  "selected": false,
+  "shouldCancelClick": [Function],
+  "showMove": false,
+  "showRemoval": true,
+  "title": "Send message",
+}
+`;
+
+exports[`ActionWrapper > render > should render self, children with base props 2`] = `
+<div
+  className="_action_604508 _localized_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={false}
+      showRemoval={true}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`ActionWrapper > render > should show move icon 1`] = `
+<div
+  className="_action_604508 _localized_604508 _send_msg_604508"
+  data-spec="action-container"
+  id="action-b1f332f3-bdd3-4891-aec5-1843a712dbf1"
+>
+  <div
+    className="_overlay_604508"
+    data-spec="action-overlay"
+  />
+  <div
+    data-spec="interactive-div"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+  >
+    <TitleBar
+      __className="_send_msg_9658e1"
+      hasIssues={false}
+      onMoveUp={[Function]}
+      onRemoval={[Function]}
+      selected={false}
+      shouldCancelClick={[Function]}
+      showMove={true}
+      showRemoval={true}
+      title="Send message"
+    />
+    <div
+      className="_body_604508 _send_msg_604508 "
+      data-spec="action-body"
+    />
+  </div>
+</div>
+`;

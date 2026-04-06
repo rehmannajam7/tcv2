@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowEditor Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .warning { background-color: #fff3cd; color: #856404; border: 1px solid #ffeaa7; }
+        .info { background-color: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        
+        #floweditor-container {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+        
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .log-output {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FlowEditor Debug Test Page</h1>
+        <p>This page helps diagnose FlowEditor loading issues by testing various scenarios.</p>
+        
+        <div class="test-section">
+            <h3>1. Basic Connectivity Tests</h3>
+            <button onclick="testBackendConnectivity()">Test Backend (Port 3000)</button>
+            <button onclick="testFlowEditorServer()">Test FlowEditor Server (Port 3001)</button>
+            <button onclick="testFlowEditorTokens()">Test FlowEditor Tokens API</button>
+            <div id="connectivity-status"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>2. FlowEditor Loading Test</h3>
+            <button onclick="loadFlowEditorStandalone()">Load FlowEditor (Standalone)</button>
+            <button onclick="loadFlowEditorWithAuth()">Load FlowEditor (With Auth)</button>
+            <button onclick="clearFlowEditor()">Clear FlowEditor</button>
+            <div id="floweditor-status"></div>
+        </div>
+        
+        <div class="test-section">
+            <h3>3. FlowEditor Container</h3>
+            <div id="floweditor-container">
+                <div style="text-align: center; padding: 50px; color: #666;">
+                    FlowEditor will load here...
+                </div>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>4. Console Logs & Network Activity</h3>
+            <button onclick="clearLogs()">Clear Logs</button>
+            <button onclick="exportLogs()">Export Logs</button>
+            <div id="log-output" class="log-output"></div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables for debugging
+        let logs = [];
+        let originalConsoleLog = console.log;
+        let originalConsoleError = console.error;
+        let originalConsoleWarn = console.warn;
+        
+        // Override console methods to capture logs
+        function captureConsole() {
+            console.log = function(...args) {
+                logs.push({type: 'log', timestamp: new Date().toISOString(), message: args.join(' ')});
+                updateLogDisplay();
+                originalConsoleLog.apply(console, args);
+            };
+            
+            console.error = function(...args) {
+                logs.push({type: 'error', timestamp: new Date().toISOString(), message: args.join(' ')});
+                updateLogDisplay();
+                originalConsoleError.apply(console, args);
+            };
+            
+            console.warn = function(...args) {
+                logs.push({type: 'warn', timestamp: new Date().toISOString(), message: args.join(' ')});
+                updateLogDisplay();
+                originalConsoleWarn.apply(console, args);
+            };
+        }
+        
+        function updateLogDisplay() {
+            const logOutput = document.getElementById('log-output');
+            const recentLogs = logs.slice(-50); // Show last 50 logs
+            logOutput.innerHTML = recentLogs.map(log => 
+                `<div class="${log.type}">[${log.timestamp}] ${log.type.toUpperCase()}: ${log.message}</div>`
+            ).join('');
+            logOutput.scrollTop = logOutput.scrollHeight;
+        }
+        
+        function clearLogs() {
+            logs = [];
+            updateLogDisplay();
+        }
+        
+        function exportLogs() {
+            const logText = logs.map(log => `[${log.timestamp}] ${log.type.toUpperCase()}: ${log.message}`).join('\n');
+            const blob = new Blob([logText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `floweditor-debug-${new Date().toISOString()}.log`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        // Test functions
+        async function testBackendConnectivity() {
+            const statusDiv = document.getElementById('connectivity-status');
+            statusDiv.innerHTML = '<div class="info">Testing backend connectivity...</div>';
+            
+            try {
+                const response = await fetch('http://localhost:3000/health', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.ok) {
+                    statusDiv.innerHTML += '<div class="success">✅ Backend (port 3000) is accessible</div>';
+                } else {
+                    statusDiv.innerHTML += `<div class="error">❌ Backend returned status: ${response.status}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML += `<div class="error">❌ Backend connection failed: ${error.message}</div>`;
+            }
+        }
+        
+        async function testFlowEditorServer() {
+            const statusDiv = document.getElementById('connectivity-status');
+            
+            try {
+                const response = await fetch('http://localhost:3001/', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.ok) {
+                    statusDiv.innerHTML += '<div class="success">✅ FlowEditor server (port 3001) is accessible</div>';
+                } else {
+                    statusDiv.innerHTML += `<div class="error">❌ FlowEditor server returned status: ${response.status}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML += `<div class="error">❌ FlowEditor server connection failed: ${error.message}</div>`;
+            }
+        }
+        
+        async function testFlowEditorTokens() {
+            const statusDiv = document.getElementById('connectivity-status');
+            
+            try {
+                const response = await fetch('http://localhost:3000/api/v1/accounts/1/flow_editor/tokens', {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+                
+                if (response.status === 401) {
+                    statusDiv.innerHTML += '<div class="warning">⚠️ FlowEditor tokens endpoint requires authentication (expected)</div>';
+                } else if (response.ok) {
+                    statusDiv.innerHTML += '<div class="success">✅ FlowEditor tokens endpoint is accessible</div>';
+                } else {
+                    statusDiv.innerHTML += `<div class="error">❌ FlowEditor tokens returned status: ${response.status}</div>`;
+                }
+            } catch (error) {
+                statusDiv.innerHTML += `<div class="error">❌ FlowEditor tokens connection failed: ${error.message}</div>`;
+            }
+        }
+        
+        function loadFlowEditorStandalone() {
+            const statusDiv = document.getElementById('floweditor-status');
+            const container = document.getElementById('floweditor-container');
+            
+            statusDiv.innerHTML = '<div class="info">Loading FlowEditor in standalone mode...</div>';
+            
+            // Clear container
+            container.innerHTML = '<div style="text-align: center; padding: 50px; color: #666;">Loading FlowEditor...</div>';
+            
+            // Create iframe to load FlowEditor
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:3001/';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            
+            iframe.onload = function() {
+                statusDiv.innerHTML += '<div class="success">✅ FlowEditor iframe loaded</div>';
+            };
+            
+            iframe.onerror = function() {
+                statusDiv.innerHTML += '<div class="error">❌ FlowEditor iframe failed to load</div>';
+            };
+            
+            container.innerHTML = '';
+            container.appendChild(iframe);
+            
+            // Set timeout to check if loading completes
+            setTimeout(() => {
+                statusDiv.innerHTML += '<div class="warning">⚠️ FlowEditor loading timeout - check console for errors</div>';
+            }, 10000);
+        }
+        
+        function loadFlowEditorWithAuth() {
+            const statusDiv = document.getElementById('floweditor-status');
+            const container = document.getElementById('floweditor-container');
+            
+            statusDiv.innerHTML = '<div class="info">Loading FlowEditor with authentication parameters...</div>';
+            
+            // Clear container
+            container.innerHTML = '<div style="text-align: center; padding: 50px; color: #666;">Loading FlowEditor with auth...</div>';
+            
+            // Create iframe with auth parameters
+            const iframe = document.createElement('iframe');
+            iframe.src = 'http://localhost:3001/?accountId=1&token=test-token&flow=new';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            
+            iframe.onload = function() {
+                statusDiv.innerHTML += '<div class="success">✅ FlowEditor iframe with auth loaded</div>';
+            };
+            
+            iframe.onerror = function() {
+                statusDiv.innerHTML += '<div class="error">❌ FlowEditor iframe with auth failed to load</div>';
+            };
+            
+            container.innerHTML = '';
+            container.appendChild(iframe);
+            
+            // Set timeout to check if loading completes
+            setTimeout(() => {
+                statusDiv.innerHTML += '<div class="warning">⚠️ FlowEditor with auth loading timeout - check console for errors</div>';
+            }, 10000);
+        }
+        
+        function clearFlowEditor() {
+            const container = document.getElementById('floweditor-container');
+            const statusDiv = document.getElementById('floweditor-status');
+            
+            container.innerHTML = '<div style="text-align: center; padding: 50px; color: #666;">FlowEditor cleared</div>';
+            statusDiv.innerHTML = '<div class="info">FlowEditor container cleared</div>';
+        }
+        
+        // Initialize console capture
+        captureConsole();
+        
+        // Log initial page load
+        console.log('FlowEditor Debug Test Page loaded');
+        console.log('User Agent:', navigator.userAgent);
+        console.log('Current URL:', window.location.href);
+        
+        // Test basic JavaScript functionality
+        console.log('JavaScript is working correctly');
+        
+        // Monitor for unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled Promise Rejection:', event.reason);
+        });
+        
+        // Monitor for general errors
+        window.addEventListener('error', function(event) {
+            console.error('JavaScript Error:', event.error);
+        });
+    </script>
+</body>
+</html>

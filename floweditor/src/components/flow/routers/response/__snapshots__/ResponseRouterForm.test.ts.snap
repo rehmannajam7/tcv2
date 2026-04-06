@@ -1,0 +1,572 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ResponseRouterForm > initializes case config 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  gutter={
+    <TimeoutControl
+      onChanged={[Function]}
+      timeout={60}
+    />
+  }
+  headerClass="wait_for_response"
+  title="Wait for response"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "switch",
+        ],
+        "description": "Wait for the contact to respond",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "categories",
+          "cases",
+        ],
+        "name": "Wait for response",
+        "type": "wait_for_response",
+        "visibility": [
+          "messaging",
+          "messaging_offline",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+              {
+                "uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_any_word",
+                  "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                },
+                {
+                  "arguments": [
+                    "@(datetime_add(today(), 5, "D"))",
+                  ],
+                  "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "type": "has_date_eq",
+                  "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "name": "Red",
+                  "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                },
+                {
+                  "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                  "name": "Other",
+                  "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                },
+                {
+                  "exit_uuid": "2dc85899-0577-4f1b-a620-f12094e34b5e",
+                  "name": "No Response",
+                  "uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                },
+              ],
+              "default_category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+              "operand": null,
+              "result_name": null,
+              "type": "switch",
+              "wait": {
+                "timeout": {
+                  "category_uuid": "42ebf1d0-a43e-4ba6-9577-c863b20c88c4",
+                  "seconds": 60,
+                },
+                "type": "msg",
+              },
+            },
+            "uuid": "70ac6ea6-803a-4c33-81c7-dc26803c313f",
+          },
+          "ui": {
+            "config": {
+              "cases": {
+                "b1f332f3-bdd3-4891-aec5-1843a712dbf1": {
+                  "arguments": [
+                    "5",
+                  ],
+                },
+              },
+            },
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "wait_for_response",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    If the message response
+  </div>
+  <CaseList
+    cases={
+      [
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "red",
+            ],
+            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "type": "has_any_word",
+            "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          },
+          "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+          "valid": true,
+        },
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "5",
+            ],
+            "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            "type": "has_date_eq",
+            "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          },
+          "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+          "valid": true,
+        },
+      ]
+    }
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`ResponseRouterForm > should render 1`] = `
+<Dialog
+  buttons={
+    {
+      "primary": {
+        "name": "Confirm",
+        "onClick": [Function],
+      },
+      "secondary": {
+        "name": "Cancel",
+        "onClick": [Function],
+      },
+    }
+  }
+  gutter={
+    <TimeoutControl
+      onChanged={[Function]}
+      timeout={0}
+    />
+  }
+  headerClass="wait_for_response"
+  title="Wait for response"
+>
+  <TypeList
+    __className=""
+    initialType={
+      {
+        "aliases": [
+          "switch",
+        ],
+        "description": "Wait for the contact to respond",
+        "form": [Function],
+        "localization": [Function],
+        "localizeableKeys": [
+          "categories",
+          "cases",
+        ],
+        "name": "Wait for response",
+        "type": "wait_for_response",
+        "visibility": [
+          "messaging",
+          "messaging_offline",
+        ],
+      }
+    }
+    nodeSettings={
+      {
+        "originalAction": null,
+        "originalNode": {
+          "inboundConnections": {},
+          "node": {
+            "actions": [],
+            "exits": [
+              {
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+            ],
+            "router": {
+              "cases": [
+                {
+                  "arguments": [
+                    "red",
+                  ],
+                  "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                  "type": "has_any_word",
+                  "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                },
+              ],
+              "categories": [
+                {
+                  "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                  "name": "Red",
+                  "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                },
+                {
+                  "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                  "name": "Other",
+                  "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                },
+              ],
+              "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              "operand": "@input.text",
+              "result_name": "",
+              "type": "switch",
+              "wait": {
+                "type": "msg",
+              },
+            },
+            "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+          },
+          "ui": {
+            "position": {
+              "left": 0,
+              "top": 0,
+            },
+            "type": "wait_for_response",
+          },
+        },
+      }
+    }
+    onChange={[MockFunction spy]}
+  />
+  <div>
+    If the message response
+  </div>
+  <CaseList
+    cases={
+      [
+        {
+          "categoryName": "Red",
+          "kase": {
+            "arguments": [
+              "red",
+            ],
+            "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            "type": "has_any_word",
+            "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          },
+          "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+          "valid": true,
+        },
+      ]
+    }
+    data-spec="cases"
+    onCasesUpdated={[Function]}
+    type="default"
+  />
+  <OptionalTextInput
+    maxLength={64}
+    name="Save as result"
+    onChange={[Function]}
+    toggleText="Save as"
+    value={
+      {
+        "value": "",
+      }
+    }
+  />
+</Dialog>
+`;
+
+exports[`ResponseRouterForm > updates > should save changes 1`] = `
+{
+  "cases": [
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "red",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      "valid": true,
+    },
+    {
+      "categoryName": "Red",
+      "kase": {
+        "arguments": [
+          "maroon",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+      "valid": true,
+    },
+    {
+      "categoryName": "Green",
+      "kase": {
+        "arguments": [
+          "green",
+        ],
+        "type": "has_any_word",
+      },
+      "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+      "valid": true,
+    },
+  ],
+  "resultName": {
+    "validationFailures": [],
+    "value": "Favorite Color",
+  },
+  "timeout": 180,
+  "valid": true,
+}
+`;
+
+exports[`ResponseRouterForm > updates > should save changes 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+            },
+            {
+              "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+            {
+              "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "red",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "maroon",
+                ],
+                "category_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "type": "has_any_word",
+              },
+              {
+                "arguments": [
+                  "green",
+                ],
+                "category_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "type": "has_any_word",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "name": "Red",
+                "uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+              },
+              {
+                "exit_uuid": "763e4844-3e1b-407a-a1b5-5fdfcd308b41",
+                "name": "Green",
+                "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+              {
+                "exit_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+                "name": "No Response",
+                "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@input.text",
+            "result_name": "Favorite Color",
+            "type": "switch",
+            "wait": {
+              "timeout": {
+                "category_uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+                "seconds": 180,
+              },
+              "type": "msg",
+            },
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {},
+          },
+          "position": null,
+          "type": "wait_for_response",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`ResponseRouterForm > updates > should save save config for relative dates 1`] = `
+{
+  "cases": [
+    {
+      "categoryName": "In the Zone",
+      "kase": {
+        "arguments": [
+          "5",
+        ],
+        "type": "has_date_gt",
+      },
+      "uuid": "b1f332f3-bdd3-4891-aec5-1843a712dbf1",
+      "valid": true,
+    },
+  ],
+  "resultName": {
+    "value": "",
+  },
+  "timeout": 0,
+  "valid": true,
+}
+`;
+
+exports[`ResponseRouterForm > updates > should save save config for relative dates 2`] = `
+[MockFunction spy] {
+  "calls": [
+    [
+      {
+        "inboundConnections": {},
+        "node": {
+          "actions": [],
+          "exits": [
+            {
+              "uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+            },
+            {
+              "uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+            },
+          ],
+          "router": {
+            "cases": [
+              {
+                "arguments": [
+                  "@(datetime_add(today(), 5, "D"))",
+                ],
+                "category_uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+                "type": "has_date_gt",
+              },
+            ],
+            "categories": [
+              {
+                "exit_uuid": "061fc171-8b79-4636-b892-bd0ea5aa9b42",
+                "name": "In the Zone",
+                "uuid": "1dce2b34-9aab-4e20-81c4-3f0408dcb671",
+              },
+              {
+                "exit_uuid": "477ac8b4-25e2-483a-8686-2d1332c4da1c",
+                "name": "Other",
+                "uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+              },
+            ],
+            "default_category_uuid": "1e47a1e1-3c67-4df5-adf1-da542c789adb",
+            "operand": "@input.text",
+            "type": "switch",
+            "wait": {
+              "type": "msg",
+            },
+          },
+          "uuid": "132de855-4042-4dc1-a18f-cc2e6a8f790a",
+        },
+        "ui": {
+          "config": {
+            "cases": {
+              "b1f332f3-bdd3-4891-aec5-1843a712dbf1": {
+                "arguments": [
+                  "5",
+                ],
+              },
+            },
+          },
+          "position": null,
+          "type": "wait_for_response",
+        },
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

@@ -1,0 +1,659 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MediaPlayer > render > should render 1`] = `
+<MediaPlayer
+  triggered={false}
+  url="https://valid-link.to/audio.mp3"
+>
+  <div
+    className="_player_88e07f "
+    data-testid="mediaplayer"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    style={
+      {
+        "height": 18,
+        "width": 18,
+      }
+    }
+  >
+    <audio
+      data-testid="audio"
+      onTimeUpdate={[Function]}
+      preload="none"
+      src="https://valid-link.to/audio.mp3"
+    />
+    <div
+      className="_circles_88e07f"
+    >
+      <svg
+        height={18}
+        width={18}
+      >
+        <circle
+          className="_circle_background_88e07f"
+          cx={9}
+          cy={9}
+          fill="#fff"
+          r={7}
+          stroke="#fff"
+          strokeWidth={1}
+        />
+        <circle
+          className="_circle_background_88e07f"
+          cx={9}
+          cy={9}
+          fill="transparent"
+          r={7}
+          stroke="#ddd"
+          strokeWidth={1}
+        />
+        <circle
+          className="_circle_foreground_88e07f"
+          cx={9}
+          cy={9}
+          fill="transparent"
+          r={7}
+          stroke="cornflowerblue"
+          strokeDasharray="43.982297150257104 43.982297150257104"
+          strokeWidth={1}
+          style={
+            {
+              "strokeDashoffset": 43.982297150257104,
+            }
+          }
+        />
+      </svg>
+    </div>
+    <div
+      className="_button_88e07f"
+    >
+      <ForwardRef
+        icon="play_arrow"
+        scheme="alert-red"
+        size="sm"
+      >
+        <ForwardRef
+          component={
+            {
+              "__scopeId": "data-v-930380cc",
+              "computed": {
+                "materialSymbolsName": [Function],
+                "svg": [Function],
+              },
+              "emits": [
+                "click",
+                "mousedown",
+                "mouseup",
+              ],
+              "methods": {
+                "onClick": [Function],
+              },
+              "mounted": [Function],
+              "name": "Icon",
+              "props": {
+                "clickable": {
+                  "default": false,
+                  "type": [Function],
+                },
+                "filled": {
+                  "type": [Function],
+                },
+                "icon": {
+                  "default": null,
+                  "type": [Function],
+                },
+                "lineHeight": {
+                  "default": null,
+                  "type": [Function],
+                  "validator": [Function],
+                },
+                "next": {
+                  "type": [Function],
+                },
+                "scheme": {
+                  "default": "neutral-darkest",
+                  "type": [Function],
+                },
+                "size": {
+                  "default": "md",
+                  "type": [Function],
+                  "validator": [Function],
+                },
+              },
+              "render": [Function],
+            }
+          }
+          icon="play_arrow"
+          scheme="alert-red"
+          size="sm"
+          veaury-options={
+            {
+              "react": {},
+              "vue": {
+                "componentWrap": "div",
+                "componentWrapAttrs": {
+                  "style": {
+                    "all": "",
+                  },
+                },
+                "slotWrap": "div",
+              },
+            }
+          }
+        >
+          <r
+            component={
+              {
+                "__scopeId": "data-v-930380cc",
+                "computed": {
+                  "materialSymbolsName": [Function],
+                  "svg": [Function],
+                },
+                "emits": [
+                  "click",
+                  "mousedown",
+                  "mouseup",
+                ],
+                "methods": {
+                  "onClick": [Function],
+                },
+                "mounted": [Function],
+                "name": "Icon",
+                "props": {
+                  "clickable": {
+                    "default": false,
+                    "type": [Function],
+                  },
+                  "filled": {
+                    "type": [Function],
+                  },
+                  "icon": {
+                    "default": null,
+                    "type": [Function],
+                  },
+                  "lineHeight": {
+                    "default": null,
+                    "type": [Function],
+                    "validator": [Function],
+                  },
+                  "next": {
+                    "type": [Function],
+                  },
+                  "scheme": {
+                    "default": "neutral-darkest",
+                    "type": [Function],
+                  },
+                  "size": {
+                    "default": "md",
+                    "type": [Function],
+                    "validator": [Function],
+                  },
+                },
+                "render": [Function],
+              }
+            }
+            icon="play_arrow"
+            scheme="alert-red"
+            size="sm"
+            veaury-options={
+              {
+                "react": {
+                  "componentWrap": "div",
+                  "componentWrapAttrs": {
+                    "__use_react_component_wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                  "slotWrap": "div",
+                  "slotWrapAttrs": {
+                    "__use_react_slot_wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                  "vueNamedSlotsKey": [
+                    "node:",
+                  ],
+                },
+                "vue": {
+                  "componentWrap": "div",
+                  "componentWrapAttrs": {
+                    "data-use-vue-component-wrap": "",
+                    "style": {
+                      "all": "",
+                    },
+                  },
+                  "componentWrapHOC": [Function],
+                  "slotWrap": "div",
+                  "slotWrapAttrs": {
+                    "data-use-vue-slot-wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                },
+              }
+            }
+          >
+            <Component
+              portals={[]}
+            >
+              <div
+                data-use-vue-component-wrap=""
+                key="null"
+                style={
+                  {
+                    "all": "",
+                  }
+                }
+              />
+            </Component>
+          </r>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </div>
+</MediaPlayer>
+`;
+
+exports[`MediaPlayer > render > should render with triggered 1`] = `
+<MediaPlayer
+  triggered={true}
+  url="https://valid-link.to/audio.mp3"
+>
+  <div
+    className="_player_88e07f "
+    data-testid="mediaplayer"
+    onMouseDown={[Function]}
+    onMouseUp={[Function]}
+    style={
+      {
+        "height": 18,
+        "width": 18,
+      }
+    }
+  >
+    <audio
+      data-testid="audio"
+      onTimeUpdate={[Function]}
+      preload="none"
+      src="https://valid-link.to/audio.mp3"
+    />
+    <div
+      className="_circles_88e07f"
+    >
+      <svg
+        height={18}
+        width={18}
+      >
+        <circle
+          className="_circle_background_88e07f"
+          cx={9}
+          cy={9}
+          fill="#fff"
+          r={7}
+          stroke="#fff"
+          strokeWidth={1}
+        />
+        <circle
+          className="_circle_background_88e07f"
+          cx={9}
+          cy={9}
+          fill="transparent"
+          r={7}
+          stroke="#ddd"
+          strokeWidth={1}
+        />
+        <circle
+          className="_circle_foreground_88e07f"
+          cx={9}
+          cy={9}
+          fill="transparent"
+          r={7}
+          stroke="cornflowerblue"
+          strokeDasharray="43.982297150257104 43.982297150257104"
+          strokeWidth={1}
+          style={
+            {
+              "strokeDashoffset": 43.982297150257104,
+            }
+          }
+        />
+      </svg>
+    </div>
+    <div
+      className="_button_88e07f"
+    >
+      <ForwardRef
+        icon="play_arrow"
+        scheme="alert-red"
+        size="sm"
+      >
+        <ForwardRef
+          component={
+            {
+              "__scopeId": "data-v-930380cc",
+              "computed": {
+                "materialSymbolsName": [Function],
+                "svg": [Function],
+              },
+              "emits": [
+                "click",
+                "mousedown",
+                "mouseup",
+              ],
+              "methods": {
+                "onClick": [Function],
+              },
+              "mounted": [Function],
+              "name": "Icon",
+              "props": {
+                "clickable": {
+                  "default": false,
+                  "type": [Function],
+                },
+                "filled": {
+                  "type": [Function],
+                },
+                "icon": {
+                  "default": null,
+                  "type": [Function],
+                },
+                "lineHeight": {
+                  "default": null,
+                  "type": [Function],
+                  "validator": [Function],
+                },
+                "next": {
+                  "type": [Function],
+                },
+                "scheme": {
+                  "default": "neutral-darkest",
+                  "type": [Function],
+                },
+                "size": {
+                  "default": "md",
+                  "type": [Function],
+                  "validator": [Function],
+                },
+              },
+              "render": [Function],
+            }
+          }
+          icon="play_arrow"
+          scheme="alert-red"
+          size="sm"
+          veaury-options={
+            {
+              "react": {},
+              "vue": {
+                "componentWrap": "div",
+                "componentWrapAttrs": {
+                  "style": {
+                    "all": "",
+                  },
+                },
+                "slotWrap": "div",
+              },
+            }
+          }
+        >
+          <r
+            component={
+              {
+                "__scopeId": "data-v-930380cc",
+                "computed": {
+                  "materialSymbolsName": [Function],
+                  "svg": [Function],
+                },
+                "emits": [
+                  "click",
+                  "mousedown",
+                  "mouseup",
+                ],
+                "methods": {
+                  "onClick": [Function],
+                },
+                "mounted": [Function],
+                "name": "Icon",
+                "props": {
+                  "clickable": {
+                    "default": false,
+                    "type": [Function],
+                  },
+                  "filled": {
+                    "type": [Function],
+                  },
+                  "icon": {
+                    "default": null,
+                    "type": [Function],
+                  },
+                  "lineHeight": {
+                    "default": null,
+                    "type": [Function],
+                    "validator": [Function],
+                  },
+                  "next": {
+                    "type": [Function],
+                  },
+                  "scheme": {
+                    "default": "neutral-darkest",
+                    "type": [Function],
+                  },
+                  "size": {
+                    "default": "md",
+                    "type": [Function],
+                    "validator": [Function],
+                  },
+                },
+                "render": [Function],
+              }
+            }
+            icon="play_arrow"
+            scheme="alert-red"
+            size="sm"
+            veaury-options={
+              {
+                "react": {
+                  "componentWrap": "div",
+                  "componentWrapAttrs": {
+                    "__use_react_component_wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                  "slotWrap": "div",
+                  "slotWrapAttrs": {
+                    "__use_react_slot_wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                  "vueNamedSlotsKey": [
+                    "node:",
+                  ],
+                },
+                "vue": {
+                  "componentWrap": "div",
+                  "componentWrapAttrs": {
+                    "data-use-vue-component-wrap": "",
+                    "style": {
+                      "all": "",
+                    },
+                  },
+                  "componentWrapHOC": [Function],
+                  "slotWrap": "div",
+                  "slotWrapAttrs": {
+                    "data-use-vue-slot-wrap": "",
+                    "style": {
+                      "all": "unset",
+                    },
+                  },
+                },
+              }
+            }
+          >
+            <Component
+              portals={[]}
+            >
+              <div
+                data-use-vue-component-wrap=""
+                key="null"
+                style={
+                  {
+                    "all": "",
+                  }
+                }
+              />
+            </Component>
+          </r>
+        </ForwardRef>
+      </ForwardRef>
+    </div>
+  </div>
+</MediaPlayer>
+`;
+
+exports[`MediaPlayer > should update playing state if audio has stopped 1`] = `
+<body>
+  <div>
+    <div
+      class="_player_88e07f _playing_88e07f"
+      data-testid="mediaplayer"
+      style="height: 18px; width: 18px;"
+    >
+      <audio
+        data-testid="audio"
+        preload="none"
+        src="https://valid-link.to/audio.mp3"
+      />
+      <div
+        class="_circles_88e07f"
+      >
+        <svg
+          height="18"
+          width="18"
+        >
+          <circle
+            class="_circle_background_88e07f"
+            cx="9"
+            cy="9"
+            fill="#fff"
+            r="7"
+            stroke="#fff"
+            stroke-width="1"
+          />
+          <circle
+            class="_circle_background_88e07f"
+            cx="9"
+            cy="9"
+            fill="transparent"
+            r="7"
+            stroke="#ddd"
+            stroke-width="1"
+          />
+          <circle
+            class="_circle_foreground_88e07f"
+            cx="9"
+            cy="9"
+            fill="transparent"
+            r="7"
+            stroke="cornflowerblue"
+            stroke-dasharray="43.982297150257104 43.982297150257104"
+            stroke-width="1"
+            style="stroke-dashoffset: 43.982297150257104;"
+          />
+        </svg>
+      </div>
+      <div
+        class="_button_88e07f"
+      >
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+        >
+          <span
+            class="material-symbols-rounded unnnic-icon-scheme--alert-red unnnic-icon-size--sm"
+            data-v-930380cc=""
+          >
+            stop
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`MediaPlayer > should update playing state if audio has stopped 2`] = `
+<body>
+  <div>
+    <div
+      class="_player_88e07f "
+      data-testid="mediaplayer"
+      style="height: 18px; width: 18px;"
+    >
+      <audio
+        data-testid="audio"
+        preload="none"
+        src="https://valid-link.to/audio2.mp3"
+      />
+      <div
+        class="_circles_88e07f"
+      >
+        <svg
+          height="18"
+          width="18"
+        >
+          <circle
+            class="_circle_background_88e07f"
+            cx="9"
+            cy="9"
+            fill="#fff"
+            r="7"
+            stroke="#fff"
+            stroke-width="1"
+          />
+          <circle
+            class="_circle_background_88e07f"
+            cx="9"
+            cy="9"
+            fill="transparent"
+            r="7"
+            stroke="#ddd"
+            stroke-width="1"
+          />
+          <circle
+            class="_circle_foreground_88e07f"
+            cx="9"
+            cy="9"
+            fill="transparent"
+            r="7"
+            stroke="cornflowerblue"
+            stroke-dasharray="43.982297150257104 43.982297150257104"
+            stroke-width="1"
+            style="stroke-dashoffset: 43.982297150257104;"
+          />
+        </svg>
+      </div>
+      <div
+        class="_button_88e07f"
+      >
+        <div
+          data-use-vue-component-wrap=""
+          data-v-app=""
+        >
+          <span
+            class="material-symbols-rounded unnnic-icon-scheme--alert-red unnnic-icon-size--sm"
+            data-v-930380cc=""
+          >
+            play_arrow
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

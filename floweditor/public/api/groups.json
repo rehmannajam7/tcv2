@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "uuid": "group-1",
+      "name": "Customers",
+      "count": 150
+    },
+    {
+      "uuid": "group-2", 
+      "name": "Prospects",
+      "count": 75
+    }
+  ]
+}

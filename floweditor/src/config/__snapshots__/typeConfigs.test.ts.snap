@@ -1,0 +1,1363 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`typeConfigs > should provide type configs 1`] = `
+[
+  {
+    "component": [Function],
+    "description": " ** Unsupported ** ",
+    "name": "Missing",
+    "type": "missing",
+    "visibility": [
+      "-",
+    ],
+  },
+  {
+    "component": [Function],
+    "description": "Play a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "audio_url",
+    ],
+    "name": "Play Message",
+    "type": "say_msg",
+    "visibility": [
+      "voice",
+    ],
+  },
+  {
+    "description": "Wait for menu selection",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Menu Selection",
+    "type": "wait_for_menu",
+    "visibility": [
+      "voice",
+    ],
+  },
+  {
+    "description": "Wait for multiple digits",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Wait for Digits",
+    "type": "wait_for_digits",
+    "visibility": [
+      "voice",
+    ],
+  },
+  {
+    "description": "Wait for an audio recording",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Audio",
+    "type": "wait_for_audio",
+    "visibility": [
+      "messaging_offline",
+      "voice",
+    ],
+  },
+  {
+    "description": "Wait for forwarded call to someone else",
+    "form": [Function],
+    "name": "Wait for Forwarded Call",
+    "type": "wait_for_dial",
+    "visibility": [
+      "voice",
+    ],
+  },
+  {
+    "component": [Function],
+    "description": "Send the contact a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "quick_replies",
+      "templating.variables",
+    ],
+    "massageForDisplay": [Function],
+    "name": "Send message",
+    "type": "send_msg",
+  },
+  {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "quick_replies",
+      "footer",
+      "header_text",
+      "button_text",
+    ],
+    "massageForDisplay": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
+  },
+  {
+    "aliases": [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp_catalog",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
+  },
+  {
+    "aliases": [
+      "switch",
+    ],
+    "description": "Wait for the contact to respond",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Wait for response",
+    "type": "wait_for_response",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  {
+    "aliases": [
+      "smart",
+    ],
+    "description": "Smartly wait for response",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Smart Wait for Response",
+    "new": true,
+    "type": "smart_wait_for_response",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  {
+    "aliases": [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
+  },
+  {
+    "aliases": [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
+  {
+    "component": [Function],
+    "description": "Send somebody else a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+    ],
+    "name": "Send broadcast",
+    "type": "send_broadcast",
+  },
+  {
+    "component": [Function],
+    "description": "Label the incoming message",
+    "form": [Function],
+    "name": "Add label",
+    "type": "add_input_labels",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+      "voice",
+    ],
+  },
+  {
+    "component": [Function],
+    "description": "Add a URN for the contact",
+    "form": [Function],
+    "name": "Add URN",
+    "type": "add_contact_urn",
+  },
+  {
+    "component": [Function],
+    "description": "Add the contact to a group",
+    "form": [Function],
+    "name": "Add to group",
+    "type": "add_contact_groups",
+  },
+  {
+    "component": [Function],
+    "description": "Remove the contact from a group",
+    "form": [Function],
+    "name": "Remove from group",
+    "type": "remove_contact_groups",
+  },
+  {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  {
+    "component": [Function],
+    "description": "Send email",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "subject",
+      "body",
+    ],
+    "name": "Send email",
+    "type": "send_email",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "component": [Function],
+    "description": "Save a result for this flow",
+    "form": [Function],
+    "name": "Save flow result",
+    "type": "set_run_result",
+  },
+  {
+    "component": [Function],
+    "description": "Play a contact recording",
+    "form": [Function],
+    "name": "Play Recording",
+    "type": "play_audio",
+    "visibility": [
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "split_by_webhook",
+    ],
+    "component": [Function],
+    "description": "Call a webhook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call webhook",
+    "type": "call_webhook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "split_by_resthook",
+    ],
+    "component": [Function],
+    "description": "Call Zapier",
+    "filter": "resthook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call Zapier",
+    "type": "call_resthook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "split_by_subflow",
+    ],
+    "component": [Function],
+    "description": "Enter another flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Enter another flow",
+    "type": "enter_flow",
+  },
+  {
+    "component": [Function],
+    "description": "Start somebody else in a flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Start somebody else",
+    "type": "start_session",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "split_by_ticket",
+    ],
+    "component": [Function],
+    "description": "Open a ticket with a human agent",
+    "filter": "ticketer",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Open Ticket",
+    "type": "open_ticket",
+  },
+  {
+    "aliases": [
+      "split_by_airtime",
+    ],
+    "component": [Function],
+    "description": "Send the contact airtime",
+    "filter": "airtime",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Send Airtime",
+    "type": "transfer_airtime",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call an external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
+  },
+  {
+    "description": "Wait for an image",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Image",
+    "type": "wait_for_image",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+  {
+    "description": "Wait for a video",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Video",
+    "type": "wait_for_video",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+  {
+    "description": "Wait for location GPS coordinates",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Location",
+    "type": "wait_for_location",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+  {
+    "aliases": [
+      "call_classifier",
+    ],
+    "component": [Function],
+    "description": "Split by intent",
+    "filter": "classifier",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by intent",
+    "type": "split_by_intent",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "aliases": [
+      "smart",
+    ],
+    "description": "Automatic Classify",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Automatic Classify",
+    "new": true,
+    "type": "automatic_classify",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  {
+    "description": "Split by a custom expression",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by expression",
+    "type": "split_by_expression",
+  },
+  {
+    "description": "Split by contact field",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by contact field",
+    "type": "split_by_contact_field",
+  },
+  {
+    "aliases": [
+      "split_by_run_result_delimited",
+    ],
+    "description": "Split by a result in the flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by flow result",
+    "type": "split_by_run_result",
+  },
+  {
+    "description": "Split randomly",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split randomly",
+    "type": "split_by_random",
+  },
+  {
+    "description": "Split by group membership",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by group membership",
+    "type": "split_by_groups",
+  },
+  {
+    "description": "Split by URN type",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by URN type",
+    "type": "split_by_scheme",
+  },
+]
+`;
+
+exports[`typeConfigs > should provide type configs 2`] = `
+{
+  "add_contact_groups": {
+    "component": [Function],
+    "description": "Add the contact to a group",
+    "form": [Function],
+    "name": "Add to group",
+    "type": "add_contact_groups",
+  },
+  "add_contact_urn": {
+    "component": [Function],
+    "description": "Add a URN for the contact",
+    "form": [Function],
+    "name": "Add URN",
+    "type": "add_contact_urn",
+  },
+  "add_input_labels": {
+    "component": [Function],
+    "description": "Label the incoming message",
+    "form": [Function],
+    "name": "Add label",
+    "type": "add_input_labels",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+      "voice",
+    ],
+  },
+  "automatic_classify": {
+    "aliases": [
+      "smart",
+    ],
+    "description": "Automatic Classify",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Automatic Classify",
+    "new": true,
+    "type": "automatic_classify",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "call_brain": {
+    "aliases": [
+      "call_brain",
+    ],
+    "component": [Function],
+    "description": "Call Weni Brain",
+    "filter": "brain",
+    "form": {
+      "$$typeof": Symbol(react.memo),
+      "WrappedComponent": [Function],
+      "compare": null,
+      "displayName": "Connect(BrainForm)",
+      "type": [Function],
+    },
+    "name": "Call Weni Brain",
+    "new": true,
+    "type": "call_brain",
+  },
+  "call_classifier": {
+    "aliases": [
+      "call_classifier",
+    ],
+    "component": [Function],
+    "description": "Split by intent",
+    "filter": "classifier",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by intent",
+    "type": "split_by_intent",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "call_external_service": {
+    "aliases": [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call an external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
+  },
+  "call_resthook": {
+    "aliases": [
+      "split_by_resthook",
+    ],
+    "component": [Function],
+    "description": "Call Zapier",
+    "filter": "resthook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call Zapier",
+    "type": "call_resthook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "call_webhook": {
+    "aliases": [
+      "split_by_webhook",
+    ],
+    "component": [Function],
+    "description": "Call a webhook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call webhook",
+    "type": "call_webhook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "call_wenigpt": {
+    "aliases": [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
+  "enter_flow": {
+    "aliases": [
+      "split_by_subflow",
+    ],
+    "component": [Function],
+    "description": "Enter another flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Enter another flow",
+    "type": "enter_flow",
+  },
+  "missing": {
+    "component": [Function],
+    "description": " ** Unsupported ** ",
+    "name": "Missing",
+    "type": "missing",
+    "visibility": [
+      "-",
+    ],
+  },
+  "open_ticket": {
+    "aliases": [
+      "split_by_ticket",
+    ],
+    "component": [Function],
+    "description": "Open a ticket with a human agent",
+    "filter": "ticketer",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Open Ticket",
+    "type": "open_ticket",
+  },
+  "play_audio": {
+    "component": [Function],
+    "description": "Play a contact recording",
+    "form": [Function],
+    "name": "Play Recording",
+    "type": "play_audio",
+    "visibility": [
+      "voice",
+    ],
+  },
+  "remove_contact_groups": {
+    "component": [Function],
+    "description": "Remove the contact from a group",
+    "form": [Function],
+    "name": "Remove from group",
+    "type": "remove_contact_groups",
+  },
+  "say_msg": {
+    "component": [Function],
+    "description": "Play a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "audio_url",
+    ],
+    "name": "Play Message",
+    "type": "say_msg",
+    "visibility": [
+      "voice",
+    ],
+  },
+  "send_broadcast": {
+    "component": [Function],
+    "description": "Send somebody else a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+    ],
+    "name": "Send broadcast",
+    "type": "send_broadcast",
+  },
+  "send_email": {
+    "component": [Function],
+    "description": "Send email",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "subject",
+      "body",
+    ],
+    "name": "Send email",
+    "type": "send_email",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "send_msg": {
+    "component": [Function],
+    "description": "Send the contact a message",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "quick_replies",
+      "templating.variables",
+    ],
+    "massageForDisplay": [Function],
+    "name": "Send message",
+    "type": "send_msg",
+  },
+  "send_msg_catalog": {
+    "aliases": [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp_catalog",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
+  },
+  "send_whatsapp_msg": {
+    "component": [Function],
+    "description": "Send a WhatsApp message",
+    "filter": "whatsapp",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "text",
+      "quick_replies",
+      "footer",
+      "header_text",
+      "button_text",
+    ],
+    "massageForDisplay": [Function],
+    "name": "Send WhatsApp Message",
+    "new": true,
+    "type": "send_whatsapp_msg",
+  },
+  "set_contact_channel": {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  "set_contact_field": {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  "set_contact_language": {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  "set_contact_name": {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  "set_contact_status": {
+    "aliases": [
+      "set_contact_name",
+      "set_contact_language",
+      "set_contact_channel",
+      "set_contact_status",
+    ],
+    "component": [Function],
+    "description": "Update the contact",
+    "form": [Function],
+    "name": "Update contact",
+    "type": "set_contact_field",
+  },
+  "set_run_result": {
+    "component": [Function],
+    "description": "Save a result for this flow",
+    "form": [Function],
+    "name": "Save flow result",
+    "type": "set_run_result",
+  },
+  "smart": {
+    "aliases": [
+      "smart",
+    ],
+    "description": "Automatic Classify",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Automatic Classify",
+    "new": true,
+    "type": "automatic_classify",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "smart_wait_for_response": {
+    "aliases": [
+      "smart",
+    ],
+    "description": "Smartly wait for response",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Smart Wait for Response",
+    "new": true,
+    "type": "smart_wait_for_response",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  "split_by_airtime": {
+    "aliases": [
+      "split_by_airtime",
+    ],
+    "component": [Function],
+    "description": "Send the contact airtime",
+    "filter": "airtime",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Send Airtime",
+    "type": "transfer_airtime",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "split_by_contact_field": {
+    "description": "Split by contact field",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by contact field",
+    "type": "split_by_contact_field",
+  },
+  "split_by_expression": {
+    "description": "Split by a custom expression",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by expression",
+    "type": "split_by_expression",
+  },
+  "split_by_external_service": {
+    "aliases": [
+      "split_by_external_service",
+    ],
+    "component": [Function],
+    "description": "Call an external service",
+    "filter": "external_service",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exists",
+    ],
+    "name": "Call External Service",
+    "type": "call_external_service",
+  },
+  "split_by_groups": {
+    "description": "Split by group membership",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by group membership",
+    "type": "split_by_groups",
+  },
+  "split_by_intent": {
+    "aliases": [
+      "call_classifier",
+    ],
+    "component": [Function],
+    "description": "Split by intent",
+    "filter": "classifier",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by intent",
+    "type": "split_by_intent",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "split_by_random": {
+    "description": "Split randomly",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split randomly",
+    "type": "split_by_random",
+  },
+  "split_by_resthook": {
+    "aliases": [
+      "split_by_resthook",
+    ],
+    "component": [Function],
+    "description": "Call Zapier",
+    "filter": "resthook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call Zapier",
+    "type": "call_resthook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "split_by_run_result": {
+    "aliases": [
+      "split_by_run_result_delimited",
+    ],
+    "description": "Split by a result in the flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by flow result",
+    "type": "split_by_run_result",
+  },
+  "split_by_run_result_delimited": {
+    "aliases": [
+      "split_by_run_result_delimited",
+    ],
+    "description": "Split by a result in the flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Split by flow result",
+    "type": "split_by_run_result",
+  },
+  "split_by_scheme": {
+    "description": "Split by URN type",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Split by URN type",
+    "type": "split_by_scheme",
+  },
+  "split_by_subflow": {
+    "aliases": [
+      "split_by_subflow",
+    ],
+    "component": [Function],
+    "description": "Enter another flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Enter another flow",
+    "type": "enter_flow",
+  },
+  "split_by_ticket": {
+    "aliases": [
+      "split_by_ticket",
+    ],
+    "component": [Function],
+    "description": "Open a ticket with a human agent",
+    "filter": "ticketer",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Open Ticket",
+    "type": "open_ticket",
+  },
+  "split_by_webhook": {
+    "aliases": [
+      "split_by_webhook",
+    ],
+    "component": [Function],
+    "description": "Call a webhook",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Call webhook",
+    "type": "call_webhook",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "split_by_wenigpt": {
+    "aliases": [
+      "split_by_wenigpt",
+    ],
+    "component": [Function],
+    "description": "Call WeniGPT",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Call WeniGPT",
+    "new": true,
+    "type": "call_wenigpt",
+  },
+  "split_by_whatsapp_product": {
+    "aliases": [
+      "split_by_whatsapp_product",
+    ],
+    "component": [Function],
+    "description": "Send a WhatsApp product",
+    "filter": "whatsapp_catalog",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "input",
+    ],
+    "name": "Send WhatsApp Product",
+    "new": true,
+    "type": "send_msg_catalog",
+  },
+  "start_session": {
+    "component": [Function],
+    "description": "Start somebody else in a flow",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Start somebody else",
+    "type": "start_session",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "switch": {
+    "aliases": [
+      "switch",
+    ],
+    "description": "Wait for the contact to respond",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Wait for response",
+    "type": "wait_for_response",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  "transfer_airtime": {
+    "aliases": [
+      "split_by_airtime",
+    ],
+    "component": [Function],
+    "description": "Send the contact airtime",
+    "filter": "airtime",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Send Airtime",
+    "type": "transfer_airtime",
+    "visibility": [
+      "messaging",
+      "messaging_background",
+      "voice",
+    ],
+  },
+  "wait_for_audio": {
+    "description": "Wait for an audio recording",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Audio",
+    "type": "wait_for_audio",
+    "visibility": [
+      "messaging_offline",
+      "voice",
+    ],
+  },
+  "wait_for_dial": {
+    "description": "Wait for forwarded call to someone else",
+    "form": [Function],
+    "name": "Wait for Forwarded Call",
+    "type": "wait_for_dial",
+    "visibility": [
+      "voice",
+    ],
+  },
+  "wait_for_digits": {
+    "description": "Wait for multiple digits",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+      "cases",
+    ],
+    "name": "Wait for Digits",
+    "type": "wait_for_digits",
+    "visibility": [
+      "voice",
+    ],
+  },
+  "wait_for_image": {
+    "description": "Wait for an image",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Image",
+    "type": "wait_for_image",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+  "wait_for_location": {
+    "description": "Wait for location GPS coordinates",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Location",
+    "type": "wait_for_location",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+  "wait_for_menu": {
+    "description": "Wait for menu selection",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Menu Selection",
+    "type": "wait_for_menu",
+    "visibility": [
+      "voice",
+    ],
+  },
+  "wait_for_response": {
+    "aliases": [
+      "switch",
+    ],
+    "description": "Wait for the contact to respond",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "categories",
+      "cases",
+    ],
+    "name": "Wait for response",
+    "type": "wait_for_response",
+    "visibility": [
+      "messaging",
+      "messaging_offline",
+    ],
+  },
+  "wait_for_video": {
+    "description": "Wait for a video",
+    "form": [Function],
+    "localization": [Function],
+    "localizeableKeys": [
+      "exits",
+    ],
+    "name": "Wait for Video",
+    "type": "wait_for_video",
+    "visibility": [
+      "messaging_offline",
+    ],
+  },
+}
+`;

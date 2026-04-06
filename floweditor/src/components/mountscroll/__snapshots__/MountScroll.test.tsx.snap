@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MountScroll > renders 1`] = `
+<body>
+  <div>
+    <div
+      class="__wrapper_f617cd_f617cd"
+    />
+  </div>
+</body>
+`;

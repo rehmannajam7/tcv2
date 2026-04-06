@@ -1,0 +1,279 @@
+@import 'src/variables.module.scss';
+
+@keyframes fadein {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.evt {
+  display: flex;
+  clear: both;
+  margin-bottom: 8px;
+  animation: fadein 0.2s;
+  word-break: break-word;
+  font-weight: $unnnic-font-weight-regular;
+  font-size: $unnnic-font-size-body-md;
+}
+
+.ivr_msg,
+.send_msg {
+  display: flex;
+  gap: $unnnic-spacing-inline-nano;
+  margin-right: 24px;
+  color: $unnnic-color-neutral-darkest;
+  width: 100%;
+
+  .msg_wrapper {
+    margin-top: $unnnic-spacing-stack-xs;
+    padding: 8px 15px;
+    background: $unnnic-color-background-sky;
+    border-radius: 0 $unnnic-border-radius-sm $unnnic-border-radius-sm $unnnic-border-radius-sm;
+  }
+
+  .msg_text {
+    min-height: $unnnic-font-size-body-md;
+  }
+
+  .profile_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $unnnic-color-brand-weni-soft;
+    border-radius: $unnnic-border-radius-pill;
+    width: $unnnic-icon-size-md;
+    height: $unnnic-icon-size-md;
+    min-width: $unnnic-icon-size-md;
+    min-height: $unnnic-icon-size-md;
+
+    .profile_icon {
+      margin-top: -2px;
+    }
+  }
+}
+
+.send_msg.whatsapp {
+
+  .msg_text {
+    position: relative;
+    border-radius: $unnnic-border-radius-lg;
+    background: #FAFAFA;
+    color: $unnnic-color-neutral-darkest;
+    margin-top: 0;
+  }
+
+  .msg_text:after {
+    content: '';
+    position: absolute;
+    bottom: 9px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-right-color: #FAFAFA;
+    border-left: 0;
+    margin-left: -20px;
+  }
+}
+
+.msg_received {
+  text-align: right;
+  margin-left: auto;
+  color: $unnnic-color-neutral-snow;
+
+  .msg_text {
+    border-radius: $unnnic-border-radius-sm;
+    background: $unnnic-color-brand-weni-soft;
+    min-height: 16px;
+    padding: 8px 15px;
+  }
+
+  &.image_attachment {
+    padding: 0;
+    border: none;
+  }
+}
+
+.msg_received.whatsapp {
+  .msg_text {
+    position: relative;
+    border-radius: $unnnic-border-radius-sm;
+    background: #DCF7C5;
+    border-radius: $unnnic-border-radius-lg;
+    color: $unnnic-color-neutral-darkest;
+  }
+
+  .msg_text:after {
+    content: '';
+    position: absolute;
+    bottom: 9px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: #DCF7C5;
+    border-right: 0;
+    margin-right: -4px;
+  }
+}
+
+.error {
+  float: inherit;
+  color: $unnnic-color-aux-baby-red;
+  border: none;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 11px;
+}
+
+.error.whatsapp {
+  color: $unnnic-color-feedback-red;
+}
+
+.info {
+  margin: 0 auto;
+  border: none;
+  text-align: center;
+  color: $unnnic-color-neutral-cleanest;
+  word-wrap: break-word;
+  padding: 0 10px;
+}
+
+.info.whatsapp {
+  color: $unnnic-color-neutral-cloudy;
+}
+
+.email {
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: #999;
+  }
+}
+
+.webhook {
+  color: $unnnic-color-neutral-cleanest;
+  margin: 0 auto;
+  word-break: break-all;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.webhook.whatsapp {
+  color: $unnnic-color-neutral-cloudy;
+}
+
+.video_attachment {
+  video {
+    width: 100%;
+  }
+}
+
+.audio_attachment {
+  background: #ccc;
+  padding: 6px 10px;
+  position: relative;
+  height: 19px;
+  display: flex;
+  border-radius: $unnnic-border-radius-md;
+
+  .media_player {
+    display: inherit;
+  }
+
+  .audio_text {
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #777;
+  }
+}
+
+.email_details {
+  padding: 20px;
+  font-size: 14px;
+
+  .to {
+    padding-top: 10px;
+  }
+
+  .subject {
+    padding-top: 10px;
+  }
+
+  .body {
+    padding-top: 20px;
+  }
+}
+
+.webhook_details {
+  unicode-bidi: embed;
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  max-height: 500px;
+  padding: 16px;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+
+  ::first-line {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 34px;
+  }
+
+  .response {
+    padding-top: 20px;
+  }
+}
+
+.event_viewer {
+  pre {
+    height: 400px;
+    white-space: pre-wrap;
+    /* css-3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    border: none;
+    border-radius: none;
+    background-color: white;
+  }
+}
+
+.has_detail {
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.classification {
+  margin: 0 auto;
+  width: 100%;
+  font-size: 90%;
+  color: #bbb;
+
+  td {
+    padding: 0 5px;
+  }
+
+  td:last-child {
+    text-align: right;
+    font-size: 90%;
+  }
+}

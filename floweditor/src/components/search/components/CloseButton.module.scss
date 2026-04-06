@@ -1,0 +1,19 @@
+@import 'src/variables.module.scss';
+
+.closeButton {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .closeIcon {
+        justify-items: center;
+        align-items: center;
+        padding: $unnnic-spacing-nano;
+        margin-top: 1px;
+    }
+
+    button {
+        padding: revert !important;
+        height: revert !important;
+    }
+}

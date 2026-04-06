@@ -1,0 +1,33 @@
+{
+  "1": {
+    "10896f86-53dc-4143-845b-ede456fc0a9a": {
+      "uuid": "10896f86-53dc-4143-845b-ede456fc0a9a",
+      "name": "New Flow - Account 1",
+      "definition_json": "{\"uuid\":\"10896f86-53dc-4143-845b-ede456fc0a9a\",\"name\":\"New Flow - Account 1\",\"language\":\"base\",\"nodes\":[{\"uuid\":\"90e9c4b9-c78d-48ad-b91d-d1e9dfba01d0\",\"actions\":[{\"attachments\":[],\"text\":\"HI\",\"type\":\"send_msg\",\"quick_replies\":[],\"uuid\":\"0a28ba67-5e2e-427b-a917-cacfa29c7549\"}],\"exits\":[{\"uuid\":\"af3d79b0-b68f-42d9-bb7e-34293fde7cdb\",\"destination_uuid\":null}]}],\"localization\":{},\"spec_version\":\"13.1.0\",\"revision\":1,\"_ui\":{\"nodes\":{\"90e9c4b9-c78d-48ad-b91d-d1e9dfba01d0\":{\"position\":{\"left\":260,\"top\":85},\"type\":\"execute_actions\"}},\"stickies\":{},\"languages\":[]},\"format\":\"json\",\"flow_editor\":{\"uuid\":\"10896f86-53dc-4143-845b-ede456fc0a9a\",\"name\":\"New Flow - Account 1\",\"language\":\"base\",\"nodes\":[{\"uuid\":\"90e9c4b9-c78d-48ad-b91d-d1e9dfba01d0\",\"actions\":[{\"attachments\":[],\"text\":\"HI\",\"type\":\"send_msg\",\"quick_replies\":[],\"uuid\":\"0a28ba67-5e2e-427b-a917-cacfa29c7549\"}],\"exits\":[{\"uuid\":\"af3d79b0-b68f-42d9-bb7e-34293fde7cdb\",\"destination_uuid\":null}]}],\"localization\":{},\"spec_version\":\"13.1.0\",\"revision\":1,\"_ui\":{\"nodes\":{\"90e9c4b9-c78d-48ad-b91d-d1e9dfba01d0\":{\"position\":{\"left\":260,\"top\":85},\"type\":\"execute_actions\"}},\"stickies\":{},\"languages\":[]}}}",
+      "account_id": "1",
+      "status": "published",
+      "created_at": "2025-10-10T11:10:26.071Z",
+      "updated_at": "2025-10-10T11:14:09.432Z"
+    }
+  },
+  "2": {
+    "cb43d82c-7f3b-4d4a-8f8e-234d1da60365": {
+      "uuid": "cb43d82c-7f3b-4d4a-8f8e-234d1da60365",
+      "name": "New Flow - Account 2",
+      "definition_json": "{\"uuid\":\"cb43d82c-7f3b-4d4a-8f8e-234d1da60365\",\"name\":\"New Flow - Account 2\",\"language\":\"base\",\"nodes\":[{\"uuid\":\"51c97ce9-faa8-49f1-ad15-15ff07ff1d47\",\"actions\":[{\"attachments\":[],\"text\":\"Ok\",\"type\":\"send_msg\",\"quick_replies\":[],\"uuid\":\"690fb8db-4f10-425d-b7d3-6e2ca537aa1d\"}],\"exits\":[{\"uuid\":\"69437930-2a8a-421d-acc0-4080491715cc\",\"destination_uuid\":null}]}],\"localization\":{},\"spec_version\":\"13.1.0\",\"revision\":1,\"_ui\":{\"nodes\":{\"51c97ce9-faa8-49f1-ad15-15ff07ff1d47\":{\"position\":{\"left\":160,\"top\":100},\"type\":\"execute_actions\"}},\"stickies\":{\"ef1db485-839d-40cf-bc9f-a62bc081223c\":{\"position\":{\"left\":495,\"top\":103},\"title\":\"New Note\",\"body\":\"..Hekk\",\"color\":\"green\"}},\"languages\":[]},\"format\":\"json\",\"flow_editor\":{\"uuid\":\"cb43d82c-7f3b-4d4a-8f8e-234d1da60365\",\"name\":\"New Flow - Account 2\",\"language\":\"base\",\"nodes\":[{\"uuid\":\"51c97ce9-faa8-49f1-ad15-15ff07ff1d47\",\"actions\":[{\"attachments\":[],\"text\":\"Ok\",\"type\":\"send_msg\",\"quick_replies\":[],\"uuid\":\"690fb8db-4f10-425d-b7d3-6e2ca537aa1d\"}],\"exits\":[{\"uuid\":\"69437930-2a8a-421d-acc0-4080491715cc\",\"destination_uuid\":null}]}],\"localization\":{},\"spec_version\":\"13.1.0\",\"revision\":1,\"_ui\":{\"nodes\":{\"51c97ce9-faa8-49f1-ad15-15ff07ff1d47\":{\"position\":{\"left\":160,\"top\":100},\"type\":\"execute_actions\"}},\"stickies\":{\"ef1db485-839d-40cf-bc9f-a62bc081223c\":{\"position\":{\"left\":495,\"top\":103},\"title\":\"New Note\",\"body\":\"..Hekk\",\"color\":\"green\"}},\"languages\":[]}}}",
+      "account_id": "2",
+      "status": "published",
+      "created_at": "2025-10-10T05:15:47.604Z",
+      "updated_at": "2025-10-10T05:35:31.552Z"
+    },
+    "test-flow-123": {
+      "uuid": "test-flow-123",
+      "name": "Test Flow",
+      "definition_json": "{\"uuid\":\"test-flow-123\",\"name\":\"Test Flow\",\"nodes\":[],\"localization\":{}}",
+      "account_id": "2",
+      "status": "active",
+      "created_at": "2025-10-10T05:20:19.393Z",
+      "updated_at": "2025-10-10T05:20:19.393Z"
+    }
+  }
+}
