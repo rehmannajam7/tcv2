@@ -919,10 +919,10 @@ class Flows::ExecutionService
       Conversations::HandoffPublicText.message_for(conversation)
     end
 
-    # 4) Replace @results.* variables (e.g. @results.Result 1.value)
-    result.gsub!(/@results\.([a-z0-9_ \-]+)\.(category|value|input)/i) do
+    # 4) Replace @results.* variables (e.g. @results.Result 1.value or bare @results.Result 1 → .value)
+    result.gsub!(/@results\.([a-z0-9_ \-]+)(?:\.(category|value|input))?\b/i) do
       key = Regexp.last_match(1).strip
-      field = Regexp.last_match(2).downcase
+      field = (Regexp.last_match(2) || 'value').downcase
       resolve_flow_result(key, field)
     end
 
