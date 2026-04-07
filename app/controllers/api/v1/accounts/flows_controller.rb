@@ -114,11 +114,22 @@ class Api::V1::Accounts::FlowsController < Api::V1::Accounts::BaseController
   end
 
   def normalize_flow_data(flow_params_hash)
-    v = flow_params_hash[:flow_data]
+    # Only normalize when the client sent flow_data. Otherwise PATCH requests that
+    # update name/channels/keywords (FlowEditModal) would inject flow_data: "{}"
+    # and wipe the FlowEditor canvas (nodes/edges) stored in flow_data.
+    string_key = flow_params_hash.key?('flow_data')
+    symbol_key = flow_params_hash.key?(:flow_data)
+    unless string_key || symbol_key
+      flow_params_hash['flow_data'] = '{}' if action_name == 'create'
+      return
+    end
+
+    key = string_key ? 'flow_data' : :flow_data
+    v = flow_params_hash[key]
     if v.blank?
-      flow_params_hash[:flow_data] = '{}'
+      flow_params_hash[key] = '{}'
     elsif !v.is_a?(String)
-      flow_params_hash[:flow_data] = v.to_json
+      flow_params_hash[key] = v.to_json
     end
   end
 
