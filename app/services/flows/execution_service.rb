@@ -919,11 +919,17 @@ class Flows::ExecutionService
       Conversations::HandoffPublicText.message_for(conversation)
     end
 
-    # 4) Replace @results.* variables (e.g. @results.Result 1.value or bare @results.Result 1 → .value)
-    result.gsub!(/@results\.([a-z0-9_ \-]+)(?:\.(category|value|input))?\b/i) do
+    # 4) Replace @results.* variables (e.g. @results.Result 1.value)
+    result.gsub!(/@results\.([a-z0-9_ \-]+)\.(category|value|input)\b/i) do
       key = Regexp.last_match(1).strip
-      field = (Regexp.last_match(2) || 'value').downcase
+      field = Regexp.last_match(2).downcase
       resolve_flow_result(key, field)
+    end
+
+    # 4b) Shorthand: @results.<name> without a field defaults to .value (FlowEditor shows @results.Result 1)
+    result.gsub!(/@results\.([a-z0-9_ \-]+)(?!\.(?:category|value|input)\b)/i) do
+      key = Regexp.last_match(1).strip
+      resolve_flow_result(key, 'value')
     end
 
     # 5) Replace @flow.* variables (stored in FlowExecution.results under "flow" namespace)
@@ -1155,6 +1161,8 @@ class Flows::ExecutionService
     when /\Aconversation\.id\z/i then conversation.display_id.to_s
     when /\Aresults\.(.+)\.(category|value|input)\z/i
       resolve_flow_result(Regexp.last_match(1).strip, Regexp.last_match(2).downcase)
+    when /\Aresults\.(.+)\z/i
+      resolve_flow_result(Regexp.last_match(1).strip, 'value')
     when /\Aflow\.(.+)\z/i
       resolve_flow_variable(Regexp.last_match(1))
     when /\Adate\z/i then Date.current.strftime('%Y-%m-%d')
@@ -1169,9 +1177,15 @@ class Flows::ExecutionService
     results = execution.results || {}
     # Try exact key first, then normalized (underscored, lowercase)
     datum = results[key] || results[key.downcase] || results[key.tr(' ', '_').downcase]
-    return '' unless datum.is_a?(Hash)
+    return '' if datum.nil?
 
-    (datum[field] || datum[field.to_sym] || '').to_s
+    if datum.is_a?(Hash)
+      (datum[field] || datum[field.to_sym] || '').to_s
+    elsif field.to_s == 'value'
+      datum.to_s
+    else
+      ''
+    end
   end
 
   def resolve_flow_variable(key)
@@ -1962,6 +1976,8 @@ class Flows::ExecutionService
       }
     when /@results\.(.+)\.(category|value|input)$/
       resolve_flow_result(Regexp.last_match(1).strip, Regexp.last_match(2).downcase)
+    when /@results\.(.+)$/
+      resolve_flow_result(Regexp.last_match(1).strip, 'value')
     when /@flow\.(.+)$/
       resolve_flow_variable(Regexp.last_match(1).strip)
     when '@contact.groups'

@@ -1,5 +1,5 @@
 class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEditor::BaseController
-  before_action :set_flow, only: [:show, :update, :destroy, :save_revision, :revisions]
+  before_action :set_flow, only: [:show, :update, :destroy, :save_revision, :revisions, :variable_completions]
   before_action :check_authorization
 
   def index
@@ -73,6 +73,17 @@ class Api::V1::Accounts::FlowEditor::FlowsController < Api::V1::Accounts::FlowEd
   end
 
   # FlowEditor specific endpoints
+  def variable_completions
+    definition = begin
+      JSON.parse(@flow.flow_data.presence || '{}')
+    rescue JSON::ParserError
+      {}
+    end
+
+    suggestions = Flows::VariableCompletionExtractor.suggestions(definition, params[:q])
+    render json: { results: suggestions, next: nil }
+  end
+
   def revisions
     # Route is /flows/:id/revisions, so use :id not :flow_id
     Rails.logger.info '=== REVISIONS DEBUG ==='

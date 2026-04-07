@@ -369,4 +369,37 @@ RSpec.describe Flows::ExecutionService do
       expect(result).not_to include('standard_handoff')
     end
   end
+
+  describe '@results variable substitution' do
+    let(:service) { described_class.new(flow: flow, conversation: conversation, trigger_data: {}) }
+    let(:execution) do
+      create(:flow_execution,
+             flow: flow,
+             conversation: conversation,
+             contact: contact,
+             account: account,
+             results: {
+               'Result 1' => { 'value' => 'one', 'input' => 'one', 'category' => 'O' }
+             })
+    end
+
+    before do
+      allow(service).to receive(:current_flow_execution).and_return(execution)
+    end
+
+    it 'replaces @results.Result 1 with the stored value (shorthand for .value)' do
+      out = service.send(:replace_variables, 'You picked @results.Result 1', {})
+      expect(out).to eq('You picked one')
+    end
+
+    it 'still supports explicit .value' do
+      out = service.send(:replace_variables, '@results.Result 1.value', {})
+      expect(out).to eq('one')
+    end
+
+    it 'supports .category' do
+      out = service.send(:replace_variables, '@results.Result 1.category', {})
+      expect(out).to eq('O')
+    end
+  end
 end

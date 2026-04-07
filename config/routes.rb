@@ -335,6 +335,7 @@ Rails.application.routes.draw do
             resources :flows, only: [:index, :show, :create, :update, :destroy] do
               member do
                 get :revisions
+                get :variable_completions
                 post :save_revision
               end
             end
