@@ -920,13 +920,13 @@ class Flows::ExecutionService
     end
 
     # 4) Replace @results.* variables (e.g. @results.Result 1.value)
-    result.gsub!(/@results\.([a-z0-9_ \-]+)\.(category|value|input)\b/i) do
+    result.gsub!(/@results\.([a-z0-9_ \-]+)\.(category|value|input)/i) do
       key = Regexp.last_match(1).strip
       field = Regexp.last_match(2).downcase
       resolve_flow_result(key, field)
     end
 
-    # 4b) Shorthand: @results.<name> without a field defaults to .value (FlowEditor shows @results.Result 1)
+    # 4b) Shorthand @results.<key> → same as @results.<key>.value (FlowEditor placeholders / UX)
     result.gsub!(/@results\.([a-z0-9_ \-]+)(?!\.(?:category|value|input)\b)/i) do
       key = Regexp.last_match(1).strip
       resolve_flow_result(key, 'value')
@@ -1177,15 +1177,9 @@ class Flows::ExecutionService
     results = execution.results || {}
     # Try exact key first, then normalized (underscored, lowercase)
     datum = results[key] || results[key.downcase] || results[key.tr(' ', '_').downcase]
-    return '' if datum.nil?
+    return '' unless datum.is_a?(Hash)
 
-    if datum.is_a?(Hash)
-      (datum[field] || datum[field.to_sym] || '').to_s
-    elsif field.to_s == 'value'
-      datum.to_s
-    else
-      ''
-    end
+    (datum[field] || datum[field.to_sym] || '').to_s
   end
 
   def resolve_flow_variable(key)
@@ -1974,11 +1968,11 @@ class Flows::ExecutionService
         text: last_message&.content.to_s,
         attachments: Array(last_message&.attachments)
       }
-    when /@results\.(.+)\.(category|value|input)$/
+    when /@results\.(.+)\.(category|value|input)\z/
       resolve_flow_result(Regexp.last_match(1).strip, Regexp.last_match(2).downcase)
-    when /@results\.(.+)$/
+    when /\A@results\.(.+)\z/
       resolve_flow_result(Regexp.last_match(1).strip, 'value')
-    when /@flow\.(.+)$/
+    when /@flow\.(.+)\z/
       resolve_flow_variable(Regexp.last_match(1).strip)
     when '@contact.groups'
       # Return label names used as groups proxy

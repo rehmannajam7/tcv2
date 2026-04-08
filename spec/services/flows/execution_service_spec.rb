@@ -378,8 +378,13 @@ RSpec.describe Flows::ExecutionService do
              conversation: conversation,
              contact: contact,
              account: account,
+             status: :running,
              results: {
-               'Result 1' => { 'value' => 'one', 'input' => 'one', 'category' => 'O' }
+               'Result 1' => {
+                 'value' => 'one',
+                 'input' => 'one',
+                 'category' => 'Option O'
+               }
              })
     end
 
@@ -387,19 +392,19 @@ RSpec.describe Flows::ExecutionService do
       allow(service).to receive(:current_flow_execution).and_return(execution)
     end
 
-    it 'replaces @results.Result 1 with the stored value (shorthand for .value)' do
-      out = service.send(:replace_variables, 'You picked @results.Result 1', {})
-      expect(out).to eq('You picked one')
+    it 'resolves @results.<name> shorthand to the stored value' do
+      out = service.send(:replace_variables, 'You said @results.Result 1', {})
+      expect(out).to eq('You said one')
     end
 
-    it 'still supports explicit .value' do
-      out = service.send(:replace_variables, '@results.Result 1.value', {})
-      expect(out).to eq('one')
+    it 'still resolves explicit @results.<name>.value' do
+      out = service.send(:replace_variables, 'You said @results.Result 1.value', {})
+      expect(out).to eq('You said one')
     end
 
-    it 'supports .category' do
-      out = service.send(:replace_variables, '@results.Result 1.category', {})
-      expect(out).to eq('O')
+    it 'resolves shorthand in resolve_operand_value' do
+      v = service.send(:resolve_operand_value, '@results.Result 1', nil, {})
+      expect(v).to eq('one')
     end
   end
 end

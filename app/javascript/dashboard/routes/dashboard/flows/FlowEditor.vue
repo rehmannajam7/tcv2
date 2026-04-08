@@ -76,7 +76,10 @@ export default {
         channels: `${b}/channels`,
         languages: `${b}/languages`,
         labels: `${fe}/labels`,
-        globals: `${fe}/globals`,
+        // Pass flow_id so globals can include @results.<name> from the current definition
+        globals: this.flowId
+          ? `${fe}/globals?flow_id=${encodeURIComponent(this.flowId)}`
+          : `${fe}/globals`,
         completion: `${fe}/completion`,
         activity: `${fe}/activity`,
         templates: `${fe}/templates`,
