@@ -1116,7 +1116,7 @@
         "AGENT_MESSAGE": "Hello"
       },
       "BRANDING_TEXT": "Chatwoot",
-      "SCRIPT_SETTINGS": "\nwindow.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\nwindow.thumbcrowdSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

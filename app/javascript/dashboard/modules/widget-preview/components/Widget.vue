@@ -10,6 +10,7 @@ import Code from 'dashboard/components/Code.vue';
 import Switch from 'dashboard/components-next/switch/Switch.vue';
 import { useBranding } from 'shared/composables/useBranding';
 import { useMapGetter } from 'dashboard/composables/store';
+import { normalizeWebWidgetScript } from 'shared/helpers/webWidgetScript';
 
 const props = defineProps({
   welcomeHeading: {
@@ -91,7 +92,7 @@ const widgetScript = computed(() => {
     launcherTitle: props.widgetBubbleLauncherTitle,
   };
 
-  const script = props.webWidgetScript;
+  const script = normalizeWebWidgetScript(props.webWidgetScript);
   return (
     script.substring(0, 13) +
     t('INBOX_MGMT.WIDGET_BUILDER.SCRIPT_SETTINGS', {

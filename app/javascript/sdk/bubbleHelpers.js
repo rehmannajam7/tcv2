@@ -26,12 +26,12 @@ export const setBubbleText = bubbleText => {
 };
 
 export const createBubbleIcon = ({ className, path, target }) => {
-  let bubbleClassName = `${className} woot-elements--${window.$chatwoot.position}`;
+  let bubbleClassName = `${className} thumbcrowd-elements--${window.$chatwoot.position}`;
   const bubbleIcon = document.createElementNS(
     'http://www.w3.org/2000/svg',
     'svg'
   );
-  bubbleIcon.setAttributeNS(null, 'id', 'woot-widget-bubble-icon');
+  bubbleIcon.setAttributeNS(null, 'id', 'thumbcrowd-widget-bubble-icon');
   bubbleIcon.setAttributeNS(null, 'width', '24');
   bubbleIcon.setAttributeNS(null, 'height', '24');
   bubbleIcon.setAttributeNS(null, 'viewBox', '0 0 240 240');
@@ -63,10 +63,10 @@ export const createBubbleIcon = ({ className, path, target }) => {
 
 export const createBubbleHolder = hideMessageBubble => {
   if (hideMessageBubble) {
-    addClasses(bubbleHolder, 'woot-hidden');
+    addClasses(bubbleHolder, 'thumbcrowd-hidden');
   }
-  addClasses(bubbleHolder, 'woot--bubble-holder');
-  bubbleHolder.id = 'cw-bubble-holder';
+  addClasses(bubbleHolder, 'thumbcrowd--bubble-holder');
+  bubbleHolder.id = 'tc-bubble-holder';
   bubbleHolder.dataset.turboPermanent = true;
   body.appendChild(bubbleHolder);
 };
@@ -90,9 +90,9 @@ export const onBubbleClick = (props = {}) => {
   const newIsOpen = toggleValue === undefined ? !isOpen : toggleValue;
   window.$chatwoot.isOpen = newIsOpen;
 
-  toggleClass(chatBubble, 'woot--hide');
-  toggleClass(closeBubble, 'woot--hide');
-  toggleClass(widgetHolder, 'woot--hide');
+  toggleClass(chatBubble, 'thumbcrowd--hide');
+  toggleClass(closeBubble, 'thumbcrowd--hide');
+  toggleClass(widgetHolder, 'thumbcrowd--hide');
 
   handleBubbleToggle(newIsOpen);
 };
@@ -102,11 +102,11 @@ export const onClickChatBubble = () => {
 };
 
 export const addUnreadClass = () => {
-  const holderEl = document.querySelector('.woot-widget-holder');
+  const holderEl = document.querySelector('.thumbcrowd-widget-holder');
   addClasses(holderEl, 'has-unread-view');
 };
 
 export const removeUnreadClass = () => {
-  const holderEl = document.querySelector('.woot-widget-holder');
+  const holderEl = document.querySelector('.thumbcrowd-widget-holder');
   removeClasses(holderEl, 'has-unread-view');
 };

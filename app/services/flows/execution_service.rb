@@ -926,6 +926,12 @@ class Flows::ExecutionService
       resolve_flow_result(key, field)
     end
 
+    # 4b) Shorthand @results.<key> → same as @results.<key>.value (FlowEditor placeholders / UX)
+    result.gsub!(/@results\.([a-z0-9_ \-]+)(?!\.(?:category|value|input)\b)/i) do
+      key = Regexp.last_match(1).strip
+      resolve_flow_result(key, 'value')
+    end
+
     # 5) Replace @flow.* variables (stored in FlowExecution.results under "flow" namespace)
     result.gsub!(/@flow\.([a-z0-9_\-]+)/i) do
       key = Regexp.last_match(1)
@@ -1155,6 +1161,8 @@ class Flows::ExecutionService
     when /\Aconversation\.id\z/i then conversation.display_id.to_s
     when /\Aresults\.(.+)\.(category|value|input)\z/i
       resolve_flow_result(Regexp.last_match(1).strip, Regexp.last_match(2).downcase)
+    when /\Aresults\.(.+)\z/i
+      resolve_flow_result(Regexp.last_match(1).strip, 'value')
     when /\Aflow\.(.+)\z/i
       resolve_flow_variable(Regexp.last_match(1))
     when /\Adate\z/i then Date.current.strftime('%Y-%m-%d')
@@ -1960,9 +1968,11 @@ class Flows::ExecutionService
         text: last_message&.content.to_s,
         attachments: Array(last_message&.attachments)
       }
-    when /@results\.(.+)\.(category|value|input)$/
+    when /@results\.(.+)\.(category|value|input)\z/
       resolve_flow_result(Regexp.last_match(1).strip, Regexp.last_match(2).downcase)
-    when /@flow\.(.+)$/
+    when /\A@results\.(.+)\z/
+      resolve_flow_result(Regexp.last_match(1).strip, 'value')
+    when /@flow\.(.+)\z/
       resolve_flow_variable(Regexp.last_match(1).strip)
     when '@contact.groups'
       # Return label names used as groups proxy

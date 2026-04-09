@@ -4,7 +4,7 @@ export const SDK_CSS = `
   --s-700: #37546D;
 }
 
-.woot-widget-holder {
+.thumbcrowd-widget-holder {
   box-shadow: 0 5px 40px rgba(0, 0, 0, .16);
   opacity: 1;
   will-change: transform, opacity;
@@ -15,13 +15,13 @@ export const SDK_CSS = `
   z-index: 2147483000 !important;
 }
 
-.woot-widget-holder.woot-widget-holder--flat {
+.thumbcrowd-widget-holder.thumbcrowd-widget-holder--flat {
   box-shadow: none;
   border-radius: 0;
   border: 1px solid var(--b-100);
 }
 
-.woot-widget-holder iframe {
+.thumbcrowd-widget-holder iframe {
   border: 0;
   color-scheme: normal;
   height: 100% !important;
@@ -29,7 +29,7 @@ export const SDK_CSS = `
   max-height: 100vh !important;
 }
 
-.woot-widget-holder.has-unread-view {
+.thumbcrowd-widget-holder.has-unread-view {
   border-radius: 0 !important;
   min-height: 80px !important;
   height: auto;
@@ -38,46 +38,46 @@ export const SDK_CSS = `
   border: 0;
 }
 
-.woot-widget-bubble {
+.thumbcrowd-widget-bubble {
   background: #1f93ff;
   border-radius: 100px;
   border-width: 0px;
   bottom: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .16) !important;
   cursor: pointer;
-  height: 60px;
+  height: 50px;
   padding: 0px;
   position: fixed;
   user-select: none;
-  width: 60px;
+  width: 50px;
   z-index: 2147483000 !important;
   overflow: hidden;
 }
 
-.woot-widget-bubble.woot-widget-bubble--flat {
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat {
   border-radius: 0;
 }
 
-.woot-widget-holder.woot-widget-holder--flat {
+.thumbcrowd-widget-holder.thumbcrowd-widget-holder--flat {
   bottom: 90px;
 }
 
-.woot-widget-bubble.woot-widget-bubble--flat {
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat {
   height: 56px;
   width: 56px;
 }
 
-.woot-widget-bubble.woot-widget-bubble--flat svg {
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat svg {
   margin: 16px;
 }
 
-.woot-widget-bubble.woot-widget-bubble--flat.woot--close::before,
-.woot-widget-bubble.woot-widget-bubble--flat.woot--close::after {
-  left: 28px;
-  top: 16px;
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat.thumbcrowd--close::before,
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat.thumbcrowd--close::after {
+  left: 25px;
+  top: 14px;
 }
 
-.woot-widget-bubble.unread-notification::after {
+.thumbcrowd-widget-bubble.unread-notification::after {
   content: '';
   position: absolute;
   width: 12px;
@@ -90,7 +90,7 @@ export const SDK_CSS = `
   transition: background 0.2s ease;
 }
 
-.woot-widget-bubble.woot-widget--expanded {
+.thumbcrowd-widget-bubble.woot-widget--expanded {
   bottom: 24px;
   display: flex;
   height: 48px !important;
@@ -98,7 +98,7 @@ export const SDK_CSS = `
   align-items: center;
 }
 
-.woot-widget-bubble.woot-widget--expanded div {
+.thumbcrowd-widget-bubble.woot-widget--expanded div {
   align-items: center;
   color: #fff;
   display: flex;
@@ -110,77 +110,77 @@ export const SDK_CSS = `
   width: auto !important;
 }
 
-.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble-color--lighter div{
+.thumbcrowd-widget-bubble.woot-widget--expanded.thumbcrowd-widget-bubble-color--lighter div{
   color: var(--s-700);
 }
 
-.woot-widget-bubble.woot-widget--expanded svg {
+.thumbcrowd-widget-bubble.woot-widget--expanded svg {
   height: 20px;
   margin: 14px 8px 14px 16px;
   width: 20px;
 }
 
-.woot-widget-bubble.woot-elements--left {
+.thumbcrowd-widget-bubble.thumbcrowd-elements--left {
   left: 20px;
 }
 
-.woot-widget-bubble.woot-elements--right {
+.thumbcrowd-widget-bubble.thumbcrowd-elements--right {
   right: 20px;
 }
 
-.woot-widget-bubble:hover {
+.thumbcrowd-widget-bubble:hover {
   background: #1f93ff;
   box-shadow: 0 8px 32px rgba(0, 0, 0, .4) !important;
 }
 
-.woot-widget-bubble svg {
+.thumbcrowd-widget-bubble svg {
   all: revert;
-  height: 45px;
+  height: 32px;
   margin: 10px;
-  width: 35px;
+  width: 30px;
 }
 
-.woot-widget-bubble.woot-widget-bubble-color--lighter path{
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble-color--lighter path{
   fill: var(--s-700);
 }
 
 @media only screen and (min-width: 667px) {
-  .woot-widget-holder.woot-elements--left {
+  .thumbcrowd-widget-holder.thumbcrowd-elements--left {
     left: 20px;
  }
-  .woot-widget-holder.woot-elements--right {
+  .thumbcrowd-widget-holder.thumbcrowd-elements--right {
     right: 20px;
  }
 }
 
-.woot--close:hover {
+.thumbcrowd--close:hover {
   opacity: 1;
 }
 
-.woot--close::before, .woot--close::after {
+.thumbcrowd--close::before, .thumbcrowd--close::after {
   background-color: #fff;
   content: ' ';
   display: inline;
   height: 24px;
-  left: 32px;
+  left: 25px;
   position: absolute;
-  top: 20px;
+  top: 14px;
   width: 2px;
 }
 
-.woot-widget-bubble-color--lighter.woot--close::before, .woot-widget-bubble-color--lighter.woot--close::after {
+.thumbcrowd-widget-bubble-color--lighter.thumbcrowd--close::before, .thumbcrowd-widget-bubble-color--lighter.thumbcrowd--close::after {
   background-color: var(--s-700);
 }
 
-.woot--close::before {
+.thumbcrowd--close::before {
   transform: rotate(45deg);
 }
 
-.woot--close::after {
+.thumbcrowd--close::after {
   transform: rotate(-45deg);
 }
 
-.woot--hide {
+.thumbcrowd--hide {
   bottom: -100vh !important;
   top: unset !important;
   opacity: 0;
@@ -188,71 +188,71 @@ export const SDK_CSS = `
   z-index: -1 !important;
 }
 
-.woot-widget--without-bubble {
+.thumbcrowd-widget--without-bubble {
   bottom: 20px !important;
 }
-.woot-widget-holder.woot--hide{
+.thumbcrowd-widget-holder.thumbcrowd--hide{
   transform: translateY(40px);
 }
-.woot-widget-bubble.woot--close {
+.thumbcrowd-widget-bubble.thumbcrowd--close {
   transform: translateX(0px) scale(1) rotate(0deg);
   transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
 }
-.woot-widget-bubble.woot--close.woot--hide {
+.thumbcrowd-widget-bubble.thumbcrowd--close.thumbcrowd--hide {
   transform: translateX(8px) scale(.75) rotate(45deg);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
 }
 
-.woot-widget-bubble {
+.thumbcrowd-widget-bubble {
   transform-origin: center;
   will-change: transform, opacity;
   transform: translateX(0) scale(1) rotate(0deg);
   transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
 }
-.woot-widget-bubble.woot--hide {
+.thumbcrowd-widget-bubble.thumbcrowd--hide {
   transform: translateX(8px) scale(.75) rotate(-30deg);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
 }
 
-.woot-widget-bubble.woot-widget--expanded {
+.thumbcrowd-widget-bubble.woot-widget--expanded {
   transform: translateX(0px);
   transition: transform 300ms ease, opacity 100ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
 }
-.woot-widget-bubble.woot-widget--expanded.woot--hide {
+.thumbcrowd-widget-bubble.woot-widget--expanded.thumbcrowd--hide {
   transform: translateX(8px);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
 }
-.woot-widget-bubble.woot-widget-bubble--flat.woot--close {
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat.thumbcrowd--close {
   transform: translateX(0px);
   transition: transform 300ms ease, opacity 10ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
 }
-.woot-widget-bubble.woot-widget-bubble--flat.woot--close.woot--hide {
+.thumbcrowd-widget-bubble.thumbcrowd-widget-bubble--flat.thumbcrowd--close.thumbcrowd--hide {
   transform: translateX(8px);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
 }
-.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble--flat {
+.thumbcrowd-widget-bubble.woot-widget--expanded.thumbcrowd-widget-bubble--flat {
   transform: translateX(0px);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 0ms, bottom 0ms linear 0ms;
 }
-.woot-widget-bubble.woot-widget--expanded.woot-widget-bubble--flat.woot--hide {
+.thumbcrowd-widget-bubble.woot-widget--expanded.thumbcrowd-widget-bubble--flat.thumbcrowd--hide {
   transform: translateX(8px);
   transition: transform 300ms ease, opacity 200ms ease, visibility 0ms linear 500ms, bottom 0ms ease 200ms;
 }
 
 @media only screen and (max-width: 667px) {
-  .woot-widget-holder {
+  .thumbcrowd-widget-holder {
     height: 100%;
     right: 0;
     top: 0;
     width: 100%;
  }
 
- .woot-widget-holder iframe {
+ .thumbcrowd-widget-holder iframe {
     min-height: 100% !important;
   }
 
 
- .woot-widget-holder.has-unread-view {
+ .thumbcrowd-widget-holder.has-unread-view {
     height: auto;
     right: 0;
     width: auto;
@@ -262,15 +262,15 @@ export const SDK_CSS = `
     padding: 0 8px;
   }
 
-  .woot-widget-holder.has-unread-view iframe {
+  .thumbcrowd-widget-holder.has-unread-view iframe {
     min-height: unset !important;
   }
 
- .woot-widget-holder.has-unread-view.woot-elements--left {
+ .thumbcrowd-widget-holder.has-unread-view.thumbcrowd-elements--left {
     left: 0;
   }
 
-  .woot-widget-bubble.woot--close {
+  .thumbcrowd-widget-bubble.thumbcrowd--close {
     bottom: 60px;
     opacity: 0;
     visibility: hidden !important;
@@ -279,7 +279,7 @@ export const SDK_CSS = `
 }
 
 @media only screen and (min-width: 667px) {
-  .woot-widget-holder {
+  .thumbcrowd-widget-holder {
     border-radius: 16px;
     bottom: 104px;
     height: calc(90% - 64px - 20px);
@@ -289,7 +289,7 @@ export const SDK_CSS = `
  }
 }
 
-.woot-hidden {
+.thumbcrowd-hidden {
   display: none !important;
 }
 `;

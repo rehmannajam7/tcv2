@@ -1116,7 +1116,7 @@
         "AGENT_MESSAGE": "Salam"
       },
       "BRANDING_TEXT": "Powered by Chatwoot",
-      "SCRIPT_SETTINGS": "\n      window.chatwootSettings = {options};"
+      "SCRIPT_SETTINGS": "\n      window.thumbcrowdSettings = {options};"
     },
     "EMAIL_PROVIDERS": {
       "MICROSOFT": {

@@ -47,11 +47,12 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     restoreWidgetInDOM(event.newDocument.body)
   );
 
-  const chatwootSettings = window.chatwootSettings || {};
-  let locale = chatwootSettings.locale;
-  let baseDomain = chatwootSettings.baseDomain;
+  const widgetSettings =
+    window.thumbcrowdSettings || window.chatwootSettings || {};
+  let locale = widgetSettings.locale;
+  let baseDomain = widgetSettings.baseDomain;
 
-  if (chatwootSettings.useBrowserLanguage) {
+  if (widgetSettings.useBrowserLanguage) {
     locale = window.navigator.language.replace('-', '_');
   }
 
@@ -59,41 +60,41 @@ const runSDK = ({ baseUrl, websiteToken }) => {
     baseUrl,
     baseDomain,
     hasLoaded: false,
-    hideMessageBubble: chatwootSettings.hideMessageBubble || false,
+    hideMessageBubble: widgetSettings.hideMessageBubble || false,
     isOpen: false,
-    position: chatwootSettings.position === 'left' ? 'left' : 'right',
+    position: widgetSettings.position === 'left' ? 'left' : 'right',
     websiteToken,
     locale,
-    useBrowserLanguage: chatwootSettings.useBrowserLanguage || false,
-    type: getBubbleView(chatwootSettings.type),
-    launcherTitle: chatwootSettings.launcherTitle || '',
-    showPopoutButton: chatwootSettings.showPopoutButton || false,
-    showUnreadMessagesDialog: chatwootSettings.showUnreadMessagesDialog ?? true,
-    widgetStyle: getWidgetStyle(chatwootSettings.widgetStyle) || 'standard',
+    useBrowserLanguage: widgetSettings.useBrowserLanguage || false,
+    type: getBubbleView(widgetSettings.type),
+    launcherTitle: widgetSettings.launcherTitle || '',
+    showPopoutButton: widgetSettings.showPopoutButton || false,
+    showUnreadMessagesDialog: widgetSettings.showUnreadMessagesDialog ?? true,
+    widgetStyle: getWidgetStyle(widgetSettings.widgetStyle) || 'standard',
     resetTriggered: false,
-    darkMode: getDarkMode(chatwootSettings.darkMode),
-    welcomeTitle: chatwootSettings.welcomeTitle || '',
-    welcomeDescription: chatwootSettings.welcomeDescription || '',
-    availableMessage: chatwootSettings.availableMessage || '',
-    unavailableMessage: chatwootSettings.unavailableMessage || '',
-    enableFileUpload: chatwootSettings.enableFileUpload,
-    enableEmojiPicker: chatwootSettings.enableEmojiPicker ?? true,
-    enableEndConversation: chatwootSettings.enableEndConversation ?? true,
+    darkMode: getDarkMode(widgetSettings.darkMode),
+    welcomeTitle: widgetSettings.welcomeTitle || '',
+    welcomeDescription: widgetSettings.welcomeDescription || '',
+    availableMessage: widgetSettings.availableMessage || '',
+    unavailableMessage: widgetSettings.unavailableMessage || '',
+    enableFileUpload: widgetSettings.enableFileUpload,
+    enableEmojiPicker: widgetSettings.enableEmojiPicker ?? true,
+    enableEndConversation: widgetSettings.enableEndConversation ?? true,
 
     toggle(state) {
       IFrameHelper.events.toggleBubble(state);
     },
 
     toggleBubbleVisibility(visibility) {
-      let widgetElm = document.querySelector('.woot--bubble-holder');
-      let widgetHolder = document.querySelector('.woot-widget-holder');
+      let widgetElm = document.querySelector('.thumbcrowd--bubble-holder');
+      let widgetHolder = document.querySelector('.thumbcrowd-widget-holder');
       if (visibility === 'hide') {
-        addClasses(widgetHolder, 'woot-widget--without-bubble');
-        addClasses(widgetElm, 'woot-hidden');
+        addClasses(widgetHolder, 'thumbcrowd-widget--without-bubble');
+        addClasses(widgetElm, 'thumbcrowd-hidden');
         window.$chatwoot.hideMessageBubble = true;
       } else if (visibility === 'show') {
-        removeClasses(widgetElm, 'woot-hidden');
-        removeClasses(widgetHolder, 'woot-widget--without-bubble');
+        removeClasses(widgetElm, 'thumbcrowd-hidden');
+        removeClasses(widgetHolder, 'thumbcrowd-widget--without-bubble');
         window.$chatwoot.hideMessageBubble = false;
       }
       IFrameHelper.sendMessage(SDK_SET_BUBBLE_VISIBILITY, {
@@ -219,3 +220,6 @@ const runSDK = ({ baseUrl, websiteToken }) => {
 window.thumbcrowdSDK = {
   run: runSDK,
 };
+
+// Backward compatibility for legacy embed snippets
+window.chatwootSDK = window.thumbcrowdSDK;
